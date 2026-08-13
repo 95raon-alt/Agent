@@ -1,0 +1,150 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 850" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #F9F7F1; }
+      .title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 24px; fill: #4A6B5D; }
+      .subtitle { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 14px; fill: #555555; }
+      
+      /* Shape Styles */
+      .start-end { fill: #4A6B5D; stroke: #2E453C; stroke-width: 2; rx: 25px; ry: 25px; }
+      .start-end-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 15px; fill: #F9F7F1; text-anchor: middle; }
+      
+      .user-action { fill: #FFFFFF; stroke: #4A6B5D; stroke-width: 2; rx: 4px; ry: 4px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.06)); }
+      .user-action-title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 13px; fill: #4A6B5D; text-anchor: middle; }
+      .user-action-sub { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 11px; fill: #666666; text-anchor: middle; }
+      
+      .system-proc { fill: #EBF2EE; stroke: #8AA89B; stroke-width: 2; rx: 12px; ry: 12px; }
+      .system-proc-title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 13px; fill: #4A6B5D; text-anchor: middle; }
+      .system-proc-sub { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 11px; fill: #4A6B5D; text-anchor: middle; }
+      
+      .decision { fill: #FFF9E6; stroke: #F5A623; stroke-width: 2; }
+      .decision-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 12px; fill: #8A5700; text-anchor: middle; }
+      
+      .line { stroke: #4A6B5D; stroke-width: 2; fill: none; }
+      .line-dash { stroke: #D32F2F; stroke-width: 1.5; stroke-dasharray: 4; fill: none; }
+      .arrow { fill: #4A6B5D; }
+      .label-text { font-family: 'Pretendard', sans-serif; font-weight: bold; font-size: 11px; fill: #4A6B5D; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg"/>
+
+  <!-- Header -->
+  <text x="50" y="45" class="title">🔄 A:FIT Balance (윤서진 디렉터) 서비스 흐름도 (Service Flowchart)</text>
+  <text x="50" y="70" class="subtitle">3040 프리미엄 웰니스 5단계 사용자 여정 (도형 구분 적용)</text>
+
+  <!-- Start Node -->
+  <g transform="translate(410, 100)">
+    <rect width="180" height="46" class="start-end"/>
+    <text x="90" y="28" class="start-end-text">시작: 메인페이지 접속</text>
+  </g>
+
+  <!-- Flow Line 1 -->
+  <path d="M 500,146 L 500,180" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Step 1: User Action (PAGE-01) -->
+  <g transform="translate(400, 180)">
+    <rect width="200" height="50" class="user-action"/>
+    <text x="100" y="25" class="user-action-title">1. Hero 3040 공감 (PAGE-01)</text>
+    <text x="100" y="40" class="user-action-sub">3줄 요약 / 웰니스 칩 확인</text>
+  </g>
+
+  <!-- Flow Line 2 -->
+  <path d="M 500,230 L 500,270" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Step 2: Decision (AI 진단 실행 여부) -->
+  <g transform="translate(500, 310)">
+    <polygon points="0,-35 80,0 0,35 -80,0" class="decision"/>
+    <text x="0" y="-4" class="decision-text">AI 바이오 진단</text>
+    <text x="0" y="12" class="decision-text">실행할 것인가?</text>
+  </g>
+
+  <!-- Branch Yes -->
+  <path d="M 420,310 L 250,310 L 250,370" class="line" marker-end="url(#arrow)"/>
+  <text x="320" y="300" class="label-text">예 (15초 퀴즈)</text>
+
+  <!-- Step 3A: System Process (PAGE-03) -->
+  <g transform="translate(150, 370)">
+    <rect width="200" height="50" class="system-proc"/>
+    <text x="100" y="25" class="system-proc-title">2A. AI 진단 모달 (PAGE-03)</text>
+    <text x="100" y="40" class="system-proc-sub">15초 퀴즈 ➔ AI 캡슐 팩 매칭</text>
+  </g>
+
+  <!-- Branch No -->
+  <path d="M 580,310 L 750,310 L 750,370" class="line" marker-end="url(#arrow)"/>
+  <text x="610" y="300" class="label-text">아니오 (바로 탐색)</text>
+
+  <!-- Step 3B: User Action (PAGE-04) -->
+  <g transform="translate(650, 370)">
+    <rect width="200" height="50" class="user-action"/>
+    <text x="100" y="25" class="user-action-title">2B. 임상 &amp; 가치비교 (PAGE-04)</text>
+    <text x="100" y="40" class="user-action-sub">특허 성분 &amp; 비용 비교표</text>
+  </g>
+
+  <!-- Merge Flow Lines -->
+  <path d="M 250,420 L 250,460 L 500,460" class="line"/>
+  <path d="M 750,420 L 750,460 L 500,460 L 500,490" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Step 4: Plan Select -->
+  <g transform="translate(400, 490)">
+    <rect width="200" height="50" class="user-action"/>
+    <text x="100" y="25" class="user-action-title">3. 프리미엄 구독 플랜 선택</text>
+    <text x="100" y="40" class="user-action-sub">주기 선택 ➔ 결제 진행</text>
+  </g>
+
+  <!-- Flow Line 5 -->
+  <path d="M 500,540 L 500,580" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Step 5: Checkout (PAGE-05) -->
+  <g transform="translate(400, 580)">
+    <rect width="200" height="50" class="user-action"/>
+    <text x="100" y="25" class="user-action-title">4. 구독 결제 진행 (PAGE-05)</text>
+    <text x="100" y="40" class="user-action-sub">배송지 입력 ➔ 1초 간편 결제</text>
+  </g>
+
+  <!-- Flow Line 6 -->
+  <path d="M 500,630 L 500,660" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Step 6: Decision (Pay Success?) -->
+  <g transform="translate(500, 695)">
+    <polygon points="0,-35 80,0 0,35 -80,0" class="decision"/>
+    <text x="0" y="-4" class="decision-text">결제 승인</text>
+    <text x="0" y="12" class="decision-text">성공했는가?</text>
+  </g>
+
+  <!-- Branch Error -->
+  <path d="M 420,695 L 250,695 L 250,610 L 400,610" class="line-dash" marker-end="url(#arrow)"/>
+  <text x="300" y="685" fill="#D32F2F" font-family="'Pretendard', sans-serif" font-weight="bold" font-size="11">실패 (오류 모달 PAGE-07)</text>
+
+  <!-- Branch Success -->
+  <path d="M 580,695 L 750,695 L 750,750" class="line" marker-end="url(#arrow)"/>
+  <text x="610" y="685" class="label-text">성공 (승인 완료)</text>
+
+  <!-- Step 7: Completion -->
+  <g transform="translate(650, 750)">
+    <rect width="200" height="46" class="start-end"/>
+    <text x="100" y="28" class="start-end-text">종료: 구독 완료 (PAGE-06)</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(50, 750)">
+    <rect width="550" height="70" fill="#FFFFFF" stroke="#4A6B5D" stroke-width="1" rx="6" ry="6"/>
+    <text x="15" y="22" font-family="'Pretendard', sans-serif" font-weight="bold" font-size="12" fill="#4A6B5D">기호 정의 (Shape Notation)</text>
+
+    <rect x="15" y="35" width="24" height="14" class="start-end" rx="7" ry="7"/>
+    <text x="45" y="47" font-family="'Pretendard', sans-serif" font-size="11" fill="#333">시작 / 종료</text>
+
+    <rect x="130" y="35" width="24" height="14" class="user-action"/>
+    <text x="160" y="47" font-family="'Pretendard', sans-serif" font-size="11" fill="#333">사용자 행동 (화면)</text>
+
+    <rect x="270" y="35" width="24" height="14" class="system-proc"/>
+    <text x="300" y="47" font-family="'Pretendard', sans-serif" font-size="11" fill="#333">시스템 처리</text>
+
+    <polygon points="410,42 420,35 430,42 420,49" class="decision"/>
+    <text x="440" y="47" font-family="'Pretendard', sans-serif" font-size="11" fill="#333">판단 분기</text>
+  </g>
+</svg>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 800" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #1C1917; }
+      .title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 24px; fill: #F472B6; }
+      .subtitle { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 14px; fill: #E7E5E4; }
+      .start-node { fill: #EC4899; stroke: #BE185D; stroke-width: 2; rx: 20px; ry: 20px; }
+      .start-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 14px; fill: #FFFFFF; text-anchor: middle; }
+      .rect-node { fill: #292524; stroke: #F472B6; stroke-width: 2; rx: 8px; ry: 8px; }
+      .rect-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 13px; fill: #F472B6; text-anchor: middle; }
+      .diamond-node { fill: #831843; stroke: #F472B6; stroke-width: 2; }
+      .diamond-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 12px; fill: #FCE7F3; text-anchor: middle; }
+      .line { stroke: #F472B6; stroke-width: 2; fill: none; }
+      .line-err { stroke: #EF4444; stroke-width: 1.5; stroke-dasharray: 4; fill: none; }
+      .label-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 11px; fill: #A8A29E; text-anchor: middle; }
+      .arrow { fill: #F472B6; }
+      .arrow-err { fill: #EF4444; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+    <marker id="arrow-err" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow-err"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg"/>
+
+  <text x="50" y="45" class="title">🔄 A:FIT Glow (송아현 디렉터) 서비스 프로세스 흐름도</text>
+  <text x="50" y="70" class="subtitle">2040 뷰티 소비자의 속건조 인식 ➔ AI 큐레이션 ➔ 성분 흡수율 검증 ➔ 정기구독 전환 흐름</text>
+
+  <!-- Start -->
+  <rect x="420" y="100" width="160" height="40" class="start-node"/>
+  <text x="500" y="125" class="start-text">시작: 메인 접속</text>
+
+  <path d="M 500 140 L 500 175" class="line" marker-end="url(#arrow)"/>
+
+  <!-- PAGE-01 -->
+  <rect x="400" y="175" width="200" height="50" class="rect-node"/>
+  <text x="500" y="205" class="rect-text">PAGE-01: Hero 속건조 탐색</text>
+
+  <path d="M 500 225 L 500 260" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Diamond Quiz -->
+  <polygon points="500,260 620,300 500,340 380,300" class="diamond-node"/>
+  <text x="500" y="304" class="diamond-text">AI 피부 큐레이션 실행?</text>
+
+  <!-- Branch Yes -->
+  <path d="M 380 300 L 250 300 L 250 370" class="line" marker-end="url(#arrow)"/>
+  <text x="315" y="290" class="label-text">예 (클릭)</text>
+
+  <rect x="150" y="370" width="200" height="50" class="rect-node"/>
+  <text x="250" y="400" class="rect-text">PAGE-03: AI 큐레이션 모달</text>
+
+  <path d="M 250 420 L 250 475 L 400 475" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Branch No -->
+  <path d="M 620 300 L 750 300 L 750 370 L 600 370 L 600 450" class="line" marker-end="url(#arrow)"/>
+  <text x="685" y="290" class="label-text">아니오 (스크롤)</text>
+
+  <!-- PAGE-04 -->
+  <rect x="400" y="450" width="200" height="50" class="rect-node"/>
+  <text x="500" y="480" class="rect-text">PAGE-04: 성분 &amp; 흡수율 비교</text>
+
+  <path d="M 500 500 L 500 540" class="line" marker-end="url(#arrow)"/>
+
+  <!-- PAGE-05 -->
+  <rect x="400" y="540" width="200" height="50" class="rect-node"/>
+  <text x="500" y="570" class="rect-text">PAGE-05: 구독 결제 창</text>
+
+  <path d="M 500 590 L 500 625" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Diamond PaySuccess -->
+  <polygon points="500,625 610,660 500,695 390,660" class="diamond-node"/>
+  <text x="500" y="664" class="diamond-text">결제 승인 성공?</text>
+
+  <!-- Pay Success -->
+  <path d="M 390 660 L 250 660 L 250 720" class="line" marker-end="url(#arrow)"/>
+  <text x="320" y="650" class="label-text">성공</text>
+
+  <rect x="170" y="720" width="160" height="40" class="start-node"/>
+  <text x="250" y="745" class="start-text">PAGE-06: 구독 완료</text>
+
+  <!-- Pay Fail -->
+  <path d="M 610 660 L 750 660 L 750 720" class="line-err" marker-end="url(#arrow-err)"/>
+  <text x="680" y="650" class="label-text">실패</text>
+
+  <rect x="650" y="720" width="200" height="50" style="fill:#451A1A; stroke:#EF4444; stroke-width:2; rx:8px; ry:8px;"/>
+  <text x="750" y="750" style="font-family:'Pretendard', sans-serif; font-size:13px; fill:#FCA5A5; text-anchor:middle;">PAGE-07: 오류/예외 모달</text>
+
+  <path d="M 750 720 L 750 565 L 600 565" class="line-err" marker-end="url(#arrow-err)"/>
+</svg>

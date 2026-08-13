@@ -1,0 +1,10 @@
+flowchart TD
+    PAGE01["PAGE-01: 메인 랜딩페이지"] --> PAGE02["PAGE-02: 브랜드 스토리"]
+    PAGE01 --> PAGE03["PAGE-03: AI 피부 큐레이션 모달"]
+    PAGE01 --> PAGE04["PAGE-04: 성분 & 흡수율 비교"]
+    PAGE01 --> PAGE05["PAGE-05: 구독 결제 창"]
+    
+    PAGE03 --> PAGE05
+    PAGE04 --> PAGE05
+    PAGE05 --> PAGE06["PAGE-06: 구독 완료"]
+    PAGE05 -.오류 발생.-> PAGE07["PAGE-07: 오류/예외 모달"]

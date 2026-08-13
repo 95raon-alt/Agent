@@ -1,0 +1,211 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "project": "A:FIT Tech & Focus IT 개발자 안구 피로 방어 정기구독 서비스",
+  "client": "임태현 Tech 브랜드 총괄 디렉터",
+  "screens": [
+    {
+      "id": "PAGE-01",
+      "name": "메인 랜딩페이지",
+      "purpose": "판교 개발자 안구 건조 방어 & 한 손 10초 섭취 가치 전달 및 구독 유도",
+      "entryConditions": [
+        "웹 브라우저 URL 직접 입력 접속",
+        "SNS IT 커뮤니티/개발자 블로그 광고 클릭"
+      ],
+      "sections": [
+        "Header",
+        "Hero",
+        "DevCareCuration",
+        "EyeMoistureChart",
+        "OneHandIntakeGIF",
+        "ImportComparison",
+        "DeveloperReviews",
+        "Footer",
+        "StickyCTA"
+      ],
+      "actions": [
+        "모니터 주시시간 선택",
+        "맞춤 영양 캡슐 진단",
+        "안구 수분 87% 차트 확인",
+        "Focus 구독 신청 클릭"
+      ],
+      "states": [
+        "기본",
+        "몰입 칩 활성화",
+        "Sticky CTA 바 추종"
+      ],
+      "nextScreens": [
+        "PAGE-02",
+        "PAGE-03",
+        "PAGE-04",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-02",
+      "name": "브랜드 스토리",
+      "purpose": "모니터 10시간 주시 안구 건조 문제 해결 및 한 손 이중제형 특허 증명",
+      "entryConditions": [
+        "PAGE-01 GNB 내 '브랜드 스토리' 클릭"
+      ],
+      "sections": [
+        "Header",
+        "EyeProblemStats",
+        "OneHandBoosterTech",
+        "Footer"
+      ],
+      "actions": [
+        "3D 보틀 회전",
+        "몰입별 진단 바로가기"
+      ],
+      "states": [
+        "기본"
+      ],
+      "nextScreens": [
+        "PAGE-01",
+        "PAGE-03"
+      ]
+    },
+    {
+      "id": "PAGE-03",
+      "name": "Dev Care 큐레이션 모달",
+      "purpose": "6h/9h/12h+ 몰입시간별 맞춤 캡슐 추천",
+      "entryConditions": [
+        "PAGE-01 내 몰입 진단 시작 클릭"
+      ],
+      "sections": [
+        "QuizHeader",
+        "HoursOptionChips",
+        "ResultPreview",
+        "SubmitButton"
+      ],
+      "actions": [
+        "몰입시간 칩 선택",
+        "다음 응답",
+        "맞춤 팩 담기"
+      ],
+      "states": [
+        "진단 중",
+        "결과 도출"
+      ],
+      "nextScreens": [
+        "PAGE-04",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-04",
+      "name": "눈건강 성분 & 비교",
+      "purpose": "해외 직구 영양제 5종 대비 올인원 10초 섭취 및 가성비 비교",
+      "entryConditions": [
+        "PAGE-01 GNB 내 '눈건강 성분' 클릭"
+      ],
+      "sections": [
+        "Header",
+        "EyeMoistureChart",
+        "ImportComparisonTable",
+        "SubscriptionPlanGrid",
+        "Footer"
+      ],
+      "actions": [
+        "성분 세부정보 확인",
+        "구독 플랜 선택"
+      ],
+      "states": [
+        "기본"
+      ],
+      "nextScreens": [
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-05",
+      "name": "구독 결제 창",
+      "purpose": "최단 동선 Focus 정기구독 결제 완료",
+      "entryConditions": [
+        "Sticky CTA 클릭"
+      ],
+      "sections": [
+        "PlanSelector",
+        "ShippingForm",
+        "PaymentMethods",
+        "SubmitButton"
+      ],
+      "actions": [
+        "오피스 배송지 입력",
+        "간편 결제 승인"
+      ],
+      "states": [
+        "입력 중",
+        "결제 진행 중"
+      ],
+      "nextScreens": [
+        "PAGE-06",
+        "PAGE-07"
+      ]
+    },
+    {
+      "id": "PAGE-06",
+      "name": "구독 완료",
+      "purpose": "정기구독 신청 완료 확인 및 판교/테헤란로 오피스 첫 배송 안내",
+      "entryConditions": [
+        "PAGE-05 결제 성공"
+      ],
+      "sections": [
+        "SuccessHeader",
+        "OrderSummary",
+        "DeliveryTimeline"
+      ],
+      "actions": [
+        "메인으로 이동"
+      ],
+      "states": [
+        "완료"
+      ],
+      "nextScreens": [
+        "PAGE-01"
+      ]
+    },
+    {
+      "id": "PAGE-07",
+      "name": "오류/예외 모달",
+      "purpose": "결제 승인 실패 안내",
+      "entryConditions": [
+        "PAGE-05 결제 실패"
+      ],
+      "sections": [
+        "ErrorHeader",
+        "ErrorMessage"
+      ],
+      "actions": [
+        "재시도"
+      ],
+      "states": [
+        "오류"
+      ],
+      "nextScreens": [
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-08",
+      "name": "404 Not Found",
+      "purpose": "잘못된 경로 진입 방어",
+      "entryConditions": [
+        "잘못된 URL"
+      ],
+      "sections": [
+        "Header404",
+        "HomeButton"
+      ],
+      "actions": [
+        "홈으로 이동"
+      ],
+      "states": [
+        "404"
+      ],
+      "nextScreens": [
+        "PAGE-01"
+      ]
+    }
+  ]
+}

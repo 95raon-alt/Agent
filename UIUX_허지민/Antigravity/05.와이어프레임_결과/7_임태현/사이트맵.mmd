@@ -1,0 +1,19 @@
+flowchart TD
+    PAGE01["PAGE-01: 메인 랜딩페이지"]
+    PAGE02["PAGE-02: 브랜드 스토리"]
+    PAGE03["PAGE-03: Dev Care 큐레이션"]
+    PAGE04["PAGE-04: 눈건강 성분 & 비교"]
+    PAGE05["PAGE-05: 구독 결제 창"]
+    PAGE06["PAGE-06: 구독 완료"]
+    PAGE07["PAGE-07: 오류/예외 모달"]
+    PAGE08["PAGE-08: 404 Not Found"]
+
+    PAGE01 -->|GNB 클릭| PAGE02
+    PAGE01 -->|몰입진단 클릭| PAGE03
+    PAGE01 -->|성분비교 클릭| PAGE04
+    PAGE01 -->|Sticky CTA 클릭| PAGE05
+    PAGE03 -->|맞춤팩 결제| PAGE05
+    PAGE04 -->|구독선택| PAGE05
+    PAGE05 -->|결제승인 성공| PAGE06
+    PAGE05 -->|결제승인 실패| PAGE07
+    PAGE01 -.->|잘못된 경로| PAGE08

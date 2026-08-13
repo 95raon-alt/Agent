@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A:FIT Balance (윤서진 디렉터) UI/UX 와이어프레임 프로토타입</title>
+  <style>
+    :root {
+      --bg-color: #F9F7F1;
+      --primary-color: #4A6B5D;
+      --accent-color: #8AA89B;
+      --text-main: #222222;
+      --text-muted: #666666;
+      --border-color: #D8D2C5;
+      --card-bg: #FFFFFF;
+      --error-color: #D32F2F;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    body {
+      background-color: #EAE5D9;
+      color: var(--text-main);
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Sidebar Navigation */
+    #sidebar {
+      width: 280px;
+      background-color: var(--primary-color);
+      color: #FFFFFF;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid rgba(255,255,255,0.1);
+      z-index: 100;
+    }
+
+    #sidebar .brand {
+      padding: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255,255,255,0.15);
+      color: var(--bg-color);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    #sidebar .brand span {
+      font-size: 11px;
+      background: var(--accent-color);
+      color: #FFFFFF;
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    .nav-group-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: rgba(255,255,255,0.5);
+      padding: 15px 20px 5px 20px;
+    }
+
+    .nav-item {
+      padding: 12px 20px;
+      color: rgba(255,255,255,0.8);
+      cursor: pointer;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s;
+      border-left: 4px solid transparent;
+    }
+
+    .nav-item:hover {
+      background-color: rgba(255,255,255,0.08);
+      color: #FFFFFF;
+    }
+
+    .nav-item.active {
+      background-color: rgba(255,255,255,0.15);
+      color: #FFFFFF;
+      border-left-color: var(--accent-color);
+      font-weight: bold;
+    }
+
+    .nav-item .page-id {
+      font-size: 11px;
+      opacity: 0.6;
+      font-family: monospace;
+    }
+
+    /* Control Topbar */
+    #main-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    #topbar {
+      height: 50px;
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .viewport-controls {
+      display: flex;
+      gap: 8px;
+    }
+
+    .btn-vp {
+      padding: 6px 12px;
+      font-size: 12px;
+      border: 1px solid var(--border-color);
+      background: #FFFFFF;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-vp.active {
+      background: var(--primary-color);
+      color: #FFFFFF;
+      border-color: var(--primary-color);
+    }
+
+    #screen-viewer {
+      flex: 1;
+      overflow: auto;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Device Viewport Simulation */
+    .viewport-frame {
+      background: var(--bg-color);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: width 0.3s;
+      margin: 0 auto;
+      min-height: 800px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .viewport-frame.desktop { width: 1200px; }
+    .viewport-frame.tablet { width: 768px; }
+    .viewport-frame.mobile { width: 375px; }
+
+    /* Wireframe Components */
+    header.wf-header {
+      background: var(--primary-color);
+      color: #FFFFFF;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .wf-logo {
+      font-weight: bold;
+      font-size: 18px;
+      letter-spacing: 0.5px;
+    }
+
+    .wf-gnb {
+      display: flex;
+      gap: 15px;
+      font-size: 13px;
+    }
+
+    .wf-gnb a {
+      color: #FFFFFF;
+      text-decoration: none;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .wf-gnb a:hover { opacity: 1; }
+
+    .wf-section {
+      padding: 30px 20px;
+      border-bottom: 1px dashed var(--border-color);
+    }
+
+    .wf-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: bold;
+      background: var(--accent-color);
+      color: #FFFFFF;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .wf-title {
+      font-size: 22px;
+      color: var(--primary-color);
+      margin-bottom: 10px;
+    }
+
+    .wf-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 15px;
+      line-height: 1.5;
+    }
+
+    .wf-card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .wf-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .wf-placeholder {
+      background: #E8E2D5;
+      border: 1px stroke #CCC;
+      height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #555;
+      font-size: 12px;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    .wf-btn {
+      display: inline-block;
+      background: var(--primary-color);
+      color: #FFFFFF;
+      padding: 12px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      text-align: center;
+      transition: opacity 0.2s;
+    }
+
+    .wf-btn:hover { opacity: 0.9; }
+
+    .wf-btn-secondary {
+      background: #E2DBD0;
+      color: var(--primary-color);
+    }
+
+    /* Sticky CTA */
+    .wf-sticky-cta {
+      position: sticky;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--primary-color);
+      color: #FFFFFF;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+      z-index: 50;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+    }
+
+    .modal-content {
+      background: var(--card-bg);
+      width: 90%;
+      max-width: 500px;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Screen Visibility */
+    .screen-view { display: none; }
+    .screen-view.active { display: block; }
+
+    /* Interactive Elements */
+    .chip-group { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
+    .chip {
+      padding: 8px 14px;
+      background: #E8E2D5;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .chip.selected { background: var(--primary-color); color: #FFFFFF; font-weight: bold; }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div id="sidebar">
+    <div class="brand">
+      A:FIT Balance <span>2차 WF</span>
+    </div>
+    <div class="nav-group-title">화면 설계 목록 (PAGE-01 ~ 08)</div>
+    <div class="nav-item active" onclick="switchScreen('PAGE-01')">
+      <span>PAGE-01 메인 랜딩</span>
+      <span class="page-id">PAGE-01</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-02')">
+      <span>PAGE-02 브랜드 스토리</span>
+      <span class="page-id">PAGE-02</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-03')">
+      <span>PAGE-03 AI 진단 모달</span>
+      <span class="page-id">PAGE-03</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-04')">
+      <span>PAGE-04 임상성분/가치비교</span>
+      <span class="page-id">PAGE-04</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-05')">
+      <span>PAGE-05 구독 결제 창</span>
+      <span class="page-id">PAGE-05</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-06')">
+      <span>PAGE-06 구독 완료</span>
+      <span class="page-id">PAGE-06</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-07')">
+      <span>PAGE-07 오류/예외 모달</span>
+      <span class="page-id">PAGE-07</span>
+    </div>
+    <div class="nav-item" onclick="switchScreen('PAGE-08')">
+      <span>PAGE-08 404 안내</span>
+      <span class="page-id">PAGE-08</span>
+    </div>
+  </div>
+
+  <!-- Main Container -->
+  <div id="main-container">
+    <div id="topbar">
+      <div style="font-size: 13px; font-weight: bold;" id="current-title">
+        PAGE-01 메인 랜딩페이지 (1Depth)
+      </div>
+      <div class="viewport-controls">
+        <button class="btn-vp active" onclick="setViewport('desktop')">💻 Desktop (1200px)</button>
+        <button class="btn-vp" onclick="setViewport('tablet')">📱 Tablet (768px)</button>
+        <button class="btn-vp" onclick="setViewport('mobile')">📲 Mobile (375px)</button>
+      </div>
+    </div>
+
+    <!-- Viewer -->
+    <div id="screen-viewer">
+      <div class="viewport-frame desktop" id="frame">
+
+        <!-- PAGE-01 -->
+        <div id="PAGE-01" class="screen-view active">
+          <header class="wf-header">
+            <div class="wf-logo">A:FIT Balance</div>
+            <div class="wf-gnb">
+              <a onclick="switchScreen('PAGE-02')">브랜드 스토리</a>
+              <a onclick="switchScreen('PAGE-03')">AI 진단</a>
+              <a onclick="switchScreen('PAGE-04')">임상 성분</a>
+              <a onclick="switchScreen('PAGE-05')">구독 신청</a>
+            </div>
+          </header>
+
+          <div class="wf-section" style="background: #F9F7F1; text-align: center; padding: 50px 20px;">
+            <span class="wf-tag">3040 전문직 프리미엄 웰니스</span>
+            <h1 class="wf-title" style="font-size: 26px;">복잡한 영양제는 내려놓으세요,<br>하루 15초로 완성되는 3040 바이오 밸런스</h1>
+            <p class="wf-desc">임상으로 검증된 특허 성분을 하루 한 병으로 정밀 큐레이션합니다.</p>
+            <button class="wf-btn" onclick="switchScreen('PAGE-03')">🔬 15초 AI 바이오 진단 시작하기</button>
+          </div>
+
+          <div class="wf-section">
+            <h3 class="wf-title">💡 3줄 요약 프리미엄 가치</h3>
+            <div class="wf-card-grid">
+              <div class="wf-card">
+                <h4>1줄: 임상 검증 특허</h4>
+                <p style="font-size:12px; color:#666; margin-top:5px;">세브란스/해외 연구진 임상 증명 최고 함량</p>
+              </div>
+              <div class="wf-card">
+                <h4>2줄: AI 맞춤 알고리즘</h4>
+                <p style="font-size:12px; color:#666; margin-top:5px;">피로 패턴에 맞춰 매월 최적화 1:1 진단</p>
+              </div>
+              <div class="wf-card">
+                <h4>3줄: 15초 원터치 앰플</h4>
+                <p style="font-size:12px; color:#666; margin-top:5px;">물 없이 앰플 뚜껑을 눌러 마시는 프리미엄 웰니스</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="wf-section">
+            <span class="wf-tag">4대 웰니스 고민 칩</span>
+            <h3 class="wf-title">현재 가장 집중 케어가 필요한 영역은?</h3>
+            <div class="chip-group">
+              <div class="chip selected">🔋 만성 피로</div>
+              <div class="chip">🌙 수면 장애</div>
+              <div class="chip">🛡️ 면역 저하</div>
+              <div class="chip">✨ 항산화 케어</div>
+            </div>
+            <div class="wf-placeholder">
+              [특허 성분 함량 도넛 차트 &amp; 세브란스 임상 데이터 그래프 UI]
+            </div>
+          </div>
+
+          <div class="wf-section">
+            <span class="wf-tag">가치 비교표</span>
+            <h3 class="wf-title">낱개 영양제 5종 vs A:FIT 올인원 비용 비교</h3>
+            <div class="wf-card" style="text-align: center; padding: 20px;">
+              <p style="font-weight: bold; font-size: 16px; color: var(--primary-color);">월 낱개 구매 18만원 ➔ A:FIT 올인원 11만원대 (약 38% 절감)</p>
+            </div>
+          </div>
+
+          <div class="wf-sticky-cta">
+            <div>
+              <div style="font-weight: bold; font-size: 14px;">3040 프리미엄 바이오 밸런스 구독</div>
+              <div style="font-size: 11px; opacity: 0.8;">임상 특허 성분 1:1 정밀 배송</div>
+            </div>
+            <button class="wf-btn" style="background: var(--accent-color); color: #FFF;" onclick="switchScreen('PAGE-05')">프리미엄 구독 시작 ➔</button>
+          </div>
+        </div>
+
+        <!-- PAGE-02 -->
+        <div id="PAGE-02" class="screen-view">
+          <header class="wf-header">
+            <div class="wf-logo" onclick="switchScreen('PAGE-01')">A:FIT Balance</div>
+            <div class="wf-gnb"><a onclick="switchScreen('PAGE-01')">Home으로 돌아가기</a></div>
+          </header>
+          <div class="wf-section">
+            <span class="wf-tag">PAGE-02 브랜드 스토리</span>
+            <h2 class="wf-title">3040 영양제 중복 오남용의 과학적 해결책</h2>
+            <div class="wf-placeholder">[특허 사본 및 임상 데이터 뷰어]</div>
+            <button class="wf-btn" onclick="switchScreen('PAGE-03')">AI 진단 바로가기</button>
+          </div>
+        </div>
+
+        <!-- PAGE-03 -->
+        <div id="PAGE-03" class="screen-view">
+          <div class="modal-overlay">
+            <div class="modal-content">
+              <span class="wf-tag">PAGE-03 AI 진단 모달</span>
+              <h3 class="wf-title">15초 AI 바이오 퀴즈</h3>
+              <p class="wf-desc">주간 야근 횟수와 수면 시간을 체크해 주세요.</p>
+              <div class="chip-group">
+                <div class="chip selected">야근 3회 이상</div>
+                <div class="chip selected">수면 6시간 미만</div>
+              </div>
+              <div style="display: flex; gap: 10px; margin-top: 20px;">
+                <button class="wf-btn wf-btn-secondary" style="flex:1;" onclick="switchScreen('PAGE-01')">취소</button>
+                <button class="wf-btn" style="flex:1;" onclick="switchScreen('PAGE-04')">결과확인 &amp; 가치비교</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE-04 -->
+        <div id="PAGE-04" class="screen-view">
+          <header class="wf-header">
+            <div class="wf-logo" onclick="switchScreen('PAGE-01')">A:FIT Balance</div>
+            <div class="wf-gnb"><a onclick="switchScreen('PAGE-01')">Home</a></div>
+          </header>
+          <div class="wf-section">
+            <span class="wf-tag">PAGE-04 임상성분 &amp; 가치비교</span>
+            <h2 class="wf-title">낱개 구매 대비 압도적인 비용과 시간 절감</h2>
+            <div class="wf-card">
+              <h4>프리미엄 4주 정기구독 플랜</h4>
+              <button class="wf-btn" onclick="switchScreen('PAGE-05')">이 플랜으로 구독 신청</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE-05 -->
+        <div id="PAGE-05" class="screen-view">
+          <header class="wf-header">
+            <div class="wf-logo" onclick="switchScreen('PAGE-01')">A:FIT Balance</div>
+            <div class="wf-gnb"><a onclick="switchScreen('PAGE-01')">Home</a></div>
+          </header>
+          <div class="wf-section">
+            <span class="wf-tag">PAGE-05 구독 결제 창</span>
+            <h2 class="wf-title">배송 주기 설정 및 1초 간편 결제</h2>
+            <div class="wf-card" style="margin-bottom: 15px;">
+              <label style="font-size:12px; font-weight:bold;">배송지 주소</label>
+              <input type="text" placeholder="서울시 서초구..." style="width:100%; padding:10px; margin: 8px 0; border:1px solid #CCC; border-radius:4px;">
+            </div>
+            <div style="display:flex; gap:10px;">
+              <button class="wf-btn wf-btn-secondary" style="flex:1;" onclick="switchScreen('PAGE-07')">결제 오류 테스트</button>
+              <button class="wf-btn" style="flex:2;" onclick="switchScreen('PAGE-06')">1초 결제 완료 ➔</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE-06 -->
+        <div id="PAGE-06" class="screen-view">
+          <div class="wf-section" style="text-align: center; padding: 60px 20px;">
+            <span class="wf-tag">PAGE-06 구독 완료</span>
+            <h2 class="wf-title">🎉 A:FIT Balance 구독이 완료되었습니다</h2>
+            <p class="wf-desc">첫 프리미엄 웰니스 앰플 팩이 다음 주 월요일에 배송됩니다.</p>
+            <button class="wf-btn" onclick="switchScreen('PAGE-01')">메인 랜딩으로 이동</button>
+          </div>
+        </div>
+
+        <!-- PAGE-07 -->
+        <div id="PAGE-07" class="screen-view">
+          <div class="modal-overlay">
+            <div class="modal-content" style="border-top: 5px solid var(--error-color);">
+              <span class="wf-tag" style="background: var(--error-color); color: #FFF;">PAGE-07 오류 모달</span>
+              <h3 class="wf-title" style="color: var(--error-color);">결제 승인 오류가 발생했습니다</h3>
+              <button class="wf-btn wf-btn-secondary" onclick="switchScreen('PAGE-05')">결제창으로 돌아가기</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- PAGE-08 -->
+        <div id="PAGE-08" class="screen-view">
+          <div class="wf-section" style="text-align: center; padding: 80px 20px;">
+            <span class="wf-tag" style="background:#555; color:#FFF;">PAGE-08 404 Not Found</span>
+            <h2 class="wf-title" style="font-size: 48px; color: #555;">404</h2>
+            <button class="wf-btn" onclick="switchScreen('PAGE-01')">메인으로 바로가기</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function switchScreen(screenId) {
+      document.querySelectorAll('.screen-view').forEach(el => el.classList.remove('active'));
+      document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
+      
+      const targetScreen = document.getElementById(screenId);
+      if(targetScreen) targetScreen.classList.add('active');
+      
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => {
+        if(item.getAttribute('onclick').includes(screenId)) {
+          item.classList.add('active');
+        }
+      });
+
+      document.getElementById('current-title').innerText = screenId + " 와이어프레임 뷰 (2차 A:FIT Balance)";
+    }
+
+    function setViewport(mode) {
+      document.querySelectorAll('.btn-vp').forEach(el => el.classList.remove('active'));
+      const frame = document.getElementById('frame');
+      frame.className = 'viewport-frame ' + mode;
+
+      event.target.classList.add('active');
+    }
+  </script>
+</body>
+</html>

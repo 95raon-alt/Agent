@@ -1,0 +1,224 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "project": "A:FIT Pro 2040 피트니스 & 바디 퍼포먼스 정기구독 서비스",
+  "client": "강민준 Pro 브랜드 총괄 디렉터",
+  "screens": [
+    {
+      "id": "PAGE-01",
+      "name": "메인 랜딩페이지",
+      "purpose": "A:FIT Pro 당류 0g 바디 부스팅 이중제형 가치 전달 및 구독 유도",
+      "entryConditions": [
+        "웹 브라우저 URL 직접 입력 접속",
+        "SNS 스포츠 광고 클릭"
+      ],
+      "sections": [
+        "Header",
+        "Hero",
+        "3LineSummary",
+        "AICuration",
+        "ZeroSugarChart",
+        "10sGIFMotion",
+        "Reviews",
+        "Footer",
+        "StickyCTA"
+      ],
+      "actions": [
+        "운동 종목 칩 선택",
+        "AI 큐레이션 시작",
+        "성분 도넛 차트 호버",
+        "구독 신청 클릭"
+      ],
+      "states": [
+        "기본",
+        "AI 큐레이션 모달 열림",
+        "Sticky CTA 바 추종"
+      ],
+      "nextScreens": [
+        "PAGE-02",
+        "PAGE-03",
+        "PAGE-04",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-02",
+      "name": "브랜드 스토리",
+      "purpose": "스포츠 음료 당류 과다 문제 해결 및 부스터 특허 기술력 전달",
+      "entryConditions": [
+        "PAGE-01 GNB 내 '브랜드 스토리' 클릭"
+      ],
+      "sections": [
+        "Header",
+        "SugarProblemStats",
+        "BoosterTech",
+        "3DViewer",
+        "Footer"
+      ],
+      "actions": [
+        "3D 부스터 뷰어 회전",
+        "AI 큐레이션 바로가기"
+      ],
+      "states": [
+        "기본",
+        "특허 사본 팝업 노출"
+      ],
+      "nextScreens": [
+        "PAGE-01",
+        "PAGE-03"
+      ]
+    },
+    {
+      "id": "PAGE-03",
+      "name": "AI 종목 큐레이션 모달",
+      "purpose": "운동 종목/목적 측정으로 맞춤 부스터 캡슐 추천",
+      "entryConditions": [
+        "PAGE-01 내 AI 큐레이션 시작 클릭"
+      ],
+      "sections": [
+        "QuizHeader",
+        "OptionChips",
+        "ResultPreview",
+        "SubmitButton"
+      ],
+      "actions": [
+        "운동 종목 칩 선택",
+        "다음 퀴즈 이동",
+        "추천 팩 담기"
+      ],
+      "states": [
+        "1단계 퀴즈",
+        "2단계 퀴즈",
+        "3단계 퀴즈",
+        "결과 도출"
+      ],
+      "nextScreens": [
+        "PAGE-04",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-04",
+      "name": "성분 & 칼로리 비교",
+      "purpose": "시중 스포츠 음료 대비 당류/칼로리/식비 절감 증명",
+      "entryConditions": [
+        "PAGE-01 내 퍼포먼스 성분 GNB 클릭",
+        "PAGE-03 큐레이션 완료 후 칼로리비교 클릭"
+      ],
+      "sections": [
+        "Header",
+        "CalorieComparisonTable",
+        "ProSubscriptionPlanGrid",
+        "Footer"
+      ],
+      "actions": [
+        "칼로리 절감 조절기 변경",
+        "Pro 구독 플랜 선택"
+      ],
+      "states": [
+        "기본",
+        "플랜 선택됨"
+      ],
+      "nextScreens": [
+        "PAGE-03",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-05",
+      "name": "구독 결제 창",
+      "purpose": "최단 동선 Pro 정기구독 결제 완료",
+      "entryConditions": [
+        "Sticky CTA 클릭",
+        "플랜 선택 클릭"
+      ],
+      "sections": [
+        "PlanSelector",
+        "ShippingForm",
+        "PaymentMethods",
+        "SubmitButton"
+      ],
+      "actions": [
+        "주기 선택",
+        "배송지 입력",
+        "간편 결제 승인"
+      ],
+      "states": [
+        "기본 입력",
+        "유효성 오류",
+        "결제 중"
+      ],
+      "nextScreens": [
+        "PAGE-06",
+        "PAGE-07"
+      ]
+    },
+    {
+      "id": "PAGE-06",
+      "name": "구독 완료",
+      "purpose": "정기구독 신청 완료 확인 및 첫 배송 타임라인 안내",
+      "entryConditions": [
+        "PAGE-05 결제 승인 성공 시 자동 전환"
+      ],
+      "sections": [
+        "SuccessHeader",
+        "OrderSummary",
+        "DeliveryTimeline",
+        "AppDownloadQR"
+      ],
+      "actions": [
+        "마이페이지 이동",
+        "메인으로 이동"
+      ],
+      "states": [
+        "완료 확인"
+      ],
+      "nextScreens": [
+        "PAGE-01"
+      ]
+    },
+    {
+      "id": "PAGE-07",
+      "name": "오류/예외 모달",
+      "purpose": "결제 승인 실패 및 입력 누락 안내",
+      "entryConditions": [
+        "PAGE-05 결제 승인 실패 시 노출"
+      ],
+      "sections": [
+        "ErrorHeader",
+        "ErrorMessage",
+        "ActionButtons"
+      ],
+      "actions": [
+        "결제창으로 돌아가기"
+      ],
+      "states": [
+        "결제 오류"
+      ],
+      "nextScreens": [
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-08",
+      "name": "404 Not Found",
+      "purpose": "잘못된 경로 진입 방어",
+      "entryConditions": [
+        "존재하지 않는 URL 진입"
+      ],
+      "sections": [
+        "Header404",
+        "GuideMessage",
+        "HomeButton"
+      ],
+      "actions": [
+        "메인으로 바로가기"
+      ],
+      "states": [
+        "404 Error"
+      ],
+      "nextScreens": [
+        "PAGE-01"
+      ]
+    }
+  ]
+}

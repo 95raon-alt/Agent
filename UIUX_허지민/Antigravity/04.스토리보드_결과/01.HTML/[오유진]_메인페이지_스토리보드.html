@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[저충실도 와이어프레임] A:FIT Eco (오유진 디렉터) 메인페이지 스토리보드</title>
+  <style>
+    /* 
+      # 디자인 금지 (No Color/No Fancy Design)
+      # 저충실도 회색 박스와 글자 (Grey Boxes & Text Only)
+      # 자바스크립트 100% 제외 (Pure HTML + CSS Only)
+    */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      color: #111111;
+      font-family: sans-serif;
+      line-height: 1.5;
+      padding-bottom: 80px;
+    }
+
+    .section-label {
+      background: #333333;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    section {
+      border: 2px solid #888888;
+      background: #ffffff;
+      margin: 15px 0;
+      padding: 20px;
+    }
+
+    .grey-box {
+      background: #e0e0e0;
+      border: 1px solid #999999;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .grey-placeholder {
+      background: #d0d0d0;
+      border: 1px dashed #666666;
+      padding: 30px 15px;
+      text-align: center;
+      color: #333333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    /* SEC01: Top Banner */
+    .top-banner {
+      background: #cccccc;
+      border: 1px solid #666666;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* SEC02: Header */
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e8e8e8;
+      border: 1px solid #777777;
+      padding: 15px 20px;
+    }
+
+    .logo-box {
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid #333333;
+      padding: 4px 10px;
+      background: #ffffff;
+    }
+
+    .nav-links span {
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+
+    /* SEC03: Split Hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .btn-grey {
+      background: #bbbbbb;
+      border: 2px solid #333333;
+      color: #000000;
+      font-weight: bold;
+      padding: 12px 20px;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .metric-box {
+      flex: 1;
+      background: #d8d8d8;
+      border: 1px solid #888888;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* SEC04: ESG Calculator */
+    .calc-slider-box {
+      background: #e5e5e5;
+      border: 1px solid #999999;
+      padding: 15px;
+      margin: 15px 0;
+      text-align: center;
+    }
+
+    .calc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .calc-card {
+      background: #d5d5d5;
+      border: 1px solid #777777;
+      padding: 15px;
+      text-align: center;
+    }
+
+    /* SEC05: Botanical Grid */
+    .curation-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .curation-card {
+      background: #e8e8e8;
+      border: 2px solid #666666;
+      padding: 15px;
+    }
+
+    /* SEC06: Vegan ESG Chart */
+    .esg-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    /* SEC07: Timeline */
+    .timeline-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .step-card {
+      background: #e0e0e0;
+      border: 1px solid #777777;
+      padding: 12px;
+    }
+
+    /* SEC08: Reviews */
+    .review-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .review-box {
+      background: #e8e8e8;
+      border: 1px solid #888888;
+      padding: 12px;
+      font-size: 13px;
+    }
+
+    /* SEC09: Footer */
+    .footer-box {
+      background: #d8d8d8;
+      border: 1px solid #666666;
+      padding: 20px;
+      font-size: 12px;
+    }
+
+    /* SEC10: Sticky CTA */
+    .sticky-cta-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #cccccc;
+      border-top: 2px solid #333333;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- [PAGE-01-SEC01] Top Banner -->
+  <div class="container">
+    <div class="top-banner">
+      <span class="section-label">[PAGE-01-SEC01] Top Banner</span><br>
+      🌱 [플라스틱 ZERO 캠페인] 정기구독 시 다 쓴 생분해 용기 무료 회수 및 환경 포인트 지급
+    </div>
+  </div>
+
+  <!-- [PAGE-01-SEC02] Header -->
+  <div class="container">
+    <div class="header-nav">
+      <div>
+        <span class="section-label">[PAGE-01-SEC02] Header</span><br>
+        <span class="logo-box">A:FIT Clean Eco</span>
+      </div>
+      <div class="nav-links">
+        <span>클린 철학</span>
+        <span>탄소 절감 계산기</span>
+        <span>에코 큐레이션</span>
+        <span>생분해 프로토콜</span>
+        <span>[마이페이지]</span>
+        <span>[장바구니]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- [PAGE-01-SEC03] Split Hero Section -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC03] Split Hero Section</span>
+      <div class="hero-grid">
+        <div>
+          <p style="font-size: 12px; color: #555;">01. Clean & Ethical Wellness</p>
+          <h1 style="font-size: 22px; margin: 8px 0;">지구에도, 내 몸에도 무해하게!<br>100% 식물성 이중제형</h1>
+          <p style="font-size: 13px; color: #444;">플라스틱 ZERO 옥수수 전분 생분해 보틀과 100% 프랑스 비건 인증 식물성 앰플.</p>
+          
+          <div class="metrics-row">
+            <div class="metric-box">
+              <strong>100%</strong><br>프랑스 EVE VEGAN 인증
+            </div>
+            <div class="metric-box">
+              <strong>0g</strong><br>플라스틱 배출량
+            </div>
+            <div class="metric-box">
+              <strong>10sec</strong><br>원샷 섭취 시간
+            </div>
+          </div>
+
+          <div class="btn-grey">맞춤 에코 진단 시작하기 →</div>
+        </div>
+
+        <div class="grey-placeholder">
+          [생분해 이중제형 보틀 저충실도 그래픽 영역]<br>
+          (180일 내 100% 자연 분해 용기)
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC04] ESG Calculator -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC04] ESG Calculator</span>
+      <h2 style="font-size: 18px;">나의 에코 정기구독 환경 영향력 (탄소 절감 계산기)</h2>
+      <p style="font-size: 13px; color: #555;">구독 개월 수 조절 슬라이더로 환경 절감 수치 연산</p>
+
+      <div class="calc-slider-box">
+        [개월 수 조절 슬라이더 바 회색 영역 (6개월 선택)]
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-card">
+          <strong style="font-size: 18px;">18 개</strong>
+          <p style="font-size: 12px;">절감된 플라스틱 병 수</p>
+        </div>
+        <div class="calc-card">
+          <strong style="font-size: 18px;">2.7 kg</strong>
+          <p style="font-size: 12px;">감축된 CO2 탄소 발자국</p>
+        </div>
+        <div class="calc-card">
+          <strong style="font-size: 18px;">18,000 pt</strong>
+          <p style="font-size: 12px;">용기 회수 누적 리워드</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC05] Botanical Grid Curation -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC05] Botanical Grid Curation</span>
+      <h2 style="font-size: 18px; margin-bottom: 10px;">보태니컬 2x2 에코 라이프 큐레이션</h2>
+
+      <div class="curation-grid">
+        <div class="curation-card">
+          <span style="font-size: 11px; font-weight: bold;">[100% VEGAN]</span>
+          <h3 style="font-size: 16px; margin: 4px 0;">🌱 비건 지향 라이프 팩</h3>
+          <p style="font-size: 12px;">식물성 L-아르기닌 + 프랑스 시카 추출물</p>
+        </div>
+        <div class="curation-card">
+          <span style="font-size: 11px; font-weight: bold;">[ZERO PLASTIC]</span>
+          <h3 style="font-size: 16px; margin: 4px 0;">♻️ 제로웨이스트 팩</h3>
+          <p style="font-size: 12px;">유기농 토마토 리코펜 + 식물성 비타민 C</p>
+        </div>
+        <div class="curation-card">
+          <span style="font-size: 11px; font-weight: bold;">[CLEAN FORMULA]</span>
+          <h3 style="font-size: 16px; margin: 4px 0;">🌿 클린 웰니스 팩</h3>
+          <p style="font-size: 12px;">식물성 아연 + 옥수수 유래 자일로스</p>
+        </div>
+        <div class="curation-card">
+          <span style="font-size: 11px; font-weight: bold;">[ETHICAL CHOICE]</span>
+          <h3 style="font-size: 16px; margin: 4px 0;">✨ 가치소비 입문 팩</h3>
+          <p style="font-size: 12px;">식물성 칼슘 + 유기농 그린티 카테킨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC06] Vegan ESG Donut Chart -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC06] Vegan ESG Donut Chart</span>
+      <h2 style="font-size: 18px; margin-bottom: 10px;">프랑스 비건 인증 & 용기 쓰레기 절감 비교표</h2>
+
+      <div class="esg-grid">
+        <div class="grey-placeholder">
+          [프랑스 EVE VEGAN 100% 인증 SVG 도넛 차트 회색 영역]
+        </div>
+        <div class="grey-box">
+          <h4 style="font-size: 14px; margin-bottom: 8px;">용기 쓰레기 비교표</h4>
+          <p style="font-size: 12px;">시중 플라스틱 병: 월 3개 이상 배출</p>
+          <p style="font-size: 12px; font-weight: bold;">A:FIT Eco: 100% 생분해 보틀 (0g)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC07] Biodegradable Protocol -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC07] Biodegradable Protocol</span>
+      <h2 style="font-size: 18px; margin-bottom: 10px;">생분해 & 회수 4단계 수평 타임라인</h2>
+
+      <div class="timeline-row">
+        <div class="step-card">
+          <strong>STEP 01</strong>
+          <h4 style="font-size: 13px;">생분해 보틀 배송</h4>
+          <p style="font-size: 11px;">100% 친환경 종이 포장재 배송</p>
+        </div>
+        <div class="step-card">
+          <strong>STEP 02</strong>
+          <h4 style="font-size: 13px;">10초 원샷 섭취</h4>
+          <p style="font-size: 11px;">물 없이 10초 앰플 원샷 섭취</p>
+        </div>
+        <div class="step-card">
+          <strong>STEP 03</strong>
+          <h4 style="font-size: 13px;">무료 회수 수거</h4>
+          <p style="font-size: 11px;">집 앞 전용 봉투 무료 수거</p>
+        </div>
+        <div class="step-card">
+          <strong>STEP 04</strong>
+          <h4 style="font-size: 13px;">자연 분해 & 포인트</h4>
+          <p style="font-size: 11px;">180일 내 퇴비화 & 포인트 적립</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC08] Eco Activist Reviews -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC08] Eco Activist Reviews</span>
+      <h2 style="font-size: 18px; margin-bottom: 10px;">환경가 실명 후기 슬라이더</h2>
+
+      <div class="review-row">
+        <div class="review-box">
+          <strong>한소희 활동가 (제로웨이스트 운동가)</strong>
+          <p style="margin-top: 6px;">"플라스틱 용기 쓰레기 걱정 없이 10초 만에 마시는 생분해 보틀이라 진정한 가치소비가 가능해요."</p>
+        </div>
+        <div class="review-box">
+          <strong>이준혁 셰프 (비건 다이닝 수석 셰프)</strong>
+          <p style="margin-top: 6px;">"화학합성 첨가물이 전혀 없어 속이 편안하고 식물성 아미노산 비율이 훌륭합니다."</p>
+        </div>
+        <div class="review-box">
+          <strong>최윤아 구독자 (4개월 차 구독자)</strong>
+          <p style="margin-top: 6px;">"아침마다 플라스틱 쓰레기를 지우는 느낌입니다. 정기구독으로 무해한 일상을 만듭니다."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC09] Footer -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC09] Footer</span>
+      <div class="footer-box">
+        <p><strong>주식회사 에이핏 에코</strong> | 대표: 오유진 | 고객센터: 1588-0000</p>
+        <p>사업자등록번호: 000-00-00000 | 통신판매업신고: 2026-서울강남-0000</p>
+        <p style="margin-top: 8px;">Copyright © A:FIT Eco Inc. All rights reserved.</p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- [PAGE-01-SEC10] Sticky CTA Bar -->
+  <div class="sticky-cta-bar">
+    <div>
+      <span class="section-label">[PAGE-01-SEC10] Sticky CTA Bar</span>
+      <p style="font-size: 13px; font-weight: bold;">A:FIT Eco 비건 지향 라이프 팩 구독 (월 4만 원대)</p>
+    </div>
+    <div class="btn-grey">10초 클린 구독 신청하기</div>
+  </div>
+
+</body>
+</html>

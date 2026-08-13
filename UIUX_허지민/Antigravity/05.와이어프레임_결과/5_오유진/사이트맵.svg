@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #1C1B18; }
+      .title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 24px; fill: #A3E635; }
+      .subtitle { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 14px; fill: #E7E5E4; }
+      .node-root { fill: #A3E635; stroke: #84CC16; stroke-width: 2; rx: 10px; ry: 10px; }
+      .node-root-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 16px; fill: #1C1B18; text-anchor: middle; }
+      .node-page { fill: #292823; stroke: #A3E635; stroke-width: 2; rx: 8px; ry: 8px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.5)); }
+      .node-page-title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 14px; fill: #A3E635; text-anchor: middle; }
+      .node-page-sub { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 11px; fill: #A8A29E; text-anchor: middle; }
+      .node-sub { fill: #1E2911; stroke: #A3E635; stroke-width: 1.5; rx: 6px; ry: 6px; }
+      .node-sub-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: 500; font-size: 12px; fill: #A3E635; text-anchor: middle; }
+      .node-err { fill: #3F1D1D; stroke: #EF4444; stroke-width: 1.5; stroke-dasharray: 4; rx: 6px; ry: 6px; }
+      .node-err-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 12px; fill: #FCA5A5; text-anchor: middle; }
+      .line { stroke: #A3E635; stroke-width: 2; fill: none; }
+      .line-dash { stroke: #EF4444; stroke-width: 1.5; stroke-dasharray: 4; fill: none; }
+      .arrow { fill: #A3E635; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <rect width="100%" height="100%" class="bg"/>
+
+  <text x="50" y="45" class="title">🗺️ A:FIT Eco (오유진 디렉터) 5차 가상 클라이언트 계층형 사이트맵</text>
+  <text x="50" y="70" class="subtitle">2040 친환경 가치소비 &amp; 클린 비건 올인원 이중제형 정기구독 서비스 (3-Depth 구조)</text>
+
+  <!-- Level 1: Root -->
+  <rect x="360" y="110" width="280" height="50" class="node-root"/>
+  <text x="500" y="140" class="node-root-text">PAGE-01: 메인 랜딩페이지</text>
+
+  <!-- Lines -->
+  <path d="M 500 160 L 500 210 L 120 210 L 120 250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500 160 L 500 210 L 370 210 L 370 250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500 160 L 500 250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500 160 L 500 210 L 630 210 L 630 250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500 160 L 500 210 L 880 210 L 880 250" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Nodes -->
+  <rect x="30" y="250" width="180" height="60" class="node-page"/>
+  <text x="120" y="277" class="node-page-title">PAGE-02</text>
+  <text x="120" y="297" class="node-page-sub">브랜드 스토리</text>
+
+  <rect x="280" y="250" width="180" height="60" class="node-page"/>
+  <text x="370" y="277" class="node-page-title">PAGE-03</text>
+  <text x="370" y="297" class="node-page-sub">AI 에코 큐레이션</text>
+
+  <rect x="410" y="370" width="180" height="60" class="node-page"/>
+  <text x="500" y="397" class="node-page-title">PAGE-04</text>
+  <text x="500" y="417" class="node-page-sub">클린 성분 &amp; 쓰레기 비교</text>
+
+  <rect x="540" y="250" width="180" height="60" class="node-page"/>
+  <text x="630" y="277" class="node-page-title">PAGE-05</text>
+  <text x="630" y="297" class="node-page-sub">구독 결제 창</text>
+
+  <rect x="790" y="250" width="180" height="60" class="node-page"/>
+  <text x="880" y="277" class="node-page-title">PAGE-08</text>
+  <text x="880" y="297" class="node-page-sub">404 Not Found</text>
+
+  <!-- Level 3 Connections -->
+  <path d="M 370 310 L 370 340 L 630 340 L 630 310" class="line" marker-end="url(#arrow)"/>
+  <path d="M 630 310 L 630 490 L 370 490 L 370 520" class="line" marker-end="url(#arrow)"/>
+  <path d="M 630 310 L 630 490 L 880 490 L 880 520" class="line-dash" marker-end="url(#arrow)"/>
+
+  <!-- Level 3 Nodes -->
+  <rect x="280" y="520" width="180" height="60" class="node-sub"/>
+  <text x="370" y="547" class="node-sub-text">PAGE-06: 구독 완료</text>
+  <text x="370" y="565" class="node-page-sub">첫 배송 &amp; 용기 회수</text>
+
+  <rect x="790" y="520" width="180" height="60" class="node-err"/>
+  <text x="880" y="547" class="node-err-text">PAGE-07: 오류/예외</text>
+  <text x="880" y="565" class="node-page-sub">결제 실패 대응</text>
+</svg>

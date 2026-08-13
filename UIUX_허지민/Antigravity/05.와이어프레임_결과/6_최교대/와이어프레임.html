@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A:FIT Emergency & Night - 와이어프레임 (최교대 디렉터)</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+    body { background-color: #0b1329; color: #f8fafc; line-height: 1.6; padding-bottom: 80px; }
+    
+    header { background: rgba(15, 23, 42, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #1e293b; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 800; color: #f59e0b; letter-spacing: -0.5px; }
+    .logo span { color: #38bdf8; }
+    nav a { color: #94a3b8; text-decoration: none; margin-left: 20px; font-size: 14px; font-weight: 600; transition: 0.2s; }
+    nav a:hover { color: #f59e0b; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 32px 20px; }
+    .hero { text-align: center; padding: 48px 0; border-bottom: 1px solid #1e293b; }
+    .badge { display: inline-block; background: rgba(245, 158, 11, 0.15); color: #f59e0b; border: 1px solid #f59e0b; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    h1 { font-size: 32px; font-weight: 800; margin-bottom: 16px; word-break: keep-all; }
+    p.desc { font-size: 16px; color: #94a3b8; margin-bottom: 32px; word-break: keep-all; }
+    
+    .btn-primary { background: #f59e0b; color: #0b1329; font-size: 16px; font-weight: 800; padding: 14px 28px; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; }
+    .btn-primary:hover { background: #d97706; transform: translateY(-2px); }
+
+    .section-title { font-size: 22px; font-weight: 700; margin: 40px 0 20px; border-left: 4px solid #f59e0b; padding-left: 12px; }
+
+    .shift-tabs { display: flex; gap: 12px; margin-bottom: 24px; }
+    .shift-tab { flex: 1; background: #1e293b; border: 1px solid #334155; color: #94a3b8; padding: 16px; border-radius: 12px; text-align: center; cursor: pointer; font-weight: 700; transition: 0.2s; }
+    .shift-tab.active { background: rgba(245, 158, 11, 0.2); border-color: #f59e0b; color: #f59e0b; }
+
+    .shift-card { background: #162036; border: 1px solid #1e293b; border-radius: 16px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    @media(max-width: 640px) { .shift-card { grid-template-columns: 1fr; } }
+    
+    .chart-box { background: #162036; border: 1px solid #1e293b; border-radius: 16px; padding: 24px; text-align: center; }
+    .chart-circle { width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(#f59e0b 0% 85%, #10b981 85% 100%); margin: 20px auto; display: flex; align-items: center; justify-content: center; }
+    .chart-inner { width: 100px; height: 100px; background: #162036; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    
+    .compare-table { width: 100%; border-collapse: collapse; background: #162036; border-radius: 12px; overflow: hidden; margin-top: 16px; }
+    .compare-table th, .compare-table td { padding: 14px; text-align: center; border-bottom: 1px solid #1e293b; font-size: 14px; }
+    .compare-table th { background: #1e293b; color: #cbd5e1; }
+
+    .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #0f172a; border-top: 1px solid #334155; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; z-index: 99; }
+    .sticky-info { display: flex; flex-direction: column; }
+    .sticky-price { font-size: 18px; font-weight: 800; color: #f59e0b; }
+    .sticky-sub { font-size: 12px; color: #94a3b8; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">A:FIT <span>Emergency</span></div>
+    <nav>
+      <a href="#story">브랜드스토리</a>
+      <a href="#shift">근무별케어</a>
+      <a href="#ingredient">비상성분</a>
+      <a href="#reviews">간호사후기</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <div class="badge">🚑 3교대 의료진 & 야간근무자 전용</div>
+      <h1>나이트 근무 도중 10초,<br>속 쓰림 없이 깨어나는 비상 활력</h1>
+      <p class="desc">불규칙한 수면과 극심한 피로 속에서도 스테이션에서 냄새 없이 10초 만에 섭취하는 테아닌+비타민B+위보호 액상 이중제형 솔루션</p>
+      <button class="btn-primary" onclick="alert('3교대 맞춤 비상 구독 신청 완료!')">10초 비상 충전 시작하기</button>
+    </section>
+
+    <section id="shift">
+      <h2 class="section-title">근무 타임라인별 맞춤 비상 케어 (Shift Care)</h2>
+      <div class="shift-tabs">
+        <div class="shift-tab active" onclick="switchShift('day', this)">☀️ Day (데이)</div>
+        <div class="shift-tab" onclick="switchShift('evening', this)">🌆 Evening (이브닝)</div>
+        <div class="shift-tab" onclick="switchShift('night', this)">🌙 Night (나이트)</div>
+      </div>
+
+      <div class="shift-card" id="shift-content">
+        <div>
+          <h3 style="color:#f59e0b; margin-bottom:8px;" id="shift-name">☀️ Day 근무 맞춤 포뮬러</h3>
+          <p style="color:#cbd5e1; font-size:14px;" id="shift-desc">아침 일찍 시작되는 피로에 대비하여 지속형 고활력 비타민B 콤플렉스와 속 편한 천연 생강 앰플을 조합합니다.</p>
+        </div>
+        <div>
+          <div style="background:#1e293b; padding:16px; border-radius:12px;">
+            <p style="font-size:12px; color:#94a3b8;">추천 캡슐 콤보</p>
+            <p style="font-weight:700; color:#4ade80;" id="shift-capsule">고농축 비타민B12 + 양배추 위보호 액상</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ingredient">
+      <h2 class="section-title">위 자극 0% & 비상 활력 성분 검증</h2>
+      <div class="chart-box">
+        <h3>위 자극 0% 및 카페인 대체 활력 성분 비율</h3>
+        <div class="chart-circle">
+          <div class="chart-inner">
+            <span style="font-size:22px; font-weight:800; color:#f59e0b;">0%</span>
+            <span style="font-size:10px; color:#94a3b8;">위장 자극</span>
+          </div>
+        </div>
+        <p style="font-size:14px; color:#cbd5e1;">산성 카페인 대신 <strong>L-테아닌 + 마그네슘 + 위보호 식물성 액상</strong>으로 속 편한 8시간 체력 방어</p>
+      </div>
+
+      <h3 style="margin-top:32px; font-size:18px; color:#cbd5e1;">시중 에너지 음료 vs A:FIT Emergency</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>시중 고카페인 음료</th>
+            <th style="color:#f59e0b;">A:FIT Emergency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>위장 자극/속쓰림</td>
+            <td style="color:#ef4444;">심함 (고산성)</td>
+            <td style="color:#4ade80; font-weight:700;">0% (위보호 액상)</td>
+          </tr>
+          <tr>
+            <td>피로회복 지속시간</td>
+            <td>1~2시간 (급락)</td>
+            <td style="color:#4ade80; font-weight:700;">8시간 지속</td>
+          </tr>
+          <tr>
+            <td>섭취 편의성</td>
+            <td>음료 캔 캔소음 발생</td>
+            <td style="color:#4ade80; font-weight:700;">10초 무소음·무냄새</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div class="sticky-bar">
+    <div class="sticky-info">
+      <span class="sticky-price">1끼당 3,400원 (정기구독 30% Off)</span>
+      <span class="sticky-sub">병원 스테이션 지정 배송 /いつでも 구독해지 가능</span>
+    </div>
+    <button class="btn-primary" onclick="alert('3교대 맞춤 비상 구독 신청 완료!')">Emergency 구독</button>
+  </div>
+
+  <script>
+    function switchShift(type, el) {
+      document.querySelectorAll('.shift-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      const name = document.getElementById('shift-name');
+      const desc = document.getElementById('shift-desc');
+      const cap = document.getElementById('shift-capsule');
+
+      if(type === 'day') {
+        name.innerText = '☀️ Day 근무 맞춤 포뮬러';
+        desc.innerText = '아침 일찍 시작되는 피로에 대비하여 지속형 고활력 비타민B 콤플렉스와 속 편한 천연 생강 앰플을 조합합니다.';
+        cap.innerText = '고농축 비타민B12 + 양배추 위보호 액상';
+      } else if(type === 'evening') {
+        name.innerText = '🌆 Evening 근무 맞춤 포뮬러';
+        desc.innerText = '퇴근 무렵의 극심한 스트레스와 뇌 피로를 감소시키기 위해 마그네슘과 L-테아닌이 강화됩니다.';
+        cap.innerText = '고함량 마그네슘 + 진정 테아닌 캡슐';
+      } else {
+        name.innerText = '🌙 Night 근무 맞춤 포뮬러';
+        desc.innerText = '새벽 시간대 쏟아지는 졸음 방지와 위장 장애 차단을 위한 비상 부스팅 활력 액상이 배합됩니다.';
+        cap.innerText = 'L-테아닌 200mg + 비상 생존 활력 앰플';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" width="100%" height="100%">
+  <defs>
+    <style>
+      .bg { fill: #FAF6EB; }
+      .title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 24px; fill: #183D33; }
+      .subtitle { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 14px; fill: #555555; }
+      .node-root { fill: #183D33; stroke: #0D231D; stroke-width: 2; rx: 10px; ry: 10px; }
+      .node-root-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 16px; fill: #FAF6EB; text-anchor: middle; }
+      .node-page { fill: #FFFFFF; stroke: #183D33; stroke-width: 2; rx: 8px; ry: 8px; filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.05)); }
+      .node-page-title { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: bold; font-size: 14px; fill: #183D33; text-anchor: middle; }
+      .node-page-sub { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 11px; fill: #666666; text-anchor: middle; }
+      .node-sub { fill: #E8F0EC; stroke: #76A58C; stroke-width: 1.5; rx: 6px; ry: 6px; }
+      .node-sub-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-weight: 500; font-size: 12px; fill: #183D33; text-anchor: middle; }
+      .node-err { fill: #FFF0F0; stroke: #E53935; stroke-width: 1.5; stroke-dasharray: 4; rx: 6px; ry: 6px; }
+      .node-err-text { font-family: 'Pretendard', 'Malgun Gothic', sans-serif; font-size: 12px; fill: #D32F2F; text-anchor: middle; }
+      .line { stroke: #76A58C; stroke-width: 2; fill: none; }
+      .line-dash { stroke: #E53935; stroke-width: 1.5; stroke-dasharray: 4; fill: none; }
+      .arrow { fill: #76A58C; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="arrow"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" class="bg"/>
+
+  <!-- Header -->
+  <text x="50" y="45" class="title">🗺️ A:FIT (박지안 디렉터) 1차 가상 클라이언트 계층형 사이트맵</text>
+  <text x="50" y="70" class="subtitle">초개인화 이중제형 올인원 건강식 정기구독 서비스 (모바일 퍼스트 3-Depth 구조)</text>
+
+  <!-- Root Node (PAGE-01) -->
+  <g transform="translate(375, 110)">
+    <rect width="250" height="60" class="node-root"/>
+    <text x="125" y="30" class="node-root-text">PAGE-01 메인 랜딩페이지</text>
+    <text x="125" y="48" font-family="'Pretendard', sans-serif" font-size="11" fill="#76A58C" text-anchor="middle">(10초 컷 / 가성비 저울 / 3줄 요약)</text>
+  </g>
+
+  <!-- Connections from Root -->
+  <path d="M 500,170 L 500,210 L 140,210 L 140,250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500,170 L 500,210 L 380,210 L 380,250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500,170 L 500,210 L 620,210 L 620,250" class="line" marker-end="url(#arrow)"/>
+  <path d="M 500,170 L 500,210 L 860,210 L 860,250" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Depth 2 Nodes -->
+  <!-- PAGE-02 -->
+  <g transform="translate(50, 250)">
+    <rect width="180" height="50" class="node-page"/>
+    <text x="90" y="28" class="node-page-title">PAGE-02 브랜드 스토리</text>
+    <text x="90" y="42" class="node-page-sub">2030 페인포인트 / 이중제형 기술</text>
+  </g>
+
+  <!-- PAGE-03 -->
+  <g transform="translate(290, 250)">
+    <rect width="180" height="50" class="node-page"/>
+    <text x="90" y="28" class="node-page-title">PAGE-03 맞춤 진단 모달</text>
+    <text x="90" y="42" class="node-page-sub">3단계 퀴즈 / 캡슐 매칭</text>
+  </g>
+
+  <!-- PAGE-04 -->
+  <g transform="translate(530, 250)">
+    <rect width="180" height="50" class="node-page"/>
+    <text x="90" y="28" class="node-page-title">PAGE-04 가성비 혜택</text>
+    <text x="90" y="42" class="node-page-sub">식비 절감 계산기 / 구독 플랜</text>
+  </g>
+
+  <!-- PAGE-05 -->
+  <g transform="translate(770, 250)">
+    <rect width="180" height="50" class="node-page"/>
+    <text x="90" y="28" class="node-page-title">PAGE-05 구독 결제 창</text>
+    <text x="90" y="42" class="node-page-sub">배송 주기 선택 / 1초 간편 결제</text>
+  </g>
+
+  <!-- Connections from Depth 2 to Checkout -->
+  <path d="M 380,300 L 380,350 L 860,350 L 860,300" class="line"/>
+  <path d="M 620,300 L 620,350 L 860,350" class="line"/>
+  <path d="M 860,300 L 860,400" class="line" marker-end="url(#arrow)"/>
+
+  <!-- Depth 3 Nodes -->
+  <!-- PAGE-06 -->
+  <g transform="translate(770, 400)">
+    <rect width="180" height="50" class="node-sub"/>
+    <text x="90" y="28" class="node-sub-text">PAGE-06 구독 완료</text>
+    <text x="90" y="42" font-family="'Pretendard', sans-serif" font-size="10" fill="#183D33" text-anchor="middle">첫 배송 타임라인 / 알림톡</text>
+  </g>
+
+  <!-- Error Connection & Node -->
+  <path d="M 860,300 L 860,350 L 620,350 L 620,400" class="line-dash"/>
+
+  <!-- PAGE-07 -->
+  <g transform="translate(530, 400)">
+    <rect width="180" height="50" class="node-err"/>
+    <text x="90" y="28" class="node-err-text">PAGE-07 오류/예외 모달</text>
+    <text x="90" y="42" font-family="'Pretendard', sans-serif" font-size="10" fill="#D32F2F" text-anchor="middle">결제 실패 / 필수입력 누락</text>
+  </g>
+
+  <!-- PAGE-08 -->
+  <g transform="translate(290, 400)">
+    <rect width="180" height="50" class="node-err"/>
+    <text x="90" y="28" class="node-err-text">PAGE-08 404 안내 페이지</text>
+    <text x="90" y="42" font-family="'Pretendard', sans-serif" font-size="10" fill="#D32F2F" text-anchor="middle">잘못된 경로 진입 방어</text>
+  </g>
+
+  <!-- Footer Legend -->
+  <g transform="translate(50, 560)">
+    <rect width="900" height="90" fill="#FFFFFF" stroke="#76A58C" stroke-width="1" rx="8" ry="8"/>
+    <text x="20" y="30" font-family="'Pretendard', sans-serif" font-weight="bold" font-size="13" fill="#183D33">범례 (Legend)</text>
+    <rect x="20" y="45" width="20" height="15" class="node-root" rx="3" ry="3"/>
+    <text x="50" y="57" font-family="'Pretendard', sans-serif" font-size="12" fill="#333333">메인 화면 (1Depth)</text>
+
+    <rect x="220" y="45" width="20" height="15" class="node-page" rx="3" ry="3"/>
+    <text x="250" y="57" font-family="'Pretendard', sans-serif" font-size="12" fill="#333333">주요 서브 화면 (2/3Depth)</text>
+
+    <rect x="440" y="45" width="20" height="15" class="node-sub" rx="3" ry="3"/>
+    <text x="470" y="57" font-family="'Pretendard', sans-serif" font-size="12" fill="#333333">완료/결과 화면</text>
+
+    <rect x="640" y="45" width="20" height="15" class="node-err" rx="3" ry="3"/>
+    <text x="670" y="57" font-family="'Pretendard', sans-serif" font-size="12" fill="#333333">예외/오류 처리 화면</text>
+  </g>
+</svg>

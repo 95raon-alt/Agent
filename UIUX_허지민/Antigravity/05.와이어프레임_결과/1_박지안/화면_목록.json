@@ -1,0 +1,232 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "project": "A:FIT 2030 초개인화 이중제형 올인원 건강식 정기구독 서비스",
+  "client": "박지안 브랜드 총괄 디렉터",
+  "screens": [
+    {
+      "id": "PAGE-01",
+      "name": "메인 랜딩페이지",
+      "purpose": "A:FIT 초개인화 이중제형 건강식 가치 전달 및 정기구독 전환 유도",
+      "entryConditions": [
+        "웹 브라우저 URL 직접 입력 접속",
+        "SNS / 포털 검색 광고 링크 클릭 진입"
+      ],
+      "sections": [
+        "Header & GNB",
+        "Hero Section",
+        "3LineSummary",
+        "SmartCuration",
+        "CostChart",
+        "GIFMotion",
+        "Reviews",
+        "Footer",
+        "StickyCTA"
+      ],
+      "actions": [
+        "상황별 이모지 칩 선택",
+        "스마트 진단 모달 열기",
+        "가성비 식비 절감 슬라이더 조절",
+        "구독 신청 버튼 클릭"
+      ],
+      "states": [
+        "기본 (Default)",
+        "진단 모달 레이어 열림",
+        "하단 Sticky CTA 바 스크롤 추종"
+      ],
+      "nextScreens": [
+        "PAGE-02",
+        "PAGE-03",
+        "PAGE-04",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-02",
+      "name": "브랜드 스토리",
+      "purpose": "2030 페인포인트 공감 및 보틀+캡슐 이중제형 특허 기술력 전달",
+      "entryConditions": [
+        "PAGE-01 GNB 내 '브랜드 스토리' 메뉴 클릭"
+      ],
+      "sections": [
+        "Header",
+        "ProblemStats",
+        "DualFormulationTech",
+        "3DContainerViewer",
+        "Footer"
+      ],
+      "actions": [
+        "3D 용기 분해 뷰어 회전",
+        "진단 시작 버튼 클릭"
+      ],
+      "states": [
+        "기본 (Default)",
+        "특허 팝업 노출"
+      ],
+      "nextScreens": [
+        "PAGE-01",
+        "PAGE-03"
+      ]
+    },
+    {
+      "id": "PAGE-03",
+      "name": "맞춤 진단 모달",
+      "purpose": "3단계 컨디션 퀴즈 입력을 통해 개인 맞춤형 캡슐 팩 자동 매칭",
+      "entryConditions": [
+        "PAGE-01 내 '진단 시작하기' 버튼 클릭",
+        "PAGE-02 내 '진단 체험' 버튼 클릭"
+      ],
+      "sections": [
+        "QuizHeader",
+        "ConditionChips",
+        "ResultPreview",
+        "SubmitButton"
+      ],
+      "actions": [
+        "고민 상황 칩 터치 선택",
+        "다음 퀴즈 단계 이동",
+        "추천 팩 장바구니/구독 담기"
+      ],
+      "states": [
+        "1단계 퀴즈 (현재 컨디션)",
+        "2단계 퀴즈 (식습관)",
+        "3단계 퀴즈 (필요 효능)",
+        "캡슐 팩 매칭 완료"
+      ],
+      "nextScreens": [
+        "PAGE-01",
+        "PAGE-04",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-04",
+      "name": "가성비 혜택",
+      "purpose": "커피 한 잔 값(한 끼 3천원대) 가성비를 데이터로 증명하여 가격 저항감 해소",
+      "entryConditions": [
+        "PAGE-01 내 '가성비 혜택' GNB 클릭",
+        "PAGE-03 진단 완료 후 혜택보기 클릭"
+      ],
+      "sections": [
+        "Header",
+        "CostCalculator",
+        "PlanComparisonTable",
+        "Footer"
+      ],
+      "actions": [
+        "주간 외식 지출액 슬라이더 조절",
+        "정기구독 주기(2주/4주) 선택"
+      ],
+      "states": [
+        "기본 (Default)",
+        "저울 기울기 모션 연산"
+      ],
+      "nextScreens": [
+        "PAGE-03",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-05",
+      "name": "구독 결제 창",
+      "purpose": "배송지 정보 입력 및 1초 간편 결제를 통한 최단 동선 정기구독 완료",
+      "entryConditions": [
+        "PAGE-01 Sticky CTA 버튼 클릭",
+        "PAGE-04 정기구독 플랜 선택 버튼 클릭"
+      ],
+      "sections": [
+        "OrderSummary",
+        "ShippingForm",
+        "PaymentMethods",
+        "SubmitButton"
+      ],
+      "actions": [
+        "배송지 주소 입력",
+        "간편 결제 수단(카카오페이/토스) 선택",
+        "1초 결제 완료 클릭"
+      ],
+      "states": [
+        "기본 입력 Form",
+        "유효성 검사 오류 (Red Highlight)",
+        "PG 결제 승인 중 (Loading Spinner)"
+      ],
+      "nextScreens": [
+        "PAGE-06",
+        "PAGE-07"
+      ]
+    },
+    {
+      "id": "PAGE-06",
+      "name": "구독 완료",
+      "purpose": "정기구독 신청 완료 확인 및 첫 배송 타임라인/알림톡 안내",
+      "entryConditions": [
+        "PAGE-05 결제 승인 성공 시 자동 전환"
+      ],
+      "sections": [
+        "SuccessHeader",
+        "OrderDetails",
+        "DeliveryTimeline",
+        "AppDownloadQR"
+      ],
+      "actions": [
+        "마이페이지 이동",
+        "카카오톡 공유하기 클릭",
+        "메인으로 돌아가기"
+      ],
+      "states": [
+        "완료 확인 (Success)"
+      ],
+      "nextScreens": [
+        "PAGE-01"
+      ]
+    },
+    {
+      "id": "PAGE-07",
+      "name": "오류/예외 모달",
+      "purpose": "결제 실패, 필수 입력 누락, 네트워크 장애 등 예외 상황 처리 안내",
+      "entryConditions": [
+        "PAGE-05 결제 승인 실패 시 노출",
+        "시스템 예외 발생 시 노출"
+      ],
+      "sections": [
+        "ErrorHeader",
+        "ErrorMessage",
+        "ActionButtons"
+      ],
+      "actions": [
+        "재시도 버튼 클릭",
+        "결제창 돌아가기 클릭",
+        "CS 상담원 연결"
+      ],
+      "states": [
+        "결제 오류 경고",
+        "네트워크 오류 경고"
+      ],
+      "nextScreens": [
+        "PAGE-01",
+        "PAGE-05"
+      ]
+    },
+    {
+      "id": "PAGE-08",
+      "name": "404 Not Found",
+      "purpose": "유효하지 않은 페이지 경로 진입 시 메인 이동 안내 및 이탈 방지",
+      "entryConditions": [
+        "존재하지 않는 URL 경로 진입"
+      ],
+      "sections": [
+        "404Header",
+        "GuideMessage",
+        "HomeButton"
+      ],
+      "actions": [
+        "메인페이지 바로가기 버튼 클릭"
+      ],
+      "states": [
+        "404 Error"
+      ],
+      "nextScreens": [
+        "PAGE-01"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+flowchart TD
+    Start([시작: 메인 접속]) --> Hero[PAGE-01: Hero 탐색]
+    Hero --> Quiz{AI 피부 큐레이션 실행?}
+    
+    Quiz -- 예 --> Modal[PAGE-03: AI 큐레이션 모달]
+    Quiz -- 아니오 --> Value[PAGE-04: 성분 & 흡수율 비교]
+    
+    Modal --> Recommendation[맞춤 바이오 앰플 팩 도출]
+    Recommendation --> Value
+    
+    Value --> PlanSelect[Glow 구독 플랜 선택]
+    PlanSelect --> Checkout[PAGE-05: 구독 결제 창]
+    
+    Checkout --> PaySuccess{결제 승인 성공?}
+    PaySuccess -- 성공 --> Success[PAGE-06: 구독 완료]
+    PaySuccess -- 실패 --> Error[PAGE-07: 오류/예외 모달]
+    
+    Error --> Checkout
+    Success --> End([종료: 배송 안내])

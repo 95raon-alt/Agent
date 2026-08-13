@@ -1,0 +1,50 @@
+[    1615ms] [ERROR] Unexpected hydration error Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings. 
+    at Suspense (<anonymous>)
+    at g (https://s.pinimg.com/webapp/9481-151d7dc852914564.mjs:16:43511)
+    at oX (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:236:11397)
+    at rw (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:236:17808)
+    at rC (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:236:21174)
+    at iF (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:273:88732)
+    at reduxProvider (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:162602)
+    at https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:145985
+    at pB (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:114840)
+    at pH (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:114918)
+    at pS (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:111644)
+    at x (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:163620)
+    at p (https://s.pinimg.com/webapp/9481-151d7dc852914564.mjs:16:22266)
+    at e.exports (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:9:69109)
+    at o (https://s.pinimg.com/webapp/27125-dcd1e778e180db81.mjs:1:40735)
+    at h (https://s.pinimg.com/webapp/9481-151d7dc852914564.mjs:16:5999)
+    at pA (https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:277:112251)
+    at tF (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:6486)
+    at tN (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:4430)
+    at https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:12631
+    at t5 (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:13641)
+    at tJ (https://s.pinimg.com/webapp/vendor-react-c7a0a1d6d76cab14.mjs:14:9012)
+    at Suspense (<anonymous>) @ https://s.pinimg.com/webapp/www/_client.ko_KR-9095807dcca45894.mjs:276
+[    1818ms] [WARNING] [GSI_LOGGER]: Your client application uses one of the Google One Tap prompt UI status methods that may stop functioning when FedCM becomes mandatory. Refer to the migration guide to update your code accordingly and opt-in to FedCM to test your changes. Learn more: https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#display_moment and https://developers.google.com/identity/gsi/web/guides/fedcm-migration?s=dc#skipped_moment @ https://accounts.google.com/gsi/client?hl=ko:86
+[    1823ms] [ERROR] Not signed in with the identity provider. @ https://kr.pinterest.com/:0
+[    2289ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/secure/unauth_user_data/:0
+[    2356ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client?hl=ko:87
+[   43957ms] [WARNING] The resource https://i.pinimg.com/236x/ee/23/2d/ee232db5d385af190427b563b499d380.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43957ms] [WARNING] The resource https://i.pinimg.com/236x/6e/db/8c/6edb8c6bd573c7af563361f8ab60a4b9.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43958ms] [WARNING] The resource https://i.pinimg.com/236x/a2/aa/8d/a2aa8d12f4cb73bdfc351148709005c9.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43958ms] [WARNING] The resource https://i.pinimg.com/236x/f1/a5/68/f1a568f1bd932124109a702e8fd3cd51.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43958ms] [WARNING] The resource https://i.pinimg.com/236x/80/18/33/80183388b8dd5d79e8fd1c00a79b3313.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43958ms] [WARNING] The resource https://i.pinimg.com/236x/b3/83/a2/b383a25ee454ed543ce9aa3f872bfc2f.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43958ms] [WARNING] The resource https://i.pinimg.com/236x/2e/65/bc/2e65bcdbdfb5d0bbf908d374686f9eda.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   43958ms] [WARNING] The resource https://i.pinimg.com/236x/25/4d/a1/254da18932097a43457d83bee029c2aa.jpg was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally. @ https://kr.pinterest.com/:0
+[   54366ms] [ERROR] Failed to load resource: the server responded with a status of 401 () @ https://kr.pinterest.com/resource/UserSessionResource/create/:0
+[   68584ms] [ERROR] Prompt dismissed. API exponential cool down not triggered. @ https://kr.pinterest.com/:0
+[   68584ms] [ERROR] [GSI_LOGGER]: FedCM get() rejects with NetworkError: Error retrieving a token. @ https://accounts.google.com/gsi/client?hl=ko:87
+[  130322ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  132550ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  134812ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  136818ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  138791ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  140849ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  142774ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  144867ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  146814ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  148889ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0
+[  150804ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://kr.pinterest.com/resource/ApiResource/create/:0

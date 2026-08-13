@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A:FIT Tech & Focus - 와이어프레임 (임태현 디렉터 - 화이트 테마)</title>
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Pretendard', sans-serif; }
+    body { background-color: #ffffff; color: #0f172a; line-height: 1.6; padding-bottom: 85px; }
+    
+    header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid #e2e8f0; padding: 16px 24px; display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 20px; font-weight: 800; color: #0f172a; letter-spacing: -0.5px; }
+    .logo span { color: #0284c7; }
+    nav a { color: #475569; text-decoration: none; margin-left: 20px; font-size: 14px; font-weight: 600; transition: 0.2s; }
+    nav a:hover { color: #ea580c; }
+
+    .container { max-width: 1000px; margin: 0 auto; padding: 32px 20px; }
+    .hero { text-align: center; padding: 48px 0; border-bottom: 1px solid #e2e8f0; background: #fafafa; border-radius: 20px; margin-top: 12px; }
+    .badge { display: inline-block; background: #e0f2fe; color: #0284c7; border: 1px solid #bae6fd; padding: 6px 14px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 16px; }
+    h1 { font-size: 32px; font-weight: 800; color: #0f172a; margin-bottom: 16px; word-break: keep-all; }
+    p.desc { font-size: 16px; color: #475569; margin-bottom: 32px; word-break: keep-all; }
+    
+    .btn-primary { background: #0284c7; color: #ffffff; font-size: 16px; font-weight: 800; padding: 14px 28px; border-radius: 12px; border: none; cursor: pointer; transition: 0.2s; }
+    .btn-primary:hover { background: #0369a1; transform: translateY(-2px); }
+
+    .section-title { font-size: 22px; font-weight: 700; color: #0f172a; margin: 40px 0 20px; border-left: 4px solid #ea580c; padding-left: 12px; }
+
+    .hours-tabs { display: flex; gap: 12px; margin-bottom: 24px; }
+    .hours-tab { flex: 1; background: #f8fafc; border: 1px solid #cbd5e1; color: #64748b; padding: 16px; border-radius: 12px; text-align: center; cursor: pointer; font-weight: 700; transition: 0.2s; }
+    .hours-tab.active { background: #e0f2fe; border-color: #0284c7; color: #0284c7; }
+
+    .dev-card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
+    @media(max-width: 640px) { .dev-card { grid-template-columns: 1fr; } }
+    
+    .chart-box { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 16px; padding: 24px; text-anchor: center; text-align: center; }
+    .chart-circle { width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(#0284c7 0% 87%, #ea580c 87% 100%); margin: 20px auto; display: flex; align-items: center; justify-content: center; }
+    .chart-inner { width: 100px; height: 100px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-direction: column; }
+    
+    .compare-table { width: 100%; border-collapse: collapse; background: #ffffff; border-radius: 12px; overflow: hidden; margin-top: 16px; border: 1px solid #e2e8f0; }
+    .compare-table th, .compare-table td { padding: 14px; text-align: center; border-bottom: 1px solid #e2e8f0; font-size: 14px; }
+    .compare-table th { background: #f1f5f9; color: #334155; }
+
+    .sticky-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #ffffff; border-top: 1px solid #e2e8f0; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; z-index: 99; box-shadow: 0 -4px 12px rgba(0,0,0,0.05); }
+    .sticky-info { display: flex; flex-direction: column; }
+    .sticky-price { font-size: 18px; font-weight: 800; color: #ea580c; }
+    .sticky-sub { font-size: 12px; color: #64748b; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">A:FIT <span>Tech</span></div>
+    <nav>
+      <a href="#story">브랜드스토리</a>
+      <a href="#dev">몰입별케어</a>
+      <a href="#ingredient">눈건강성분</a>
+      <a href="#reviews">개발자후기</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <div class="badge">💻 IT 개발자 &amp; 오피스 노마드 전용 (화이트 테마)</div>
+      <h1>모니터 앞 10시간,<br>키보드 치다 한 손으로 챙기는 눈건강</h1>
+      <p class="desc">코딩 중 손에 가루나 물 묻히지 않고, 왼손 10초 만에 섭취하는 루테인+아스타잔틴+안구 수분 이중제형 솔루션</p>
+      <button class="btn-primary" onclick="alert('판교/테헤란로 오피스 맞춤 Focus 구독 신청 완료!')">한 손 10초 시작하기</button>
+    </section>
+
+    <section id="dev">
+      <h2 class="section-title">모니터 주시시간별 맞춤 눈건강 케어 (Dev Care)</h2>
+      <div class="hours-tabs">
+        <div class="hours-tab active" onclick="switchHours('6h', this)">💻 6시간 (일반 오피스)</div>
+        <div class="hours-tab" onclick="switchHours('9h', this)">🔥 9시간 (개발자/디자이너)</div>
+        <div class="hours-tab" onclick="switchHours('12h', this)">🚀 12시간+ (해커톤/마감중)</div>
+      </div>
+
+      <div class="dev-card" id="dev-content">
+        <div>
+          <h3 style="color:#0284c7; margin-bottom:8px;" id="hours-name">💻 6시간 모니터 몰입 포뮬러</h3>
+          <p style="color:#475569; font-size:14px;" id="hours-desc">기초 안구 수분 충전과 루테인 성분으로 눈의 뻑뻑함을 방지하고 피로를 줄입니다.</p>
+        </div>
+        <div>
+          <div style="background:#f8fafc; padding:16px; border-radius:12px; border:1px solid #e2e8f0;">
+            <p style="font-size:12px; color:#64748b;">추천 캡슐 콤보</p>
+            <p style="font-weight:700; color:#15803d;" id="hours-capsule">루테인 20mg + 안구 수분 액상 앰플</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="ingredient">
+      <h2 class="section-title">안구 피로도 87% 감소 &amp; 성분 검증</h2>
+      <div class="chart-box">
+        <h3>안구 건조 개선 및 아스타잔틴 시각화</h3>
+        <div class="chart-circle">
+          <div class="chart-inner">
+            <span style="font-size:22px; font-weight:800; color:#0284c7;">87%</span>
+            <span style="font-size:10px; color:#64748b;">안구 피로 감소</span>
+          </div>
+        </div>
+        <p style="font-size:14px; color:#475569;">초점 조절 피로를 줄이는 <strong>초고농축 아스타잔틴 6mg + 빌베리 추출물</strong> 올인원 함유</p>
+      </div>
+
+      <h3 style="margin-top:32px; font-size:18px; color:#0f172a;">번거로운 직구 영양제 5종 vs A:FIT Tech</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>항목</th>
+            <th>해외 직구 영양제 5종 복용</th>
+            <th style="color:#0284c7;">A:FIT Tech &amp; Focus</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>복용 편의성</td>
+            <td style="color:#ef4444;">물 뜨러 가야 하고 번거로움</td>
+            <td style="color:#15803d; font-weight:700;">왼손 한 손 10초 원터치</td>
+          </tr>
+          <tr>
+            <td>손 위생 / 편의</td>
+            <td>가루/약 냄새 손에 묻음</td>
+            <td style="color:#15803d; font-weight:700;">손에 자극/가루 0%</td>
+          </tr>
+          <tr>
+            <td>1회당 평균 비용</td>
+            <td>5,200원 (각종 병 구입)</td>
+            <td style="color:#15803d; font-weight:700;">1끼당 3,200원 (구독할인)</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <div class="sticky-bar">
+    <div class="sticky-info">
+      <span class="sticky-price">1끼당 3,200원 (개발자 정기구독 30% Off)</span>
+      <span class="sticky-sub">판교/테헤란로 오피스 직배송 / 언제든 구독해지 가능</span>
+    </div>
+    <button class="btn-primary" onclick="alert('판교/테헤란로 오피스 맞춤 Focus 구독 신청 완료!')">Focus 맞춤 구독</button>
+  </div>
+
+  <script>
+    function switchHours(type, el) {
+      document.querySelectorAll('.hours-tab').forEach(t => t.classList.remove('active'));
+      el.classList.add('active');
+      const name = document.getElementById('hours-name');
+      const desc = document.getElementById('hours-desc');
+      const cap = document.getElementById('hours-capsule');
+
+      if(type === '6h') {
+        name.innerText = '💻 6시간 모니터 몰입 포뮬러';
+        desc.innerText = '기초 안구 수분 충전과 루테인 성분으로 눈의 뻑뻑함을 방지하고 피로를 줄입니다.';
+        cap.innerText = '루테인 20mg + 안구 수분 액상 앰플';
+      } else if(type === '9h') {
+        name.innerText = '🔥 9시간 모니터 몰입 포뮬러';
+        desc.innerText = '눈 초점 조절 근육 피로를 즉각 회복하는 아스타잔틴과 밀크씨슬을 함께 배합합니다.';
+        cap.innerText = '아스타잔틴 6mg + 간 피로 밀크씨슬';
+      } else {
+        name.innerText = '🚀 12시간+ 해커톤 몰입 포뮬러';
+        desc.innerText = '야근 및 마감 직전 뇌 피로와 안구 건조를 동시에 방어하는 티로신+안구 올인원 부스터입니다.';
+        cap.innerText = '아스타잔틴 + L-티로신 뇌활력 앰플';
+      }
+    }
+  </script>
+</body>
+</html>
