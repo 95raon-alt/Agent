@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>A:FIT Tech (에이핏 테크) 임태현 메인페이지 스토리보드 와이어프레임 프로토타입</title>
+  <title>A:FIT [메인페이지] Emergency (에이핏 이머전시) 최교대 메인페이지 메인페이지 스토리보드 와이어프레임 프로토타입</title>
   <style>
     /* =========================================================
-       A:FIT Tech Brand Design System (Tech & Focus High-End)
+       A:FIT Emergency Brand Design System (Shift Recovery High-End)
        Primary: #183D33 (Deep Forest Emerald)
        Accent: #76A58C (Vital Sage Mint)
        Accent Light: #EBF3EF
@@ -224,7 +224,7 @@
       transform: translateY(-2px);
     }
 
-    /* AFITT-100: Hero Open High-End Layout */
+    /* AFITN-100: Hero Open High-End Layout */
     .hero-open-grid {
       display: grid;
       grid-template-columns: 1.18fr 0.82fr;
@@ -258,9 +258,9 @@
       font-weight: 700;
     }
 
-    /* Sleek Tech Bottle Object */
+    /* Sleek Emergency Bottle Object */
     .bottle-stage {
-      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #E8EFF2 100%);
+      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #EAEFF2 100%);
       border: 1px solid var(--border);
       border-radius: 32px;
       padding: 44px 24px;
@@ -296,7 +296,7 @@
     .capsule-pill {
       width: 32px;
       height: 12px;
-      background: linear-gradient(90deg, #FFFFFF 50%, #183D33 50%);
+      background: linear-gradient(90deg, #F59E0B 50%, #183D33 50%);
       border-radius: 999px;
       border: 1px solid rgba(24, 61, 51, 0.2);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -312,7 +312,7 @@
     .bottle-liquid-body {
       width: 98px;
       height: 136px;
-      background: linear-gradient(180deg, rgba(118, 165, 140, 0.85) 0%, rgba(24, 61, 51, 0.95) 100%);
+      background: linear-gradient(180deg, rgba(245, 158, 11, 0.75) 0%, rgba(24, 61, 51, 0.95) 100%);
       border: 2.5px solid rgba(255, 255, 255, 0.9);
       border-radius: 8px 8px 28px 28px;
       display: flex;
@@ -337,7 +337,7 @@
       line-height: 1.25;
     }
 
-    /* AFITT-110: 3-Line Principles */
+    /* AFITN-110: 3-Line Principles */
     .core-num {
       font-size: 0.85rem;
       font-weight: 900;
@@ -347,7 +347,7 @@
       display: block;
     }
 
-    /* AFITT-120: Tech Chips */
+    /* AFITN-120: Shift Chips */
     .chips-group {
       display: flex;
       gap: 10px;
@@ -381,7 +381,7 @@
       box-shadow: var(--shadow-md);
     }
 
-    /* Dark Tech Engraved Label Card */
+    /* Dark Emergency Engraved Label Card */
     .engraved-card {
       background: linear-gradient(145deg, #183D33 0%, #102B24 100%);
       color: #FFFFFF;
@@ -407,7 +407,7 @@
       letter-spacing: -0.01em;
     }
 
-    /* AFITT-130: Eye-Moisture Donut Chart & Table */
+    /* AFITN-130: Gastro-Safe Donut Chart & Table */
     .clinical-box {
       background: var(--card);
       border: 1px solid var(--border);
@@ -429,7 +429,7 @@
       width: 105px;
       height: 105px;
       border-radius: 50%;
-      background: conic-gradient(var(--primary) 0% 87%, #D8D2C5 87% 100%);
+      background: conic-gradient(var(--primary) 0% 100%);
       display: grid;
       place-items: center;
       position: relative;
@@ -437,7 +437,7 @@
       box-shadow: var(--shadow-sm);
     }
     .donut-chart-circle::after {
-      content: '-87%';
+      content: '0%';
       width: 76px;
       height: 76px;
       background: var(--card);
@@ -445,7 +445,7 @@
       display: grid;
       place-items: center;
       font-weight: 900;
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       color: var(--primary);
     }
     .compare-table {
@@ -470,12 +470,12 @@
       font-weight: 800;
     }
 
-    /* AFITT-140: 10s Mechanism Steps */
+    /* AFITN-140: 10s Mechanism Steps */
     .step-item-card {
       border-top: 3px solid var(--primary);
     }
 
-    /* AFITT-150: Reviews */
+    /* AFITN-150: Reviews */
     .review-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -505,7 +505,7 @@
       border: 1px solid rgba(118, 165, 140, 0.4);
     }
 
-    /* AFITT-160: FAQ */
+    /* AFITN-160: FAQ */
     .faq details {
       background: var(--card);
       border: 1px solid var(--border);
@@ -546,7 +546,7 @@
       line-height: 1.65;
     }
 
-    /* AFITT-170: Sticky Subscription Bar */
+    /* AFITN-170: Sticky Subscription Bar */
     .sticky-bar {
       position: fixed;
       bottom: 0;
@@ -672,22 +672,22 @@
 <body>
 
   <!-- =========================================================
-       AFITT-100: Top Sticky GNB
+       AFITN-100: Top Sticky GNB
        ========================================================= -->
   <header class="top">
     <nav class="wrap">
       <a href="#" class="brand-logo">
-        <strong>A:FIT Tech</strong>
-        <span class="brand-badge">💻 IT 개발자 눈건강</span>
+        <strong>A:FIT Emergency</strong>
+        <span class="brand-badge">🚨 3교대 비상 충전</span>
       </a>
       <div class="links">
-        <a href="#summary">3대 테크 원칙</a>
-        <a href="#curation">몰입시간별 AI 큐레이션</a>
-        <a href="#eyecare">눈건강 성분표</a>
+        <a href="#summary">3대 비상 원칙</a>
+        <a href="#curation">근무별 AI 큐레이션</a>
+        <a href="#gastrosafe">속편한 성분표</a>
         <a href="#mechanism">10초 섭취 기전</a>
-        <a href="#reviews">개발자 후기</a>
+        <a href="#reviews">의료진 후기</a>
         <button class="btn primary" onclick="openCheckoutModal()">
-          <span>포커스 케어 시작</span>
+          <span>비상 충전 시작</span>
           <span>→</span>
         </button>
       </div>
@@ -696,50 +696,50 @@
 
   <main>
     <!-- =========================================================
-         AFITT-100: Hero Section (테크 앰플 비주얼)
+         AFITN-100: Hero Section (비상 앰플 비주얼)
          ========================================================= -->
     <section style="padding: 48px 0 64px; border-top: none;">
       <div class="wrap hero-open-grid">
         <div>
           <span class="tag" style="background: var(--accent-light); border-color: rgba(118, 165, 140, 0.4); color: var(--primary);">
-            IT 개발자 & 오피스 노마드를 위한 안구 건조 방어 솔루션
+            3교대 의료진 & 야간근무자 비상 활력 솔루션
           </span>
           <h1>
-            모니터 앞 10시간,<br>
-            키보드 치다 한 손으로 챙기는 눈건강
+            나이트 근무 도중 10초,<br>
+            속 쓰림 없이 깨어나는 비상 활력
           </h1>
           <p class="lead">
-            침침한 눈과 거북목 피로는 이제 그만. 루테인지아잔틴 20mg, 아스타잔틴 6mg, 뇌활력 테아닌 액상을 코딩 중 한 손으로 10초 만에 완벽 충전합니다.
+            카페인 폭탄과 속 쓰림은 이제 그만. 테아닌 200mg, 고함량 활성 비타민 B군, 위 점막 보호 양배추 액상을 물 없이 10초 만에 무소음/무냄새로 충전합니다.
           </p>
 
           <div class="metrics-pill-group">
             <div class="metric-pill-item">
-              <strong>안구 피로 -87%</strong>
-              <span>아스타잔틴 6mg 함유</span>
+              <strong>위 자극 0%</strong>
+              <span>양배추 농축 위보호</span>
             </div>
             <div class="metric-pill-item">
-              <strong>루테인 20mg</strong>
-              <span>식약처 1일 최대치</span>
+              <strong>비타민B 1,000%</strong>
+              <span>8시간 지속 활력</span>
             </div>
             <div class="metric-pill-item">
-              <strong>10초 원핸드</strong>
-              <span>키보드 위 한 손 컷</span>
+              <strong>10초 무소음</strong>
+              <span>스테이션 원샷 케어</span>
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <button class="btn primary" style="padding: 14px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
-              개발자 맞춤 포커스 구독 시작하기 →
+              3교대 맞춤 비상 구독 시작하기 →
             </button>
-            <a class="btn" href="#eyecare" style="padding: 14px 22px;">
-              눈건강 성분 검증표 확인
+            <a class="btn" href="#gastrosafe" style="padding: 14px 22px;">
+              속편한 성분 검증표 확인
             </a>
           </div>
         </div>
 
-        <!-- Sleek Tech Bottle Mockup Stage -->
+        <!-- Sleek Emergency Bottle Mockup Stage -->
         <div class="bottle-stage">
-          <span class="tag">A:FIT TECH FOCUS BOTTLE</span>
+          <span class="tag">A:FIT EMERGENCY SHIFT BOTTLE</span>
           <div class="bottle-object" id="heroBottle">
             <div class="bottle-top-chamber">
               <div class="capsule-pill"></div>
@@ -748,50 +748,50 @@
             <div class="bottle-connector"></div>
             <div class="bottle-liquid-body">
               <div class="bottle-label-engraved" id="bottleHeroLabel">
-                "임태현 매니저 검증<br>판교 개발자 포커스 팩"
+                "최교대 간호사 검증<br>나이트 근무 생명줄 팩"
               </div>
             </div>
           </div>
           <div style="font-size: 0.82rem; color: var(--primary); font-weight: 700;">
-            ✦ 상단 루테인+아스타잔틴 캡슐 + 하단 테아닌 뇌활력 액상
+            ✦ 상단 테아닌+비타민B 캡슐 + 하단 속편한 양배추 액상
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         AFITT-110: 3-Line Principles (3대 테크 원칙)
+         AFITN-110: 3-Line Principles (3대 비상 원칙)
          ========================================================= -->
     <section id="summary">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFITT-110 · 3-LINE TECH PRINCIPLES</span>
-          <h2>몰입을 지키는 3대 테크 원칙</h2>
-          <p class="lead">모니터 앞 피로를 3줄로 끝내는 스마트 포커스 핵심 가치 (Ritual 벤치마킹)</p>
+          <span class="tag">AFITN-110 · 3-LINE SHIFT PRINCIPLES</span>
+          <h2>3교대 생존을 위한 3대 비상 원칙</h2>
+          <p class="lead">불규칙한 교대근무를 3줄로 지켜내는 속편한 리커버리 가치 (Ritual 벤치마킹)</p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <span class="core-num">PRINCIPLE 01</span>
-            <h3>01. EYE MOISTURE (안구 수분 방어)</h3>
+            <h3>01. ZERO HEARTBURN (속 쓰림 0%)</h3>
             <p style="color: var(--text-body); font-size: 0.94rem;">
-              아스타잔틴과 루테인지아잔틴이 모니터 블루라이트와 깜빡임 부족으로 인한 안구 건조를 87% 방어합니다.
+              고농축 양배추와 브로콜리 추출 액상으로 공복에 마셔도 속 쓰림 없이 부드럽게 흡수됩니다.
             </p>
           </article>
 
           <article class="card">
             <span class="core-num">PRINCIPLE 02</span>
-            <h3>02. SCREEN-TIME (몰입시간 맞춤)</h3>
+            <h3>02. SHIFT-CUSTOM (근무별 맞춤)</h3>
             <p style="color: var(--text-body); font-size: 0.94rem;">
-              6시간(일반오피스), 9시간(집중코딩), 12시간+(릴리즈야근) 스크린 타임에 최적화된 영양비를 AI가 배합합니다.
+              Day(오전집중), Evening(피로회복), Night(심야비상) 근무 패턴에 맞춘 영양비를 AI가 처방합니다.
             </p>
           </article>
 
           <article class="card">
             <span class="core-num">PRINCIPLE 03</span>
-            <h3>03. 10s ONE-HAND (한 손 10초 컷)</h3>
+            <h3>03. 10s SILENT (10초 무소음)</h3>
             <p style="color: var(--text-body); font-size: 0.94rem;">
-              마우스를 놓지 않고 왼손으로 뚜껑을 딸깍 눌러 10초 만에 섭취하는 무가루/무수분 오피스 루틴입니다.
+              병동 스테이션, 조용한 사무실에서 냄새와 소음 없이 뚜껑만 눌러 10초 만에 마실 수 있습니다.
             </p>
           </article>
         </div>
@@ -799,74 +799,74 @@
     </section>
 
     <!-- =========================================================
-         AFITT-120: Screen-Time AI Curation (몰입시간별 큐레이션)
+         AFITN-120: Shift Care AI Curation (근무타입별 큐레이션)
          ========================================================= -->
     <section id="curation">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFITT-120 · SCREEN-TIME AI CURATION</span>
-          <h2>모니터 몰입시간별 1:1 눈건강 맞춤 배합</h2>
-          <p class="lead">몰입시간 칩을 선택하면 최적의 포커스 처방과 실시간 각인 라벨이 즉시 갱신됩니다. (Gainful 벤치마킹)</p>
+          <span class="tag">AFITN-120 · SHIFT CARE AI CURATION</span>
+          <h2>근무 패턴별 1:1 비상 활력 맞춤 배합</h2>
+          <p class="lead">근무 칩을 선택하면 최적의 비상 처방과 실시간 각인 라벨이 즉시 갱신됩니다. (Gainful 벤치마킹)</p>
         </div>
 
         <div class="chips-group" id="condChips">
-          <button class="active" data-cond="9h" 
-                  data-name="9시간 집중 코딩 안구건조·피로 방어 팩" 
-                  data-msg="임태현 매니저 검증: 판교 개발자 10초 눈건강 포커스 팩" 
-                  data-ing="루테인지아잔틴 20mg + 아스타잔틴 6mg + L-티로신"
-                  data-timing="오후 2시 코드 리뷰 전 10초 원샷">
-            ⚡ 9시간 코딩 / 안구건조·피로
+          <button class="active" data-cond="night" 
+                  data-name="Night 근무 심야 비상 활력 팩" 
+                  data-msg="최교대 간호사 검증: 나이트 근무 생명줄 10초 비상팩" 
+                  data-ing="활성 비타민 B12 1,000% + 타우린 1,000mg + 양배추농축액"
+                  data-timing="나이트 근무 투입 30분 전 10초 원샷">
+            🌙 Night 근무 / 심야 비상
           </button>
-          <button data-cond="6h" 
-                  data-name="6시간 기본 오피스 블루라이트 케어 팩" 
-                  data-msg="임태현 매니저 검증: 데일리 스마트 오피스 눈보호 팩" 
-                  data-ing="루테인 10mg + 비타민 A 700μg + 빌베리추출물"
-                  data-timing="오전 업무 시작 직후 10초 원샷">
-            💻 6시간 몰입 / 기본 눈보호
+          <button data-cond="day" 
+                  data-name="Day 근무 오전 집중 브레인 팩" 
+                  data-msg="최교대 간호사 검증: 아침 회진 집중력 부스터 팩" 
+                  data-ing="L-테아닌 200mg + 활성 엽산 + 비타민 B군"
+                  data-timing="오전 07시 출근 직후 10초 원샷">
+            ☀️ Day 근무 / 오전 집중
           </button>
-          <button data-cond="12h" 
-                  data-name="12시간+ 릴리즈 야근 비상 브레인 리셋 팩" 
-                  data-msg="임태현 매니저 검증: 야근 스프린트 브레인 리셋 팩" 
-                  data-ing="은행잎추출물 150mg + 테아닌 200mg + 비타민 B군"
-                  data-timing="스프린트 마감 1시간 전 10초 원샷">
-            🔥 12시간+ 야근 / 비상 브레인
+          <button data-cond="evening" 
+                  data-name="Evening 근무 오후 피로 리셋 팩" 
+                  data-msg="최교대 간호사 검증: 오후 극심 피로 순삭 리셋 팩" 
+                  data-ing="고순도 밀크씨슬 130mg + 홍경천추출물 + 마그네슘"
+                  data-timing="오후 3시 교대 투입 직후 10초 원샷">
+            🌆 Evening 근무 / 오후 피로
           </button>
         </div>
 
         <div class="grid-2">
           <!-- 1:1 Analysis Report Card -->
           <div class="card">
-            <span class="tag">테크 포커스 정밀 처방 리포트</span>
-            <h3 id="curTitle" style="font-size: 1.25rem; margin: 8px 0;">⚡ 9시간 집중 코딩 안구건조·피로 방어 팩</h3>
+            <span class="tag">3교대 메디컬 정밀 처방 리포트</span>
+            <h3 id="curTitle" style="font-size: 1.25rem; margin: 8px 0;">🌙 Night 근무 심야 비상 활력 팩</h3>
             <div style="background: var(--card-subtle); padding: 18px; border-radius: 12px; margin: 14px 0; border: 1px solid var(--border);">
               <div style="font-size: 0.92rem; margin-bottom: 8px;">
-                <strong>• 특화 눈건강 바이오 원료:</strong> <span id="curIng" style="color: var(--primary); font-weight: 800;">루테인지아잔틴 20mg + 아스타잔틴 6mg + L-티로신</span>
+                <strong>• 특화 비상 활력 원료:</strong> <span id="curIng" style="color: var(--primary); font-weight: 800;">활성 비타민 B12 1,000% + 타우린 1,000mg + 양배추농축액</span>
               </div>
               <div style="font-size: 0.92rem; margin-bottom: 8px;">
-                <strong>• 이중제형 구성:</strong> 고농축 지용성 오일 캡슐 2정 + 뇌활력 테아닌 액상 50ml
+                <strong>• 이중제형 구성:</strong> 고활력 비타민 캡슐 2정 + 속편한 양배추 액상 50ml
               </div>
               <div style="font-size: 0.92rem;">
-                <strong>• 권장 섭취 타이밍:</strong> <span id="curTiming" style="color: var(--primary); font-weight: 800;">오후 2시 코드 리뷰 전 10초 원샷</span>
+                <strong>• 권장 섭취 타이밍:</strong> <span id="curTiming" style="color: var(--primary); font-weight: 800;">나이트 근무 투입 30분 전 10초 원샷</span>
               </div>
             </div>
             <button class="btn primary" style="width: 100%; justify-content: center; padding: 13px;" onclick="openCheckoutModal()">
-              이 테크 조합으로 맞춤 구독하기 →
+              이 근무 조합으로 맞춤 구독하기 →
             </button>
           </div>
 
           <!-- Real-Time Engraved Label Card -->
           <div class="engraved-card">
             <span class="tag" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3);">
-              AFITT-121 · 실시간 테크 각인 라벨
+              AFITN-121 · 실시간 비상 각인 라벨
             </span>
             <div class="engraved-box-inner">
-              <div style="font-size: 0.78rem; opacity: 0.8; margin-bottom: 6px;">[A:FIT TECH SMART DEVELOPER FORMULA]</div>
+              <div style="font-size: 0.78rem; opacity: 0.8; margin-bottom: 6px;">[A:FIT EMERGENCY MEDICAL FORMULA]</div>
               <div class="engraved-text" id="labelPreview">
-                "임태현 매니저 검증: 판교 개발자 10초 눈건강 포커스 팩"
+                "최교대 간호사 검증: 나이트 근무 생명줄 10초 비상팩"
               </div>
             </div>
             <div style="font-size: 0.82rem; opacity: 0.85; text-align: center;">
-              ✦ 매월 정기구독 시 내 닉네임과 개발팀 코딩 응원 문구가 보틀에 직접 각인 배송됩니다.
+              ✦ 매월 정기구독 시 내 근무 부서명과 생존 응원 문구가 보틀에 직접 각인 배송됩니다.
             </div>
           </div>
         </div>
@@ -874,23 +874,23 @@
     </section>
 
     <!-- =========================================================
-         AFITT-130: Eye-Moisture Donut Chart & Direct Buy Comparison
+         AFITN-130: Gastro-Safe Donut Chart & Energy Comparison
          ========================================================= -->
-    <section id="eyecare">
+    <section id="gastrosafe">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFITT-130 · EYE-MOISTURE & VALUE COMPARISON</span>
-          <h2>안구 피로 -87% 개선 & 해외직구 5종 비교</h2>
-          <p class="lead">책상 위에 굴러다니는 직구 약통 5개 대신 1병으로 끝내는 스마트함 (AG1 벤치마킹)</p>
+          <span class="tag">AFITN-130 · GASTRO-SAFE & ENERGY COMPARISON</span>
+          <h2>위 자극 0% 검증 & 고카페인 음료 비교</h2>
+          <p class="lead">속 쓰림과 심장 두근거림을 유발하는 에너지 음료와의 차이를 확인하세요. (Bare Performance 벤치마킹)</p>
         </div>
 
         <div class="clinical-box">
           <div class="donut-container">
             <div class="donut-chart-circle"></div>
             <div>
-              <h3 style="margin-bottom: 6px;">안구 피로도 87% 개선 & 눈 깜빡임 촉촉함 지속</h3>
+              <h3 style="margin-bottom: 6px;">위 자극 0% · 카페인 크래시 0% · 8시간 지속 활력</h3>
               <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
-                헤마토코쿠스 아스타잔틴 임상 결과 초점 조절력 42.1% 향상 및 오후 눈시림 87.0% 감소 검증
+                공복 섭취 임상 결과 속 쓰림 발생률 0.0%, 근무 후반 집중력 유지율 91.3% 검증
               </p>
             </div>
           </div>
@@ -899,29 +899,29 @@
             <thead>
               <tr>
                 <th>비교 항목</th>
-                <th>해외 직구 영양제 5종 복용</th>
-                <th>A:FIT Tech 올인원 이중제형</th>
-                <th>스마트 개발자 가치</th>
+                <th>시중 고카페인 에너지 음료</th>
+                <th>A:FIT Emergency 비상 앰플</th>
+                <th>교대근무 혜택</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>책상 위 환경</strong></td>
-                <td>약통 5개 방치 & 먼지 쌓임</td>
-                <td class="highlight"><strong>슬림 앰플 1병 (미니멀 데스크)</strong></td>
-                <td style="font-weight: 800; color: var(--primary);">데스크테리어 완성</td>
+                <td><strong>위장 자극</strong></td>
+                <td>속 쓰림 유발 (강산성 pH 2.8)</td>
+                <td class="highlight"><strong>위 자극 0% (중성 양배추액)</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">공복 섭취 100% 안심</td>
               </tr>
               <tr>
-                <td><strong>복용 편의성</strong></td>
-                <td>큰 알약 6알 + 물컵 필요</td>
-                <td class="highlight"><strong>한 손 10초 원샷 (물 불필요)</strong></td>
-                <td style="font-weight: 800; color: var(--primary);">코딩 흐름 유지</td>
+                <td><strong>각성 지속력</strong></td>
+                <td>2시간 후 급격한 카페인 크래시</td>
+                <td class="highlight"><strong>8시간 완만하고 지속적 활력</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">교대근무 완벽 커버</td>
               </tr>
               <tr>
-                <td><strong>월 구매 비용</strong></td>
-                <td>월 125,000원 + 배송비</td>
-                <td class="highlight"><strong>월 50,000원대</strong></td>
-                <td style="font-weight: 800; color: var(--primary);">매월 약 70,000원 절감</td>
+                <td><strong>수면 방해</strong></td>
+                <td>퇴근 후 불면증 유발</td>
+                <td class="highlight"><strong>테아닌 함유 (퇴근 후 꿀잠)</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">수면 리듬 정상화</td>
               </tr>
             </tbody>
           </table>
@@ -930,38 +930,38 @@
     </section>
 
     <!-- =========================================================
-         AFITT-140: 10s Dual Mechanism
+         AFITN-140: 10s Dual Mechanism
          ========================================================= -->
     <section id="mechanism">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFITT-140 · 10s DUAL MECHANISM</span>
-          <h2>코딩 중 왼손으로 끝내는 10초 원핸드 섭취</h2>
-          <p class="lead">키보드/마우스 작업 중 손에 묻지 않고 10초 만에 완벽 흡수</p>
+          <span class="tag">AFITN-140 · 10s DUAL MECHANISM</span>
+          <h2>물 없이 끝내는 10초 무소음 비상 충전</h2>
+          <p class="lead">병동 스테이션, 조용한 야간실에서 10초 만에 완벽 흡수</p>
         </div>
 
         <div class="grid-3">
           <div class="card step-item-card">
             <span class="core-num">STEP 01</span>
-            <h3>1. 왼손 원터치 딸깍</h3>
+            <h3>1. 원터치 캡 딸깍</h3>
             <p style="color: var(--text-body); font-size: 0.92rem;">
-              마우스를 놓지 않고 왼손으로 상단 캡을 누르면 오일 캡슐 챔버가 열립니다.
+              소음 없이 상단 캡을 누르면 활성 비타민/테아닌 캡슐 챔버가 열립니다.
             </p>
           </div>
 
           <div class="card step-item-card">
             <span class="core-num">STEP 02</span>
-            <h3>2. 루테인 캡슐 낙하</h3>
+            <h3>2. 비상 캡슐 낙하</h3>
             <p style="color: var(--text-body); font-size: 0.92rem;">
-              산화 없이 신선하게 밀폐된 아스타잔틴 캡슐이 테아닌 액상으로 낙하합니다.
+              산화 없이 신선하게 밀폐된 캡슐이 속편한 양배추 액상으로 낙하합니다.
             </p>
           </div>
 
           <div class="card step-item-card">
             <span class="core-num">STEP 03</span>
-            <h3>3. 10초 원핸드 원샷</h3>
+            <h3>3. 10초 무소음 원샷</h3>
             <p style="color: var(--text-body); font-size: 0.92rem;">
-              물 없이 상큼한 블루베리맛 액상과 함께 10초 만에 마셔 안구 수분을 충전합니다.
+              물 없이 10초 만에 마셔 위장 부담 없이 8시간 지속 에너지를 충전합니다.
             </p>
           </div>
         </div>
@@ -969,29 +969,29 @@
     </section>
 
     <!-- =========================================================
-         AFITT-150: Tech Workers Reviews
+         AFITN-150: Shift Workers Reviews
          ========================================================= -->
     <section id="reviews">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFITT-150 · TECH WORKERS REVIEWS</span>
-          <h2>현직 IT 개발자 실명 후기 (평점 ★ 4.98/5.0)</h2>
-          <p class="lead">네카라쿠배 백엔드 개발자, UI 디자이너의 스마트한 보이스</p>
+          <span class="tag">AFITN-150 · SHIFT WORKERS REVIEWS</span>
+          <h2>3교대 의료진 & 야간근무자 후기 (평점 ★ 4.98/5.0)</h2>
+          <p class="lead">응급실 간호사, 야간 설비 엔지니어의 생생한 생존 보이스</p>
         </div>
 
         <div class="grid-3">
           <div class="review-card">
             <div>
               <div class="review-author-meta">
-                <div class="author-initial">임</div>
+                <div class="author-initial">김</div>
                 <div>
-                  <strong style="color: var(--primary);">임코딩 (31세)</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">IT 대기업 백엔드 리드 개발자</div>
+                  <strong style="color: var(--primary);">김응급 (29세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">대학병원 응급실 3교대 간호사</div>
                 </div>
               </div>
               <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
               <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
-                "아이허브에서 산 루테인 약통 4개가 책상 위에서 썩어가고 있었는데, A:FIT Tech는 모니터 옆에 두고 코딩하다가 왼손으로 10초 만에 마실 수 있어서 하루도 안 거르고 먹고 있습니다."
+                "새벽 4시만 되면 커피 3잔으로 버티다 위염 달고 살았는데, A:FIT Emergency로 바꾸고 속 쓰림이 100% 사라졌어요. 병동 동기들도 다 같이 구독 중입니다."
               </p>
             </div>
             <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
@@ -1002,15 +1002,15 @@
           <div class="review-card">
             <div>
               <div class="review-author-meta">
-                <div class="author-initial">정</div>
+                <div class="author-initial">박</div>
                 <div>
-                  <strong style="color: var(--primary);">정디자인 (28세)</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">프로덕트 UI/UX 디자이너</div>
+                  <strong style="color: var(--primary);">박나이트 (36세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">반도체 팹 야간 엔지니어</div>
                 </div>
               </div>
               <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
               <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
-                "모니터 픽셀 하루 종일 보느라 오후 4시만 되면 눈이 뻑뻑해서 인공눈물 달고 살았는데, 아스타잔틴 복용 2주 만에 눈시림이 사라졌습니다!"
+                "방진복 입고 일해서 물 챙겨 마시기 어려운데, 들어가기 직전 10초 만에 원샷할 수 있어서 너무 편합니다. 퇴근하고 잠도 깊게 잘 와요."
               </p>
             </div>
             <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
@@ -1021,19 +1021,19 @@
           <div class="review-card">
             <div>
               <div class="review-author-meta">
-                <div class="author-initial">박</div>
+                <div class="author-initial">이</div>
                 <div>
-                  <strong style="color: var(--primary);">박CTO (37세)</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">AI 스타트업 최고기술책임자</div>
+                  <strong style="color: var(--primary);">이교대 (41세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">종합병원 영상의학과 방사선사</div>
                 </div>
               </div>
               <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
               <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
-                "우리 개발팀 12명 전체 복지로 단체 구독 신청했습니다. 팀원들 오후 피로도가 줄어들어 생산성이 확연히 올라갔습니다."
+                "라벨에 내 이름이랑 병원 부서명이 각인되어 오니까 락커룸에서 섞일 일도 없고 매일 나이트 출근할 때마다 힐링됩니다!"
               </p>
             </div>
             <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
-              ✓ 4개월 단체 구독 중
+              ✓ 4개월 정기구독 중
             </div>
           </div>
         </div>
@@ -1041,91 +1041,91 @@
     </section>
 
     <!-- =========================================================
-         AFITT-160: FAQ
+         AFITN-160: FAQ
          ========================================================= -->
     <section class="faq">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFITT-160 · FAQ</span>
+          <span class="tag">AFITN-160 · FAQ</span>
           <h2>자주 묻는 질문</h2>
         </div>
 
         <details open>
-          <summary>소프트렌즈나 하드렌즈를 착용한 상태에서 마셔도 되나요?</summary>
-          <p>네! 렌즈 착용자에게 흔히 발생하는 각막 건조와 눈 깜빡임 마찰을 완화해 주는 체내 흡수형 안구 수분 포뮬러입니다.</p>
+          <summary>정말 밥을 안 먹고 빈속에 마셔도 속이 안 쓰린가요?</summary>
+          <p>네! 위 점막을 보호하는 유기농 양배추 농축액과 비자극성 수용성 비타민 B군으로 배합되어 극심한 공복에도 속 편하게 섭취하실 수 있습니다.</p>
         </details>
 
         <details>
-          <summary>정말 손에 가루나 액상이 전혀 안 묻나요?</summary>
-          <p>특허받은 밀폐형 듀얼 챔버 설계로 원터치 푸시 시 캡슐이 내부 액상으로만 바로 낙하하여 키보드나 마우스에 일체 오염이 발생하지 않습니다.</p>
+          <summary>퇴근 후 잘 때 불면증이 생기지 않나요?</summary>
+          <p>고카페인 에너지 드링크와 달리 뇌파를 안정시키는 L-테아닌 200mg이 함유되어 있어 근무 중에는 맑은 집중력을, 퇴근 후에는 깊은 수면을 돕습니다.</p>
         </details>
 
         <details>
-          <summary>개발팀이나 기업 복지용 단체 구독 할인이 있나요?</summary>
-          <p>5인 이상 팀/기업 구독 신청 시 추가 10% 복합 할인 및 분기별 세금계산서 발행이 지원됩니다.</p>
+          <summary>교대근무 스케줄(근무표)에 맞춰 배송일을 조정할 수 있나요?</summary>
+          <p>네, 마이페이지에서 다음 나이트 근무 주간에 맞춰 배송 시작일을 원하는 날짜로 자유롭게 변경하실 수 있습니다.</p>
         </details>
       </div>
     </section>
   </main>
 
   <!-- =========================================================
-       AFITT-170: Sticky Subscription Bar
+       AFITN-170: Sticky Subscription Bar
        ========================================================= -->
   <aside class="sticky-bar" id="stickyBar">
     <div class="wrap sticky-flex">
       <div>
         <div style="display: flex; align-items: center; gap: 8px;">
-          <strong style="font-size: 1.1rem; color: var(--primary);">A:FIT Tech 개발자 맞춤 눈건강 앰플 정기구독</strong>
-          <span class="tag highlight" style="font-size: 0.72rem; padding: 2px 8px;">첫 달 30% 테크 지원 혜택</span>
+          <strong style="font-size: 1.1rem; color: var(--primary);">A:FIT Emergency 3교대 맞춤 앰플 정기구독</strong>
+          <span class="tag highlight" style="font-size: 0.72rem; padding: 2px 8px;">첫 달 30% 비상 지원 혜택</span>
         </div>
         <div style="font-size: 0.85rem; color: var(--text-muted);">
-          안구 피로 -87%, 하루 10초로 끝내는 개발자 눈건강 (월 5만 원대~)
+          위 자극 0%, 하루 10초로 끝내는 3교대 생존 활력 (월 5만 원대~)
         </div>
       </div>
       <button class="btn primary" style="padding: 12px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
-        10초 포커스 케어 시작하기 →
+        10초 비상 충전 시작하기 →
       </button>
     </div>
   </aside>
 
   <!-- =========================================================
-       AFITT-180: Instant Checkout Modal
+       AFITN-180: Instant Checkout Modal
        ========================================================= -->
   <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="dialog">
       <button class="close" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
-      <span class="tag">AFITT-180 · INSTANT CHECKOUT</span>
-      <h2 id="modalTitle" style="margin: 8px 0 16px;">10초 Tech 맞춤 구독 신청</h2>
+      <span class="tag">AFITN-180 · INSTANT CHECKOUT</span>
+      <h2 id="modalTitle" style="margin: 8px 0 16px;">10초 Emergency 맞춤 구독 신청</h2>
 
       <div style="background: var(--card-subtle); padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border);">
-        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">선택된 개발자 각인 라벨:</div>
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">선택된 교대근무 각인 라벨:</div>
         <strong id="modalLabelText" style="font-size: 0.98rem; color: var(--primary);">
-          "임태현 매니저 검증: 판교 개발자 10초 눈건강 포커스 팩"
+          "최교대 간호사 검증: 나이트 근무 생명줄 10초 비상팩"
         </strong>
       </div>
 
       <form id="checkoutForm" novalidate>
         <div class="field">
-          <label for="custName">구독자 성함 (또는 닉네임)</label>
-          <input type="text" id="custName" name="custName" value="임태현" required>
+          <label for="custName">구독자 성함</label>
+          <input type="text" id="custName" name="custName" value="최교대" required>
         </div>
 
         <div class="field">
           <label for="custPhone">휴대폰 번호 (새벽 정밀배송 알림용)</label>
-          <input type="tel" id="custPhone" name="custPhone" value="010-7788-9900" required>
+          <input type="tel" id="custPhone" name="custPhone" value="010-6677-8899" required>
         </div>
 
         <div class="field">
           <label for="planSelect">구독 플랜 선택</label>
           <select id="planSelect">
-            <option value="20day">월 20일 오피스 포커스팩 (월 20병 / 76,000원 → 첫달 53,200원)</option>
-            <option value="30day" selected>월 30일 개발자 올인원팩 (월 30병 / 114,000원 → 첫달 79,800원)</option>
+            <option value="20day">월 20일 나이트 비상팩 (월 20병 / 76,000원 → 첫달 53,200원)</option>
+            <option value="30day" selected>월 30일 3교대 올인원팩 (월 30병 / 114,000원 → 첫달 79,800원)</option>
           </select>
         </div>
 
         <div class="field">
-          <label for="custAddr">배송지 주소 (판교 오피스/자택)</label>
-          <input type="text" id="custAddr" name="custAddr" value="경기도 성남시 분당구 판교역로 166 (카카오 판교 아지트)" required>
+          <label for="custAddr">배송지 주소 (병원 기숙사/자택)</label>
+          <input type="text" id="custAddr" name="custAddr" value="서울특별시 종로구 대학로 101 (서울대병원 기숙사)" required>
         </div>
 
         <label style="display: flex; gap: 8px; align-items: center; margin: 16px 0; font-size: 0.88rem; color: var(--text-body);">
@@ -1143,22 +1143,22 @@
   </div>
 
   <!-- =========================================================
-       AFITT-181: Done Modal
+       AFITN-181: Done Modal
        ========================================================= -->
   <div id="doneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
     <div class="dialog" style="text-align: center;">
       <button class="close" onclick="closeDoneModal()" aria-label="닫기">×</button>
-      <span class="tag highlight">AFITT-181 · SUBSCRIPTION CONFIRMED</span>
-      <div style="font-size: 3.2rem; margin: 12px 0;">💻</div>
-      <h2 id="doneTitle" style="margin-bottom: 8px;">A:FIT Tech 정기구독이 정상 접수되었습니다!</h2>
+      <span class="tag highlight">AFITN-181 · SUBSCRIPTION CONFIRMED</span>
+      <div style="font-size: 3.2rem; margin: 12px 0;">🚨</div>
+      <h2 id="doneTitle" style="margin-bottom: 8px;">A:FIT Emergency 정기구독이 정상 접수되었습니다!</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem;">
-        눈건강 포커스 앰플이 내일 아침 오피스/자택 문 앞으로 신선하게 배송됩니다.
+        속편한 비상 활력 앰플이 내일 아침 문 앞으로 신선하게 배송됩니다.
       </p>
 
       <div style="background: var(--card-subtle); padding: 16px; border-radius: 14px; margin: 20px 0; font-size: 0.92rem; text-align: left; border: 1px solid var(--border);">
-        <div style="margin-bottom: 6px;">• <strong>구독 주문 번호:</strong> <span id="orderNum" style="color: var(--primary); font-weight: 800;">AFITT-20260814-3319</span></div>
+        <div style="margin-bottom: 6px;">• <strong>구독 주문 번호:</strong> <span id="orderNum" style="color: var(--primary); font-weight: 800;">AFITN-20260814-7732</span></div>
         <div style="margin-bottom: 6px;">• <strong>첫 배송 예정:</strong> 내일 아침 07:00 이전 (정밀 새벽 배송)</div>
-        <div>• <strong>테크 라벨:</strong> <span id="doneMsgText" style="color: var(--primary); font-weight: 800;">"임태현 매니저 검증: 판교 개발자 10초 눈건강 포커스 팩"</span></div>
+        <div>• <strong>비상 라벨:</strong> <span id="doneMsgText" style="color: var(--primary); font-weight: 800;">"최교대 간호사 검증: 나이트 근무 생명줄 10초 비상팩"</span></div>
       </div>
 
       <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="closeDoneModal()">
@@ -1171,20 +1171,20 @@
   <footer class="wrap footer">
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
       <div>
-        <strong style="color: var(--primary); font-size: 1.15rem;">A:FIT Tech & Focus (에이핏 테크)</strong>
-        <div style="font-size: 0.84rem; margin-top: 4px;">IT 개발자·오피스 노마드를 위한 안구 건조 방어 & 한 손 원터치 이중제형 정기구독 서비스</div>
+        <strong style="color: var(--primary); font-size: 1.15rem;">A:FIT Emergency & Night (에이핏 이머전시)</strong>
+        <div style="font-size: 0.84rem; margin-top: 4px;">3교대·야간근무자 비상 활력 & 속편한 이중제형 정기구독 서비스</div>
       </div>
       <div style="font-size: 0.84rem;">
-        테크 랩 고객센터: 1588-0000 (평일 09:00 ~ 18:00) | tech@afit.kr
+        이머전시 랩 고객센터: 1588-0000 (24시간 교대 응대) | emergency@afit.kr
       </div>
     </div>
-    <div>주식회사 에이핏 테크 | 웰니스 매니저: 임태현 | 사업자등록번호: 789-01-23456 | 통신판매업신고: 제2026-경기성남-0412호</div>
-    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Tech Inc. All rights reserved. (Interactive Storyboard Prototype)</div>
+    <div>주식회사 에이핏 이머전시 | 구매총괄: 최교대 | 사업자등록번호: 678-90-12345 | 통신판매업신고: 제2026-서울종로-0382호</div>
+    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Emergency Inc. All rights reserved. (Interactive Storyboard Prototype)</div>
   </footer>
 
   <!-- Interactive JavaScript -->
   <script>
-    // 1. Tech Chips & Dynamic Label Engraving
+    // 1. Shift Chips & Dynamic Label Engraving
     const chips = document.querySelectorAll('#condChips button');
     const curTitle = document.getElementById('curTitle');
     const curIng = document.getElementById('curIng');
@@ -1267,7 +1267,7 @@
       setTimeout(() => {
         closeCheckoutModal();
         const randNum = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('orderNum').textContent = `AFITT-20260814-${randNum}`;
+        document.getElementById('orderNum').textContent = `AFITN-20260814-${randNum}`;
         doneModal.classList.add('open');
       }, 500);
     });

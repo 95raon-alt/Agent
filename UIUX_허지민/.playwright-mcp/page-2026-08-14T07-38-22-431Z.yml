@@ -1,0 +1,234 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "A:FIT 대한민국 No.1 맞춤 웰니스" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - strong [ref=e5]: A:FIT
+        - generic [ref=e6]: 대한민국 No.1 맞춤 웰니스
+      - generic [ref=e7]:
+        - link "3대 핵심 가치" [ref=e8] [cursor=pointer]:
+          - /url: "#summary"
+        - link "7대 AI 맞춤 진단" [ref=e9] [cursor=pointer]:
+          - /url: "#curation"
+        - link "가성비 & 비교 매트릭스" [ref=e10] [cursor=pointer]:
+          - /url: "#calculator"
+        - link "10초 섭취 기전" [ref=e11] [cursor=pointer]:
+          - /url: "#mechanism"
+        - link "실구독자 후기" [ref=e12] [cursor=pointer]:
+          - /url: "#reviews"
+        - button "10초 웰니스 시작 →" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: 10초 웰니스 시작
+          - generic [ref=e15]: →
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: 대한민국 1등 10초 올인원 이중제형 솔루션
+        - heading "식사부터 영양제까지 10초 컷, 커피 한 잔 값으로 완성하는 바른 내일" [level=1] [ref=e21]
+        - paragraph [ref=e22]: 바쁜 아침 편의점 삼각김밥과 약통 4개를 뒤적거리던 일상은 이제 끝납니다. 7대 라이프스타일 맞춤 유효 성분을 물 없이 10초 만에 완벽 충전하세요.
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - strong [ref=e25]: 3,800원
+            - text: 한 끼+영양제 올인원
+          - generic [ref=e26]:
+            - strong [ref=e27]: 10초 컷
+            - text: 물 없이 원터치 흡수
+          - generic [ref=e28]:
+            - strong [ref=e29]: 1:1 맞춤 각인
+            - text: 7대 페르소나 라벨
+        - generic [ref=e30]:
+          - button "내 맞춤 웰니스 구독 시작하기 →" [ref=e31] [cursor=pointer]
+          - link "7대 라이프스타일 진단 체험" [ref=e32] [cursor=pointer]:
+            - /url: "#curation"
+      - generic [ref=e33]:
+        - generic [ref=e34]: A:FIT MASTER DUAL BOTTLE
+        - generic [ref=e35]: "\"박지안님,오늘도 퇴근까지 10초 파워!\""
+        - generic [ref=e42]: ✦ 상단 고효능 캡슐 2정 + 하단 10초 흡수 액상 포뮬러
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - generic [ref=e46]: AFITM-110 · 3-LINE CORE PRINCIPLES & TRUST
+        - heading "A:FIT이 약속하는 3대 핵심 원칙" [level=2] [ref=e47]
+        - paragraph [ref=e48]: 복잡한 웰니스 루틴을 3줄로 끝내는 라이프 체인징 혁신 (바디럽 모티브 신뢰 검증)
+      - generic [ref=e49]:
+        - article [ref=e50]:
+          - generic [ref=e51]: PRINCIPLE 01
+          - heading "01. 개인 맞춤 효능" [level=3] [ref=e52]
+          - paragraph [ref=e53]: 직장인, 운동선수, 3교대, IT 개발자 등 내 라이프스타일에 맞춘 유효 성분을 AI가 1:1로 정밀 처방합니다.
+        - article [ref=e54]:
+          - generic [ref=e55]: PRINCIPLE 02
+          - heading "02. 압도적 식비 절감" [level=3] [ref=e56]
+          - paragraph [ref=e57]: 편의점 한 끼 8,500원 대신 하루 3,800원으로 필수 영양과 지속 가능한 에너지를 가뿐하게 챙깁니다.
+        - article [ref=e58]:
+          - generic [ref=e59]: PRINCIPLE 03
+          - heading "03. 10초 원핸드 섭취" [level=3] [ref=e60]
+          - paragraph [ref=e61]: 물컵도 쉐이커도 필요 없이, 상단 캡을 눌러 10초 만에 마시는 특허받은 올인원 이중제형입니다.
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e64]: 🏅
+          - text: 식약처 건강기능식품 인정
+        - generic [ref=e65]:
+          - generic [ref=e66]: 🏭
+          - text: 우수 건강기능식품 제조 GMP
+        - generic [ref=e67]:
+          - generic [ref=e68]: 🌿
+          - text: 프랑스 EVE VEGAN 인증
+        - generic [ref=e69]:
+          - generic [ref=e70]: ♻️
+          - text: 180일 토양 생분해 시험 완료
+    - generic [ref=e72]:
+      - generic [ref=e73]:
+        - generic [ref=e74]: AFITM-120 · MASTER AI CURATION
+        - heading "7대 라이프스타일 1:1 맞춤 배합 진단" [level=2] [ref=e75]
+        - paragraph [ref=e76]: 나에게 맞는 페르소나 칩을 선택하면 최적 처방과 실시간 각인 라벨이 즉시 동기화됩니다.
+      - generic [ref=e77]:
+        - button "💼 2030 직장인 (피로·식비)" [ref=e78] [cursor=pointer]
+        - button "🧬 R&D 바이오 (정밀임상)" [ref=e79] [cursor=pointer]
+        - button "⚡ 스포츠 Pro (당류 0g)" [ref=e80] [cursor=pointer]
+        - button "💧 스킨 Glow (속건조·미백)" [ref=e81] [cursor=pointer]
+        - button "🌱 클린 Eco (생분해)" [ref=e82] [cursor=pointer]
+        - button "🚨 3교대 Emergency (속편한 비상)" [ref=e83] [cursor=pointer]
+        - button "💻 IT Tech (눈건강·포커스)" [ref=e84] [cursor=pointer]
+      - generic [ref=e85]:
+        - generic [ref=e86]:
+          - generic [ref=e87]: A:FIT AI 정밀 맞춤 분석 리포트
+          - heading "💼 2030 직장인 식비·피로 세이빙 팩" [level=3] [ref=e88]
+          - generic [ref=e89]:
+            - generic [ref=e90]: 114,000원
+            - generic [ref=e91]: 30% OFF
+            - strong [ref=e92]: 월 79,800원
+            - generic [ref=e93]: (1일 3,800원)
+          - generic [ref=e94]:
+            - generic [ref=e95]:
+              - strong [ref=e96]: "• 특화 기능성 바이오 원료:"
+              - text: 고순도 밀크씨슬 130mg + 활성 비타민 B군 500% + 타우린
+            - generic [ref=e97]:
+              - strong [ref=e98]: "• 이중제형 구성:"
+              - text: 고농축 정제 2정 + 10초 고활력 액상 포뮬러 50ml
+            - generic [ref=e99]:
+              - strong [ref=e100]: "• 권장 섭취 타이밍:"
+              - text: 아침 출근길 또는 점심 식후 10초 원샷
+          - button "첫 달 30% 할인가로 맞춤 구독하기 →" [ref=e101] [cursor=pointer]
+        - generic [ref=e102]:
+          - generic [ref=e103]: AFITM-121 · 실시간 맞춤 각인 라벨
+          - generic [ref=e104]:
+            - generic [ref=e105]: "[A:FIT MASTER CUSTOM FORMULA]"
+            - generic [ref=e106]: "\"박지안님, 오늘도 퇴근까지 10초 파워!\""
+          - generic [ref=e107]: ✦ 매월 정기구독 시 내 이름과 응원 문구가 보틀 전면에 실시간 각인 배송됩니다.
+    - generic [ref=e109]:
+      - generic [ref=e110]:
+        - generic [ref=e111]: AFITM-130 · VALUE & COMPARISON MATRIX
+        - heading "가성비 절감 계산기 & 비교 매트릭스" [level=2] [ref=e112]
+        - paragraph [ref=e113]: 한 달 섭취 일수를 조절하여 절감되는 식비와 시간을 직접 계산해보세요.
+      - generic [ref=e114]:
+        - generic [ref=e115]:
+          - generic [ref=e116]: "월간 구독 일수 선택: 30일"
+          - generic [ref=e117]: 편의점 한 끼(8,500원) 대비 일 4,700원 절감 기준
+        - 'slider "월간 구독 일수 선택: 30일" [ref=e119]': "30"
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]: 한 달 절약되는 식비/영양제 비용
+            - strong [ref=e123]: 141,000원 절약
+          - generic [ref=e124]:
+            - generic [ref=e125]: 한 달 절약되는 아침 준비/식사 시간
+            - strong [ref=e126]: 약 10.0시간 절약
+        - table [ref=e127]:
+          - rowgroup [ref=e128]:
+            - row [ref=e129]:
+              - columnheader "비교 항목" [ref=e130]
+              - columnheader "시중 편의점 식사 + 개별 영양제" [ref=e131]
+              - columnheader "A:FIT 올인원 맞춤 이중제형" [ref=e132]
+              - columnheader "구독자 혜택" [ref=e133]
+          - rowgroup [ref=e134]:
+            - row [ref=e135]:
+              - cell [ref=e136]:
+                - strong [ref=e137]: 1회 비용
+              - cell "8,500원 ~ 12,000원" [ref=e138]
+              - cell [ref=e139]:
+                - strong [ref=e140]: 3,800원
+              - cell "매월 55% 식비 절감" [ref=e141]
+            - row [ref=e142]:
+              - cell [ref=e143]:
+                - strong [ref=e144]: 섭취 시간
+              - cell "식사 20분 + 영양제 복용 3분" [ref=e145]
+              - cell [ref=e146]:
+                - strong [ref=e147]: 단 10초 원샷
+              - cell "물 없이 즉시 흡수" [ref=e148]
+            - row [ref=e149]:
+              - cell [ref=e150]:
+                - strong [ref=e151]: 유효 흡수율
+              - cell "정제형 12.3% (위장 손실)" [ref=e152]
+              - cell [ref=e153]:
+                - strong [ref=e154]: 92.4% 액상 진피 도달
+              - cell "7.5배 높은 흡수 효율" [ref=e155]
+    - generic [ref=e157]:
+      - generic [ref=e158]:
+        - generic [ref=e159]: AFITM-140 · 10s DUAL MECHANISM
+        - heading "물 없이 끝내는 10초 이중제형 메커니즘" [level=2] [ref=e160]
+        - paragraph [ref=e161]: 출근길, 사무실, 헬스장 어디서나 10초 만에 완벽 흡수
+      - generic [ref=e162]:
+        - generic [ref=e163]:
+          - generic [ref=e164]: STEP 01
+          - heading "1. 원터치 캡 딸깍" [level=3] [ref=e165]
+          - paragraph [ref=e166]: 상단 캡을 가볍게 누르면 밀폐된 맞춤 고농축 정제 챔버가 열립니다.
+        - generic [ref=e167]:
+          - generic [ref=e168]: STEP 02
+          - heading "2. 정제 2정 톡 낙하" [level=3] [ref=e169]
+          - paragraph [ref=e170]: 산화 없이 신선하게 보관된 정제가 하단 액상 포뮬러로 바로 낙하합니다.
+        - generic [ref=e171]:
+          - generic [ref=e172]: STEP 03
+          - heading "3. 10초 원샷 완벽 흡수" [level=3] [ref=e173]
+          - paragraph [ref=e174]: 물 없이 상큼한 액상과 함께 10초 만에 마셔 하루 활력을 충전합니다.
+    - generic [ref=e176]:
+      - generic [ref=e177]:
+        - generic [ref=e178]: AFITM-150 · REAL SUBSCRIBERS REVIEWS
+        - heading "7대 페르소나 실명 구독 후기 (평점 ★ 4.95/5.0)" [level=2] [ref=e179]
+        - paragraph [ref=e180]: 12,000명이 경험한 대한민국 1등 맞춤 웰니스의 리얼 보이스
+      - generic [ref=e181]:
+        - generic [ref=e182]:
+          - generic [ref=e183]:
+            - generic [ref=e184]:
+              - generic [ref=e185]: 박
+              - generic [ref=e186]:
+                - strong [ref=e187]: 박지안 (29세)
+                - generic [ref=e188]: IT 서비스 기획자 / 2030 직장인
+            - generic [ref=e189]: ★★★★★
+            - paragraph [ref=e190]: "\"아침마다 편의점에서 돈 쓰고 영양제 깜빡하던 제가, A:FIT으로 매달 식비 14만 원 아끼고 출근길 10초 만에 활력 충전하고 있어요!\""
+          - generic [ref=e191]: ✓ 6개월 정기구독 중
+        - generic [ref=e192]:
+          - generic [ref=e193]:
+            - generic [ref=e194]:
+              - generic [ref=e195]: 강
+              - generic [ref=e196]:
+                - strong [ref=e197]: 강마라톤 (31세)
+                - generic [ref=e198]: 러닝 크루 리더 / 하프마라톤 완주
+            - generic [ref=e199]: ★★★★★
+            - paragraph [ref=e200]: "\"당류 0g에 BCAA 5,000mg이 들어가 있어서 러닝 직전에 10초 만에 마시기 너무 좋습니다. 체지방 걱정 없이 완벽해요!\""
+          - generic [ref=e201]: ✓ 5개월 정기구독 중
+        - generic [ref=e202]:
+          - generic [ref=e203]:
+            - generic [ref=e204]:
+              - generic [ref=e205]: 김
+              - generic [ref=e206]:
+                - strong [ref=e207]: 김응급 (29세)
+                - generic [ref=e208]: 대학병원 응급실 3교대 간호사
+            - generic [ref=e209]: ★★★★★
+            - paragraph [ref=e210]: "\"나이트 근무 때 빈속에 마셔도 속 쓰림이 0%예요. 병동 동기들도 전부 A:FIT Emergency로 갈아탔습니다.\""
+          - generic [ref=e211]: ✓ 4개월 정기구독 중
+    - generic [ref=e213]:
+      - generic [ref=e214]:
+        - generic [ref=e215]: AFITM-160 · FAQ
+        - heading "자주 묻는 질문" [level=2] [ref=e216]
+      - group [ref=e217]:
+        - generic "정말 물 없이 바로 마셔도 목 넘김이 편안한가요? −" [ref=e218] [cursor=pointer]
+        - paragraph [ref=e219]: 네! 특허받은 10초 이중제형 설계로 상단 정제가 고순도 액상 앰플과 함께 부드럽게 넘어가 물 없이도 10초 만에 완벽하게 섭취됩니다.
+      - group [ref=e220]:
+        - generic "매달 보틀에 새겨지는 각인 문구를 변경할 수 있나요? +" [ref=e221] [cursor=pointer]
+      - group [ref=e222]:
+        - generic "정기구독 해지나 일시정지는 언제든 가능한가요? +" [ref=e223] [cursor=pointer]
+  - contentinfo [ref=e224]:
+    - generic [ref=e225]:
+      - generic [ref=e226]:
+        - strong [ref=e227]: A:FIT (주식회사 에이핏)
+        - generic [ref=e228]: 대한민국 No.1 10초 올인원 이중제형 맞춤 웰니스 D2C 플랫폼
+      - generic [ref=e229]: "고객만족센터: 1588-0000 (평일 09:00 ~ 18:00) | contact@afit.kr"
+    - generic [ref=e230]: "주식회사 에이핏 | 대표이사: 허지민 | 사업자등록번호: 123-45-67890 | 통신판매업신고: 제2026-서울강남-0198호"
+    - generic [ref=e231]: Copyright © 2026 A:FIT Inc. All rights reserved. (7-Persona Integrated Master Prototype)
