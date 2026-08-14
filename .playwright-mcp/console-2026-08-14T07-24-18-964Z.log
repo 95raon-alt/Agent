@@ -1,0 +1,87 @@
+[     349ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://bodyluv.kr/%7B#pc_thumb_url%7D:0
+[    1326ms] [WARNING] Failed - Get Cafe24 account @ https://static.shoplive.cloud/shoplive.js:0
+[    1414ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://bodyluv.kr/%7B#pc_thumb_url%7D:0
+[    1419ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://widgets.cre.ma/bodyluv.kr/init.js:0
+[    1421ms] [LOG] 배너매니저 실행 @ https://bodyluv.kr/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/0d9609eeb689f47c8bcd711284e19f4d.js?v=1786692260295:0
+[    1421ms] [LOG] 프로젝트: bodyluv @ https://bodyluv.kr/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/0d9609eeb689f47c8bcd711284e19f4d.js?v=1786692260295:0
+[    1422ms] [LOG] 수정일자: 2025-12-02 10:02:47 @ https://bodyluv.kr/web/upload/appfiles/ZaReJam3QiELznoZeGGkMG/0d9609eeb689f47c8bcd711284e19f4d.js?v=1786692260295:0
+[    1495ms] [LOG] chrome @ https://cdn.snapfit.co.kr/js/spm_f_common.js:1826
+[    1880ms] [LOG] %c** 웹퍼블릭 배너매니저 v 2.4 ** color: white;background: linear-gradient(to right, #36d1dc, #5b86e5);padding: 8px;font-size: 16px;font-weight: bold;border-radius: 4px @ https://bodyluv.kr/web/upload/appfiles/AIFBrluHGdhkEsW6ewuLoA/c812682f651e2a7474789a23280c7638.js?v=1786692260447:0
+[    1880ms] [LOG] %c최종 수정일자: %c2026/08/14 16:11:06 color: #36d1dc; font-weight: bold; color: #5b86e5 @ https://bodyluv.kr/web/upload/appfiles/AIFBrluHGdhkEsW6ewuLoA/c812682f651e2a7474789a23280c7638.js?v=1786692260447:0
+[    1880ms] [LOG] %c프로젝트: %cbodyluv color: #36d1dc; font-weight: bold; color: #5b86e5 @ https://bodyluv.kr/web/upload/appfiles/AIFBrluHGdhkEsW6ewuLoA/c812682f651e2a7474789a23280c7638.js?v=1786692260447:0
+[    1958ms] [ERROR] Failed to load resource: the server responded with a status of 404 () @ https://bodyluv.kr/%7B#pc_thumb_url%7D:0
+[    2054ms] [WARNING] Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters @ https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js:12
+[    2082ms] [LOG] %c 해시코퍼레이션 : agency@hashcorp.kr
+ 카페24 리뉴얼 및 커스텀 작업 background: #222; color: #ffe64d; font-weight: bold; font-size: 18px; padding: 8px 24px; border-radius: 6px; @ https://bodyluv.kr/ind-script/optimizer_user.php?filename=lZJNUsMwDIX3Tbc9hzdwEk4gZBEr8V8tudS3b0I7HQYSElaWZ75nSe9ZLHWWhPtoZOT4-mI697gPYgJwPA5ykl8UVtEUZiYXmwsjLXPzI8lWT8ZDS1UNgq6jgoWzbnUUbZ62oMDXDJH8szhoARypLAsf072DMM7y4VyptOOHp6t4tlQOYc2Kn9KvYnVFTCGkuNOsc2UcuwvT587WyTZfL8vw92DvPm1Nkct0ohoBT90fIXcOxGEq2YAIqdz3zK1w73S_xJIC-3_8oz5NEe3DQ_XK4lJ-c5wzx37S3QA&type=js&k=b300326b830ff6e1f1dbdd5a059dcc3a2210046c&t=1776171707&user=T:1715
+[    2087ms] TypeError: Cannot read properties of null (reading 'appendChild')
+    at setSelectedTab (https://bodyluv.kr/ind-script/optimizer_user.php?filename=lZJNUsMwDIX3Tbc9hzdwEk4gZBEr8V8tudS3b0I7HQYSElaWZ75nSe9ZLHWWhPtoZOT4-mI697gPYgJwPA5ykl8UVtEUZiYXmwsjLXPzI8lWT8ZDS1UNgq6jgoWzbnUUbZ62oMDXDJH8szhoARypLAsf072DMM7y4VyptOOHp6t4tlQOYc2Kn9KvYnVFTCGkuNOsc2UcuwvT587WyTZfL8vw92DvPm1Nkct0ohoBT90fIXcOxGEq2YAIqdz3zK1w73S_xJIC-3_8oz5NEe3DQ_XK4lJ-c5wzx37S3QA&type=js&k=b300326b830ff6e1f1dbdd5a059dcc3a2210046c&t=1776171707&user=T:1790:25)
+    at scrollSpy (https://bodyluv.kr/ind-script/optimizer_user.php?filename=lZJNUsMwDIX3Tbc9hzdwEk4gZBEr8V8tudS3b0I7HQYSElaWZ75nSe9ZLHWWhPtoZOT4-mI697gPYgJwPA5ykl8UVtEUZiYXmwsjLXPzI8lWT8ZDS1UNgq6jgoWzbnUUbZ62oMDXDJH8szhoARypLAsf072DMM7y4VyptOOHp6t4tlQOYc2Kn9KvYnVFTCGkuNOsc2UcuwvT587WyTZfL8vw92DvPm1Nkct0ohoBT90fIXcOxGEq2YAIqdz3zK1w73S_xJIC-3_8oz5NEe3DQ_XK4lJ-c5wzx37S3QA&type=js&k=b300326b830ff6e1f1dbdd5a059dcc3a2210046c&t=1776171707&user=T:1775:13)
+    at registerTabEvent (https://bodyluv.kr/ind-script/optimizer_user.php?filename=lZJNUsMwDIX3Tbc9hzdwEk4gZBEr8V8tudS3b0I7HQYSElaWZ75nSe9ZLHWWhPtoZOT4-mI697gPYgJwPA5ykl8UVtEUZiYXmwsjLXPzI8lWT8ZDS1UNgq6jgoWzbnUUbZ62oMDXDJH8szhoARypLAsf072DMM7y4VyptOOHp6t4tlQOYc2Kn9KvYnVFTCGkuNOsc2UcuwvT587WyTZfL8vw92DvPm1Nkct0ohoBT90fIXcOxGEq2YAIqdz3zK1w73S_xJIC-3_8oz5NEe3DQ_XK4lJ-c5wzx37S3QA&type=js&k=b300326b830ff6e1f1dbdd5a059dcc3a2210046c&t=1776171707&user=T:1737:9)
+    at HTMLDocument.<anonymous> (https://bodyluv.kr/ind-script/optimizer_user.php?filename=lZJNUsMwDIX3Tbc9hzdwEk4gZBEr8V8tudS3b0I7HQYSElaWZ75nSe9ZLHWWhPtoZOT4-mI697gPYgJwPA5ykl8UVtEUZiYXmwsjLXPzI8lWT8ZDS1UNgq6jgoWzbnUUbZ62oMDXDJH8szhoARypLAsf072DMM7y4VyptOOHp6t4tlQOYc2Kn9KvYnVFTCGkuNOsc2UcuwvT587WyTZfL8vw92DvPm1Nkct0ohoBT90fIXcOxGEq2YAIqdz3zK1w73S_xJIC-3_8oz5NEe3DQ_XK4lJ-c5wzx37S3QA&type=js&k=b300326b830ff6e1f1dbdd5a059dcc3a2210046c&t=1776171707&user=T:1799:5)
+[    2089ms] [LOG] [shoplive plugin]: run @ https://static.shoplive.cloud/shoplive.js:0
+[    2224ms] [LOG] twt pixel activated @ :0
+[    2228ms] [LOG] [GTM] 페이지뷰 이벤트 전송: {페이지 제목: BODYLUV 바디럽 | 샤워기 리필 필터, UV 칫솔살균기, 딥슬립베개, 욕실용품, 페이지 URL: https://bodyluv.kr/, 페이지 경로: /, 이전 페이지: direct, 페이지 유형: 메인} @ :1
+[    2234ms] TypeError: window.mixpanel.track is not a function
+    at <anonymous>:1:137
+    at <anonymous>:1:153
+    at https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:1126:429
+    at NS (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:1128:31)
+    at Kd.MS (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:1125:92)
+    at Kd.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:457:187)
+    at l.apply (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:378:465)
+    at fb (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:341:750)
+    at eb (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:341:501)
+    at Kd.<anonymous> (https://www.googletagmanager.com/gtm.js?id=GTM-PG6W2L9:402:473)
+[    2717ms] [LOG] null @ https://push.snapfit.co.kr/Popup/show?q=%7B%22popup_id%22%3A%2213%22%2C%22device%22%3A%22pc%22%2C%22sf_store_name%22%3A%22bodyluv%22%2C%22spm_spmuserid%22%3A%222342eb8cd061f5b1a71df47dec0eeae3%22%7D:129
+[    2851ms] [LOG] 560 869 560 869 @ https://cdn.snapfit.co.kr/js/spm_f_common.js:300
+[    3123ms] [LOG] resize caller @ https://push.snapfit.co.kr/js/layout_common.js?v=20201117:343
+[    3458ms] [LOG] Removed existing live mini preview. @ https://static.shoplive.cloud/shoplive.js:0
+[    4338ms] [LOG] AlphaReview - CDP Integration initialized @ https://static.alphwidget.com/script/Common-Script/PRODUCTION/alphacore_alpha_data.js?vs=20251202155655.1&client_id=tgHZp6LCG5KuklqvIYgrtB:169
+[    4341ms] [LOG] start push main script loading undefined @ https://static.alphwidget.com/script/Push-Script/PRODUCTION/alphapush_main.js?vs=20251202155653.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4341ms] [LOG] %c 구매 과정을 편하게, %c알파푸시%c
+Homepage: https://store.cafe24.com/kr/apps/20261 
+            background: #246be7;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 400;
+            padding: 10px 0px 10px 18px;
+            border-radius: 10px 0 0 10px;
+            box-shadow: 0 3px 10px rgba(62, 126, 255, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+            line-height: 1.5;
+           
+            background: #246be7;
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 10px 18px 10px 0px;
+            border-radius: 0 10px 10px 0;
+            box-shadow: 0 3px 10px rgba(62, 126, 255, 0.3);
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", sans-serif;
+            line-height: 1.5;
+           background: none; padding: 0; color: #FFFFFF; font-size: 12px; font-weight: bold; margin-top: 4px; @ https://static.alphwidget.com/script/Push-Script/PRODUCTION/alphapush_main.js?vs=20251202155653.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4375ms] [LOG] [AppAlphaUpsellSharedUtils] Initializing... @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4375ms] [LOG] [AppAlphaUpsellSharedUtils] 즉시 초기화 시작 @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4376ms] [LOG] [AppAlphaUpsellSharedUtils] EC_PATH_ROLE MAIN @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4376ms] [LOG] [AppAlphaUpsellSharedUtils] CAFE24API Initialized. @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4383ms] [LOG] [AppAlphaUpsellRecommendation] Initializing... @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:10869
+[    4384ms] [LOG] [AppAlphaUpsellState] Initializing... @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:10869
+[    4384ms] [LOG] [AppAlphaUpsellReview] Initializing... @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:10869
+[    4440ms] [LOG] AlphaReview - Existing DB 'ALPHAREVIEW_FRONT_DB_SHOP_1' deleted successfully or did not exist. @ https://static.alphwidget.com/script/Common-Script/PRODUCTION/alphacore_alpha_data.js?vs=20251202155655.1&client_id=tgHZp6LCG5KuklqvIYgrtB:63
+[    4451ms] [LOG] SKIN_CODE:  skin54 @ https://app4you.cafe24.com/SmartPopup/tunnel/scriptTagContent:340
+[    4454ms] [WARNING] [Meta pixel] 599994466873494 is unavailable on this website due to it's traffic permission settings. Go to https://www.facebook.com/business/help/572690630080597 to learn more. @ https://connect.facebook.net/en_US/fbevents.js:197
+[    4456ms] [LOG] AlphaReview - ALPHAREVIEW_FRONT_DB_SHOP_1 init. @ https://static.alphwidget.com/script/Common-Script/PRODUCTION/alphacore_alpha_data.js?vs=20251202155655.1&client_id=tgHZp6LCG5KuklqvIYgrtB:77
+[    4456ms] [LOG] AlphaReview - AlphaData init. @ https://static.alphwidget.com/script/Common-Script/PRODUCTION/alphacore_alpha_data.js?vs=20251202155655.1&client_id=tgHZp6LCG5KuklqvIYgrtB:548
+[    4805ms] [WARNING] [AppAlphaUpsellSharedUtils] 고객정보 조회 재시도 최종 실패: Error: getCAFE24CustomerInfo returned null
+    at https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:1:383656
+    at async https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:1:383527
+    at async Le (https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:1:383474)
+    at async https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:1:393582 @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4947ms] [LOG] [AppAlphaUpsellSharedUtils] 모든 필수 데이터 로드 완료. @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4947ms] [LOG] [AppAlphaUpsellSharedUtils] 유틸 스크립트 로드 완료 - 위젯 초기화 가능 @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4978ms] [WARNING] [UpsellWidgetTimesale] 위젯이 비활성화 상태입니다 @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    4979ms] [WARNING] [UpsellCartSideBar] 위젯이 비활성화 되어 있습니다. @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:9865
+[    4980ms] [LOG] [AppAlphaUpsellState] alphaDataModule 세션 연동 완료 @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:10869
+[    5038ms] [LOG] [AppAlphaUpsellSharedUtils] PV 이벤트 전송 완료. @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[    5041ms] [LOG] [AppAlphaUpsellSharedUtils] 상세 페이지가 아니므로 ProductAdd 초기화 생략 @ https://static.alphwidget.com/script/Upsell-Script/PRODUCTION/alpha-upsell-shadow-bundle.js?vs=20260729111615.1&client_id=tgHZp6LCG5KuklqvIYgrtB:0
+[   32056ms] [WARNING] Swiper Loop Warning: The number of slides is not enough for loop mode, it will be disabled or not function properly. You need to add more slides (or make duplicates) or lower the values of slidesPerView and slidesPerGroup parameters @ https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js:12
