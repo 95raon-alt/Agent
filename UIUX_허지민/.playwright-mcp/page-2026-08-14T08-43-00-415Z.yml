@@ -1,0 +1,191 @@
+- generic [active] [ref=f2e1]:
+  - banner [ref=f2e2]:
+    - navigation [ref=f2e3]:
+      - link "A:FIT 대한민국 No.1 맞춤 웰니스" [ref=f2e4] [cursor=pointer]:
+        - /url: 메인페이지_스토리보드_와이드.html
+        - strong [ref=f2e5]: A:FIT
+        - generic [ref=f2e6]: 대한민국 No.1 맞춤 웰니스
+      - generic [ref=f2e7]:
+        - link "메인 홈" [ref=f2e8] [cursor=pointer]:
+          - /url: 메인페이지_스토리보드_와이드.html
+        - link "브랜드 소개" [ref=f2e9] [cursor=pointer]:
+          - /url: 브랜드소개_스토리보드.html
+        - link "제품 라인업" [ref=f2e10] [cursor=pointer]:
+          - /url: "#"
+        - link "가성비 계산기" [ref=f2e11] [cursor=pointer]:
+          - /url: 메인페이지_스토리보드_와이드.html#calculator
+        - link "구독자 후기" [ref=f2e12] [cursor=pointer]:
+          - /url: 메인페이지_스토리보드_와이드.html#reviews
+        - button "10초 웰니스 시작 →" [ref=f2e13] [cursor=pointer]:
+          - generic [ref=f2e14]: 10초 웰니스 시작
+          - generic [ref=f2e15]: →
+  - main [ref=f2e16]:
+    - generic [ref=f2e18]:
+      - generic [ref=f2e19]:
+        - generic [ref=f2e20]: CAT-100 · 7 LIFESTYLE FORMULAS
+        - heading "내 라이프스타일에 맞춘 7대 올인원 이중제형 컬렉션" [level=1] [ref=f2e21]
+        - paragraph [ref=f2e22]: 직장인, 운동선수, 3교대 간호사, IT 개발자까지. 당신의 하루 패턴에 가장 정밀하게 최적화된 10초 웰니스 포뮬러를 탐색하세요.
+      - generic [ref=f2e23]:
+        - button "전체보기 (7)" [ref=f2e24] [cursor=pointer]
+        - button "💼 2030 직장인" [ref=f2e25] [cursor=pointer]
+        - button "🧬 R&D 바이오" [ref=f2e26] [cursor=pointer]
+        - button "⚡ 스포츠 Pro" [ref=f2e27] [cursor=pointer]
+        - button "💧 스킨 Glow" [ref=f2e28] [cursor=pointer]
+        - button "🌱 클린 Eco" [ref=f2e29] [cursor=pointer]
+        - button "🚨 3교대 Emergency" [ref=f2e30] [cursor=pointer]
+        - button "💻 IT Tech" [ref=f2e31] [cursor=pointer]
+      - generic [ref=f2e32]:
+        - generic [ref=f2e33]:
+          - generic [ref=f2e34]:
+            - generic [ref=f2e35]: 💼
+            - generic [ref=f2e36]: 2030 직장인 식비·피로 세이빙
+            - heading "A:FIT Worker Saving Pack" [level=3] [ref=f2e37]
+            - paragraph [ref=f2e38]: 고순도 밀크씨슬 130mg + 활성 비타민 B군 500% + 타우린으로 출근길 10초 활력 충전.
+          - generic [ref=f2e39]:
+            - generic [ref=f2e40]:
+              - generic [ref=f2e41]: 114,000원
+              - generic [ref=f2e42]: 30% OFF
+              - strong [ref=f2e43]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e44] [cursor=pointer]
+        - generic [ref=f2e45]:
+          - generic [ref=f2e46]:
+            - generic [ref=f2e47]: 🧬
+            - generic [ref=f2e48]: R&D 바이오 정밀 임상 사이언스
+            - heading "A:FIT Bio Science LAB" [level=3] [ref=f2e49]
+            - paragraph [ref=f2e50]: 3단계 바이오 문진 매칭 유효성분 + 항산화 콤플렉스로 92.4% 다이렉트 진피 흡수.
+          - generic [ref=f2e51]:
+            - generic [ref=f2e52]:
+              - generic [ref=f2e53]: 114,000원
+              - generic [ref=f2e54]: 30% OFF
+              - strong [ref=f2e55]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e56] [cursor=pointer]
+        - generic [ref=f2e57]:
+          - generic [ref=f2e58]:
+            - generic [ref=f2e59]: ⚡
+            - generic [ref=f2e60]: 스포츠 액티브 당류 0g
+            - heading "A:FIT Active Pro Booster" [level=3] [ref=f2e61]
+            - paragraph [ref=f2e62]: 순수 BCAA 5,000mg + 구연산 마그네슘 + 전해질 포뮬러로 운동 전 10초 부스팅.
+          - generic [ref=f2e63]:
+            - generic [ref=f2e64]:
+              - generic [ref=f2e65]: 114,000원
+              - generic [ref=f2e66]: 30% OFF
+              - strong [ref=f2e67]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e68] [cursor=pointer]
+        - generic [ref=f2e69]:
+          - generic [ref=f2e70]:
+            - generic [ref=f2e71]: 💧
+            - generic [ref=f2e72]: 스킨 바이오 속건조·진피 광채
+            - heading "A:FIT Skin Glow Ampoule" [level=3] [ref=f2e73]
+            - paragraph [ref=f2e74]: 초저분자 액상 콜라겐 3,270mg + 순수 글루타치온 + 히알루론산 속건조 순삭 팩.
+          - generic [ref=f2e75]:
+            - generic [ref=f2e76]:
+              - generic [ref=f2e77]: 114,000원
+              - generic [ref=f2e78]: 30% OFF
+              - strong [ref=f2e79]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e80] [cursor=pointer]
+        - generic [ref=f2e81]:
+          - generic [ref=f2e82]:
+            - generic [ref=f2e83]: 🌱
+            - generic [ref=f2e84]: 친환경 100% EVE 비건 & 생분해
+            - heading "A:FIT Clean Eco Vegan" [level=3] [ref=f2e85]
+            - paragraph [ref=f2e86]: 프랑스 EVE 비건 B12 1,000% + 유기농 스피루리나 500mg 100% 식물성 클린 에너지.
+          - generic [ref=f2e87]:
+            - generic [ref=f2e88]:
+              - generic [ref=f2e89]: 114,000원
+              - generic [ref=f2e90]: 30% OFF
+              - strong [ref=f2e91]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e92] [cursor=pointer]
+        - generic [ref=f2e93]:
+          - generic [ref=f2e94]:
+            - generic [ref=f2e95]: 🚨
+            - generic [ref=f2e96]: 3교대·야간근무 속편한 비상활력
+            - heading "A:FIT Emergency Care" [level=3] [ref=f2e97]
+            - paragraph [ref=f2e98]: L-테아닌 200mg + 위점막 보호 양배추농축액 빈속에도 속 쓰림 0% 비상 케어.
+          - generic [ref=f2e99]:
+            - generic [ref=f2e100]:
+              - generic [ref=f2e101]: 114,000원
+              - generic [ref=f2e102]: 30% OFF
+              - strong [ref=f2e103]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e104] [cursor=pointer]
+        - generic [ref=f2e105]:
+          - generic [ref=f2e106]:
+            - generic [ref=f2e107]: 💻
+            - generic [ref=f2e108]: IT 개발자 모니터 눈건강·포커스
+            - heading "A:FIT Tech Focus Eye" [level=3] [ref=f2e109]
+            - paragraph [ref=f2e110]: 루테인지아잔틴 20mg + 아스타잔틴 6mg + L-티로신 판교 개발자 10초 눈건강 포커스.
+          - generic [ref=f2e111]:
+            - generic [ref=f2e112]:
+              - generic [ref=f2e113]: 114,000원
+              - generic [ref=f2e114]: 30% OFF
+              - strong [ref=f2e115]: 월 79,800원
+            - button "10초 맞춤 구독하기 →" [ref=f2e116] [cursor=pointer]
+    - generic [ref=f2e118]:
+      - generic [ref=f2e119]:
+        - generic [ref=f2e120]: CAT-130 · FORMULA COMPARISON MATRIX
+        - heading "7대 라인업 맞춤 스펙 한눈에 비교" [level=2] [ref=f2e121]
+      - table [ref=f2e122]:
+        - rowgroup [ref=f2e123]:
+          - row [ref=f2e124]:
+            - columnheader "라인업 명칭" [ref=f2e125]
+            - columnheader "주요 특화 성분" [ref=f2e126]
+            - columnheader "제형 특성" [ref=f2e127]
+            - columnheader "추천 섭취 타이밍" [ref=f2e128]
+            - columnheader "첫달 구독가" [ref=f2e129]
+        - rowgroup [ref=f2e130]:
+          - row [ref=f2e131]:
+            - cell [ref=f2e132]:
+              - strong [ref=f2e133]: 💼 2030 직장인
+            - cell "밀크씨슬 130mg + 활성B군 500%" [ref=f2e134]
+            - cell "캡슐 2정 + 피로케어 액상 50ml" [ref=f2e135]
+            - cell "아침 출근길 10초 원샷" [ref=f2e136]
+            - cell "79,800원 (30% OFF)" [ref=f2e137]
+          - row [ref=f2e138]:
+            - cell [ref=f2e139]:
+              - strong [ref=f2e140]: 🧬 R&D 바이오
+            - cell "3단계 문진 매칭 + 항산화 콤플렉스" [ref=f2e141]
+            - cell "정밀 펠릿 2정 + 사이언스 액상" [ref=f2e142]
+            - cell "기상 직후 공복 10초" [ref=f2e143]
+            - cell "79,800원 (30% OFF)" [ref=f2e144]
+          - row [ref=f2e145]:
+            - cell [ref=f2e146]:
+              - strong [ref=f2e147]: ⚡ 스포츠 Pro
+            - cell "순수 BCAA 5,000mg + 당류 0g" [ref=f2e148]
+            - cell "아미노 정제 2정 + 전해질 액상" [ref=f2e149]
+            - cell "운동 20분 전 10초" [ref=f2e150]
+            - cell "79,800원 (30% OFF)" [ref=f2e151]
+          - row [ref=f2e152]:
+            - cell [ref=f2e153]:
+              - strong [ref=f2e154]: 💧 스킨 Glow
+            - cell "초저분자 콜라겐 3,270mg + 글루타치온" [ref=f2e155]
+            - cell "비타민C 정제 + 진피 히알루론산" [ref=f2e156]
+            - cell "아침 스킨케어 직후 10초" [ref=f2e157]
+            - cell "79,800원 (30% OFF)" [ref=f2e158]
+          - row [ref=f2e159]:
+            - cell [ref=f2e160]:
+              - strong [ref=f2e161]: 🌱 클린 Eco
+            - cell "프랑스 EVE 비건 B12 + 스피루리나" [ref=f2e162]
+            - cell "100% 식물성 정제 + 유기농 액상" [ref=f2e163]
+            - cell "아침 식전 10초" [ref=f2e164]
+            - cell "79,800원 (30% OFF)" [ref=f2e165]
+          - row [ref=f2e166]:
+            - cell [ref=f2e167]:
+              - strong [ref=f2e168]: 🚨 3교대 Emergency
+            - cell "L-테아닌 200mg + 양배추농축액" [ref=f2e169]
+            - cell "스트레스 완화 정제 + 위보호 액상" [ref=f2e170]
+            - cell "나이트 근무 투입 30분 전" [ref=f2e171]
+            - cell "79,800원 (30% OFF)" [ref=f2e172]
+          - row [ref=f2e173]:
+            - cell [ref=f2e174]:
+              - strong [ref=f2e175]: 💻 IT Tech
+            - cell "루테인지아잔틴 20mg + 아스타잔틴" [ref=f2e176]
+            - cell "눈건강 연질캡슐 + 포커스 액상" [ref=f2e177]
+            - cell "오후 2시 코딩 집중 전" [ref=f2e178]
+            - cell "79,800원 (30% OFF)" [ref=f2e179]
+  - contentinfo [ref=f2e180]:
+    - generic [ref=f2e181]:
+      - generic [ref=f2e182]:
+        - strong [ref=f2e183]: A:FIT (주식회사 에이핏)
+        - generic [ref=f2e184]: 대한민국 No.1 10초 올인원 이중제형 맞춤 웰니스 D2C 플랫폼
+      - generic [ref=f2e185]: "고객만족센터: 1588-0000 (평일 09:00 ~ 18:00) | contact@afit.kr"
+    - generic [ref=f2e186]: "주식회사 에이핏 | 대표이사: 허지민 | 사업자등록번호: 123-45-67890 | 통신판매업신고: 제2026-서울강남-0198호"
+    - generic [ref=f2e187]: Copyright © 2026 A:FIT Inc. All rights reserved. (Category Storyboard Prototype)
