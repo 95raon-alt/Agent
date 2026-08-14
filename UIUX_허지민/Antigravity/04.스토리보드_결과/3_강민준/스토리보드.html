@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[저충실도 와이어프레임] A:FIT Pro (강민준 트레이너) 메인페이지 스토리보드</title>
+  <style>
+    /* 
+      # 디자인 금지 (No Color/No Fancy Design)
+      # 저충실도 회색 박스와 글자 (Grey Boxes & Text Only)
+      # 데스크톱/PC 중심 대화형 반응형 웹 규격 (Desktop-Centric Responsive Wireframe)
+    */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      color: #111111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .section-label {
+      background: #333333;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+      border-radius: 2px;
+    }
+
+    section {
+      border: 2px solid #888888;
+      background: #ffffff;
+      margin: 15px 0;
+      padding: 20px;
+    }
+
+    .grey-box {
+      background: #e0e0e0;
+      border: 1px solid #999999;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .grey-placeholder {
+      background: #d0d0d0;
+      border: 1px dashed #666666;
+      padding: 30px 15px;
+      text-align: center;
+      color: #333333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .btn-grey {
+      background: #bbbbbb;
+      border: 2px solid #333333;
+      color: #000000;
+      font-weight: bold;
+      padding: 12px 20px;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* SEC01: Header */
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e8e8e8;
+      border: 1px solid #777777;
+      padding: 15px 20px;
+    }
+
+    .logo-box {
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid #333333;
+      padding: 4px 10px;
+      background: #ffffff;
+      display: inline-block;
+    }
+
+    .nav-links span {
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .user-actions span {
+      font-size: 12px;
+      background: #ffffff;
+      border: 1px solid #666666;
+      padding: 4px 8px;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    /* SEC02: Hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .badge-pill {
+      background: #444444;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .metric-box {
+      flex: 1;
+      background: #d8d8d8;
+      border: 1px solid #888888;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* SEC03: 3-Line Summary */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .summary-card {
+      background: #e8e8e8;
+      border: 2px solid #777777;
+      padding: 15px;
+    }
+
+    /* SEC04: AI Performance Curation */
+    .chips-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .chip-item {
+      background: #e0e0e0;
+      border: 1px solid #666666;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .chip-item.active {
+      background: #333333;
+      color: #ffffff;
+      border-color: #000000;
+    }
+
+    .curation-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    /* SEC05 & SEC07 Tables */
+    .chart-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .chart-card {
+      background: #e4e4e4;
+      border: 1px solid #888888;
+      padding: 15px;
+    }
+
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .cost-table th, .cost-table td {
+      border: 1px solid #999999;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    .cost-table th {
+      background: #d0d0d0;
+      font-weight: bold;
+    }
+
+    /* SEC06: 10s Motion */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .step-box {
+      background: #e0e0e0;
+      border: 1px solid #777777;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* SEC08: Crew Reviews */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .review-card {
+      background: #e8e8e8;
+      border: 1px solid #888888;
+      padding: 15px;
+      font-size: 12px;
+    }
+
+    /* SEC09: Footer */
+    .footer-box {
+      background: #d8d8d8;
+      border: 1px solid #666666;
+      padding: 20px;
+      font-size: 12px;
+    }
+
+    /* SEC10: Sticky CTA */
+    .sticky-cta-bar {
+      background: #cccccc;
+      border: 2px solid #333333;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- [PAGE-01-SEC01] Header -->
+  <div class="container">
+    <div class="header-nav" style="margin-top: 15px;">
+      <div>
+        <span class="section-label">[PAGE-01-SEC01] Header (스포티 다크 GNB)</span><br>
+        <div class="logo-box">A:FIT Pro</div>
+      </div>
+      <div class="nav-links">
+        <span>브랜드 스토리</span>
+        <span>AI 큐레이션</span>
+        <span>퍼포먼스 성분</span>
+        <span>구독 혜택</span>
+      </div>
+      <div class="user-actions">
+        <span>[마이페이지]</span>
+        <span>[장바구니 (0)]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- [PAGE-01-SEC02] Hero Section -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC02] Hero Section (당류 0g 피로 공감 & 메인 비주얼)</span>
+      <div class="hero-grid">
+        <div>
+          <span class="badge-pill">⚡ 당류 / 합성첨가물 0g 피트니스 올인원 부스터</span>
+          <h1 style="font-size: 21px; margin: 8px 0; line-height: 1.3;">
+            설탕 0g, 한 손으로 부스팅하라!<br>
+            운동 10초 전 마시는 2040 피트니스 이중제형
+          </h1>
+          <p style="font-size: 13px; color: #333333; margin-bottom: 10px;">
+            설탕 범벅 음료와 합성 감미료는 이제 그만. 혈당 스파이크 없이 10초 만에 완벽한 바디 부스팅을 경험하세요.
+          </p>
+
+          <div class="metrics-row">
+            <div class="metric-box">
+              <strong>당류 0g</strong><br>Zero Sugar 설계
+            </div>
+            <div class="metric-box">
+              <strong>8,000mg</strong><br>BCAA + 아미노산
+            </div>
+            <div class="metric-box">
+              <strong>10초</strong><br>원터치 부스팅 컷
+            </div>
+          </div>
+
+          <div class="btn-grey" style="width: 100%;">
+            당류 0g 내 운동 종목 맞춤 부스팅 구독하기 →
+          </div>
+        </div>
+
+        <div class="grey-placeholder">
+          [스포티 액티브 앰플 보틀 저충실도 그래픽]<br>
+          (상단 부스터 캡슐 + 하단 전해질 아미노 액상 결합 모크업)
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC03] 3-Line Summary -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC03] 3-Line Summary (3줄 요약 퍼포먼스 카드)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">2040 피트니스족을 위한 A:FIT Pro 3대 핵심 가치</h2>
+      <p style="font-size: 12px; color: #555555;">혈당 부담 없는 고효율 바디 퍼포먼스 3줄 요약</p>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">01. ZERO SUGAR</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">당류 & 인공첨가물 0g</h3>
+          <p style="font-size: 12px; color: #333;">혈당 스파이크나 위장 장애 없이 운동 전후 완벽한 에너지 대사 촉진</p>
+        </div>
+
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">02. SPORT MATCH</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">종목별 AI 큐레이션</h3>
+          <p style="font-size: 12px; color: #333;">러닝, 웨이트, 골프, 등산 등 각 운동의 생리학적 요구에 맞춘 성분 배합</p>
+        </div>
+
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">03. 10s ONE-TOUCH</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">10초 원터치 이중제형</h3>
+          <p style="font-size: 12px; color: #333;">운동 시작 10초 전, 물 없이 보틀 캡만 눌러 즉각 마시는 올인원</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC04] AI Performance Curation -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC04] AI Performance Curation (종목별 AI 큐레이션)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">AI Performance Curation & 4대 스포츠 맞춤 부스터 매칭</h2>
+      <p style="font-size: 12px; color: #555555;">나의 주 운동 종목 칩을 선택하면 스포츠 생리학 알고리즘이 성분을 자동 조합합니다.</p>
+
+      <div class="chips-row">
+        <div class="chip-item active">🏃 러닝 / 마라톤 (전해질+BCAA 액상) [선택됨]</div>
+        <div class="chip-item">🏋️ 웨이트 / 크로스핏 (크레아틴+필수 아미노산)</div>
+        <div class="chip-item">⛳ 골프 / 아웃도어 (L-테아닌+항산화 캡슐)</div>
+        <div class="chip-item">🧗 등산 / 트레킹 (옥타코사놀+비타민B 복합체)</div>
+      </div>
+
+      <div class="curation-split">
+        <div class="grey-box">
+          <strong style="font-size: 13px;">[스포츠 생리학 분석 리포트]</strong>
+          <p style="font-size: 12px; margin-top: 6px;">• 추천 종목: 로드 러닝 & 하프 마라톤 (유산소 지구력 및 젖산 축적 억제)</p>
+          <p style="font-size: 12px;">• 최적 배합: 발효 순수 BCAA 5,000mg + 흡수형 식물성 전해질 1,200mg</p>
+          <p style="font-size: 12px;">• 섭취 타이밍: 러닝 시작 10분 전 또는 인터벌 중간 10초 원샷</p>
+        </div>
+
+        <div class="grey-placeholder" style="padding: 20px 10px;">
+          [맞춤 Pro 부스터 앰플 3D 뷰어]<br>
+          <strong style="font-size: 14px; margin-top: 6px; display: inline-block;">"A:FIT Pro Runner's High Booster"</strong><br>
+          <span style="font-size: 11px; color: #555;">(종목 전용 프로 라벨 각인 팩)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC05] Zero-Sugar Donut Chart -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC05] Zero-Sugar Donut Chart (당류 0g 성분 도넛 차트)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">당류 0g & 고효율 아미노산 / 전해질 비율 시각화</h2>
+      <p style="font-size: 12px; color: #555555;">불필요한 당류는 덜어내고, 근육 회복과 퍼포먼스를 위한 순수 성분 100% 충전</p>
+
+      <div class="chart-split">
+        <div class="chart-card">
+          <strong style="font-size: 13px;">📊 당류 0g & 순수 활성 성분 비율</strong>
+          <div class="grey-placeholder" style="padding: 20px; margin: 8px 0;">
+            [SVG 도넛 차트 영역]<br>
+            • 당류(Sugar): <strong>0g (0%)</strong><br>
+            • 순수 BCAA & 아미노산: <strong>8,000mg</strong><br>
+            • 천연 이온 전해질: <strong>1,200mg</strong>
+          </div>
+        </div>
+
+        <div class="chart-card">
+          <strong style="font-size: 13px;">🔬 퍼포먼스 핵심 성분표</strong>
+          <div class="grey-box" style="margin-top: 8px;">
+            <p style="font-size: 12px;">• <strong>BCAA 2:1:1 최적 비율</strong>: 류신 2,500mg, 이소류신 1,250mg, 발린 1,250mg</p>
+            <p style="font-size: 12px; margin-top: 4px;">• <strong>L-아르기닌 2,000mg</strong>: 혈관 확장 및 근육 펌핑 극대화</p>
+            <p style="font-size: 12px; margin-top: 4px;">• <strong>타우린 1,000mg</strong>: 젖산 분해 및 근육 피로 회복 가속</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC06] 10s GIF Motion -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC06] 10s GIF Motion (원터치 이중제형 섭취 모션)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">운동 직전 10초! 원터치 이중제형 바디 부스팅 메커니즘</h2>
+      <p style="font-size: 12px; color: #555555;">헬스장 락커룸, 러닝 트랙 위 어디서나 10초 만에 끝내는 원터치 프로토콜</p>
+
+      <div class="grey-placeholder" style="padding: 25px 15px;">
+        [운동 10초 전 원터치 개봉 & 부스팅 액션 인터랙티브 GIF 영역]<br>
+        (보틀 캡 원터치 클릭 ➔ 부스터 캡슐 낙하 ➔ 물 없이 원샷 애니메이션)
+      </div>
+
+      <div class="steps-row">
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 01. CLICK</strong>
+          <p style="font-size: 11px; margin-top: 4px;">보틀 상단 앰플 캡<br>원터치 클릭 (딸깍!)</p>
+        </div>
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 02. DROP</strong>
+          <p style="font-size: 11px; margin-top: 4px;">크레아틴/아미노 캡슐이<br>하단 전해질 앰플로 낙하</p>
+        </div>
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 03. DRINK</strong>
+          <p style="font-size: 11px; margin-top: 4px;">물 없이 액상과 함께<br>10초 만에 완벽 원샷!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC07] Energy Comparison -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC07] Energy Comparison (칼로리 & 비용 비교표)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">시중 설탕 스포츠 음료 vs A:FIT Pro 당류/칼로리/비용 비교표</h2>
+      <p style="font-size: 12px; color: #555555;">다이어트와 린매스업을 방해하는 당류 과다 음료 대비 확실한 수치 비교</p>
+
+      <table class="cost-table">
+        <tr>
+          <th>구분</th>
+          <th>시중 설탕 스포츠 음료 2종</th>
+          <th>A:FIT Pro 부스터</th>
+          <th>절감 및 개선 효과</th>
+        </tr>
+        <tr>
+          <td><strong>당류 함량</strong></td>
+          <td>24g ~ 32g (설탕 과다)</td>
+          <td><strong>0g (Zero Sugar)</strong></td>
+          <td>혈당 스파이크 100% 차단</td>
+        </tr>
+        <tr>
+          <td><strong>열량 (칼로리)</strong></td>
+          <td>120 ~ 150 kcal</td>
+          <td><strong>15 kcal</strong></td>
+          <td>칼로리 90% CUT</td>
+        </tr>
+        <tr>
+          <td><strong>1회 섭취 비용</strong></td>
+          <td>3,000 ~ 3,500 원</td>
+          <td><strong>1,800 원 (구독 할인가)</strong></td>
+          <td>월 4만 원 이상 절감</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- [PAGE-01-SEC08] Sports Crew Reviews -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC08] Sports Crew Reviews (스포츠 크루 실명 후기)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">러너, 크로스핏터, 피트니스 선수 실제 리뷰</h2>
+      <p style="font-size: 12px; color: #555555;">전문가와 동호인이 직접 검증한 체감 퍼포먼스</p>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">최강민 (31세 / 서초 러닝크루 캡틴 & 마라토너)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 4개월 구독 중 [러닝 종목]</div>
+          <p style="margin-top: 6px; color: #222;">
+            "풀코스 마라톤 훈련 때 스포츠 음료를 마시면 입안이 끈적거리고 속이 더부룩했는데, A:FIT Pro는 당류 0g이라 깔끔하고 후반 30km 지점 근육 경련이 사라졌습니다."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">강동현 (34세 / 크로스핏 헤드 코치)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 6개월 구독 중 [웨이트 종목]</div>
+          <p style="margin-top: 6px; color: #222;">
+            "회원들이 운동 전 보충제 타 마시는 번거로움 없이 10초 만에 마실 수 있어 반응이 폭발적입니다. 크레아틴과 BCAA 조합이 아주 훌륭합니다."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC09] Footer -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC09] Footer (기업 정보 푸터)</span>
+      <div class="footer-box">
+        <p><strong>주식회사 에이핏 프로 (A:FIT Pro Inc.)</strong> | 대표: 강민준 | 스포츠 사이언스 센터: 서울 서초구 반포대로</p>
+        <p>사업자등록번호: 312-88-00000 | 통신판매업: 제2026-서울서초-0789호 | 고객센터: 1588-0000 (평일 09:00~18:00)</p>
+        <p style="margin-top: 8px; color: #444;">
+          <span style="text-decoration: underline; cursor: pointer;">이용약관</span> | 
+          <span style="text-decoration: underline; cursor: pointer;">개인정보처리방침</span> | 
+          <span style="text-decoration: underline; cursor: pointer;">도핑안전 검사 성적서</span>
+        </p>
+        <p style="margin-top: 8px; font-size: 11px; color: #666;">Copyright © A:FIT Pro Inc. All rights reserved.</p>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC10] Sticky CTA Bar -->
+    <div class="sticky-cta-bar">
+      <div>
+        <span class="section-label" style="margin-bottom: 2px;">[PAGE-01-SEC10] Sticky CTA Bar</span>
+        <p style="font-size: 13px; font-weight: bold;">
+          A:FIT Pro 당류 0g 내 종목 맞춤 정기구독 (회당 1,800원 가성비)
+        </p>
+      </div>
+      <div class="btn-grey" style="margin-top: 0; padding: 10px 24px;">
+        당류 0g 내 종목 맞춤 구독 시작하기 →
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[저충실도 와이어프레임] A:FIT (박지안 디렉터) 메인페이지 스토리보드</title>
+  <style>
+    /* 
+      # 디자인 금지 (No Color/No Fancy Design)
+      # 저충실도 회색 박스와 글자 (Grey Boxes & Text Only)
+      # 데스크톱/PC 중심 대화형 반응형 웹 규격 (Desktop-Centric Responsive Wireframe)
+    */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      color: #111111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .section-label {
+      background: #333333;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+      border-radius: 2px;
+    }
+
+    section {
+      border: 2px solid #888888;
+      background: #ffffff;
+      margin: 15px 0;
+      padding: 20px;
+    }
+
+    .grey-box {
+      background: #e0e0e0;
+      border: 1px solid #999999;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .grey-placeholder {
+      background: #d0d0d0;
+      border: 1px dashed #666666;
+      padding: 30px 15px;
+      text-align: center;
+      color: #333333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .btn-grey {
+      background: #bbbbbb;
+      border: 2px solid #333333;
+      color: #000000;
+      font-weight: bold;
+      padding: 12px 20px;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* SEC01: Header */
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e8e8e8;
+      border: 1px solid #777777;
+      padding: 15px 20px;
+    }
+
+    .logo-box {
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid #333333;
+      padding: 4px 10px;
+      background: #ffffff;
+      display: inline-block;
+    }
+
+    .nav-links span {
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .user-actions span {
+      font-size: 12px;
+      background: #ffffff;
+      border: 1px solid #666666;
+      padding: 4px 8px;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    /* SEC02: Hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .badge-pill {
+      background: #444444;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .metric-box {
+      flex: 1;
+      background: #d8d8d8;
+      border: 1px solid #888888;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* SEC03: 3-Line Summary */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .summary-card {
+      background: #e8e8e8;
+      border: 2px solid #777777;
+      padding: 15px;
+    }
+
+    /* SEC04: Smart Curation & Label Preview */
+    .chips-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .chip-item {
+      background: #e0e0e0;
+      border: 1px solid #666666;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .chip-item.active {
+      background: #333333;
+      color: #ffffff;
+      border-color: #000000;
+    }
+
+    .curation-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    .label-preview-box {
+      background: #d5d5d5;
+      border: 2px dashed #444444;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* SEC05: Cost Efficiency Chart */
+    .cost-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .cost-card {
+      background: #e4e4e4;
+      border: 1px solid #888888;
+      padding: 15px;
+    }
+
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .cost-table th, .cost-table td {
+      border: 1px solid #999999;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    .cost-table th {
+      background: #d0d0d0;
+      font-weight: bold;
+    }
+
+    .saving-highlight {
+      background: #cccccc;
+      border: 2px solid #333333;
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      margin-top: 10px;
+      font-size: 13px;
+    }
+
+    /* SEC06: 10s Motion */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .step-box {
+      background: #e0e0e0;
+      border: 1px solid #777777;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* SEC07: Target Reviews */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .review-card {
+      background: #e8e8e8;
+      border: 1px solid #888888;
+      padding: 12px;
+      font-size: 12px;
+    }
+
+    /* SEC08: Footer */
+    .footer-box {
+      background: #d8d8d8;
+      border: 1px solid #666666;
+      padding: 20px;
+      font-size: 12px;
+    }
+
+    /* SEC09: Sticky CTA */
+    .sticky-cta-bar {
+      background: #cccccc;
+      border: 2px solid #333333;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- [PAGE-01-SEC01] Header -->
+  <div class="container">
+    <div class="header-nav" style="margin-top: 15px;">
+      <div>
+        <span class="section-label">[PAGE-01-SEC01] Header (상단 전역 내비게이션)</span><br>
+        <div class="logo-box">A:FIT</div>
+      </div>
+      <div class="nav-links">
+        <span>브랜드 스토리</span>
+        <span>맞춤 진단</span>
+        <span>가성비 혜택</span>
+        <span>구독 신청</span>
+      </div>
+      <div class="user-actions">
+        <span>[마이페이지]</span>
+        <span>[장바구니 (0)]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- [PAGE-01-SEC02] Hero Section -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC02] Hero Section (문제 정의 & 메인 비주얼)</span>
+      <div class="hero-grid">
+        <div>
+          <span class="badge-pill">⚡ 2030 직장인 / 1인가구 전용 올인원 솔루션</span>
+          <h1 style="font-size: 22px; margin: 8px 0; line-height: 1.3;">
+            커피 한 잔 값으로 10초 만에 해결하는<br>
+            2030 올인원 맞춤 이중제형
+          </h1>
+          <p style="font-size: 13px; color: #333333; margin-bottom: 10px;">
+            바쁜 아침, 식사와 필수 영양제를 물 없이 10초 만에 원핸드로 해결하세요.
+          </p>
+
+          <div class="metrics-row">
+            <div class="metric-box">
+              <strong>한 끼 3,800원</strong><br>커피 1잔 값 가성비
+            </div>
+            <div class="metric-box">
+              <strong>10초 컷</strong><br>물 없는 원핸드 섭취
+            </div>
+            <div class="metric-box">
+              <strong>1:1 맞춤</strong><br>알고리즘 라벨 각인
+            </div>
+          </div>
+
+          <div class="btn-grey" style="width: 100%;">
+            커피 한 잔 값으로 맞춤 구독 시작하기 →
+          </div>
+        </div>
+
+        <div class="grey-placeholder">
+          [3D 맞춤 이중제형 보틀 저충실도 모크업 영역]<br>
+          (상단 맞춤 정제 캡슐 + 하단 고농축 액상 앰플 결합 구조)
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC03] 3-Line Summary -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC03] 3-Line Summary (3줄 요약 카드)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">바쁜 2030을 위한 A:FIT 3대 핵심 가치</h2>
+      <p style="font-size: 12px; color: #555555;">정보 피로도 없는 3줄 요약 핵심 소구점</p>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">01. COST SAVING</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">한 끼 3~4천 원대 가성비</h3>
+          <p style="font-size: 12px; color: #333;">편의점 커피+삼각김밥 대비 식비 50% 절감 및 영양 밸런스 완벽 충족</p>
+        </div>
+
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">02. 10s ONE-HAND</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">10초 컷 원핸드 섭취</h3>
+          <p style="font-size: 12px; color: #333;">물 없이 보틀 뚜껑 캡슐을 눌러 즉시 마시는 간편한 이중제형 메커니즘</p>
+        </div>
+
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">03. SMART DIAGNOSIS</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">상황별 AI 맞춤 큐레이션</h3>
+          <p style="font-size: 12px; color: #333;">야근, 회식, 붓기, 만성 피로 등 실시간 컨디션에 맞춘 알고리즘 처방</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC04] Smart Curation -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC04] Smart Curation (앱 연동 진단 모크업 & 맞춤 라벨)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">Smart Condition Curation & 알고리즘 메시지 각인</h2>
+      <p style="font-size: 12px; color: #555555;">오늘 나의 컨디션 상태를 선택하면 AI가 배합 성분과 개인화 라벨 문구를 자동 도출합니다.</p>
+
+      <div class="chips-row">
+        <div class="chip-item active">🌙 야근 / 밤샘 피로 (밀크씨슬+비타민B) [선택됨]</div>
+        <div class="chip-item">🍻 회식 / 숙취 케어 (헛개나무+덱스트린)</div>
+        <div class="chip-item">💧 아침 붓기 완화 (호박추출물+아르기닌)</div>
+        <div class="chip-item">⚡ 만성 에너지 저하 (타우린+고함량 비타민C)</div>
+      </div>
+
+      <div class="curation-split">
+        <div class="grey-box">
+          <strong style="font-size: 13px;">[1:1 맞춤 진단 분석 모크업]</strong>
+          <p style="font-size: 12px; margin-top: 6px;">• 사용자 분석: 20대 IT 직장인 (수면 부족 5.2h / 야근 주 3회)</p>
+          <p style="font-size: 12px;">• 추천 제형 배합: 고순도 밀크씨슬 130mg + 활성 비타민 B군 500%</p>
+          <p style="font-size: 12px;">• 섭취 최적 타이밍: 오전 출근 직후 10초 원샷</p>
+        </div>
+
+        <div class="label-preview-box">
+          <span style="font-size: 11px; font-weight: bold; background: #ffffff; padding: 2px 6px; border: 1px solid #333;">3D 커스텀 라벨 프리뷰</span>
+          <h4 style="font-size: 15px; margin: 10px 0;">"어제 밤샘 야근한 박지안님을 위한<br>간 피로 & 붓기 타파 솔루션"</h4>
+          <p style="font-size: 11px; color: #555;">[알고리즘 자동 생성 개별 메시지 패키징 각인 뷰]</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC05] Cost Efficiency Chart -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC05] Cost Efficiency Chart (식비 절감 저울 UI)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">편의점 식사 vs A:FIT 한 끼 비용/시간 비교표</h2>
+      <p style="font-size: 12px; color: #555555;">매일 소비되는 편의점 도시락/커피 지출 대비 확실한 가성비 데이터</p>
+
+      <div class="cost-grid">
+        <div class="cost-card">
+          <strong style="font-size: 13px;">🏪 일반 편의점 도시락 + 카페 커피</strong>
+          <table class="cost-table">
+            <tr>
+              <th>구분</th>
+              <th>소요 비용</th>
+              <th>소요 시간</th>
+            </tr>
+            <tr>
+              <td>1회 지출</td>
+              <td>8,500 원</td>
+              <td>15 분</td>
+            </tr>
+            <tr>
+              <td>월간(30일)</td>
+              <td>255,000 원</td>
+              <td>450 분 (7.5시간)</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="cost-card" style="border: 2px solid #333333;">
+          <strong style="font-size: 13px;">💊 A:FIT 올인원 이중제형 정기구독</strong>
+          <table class="cost-table">
+            <tr>
+              <th>구분</th>
+              <th>소요 비용</th>
+              <th>소요 시간</th>
+            </tr>
+            <tr>
+              <td>1회 지출</td>
+              <td><strong>3,800 원</strong></td>
+              <td><strong>10 초</strong></td>
+            </tr>
+            <tr>
+              <td>월간(30일)</td>
+              <td><strong>114,000 원</strong></td>
+              <td><strong>5 분</strong></td>
+            </tr>
+          </table>
+        </div>
+      </div>
+
+      <div class="saving-highlight">
+        ⚖️ [절감 효과] 월 141,000원 식비 절감 (55% CUT) & 매일 아침 15분 여유 시간 확보!
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC06] 10s GIF Motion -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC06] 10s GIF Motion (이중제형 원핸드 섭취 모션)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">물도 필요 없다! 10초 컷 원핸드 이중제형 메커니즘</h2>
+      <p style="font-size: 12px; color: #555555;">출근길, 책상 앞 어디서나 10초 만에 끝내는 스마트 섭취 프로토콜</p>
+
+      <div class="grey-placeholder" style="padding: 25px 15px;">
+        [10초 원핸드 섭취 액션 비디오 / 인터랙티브 GIF 영역]<br>
+        (캡슐 누름 ➔ 앰플로 낙하 ➔ 물 없이 원샷 애니메이션)
+      </div>
+
+      <div class="steps-row">
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 01. PUSH</strong>
+          <p style="font-size: 11px; margin-top: 4px;">보틀 상단 캡슐 캡<br>원터치 클릭 (딸깍!)</p>
+        </div>
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 02. DROP</strong>
+          <p style="font-size: 11px; margin-top: 4px;">맞춤 영양 캡슐이<br>하단 액상 앰플로 낙하</p>
+        </div>
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 03. DRINK</strong>
+          <p style="font-size: 11px; margin-top: 4px;">물 없이 액상과 함께<br>10초 만에 완벽 원샷</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC07] Target Reviews -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC07] Target Reviews (2030 페르소나 공감 리뷰)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">2030 실제 구독자 실명 공감 리뷰</h2>
+      <p style="font-size: 12px; color: #555555;">직종별 라이프스타일에 맞춘 실사용 만족도 평가</p>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">김민지 (24세 / 취준생)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 2개월 구독 중</div>
+          <p style="margin-top: 6px; color: #222;">
+            "도서관에서 영양제 챙겨 먹으려면 물병 들고 왔다 갔다 민망했는데, 가방에서 꺼내 10초 만에 마시니 정말 편해요."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">이성우 (29세 / IT 개발자)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 5개월 구독 중</div>
+          <p style="margin-top: 6px; color: #222;">
+            "야근할 때 커피 대신 마시는데 식비도 10만 원 넘게 아끼고 만성 피로와 뇌 피로감이 확실히 줄어들었습니다."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">박진아 (27세 / 3교대 간호사)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 3개월 구독 중</div>
+          <p style="margin-top: 6px; color: #222;">
+            "3교대 근무라 밥 챙겨 먹기 힘든데 커피 한 잔 값으로 필요한 비타민과 영양을 챙길 수 있어서 필수템이 되었어요."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC08] Footer -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC08] Footer (푸터 기업 정보)</span>
+      <div class="footer-box">
+        <p><strong>주식회사 에이핏 (A:FIT Inc.)</strong> | 대표: 박지안 | 사업자등록번호: 120-88-00000</p>
+        <p>통신판매업신고: 제2026-서울강남-0123호 | 고객센터: 1588-0000 (평일 09:00~18:00)</p>
+        <p style="margin-top: 8px; color: #444;">
+          <span style="text-decoration: underline; cursor: pointer;">이용약관</span> | 
+          <span style="text-decoration: underline; cursor: pointer;">개인정보처리방침</span> | 
+          <span style="text-decoration: underline; cursor: pointer;">서비스 안내</span>
+        </p>
+        <p style="margin-top: 8px; font-size: 11px; color: #666;">Copyright © A:FIT Inc. All rights reserved.</p>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC09] Sticky CTA Bar -->
+    <div class="sticky-cta-bar">
+      <div>
+        <span class="section-label" style="margin-bottom: 2px;">[PAGE-01-SEC09] Sticky CTA Bar</span>
+        <p style="font-size: 13px; font-weight: bold;">
+          A:FIT 2030 맞춤 이중제형 정기구독 (월 3만 원대 / 첫 달 30% 할인)
+        </p>
+      </div>
+      <div class="btn-grey" style="margin-top: 0; padding: 10px 24px;">
+        커피 한 잔 값으로 맞춤 구독하기 →
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

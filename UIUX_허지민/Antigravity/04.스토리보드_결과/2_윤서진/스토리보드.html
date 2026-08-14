@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[저충실도 와이어프레임] A:FIT Balance (윤서진 연구소장) 메인페이지 스토리보드</title>
+  <style>
+    /* 
+      # 디자인 금지 (No Color/No Fancy Design)
+      # 저충실도 회색 박스와 글자 (Grey Boxes & Text Only)
+      # 데스크톱/PC 중심 대화형 반응형 웹 규격 (Desktop-Centric Responsive Wireframe)
+    */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #f0f0f0;
+      color: #111111;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      padding-bottom: 90px;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+
+    .section-label {
+      background: #333333;
+      color: #ffffff;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+      border-radius: 2px;
+    }
+
+    section {
+      border: 2px solid #888888;
+      background: #ffffff;
+      margin: 15px 0;
+      padding: 20px;
+    }
+
+    .grey-box {
+      background: #e0e0e0;
+      border: 1px solid #999999;
+      padding: 15px;
+      margin-top: 10px;
+    }
+
+    .grey-placeholder {
+      background: #d0d0d0;
+      border: 1px dashed #666666;
+      padding: 30px 15px;
+      text-align: center;
+      color: #333333;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .btn-grey {
+      background: #bbbbbb;
+      border: 2px solid #333333;
+      color: #000000;
+      font-weight: bold;
+      padding: 12px 20px;
+      display: inline-block;
+      margin-top: 15px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* SEC01: Header */
+    .header-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #e8e8e8;
+      border: 1px solid #777777;
+      padding: 15px 20px;
+    }
+
+    .logo-box {
+      font-size: 18px;
+      font-weight: bold;
+      border: 1px solid #333333;
+      padding: 4px 10px;
+      background: #ffffff;
+      display: inline-block;
+    }
+
+    .nav-links span {
+      margin: 0 10px;
+      font-weight: bold;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .user-actions span {
+      font-size: 12px;
+      background: #ffffff;
+      border: 1px solid #666666;
+      padding: 4px 8px;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    /* SEC02: Hero */
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .badge-pill {
+      background: #444444;
+      color: #ffffff;
+      font-size: 11px;
+      font-weight: bold;
+      padding: 3px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .metrics-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .metric-box {
+      flex: 1;
+      background: #d8d8d8;
+      border: 1px solid #888888;
+      padding: 10px;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    /* SEC03: 3-Line Summary */
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .summary-card {
+      background: #e8e8e8;
+      border: 2px solid #777777;
+      padding: 15px;
+    }
+
+    /* SEC04: AI Bio Curation */
+    .chips-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 12px 0;
+    }
+
+    .chip-item {
+      background: #e0e0e0;
+      border: 1px solid #666666;
+      padding: 6px 12px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .chip-item.active {
+      background: #333333;
+      color: #ffffff;
+      border-color: #000000;
+    }
+
+    .curation-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 10px;
+    }
+
+    /* SEC05: Clinical Component Chart */
+    .chart-split {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 15px;
+      margin-top: 12px;
+    }
+
+    .chart-card {
+      background: #e4e4e4;
+      border: 1px solid #888888;
+      padding: 15px;
+    }
+
+    .cost-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      margin-top: 8px;
+    }
+
+    .cost-table th, .cost-table td {
+      border: 1px solid #999999;
+      padding: 6px 8px;
+      text-align: center;
+    }
+
+    .cost-table th {
+      background: #d0d0d0;
+      font-weight: bold;
+    }
+
+    /* SEC06: Dual Tech Motion */
+    .steps-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .step-box {
+      background: #e0e0e0;
+      border: 1px solid #777777;
+      padding: 12px;
+      text-align: center;
+    }
+
+    /* SEC07: Professional Reviews */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .review-card {
+      background: #e8e8e8;
+      border: 1px solid #888888;
+      padding: 15px;
+      font-size: 12px;
+    }
+
+    /* SEC08: Footer */
+    .footer-box {
+      background: #d8d8d8;
+      border: 1px solid #666666;
+      padding: 20px;
+      font-size: 12px;
+    }
+
+    /* SEC09: Sticky CTA */
+    .sticky-cta-bar {
+      background: #cccccc;
+      border: 2px solid #333333;
+      padding: 15px 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- [PAGE-01-SEC01] Header -->
+  <div class="container">
+    <div class="header-nav" style="margin-top: 15px;">
+      <div>
+        <span class="section-label">[PAGE-01-SEC01] Header (반투명 프리미엄 GNB)</span><br>
+        <div class="logo-box">A:FIT Balance</div>
+      </div>
+      <div class="nav-links">
+        <span>브랜드 스토리</span>
+        <span>AI 진단</span>
+        <span>임상 성분</span>
+        <span>구독 혜택</span>
+      </div>
+      <div class="user-actions">
+        <span>[마이페이지]</span>
+        <span>[장바구니 (0)]</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <!-- [PAGE-01-SEC02] Hero Section -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC02] Hero Section (3040 피로 공감 & 메인 비주얼)</span>
+      <div class="hero-grid">
+        <div>
+          <span class="badge-pill">🔬 세브란스 / 해외 연구진 임상 검증 바이오 웰니스</span>
+          <h1 style="font-size: 21px; margin: 8px 0; line-height: 1.3;">
+            3040 만성 피로와 수면 장애,<br>
+            영양제 오남용 없이 15초 바이오 큐레이션으로
+          </h1>
+          <p style="font-size: 13px; color: #333333; margin-bottom: 10px;">
+            더 이상 중복 영양제 과다 복용에 불안해하지 마세요. 1:1 라이프스타일 임상 분석 기반 15초 앰플 솔루션.
+          </p>
+
+          <div class="metrics-row">
+            <div class="metric-box">
+              <strong>99.8%</strong><br>특허 원료 순도
+            </div>
+            <div class="metric-box">
+              <strong>88%</strong><br>체내 임상 흡수율
+            </div>
+            <div class="metric-box">
+              <strong>15초</strong><br>프리미엄 앰플 섭취
+            </div>
+          </div>
+
+          <div class="btn-grey" style="width: 100%;">
+            내 라이프스타일 15초 분석받기 →
+          </div>
+        </div>
+
+        <div class="grey-placeholder">
+          [프리미엄 앰플 + 서재 웰니스 오브제 저충실도 그래픽]<br>
+          (특허 이중제형 결합 앰플 보틀 3D 모델)
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC03] 3-Line Summary -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC03] 3-Line Summary (프리미엄 3줄 요약 카드)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">전문직을 위한 A:FIT Balance 3대 임상 가치</h2>
+      <p style="font-size: 12px; color: #555555;">정보 피로도를 최소화한 3줄 요약 프리미엄 명세</p>
+
+      <div class="summary-grid">
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">01. CLINICAL PROOF</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">임상 검증 특허 원료</h3>
+          <p style="font-size: 12px; color: #333;">세브란스 및 해외 연구진 SCI급 논문 임상 데이터셋 기반 안전성 입증</p>
+        </div>
+
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">02. AI BIO DIAGNOSIS</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">15초 스마트 바이오 진단</h3>
+          <p style="font-size: 12px; color: #333;">피로, 수면, 면역, 항산화 4대 핵심 고민을 15초 알고리즘으로 자동 정밀 매칭</p>
+        </div>
+
+        <div class="summary-card">
+          <span style="font-size: 11px; font-weight: bold; color: #555;">03. PREMIUM DUAL</span>
+          <h3 style="font-size: 15px; margin: 4px 0;">프리미엄 이중제형</h3>
+          <p style="font-size: 12px; color: #333;">고농축 액상 앰플 + 맞춤 정제 결합으로 체내 흡수 속도 극대화</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC04] AI Bio Curation -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC04] AI Bio Curation (바이오 큐레이션 진단)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">AI Bio-Lifestyle Curation & 4대 타깃 웰니스 솔루션</h2>
+      <p style="font-size: 12px; color: #555555;">고민 칩을 선택하면 약학 연구 알고리즘이 특허 성분 배합을 실시간 구성합니다.</p>
+
+      <div class="chips-row">
+        <div class="chip-item active">🧠 만성 뇌 피로 (L-테아닌 + 테아닌 앰플) [선택됨]</div>
+        <div class="chip-item">🌙 수면 장애 / 불면 (감태추출물 + 마그네슘 앰플)</div>
+        <div class="chip-item">🛡️ 면역 저하 (고함량 아연 + 비타민 D 앰플)</div>
+        <div class="chip-item">✨ 항산화 / 항노화 (코엔자임 Q10 + 비타민 E 앰플)</div>
+      </div>
+
+      <div class="curation-split">
+        <div class="grey-box">
+          <strong style="font-size: 13px;">[15초 라이프스타일 분석 리포트]</strong>
+          <p style="font-size: 12px; margin-top: 6px;">• 대상자: 3040 전문직 / 워킹맘·파파 (두뇌 활동량 과다, 수면 질 저하)</p>
+          <p style="font-size: 12px;">• 바이오 추천 배합: 활성형 L-테아닌 250mg + 고농축 홍경천 앰플</p>
+          <p style="font-size: 12px;">• 작용 기전: 알파파 유도 및 스트레스 호르몬 코르티솔 32% 감소</p>
+        </div>
+
+        <div class="grey-placeholder" style="padding: 20px 10px;">
+          [맞춤 특허 바이오 앰플 3D 렌더링 뷰]<br>
+          <strong style="font-size: 14px; margin-top: 6px; display: inline-block;">"A:FIT Balance Bio-Pack #01"</strong><br>
+          <span style="font-size: 11px; color: #555;">(연구원 검증 처방 라벨 각인)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC05] Clinical Component Chart -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC05] Clinical Component Chart (임상 데이터 도넛 차트 & 비용 비교)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">특허 원료 함량 도넛 차트 & 낱개 영양제 대비 비용 절감 비교표</h2>
+      <p style="font-size: 12px; color: #555555;">중복 과다 지출되는 낱개 영양제 대비 확실한 가치 및 데이터 검증</p>
+
+      <div class="chart-split">
+        <div class="chart-card">
+          <strong style="font-size: 13px;">📊 특허 원료 함량 & 흡수율</strong>
+          <div class="grey-placeholder" style="padding: 20px; margin: 8px 0;">
+            [SVG 도넛 차트 영역]<br>
+            • 특허 성분 순도: <strong>99.8%</strong><br>
+            • 체내 생체이용률: <strong>88.4%</strong>
+          </div>
+          <p style="font-size: 11px; color: #555;">* 세브란스 바이오 임상 시험 결과 기준</p>
+        </div>
+
+        <div class="chart-card" style="border: 2px solid #333333;">
+          <strong style="font-size: 13px;">💊 낱개 영양제 5종 vs A:FIT Balance 비교표</strong>
+          <table class="cost-table">
+            <tr>
+              <th>구분</th>
+              <th>시중 낱개 영양제 5종</th>
+              <th>A:FIT Balance</th>
+            </tr>
+            <tr>
+              <td>월 지출 비용</td>
+              <td>180,000 원 (중복 과다)</td>
+              <td><strong>60,000 원대 (올인원)</strong></td>
+            </tr>
+            <tr>
+              <td>일일 복용 알수</td>
+              <td>7 ~ 9 정 (목넘김 부담)</td>
+              <td><strong>1 앰플 10초 섭취</strong></td>
+            </tr>
+            <tr>
+              <td>체내 흡수율</td>
+              <td>일반 정제 (20~30%)</td>
+              <td><strong>액상 앰플 융합 (88%)</strong></td>
+            </tr>
+          </table>
+          <div style="background: #cccccc; padding: 6px; text-align: center; font-size: 11px; font-weight: bold; margin-top: 8px;">
+            ⚖️ 월 12만 원 지출 절감 & 중복 성분 오남용 100% 방지
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC06] Dual Tech GIF Motion -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC06] Dual Tech GIF Motion (15초 프리미엄 앰플 모션)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">하루 15초, 고급 서재에서 즐기는 프리미엄 웰니스 메커니즘</h2>
+      <p style="font-size: 12px; color: #555555;">원터치 개봉과 동시에 신선하게 혼합되는 특허 앰플 섭취 3단계</p>
+
+      <div class="grey-placeholder" style="padding: 25px 15px;">
+        [15초 프리미엄 액상 앰플 3D 회전 & 스크롤 반응 애니메이션 영역]<br>
+        (상단 캡슐 캡 회전 ➔ 농축 앰플 침투 ➔ 15초 원샷 인터랙션)
+      </div>
+
+      <div class="steps-row">
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 01. TWIST</strong>
+          <p style="font-size: 11px; margin-top: 4px;">보틀 상단 골드 캡 회전<br>(신선 보존 챔버 개방)</p>
+        </div>
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 02. INFUSE</strong>
+          <p style="font-size: 11px; margin-top: 4px;">특허 정제가 하단<br>고농축 앰플로 즉각 혼합</p>
+        </div>
+        <div class="step-box">
+          <strong style="font-size: 12px;">STEP 03. SHOT</strong>
+          <p style="font-size: 11px; margin-top: 4px;">물 없이 15초 만에<br>부드럽고 신선하게 섭취</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC07] Professional Reviews -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC07] Professional Reviews (3040 전문직 실명 리뷰)</span>
+      <h2 style="font-size: 17px; margin-bottom: 4px;">3040 전문직 실제 장기 구독자 실명 리뷰</h2>
+      <p style="font-size: 12px; color: #555555;">금융, 법조, 의료계 및 워킹맘의 라이프스타일 변화 평가</p>
+
+      <div class="review-grid">
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">최현우 (38세 / 자산운용사 이사)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 8개월 정기구독 중 [직종 인증]</div>
+          <p style="margin-top: 6px; color: #222;">
+            "매일 야근과 펀드 운용 스트레스로 만성 두뇌 피로에 시달렸는데, 뇌 피로 맞춤 앰플 섭취 후 다음 날 아침 집중력과 기상 컨디션이 획기적으로 개선되었습니다."
+          </p>
+        </div>
+
+        <div class="review-card">
+          <div style="font-weight: bold; margin-bottom: 4px;">정유진 (35세 / 법무법인 변호사 & 워킹맘)</div>
+          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 6개월 정기구독 중 [직종 인증]</div>
+          <p style="margin-top: 6px; color: #222;">
+            "바쁜 재판과 육아로 영양제 5~6통을 챙겨 먹다 목 넘김도 힘들고 중복 복용이 늘 불안했는데, 하루 15초 바이오 앰플 하나로 해결되어 삶의 질이 달라졌습니다."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC08] Footer -->
+    <section>
+      <span class="section-label">[PAGE-01-SEC08] Footer (기업 정보 & 임상 출처 푸터)</span>
+      <div class="footer-box">
+        <p style="font-size: 11px; color: #444; margin-bottom: 6px;">
+          * 세브란스 바이오 임상 데이터셋 출처: 2025 바이오 웰니스 저널 Vol.12 No.4 (피험자 120명 대상 8주 무작위 이중맹검 대조군 시험)
+        </p>
+        <hr style="border: 0; border-top: 1px solid #aaa; margin: 8px 0;">
+        <p><strong>주식회사 에이핏 밸런스 (A:FIT Balance Inc.)</strong> | 대표: 윤서진 | R&D 센터: 서울 강남구 테헤란로 바이오타워</p>
+        <p>사업자등록번호: 214-88-00000 | 통신판매업: 제2026-서울강남-0456호 | 고객센터: 1588-0000 (평일 09:00~18:00)</p>
+        <p style="margin-top: 8px; color: #444;">
+          <span style="text-decoration: underline; cursor: pointer;">이용약관</span> | 
+          <span style="text-decoration: underline; cursor: pointer;">개인정보처리방침</span> | 
+          <span style="text-decoration: underline; cursor: pointer;">임상 논문 원본 데이터</span>
+        </p>
+        <p style="margin-top: 8px; font-size: 11px; color: #666;">Copyright © A:FIT Balance Inc. All rights reserved.</p>
+      </div>
+    </section>
+
+    <!-- [PAGE-01-SEC09] Sticky CTA Bar -->
+    <div class="sticky-cta-bar">
+      <div>
+        <span class="section-label" style="margin-bottom: 2px;">[PAGE-01-SEC09] Sticky CTA Bar</span>
+        <p style="font-size: 13px; font-weight: bold;">
+          A:FIT Balance 15초 바이오 웰니스 프리미엄 정기구독 (월 6만 원대)
+        </p>
+      </div>
+      <div class="btn-grey" style="margin-top: 0; padding: 10px 24px;">
+        15초 프리미엄 구독 시작하기 →
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
