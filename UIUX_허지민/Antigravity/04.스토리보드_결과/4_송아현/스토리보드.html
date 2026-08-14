@@ -3,20 +3,17 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>A:FIT (에이핏) B2C 박지안 메인페이지 스토리보드 와이어프레임 프로토타입</title>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <title>A:FIT Glow (에이핏 글로우) 송아현 메인페이지 스토리보드 와이어프레임 프로토타입</title>
   <style>
     /* =========================================================
-       A:FIT High-End Wellness Design System Tokens
+       A:FIT Glow Brand Design System (Bio-InnerBeauty High-End)
        Primary: #183D33 (Deep Forest Emerald)
-       Primary Dark: #0E241E
        Accent: #76A58C (Vital Sage Mint)
-       Accent Light: #EBF3EF (Soft Sage Tint)
+       Accent Light: #EBF3EF
        Background: #FAF7F0 (Warm Cashmere Ivory)
-       Card Background: #FFFFFF (Pure Optical White)
-       Card Subtle: #F3EFE6 (Warm Sand Tint)
+       Card/Surface: #FFFFFF (Clean White)
+       Card Subtle: #F3EFE6
        Border: rgba(24, 61, 51, 0.12)
-       Border Strong: #183D33
        Text Main: #183D33
        Text Body: #3A4B45
        Text Muted: #6B7C75
@@ -31,7 +28,6 @@
       --card: #FFFFFF;
       --card-subtle: #F3EFE6;
       --border: rgba(24, 61, 51, 0.12);
-      --border-focus: #183D33;
       --text: #183D33;
       --text-body: #3A4B45;
       --text-muted: #6B7C75;
@@ -97,13 +93,13 @@
     }
     .links {
       display: flex;
-      gap: 28px;
+      gap: 24px;
       align-items: center;
     }
     .links a {
       color: var(--text-body);
       text-decoration: none;
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       font-weight: 700;
       padding: 6px 0;
       position: relative;
@@ -228,7 +224,7 @@
       transform: translateY(-2px);
     }
 
-    /* AFIT-100: Hero Open High-End Layout */
+    /* AFITG-100: Hero Open High-End Layout */
     .hero-open-grid {
       display: grid;
       grid-template-columns: 1.18fr 0.82fr;
@@ -262,9 +258,9 @@
       font-weight: 700;
     }
 
-    /* Sleek Glassmorphism Bottle Object */
+    /* Sleek Glow Bio Bottle Object */
     .bottle-stage {
-      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F0ECE1 100%);
+      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #F5EFE6 100%);
       border: 1px solid var(--border);
       border-radius: 32px;
       padding: 44px 24px;
@@ -284,11 +280,10 @@
     .bottle-object:hover {
       transform: translateY(-8px) scale(1.03);
     }
-    /* Cap (Transparent Capsule Chamber) */
     .bottle-top-chamber {
       width: 64px;
       height: 52px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.88);
       border: 2px solid var(--accent);
       border-radius: 16px 16px 4px 4px;
       backdrop-filter: blur(8px);
@@ -297,12 +292,11 @@
       align-items: center;
       justify-content: center;
       box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8);
-      position: relative;
     }
     .capsule-pill {
       width: 32px;
       height: 12px;
-      background: linear-gradient(90deg, #FFFFFF 50%, var(--accent) 50%);
+      background: linear-gradient(90deg, #FFFFFF 50%, #76A58C 50%);
       border-radius: 999px;
       border: 1px solid rgba(24, 61, 51, 0.2);
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -315,11 +309,10 @@
       border-left: 2px solid #BCB3A1;
       border-right: 2px solid #BCB3A1;
     }
-    /* Body (Liquid Glass Ampoule) */
     .bottle-liquid-body {
       width: 98px;
       height: 136px;
-      background: linear-gradient(180deg, rgba(118, 165, 140, 0.75) 0%, rgba(24, 61, 51, 0.95) 100%);
+      background: linear-gradient(180deg, rgba(243, 215, 203, 0.9) 0%, rgba(24, 61, 51, 0.95) 100%);
       border: 2.5px solid rgba(255, 255, 255, 0.9);
       border-radius: 8px 8px 28px 28px;
       display: flex;
@@ -328,7 +321,7 @@
       justify-content: center;
       padding: 8px;
       position: relative;
-      box-shadow: inset 0 4px 12px rgba(255, 255, 255, 0.3), 0 8px 20px rgba(24, 61, 51, 0.2);
+      box-shadow: inset 0 4px 12px rgba(255, 255, 255, 0.4), 0 8px 20px rgba(24, 61, 51, 0.18);
     }
     .bottle-label-engraved {
       background: rgba(255, 255, 255, 0.96);
@@ -344,7 +337,7 @@
       line-height: 1.25;
     }
 
-    /* AFIT-110: 3-Line Core Values */
+    /* AFITG-110: 3-Line Principles */
     .core-num {
       font-size: 0.85rem;
       font-weight: 900;
@@ -354,7 +347,7 @@
       display: block;
     }
 
-    /* AFIT-120: Situation Chips */
+    /* AFITG-120: Skin Chips */
     .chips-group {
       display: flex;
       gap: 10px;
@@ -388,7 +381,7 @@
       box-shadow: var(--shadow-md);
     }
 
-    /* Dark Emerald Engraved Label Card */
+    /* Dark Glow Engraved Label Card */
     .engraved-card {
       background: linear-gradient(145deg, #183D33 0%, #102B24 100%);
       color: #FFFFFF;
@@ -414,53 +407,75 @@
       letter-spacing: -0.01em;
     }
 
-    /* AFIT-130: Modern Minimized Balance Scale UI */
-    .scale-card-refined {
+    /* AFITG-130: Absorption Donut Chart & Table */
+    .clinical-box {
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 36px;
       box-shadow: var(--shadow-sm);
     }
-    .scale-grid {
+    .donut-container {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: var(--card-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .donut-chart-circle {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0% 92.4%, #D8D2C5 92.4% 100%);
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-bottom: 28px;
+      place-items: center;
+      position: relative;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
     }
-    .scale-box {
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid var(--border);
-      background: var(--card-subtle);
+    .donut-chart-circle::after {
+      content: '92.4%';
+      width: 76px;
+      height: 76px;
+      background: var(--card);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--primary);
     }
-    .scale-box.highlight {
-      background: var(--accent-light);
-      border-color: rgba(118, 165, 140, 0.5);
-    }
-    .scale-slider-wrapper {
-      background: var(--card-subtle);
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid var(--border);
-    }
-    .scale-slider-wrapper input[type="range"] {
+    .compare-table {
       width: 100%;
-      height: 8px;
-      border-radius: 4px;
-      background: #D8D2C5;
-      outline: none;
-      margin: 14px 0;
-      accent-color: var(--primary);
-      cursor: pointer;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.93rem;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .compare-table th {
+      background: var(--card-subtle);
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .compare-table td.highlight {
+      background: var(--accent-light);
+      color: var(--primary);
+      font-weight: 800;
     }
 
-    /* AFIT-140: 10s Mechanism */
+    /* AFITG-140: 10s Mechanism Steps */
     .step-item-card {
       border-top: 3px solid var(--primary);
     }
 
-    /* AFIT-150: Reviews */
+    /* AFITG-150: Reviews */
     .review-card {
       background: var(--card);
       border: 1px solid var(--border);
@@ -490,7 +505,7 @@
       border: 1px solid rgba(118, 165, 140, 0.4);
     }
 
-    /* AFIT-160: FAQ */
+    /* AFITG-160: FAQ */
     .faq details {
       background: var(--card);
       border: 1px solid var(--border);
@@ -531,14 +546,14 @@
       line-height: 1.65;
     }
 
-    /* AFIT-170: Sticky Subscription Bar (Floating Bottom Bar) */
+    /* AFITG-170: Sticky Subscription Bar */
     .sticky-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
       z-index: 90;
-      background: rgba(255, 255, 255, 0.96);
+      background: rgba(255, 255, 255, 0.97);
       border-top: 1px solid var(--border);
       backdrop-filter: blur(14px);
       padding: 14px 0;
@@ -643,10 +658,11 @@
 
     @media (max-width: 820px) {
       .hero-open-grid { grid-template-columns: 1fr; gap: 32px; }
-      .grid-3, .grid-2, .scale-grid { grid-template-columns: 1fr; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
       .links a:not(:last-child) { display: none; }
       .sticky-flex { flex-direction: column; text-align: center; }
       .sticky-flex .btn { width: 100%; justify-content: center; }
+      .donut-container { flex-direction: column; text-align: center; }
     }
     @media (prefers-reduced-motion: reduce) {
       * { scroll-behavior: auto !important; transition: none !important; }
@@ -656,22 +672,22 @@
 <body>
 
   <!-- =========================================================
-       AFIT-100: Top Sticky GNB
+       AFITG-100: Top Sticky GNB
        ========================================================= -->
   <header class="top">
     <nav class="wrap">
       <a href="#" class="brand-logo">
-        <strong>A:FIT</strong>
-        <span class="brand-badge">2030 맞춤 D2C</span>
+        <strong>A:FIT Glow</strong>
+        <span class="brand-badge">💧 스킨 바이오 앰플</span>
       </a>
       <div class="links">
-        <a href="#summary">3대 핵심 가치</a>
-        <a href="#curation">1:1 맞춤 진단</a>
-        <a href="#scale">가성비 계산기</a>
+        <a href="#summary">3대 바이오 원칙</a>
+        <a href="#curation">피부 고민별 AI 큐레이션</a>
+        <a href="#absorption">흡수율 비교표</a>
         <a href="#mechanism">10초 섭취 기전</a>
-        <a href="#reviews">실제 후기</a>
+        <a href="#reviews">전문가 후기</a>
         <button class="btn primary" onclick="openCheckoutModal()">
-          <span>10초 웰니스 시작</span>
+          <span>Glow 시작하기</span>
           <span>→</span>
         </button>
       </div>
@@ -680,50 +696,50 @@
 
   <main>
     <!-- =========================================================
-         AFIT-100: Hero Open High-End Section (오픈형 럭셔리 레이아웃)
+         AFITG-100: Hero Section (속건조 바이오 앰플 비주얼)
          ========================================================= -->
     <section style="padding: 48px 0 64px; border-top: none;">
       <div class="wrap hero-open-grid">
         <div>
           <span class="tag" style="background: var(--accent-light); border-color: rgba(118, 165, 140, 0.4); color: var(--primary);">
-            2030 직장인 10초 식비·시간 세이빙 솔루션
+            2040 겉피부 케어의 한계를 넘는 바이오 솔루션
           </span>
           <h1>
-            식사부터 영양제까지 10초 컷,<br>
-            커피 한 잔 값으로 완성하는 바른 내일
+            바르는 화장품의 한계를 넘다,<br>
+            속건조 잡는 10초 바이오 앰플
           </h1>
           <p class="lead">
-            바쁜 출근길 굶지 마세요. 한 병 3,800원으로 필수 영양소와 활력을 10초 만에 완벽 충전합니다.
+            겉만 맴도는 화장품은 이제 그만. 초저분자 액상 콜라겐 3,270mg과 글루타치온을 물 없이 10초 만에 흡수시켜 진피층까지 직접 수분을 채웁니다.
           </p>
 
           <div class="metrics-pill-group">
             <div class="metric-pill-item">
-              <strong>3,800원</strong>
-              <span>한 끼 식사 & 영양제 올인원</span>
+              <strong>초저분자 3,270mg</strong>
+              <span>500달톤 이하 고흡수</span>
+            </div>
+            <div class="metric-pill-item">
+              <strong>흡수율 92.4%</strong>
+              <span>알약 대비 7.5배 도달</span>
             </div>
             <div class="metric-pill-item">
               <strong>10초 컷</strong>
-              <span>원터치 액상+캡슐</span>
-            </div>
-            <div class="metric-pill-item">
-              <strong>1:1 각인</strong>
-              <span>나만의 맞춤 응원 라벨</span>
+              <span>파우더룸 원샷 케어</span>
             </div>
           </div>
 
           <div style="display: flex; gap: 12px; flex-wrap: wrap;">
             <button class="btn primary" style="padding: 14px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
-              10초 맞춤 정기구독 시작하기 →
+              속건조 맞춤 글로우 구독 시작하기 →
             </button>
-            <a class="btn" href="#scale" style="padding: 14px 22px;">
-              식비 절감 계산기 확인
+            <a class="btn" href="#absorption" style="padding: 14px 22px;">
+              진피 흡수율 데이터 확인
             </a>
           </div>
         </div>
 
-        <!-- Sleek Glass Bottle Mockup Stage -->
+        <!-- Sleek Glow Bottle Mockup Stage -->
         <div class="bottle-stage">
-          <span class="tag">A:FIT DUAL BOTTLE</span>
+          <span class="tag">A:FIT GLOW BIO AMPOULE</span>
           <div class="bottle-object" id="heroBottle">
             <div class="bottle-top-chamber">
               <div class="capsule-pill"></div>
@@ -732,50 +748,50 @@
             <div class="bottle-connector"></div>
             <div class="bottle-liquid-body">
               <div class="bottle-label-engraved" id="bottleHeroLabel">
-                "박지안님, 오늘도<br>퇴근까지 10초 파워!"
+                "송아현 디렉터 검증<br>속건조 순삭 수분 광채"
               </div>
             </div>
           </div>
           <div style="font-size: 0.82rem; color: var(--primary); font-weight: 700;">
-            ✦ 상단 비타민 캡슐 2정 + 하단 고농축 활성 액상
+            ✦ 상단 글루타치온 캡슐 + 하단 초저분자 액상 콜라겐
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         AFIT-110: 3-Line Core Values (3대 핵심 가치 요약)
+         AFITG-110: 3-Line Bio Principles (3대 바이오 원칙)
          ========================================================= -->
     <section id="summary">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFIT-110 · 3-LINE CORE VALUES</span>
-          <h2>A:FIT이 2030을 위해 약속하는 3대 원칙</h2>
-          <p class="lead">복잡한 설명 없이 3줄로 끝내는 핵심 가치 (HUM & Ritual 벤치마킹)</p>
+          <span class="tag">AFITG-110 · 3-LINE BIO PRINCIPLES</span>
+          <h2>속건조를 끝내는 3대 바이오 원칙</h2>
+          <p class="lead">복잡한 화장품 단계를 3줄로 끝내는 이너뷰티 혁신 (Ritual 벤치마킹)</p>
         </div>
 
         <div class="grid-3">
           <article class="card">
             <span class="core-num">PRINCIPLE 01</span>
-            <h3>01. 핵심 효능 (상황 맞춤)</h3>
+            <h3>01. INNER BIO (진피 직접 도달)</h3>
             <p style="color: var(--text-body); font-size: 0.94rem;">
-              야근, 회식, 붓기, 야식 등 5대 일상 피로에 꼭 필요한 기능성 원료를 1:1 정밀 배합합니다.
+              표피 장벽에 막히는 화장품 대신 모세혈관을 통해 피부 진피층까지 유효 성분을 직접 전달합니다.
             </p>
           </article>
 
           <article class="card">
             <span class="core-num">PRINCIPLE 02</span>
-            <h3>02. 식비 절감 (극가성비)</h3>
+            <h3>02. SKIN-CUSTOM (피부 고민 맞춤)</h3>
             <p style="color: var(--text-body); font-size: 0.94rem;">
-              편의점 도시락(8,500원) 대비 절반 이하인 3,800원으로 한 끼 영양과 활력을 모두 해결합니다.
+              속건조, 미백, 탄력, 트러블 등 내 피부 고민에 맞춘 바이오 성분을 AI가 1:1 정밀 배합합니다.
             </p>
           </article>
 
           <article class="card">
             <span class="core-num">PRINCIPLE 03</span>
-            <h3>03. 섭취 편의 (10초 컷)</h3>
+            <h3>03. 10s ONE-SHOT (10초 원샷 섭취)</h3>
             <p style="color: var(--text-body); font-size: 0.94rem;">
-              물 챙길 필요 없이 뚜껑을 딸깍 눌러 액상과 캡슐을 한 번에 마시는 10초 원핸드 웰니스입니다.
+              파우더룸이나 화장대에서 물 챙길 필요 없이 뚜껑만 눌러 10초 만에 마시는 럭셔리 루틴입니다.
             </p>
           </article>
         </div>
@@ -783,88 +799,81 @@
     </section>
 
     <!-- =========================================================
-         AFIT-120 & 121: 5 Situation Chips & Engraved Label Preview
+         AFITG-120: Skin Bio AI Curation (피부 고민별 큐레이션)
          ========================================================= -->
     <section id="curation">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFIT-120 & 121 · 1:1 CUSTOM CURATION & LABEL PREVIEW</span>
-          <h2>오늘 나의 컨디션 맞춤 이중제형 배합</h2>
-          <p class="lead">5대 피로 상황 칩을 터치하면 성분과 용기 라벨이 실시간으로 각인됩니다. (AG1 & Ritual 벤치마킹)</p>
+          <span class="tag">AFITG-120 · SKIN BIO AI CURATION</span>
+          <h2>피부 고민별 1:1 스킨 바이오 배합</h2>
+          <p class="lead">피부 고민 칩을 터치하면 성분 처방과 실시간 각인 라벨이 즉시 갱신됩니다. (HUM Nutrition 벤치마킹)</p>
         </div>
 
         <div class="chips-group" id="condChips">
-          <button class="active" data-cond="overwork" 
-                  data-name="야근·철야 피로 집중 케어" 
-                  data-msg="박지안님, 오늘도 퇴근까지 10초 파워 충전!" 
-                  data-ing="고순도 밀크씨슬 130mg + 활성 비타민 B군 500%"
-                  data-timing="오전 출근 직후 10초 원샷">
-            💼 야근·철야
+          <button class="active" data-cond="moisture" 
+                  data-name="속건조 순삭 수분 광채 앰플" 
+                  data-msg="송아현 디렉터 검증: 속건조 순삭 수분 광채 앰플" 
+                  data-ing="초저분자 액상 콜라겐 3,270mg + 히알루론산 120mg"
+                  data-timing="아침 스킨케어 직후 10초 원샷">
+            💧 속건조 / 수분충전
           </button>
-          <button data-cond="drink" 
-                  data-name="회식·음주 숙취 순삭 케어" 
-                  data-msg="박지안님, 어젯밤 회식 흔적 완벽 리셋!" 
-                  data-ing="헛개나무과병추출물 2,500mg + 타우린 1,000mg"
-                  data-timing="술자리 전후 10초 원샷">
-            🍻 회식·음주
+          <button data-cond="tone" 
+                  data-name="미백 / 기미 토닝 화이트 앰플" 
+                  data-msg="송아현 디렉터 검증: 투명 톤업 글루타치온 화이트 앰플" 
+                  data-ing="순도 50% L-글루타치온 250mg + 비타민 C 500mg"
+                  data-timing="외출 전 자외선 노출 직전">
+            ✨ 미백 / 기미·토닝
           </button>
-          <button data-cond="swell" 
-                  data-name="아침 얼굴·다리 붓기 케어" 
-                  data-msg="박지안님, 아침 붓기 싹 빼고 가벼운 라인!" 
-                  data-ing="호박농축분말 1,000mg + 칼륨 400mg + 옥수수수염"
-                  data-timing="아침 기상 직후 10초 원샷">
-            🪞 붓기·라인
+          <button data-cond="elastic" 
+                  data-name="탄력 / 잔주름 리프팅 앰플" 
+                  data-msg="송아현 디렉터 검증: 진피 코어 엘라스틴 리프팅 앰플" 
+                  data-ing="피쉬 엘라스틴 100mg + 밀크세라마이드 30mg"
+                  data-timing="취침 전 피부 재생 골든타임">
+            🌸 탄력 / 주름리프팅
           </button>
-          <button data-cond="night" 
-                  data-name="늦은 밤 야식·더부룩함 케어" 
-                  data-msg="박지안님, 야식 먹은 다음 날도 속 편하게!" 
-                  data-ing="복합 소화효소 5종 + 유산균 100억 CFU"
-                  data-timing="취침 전 또는 기상 직후">
-            🍜 야식·속쓰림
-          </button>
-          <button data-cond="energy" 
-                  data-name="만성 피로·무기력 올인원 케어" 
-                  data-msg="박지안님, 오늘도 활력 넘치게 치얼업!" 
-                  data-ing="홍경천추출물 200mg + 아연 12mg + 비타민 C"
-                  data-timing="점심 식후 나른할 때">
-            ⚡ 만성 피로
+          <button data-cond="barrier" 
+                  data-name="트러블 / 피부장벽 진정 앰플" 
+                  data-msg="송아현 디렉터 검증: 피부 트러블 진정 시카 장벽 앰플" 
+                  data-ing="병풀추출물 150mg + 아연 12mg + 판토텐산"
+                  data-timing="피부 민감 반응 시 10초 원샷">
+            🌿 트러블 / 피부장벽
           </button>
         </div>
 
         <div class="grid-2">
           <!-- 1:1 Analysis Report Card -->
           <div class="card">
-            <span class="tag">1:1 맞춤 배합 리포트</span>
-            <h3 id="curTitle" style="font-size: 1.25rem; margin: 8px 0;">💼 야근·철야 피로 집중 케어</h3>
+            <span class="tag">스킨 바이오 정밀 처방 리포트</span>
+            <h3 id="curTitle" style="font-size: 1.25rem; margin: 8px 0;">💧 속건조 순삭 수분 광채 앰플</h3>
             <div style="background: var(--card-subtle); padding: 18px; border-radius: 12px; margin: 14px 0; border: 1px solid var(--border);">
               <div style="font-size: 0.92rem; margin-bottom: 8px;">
-                <strong>• 맞춤 기능성 원료:</strong> <span id="curIng" style="color: var(--primary); font-weight: 800;">고순도 밀크씨슬 130mg + 활성 비타민 B군 500%</span>
+                <strong>• 핵심 기능성 바이오 원료:</strong> <span id="curIng" style="color: var(--primary); font-weight: 800;">초저분자 액상 콜라겐 3,270mg + 히알루론산 120mg</span>
               </div>
               <div style="font-size: 0.92rem; margin-bottom: 8px;">
-                <strong>• 이중제형 구성:</strong> 에너지 활성 캡슐 2정 + 피로회복 고농축 액상 50ml
+                <strong>• 이중제형 구성:</strong> 고보습 히알루론산 캡슐 2정 + 고농축 광채 액상 50ml
               </div>
               <div style="font-size: 0.92rem;">
-                <strong>• 권장 섭취 타이밍:</strong> <span id="curTiming" style="color: var(--primary); font-weight: 800;">오전 출근 직후 10초 원샷</span>
+                <strong>• 권장 섭취 타이밍:</strong> <span id="curTiming" style="color: var(--primary); font-weight: 800;">아침 스킨케어 직후 10초 원샷</span>
               </div>
             </div>
             <button class="btn primary" style="width: 100%; justify-content: center; padding: 13px;" onclick="openCheckoutModal()">
-              이 조합으로 10초 맞춤 구독하기 →
+              이 포뮬러로 Glow 맞춤 구독하기 →
             </button>
           </div>
 
           <!-- Real-Time Engraved Label Card -->
           <div class="engraved-card">
             <span class="tag" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3);">
-              AFIT-121 · 실시간 라벨 각인 프리뷰
+              AFITG-121 · 실시간 맞춤 각인 라벨
             </span>
             <div class="engraved-box-inner">
-              <div style="font-size: 0.78rem; opacity: 0.8; margin-bottom: 6px;">[A:FIT D2C CUSTOM ENGRAVING]</div>
+              <div style="font-size: 0.78rem; opacity: 0.8; margin-bottom: 6px;">[A:FIT GLOW BIO SKIN FORMULA]</div>
               <div class="engraved-text" id="labelPreview">
-                "박지안님, 오늘도 퇴근까지 10초 파워 충전!"
+                "송아현 디렉터 검증: 속건조 순삭 수분 광채 앰플"
               </div>
             </div>
             <div style="font-size: 0.82rem; opacity: 0.85; text-align: center;">
-              ✦ 매월 정기구독 시 내가 입력한 이름과 응원 문구가 보틀에 직접 인쇄되어 배송됩니다.
+              ✦ 매월 정기구독 시 내 피부 고민과 스킨케어 응원 문구가 보틀에 직접 각인 배송됩니다.
             </div>
           </div>
         </div>
@@ -872,64 +881,70 @@
     </section>
 
     <!-- =========================================================
-         AFIT-130: Modern Minimized Balance Scale UI (가성비 계산기)
+         AFITG-130: Absorption Donut Chart & Value Comparison
          ========================================================= -->
-    <section id="scale">
+    <section id="absorption">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFIT-130 · VALUE & TIME SAVING CALCULATOR</span>
-          <h2>편의점 식비 vs A:FIT 가성비 계산기</h2>
-          <p class="lead">슬라이더를 움직여 한 달 식비와 시간 절약 금액을 실시간으로 확인하세요. (Seed & HUM 벤치마킹)</p>
+          <span class="tag">AFITG-130 · ABSORPTION & VALUE COMPARISON</span>
+          <h2>진피 흡수율 92.4% & 개별 영양제 비교</h2>
+          <p class="lead">알약 콜라겐 대비 7.5배 높은 흡수율과 4종 올인원 가치를 확인하세요. (Seed & Thorne 벤치마킹)</p>
         </div>
 
-        <div class="scale-card-refined">
-          <div class="scale-grid">
-            <div class="scale-box">
-              <span class="tag">기존 편의점 식사</span>
-              <div style="font-size: 1.8rem; font-weight: 900; color: #8C4A4A; margin: 10px 0 6px;">8,500원</div>
-              <div style="font-size: 0.88rem; color: var(--text-muted);">도시락 + 커피 구매 시 (소요 시간 20분)</div>
-            </div>
-
-            <div class="scale-box highlight">
-              <span class="tag highlight">A:FIT 올인원 구독</span>
-              <div style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin: 10px 0 6px;">3,800원</div>
-              <div style="font-size: 0.88rem; color: var(--primary); font-weight: 700;">완전 영양 + 10초 컷 해결!</div>
+        <div class="clinical-box">
+          <div class="donut-container">
+            <div class="donut-chart-circle"></div>
+            <div>
+              <h3 style="margin-bottom: 6px;">초저분자 액상 92.4% vs 일반 알약 12.3% 진피 도달</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                위장관 분해 없이 10초 만에 혈중으로 흡수되어 4주 만에 피부 수분량 32.8% 증가 검증
+              </p>
             </div>
           </div>
 
-          <div class="scale-slider-wrapper">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-              <label for="daySlider" style="font-weight: 800; color: var(--primary); font-size: 1rem;">
-                월간 섭취 일수 설정:
-              </label>
-              <strong style="font-size: 1.25rem; color: var(--primary);"><span id="sliderVal">30</span>일</strong>
-            </div>
-            <input type="range" id="daySlider" min="5" max="30" step="1" value="30">
-            
-            <div style="display: flex; justify-content: space-around; margin-top: 16px; flex-wrap: wrap; gap: 14px; text-align: center;">
-              <div>
-                <span style="font-size: 0.84rem; color: var(--text-muted);">한 달 절약 식비:</span>
-                <strong style="font-size: 1.5rem; color: var(--primary); display: block;" id="savedMoney">141,000원</strong>
-              </div>
-              <div>
-                <span style="font-size: 0.84rem; color: var(--text-muted);">한 달 절약 시간:</span>
-                <strong style="font-size: 1.5rem; color: var(--accent); display: block;" id="savedTime">590분 (약 10시간)</strong>
-              </div>
-            </div>
-          </div>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>비교 항목</th>
+                <th>시중 개별 영양제 4종 구입</th>
+                <th>A:FIT Glow 올인원 바이오 앰플</th>
+                <th>글로우 가치</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>월 구매 비용</strong></td>
+                <td>월 148,000원 (콜라겐+글루타치온 등)</td>
+                <td class="highlight"><strong>월 50,000원대</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">매월 약 98,000원 절감</td>
+              </tr>
+              <tr>
+                <td><strong>섭취 편의성</strong></td>
+                <td>큰 알약 6알 + 물 500ml 섭취</td>
+                <td class="highlight"><strong>물 없이 10초 원샷</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">목넘김 부담 0%</td>
+              </tr>
+              <tr>
+                <td><strong>피부 흡수율</strong></td>
+                <td>정제형 12.3% (대부분 배출)</td>
+                <td class="highlight"><strong>92.4% 액상 진피 도달</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">7.5배 흡수 효율</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
     <!-- =========================================================
-         AFIT-140: 10s Mechanism Steps (10초 섭취 기전)
+         AFITG-140: 10s Dual Mechanism
          ========================================================= -->
     <section id="mechanism">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFIT-140 · 10s DUAL MECHANISM</span>
-          <h2>물 없이 끝내는 10초 원핸드 섭취 기전</h2>
-          <p class="lead">출근길, 책상 앞 어디서나 10초 만에 완벽 흡수되는 3단계 프로세스 (Seed 벤치마킹)</p>
+          <span class="tag">AFITG-140 · 10s DUAL MECHANISM</span>
+          <h2>물 없이 끝내는 10초 원샷 스킨 루틴</h2>
+          <p class="lead">화장대, 파우더룸 어디서나 10초 만에 완벽 흡수</p>
         </div>
 
         <div class="grid-3">
@@ -937,23 +952,23 @@
             <span class="core-num">STEP 01</span>
             <h3>1. 원터치 캡 딸깍</h3>
             <p style="color: var(--text-body); font-size: 0.92rem;">
-              보틀 상단 캡을 가볍게 누르면 캡슐 보관실이 열립니다.
+              보틀 상단 캡을 누르면 글루타치온/히알루론산 캡슐 챔버가 열립니다.
             </p>
           </div>
 
           <div class="card step-item-card">
             <span class="core-num">STEP 02</span>
-            <h3>2. 정제 2알 톡 낙하</h3>
+            <h3>2. 캡슐 2정 톡 낙하</h3>
             <p style="color: var(--text-body); font-size: 0.92rem;">
-              질소 치환으로 신선하게 보존된 정제가 액상으로 낙하합니다.
+              산화 없이 신선하게 보존된 유효 캡슐이 초저분자 액상 앰플로 낙하합니다.
             </p>
           </div>
 
           <div class="card step-item-card">
             <span class="core-num">STEP 03</span>
-            <h3>3. 10초 원샷 완벽 흡수</h3>
+            <h3>3. 10초 원샷 진피 흡수</h3>
             <p style="color: var(--text-body); font-size: 0.92rem;">
-              물 없이 고농축 액상과 함께 10초 만에 마시면 흡수가 시작됩니다.
+              물 없이 상큼한 샤인머스캣 맛 액상과 함께 10초 만에 마셔 피부 속으로 흡수됩니다.
             </p>
           </div>
         </div>
@@ -961,71 +976,71 @@
     </section>
 
     <!-- =========================================================
-         AFIT-150: Real Reviews (2030 직장인 실명 후기)
+         AFITG-150: Expert & Real Reviews
          ========================================================= -->
     <section id="reviews">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFIT-150 · 2030 REAL REVIEWS</span>
-          <h2>2030 실구독자 100% 찐 후기 (평점 ★ 4.9/5.0)</h2>
-          <p class="lead">바쁜 1인가구와 직장인들의 리얼 구독 보이스 (HUM 벤치마킹)</p>
+          <span class="tag">AFITG-150 · EXPERT & REAL REVIEWS</span>
+          <h2>전문가 & 실구독자 후기 (평점 ★ 4.96/5.0)</h2>
+          <p class="lead">피부과 전문의, 뷰티 에디터, 장기 구독자의 리얼 보이스</p>
         </div>
 
         <div class="grid-3">
           <div class="review-card">
             <div>
               <div class="review-author-meta">
-                <div class="author-initial">이</div>
+                <div class="author-initial">김</div>
                 <div>
-                  <strong style="color: var(--primary);">이성우 (29세)</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">IT 개발자 / 야근 잦음</div>
+                  <strong style="color: var(--primary);">김피부과 원장 (42세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">피부과 전문의 / 의학박사</div>
                 </div>
               </div>
               <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
               <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
-                "야근할 때 편의점 커피랑 에너지드링크로 버텼는데, A:FIT으로 바꾸고 한 달 식비 15만원 아끼고 피로도 훨씬 덜해요."
+                "피부 장벽이 무너져 내원하는 환자들에게 항상 액상 이너뷰티를 권합니다. 초저분자 액상 콜라겐과 글루타치온 배합의 흡수율이 압도적입니다."
               </p>
             </div>
             <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
-              ✓ 3개월 정기구독 중
+              ✓ 6개월 자문 및 복용 중
             </div>
           </div>
 
           <div class="review-card">
             <div>
               <div class="review-author-meta">
-                <div class="author-initial">최</div>
+                <div class="author-initial">정</div>
                 <div>
-                  <strong style="color: var(--primary);">최교대 (29세)</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">간호사 / 3교대 근무</div>
+                  <strong style="color: var(--primary);">정뷰티 에디터 (33세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">매거진 뷰티 수석 에디터</div>
                 </div>
               </div>
               <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
               <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
-                "불규칙한 교대근무로 늘 얼굴이 부어있었는데 붓기 팩 마시고 출근하면 다리가 너무 가볍습니다. 라벨 응원 문구도 힐링돼요!"
+                "수많은 화장품을 테스트하지만 겨울철 속당김은 A:FIT Glow 2주 만에 잡혔습니다. 비린 맛 전혀 없는 샤인머스캣 맛도 완벽합니다."
+              </p>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
+              ✓ 5개월 정기구독 중
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-author-meta">
+                <div class="author-initial">이</div>
+                <div>
+                  <strong style="color: var(--primary);">이글로우 (28세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">뷰티 크리에이터</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
+              <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
+                "화장대 위에 두면 디자인도 너무 고급스럽고, 매일 아침 메이크업 전에 10초 만에 마시니까 파운데이션 들뜸이 사라졌어요!"
               </p>
             </div>
             <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
               ✓ 4개월 정기구독 중
-            </div>
-          </div>
-
-          <div class="review-card">
-            <div>
-              <div class="review-author-meta">
-                <div class="author-initial">이</div>
-                <div>
-                  <strong style="color: var(--primary);">이취준 (25세)</strong>
-                  <div style="font-size: 0.78rem; color: var(--text-muted);">취업준비생 / 1인가구</div>
-                </div>
-              </div>
-              <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
-              <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
-                "식비 부담이 제일 컸는데 하루 3,800원에 밥이랑 영양제를 같이 해결할 수 있어서 자취생에게 최고의 갓성비템입니다."
-              </p>
-            </div>
-            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
-              ✓ 2개월 정기구독 중
             </div>
           </div>
         </div>
@@ -1033,91 +1048,91 @@
     </section>
 
     <!-- =========================================================
-         AFIT-160: FAQ (자주 묻는 질문)
+         AFITG-160: FAQ
          ========================================================= -->
     <section class="faq">
       <div class="wrap">
         <div class="section-header">
-          <span class="tag">AFIT-160 · FAQ</span>
+          <span class="tag">AFITG-160 · FAQ</span>
           <h2>자주 묻는 질문</h2>
         </div>
 
         <details open>
-          <summary>정말 물 없이 바로 마셔도 목 넘김이 괜찮나요?</summary>
-          <p>네! A:FIT은 목 넘김이 가장 부드러운 소형 정제와 고농축 액상이 최적의 점도로 배합되어 물 없이 10초 만에 깔끔하게 섭취하실 수 있습니다.</p>
+          <summary>피쉬콜라겐 특유의 비린 맛은 전혀 없나요?</summary>
+          <p>네, 네덜란드산 고순도 정제 효소 공법과 천연 샤인머스캣 과즙 블렌딩으로 비린 맛 0%, 상큼하고 깔끔한 맛을 완성했습니다.</p>
         </details>
 
         <details>
-          <summary>라벨 각인 문구는 매달 바꿀 수 있나요?</summary>
-          <p>네, 마이페이지에서 매월 결제일 24시간 전까지 원하는 이름과 응원 문구를 자유롭게 수정하실 수 있습니다.</p>
+          <summary>임산부나 수유부도 섭취가 가능한가요?</summary>
+          <p>A:FIT Glow는 안전한 식품 등급의 원료만 사용하지만, 임신·수유 중에는 전문의와 상의 후 섭취하시는 것을 권장합니다.</p>
         </details>
 
         <details>
-          <summary>구독 해지나 일시정지는 언제든 가능한가요?</summary>
-          <p>위약금 0원으로 마이페이지에서 클릭 한 번에 자유롭게 다음 회차 건너뛰기 또는 100% 해지가 가능합니다.</p>
+          <summary>구독 플랜 변경이나 일시정지는 언제든 가능한가요?</summary>
+          <p>네, 마이페이지에서 위약금 없이 1클릭으로 다음 결제일 연기, 일시정지, 해지가 100% 자유롭습니다.</p>
         </details>
       </div>
     </section>
   </main>
 
   <!-- =========================================================
-       AFIT-170: Sticky Subscription Bar
+       AFITG-170: Sticky Subscription Bar
        ========================================================= -->
   <aside class="sticky-bar" id="stickyBar">
     <div class="wrap sticky-flex">
       <div>
         <div style="display: flex; align-items: center; gap: 8px;">
-          <strong style="font-size: 1.1rem; color: var(--primary);">A:FIT 2030 맞춤 이중제형 정기구독</strong>
-          <span class="tag highlight" style="font-size: 0.72rem; padding: 2px 8px;">첫 달 30% 할인</span>
+          <strong style="font-size: 1.1rem; color: var(--primary);">A:FIT Glow 맞춤 스킨 바이오 앰플 정기구독</strong>
+          <span class="tag highlight" style="font-size: 0.72rem; padding: 2px 8px;">첫 달 30% 글로우 혜택</span>
         </div>
         <div style="font-size: 0.85rem; color: var(--text-muted);">
-          한 병 3,800원, 하루 10초로 완성하는 갓생 루틴 (월 5만 원대~)
+          초저분자 3,270mg, 하루 10초로 끝내는 속건조 케어 (월 5만 원대~)
         </div>
       </div>
       <button class="btn primary" style="padding: 12px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
-        10초 맞춤 구독 시작하기 →
+        10초 맞춤 글로우 시작하기 →
       </button>
     </div>
   </aside>
 
   <!-- =========================================================
-       AFIT-180: Instant Checkout Modal (10초 맞춤 구독 모달)
+       AFITG-180: Instant Checkout Modal
        ========================================================= -->
   <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <div class="dialog">
       <button class="close" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
-      <span class="tag">AFIT-180 · INSTANT CHECKOUT</span>
-      <h2 id="modalTitle" style="margin: 8px 0 16px;">10초 맞춤 정기구독 신청</h2>
+      <span class="tag">AFITG-180 · INSTANT CHECKOUT</span>
+      <h2 id="modalTitle" style="margin: 8px 0 16px;">10초 Glow 맞춤 구독 신청</h2>
 
       <div style="background: var(--card-subtle); padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border);">
-        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">선택된 각인 라벨:</div>
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">선택된 스킨케어 각인 라벨:</div>
         <strong id="modalLabelText" style="font-size: 0.98rem; color: var(--primary);">
-          "박지안님, 오늘도 퇴근까지 10초 파워 충전!"
+          "송아현 디렉터 검증: 속건조 순삭 수분 광채 앰플"
         </strong>
       </div>
 
       <form id="checkoutForm" novalidate>
         <div class="field">
-          <label for="custName">구독자 성함 (라벨에 인쇄될 이름)</label>
-          <input type="text" id="custName" name="custName" value="박지안" required>
+          <label for="custName">구독자 성함</label>
+          <input type="text" id="custName" name="custName" value="송아현" required>
         </div>
 
         <div class="field">
-          <label for="custPhone">휴대폰 번호 (배송 알림톡 수신용)</label>
-          <input type="tel" id="custPhone" name="custPhone" value="010-1234-5678" required>
+          <label for="custPhone">휴대폰 번호 (새벽 정밀배송 알림용)</label>
+          <input type="tel" id="custPhone" name="custPhone" value="010-4455-6677" required>
         </div>
 
         <div class="field">
           <label for="planSelect">구독 플랜 선택</label>
           <select id="planSelect">
-            <option value="20day">주 5일 오피스 집중팩 (월 20병 / 76,000원 → 첫달 53,200원)</option>
-            <option value="30day" selected>주 7일 올인원 풀케어팩 (월 30병 / 114,000원 → 첫달 79,800원)</option>
+            <option value="20day">월 20일 글로우팩 (월 20병 / 76,000원 → 첫달 53,200원)</option>
+            <option value="30day" selected>월 30일 올인원 프리미엄팩 (월 30병 / 114,000원 → 첫달 79,800원)</option>
           </select>
         </div>
 
         <div class="field">
           <label for="custAddr">배송지 주소</label>
-          <input type="text" id="custAddr" name="custAddr" value="서울특별시 강남구 테헤란로 123 (역삼동)" required>
+          <input type="text" id="custAddr" name="custAddr" value="서울특별시 강남구 압구정로 201 (현대아파트)" required>
         </div>
 
         <label style="display: flex; gap: 8px; align-items: center; margin: 16px 0; font-size: 0.88rem; color: var(--text-body);">
@@ -1135,22 +1150,22 @@
   </div>
 
   <!-- =========================================================
-       AFIT-181: Done Modal (구독 접수 완료 모달)
+       AFITG-181: Done Modal
        ========================================================= -->
   <div id="doneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
     <div class="dialog" style="text-align: center;">
       <button class="close" onclick="closeDoneModal()" aria-label="닫기">×</button>
-      <span class="tag highlight">AFIT-181 · SUBSCRIPTION CONFIRMED</span>
-      <div style="font-size: 3.2rem; margin: 12px 0;">🎉</div>
-      <h2 id="doneTitle" style="margin-bottom: 8px;">정기구독이 정상 접수되었습니다!</h2>
+      <span class="tag highlight">AFITG-181 · SUBSCRIPTION CONFIRMED</span>
+      <div style="font-size: 3.2rem; margin: 12px 0;">✨</div>
+      <h2 id="doneTitle" style="margin-bottom: 8px;">A:FIT Glow 정기구독이 정상 접수되었습니다!</h2>
       <p style="color: var(--text-muted); font-size: 0.95rem;">
-        박지안님의 이름이 각인된 첫 번째 A:FIT 패키지가 내일 아침 문 앞으로 출발합니다.
+        송아현 디렉터 검증 맞춤 스킨 바이오 앰플이 내일 아침 문 앞으로 신선하게 배송됩니다.
       </p>
 
       <div style="background: var(--card-subtle); padding: 16px; border-radius: 14px; margin: 20px 0; font-size: 0.92rem; text-align: left; border: 1px solid var(--border);">
-        <div style="margin-bottom: 6px;">• <strong>구독 주문 번호:</strong> <span id="orderNum" style="color: var(--primary); font-weight: 800;">AFIT-20260814-7892</span></div>
-        <div style="margin-bottom: 6px;">• <strong>첫 배송 예정:</strong> 내일 아침 07:00 이전 (새벽 정밀 배송)</div>
-        <div>• <strong>각인 라벨:</strong> <span id="doneMsgText" style="color: var(--primary); font-weight: 800;">"박지안님, 오늘도 퇴근까지 10초 파워 충전!"</span></div>
+        <div style="margin-bottom: 6px;">• <strong>구독 주문 번호:</strong> <span id="orderNum" style="color: var(--primary); font-weight: 800;">AFITG-20260814-8841</span></div>
+        <div style="margin-bottom: 6px;">• <strong>첫 배송 예정:</strong> 내일 아침 07:00 이전 (정밀 새벽 배송)</div>
+        <div>• <strong>각인 라벨:</strong> <span id="doneMsgText" style="color: var(--primary); font-weight: 800;">"송아현 디렉터 검증: 속건조 순삭 수분 광채 앰플"</span></div>
       </div>
 
       <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="closeDoneModal()">
@@ -1163,20 +1178,20 @@
   <footer class="wrap footer">
     <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
       <div>
-        <strong style="color: var(--primary); font-size: 1.15rem;">A:FIT (에이핏)</strong>
-        <div style="font-size: 0.84rem; margin-top: 4px;">2030 직장인 식비·시간 세이빙 D2C 맞춤 이중제형 구독 서비스</div>
+        <strong style="color: var(--primary); font-size: 1.15rem;">A:FIT Glow (에이핏 글로우)</strong>
+        <div style="font-size: 0.84rem; margin-top: 4px;">2040 뷰티 & 스킨 바이오 케어 올인원 이중제형 정기구독 서비스</div>
       </div>
       <div style="font-size: 0.84rem;">
-        고객센터: 1588-0000 (평일 09:00 ~ 18:00) | support@afit.kr
+        글로우 랩 고객센터: 1588-0000 (평일 09:00 ~ 18:00) | glow@afit.kr
       </div>
     </div>
-    <div>주식회사 에이핏 | 대표이사: 허지민 | 사업자등록번호: 123-45-67890 | 통신판매업신고: 제2026-서울강남-0123호</div>
-    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Inc. All rights reserved. (Interactive Storyboard Prototype)</div>
+    <div>주식회사 에이핏 글로우 | 마케팅 디렉터: 송아현 | 사업자등록번호: 456-78-90123 | 통신판매업신고: 제2026-서울강남-0912호</div>
+    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Glow Inc. All rights reserved. (Interactive Storyboard Prototype)</div>
   </footer>
 
   <!-- Interactive JavaScript -->
   <script>
-    // 1. Situation Chips & Dynamic Label Engraving
+    // 1. Skin Chips & Dynamic Label Engraving
     const chips = document.querySelectorAll('#condChips button');
     const curTitle = document.getElementById('curTitle');
     const curIng = document.getElementById('curIng');
@@ -1200,25 +1215,20 @@
         curIng.textContent = ing;
         curTiming.textContent = timing;
         labelPreview.textContent = `"${msg}"`;
-        bottleHeroLabel.innerHTML = `"${msg.replace('오늘도 ', '오늘도<br>')}"`;
+        bottleHeroLabel.innerHTML = `"${msg.replace('검증: ', '검증<br>')}"`;
         modalLabelText.textContent = `"${msg}"`;
         doneMsgText.textContent = `"${msg}"`;
       });
     });
 
-    // 2. Cost Saving Balance Scale Slider
-    const daySlider = document.getElementById('daySlider');
-    const sliderVal = document.getElementById('sliderVal');
-    const savedMoney = document.getElementById('savedMoney');
-    const savedTime = document.getElementById('savedTime');
-
-    daySlider.addEventListener('input', (e) => {
-      const days = parseInt(e.target.value);
-      sliderVal.textContent = days;
-      const money = days * 4700;
-      const time = days * 20 - (days * 0.16); // 20m vs 10s
-      savedMoney.textContent = `${money.toLocaleString()}원`;
-      savedTime.textContent = `${Math.round(time)}분 (약 ${(time/60).toFixed(1)}시간)`;
+    // 2. Sticky Bar Scroll Visibility
+    const stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
     });
 
     // 3. Modal Control
@@ -1264,19 +1274,9 @@
       setTimeout(() => {
         closeCheckoutModal();
         const randNum = Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('orderNum').textContent = `AFIT-20260814-${randNum}`;
+        document.getElementById('orderNum').textContent = `AFITG-20260814-${randNum}`;
         doneModal.classList.add('open');
       }, 500);
-    });
-
-    // 4. Sticky Bar Scroll Visibility
-    const stickyBar = document.getElementById('stickyBar');
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 400) {
-        stickyBar.classList.add('show');
-      } else {
-        stickyBar.classList.remove('show');
-      }
     });
 
     // Close Modal on Escape Key

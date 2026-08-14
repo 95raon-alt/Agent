@@ -1,0 +1,206 @@
+- generic [active] [ref=f3e1]:
+  - banner [ref=f3e2]:
+    - navigation [ref=f3e3]:
+      - link "A:FIT Emergency 🚨 3교대 비상 충전" [ref=f3e4] [cursor=pointer]:
+        - /url: "#"
+        - strong [ref=f3e5]: A:FIT Emergency
+        - generic [ref=f3e6]: 🚨 3교대 비상 충전
+      - generic [ref=f3e7]:
+        - link "3대 비상 원칙" [ref=f3e8] [cursor=pointer]:
+          - /url: "#summary"
+        - link "근무별 AI 큐레이션" [ref=f3e9] [cursor=pointer]:
+          - /url: "#curation"
+        - link "속편한 성분표" [ref=f3e10] [cursor=pointer]:
+          - /url: "#gastrosafe"
+        - link "10초 섭취 기전" [ref=f3e11] [cursor=pointer]:
+          - /url: "#mechanism"
+        - link "의료진 후기" [ref=f3e12] [cursor=pointer]:
+          - /url: "#reviews"
+        - button "비상 충전 시작 →" [ref=f3e13] [cursor=pointer]:
+          - generic [ref=f3e14]: 비상 충전 시작
+          - generic [ref=f3e15]: →
+  - main [ref=f3e16]:
+    - generic [ref=f3e18]:
+      - generic [ref=f3e19]:
+        - generic [ref=f3e20]: 3교대 의료진 & 야간근무자 비상 활력 솔루션
+        - heading "나이트 근무 도중 10초, 속 쓰림 없이 깨어나는 비상 활력" [level=1] [ref=f3e21]
+        - paragraph [ref=f3e22]: 카페인 폭탄과 속 쓰림은 이제 그만. 테아닌 200mg, 고함량 활성 비타민 B군, 위 점막 보호 양배추 액상을 물 없이 10초 만에 무소음/무냄새로 충전합니다.
+        - generic [ref=f3e23]:
+          - generic [ref=f3e24]:
+            - strong [ref=f3e25]: 위 자극 0%
+            - text: 양배추 농축 위보호
+          - generic [ref=f3e26]:
+            - strong [ref=f3e27]: 비타민B 1,000%
+            - text: 8시간 지속 활력
+          - generic [ref=f3e28]:
+            - strong [ref=f3e29]: 10초 무소음
+            - text: 스테이션 원샷 케어
+        - generic [ref=f3e30]:
+          - button "3교대 맞춤 비상 구독 시작하기 →" [ref=f3e31] [cursor=pointer]
+          - link "속편한 성분 검증표 확인" [ref=f3e32] [cursor=pointer]:
+            - /url: "#gastrosafe"
+      - generic [ref=f3e33]:
+        - generic [ref=f3e34]: A:FIT EMERGENCY SHIFT BOTTLE
+        - generic [ref=f3e35]: "\"최교대 간호사 검증나이트 근무 생명줄 팩\""
+        - generic [ref=f3e42]: ✦ 상단 테아닌+비타민B 캡슐 + 하단 속편한 양배추 액상
+    - generic [ref=f3e44]:
+      - generic [ref=f3e45]:
+        - generic [ref=f3e46]: AFITN-110 · 3-LINE SHIFT PRINCIPLES
+        - heading "3교대 생존을 위한 3대 비상 원칙" [level=2] [ref=f3e47]
+        - paragraph [ref=f3e48]: 불규칙한 교대근무를 3줄로 지켜내는 속편한 리커버리 가치 (Ritual 벤치마킹)
+      - generic [ref=f3e49]:
+        - article [ref=f3e50]:
+          - generic [ref=f3e51]: PRINCIPLE 01
+          - heading "01. ZERO HEARTBURN (속 쓰림 0%)" [level=3] [ref=f3e52]
+          - paragraph [ref=f3e53]: 고농축 양배추와 브로콜리 추출 액상으로 공복에 마셔도 속 쓰림 없이 부드럽게 흡수됩니다.
+        - article [ref=f3e54]:
+          - generic [ref=f3e55]: PRINCIPLE 02
+          - heading "02. SHIFT-CUSTOM (근무별 맞춤)" [level=3] [ref=f3e56]
+          - paragraph [ref=f3e57]: Day(오전집중), Evening(피로회복), Night(심야비상) 근무 패턴에 맞춘 영양비를 AI가 처방합니다.
+        - article [ref=f3e58]:
+          - generic [ref=f3e59]: PRINCIPLE 03
+          - heading "03. 10s SILENT (10초 무소음)" [level=3] [ref=f3e60]
+          - paragraph [ref=f3e61]: 병동 스테이션, 조용한 사무실에서 냄새와 소음 없이 뚜껑만 눌러 10초 만에 마실 수 있습니다.
+    - generic [ref=f3e63]:
+      - generic [ref=f3e64]:
+        - generic [ref=f3e65]: AFITN-120 · SHIFT CARE AI CURATION
+        - heading "근무 패턴별 1:1 비상 활력 맞춤 배합" [level=2] [ref=f3e66]
+        - paragraph [ref=f3e67]: 근무 칩을 선택하면 최적의 비상 처방과 실시간 각인 라벨이 즉시 갱신됩니다. (Gainful 벤치마킹)
+      - generic [ref=f3e68]:
+        - button "🌙 Night 근무 / 심야 비상" [ref=f3e69] [cursor=pointer]
+        - button "☀️ Day 근무 / 오전 집중" [ref=f3e70] [cursor=pointer]
+        - button "🌆 Evening 근무 / 오후 피로" [ref=f3e71] [cursor=pointer]
+      - generic [ref=f3e72]:
+        - generic [ref=f3e73]:
+          - generic [ref=f3e74]: 3교대 메디컬 정밀 처방 리포트
+          - heading "🌙 Night 근무 심야 비상 활력 팩" [level=3] [ref=f3e75]
+          - generic [ref=f3e76]:
+            - generic [ref=f3e77]:
+              - strong [ref=f3e78]: "• 특화 비상 활력 원료:"
+              - text: 활성 비타민 B12 1,000% + 타우린 1,000mg + 양배추농축액
+            - generic [ref=f3e79]:
+              - strong [ref=f3e80]: "• 이중제형 구성:"
+              - text: 고활력 비타민 캡슐 2정 + 속편한 양배추 액상 50ml
+            - generic [ref=f3e81]:
+              - strong [ref=f3e82]: "• 권장 섭취 타이밍:"
+              - text: 나이트 근무 투입 30분 전 10초 원샷
+          - button "이 근무 조합으로 맞춤 구독하기 →" [ref=f3e83] [cursor=pointer]
+        - generic [ref=f3e84]:
+          - generic [ref=f3e85]: AFITN-121 · 실시간 비상 각인 라벨
+          - generic [ref=f3e86]:
+            - generic [ref=f3e87]: "[A:FIT EMERGENCY MEDICAL FORMULA]"
+            - generic [ref=f3e88]: "\"최교대 간호사 검증: 나이트 근무 생명줄 10초 비상팩\""
+          - generic [ref=f3e89]: ✦ 매월 정기구독 시 내 근무 부서명과 생존 응원 문구가 보틀에 직접 각인 배송됩니다.
+    - generic [ref=f3e91]:
+      - generic [ref=f3e92]:
+        - generic [ref=f3e93]: AFITN-130 · GASTRO-SAFE & ENERGY COMPARISON
+        - heading "위 자극 0% 검증 & 고카페인 음료 비교" [level=2] [ref=f3e94]
+        - paragraph [ref=f3e95]: 속 쓰림과 심장 두근거림을 유발하는 에너지 음료와의 차이를 확인하세요. (Bare Performance 벤치마킹)
+      - generic [ref=f3e96]:
+        - generic [ref=f3e97]:
+          - generic [ref=f3e98]: 0%
+          - generic [ref=f3e99]:
+            - heading "위 자극 0% · 카페인 크래시 0% · 8시간 지속 활력" [level=3] [ref=f3e100]
+            - paragraph [ref=f3e101]: 공복 섭취 임상 결과 속 쓰림 발생률 0.0%, 근무 후반 집중력 유지율 91.3% 검증
+        - table [ref=f3e102]:
+          - rowgroup [ref=f3e103]:
+            - row [ref=f3e104]:
+              - columnheader "비교 항목" [ref=f3e105]
+              - columnheader "시중 고카페인 에너지 음료" [ref=f3e106]
+              - columnheader "A:FIT Emergency 비상 앰플" [ref=f3e107]
+              - columnheader "교대근무 혜택" [ref=f3e108]
+          - rowgroup [ref=f3e109]:
+            - row [ref=f3e110]:
+              - cell [ref=f3e111]:
+                - strong [ref=f3e112]: 위장 자극
+              - cell "속 쓰림 유발 (강산성 pH 2.8)" [ref=f3e113]
+              - cell [ref=f3e114]:
+                - strong [ref=f3e115]: 위 자극 0% (중성 양배추액)
+              - cell "공복 섭취 100% 안심" [ref=f3e116]
+            - row [ref=f3e117]:
+              - cell [ref=f3e118]:
+                - strong [ref=f3e119]: 각성 지속력
+              - cell "2시간 후 급격한 카페인 크래시" [ref=f3e120]
+              - cell [ref=f3e121]:
+                - strong [ref=f3e122]: 8시간 완만하고 지속적 활력
+              - cell "교대근무 완벽 커버" [ref=f3e123]
+            - row [ref=f3e124]:
+              - cell [ref=f3e125]:
+                - strong [ref=f3e126]: 수면 방해
+              - cell "퇴근 후 불면증 유발" [ref=f3e127]
+              - cell [ref=f3e128]:
+                - strong [ref=f3e129]: 테아닌 함유 (퇴근 후 꿀잠)
+              - cell "수면 리듬 정상화" [ref=f3e130]
+    - generic [ref=f3e132]:
+      - generic [ref=f3e133]:
+        - generic [ref=f3e134]: AFITN-140 · 10s DUAL MECHANISM
+        - heading "물 없이 끝내는 10초 무소음 비상 충전" [level=2] [ref=f3e135]
+        - paragraph [ref=f3e136]: 병동 스테이션, 조용한 야간실에서 10초 만에 완벽 흡수
+      - generic [ref=f3e137]:
+        - generic [ref=f3e138]:
+          - generic [ref=f3e139]: STEP 01
+          - heading "1. 원터치 캡 딸깍" [level=3] [ref=f3e140]
+          - paragraph [ref=f3e141]: 소음 없이 상단 캡을 누르면 활성 비타민/테아닌 캡슐 챔버가 열립니다.
+        - generic [ref=f3e142]:
+          - generic [ref=f3e143]: STEP 02
+          - heading "2. 비상 캡슐 낙하" [level=3] [ref=f3e144]
+          - paragraph [ref=f3e145]: 산화 없이 신선하게 밀폐된 캡슐이 속편한 양배추 액상으로 낙하합니다.
+        - generic [ref=f3e146]:
+          - generic [ref=f3e147]: STEP 03
+          - heading "3. 10초 무소음 원샷" [level=3] [ref=f3e148]
+          - paragraph [ref=f3e149]: 물 없이 10초 만에 마셔 위장 부담 없이 8시간 지속 에너지를 충전합니다.
+    - generic [ref=f3e151]:
+      - generic [ref=f3e152]:
+        - generic [ref=f3e153]: AFITN-150 · SHIFT WORKERS REVIEWS
+        - heading "3교대 의료진 & 야간근무자 후기 (평점 ★ 4.98/5.0)" [level=2] [ref=f3e154]
+        - paragraph [ref=f3e155]: 응급실 간호사, 야간 설비 엔지니어의 생생한 생존 보이스
+      - generic [ref=f3e156]:
+        - generic [ref=f3e157]:
+          - generic [ref=f3e158]:
+            - generic [ref=f3e159]:
+              - generic [ref=f3e160]: 김
+              - generic [ref=f3e161]:
+                - strong [ref=f3e162]: 김응급 (29세)
+                - generic [ref=f3e163]: 대학병원 응급실 3교대 간호사
+            - generic [ref=f3e164]: ★★★★★
+            - paragraph [ref=f3e165]: "\"새벽 4시만 되면 커피 3잔으로 버티다 위염 달고 살았는데, A:FIT Emergency로 바꾸고 속 쓰림이 100% 사라졌어요. 병동 동기들도 다 같이 구독 중입니다.\""
+          - generic [ref=f3e166]: ✓ 6개월 정기구독 중
+        - generic [ref=f3e167]:
+          - generic [ref=f3e168]:
+            - generic [ref=f3e169]:
+              - generic [ref=f3e170]: 박
+              - generic [ref=f3e171]:
+                - strong [ref=f3e172]: 박나이트 (36세)
+                - generic [ref=f3e173]: 반도체 팹 야간 엔지니어
+            - generic [ref=f3e174]: ★★★★★
+            - paragraph [ref=f3e175]: "\"방진복 입고 일해서 물 챙겨 마시기 어려운데, 들어가기 직전 10초 만에 원샷할 수 있어서 너무 편합니다. 퇴근하고 잠도 깊게 잘 와요.\""
+          - generic [ref=f3e176]: ✓ 5개월 정기구독 중
+        - generic [ref=f3e177]:
+          - generic [ref=f3e178]:
+            - generic [ref=f3e179]:
+              - generic [ref=f3e180]: 이
+              - generic [ref=f3e181]:
+                - strong [ref=f3e182]: 이교대 (41세)
+                - generic [ref=f3e183]: 종합병원 영상의학과 방사선사
+            - generic [ref=f3e184]: ★★★★★
+            - paragraph [ref=f3e185]: "\"라벨에 내 이름이랑 병원 부서명이 각인되어 오니까 락커룸에서 섞일 일도 없고 매일 나이트 출근할 때마다 힐링됩니다!\""
+          - generic [ref=f3e186]: ✓ 4개월 정기구독 중
+    - generic [ref=f3e188]:
+      - generic [ref=f3e189]:
+        - generic [ref=f3e190]: AFITN-160 · FAQ
+        - heading "자주 묻는 질문" [level=2] [ref=f3e191]
+      - group [ref=f3e192]:
+        - generic "정말 밥을 안 먹고 빈속에 마셔도 속이 안 쓰린가요? −" [ref=f3e193] [cursor=pointer]
+        - paragraph [ref=f3e194]: 네! 위 점막을 보호하는 유기농 양배추 농축액과 비자극성 수용성 비타민 B군으로 배합되어 극심한 공복에도 속 편하게 섭취하실 수 있습니다.
+      - group [ref=f3e195]:
+        - generic "퇴근 후 잘 때 불면증이 생기지 않나요? +" [ref=f3e196] [cursor=pointer]
+      - group [ref=f3e197]:
+        - generic "교대근무 스케줄(근무표)에 맞춰 배송일을 조정할 수 있나요? +" [ref=f3e198] [cursor=pointer]
+  - contentinfo [ref=f3e199]:
+    - generic [ref=f3e200]:
+      - generic [ref=f3e201]:
+        - strong [ref=f3e202]: A:FIT Emergency & Night (에이핏 이머전시)
+        - generic [ref=f3e203]: 3교대·야간근무자 비상 활력 & 속편한 이중제형 정기구독 서비스
+      - generic [ref=f3e204]: "이머전시 랩 고객센터: 1588-0000 (24시간 교대 응대) | emergency@afit.kr"
+    - generic [ref=f3e205]: "주식회사 에이핏 이머전시 | 구매총괄: 최교대 | 사업자등록번호: 678-90-12345 | 통신판매업신고: 제2026-서울종로-0382호"
+    - generic [ref=f3e206]: Copyright © 2026 A:FIT Emergency Inc. All rights reserved. (Interactive Storyboard Prototype)

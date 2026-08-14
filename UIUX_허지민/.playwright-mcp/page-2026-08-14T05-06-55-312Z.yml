@@ -1,0 +1,222 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "A:FIT B2C 2030 직장인 맞춤" [ref=e4] [cursor=pointer]:
+        - /url: "#"
+        - strong [ref=e5]: A:FIT
+        - generic [ref=e6]: B2C 2030 직장인 맞춤
+      - generic [ref=e7]:
+        - link "3대 핵심 가치" [ref=e8] [cursor=pointer]:
+          - /url: "#summary"
+        - link "1:1 맞춤 진단" [ref=e9] [cursor=pointer]:
+          - /url: "#curation"
+        - link "가성비 저울" [ref=e10] [cursor=pointer]:
+          - /url: "#cost"
+        - link "10초 섭취 기전" [ref=e11] [cursor=pointer]:
+          - /url: "#mechanism"
+        - link "실제 후기" [ref=e12] [cursor=pointer]:
+          - /url: "#reviews"
+        - button "커피 1잔 값 구독 시작 →" [ref=e13] [cursor=pointer]:
+          - generic [ref=e14]: 커피 1잔 값 구독 시작
+          - generic [ref=e15]: →
+  - main [ref=e16]:
+    - generic [ref=e18]:
+      - generic [ref=e19]:
+        - generic [ref=e20]: ⚡ 2030 직장인 / 1인가구 전용 솔루션
+        - heading "식사부터 영양제까지 10초 컷, 커피 한 잔 값으로 완성하는 바른 내일" [level=1] [ref=e21]
+        - paragraph [ref=e22]: 챙겨 먹을 시간도, 챙겨줄 사람도 없는 2030을 위해. 물 없이 뚜껑만 열어 10초 만에 끝내는 초개인화 이중제형 건강 솔루션입니다.
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - strong [ref=e25]: 3,800원
+            - text: 커피 1잔 값 가성비
+          - generic [ref=e26]:
+            - strong [ref=e27]: 10초 컷
+            - text: 물 없는 원핸드 섭취
+          - generic [ref=e28]:
+            - strong [ref=e29]: 1:1 맞춤
+            - text: 알고리즘 라벨 각인
+        - generic [ref=e30]:
+          - button "커피 한 잔 값으로 맞춤 구독 시작하기 →" [ref=e31] [cursor=pointer]
+          - link "내 맞춤 라벨 진단하기" [ref=e32] [cursor=pointer]:
+            - /url: "#curation"
+      - generic [ref=e33]:
+        - generic [ref=e34]: DUAL-FORMULATION 3D
+        - generic [ref=e35]:
+          - generic [ref=e36]: CAPSULE 💊 2정 밀폐
+          - generic [ref=e38]: "\"어제 밤샘 야근한지안님을 위한 붓기 팩\""
+        - generic [ref=e40]: ✦ 상단 맞춤 캡슐 + 하단 액상 앰플 결합 구조
+        - paragraph [ref=e41]: (호버 시 3D 틸트 인터랙션 & 라벨 실시간 연동)
+    - generic [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]: AFIT-110 · 3-LINE CORE VALUES
+        - heading "바쁜 2030을 위한 A:FIT 3대 약속" [level=2] [ref=e46]
+        - paragraph [ref=e47]: 정보 피로도 없는 3줄 요약 핵심 소구점 (HUM Nutrition 벤치마킹)
+      - generic [ref=e48]:
+        - article [ref=e49]:
+          - generic [ref=e50]: "01"
+          - heading "01. 핵심 효능 (상황 맞춤)" [level=3] [ref=e51]
+          - paragraph [ref=e52]: 어제 먹은 야식, 회식, 밤샘 야근 등 나의 실시간 컨디션 상태에 맞춘 고순도 맞춤 캡슐과 앰플을 자동 매칭합니다.
+        - article [ref=e53]:
+          - generic [ref=e54]: "02"
+          - heading "02. 식비 절감 (극가성비)" [level=3] [ref=e55]
+          - paragraph [ref=e56]: 편의점 도시락+커피(8,500원) 대비 식비를 55% 절감하는 한 끼 3,800원으로 월 141,000원의 식비를 방어합니다.
+        - article [ref=e57]:
+          - generic [ref=e58]: "03"
+          - heading "03. 섭취 편의 (10초 컷)" [level=3] [ref=e59]
+          - paragraph [ref=e60]: 바쁜 업무 중에도 물컵 챙길 필요 없이, 한 손으로 뚜껑만 눌러 즉시 마시는 혁신적인 10초 원핸드 메커니즘을 제공합니다.
+    - generic [ref=e62]:
+      - generic [ref=e63]:
+        - generic [ref=e64]: AFIT-120 & 121 · SMART CURATION & 3D PREVIEW
+        - heading "오늘 나의 컨디션 맞춤 캡슐 & 라벨 프리뷰" [level=2] [ref=e65]
+        - paragraph [ref=e66]: 현재 겪고 있는 5대 피로 상황을 선택하면 알고리즘이 배합 성분과 맞춤 라벨을 즉시 생성합니다. (Ritual & Vitable 벤치마킹)
+      - generic [ref=e67]:
+        - button "🌙 야근 / 밤샘 피로" [ref=e68] [cursor=pointer]
+        - button "🍻 회식 / 숙취 케어" [ref=e69] [cursor=pointer]
+        - button "💧 아침 붓기 완화" [ref=e70] [cursor=pointer]
+        - button "🍕 늦은 야식 / 더부룩" [ref=e71] [cursor=pointer]
+        - button "⚡ 만성 에너지 저하" [ref=e72] [cursor=pointer]
+      - generic [ref=e73]:
+        - generic [ref=e74]:
+          - generic [ref=e75]: 1:1 알고리즘 진단 리포트
+          - heading "🌙 야근/밤샘 집중 케어 맞춤 배합" [level=3] [ref=e76]
+          - generic [ref=e77]:
+            - generic [ref=e78]:
+              - strong [ref=e79]: "• 맞춤 기능성 원료:"
+              - text: 고순도 밀크씨슬 130mg + 활성 비타민 B군 500%
+            - generic [ref=e80]:
+              - strong [ref=e81]: "• 이중제형 구성:"
+              - text: 간 피로 회복 정제 2정 + 피로 완화 타우린 액상 앰플 50ml
+            - generic [ref=e82]:
+              - strong [ref=e83]: "• 권장 섭취 타이밍:"
+              - text: 오전 출근 직후 10초 원샷
+          - button "이 맞춤 배합으로 10초 구독하기" [ref=e84] [cursor=pointer]
+        - generic [ref=e85]:
+          - text: A:FIT DUAL LAB
+          - generic [ref=e86]: AFIT-121 · 실시간 라벨 각인 3D 프리뷰
+          - generic [ref=e87]:
+            - generic [ref=e88]: "[보틀 전면 레이저 각인 문구]"
+            - generic [ref=e89]: "\"어제 밤샘 야근한 지안님을 위한 붓기 타파 팩\""
+          - generic [ref=e90]: ✦ 사용자의 컨디션 데이터와 성함에 따라 매일 아침 패키지 라벨이 1:1 초개인화 인쇄됩니다.
+    - generic [ref=e92]:
+      - generic [ref=e93]:
+        - generic [ref=e94]: AFIT-130 · COST EFFICIENCY BALANCE
+        - heading "편의점 식사 vs A:FIT 가성비 데이터 저울" [level=2] [ref=e95]
+        - paragraph [ref=e96]: 커피 한 잔과 삼각김밥보다 저렴한 가격으로 시간과 식비를 모두 아끼세요. (AG1 & Heights 벤치마킹)
+      - generic [ref=e97]:
+        - table [ref=e98]:
+          - rowgroup [ref=e99]:
+            - row [ref=e100]:
+              - columnheader "비교 항목" [ref=e101]
+              - columnheader "편의점 도시락 + 프랜차이즈 커피" [ref=e102]
+              - columnheader "A:FIT 맞춤 정기구독" [ref=e103]
+              - columnheader "절감 혜택" [ref=e104]
+          - rowgroup [ref=e105]:
+            - row [ref=e106]:
+              - cell [ref=e107]:
+                - strong [ref=e108]: 1회 평균 비용
+              - cell "8,500원" [ref=e109]
+              - cell [ref=e110]:
+                - strong [ref=e111]: 3,800원
+              - cell "- 4,700원 (55% 절약)" [ref=e112]
+            - row [ref=e113]:
+              - cell [ref=e114]:
+                - strong [ref=e115]: 섭취 소요 시간
+              - cell "15분 ~ 20분 (이동/취식)" [ref=e116]
+              - cell [ref=e117]:
+                - strong [ref=e118]: 10초 컷
+                - text: (원터치 원샷)
+              - cell "99% 시간 절약" [ref=e119]
+            - row [ref=e120]:
+              - cell [ref=e121]:
+                - strong [ref=e122]: 월 예상 지출
+              - cell "255,000원" [ref=e123]
+              - cell [ref=e124]:
+                - strong [ref=e125]: 114,000원
+              - cell "월 141,000원 절약!" [ref=e126]
+        - generic [ref=e127]:
+          - generic [ref=e128]:
+            - generic [ref=e129]: "월간 섭취 일수 시뮬레이션: 30일"
+            - generic [ref=e130]: 월 141,000원 세이브
+          - 'slider "월간 섭취 일수 시뮬레이션: 30일" [ref=e131]': "30"
+          - generic [ref=e132]: ✦ 슬라이더를 조절하여 나의 근무 형태(주 5일 / 주 7일)에 따른 월간 식비 절감액을 확인하세요.
+    - generic [ref=e134]:
+      - generic [ref=e135]:
+        - generic [ref=e136]: AFIT-140 · 10s DUAL-FORMULATION MECHANISM
+        - heading "물 없이 마시는 10초 컷 원핸드 메커니즘" [level=2] [ref=e137]
+        - paragraph [ref=e138]: 보틀 캡을 누르는 순간 캡슐이 앰플로 낙하하여 물 없이 즉시 섭취할 수 있습니다. (Seed & Heights 벤치마킹)
+      - generic [ref=e139]:
+        - generic [ref=e140]:
+          - generic [ref=e141]: "1"
+          - heading "1. 원터치 캡 딸깍" [level=3] [ref=e142]
+          - paragraph [ref=e143]: 보틀 상단 밀폐 캡을 가볍게 누르면 내부 차단막이 열리며 캡슐 보관함이 개방됩니다.
+        - generic [ref=e144]:
+          - generic [ref=e145]: "2"
+          - heading "2. 맞춤 정제 낙하" [level=3] [ref=e146]
+          - paragraph [ref=e147]: 밀폐되어 있던 맞춤 정제 2정이 하단 고농축 액상 앰플 속으로 깔끔하게 낙하합니다.
+        - generic [ref=e148]:
+          - generic [ref=e149]: "3"
+          - heading "3. 10초 원샷 완료" [level=3] [ref=e150]
+          - paragraph [ref=e151]: 물컵을 챙길 필요 없이, 상큼한 액상 앰플과 함께 10초 만에 완벽하게 섭취합니다.
+    - generic [ref=e153]:
+      - generic [ref=e154]:
+        - generic [ref=e155]: AFIT-150 · 2030 REAL PERSONA REVIEWS
+        - heading "2030 직장인 / 1인가구 실명 후기 (평점 ★ 4.9/5.0)" [level=2] [ref=e156]
+        - paragraph [ref=e157]: 실제 IT 직장인, 3교대 간호사, 취업준비생의 100% 리얼 보이스 (Vitable & Persona 벤치마킹)
+      - generic [ref=e158]:
+        - generic [ref=e159]:
+          - generic [ref=e160]:
+            - generic [ref=e161]:
+              - generic [ref=e162]: 이
+              - generic [ref=e163]:
+                - strong [ref=e164]: 이성우 (29세)
+                - generic [ref=e165]: IT 개발자 / 야근 잦음
+            - generic [ref=e166]: ★★★★★
+            - paragraph [ref=e167]: "\"야근할 때 에너지 음료 대신 마시는데 속 쓰림도 전혀 없고 10초 만에 끝나서 개발 흐름이 안 끊깁니다. 식비 절약은 덤이네요.\""
+          - generic [ref=e168]: ✓ 6개월 정기구독 중
+        - generic [ref=e169]:
+          - generic [ref=e170]:
+            - generic [ref=e171]:
+              - generic [ref=e172]: 최
+              - generic [ref=e173]:
+                - strong [ref=e174]: 최교대 (29세)
+                - generic [ref=e175]: 대학병원 3교대 간호사
+            - generic [ref=e176]: ★★★★★
+            - paragraph [ref=e177]: "\"나이트 근무 때 화장실 갈 시간도 없는데 주머니에서 꺼내 10초 만에 마시니 생명줄이 되어줍니다. 식비도 아끼고 체력도 살아요.\""
+          - generic [ref=e178]: ✓ 4개월 정기구독 중
+        - generic [ref=e179]:
+          - generic [ref=e180]:
+            - generic [ref=e181]:
+              - generic [ref=e182]: 이
+              - generic [ref=e183]:
+                - strong [ref=e184]: 이취준 (25세)
+                - generic [ref=e185]: 취업준비생 / 1인가구
+            - generic [ref=e186]: ★★★★★
+            - paragraph [ref=e187]: "\"도서관에서 1분 만에 밥이랑 비타민B 챙기니까 눈치도 안 보이고 편해요. 커피값 아껴서 정기구독 유지하고 있어요.\""
+          - generic [ref=e188]: ✓ 3개월 정기구독 중
+    - generic [ref=e190]:
+      - generic [ref=e191]:
+        - generic [ref=e192]: AFIT-160 · FAQ
+        - heading "자주 묻는 질문" [level=2] [ref=e193]
+      - group [ref=e194]:
+        - generic "구독 변경이나 해지는 위약금 없이 자유로운가요? −" [ref=e195] [cursor=pointer]
+        - paragraph [ref=e196]: 네, 마이페이지에서 다음 정기배송 결제일 24시간 전까지 언제든지 배합 성분 변경, 일시정지, 위약금 0원의 100% 즉시 해지가 가능합니다.
+      - group [ref=e197]:
+        - generic "보관은 어떻게 하나요? 냉장 보관이 필수인가요? +" [ref=e198] [cursor=pointer]
+      - group [ref=e199]:
+        - generic "진단 메시지 라벨 문구는 매일 변경되나요? +" [ref=e200] [cursor=pointer]
+  - complementary [ref=e201]:
+    - generic [ref=e202]:
+      - generic [ref=e203]:
+        - generic [ref=e204]:
+          - strong [ref=e205]: A:FIT 2030 맞춤 이중제형 정기구독
+          - generic [ref=e206]: 첫 달 30% 할인
+        - generic [ref=e207]: 한 끼 3,800원으로 시작하는 10초 컨디션 케어 (월 3만 원대~)
+      - button "커피 한 잔 값으로 구독하기 →" [ref=e208] [cursor=pointer]
+  - contentinfo [ref=e209]:
+    - generic [ref=e210]:
+      - generic [ref=e211]:
+        - strong [ref=e212]: A:FIT (에이핏)
+        - generic [ref=e213]: 2030 직장인 상황 맞춤형 이중제형 올인원 건강식 정기구독 서비스
+      - generic [ref=e214]: "고객센터: 1588-0000 (평일 09:00 ~ 18:00) | support@afit.kr"
+    - generic [ref=e215]: "주식회사 에이핏 | 대표: 박지안 | 사업자등록번호: 123-45-67890 | 통신판매업신고: 제2026-서울마포-0123호"
+    - generic [ref=e216]: Copyright © 2026 A:FIT Inc. All rights reserved. (B2C Low-Fidelity Interactive Storyboard Prototype)

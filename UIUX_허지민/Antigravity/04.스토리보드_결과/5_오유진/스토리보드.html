@@ -1,434 +1,1291 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[저충실도 와이어프레임] A:FIT Eco (오유진 디렉터) 메인페이지 스토리보드</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A:FIT Eco (에이핏 에코) 오유진 메인페이지 스토리보드 와이어프레임 프로토타입</title>
   <style>
-    /* 
-      # 디자인 금지 (No Color/No Fancy Design)
-      # 저충실도 회색 박스와 글자 (Grey Boxes & Text Only)
-      # 자바스크립트 100% 제외 (Pure HTML + CSS Only)
-    */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /* =========================================================
+       A:FIT Eco Brand Design System (Clean Vegan & ESG High-End)
+       Primary: #183D33 (Deep Forest Emerald)
+       Accent: #76A58C (Vital Sage Mint)
+       Accent Light: #EBF3EF
+       Background: #FAF7F0 (Warm Cashmere Ivory)
+       Card/Surface: #FFFFFF (Clean White)
+       Card Subtle: #F3EFE6
+       Border: rgba(24, 61, 51, 0.12)
+       Text Main: #183D33
+       Text Body: #3A4B45
+       Text Muted: #6B7C75
+       ========================================================= */
+    :root {
+      --primary: #183D33;
+      --primary-dark: #0E241E;
+      --accent: #76A58C;
+      --accent-hover: #5F8C75;
+      --accent-light: #EBF3EF;
+      --bg: #FAF7F0;
+      --card: #FFFFFF;
+      --card-subtle: #F3EFE6;
+      --border: rgba(24, 61, 51, 0.12);
+      --text: #183D33;
+      --text-body: #3A4B45;
+      --text-muted: #6B7C75;
+      --shadow-sm: 0 2px 8px rgba(24, 61, 51, 0.04);
+      --shadow-md: 0 10px 30px rgba(24, 61, 51, 0.08);
+      --shadow-lg: 0 20px 50px rgba(24, 61, 51, 0.12);
+      --radius: 20px;
+      --radius-sm: 12px;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background-color: #f0f0f0;
-      color: #111111;
-      font-family: sans-serif;
-      line-height: 1.5;
-      padding-bottom: 80px;
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+      line-height: 1.65;
+      padding-bottom: 110px;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
     }
 
-    .section-label {
-      background: #333333;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 4px 8px;
-      display: inline-block;
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .wrap { width: min(1140px, calc(100% - 40px)); margin: auto; }
+
+    /* Top Sticky Header */
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 240, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .brand-logo strong {
+      font-size: 1.65rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: var(--accent-light);
+      color: var(--primary);
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .links a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 6px 0;
+      position: relative;
+      transition: color 0.2s ease;
+      background: none;
+      border: none;
+    }
+    .links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      border-radius: 2px;
+    }
+    .links a:hover {
+      color: var(--primary);
+    }
+    .links a:hover::after {
+      width: 100%;
+    }
+    .btn {
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: 1px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Section Global */
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-header {
+      margin-bottom: 36px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(24, 61, 51, 0.2);
+      border-radius: 999px;
+      background: var(--card);
+      padding: 5px 14px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .tag.highlight {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+    h1 {
+      font-size: clamp(2.3rem, 5.2vw, 3.6rem);
+      line-height: 1.16;
+      margin: 14px 0 20px;
+      letter-spacing: -0.035em;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.22;
+      margin: 8px 0 14px;
+      letter-spacing: -0.025em;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--primary);
       margin-bottom: 8px;
     }
-
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 15px;
+    .lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+      max-width: 680px;
     }
 
-    section {
-      border: 2px solid #888888;
-      background: #ffffff;
-      margin: 15px 0;
-      padding: 20px;
+    /* Layout Grids */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
     }
 
-    .grey-box {
-      background: #e0e0e0;
-      border: 1px solid #999999;
-      padding: 15px;
-      margin-top: 10px;
+    /* AFITE-100: Hero Open High-End Layout */
+    .hero-open-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      align-items: center;
+      gap: 50px;
+      padding: 20px 0 40px;
+    }
+    .metrics-pill-group {
+      display: flex;
+      gap: 14px;
+      margin: 32px 0 36px;
+    }
+    .metric-pill-item {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--accent);
+    }
+    .metric-pill-item strong {
+      font-size: 1.45rem;
+      display: block;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    .metric-pill-item span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 700;
     }
 
-    .grey-placeholder {
-      background: #d0d0d0;
-      border: 1px dashed #666666;
-      padding: 30px 15px;
+    /* Sleek Eco Biodegradable Bottle Object */
+    .bottle-stage {
+      background: radial-gradient(circle at 50% 30%, #FFFFFF 0%, #EFEBE0 100%);
+      border: 1px solid var(--border);
+      border-radius: 32px;
+      padding: 44px 24px;
       text-align: center;
-      color: #333333;
-      font-weight: bold;
-      margin-top: 10px;
+      box-shadow: var(--shadow-md);
+      position: relative;
     }
-
-    /* SEC01: Top Banner */
-    .top-banner {
-      background: #cccccc;
-      border: 1px solid #666666;
+    .bottle-object {
+      width: 140px;
+      margin: 0 auto 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      filter: drop-shadow(0 18px 30px rgba(24, 61, 51, 0.15));
+      transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .bottle-object:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+    .bottle-top-chamber {
+      width: 64px;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 2px solid var(--accent);
+      border-radius: 16px 16px 4px 4px;
+      backdrop-filter: blur(8px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.8);
+    }
+    .capsule-pill {
+      width: 32px;
+      height: 12px;
+      background: linear-gradient(90deg, #FAF7F0 50%, #76A58C 50%);
+      border-radius: 999px;
+      border: 1px solid rgba(24, 61, 51, 0.2);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin: 1px 0;
+    }
+    .bottle-connector {
+      width: 28px;
+      height: 10px;
+      background: #D9D2C3;
+      border-left: 2px solid #BCB3A1;
+      border-right: 2px solid #BCB3A1;
+    }
+    .bottle-liquid-body {
+      width: 98px;
+      height: 136px;
+      background: linear-gradient(180deg, rgba(118, 165, 140, 0.88) 0%, rgba(24, 61, 51, 0.95) 100%);
+      border: 2.5px solid rgba(255, 255, 255, 0.9);
+      border-radius: 8px 8px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 8px;
+      position: relative;
+      box-shadow: inset 0 4px 12px rgba(255, 255, 255, 0.35), 0 8px 20px rgba(24, 61, 51, 0.18);
+    }
+    .bottle-label-engraved {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1px solid var(--primary);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 0.62rem;
+      font-weight: 800;
+      color: var(--primary);
       text-align: center;
-      padding: 10px;
-      font-weight: bold;
-      font-size: 13px;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      width: 90%;
+      line-height: 1.25;
     }
 
-    /* SEC02: Header */
-    .header-nav {
+    /* AFITE-110: 3-Line Principles */
+    .core-num {
+      font-size: 0.85rem;
+      font-weight: 900;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    /* AFITE-120: Eco Chips */
+    .chips-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0 28px;
+    }
+    .chips-group button {
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      padding: 11px 20px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--text-body);
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .chips-group button:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+    .chips-group button.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Dark Eco Engraved Label Card */
+    .engraved-card {
+      background: linear-gradient(145deg, #183D33 0%, #102B24 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+      border: 1px solid var(--border);
+    }
+    .engraved-box-inner {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px dashed rgba(255, 255, 255, 0.35);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 18px 0;
+      text-align: center;
+      backdrop-filter: blur(4px);
+    }
+    .engraved-text {
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: #FFFFFF;
+      letter-spacing: -0.01em;
+    }
+
+    /* AFITE-130: Vegan & ESG Donut Chart & Table */
+    .clinical-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px;
+      box-shadow: var(--shadow-sm);
+    }
+    .donut-container {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: var(--card-subtle);
+      border-radius: 16px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .donut-chart-circle {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0% 84.6%, #D8D2C5 84.6% 100%);
+      display: grid;
+      place-items: center;
+      position: relative;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .donut-chart-circle::after {
+      content: '-84.6%';
+      width: 76px;
+      height: 76px;
+      background: var(--card);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: var(--primary);
+    }
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 16px;
+      font-size: 0.93rem;
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      text-align: center;
+    }
+    .compare-table th {
+      background: var(--card-subtle);
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .compare-table td.highlight {
+      background: var(--accent-light);
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* AFITE-140: 10s Mechanism Steps */
+    .step-item-card {
+      border-top: 3px solid var(--primary);
+    }
+
+    /* AFITE-150: Reviews */
+    .review-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-author-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .author-initial {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--primary);
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      font-size: 0.95rem;
+      border: 1px solid rgba(118, 165, 140, 0.4);
+    }
+
+    /* AFITE-160: FAQ */
+    .faq details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
+    }
+    .faq details[open] {
+      border-color: var(--accent);
+      background: #FFFFFF;
+    }
+    .faq summary {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #e8e8e8;
-      border: 1px solid #777777;
-      padding: 15px 20px;
     }
-
-    .logo-box {
-      font-size: 18px;
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: '+';
+      font-size: 1.4rem;
+      color: var(--accent);
       font-weight: bold;
-      border: 1px solid #333333;
-      padding: 4px 10px;
-      background: #ffffff;
+    }
+    .faq details[open] summary::after {
+      content: '−';
+    }
+    .faq p {
+      margin-top: 12px;
+      color: var(--text-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
     }
 
-    .nav-links span {
-      margin: 0 10px;
-      font-weight: bold;
-      font-size: 13px;
-    }
-
-    /* SEC03: Split Hero */
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .btn-grey {
-      background: #bbbbbb;
-      border: 2px solid #333333;
-      color: #000000;
-      font-weight: bold;
-      padding: 12px 20px;
-      display: inline-block;
-      margin-top: 15px;
-      cursor: pointer;
-    }
-
-    .metrics-row {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .metric-box {
-      flex: 1;
-      background: #d8d8d8;
-      border: 1px solid #888888;
-      padding: 10px;
-      text-align: center;
-      font-size: 12px;
-    }
-
-    /* SEC04: ESG Calculator */
-    .calc-slider-box {
-      background: #e5e5e5;
-      border: 1px solid #999999;
-      padding: 15px;
-      margin: 15px 0;
-      text-align: center;
-    }
-
-    .calc-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .calc-card {
-      background: #d5d5d5;
-      border: 1px solid #777777;
-      padding: 15px;
-      text-align: center;
-    }
-
-    /* SEC05: Botanical Grid */
-    .curation-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    .curation-card {
-      background: #e8e8e8;
-      border: 2px solid #666666;
-      padding: 15px;
-    }
-
-    /* SEC06: Vegan ESG Chart */
-    .esg-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    /* SEC07: Timeline */
-    .timeline-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
-    }
-
-    .step-card {
-      background: #e0e0e0;
-      border: 1px solid #777777;
-      padding: 12px;
-    }
-
-    /* SEC08: Reviews */
-    .review-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-    }
-
-    .review-box {
-      background: #e8e8e8;
-      border: 1px solid #888888;
-      padding: 12px;
-      font-size: 13px;
-    }
-
-    /* SEC09: Footer */
-    .footer-box {
-      background: #d8d8d8;
-      border: 1px solid #666666;
-      padding: 20px;
-      font-size: 12px;
-    }
-
-    /* SEC10: Sticky CTA */
-    .sticky-cta-bar {
+    /* AFITE-170: Sticky Subscription Bar */
+    .sticky-bar {
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
-      background: #cccccc;
-      border-top: 2px solid #333333;
-      padding: 15px 30px;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.97);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      padding: 14px 0;
+      box-shadow: 0 -10px 30px rgba(24, 61, 51, 0.08);
+      display: none;
+    }
+    .sticky-bar.show {
+      display: block;
+    }
+    .sticky-flex {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 100;
+      gap: 16px;
+    }
+
+    /* Modal Framework */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(24, 61, 51, 0.65);
+      backdrop-filter: blur(6px);
+      place-items: center;
+      padding: 18px;
+    }
+    .modal.open { display: grid; }
+    .dialog {
+      width: min(520px, 100%);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 34px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: 0;
+      background: var(--card-subtle);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      transition: background 0.2s;
+    }
+    .close:hover { background: #E5DFC8; }
+    .field {
+      display: grid;
+      gap: 6px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #FFFFFF;
+      font-size: 0.95rem;
+      color: var(--text-body);
+      transition: border-color 0.2s;
+    }
+    .field input:focus, .field select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    .status-box {
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+    .status-box.error { background: #FDE8E8; color: #9B1C1C; border: 1px solid #F8B4B4; }
+    .status-box.good { background: var(--accent-light); color: var(--primary); border: 1px solid var(--accent); }
+
+    /* Footer */
+    .footer {
+      padding: 50px 0 24px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Accessibility */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 820px) {
+      .hero-open-grid { grid-template-columns: 1fr; gap: 32px; }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+      .links a:not(:last-child) { display: none; }
+      .sticky-flex { flex-direction: column; text-align: center; }
+      .sticky-flex .btn { width: 100%; justify-content: center; }
+      .donut-container { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- [PAGE-01-SEC01] Top Banner -->
-  <div class="container">
-    <div class="top-banner">
-      <span class="section-label">[PAGE-01-SEC01] Top Banner</span><br>
-      🌱 [플라스틱 ZERO 캠페인] 정기구독 시 다 쓴 생분해 용기 무료 회수 및 환경 포인트 지급
-    </div>
-  </div>
-
-  <!-- [PAGE-01-SEC02] Header -->
-  <div class="container">
-    <div class="header-nav">
-      <div>
-        <span class="section-label">[PAGE-01-SEC02] Header</span><br>
-        <span class="logo-box">A:FIT Clean Eco</span>
+  <!-- =========================================================
+       AFITE-100: Top Sticky GNB
+       ========================================================= -->
+  <header class="top">
+    <nav class="wrap">
+      <a href="#" class="brand-logo">
+        <strong>A:FIT Eco</strong>
+        <span class="brand-badge">🌱 100% 비건 생분해</span>
+      </a>
+      <div class="links">
+        <a href="#summary">3대 클린 원칙</a>
+        <a href="#curation">라이프스타일 AI 큐레이션</a>
+        <a href="#esg">비건·탄소 비교표</a>
+        <a href="#mechanism">10초 섭취 기전</a>
+        <a href="#reviews">환경 활동가 후기</a>
+        <button class="btn primary" onclick="openCheckoutModal()">
+          <span>클린 에코 시작</span>
+          <span>→</span>
+        </button>
       </div>
-      <div class="nav-links">
-        <span>클린 철학</span>
-        <span>탄소 절감 계산기</span>
-        <span>에코 큐레이션</span>
-        <span>생분해 프로토콜</span>
-        <span>[마이페이지]</span>
-        <span>[장바구니]</span>
-      </div>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="container">
-
-    <!-- [PAGE-01-SEC03] Split Hero Section -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC03] Split Hero Section</span>
-      <div class="hero-grid">
+  <main>
+    <!-- =========================================================
+         AFITE-100: Hero Section (생분해 에코 앰플 비주얼)
+         ========================================================= -->
+    <section style="padding: 48px 0 64px; border-top: none;">
+      <div class="wrap hero-open-grid">
         <div>
-          <p style="font-size: 12px; color: #555;">01. Clean & Ethical Wellness</p>
-          <h1 style="font-size: 22px; margin: 8px 0;">지구에도, 내 몸에도 무해하게!<br>100% 식물성 이중제형</h1>
-          <p style="font-size: 13px; color: #444;">플라스틱 ZERO 옥수수 전분 생분해 보틀과 100% 프랑스 비건 인증 식물성 앰플.</p>
-          
-          <div class="metrics-row">
-            <div class="metric-box">
-              <strong>100%</strong><br>프랑스 EVE VEGAN 인증
+          <span class="tag" style="background: var(--accent-light); border-color: rgba(118, 165, 140, 0.4); color: var(--primary);">
+            2040 가치소비족을 위한 플라스틱 ZERO 바이오 솔루션
+          </span>
+          <h1>
+            지구와 내 몸을 위한 클린 혁신,<br>
+            플라스틱 ZERO 10초 비건 앰플
+          </h1>
+          <p class="lead">
+            화학 합성 첨가물과 플라스틱 쓰레기는 이제 그만. 100% 프랑스 EVE 비건 인증 식물성 원료와 180일 완전 생분해 용기를 10초 만에 실천하는 지속가능한 웰니스입니다.
+          </p>
+
+          <div class="metrics-pill-group">
+            <div class="metric-pill-item">
+              <strong>100% 비건</strong>
+              <span>EVE VEGAN 공식 인증</span>
             </div>
-            <div class="metric-box">
-              <strong>0g</strong><br>플라스틱 배출량
+            <div class="metric-pill-item">
+              <strong>탄소 -84.6%</strong>
+              <span>180일 완전 생분해 PLA</span>
             </div>
-            <div class="metric-box">
-              <strong>10sec</strong><br>원샷 섭취 시간
+            <div class="metric-pill-item">
+              <strong>10초 컷</strong>
+              <span>물 없는 클린 루틴</span>
             </div>
           </div>
 
-          <div class="btn-grey">맞춤 에코 진단 시작하기 →</div>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn primary" style="padding: 14px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
+              지구와 내 몸 맞춤 에코 구독 시작하기 →
+            </button>
+            <a class="btn" href="#esg" style="padding: 14px 22px;">
+              ESG 탄소 절감 데이터 확인
+            </a>
+          </div>
         </div>
 
-        <div class="grey-placeholder">
-          [생분해 이중제형 보틀 저충실도 그래픽 영역]<br>
-          (180일 내 100% 자연 분해 용기)
+        <!-- Sleek Eco Bottle Mockup Stage -->
+        <div class="bottle-stage">
+          <span class="tag">A:FIT ECO BIODEGRADABLE</span>
+          <div class="bottle-object" id="heroBottle">
+            <div class="bottle-top-chamber">
+              <div class="capsule-pill"></div>
+              <div class="capsule-pill"></div>
+            </div>
+            <div class="bottle-connector"></div>
+            <div class="bottle-liquid-body">
+              <div class="bottle-label-engraved" id="bottleHeroLabel">
+                "오유진 대표 검증<br>100% 식물성 클린 에너지"
+              </div>
+            </div>
+          </div>
+          <div style="font-size: 0.82rem; color: var(--primary); font-weight: 700;">
+            ✦ 상단 식물성 HPMC 캡슐 + 하단 유기농 액상 포뮬러
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC04] ESG Calculator -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC04] ESG Calculator</span>
-      <h2 style="font-size: 18px;">나의 에코 정기구독 환경 영향력 (탄소 절감 계산기)</h2>
-      <p style="font-size: 13px; color: #555;">구독 개월 수 조절 슬라이더로 환경 절감 수치 연산</p>
+    <!-- =========================================================
+         AFITE-110: 3-Line Principles (3대 클린 원칙)
+         ========================================================= -->
+    <section id="summary">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITE-110 · 3-LINE ECO PRINCIPLES</span>
+          <h2>지속가능한 내일을 여는 3대 클린 원칙</h2>
+          <p class="lead">복잡한 친환경 용어를 3줄로 끝내는 클린 웰니스 핵심 가치 (Ritual 벤치마킹)</p>
+        </div>
 
-      <div class="calc-slider-box">
-        [개월 수 조절 슬라이더 바 회색 영역 (6개월 선택)]
-      </div>
+        <div class="grid-3">
+          <article class="card">
+            <span class="core-num">PRINCIPLE 01</span>
+            <h3>01. ZERO PLASTIC (플라스틱 0%)</h3>
+            <p style="color: var(--text-body); font-size: 0.94rem;">
+              옥수수 전분 기반 PLA 생분해 용기로 180일 만에 자연으로 돌아가며 탄소 배출을 84.6% 감축합니다.
+            </p>
+          </article>
 
-      <div class="calc-grid">
-        <div class="calc-card">
-          <strong style="font-size: 18px;">18 개</strong>
-          <p style="font-size: 12px;">절감된 플라스틱 병 수</p>
-        </div>
-        <div class="calc-card">
-          <strong style="font-size: 18px;">2.7 kg</strong>
-          <p style="font-size: 12px;">감축된 CO2 탄소 발자국</p>
-        </div>
-        <div class="calc-card">
-          <strong style="font-size: 18px;">18,000 pt</strong>
-          <p style="font-size: 12px;">용기 회수 누적 리워드</p>
-        </div>
-      </div>
-    </section>
+          <article class="card">
+            <span class="core-num">PRINCIPLE 02</span>
+            <h3>02. 100% VEGAN (순수 식물성)</h3>
+            <p style="color: var(--text-body); font-size: 0.94rem;">
+              동물성 원료와 인공합성 첨가물 0%. 프랑스 EVE 비건 공식 인증을 획득한 식물성 성분만 담았습니다.
+            </p>
+          </article>
 
-    <!-- [PAGE-01-SEC05] Botanical Grid Curation -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC05] Botanical Grid Curation</span>
-      <h2 style="font-size: 18px; margin-bottom: 10px;">보태니컬 2x2 에코 라이프 큐레이션</h2>
-
-      <div class="curation-grid">
-        <div class="curation-card">
-          <span style="font-size: 11px; font-weight: bold;">[100% VEGAN]</span>
-          <h3 style="font-size: 16px; margin: 4px 0;">🌱 비건 지향 라이프 팩</h3>
-          <p style="font-size: 12px;">식물성 L-아르기닌 + 프랑스 시카 추출물</p>
-        </div>
-        <div class="curation-card">
-          <span style="font-size: 11px; font-weight: bold;">[ZERO PLASTIC]</span>
-          <h3 style="font-size: 16px; margin: 4px 0;">♻️ 제로웨이스트 팩</h3>
-          <p style="font-size: 12px;">유기농 토마토 리코펜 + 식물성 비타민 C</p>
-        </div>
-        <div class="curation-card">
-          <span style="font-size: 11px; font-weight: bold;">[CLEAN FORMULA]</span>
-          <h3 style="font-size: 16px; margin: 4px 0;">🌿 클린 웰니스 팩</h3>
-          <p style="font-size: 12px;">식물성 아연 + 옥수수 유래 자일로스</p>
-        </div>
-        <div class="curation-card">
-          <span style="font-size: 11px; font-weight: bold;">[ETHICAL CHOICE]</span>
-          <h3 style="font-size: 16px; margin: 4px 0;">✨ 가치소비 입문 팩</h3>
-          <p style="font-size: 12px;">식물성 칼슘 + 유기농 그린티 카테킨</p>
+          <article class="card">
+            <span class="core-num">PRINCIPLE 03</span>
+            <h3>03. 10s ONE-SHOT (10초 원샷 섭취)</h3>
+            <p style="color: var(--text-body); font-size: 0.94rem;">
+              물 챙길 필요 없이 뚜껑을 눌러 10초 만에 마시는 제로웨이스트 초간편 웰니스 루틴입니다.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC06] Vegan ESG Donut Chart -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC06] Vegan ESG Donut Chart</span>
-      <h2 style="font-size: 18px; margin-bottom: 10px;">프랑스 비건 인증 & 용기 쓰레기 절감 비교표</h2>
-
-      <div class="esg-grid">
-        <div class="grey-placeholder">
-          [프랑스 EVE VEGAN 100% 인증 SVG 도넛 차트 회색 영역]
+    <!-- =========================================================
+         AFITE-120: Eco-Lifestyle AI Curation (라이프스타일 큐레이션)
+         ========================================================= -->
+    <section id="curation">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITE-120 · ECO-LIFESTYLE AI CURATION</span>
+          <h2>친환경 라이프스타일별 1:1 맞춤 배합</h2>
+          <p class="lead">에코 라이프 칩을 선택하면 최적의 식물성 처방과 실시간 각인 라벨이 즉시 갱신됩니다. (Public Goods 벤치마킹)</p>
         </div>
-        <div class="grey-box">
-          <h4 style="font-size: 14px; margin-bottom: 8px;">용기 쓰레기 비교표</h4>
-          <p style="font-size: 12px;">시중 플라스틱 병: 월 3개 이상 배출</p>
-          <p style="font-size: 12px; font-weight: bold;">A:FIT Eco: 100% 생분해 보틀 (0g)</p>
+
+        <div class="chips-group" id="condChips">
+          <button class="active" data-cond="vegan" 
+                  data-name="100% 비건 클린 활력 에너지 팩" 
+                  data-msg="오유진 대표 검증: 100% 식물성 클린 에너지 팩" 
+                  data-ing="식물성 활성 비타민 B12 1,000% + 유기농 스피루리나 500mg"
+                  data-timing="아침 식전 10초 원샷">
+            🌱 비건 지향 / 클린식
+          </button>
+          <button data-cond="zerowaste" 
+                  data-name="제로웨이스트 리필 순환 케어 팩" 
+                  data-msg="오유진 대표 검증: 플라스틱 제로 리필 순환 케어 팩" 
+                  data-ing="미세조류 추출 식물성 DHA 300mg + 식물성 비타민 D3"
+                  data-timing="오전 업무 시작 직후 10초 원샷">
+            ♻️ 제로웨이스트 / 리필
+          </button>
+          <button data-cond="detox" 
+                  data-name="클린 웰니스 식물성 디톡스 팩" 
+                  data-msg="오유진 대표 검증: 클린 웰니스 순수 디톡스 팩" 
+                  data-ing="유기농 밀싹 분말 1,000mg + 식물성 소화효소 5종"
+                  data-timing="점심 식후 나른할 때">
+            🧘 클린 웰니스 / 디톡스
+          </button>
+          <button data-cond="starter" 
+                  data-name="가치소비 입문 클린 올인원 팩" 
+                  data-msg="오유진 대표 검증: 에코 가치소비 첫걸음 올인원 팩" 
+                  data-ing="식물성 멀티미네랄 7종 + 유기농 과채농축 100%"
+                  data-timing="출근길 가볍게 10초 원샷">
+            ✨ 가치소비 입문 / 올인원
+          </button>
+        </div>
+
+        <div class="grid-2">
+          <!-- 1:1 Analysis Report Card -->
+          <div class="card">
+            <span class="tag">에코 바이오 정밀 처방 리포트</span>
+            <h3 id="curTitle" style="font-size: 1.25rem; margin: 8px 0;">🌱 100% 비건 클린 활력 에너지 팩</h3>
+            <div style="background: var(--card-subtle); padding: 18px; border-radius: 12px; margin: 14px 0; border: 1px solid var(--border);">
+              <div style="font-size: 0.92rem; margin-bottom: 8px;">
+                <strong>• 특화 식물성 바이오 원료:</strong> <span id="curIng" style="color: var(--primary); font-weight: 800;">식물성 활성 비타민 B12 1,000% + 유기농 스피루리나 500mg</span>
+              </div>
+              <div style="font-size: 0.92rem; margin-bottom: 8px;">
+                <strong>• 이중제형 구성:</strong> 식물성 HPMC 캡슐 2정 + 유기농 과채 액상 50ml
+              </div>
+              <div style="font-size: 0.92rem;">
+                <strong>• 권장 섭취 타이밍:</strong> <span id="curTiming" style="color: var(--primary); font-weight: 800;">아침 식전 10초 원샷</span>
+              </div>
+            </div>
+            <button class="btn primary" style="width: 100%; justify-content: center; padding: 13px;" onclick="openCheckoutModal()">
+              이 에코 조합으로 맞춤 구독하기 →
+            </button>
+          </div>
+
+          <!-- Real-Time Engraved Label Card -->
+          <div class="engraved-card">
+            <span class="tag" style="background: rgba(255,255,255,0.15); color: #fff; border-color: rgba(255,255,255,0.3);">
+              AFITE-121 · 실시간 에코 각인 라벨
+            </span>
+            <div class="engraved-box-inner">
+              <div style="font-size: 0.78rem; opacity: 0.8; margin-bottom: 6px;">[A:FIT ECO CLEAN PLANET FORMULA]</div>
+              <div class="engraved-text" id="labelPreview">
+                "오유진 대표 검증: 100% 식물성 클린 에너지 팩"
+              </div>
+            </div>
+            <div style="font-size: 0.82rem; opacity: 0.85; text-align: center;">
+              ✦ 매월 정기구독 시 내 에코 라이프스타일과 환경 응원 문구가 생분해 라벨에 각인 배송됩니다.
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC07] Biodegradable Protocol -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC07] Biodegradable Protocol</span>
-      <h2 style="font-size: 18px; margin-bottom: 10px;">생분해 & 회수 4단계 수평 타임라인</h2>
+    <!-- =========================================================
+         AFITE-130: Vegan & ESG Donut Chart & Comparison
+         ========================================================= -->
+    <section id="esg">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITE-130 · VEGAN & ESG COMPARISON</span>
+          <h2>탄소 발자국 -84.6% & 플라스틱 쓰레기 비교</h2>
+          <p class="lead">시중 플라스틱 영양제 대비 완벽한 쓰레기 ZERO 가치를 증명합니다. (Bite Toothpaste Bits 벤치마킹)</p>
+        </div>
 
-      <div class="timeline-row">
-        <div class="step-card">
-          <strong>STEP 01</strong>
-          <h4 style="font-size: 13px;">생분해 보틀 배송</h4>
-          <p style="font-size: 11px;">100% 친환경 종이 포장재 배송</p>
-        </div>
-        <div class="step-card">
-          <strong>STEP 02</strong>
-          <h4 style="font-size: 13px;">10초 원샷 섭취</h4>
-          <p style="font-size: 11px;">물 없이 10초 앰플 원샷 섭취</p>
-        </div>
-        <div class="step-card">
-          <strong>STEP 03</strong>
-          <h4 style="font-size: 13px;">무료 회수 수거</h4>
-          <p style="font-size: 11px;">집 앞 전용 봉투 무료 수거</p>
-        </div>
-        <div class="step-card">
-          <strong>STEP 04</strong>
-          <h4 style="font-size: 13px;">자연 분해 & 포인트</h4>
-          <p style="font-size: 11px;">180일 내 퇴비화 & 포인트 적립</p>
+        <div class="clinical-box">
+          <div class="donut-container">
+            <div class="donut-chart-circle"></div>
+            <div>
+              <h3 style="margin-bottom: 6px;">탄소 배출 84.6% 감축 & 180일 토양 완전 생분해</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                석유계 플라스틱 0g, 식물성 원료 100%로 1인 연간 플라스틱 4.2kg 감축 효과 검증
+              </p>
+            </div>
+          </div>
+
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>비교 항목</th>
+                <th>시중 개별 비건 영양제 3종</th>
+                <th>A:FIT Eco 올인원 생분해 앰플</th>
+                <th>지속가능 가치</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>연간 플라스틱 배출</strong></td>
+                <td>플라스틱 용기 36병 (약 4.2kg)</td>
+                <td class="highlight"><strong>0g (100% 생분해 PLA)</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">플라스틱 ZERO 실천</td>
+              </tr>
+              <tr>
+                <td><strong>비건 인증</strong></td>
+                <td>일부 화학 캡슐 혼용</td>
+                <td class="highlight"><strong>프랑스 EVE VEGAN 100%</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">순수 식물성 보장</td>
+              </tr>
+              <tr>
+                <td><strong>공병 회수 리필</strong></td>
+                <td>소비자 직접 분리배출 폐기</td>
+                <td class="highlight"><strong>무료 수거 & 적립금 환급</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">완벽한 자원 순환</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC08] Eco Activist Reviews -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC08] Eco Activist Reviews</span>
-      <h2 style="font-size: 18px; margin-bottom: 10px;">환경가 실명 후기 슬라이더</h2>
+    <!-- =========================================================
+         AFITE-140: 10s Dual Mechanism
+         ========================================================= -->
+    <section id="mechanism">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITE-140 · 10s DUAL MECHANISM</span>
+          <h2>물 없이 끝내는 10초 생분해 클린 루틴</h2>
+          <p class="lead">어디서나 10초 만에 마시고 100% 자연으로 환원</p>
+        </div>
 
-      <div class="review-row">
-        <div class="review-box">
-          <strong>한소희 활동가 (제로웨이스트 운동가)</strong>
-          <p style="margin-top: 6px;">"플라스틱 용기 쓰레기 걱정 없이 10초 만에 마시는 생분해 보틀이라 진정한 가치소비가 가능해요."</p>
-        </div>
-        <div class="review-box">
-          <strong>이준혁 셰프 (비건 다이닝 수석 셰프)</strong>
-          <p style="margin-top: 6px;">"화학합성 첨가물이 전혀 없어 속이 편안하고 식물성 아미노산 비율이 훌륭합니다."</p>
-        </div>
-        <div class="review-box">
-          <strong>최윤아 구독자 (4개월 차 구독자)</strong>
-          <p style="margin-top: 6px;">"아침마다 플라스틱 쓰레기를 지우는 느낌입니다. 정기구독으로 무해한 일상을 만듭니다."</p>
+        <div class="grid-3">
+          <div class="card step-item-card">
+            <span class="core-num">STEP 01</span>
+            <h3>1. 원터치 캡 딸깍</h3>
+            <p style="color: var(--text-body); font-size: 0.92rem;">
+              생분해 캡을 가볍게 누르면 식물성 비건 캡슐 보관실이 열립니다.
+            </p>
+          </div>
+
+          <div class="card step-item-card">
+            <span class="core-num">STEP 02</span>
+            <h3>2. 식물성 캡슐 낙하</h3>
+            <p style="color: var(--text-body); font-size: 0.92rem;">
+              동물성 젤라틴 없는 순수 HPMC 캡슐이 유기농 액상으로 낙하합니다.
+            </p>
+          </div>
+
+          <div class="card step-item-card">
+            <span class="core-num">STEP 03</span>
+            <h3>3. 10초 원샷 & 생분해</h3>
+            <p style="color: var(--text-body); font-size: 0.92rem;">
+              물 없이 상큼하게 마시고 다 쓴 용기는 180일 내 자연 분해됩니다.
+            </p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC09] Footer -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC09] Footer</span>
-      <div class="footer-box">
-        <p><strong>주식회사 에이핏 에코</strong> | 대표: 오유진 | 고객센터: 1588-0000</p>
-        <p>사업자등록번호: 000-00-00000 | 통신판매업신고: 2026-서울강남-0000</p>
-        <p style="margin-top: 8px;">Copyright © A:FIT Eco Inc. All rights reserved.</p>
+    <!-- =========================================================
+         AFITE-150: Eco Reviews
+         ========================================================= -->
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITE-150 · ECO ACTIVIST REVIEWS</span>
+          <h2>환경 활동가 & 비건 셰프 후기 (평점 ★ 4.97/5.0)</h2>
+          <p class="lead">가치소비 리더와 비건 지향인들의 지속가능한 보이스</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="review-card">
+            <div>
+              <div class="review-author-meta">
+                <div class="author-initial">박</div>
+                <div>
+                  <strong style="color: var(--primary);">박그린 (34세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">환경 운동가 / 제로웨이스트 활동가</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
+              <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
+                "매달 쌓이던 플라스틱 영양제 통 때문에 죄책감이 컸는데, A:FIT Eco의 생분해 용기와 무료 수거 시스템 덕분에 진정한 제로웨이스트를 실천하고 있습니다."
+              </p>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
+              ✓ 6개월 정기구독 중
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-author-meta">
+                <div class="author-initial">이</div>
+                <div>
+                  <strong style="color: var(--primary);">이채식 (38세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">비건 레스토랑 오너 셰프</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
+              <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
+                "비건 식단에서 결핍되기 쉬운 B12와 식물성 오메가3를 10초 만에 완벽하게 채울 수 있어서 우리 레스토랑 크루들에게도 모두 추천했습니다."
+              </p>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
+              ✓ 5개월 정기구독 중
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-author-meta">
+                <div class="author-initial">최</div>
+                <div>
+                  <strong style="color: var(--primary);">최에코 (29세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">에코 라이프스타일 작가</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px; font-size: 0.9rem;">★★★★★</div>
+              <p style="color: var(--text-body); font-size: 0.92rem; line-height: 1.6;">
+                "내추럴한 샌드 톤 패키지 디자인도 너무 아름답고, 맛도 텁텁함 없이 깔끔합니다. 가치소비를 실천하는 가장 쉽고 세련된 방법이에요!"
+              </p>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--accent); font-weight: 800; margin-top: 14px;">
+              ✓ 4개월 정기구독 중
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-  </div>
+    <!-- =========================================================
+         AFITE-160: FAQ
+         ========================================================= -->
+    <section class="faq">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITE-160 · FAQ</span>
+          <h2>자주 묻는 질문</h2>
+        </div>
 
-  <!-- [PAGE-01-SEC10] Sticky CTA Bar -->
-  <div class="sticky-cta-bar">
-    <div>
-      <span class="section-label">[PAGE-01-SEC10] Sticky CTA Bar</span>
-      <p style="font-size: 13px; font-weight: bold;">A:FIT Eco 비건 지향 라이프 팩 구독 (월 4만 원대)</p>
+        <details open>
+          <summary>생분해 용기는 일반 쓰레기로 버려도 되나요?</summary>
+          <p>생분해 PLA 소재이므로 일반 쓰레기로 배출하시면 매립 시 180일 내 자연 분해됩니다. 또한 30병을 모아 무료 수거를 신청하시면 리필 적립금 3,000원을 드립니다.</p>
+        </details>
+
+        <details>
+          <summary>캡슐에 동물성 젤라틴이 전혀 들어가지 않나요?</summary>
+          <p>네, 100% 소나무 펄프에서 추출한 식물성 HPMC 캡슐을 사용하여 프랑스 EVE VEGAN 인증을 완료했습니다.</p>
+        </details>
+
+        <details>
+          <summary>정기구독 일시정지나 해지는 간편한가요?</summary>
+          <p>네, 마이페이지에서 위약금 없이 1클릭으로 다음 결제일 연기, 배송 주기 변경, 해지가 100% 자유롭습니다.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================
+       AFITE-170: Sticky Subscription Bar
+       ========================================================= -->
+  <aside class="sticky-bar" id="stickyBar">
+    <div class="wrap sticky-flex">
+      <div>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <strong style="font-size: 1.1rem; color: var(--primary);">A:FIT Eco 맞춤 비건 생분해 앰플 정기구독</strong>
+          <span class="tag highlight" style="font-size: 0.72rem; padding: 2px 8px;">첫 달 30% 에코 스타터 혜택</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          100% 비건 식물성, 하루 10초로 끝내는 클린 웰니스 (월 5만 원대~)
+        </div>
+      </div>
+      <button class="btn primary" style="padding: 12px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
+        10초 클린 에코 시작하기 →
+      </button>
     </div>
-    <div class="btn-grey">10초 클린 구독 신청하기</div>
+  </aside>
+
+  <!-- =========================================================
+       AFITE-180: Instant Checkout Modal
+       ========================================================= -->
+  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="dialog">
+      <button class="close" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
+      <span class="tag">AFITE-180 · INSTANT CHECKOUT</span>
+      <h2 id="modalTitle" style="margin: 8px 0 16px;">10초 Eco 맞춤 구독 신청</h2>
+
+      <div style="background: var(--card-subtle); padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border);">
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">선택된 에코 라이프 각인 라벨:</div>
+        <strong id="modalLabelText" style="font-size: 0.98rem; color: var(--primary);">
+          "오유진 대표 검증: 100% 식물성 클린 에너지 팩"
+        </strong>
+      </div>
+
+      <form id="checkoutForm" novalidate>
+        <div class="field">
+          <label for="custName">구독자 성함</label>
+          <input type="text" id="custName" name="custName" value="오유진" required>
+        </div>
+
+        <div class="field">
+          <label for="custPhone">휴대폰 번호 (새벽 정밀배송 알림용)</label>
+          <input type="tel" id="custPhone" name="custPhone" value="010-5566-7788" required>
+        </div>
+
+        <div class="field">
+          <label for="planSelect">구독 플랜 선택</label>
+          <select id="planSelect">
+            <option value="20day">월 20일 에코 스타터팩 (월 20병 / 76,000원 → 첫달 53,200원)</option>
+            <option value="30day" selected>월 30일 제로웨이스트 올인원팩 (월 30병 / 114,000원 → 첫달 79,800원)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="custAddr">배송지 주소</label>
+          <input type="text" id="custAddr" name="custAddr" value="서울특별시 성동구 성수이로 88 (성수 트리마제)" required>
+        </div>
+
+        <label style="display: flex; gap: 8px; align-items: center; margin: 16px 0; font-size: 0.88rem; color: var(--text-body);">
+          <input type="checkbox" id="agreeTerms" checked required>
+          <span>정기결제 이용약관 및 개인정보 수집 동의 (언제든 100% 해지 가능)</span>
+        </label>
+
+        <button type="submit" class="btn primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1.05rem;">
+          1초 간편 결제로 구독 시작하기
+        </button>
+
+        <div id="formStatus" class="status-box" style="display:none;"></div>
+      </form>
+    </div>
   </div>
 
+  <!-- =========================================================
+       AFITE-181: Done Modal
+       ========================================================= -->
+  <div id="doneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+    <div class="dialog" style="text-align: center;">
+      <button class="close" onclick="closeDoneModal()" aria-label="닫기">×</button>
+      <span class="tag highlight">AFITE-181 · SUBSCRIPTION CONFIRMED</span>
+      <div style="font-size: 3.2rem; margin: 12px 0;">🌱</div>
+      <h2 id="doneTitle" style="margin-bottom: 8px;">A:FIT Eco 정기구독이 정상 접수되었습니다!</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        100% 식물성 비건 앰플이 친환경 생분해 패키지에 담겨 내일 아침 문 앞으로 신선하게 배송됩니다.
+      </p>
+
+      <div style="background: var(--card-subtle); padding: 16px; border-radius: 14px; margin: 20px 0; font-size: 0.92rem; text-align: left; border: 1px solid var(--border);">
+        <div style="margin-bottom: 6px;">• <strong>구독 주문 번호:</strong> <span id="orderNum" style="color: var(--primary); font-weight: 800;">AFITE-20260814-9912</span></div>
+        <div style="margin-bottom: 6px;">• <strong>첫 배송 예정:</strong> 내일 아침 07:00 이전 (정밀 새벽 배송)</div>
+        <div>• <strong>에코 라벨:</strong> <span id="doneMsgText" style="color: var(--primary); font-weight: 800;">"오유진 대표 검증: 100% 식물성 클린 에너지 팩"</span></div>
+      </div>
+
+      <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="closeDoneModal()">
+        확인 및 메인 홈으로
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="wrap footer">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
+      <div>
+        <strong style="color: var(--primary); font-size: 1.15rem;">A:FIT Eco (에이핏 에코)</strong>
+        <div style="font-size: 0.84rem; margin-top: 4px;">2040 친환경 가치소비 & 클린 비건 타깃 100% 식물성 이중제형 정기구독 서비스</div>
+      </div>
+      <div style="font-size: 0.84rem;">
+        에코 랩 고객센터: 1588-0000 (평일 09:00 ~ 18:00) | eco@afit.kr
+      </div>
+    </div>
+    <div>주식회사 에이핏 에코 | ESG 대표: 오유진 | 사업자등록번호: 567-89-01234 | 통신판매업신고: 제2026-서울성동-0541호</div>
+    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Eco Inc. All rights reserved. (Interactive Storyboard Prototype)</div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // 1. Eco Chips & Dynamic Label Engraving
+    const chips = document.querySelectorAll('#condChips button');
+    const curTitle = document.getElementById('curTitle');
+    const curIng = document.getElementById('curIng');
+    const curTiming = document.getElementById('curTiming');
+    const labelPreview = document.getElementById('labelPreview');
+    const bottleHeroLabel = document.getElementById('bottleHeroLabel');
+    const modalLabelText = document.getElementById('modalLabelText');
+    const doneMsgText = document.getElementById('doneMsgText');
+
+    chips.forEach(btn => {
+      btn.addEventListener('click', () => {
+        chips.forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        
+        const name = btn.dataset.name;
+        const msg = btn.dataset.msg;
+        const ing = btn.dataset.ing;
+        const timing = btn.dataset.timing;
+
+        curTitle.textContent = `${btn.innerText.split(' ')[0]} ${name}`;
+        curIng.textContent = ing;
+        curTiming.textContent = timing;
+        labelPreview.textContent = `"${msg}"`;
+        bottleHeroLabel.innerHTML = `"${msg.replace('검증: ', '검증<br>')}"`;
+        modalLabelText.textContent = `"${msg}"`;
+        doneMsgText.textContent = `"${msg}"`;
+      });
+    });
+
+    // 2. Sticky Bar Scroll Visibility
+    const stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
+    });
+
+    // 3. Modal Control
+    const checkoutModal = document.getElementById('checkoutModal');
+    const doneModal = document.getElementById('doneModal');
+    const checkoutForm = document.getElementById('checkoutForm');
+    const formStatus = document.getElementById('formStatus');
+
+    function openCheckoutModal() {
+      checkoutModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCheckoutModal() {
+      checkoutModal.classList.remove('open');
+      document.body.style.overflow = '';
+      formStatus.style.display = 'none';
+    }
+
+    function closeDoneModal() {
+      doneModal.classList.remove('open');
+      document.body.style.overflow = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const agree = document.getElementById('agreeTerms').checked;
+
+      if (!name || phone.length < 9 || !agree) {
+        formStatus.style.display = 'block';
+        formStatus.className = 'status-box error';
+        formStatus.textContent = '성함과 휴대폰 번호를 확인하고 이용약관에 동의해 주세요.';
+        return;
+      }
+
+      formStatus.style.display = 'block';
+      formStatus.className = 'status-box good';
+      formStatus.textContent = '10초 맞춤 정기구독 결제 승인 중...';
+
+      setTimeout(() => {
+        closeCheckoutModal();
+        const randNum = Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('orderNum').textContent = `AFITE-20260814-${randNum}`;
+        doneModal.classList.add('open');
+      }, 500);
+    });
+
+    // Close Modal on Escape Key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCheckoutModal();
+        closeDoneModal();
+      }
+    });
+  </script>
 </body>
 </html>

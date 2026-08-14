@@ -1,527 +1,1552 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[저충실도 와이어프레임] A:FIT Balance (윤서진 연구소장) 메인페이지 스토리보드</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A:FIT Balance (에이핏 밸런스) 윤서진 메인페이지 스토리보드 와이어프레임 프로토타입</title>
   <style>
-    /* 
-      # 디자인 금지 (No Color/No Fancy Design)
-      # 저충실도 회색 박스와 글자 (Grey Boxes & Text Only)
-      # 데스크톱/PC 중심 대화형 반응형 웹 규격 (Desktop-Centric Responsive Wireframe)
-    */
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /* =========================================================
+       A:FIT Balance Brand Design System (R&D High-Trust)
+       Primary: #183D33 (Deep Forest Emerald)
+       Accent: #76A58C (Vital Sage Mint)
+       Accent Light: #E3EFE9
+       Background: #FAF6EB (Warm Natural Ivory)
+       Surface/Card: #FFFFFF (Clean White)
+       Border: #D3CDC0
+       Dark Accent: #102B24
+       ========================================================= */
+    :root {
+      --primary: #183D33;
+      --primary-hover: #102B24;
+      --accent: #76A58C;
+      --accent-light: #E3EFE9;
+      --accent-badge: #2B5A4B;
+      --bg: #FAF6EB;
+      --card: #FFFFFF;
+      --card-subtle: #F5EFE0;
+      --border: #D3CDC0;
+      --text: #1F2937;
+      --text-muted: #64748B;
+      --shadow-sm: 0 2px 8px rgba(24, 61, 51, 0.06);
+      --shadow-md: 0 8px 24px rgba(24, 61, 51, 0.09);
+      --shadow-lg: 0 16px 40px rgba(24, 61, 51, 0.12);
+      --radius: 16px;
+      --radius-sm: 10px;
     }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
-      background-color: #f0f0f0;
-      color: #111111;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.5;
-      padding-bottom: 90px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+      line-height: 1.6;
+      padding-bottom: 100px;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 0 15px;
-    }
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: auto; }
 
-    .section-label {
-      background: #333333;
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 4px 8px;
-      display: inline-block;
-      margin-bottom: 8px;
+    /* Top Sticky Header */
+    .top {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 246, 235, 0.94);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(16px);
+    }
+    nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .brand-logo strong {
+      font-size: 1.6rem;
+      font-weight: 900;
+      letter-spacing: 0.04em;
+    }
+    .brand-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      background: var(--accent-light);
+      color: var(--primary);
+      padding: 3px 9px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .links {
+      display: flex;
+      gap: 26px;
+      align-items: center;
+    }
+    .links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 6px 0;
+      position: relative;
+      transition: color 0.2s ease;
+      background: none;
+      border: none;
+    }
+    .links a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
       border-radius: 2px;
     }
+    .links a:hover {
+      color: var(--primary);
+    }
+    .links a:hover::after {
+      width: 100%;
+    }
+    .btn {
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: 1px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn.primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
 
+    /* Section Global */
     section {
-      border: 2px solid #888888;
-      background: #ffffff;
-      margin: 15px 0;
-      padding: 20px;
+      padding: 64px 0;
+      border-top: 1px solid var(--border);
     }
-
-    .grey-box {
-      background: #e0e0e0;
-      border: 1px solid #999999;
-      padding: 15px;
-      margin-top: 10px;
+    .section-header {
+      margin-bottom: 28px;
     }
-
-    .grey-placeholder {
-      background: #d0d0d0;
-      border: 1px dashed #666666;
-      padding: 30px 15px;
-      text-align: center;
-      color: #333333;
-      font-weight: bold;
-      margin-top: 10px;
-    }
-
-    .btn-grey {
-      background: #bbbbbb;
-      border: 2px solid #333333;
-      color: #000000;
-      font-weight: bold;
-      padding: 12px 20px;
-      display: inline-block;
-      margin-top: 15px;
-      cursor: pointer;
-      text-align: center;
-    }
-
-    /* SEC01: Header */
-    .header-nav {
-      display: flex;
-      justify-content: space-between;
+    .tag {
+      display: inline-flex;
       align-items: center;
-      background: #e8e8e8;
-      border: 1px solid #777777;
-      padding: 15px 20px;
+      gap: 6px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      padding: 4px 12px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.02em;
+      margin-bottom: 12px;
+    }
+    .tag.highlight {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+    }
+    h1 {
+      font-size: clamp(2.1rem, 5vw, 3.3rem);
+      line-height: 1.2;
+      margin: 12px 0 16px;
+      letter-spacing: -0.025em;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    h2 {
+      font-size: clamp(1.6rem, 3.8vw, 2.3rem);
+      line-height: 1.22;
+      margin: 8px 0 12px;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .lead {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.65;
     }
 
-    .logo-box {
-      font-size: 18px;
-      font-weight: bold;
-      border: 1px solid #333333;
-      padding: 4px 10px;
-      background: #ffffff;
-      display: inline-block;
+    /* Layout Grids */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+    .card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
     }
 
-    .nav-links span {
-      margin: 0 10px;
-      font-weight: bold;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    .user-actions span {
-      font-size: 12px;
-      background: #ffffff;
-      border: 1px solid #666666;
-      padding: 4px 8px;
-      margin-left: 5px;
-      font-weight: bold;
-    }
-
-    /* SEC02: Hero */
-    .hero-grid {
+    /* AFITB-100: Hero Section */
+    .hero {
+      min-height: 72vh;
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 20px;
+      grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
+      gap: 40px;
+      padding: 40px 0;
     }
-
-    .badge-pill {
-      background: #444444;
-      color: #ffffff;
-      font-size: 11px;
-      font-weight: bold;
-      padding: 3px 8px;
-      display: inline-block;
-      margin-bottom: 8px;
-    }
-
     .metrics-row {
       display: flex;
-      gap: 10px;
-      margin-top: 15px;
-    }
-
-    .metric-box {
-      flex: 1;
-      background: #d8d8d8;
-      border: 1px solid #888888;
-      padding: 10px;
-      text-align: center;
-      font-size: 12px;
-    }
-
-    /* SEC03: 3-Line Summary */
-    .summary-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin-top: 12px;
+      margin: 24px 0 28px;
+    }
+    .metric-pill {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 12px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      border-top: 3px solid var(--accent);
+    }
+    .metric-pill strong {
+      font-size: 1.35rem;
+      display: block;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .metric-pill span {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 600;
     }
 
-    .summary-card {
-      background: #e8e8e8;
-      border: 2px solid #777777;
-      padding: 15px;
+    /* 3D Dual Bottle Object Graphic */
+    .bottle-mockup-wrapper {
+      background: linear-gradient(145deg, #FAF6EB 0%, #EAE4D4 100%);
+      border: 2px solid var(--border);
+      border-radius: 28px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-md);
+      position: relative;
     }
-
-    /* SEC04: AI Bio Curation */
-    .chips-row {
+    .bottle-graphic {
+      width: 140px;
+      margin: 0 auto 16px;
       display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 12px 0;
+      flex-direction: column;
+      align-items: center;
+      filter: drop-shadow(0 14px 20px rgba(24, 61, 51, 0.15));
+      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .bottle-graphic:hover {
+      transform: translateY(-6px) scale(1.03);
+    }
+    .bottle-cap {
+      width: 62px;
+      height: 50px;
+      background: var(--primary);
+      border-radius: 12px 12px 4px 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 800;
+      border: 2px solid #336154;
+      position: relative;
+    }
+    .bottle-cap::after {
+      content: '🔬 질소밀폐';
+      font-size: 0.58rem;
+      background: var(--accent);
+      color: var(--primary);
+      padding: 1px 4px;
+      border-radius: 4px;
+      margin-top: 2px;
+    }
+    .bottle-neck {
+      width: 30px;
+      height: 10px;
+      background: #D1C9B8;
+      border-left: 2px solid #A89F8D;
+      border-right: 2px solid #A89F8D;
+    }
+    .bottle-body {
+      width: 90px;
+      height: 122px;
+      background: linear-gradient(180deg, #E3EFE9 0%, #76A58C 100%);
+      border-radius: 8px 8px 24px 24px;
+      border: 2px solid var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6px;
+      position: relative;
+    }
+    .bottle-label-preview {
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid var(--primary);
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 0.6rem;
+      font-weight: 700;
+      color: var(--primary);
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      width: 92%;
+      line-height: 1.2;
+    }
+    .bottle-badge-floating {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: var(--primary);
+      font-weight: 700;
+      background: var(--card);
+      padding: 4px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--accent);
     }
 
-    .chip-item {
-      background: #e0e0e0;
-      border: 1px solid #666666;
-      padding: 6px 12px;
-      font-size: 12px;
-      font-weight: bold;
+    /* AFITB-110: 3-Bio Principle Badges */
+    .bio-badge-box {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #FFFFFF;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 0.95rem;
+      margin-bottom: 16px;
+      box-shadow: var(--shadow-sm);
     }
 
-    .chip-item.active {
-      background: #333333;
-      color: #ffffff;
-      border-color: #000000;
+    /* AFITB-120: 3-Step Diagnostic Stepper UI */
+    .stepper-container {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+    }
+    .stepper-header {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .stepper-header::before {
+      content: '';
+      position: absolute;
+      top: 18px;
+      left: 30px;
+      right: 30px;
+      height: 2px;
+      background: var(--border);
+      z-index: 1;
+    }
+    .step-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      background: var(--card);
+      padding: 0 10px;
+    }
+    .step-circle {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--card-subtle);
+      border: 2px solid var(--border);
+      color: var(--text-muted);
+      display: grid;
+      place-items: center;
+      font-weight: 800;
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .step-item.active .step-circle {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 0 0 4px var(--accent-light);
+    }
+    .step-item.completed .step-circle {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #FFFFFF;
+    }
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      margin-top: 6px;
+    }
+    .step-item.active .step-label {
+      color: var(--primary);
     }
 
-    .curation-split {
+    .step-content {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .step-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+
+    .quiz-options {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 10px;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .quiz-opt-btn {
+      background: var(--card-subtle);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: left;
+      font-weight: 700;
+      color: var(--text);
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .quiz-opt-btn:hover {
+      border-color: var(--primary);
+      background: var(--accent-light);
+    }
+    .quiz-opt-btn.selected {
+      border-color: var(--primary);
+      background: var(--primary);
+      color: #FFFFFF;
+      box-shadow: var(--shadow-sm);
     }
 
-    /* SEC05: Clinical Component Chart */
-    .chart-split {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 15px;
-      margin-top: 12px;
+    /* R&D Lab Result Panel */
+    .lab-result-box {
+      background: linear-gradient(135deg, #183D33 0%, #255447 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+    .lab-code-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      font-family: monospace;
+      letter-spacing: 0.05em;
     }
 
-    .chart-card {
-      background: #e4e4e4;
-      border: 1px solid #888888;
-      padding: 15px;
+    /* AFITB-130: Clinical Data Dashboard */
+    .clinical-dashboard {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
     }
-
-    .cost-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 12px;
-      margin-top: 8px;
-    }
-
-    .cost-table th, .cost-table td {
-      border: 1px solid #999999;
-      padding: 6px 8px;
-      text-align: center;
-    }
-
-    .cost-table th {
-      background: #d0d0d0;
-      font-weight: bold;
-    }
-
-    /* SEC06: Dual Tech Motion */
-    .steps-row {
+    .clinical-stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 12px;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .stat-card {
+      background: var(--card-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      text-align: center;
+      border-top: 3px solid var(--primary);
+    }
+    .stat-card strong {
+      font-size: 1.8rem;
+      display: block;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    .stat-card span {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .donut-layout {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      background: #FAF8F2;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+    .donut-chart-circle {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      background: conic-gradient(var(--primary) 0% 64.7%, #D3CDC0 64.7% 100%);
+      display: grid;
+      place-items: center;
+      position: relative;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .donut-chart-circle::after {
+      content: '64.7%';
+      width: 80px;
+      height: 80px;
+      background: var(--card);
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1.05rem;
+      color: var(--primary);
     }
 
-    .step-box {
-      background: #e0e0e0;
-      border: 1px solid #777777;
-      padding: 12px;
+    /* AFITB-131: Comparison Matrix */
+    .matrix-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.92rem;
+    }
+    .matrix-table th, .matrix-table td {
+      border: 1px solid var(--border);
+      padding: 12px 16px;
       text-align: center;
     }
-
-    /* SEC07: Professional Reviews */
-    .review-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-top: 12px;
+    .matrix-table th {
+      background: var(--card-subtle);
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .matrix-table td.highlight {
+      background: var(--accent-light);
+      color: var(--primary);
+      font-weight: 800;
     }
 
+    /* AFITB-140: 15s Mechanism Steps */
+    .step-card {
+      position: relative;
+      overflow: hidden;
+      border-top: 4px solid var(--primary);
+    }
+
+    /* AFITB-150: Reviews */
     .review-card {
-      background: #e8e8e8;
-      border: 1px solid #888888;
-      padding: 15px;
-      font-size: 12px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+    }
+    .author-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--primary);
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      border: 1px solid var(--accent);
     }
 
-    /* SEC08: Footer */
-    .footer-box {
-      background: #d8d8d8;
-      border: 1px solid #666666;
-      padding: 20px;
-      font-size: 12px;
+    /* AFITB-160: FAQ */
+    .faq details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      margin-bottom: 12px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s;
     }
-
-    /* SEC09: Sticky CTA */
-    .sticky-cta-bar {
-      background: #cccccc;
-      border: 2px solid #333333;
-      padding: 15px 25px;
+    .faq details[open] {
+      border-color: var(--accent);
+      background: #FFFEFA;
+    }
+    .faq summary {
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-top: 15px;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::after {
+      content: '+';
+      font-size: 1.3rem;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    .faq details[open] summary::after {
+      content: '−';
+    }
+    .faq p {
+      margin-top: 14px;
+      color: var(--text-muted);
+      font-size: 0.94rem;
+      line-height: 1.6;
+    }
+
+    /* AFITB-170: Sticky Subscription Bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 90;
+      background: rgba(255, 255, 255, 0.97);
+      border-top: 1px solid var(--border);
+      backdrop-filter: blur(14px);
+      padding: 14px 0;
+      box-shadow: 0 -10px 30px rgba(24, 61, 51, 0.08);
+      display: none;
+    }
+    .sticky-bar.show {
+      display: block;
+    }
+    .sticky-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    /* Modal Framework */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(24, 61, 51, 0.65);
+      backdrop-filter: blur(6px);
+      place-items: center;
+      padding: 18px;
+    }
+    .modal.open { display: grid; }
+    .dialog {
+      width: min(540px, 100%);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 32px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: 0;
+      background: var(--card-subtle);
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      transition: background 0.2s;
+    }
+    .close:hover { background: #E5DFC8; }
+    .field {
+      display: grid;
+      gap: 6px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #FFFFFF;
+      font-size: 0.95rem;
+      color: var(--text);
+      transition: border-color 0.2s;
+    }
+    .field input:focus, .field select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+    .status-box {
+      padding: 12px;
+      border-radius: 8px;
+      margin: 12px 0;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+    .status-box.error { background: #FDE8E8; color: #9B1C1C; border: 1px solid #F8B4B4; }
+    .status-box.good { background: var(--accent-light); color: var(--primary); border: 1px solid var(--accent); }
+
+    /* Footer */
+    .footer {
+      padding: 48px 0 20px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Accessibility */
+    button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; padding: 24px 0; }
+      .grid-3, .grid-2, .quiz-options, .clinical-stats-grid { grid-template-columns: 1fr; }
+      .links a:not(:last-child) { display: none; }
+      .sticky-flex { flex-direction: column; text-align: center; }
+      .sticky-flex .btn { width: 100%; justify-content: center; }
+      .donut-layout { flex-direction: column; text-align: center; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
     }
   </style>
 </head>
 <body>
 
-  <!-- [PAGE-01-SEC01] Header -->
-  <div class="container">
-    <div class="header-nav" style="margin-top: 15px;">
-      <div>
-        <span class="section-label">[PAGE-01-SEC01] Header (반투명 프리미엄 GNB)</span><br>
-        <div class="logo-box">A:FIT Balance</div>
+  <!-- =========================================================
+       AFITB-100: Top Sticky GNB (R&D Edition)
+       ========================================================= -->
+  <header class="top">
+    <nav class="wrap">
+      <a href="#" class="brand-logo">
+        <strong>A:FIT Balance</strong>
+        <span class="brand-badge">🔬 R&D 연구소장 검증</span>
+      </a>
+      <div class="links">
+        <a href="#summary">3대 바이오 원칙</a>
+        <a href="#stepper">AI 진단 스텝퍼</a>
+        <a href="#clinical">임상 시험 데이터</a>
+        <a href="#matrix">비교 매트릭스</a>
+        <a href="#mechanism">15초 흡수 기전</a>
+        <a href="#reviews">전문직 리포트</a>
+        <button class="btn primary" onclick="openCheckoutModal()">
+          <span>15초 맞춤 웰니스 시작</span>
+          <span>→</span>
+        </button>
       </div>
-      <div class="nav-links">
-        <span>브랜드 스토리</span>
-        <span>AI 진단</span>
-        <span>임상 성분</span>
-        <span>구독 혜택</span>
-      </div>
-      <div class="user-actions">
-        <span>[마이페이지]</span>
-        <span>[장바구니 (0)]</span>
-      </div>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="container">
-
-    <!-- [PAGE-01-SEC02] Hero Section -->
+  <main>
+    <!-- =========================================================
+         AFITB-100: Hero Section (문제 정의 & 연구소 선언)
+         ========================================================= -->
     <section>
-      <span class="section-label">[PAGE-01-SEC02] Hero Section (3040 피로 공감 & 메인 비주얼)</span>
-      <div class="hero-grid">
+      <div class="wrap hero">
         <div>
-          <span class="badge-pill">🔬 세브란스 / 해외 연구진 임상 검증 바이오 웰니스</span>
-          <h1 style="font-size: 21px; margin: 8px 0; line-height: 1.3;">
-            3040 만성 피로와 수면 장애,<br>
-            영양제 오남용 없이 15초 바이오 큐레이션으로
+          <span class="tag highlight">🔬 약학/영양 R&D 연구소장 검증 솔루션</span>
+          <h1>
+            복잡한 영양제는 내려놓으세요,<br>
+            하루 15초 3040 바이오 밸런스
           </h1>
-          <p style="font-size: 13px; color: #333333; margin-bottom: 10px;">
-            더 이상 중복 영양제 과다 복용에 불안해하지 마세요. 1:1 라이프스타일 임상 분석 기반 15초 앰플 솔루션.
+          <p class="lead">
+            영양제 5~6개 중복 복용으로 인한 간 피로와 흡수율 간섭 문제,<br>
+            세브란스 및 해외 연구진 임상으로 증명된 특허 원료를 하루 한 병으로 정밀 큐레이션합니다.
           </p>
 
           <div class="metrics-row">
-            <div class="metric-box">
-              <strong>99.8%</strong><br>특허 원료 순도
+            <div class="metric-pill">
+              <strong>15초 컷</strong>
+              <span>원터치 액상+캡슐</span>
             </div>
-            <div class="metric-box">
-              <strong>88%</strong><br>체내 임상 흡수율
+            <div class="metric-pill">
+              <strong>64.7%</strong>
+              <span>임상 피로도 감소율</span>
             </div>
-            <div class="metric-box">
-              <strong>15초</strong><br>프리미엄 앰플 섭취
+            <div class="metric-pill">
+              <strong>1:1 맞춤</strong>
+              <span>AI 바이오 큐레이션</span>
             </div>
           </div>
 
-          <div class="btn-grey" style="width: 100%;">
-            내 라이프스타일 15초 분석받기 →
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a class="btn primary" href="#stepper" style="padding: 14px 28px; font-size: 1.02rem;">
+              내 라이프스타일 15초 정밀 진단받기 →
+            </a>
+            <a class="btn" href="#clinical" style="padding: 14px 20px;">
+              임상 검증 데이터 열람
+            </a>
           </div>
         </div>
 
-        <div class="grey-placeholder">
-          [프리미엄 앰플 + 서재 웰니스 오브제 저충실도 그래픽]<br>
-          (특허 이중제형 결합 앰플 보틀 3D 모델)
+        <!-- 3D Dual Bottle Interactive Graphic -->
+        <div class="bottle-mockup-wrapper">
+          <span class="tag">DUAL-FORMULATION 3D</span>
+          <div class="bottle-graphic" id="heroBottle">
+            <div class="bottle-cap">
+              BIO CAPSULE
+            </div>
+            <div class="bottle-neck"></div>
+            <div class="bottle-body">
+              <div class="bottle-label-preview" id="bottleHeroLabel">
+                "연구원 윤서진 소장 검증<br>3040 뇌 피로 리셋 팩"
+              </div>
+            </div>
+          </div>
+          <div class="bottle-badge-floating">
+            ✦ 상단 질소치환 캡슐 + 하단 고농축 활성 앰플
+          </div>
+          <p style="font-size: 0.78rem; color: var(--text-muted); margin-top: 8px;">
+            (호버 시 3D 틸트 인터랙션 & 연구소 라벨 연동)
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC03] 3-Line Summary -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC03] 3-Line Summary (프리미엄 3줄 요약 카드)</span>
-      <h2 style="font-size: 17px; margin-bottom: 4px;">전문직을 위한 A:FIT Balance 3대 임상 가치</h2>
-      <p style="font-size: 12px; color: #555555;">정보 피로도를 최소화한 3줄 요약 프리미엄 명세</p>
-
-      <div class="summary-grid">
-        <div class="summary-card">
-          <span style="font-size: 11px; font-weight: bold; color: #555;">01. CLINICAL PROOF</span>
-          <h3 style="font-size: 15px; margin: 4px 0;">임상 검증 특허 원료</h3>
-          <p style="font-size: 12px; color: #333;">세브란스 및 해외 연구진 SCI급 논문 임상 데이터셋 기반 안전성 입증</p>
+    <!-- =========================================================
+         AFITB-110: 3-Bio Principles (3대 바이오 원칙)
+         ========================================================= -->
+    <section id="summary">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-110 · 3-BIO PRINCIPLES</span>
+          <h2>연구원이 설계한 3대 바이오 원칙</h2>
+          <p class="lead">중복 복용과 간 피로 없는 3줄 요약 핵심 소구점 (Pure Encapsulations 벤치마킹)</p>
         </div>
 
-        <div class="summary-card">
-          <span style="font-size: 11px; font-weight: bold; color: #555;">02. AI BIO DIAGNOSIS</span>
-          <h3 style="font-size: 15px; margin: 4px 0;">15초 스마트 바이오 진단</h3>
-          <p style="font-size: 12px; color: #333;">피로, 수면, 면역, 항산화 4대 핵심 고민을 15초 알고리즘으로 자동 정밀 매칭</p>
-        </div>
+        <div class="grid-3">
+          <article class="card">
+            <div class="bio-badge-box">01</div>
+            <h3>01. CLINICAL PROOF (임상 검증)</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              세브란스 및 해외 연구진 SCI급 임상으로 검증된 최고 순도 특허 원료(A-Fit Bio™)만을 엄선하여 배합합니다.
+            </p>
+          </article>
 
-        <div class="summary-card">
-          <span style="font-size: 11px; font-weight: bold; color: #555;">03. PREMIUM DUAL</span>
-          <h3 style="font-size: 15px; margin: 4px 0;">프리미엄 이중제형</h3>
-          <p style="font-size: 12px; color: #333;">고농축 액상 앰플 + 맞춤 정제 결합으로 체내 흡수 속도 극대화</p>
-        </div>
-      </div>
-    </section>
+          <article class="card">
+            <div class="bio-badge-box">02</div>
+            <h3>02. AI BIO DIAGNOSIS (AI 맞춤)</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              뇌 피로, 수면, 면역, 항산화 4대 라이프스타일 데이터를 분석하여 매월 최적의 포뮬러를 1:1 재설계합니다.
+            </p>
+          </article>
 
-    <!-- [PAGE-01-SEC04] AI Bio Curation -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC04] AI Bio Curation (바이오 큐레이션 진단)</span>
-      <h2 style="font-size: 17px; margin-bottom: 4px;">AI Bio-Lifestyle Curation & 4대 타깃 웰니스 솔루션</h2>
-      <p style="font-size: 12px; color: #555555;">고민 칩을 선택하면 약학 연구 알고리즘이 특허 성분 배합을 실시간 구성합니다.</p>
-
-      <div class="chips-row">
-        <div class="chip-item active">🧠 만성 뇌 피로 (L-테아닌 + 테아닌 앰플) [선택됨]</div>
-        <div class="chip-item">🌙 수면 장애 / 불면 (감태추출물 + 마그네슘 앰플)</div>
-        <div class="chip-item">🛡️ 면역 저하 (고함량 아연 + 비타민 D 앰플)</div>
-        <div class="chip-item">✨ 항산화 / 항노화 (코엔자임 Q10 + 비타민 E 앰플)</div>
-      </div>
-
-      <div class="curation-split">
-        <div class="grey-box">
-          <strong style="font-size: 13px;">[15초 라이프스타일 분석 리포트]</strong>
-          <p style="font-size: 12px; margin-top: 6px;">• 대상자: 3040 전문직 / 워킹맘·파파 (두뇌 활동량 과다, 수면 질 저하)</p>
-          <p style="font-size: 12px;">• 바이오 추천 배합: 활성형 L-테아닌 250mg + 고농축 홍경천 앰플</p>
-          <p style="font-size: 12px;">• 작용 기전: 알파파 유도 및 스트레스 호르몬 코르티솔 32% 감소</p>
-        </div>
-
-        <div class="grey-placeholder" style="padding: 20px 10px;">
-          [맞춤 특허 바이오 앰플 3D 렌더링 뷰]<br>
-          <strong style="font-size: 14px; margin-top: 6px; display: inline-block;">"A:FIT Balance Bio-Pack #01"</strong><br>
-          <span style="font-size: 11px; color: #555;">(연구원 검증 처방 라벨 각인)</span>
+          <article class="card">
+            <div class="bio-badge-box">03</div>
+            <h3>03. PREMIUM DUAL (15초 섭취)</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              영양제 5개를 따로 삼킬 필요 없이, 원터치로 액상과 캡슐을 한 번에 흡수하는 하루 15초 웰니스를 구현합니다.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC05] Clinical Component Chart -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC05] Clinical Component Chart (임상 데이터 도넛 차트 & 비용 비교)</span>
-      <h2 style="font-size: 17px; margin-bottom: 4px;">특허 원료 함량 도넛 차트 & 낱개 영양제 대비 비용 절감 비교표</h2>
-      <p style="font-size: 12px; color: #555555;">중복 과다 지출되는 낱개 영양제 대비 확실한 가치 및 데이터 검증</p>
+    <!-- =========================================================
+         AFITB-120 & 121: 3-Step AI Bio Diagnostic Stepper (스텝퍼 UX)
+         ========================================================= -->
+    <section id="stepper">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-120 & 121 · 3-STEP AI BIO DIAGNOSTIC STEPPER</span>
+          <h2>3단계 AI 바이오 라이프스타일 정밀 진단</h2>
+          <p class="lead">문진 단계에 따라 나의 증상과 근무 패턴을 분석하여 R&D 연구소 인증 처방 코드를 도출합니다. (Viome & Thorne 벤치마킹)</p>
+        </div>
 
-      <div class="chart-split">
-        <div class="chart-card">
-          <strong style="font-size: 13px;">📊 특허 원료 함량 & 흡수율</strong>
-          <div class="grey-placeholder" style="padding: 20px; margin: 8px 0;">
-            [SVG 도넛 차트 영역]<br>
-            • 특허 성분 순도: <strong>99.8%</strong><br>
-            • 체내 생체이용률: <strong>88.4%</strong>
+        <div class="stepper-container">
+          <!-- Stepper Header Progress -->
+          <div class="stepper-header">
+            <div class="step-item active" id="stepIndicator1">
+              <div class="step-circle">1</div>
+              <div class="step-label">피로 증상 진단</div>
+            </div>
+            <div class="step-item" id="stepIndicator2">
+              <div class="step-circle">2</div>
+              <div class="step-label">근무/수면 패턴</div>
+            </div>
+            <div class="step-item" id="stepIndicator3">
+              <div class="step-circle">3</div>
+              <div class="step-label">AI 처방 도출</div>
+            </div>
           </div>
-          <p style="font-size: 11px; color: #555;">* 세브란스 바이오 임상 시험 결과 기준</p>
+
+          <!-- Step 1: Symptom Selection -->
+          <div class="step-content active" id="stepContent1">
+            <h3 style="font-size: 1.2rem;">Q1. 최근 가장 심각하게 느끼는 피로 증상은 무엇인가요?</h3>
+            <div class="quiz-options">
+              <button class="quiz-opt-btn selected" onclick="selectSymptom(this, 'brain', '만성 뇌 피로 / 집중력 저하', 'L-테아닌 200mg + 포스파티딜세린 100mg', '연구원 윤서진 소장 검증: 3040 뇌 피로 리셋 밸런스 팩')">
+                <span>🧠</span>
+                <div>
+                  <div>만성 뇌 피로 / 집중력 저하</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">오후 3시 이후 극심한 브레인 포그</div>
+                </div>
+              </button>
+              <button class="quiz-opt-btn" onclick="selectSymptom(this, 'sleep', '수면 불균형 / 스트레스', '제주 감태추출물 500mg + 킬레이트 마그네슘 300mg', '연구원 윤서진 소장 검증: 딥슬립 나이트 밸런스 팩')">
+                <span>🌙</span>
+                <div>
+                  <div>수면 불균형 / 얕은 잠</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">자고 일어나도 개운하지 않은 아침</div>
+                </div>
+              </button>
+              <button class="quiz-opt-btn" onclick="selectSymptom(this, 'immune', '면역력 저하 / 잦은 염증', '글루콘산 아연 12mg + 활성 비타민 D3 2,000IU', '연구원 윤서진 소장 검증: 전신 면역 부스터 밸런스 팩')">
+                <span>🛡️</span>
+                <div>
+                  <div>면역력 저하 / 잔병치레</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">환절기 컨디션 난조 및 염증</div>
+                </div>
+              </button>
+              <button class="quiz-opt-btn" onclick="selectSymptom(this, 'anti', '세포 항산화 / 활력 저하', '순도 99% 코엔자임 Q10 100mg + 비타민 E 400IU', '연구원 윤서진 소장 검증: 프리미엄 셀 항산화 밸런스 팩')">
+                <span>✨</span>
+                <div>
+                  <div>세포 항산화 / 피부 탄력 저하</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">야근 후 급격한 안색 저하</div>
+                </div>
+              </button>
+            </div>
+            <div style="text-align: right;">
+              <button class="btn primary" onclick="goToStep(2)">다음 단계로 (패턴 분석) →</button>
+            </div>
+          </div>
+
+          <!-- Step 2: Lifestyle Pattern -->
+          <div class="step-content" id="stepContent2">
+            <h3 style="font-size: 1.2rem;">Q2. 주당 평균 근무 시간 및 수면 환경은 어떻게 되시나요?</h3>
+            <div class="quiz-options">
+              <button class="quiz-opt-btn selected" onclick="selectPattern(this)">
+                <span>💼</span>
+                <div>
+                  <div>주 50시간 이상 고강도 근무</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">전문직, 관리자, 잦은 야근</div>
+                </div>
+              </button>
+              <button class="quiz-opt-btn" onclick="selectPattern(this)">
+                <span>👶</span>
+                <div>
+                  <div>퇴근 후 육아 병행 (워킹맘/파파)</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">하루 휴식 시간 1시간 미만</div>
+                </div>
+              </button>
+              <button class="quiz-opt-btn" onclick="selectPattern(this)">
+                <span>☕</span>
+                <div>
+                  <div>하루 커피 3잔 이상 의존</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">오후 에너지 급락 극복용</div>
+                </div>
+              </button>
+              <button class="quiz-opt-btn" onclick="selectPattern(this)">
+                <span>💊</span>
+                <div>
+                  <div>영양제 3~5종 중복 복용 중</div>
+                  <div style="font-size: 0.78rem; color: var(--text-muted); font-weight: normal;">위장 부담 및 속 쓰림 경험</div>
+                </div>
+              </button>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <button class="btn" onclick="goToStep(1)">← 이전 질문</button>
+              <button class="btn primary" onclick="runAiAnalysis()">AI 바이오 처방 도출하기 🔬</button>
+            </div>
+          </div>
+
+          <!-- Step 3: AI Prescription Result -->
+          <div class="step-content" id="stepContent3">
+            <div class="grid-2">
+              <div class="card" style="background: var(--card-subtle);">
+                <span class="tag">AI 바이오 분석 결과 리포트</span>
+                <h3 id="stepResultTitle" style="font-size: 1.3rem; margin: 8px 0; color: var(--primary);">
+                  🧠 만성 뇌 피로 / 집중력 저하 케어
+                </h3>
+                <div style="font-size: 0.9rem; margin-bottom: 8px;">
+                  <strong>• 정밀 임상 원료:</strong> <span id="stepResultIng" style="color: var(--primary); font-weight: 800;">L-테아닌 200mg + 포스파티딜세린 100mg</span>
+                </div>
+                <div style="font-size: 0.9rem; margin-bottom: 8px;">
+                  <strong>• 제형 시너지:</strong> 뇌 활성 인지질 정제 2정 + 고농축 테아닌 액상 앰플 50ml
+                </div>
+                <div style="font-size: 0.9rem; margin-bottom: 14px;">
+                  <strong>• 생체 흡수율:</strong> 일반 정제 대비 <span style="color: var(--primary); font-weight: 800;">3.8배 빠른 혈중 도달</span>
+                </div>
+                <button class="btn primary" style="width: 100%; justify-content: center;" onclick="openCheckoutModal()">
+                  이 처방으로 15초 정기구독 신청하기 →
+                </button>
+              </div>
+
+              <div class="lab-result-box">
+                <span class="tag" style="background: rgba(255,255,255,0.2); color: #fff; border-color: rgba(255,255,255,0.3);">
+                  AFITB-121 · R&D 연구소 인증 라벨
+                </span>
+                <div style="margin: 12px 0;">
+                  <span class="lab-code-badge" id="stepResultCode">LAB-RND-2026-0842</span>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.12); border: 2px dashed rgba(255, 255, 255, 0.35); border-radius: 12px; padding: 18px; margin: 12px 0; text-align: center;">
+                  <div style="font-size: 1.1rem; font-weight: 800;" id="stepResultMsg">
+                    "연구원 윤서진 소장 검증: 3040 뇌 피로 리셋 밸런스 팩"
+                  </div>
+                </div>
+                <div style="font-size: 0.8rem; opacity: 0.85; text-align: center;">
+                  ✦ 약학 연구진의 1:1 처방에 따라 매월 최적화된 패키지가 발송됩니다.
+                </div>
+              </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+              <button class="btn" onclick="goToStep(1)">↺ 문진 다시 진행하기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         AFITB-130: Clinical Data Dashboard (임상 대시보드)
+         ========================================================= -->
+    <section id="clinical">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-130 · CLINICAL DATA DASHBOARD</span>
+          <h2>세브란스 및 해외 연구진 임상 검증 대시보드</h2>
+          <p class="lead">SCI급 무작위 이중맹검 대조 시험(RCT)으로 입증된 확실한 수치 (Thorne & Pure Encapsulations 벤치마킹)</p>
         </div>
 
-        <div class="chart-card" style="border: 2px solid #333333;">
-          <strong style="font-size: 13px;">💊 낱개 영양제 5종 vs A:FIT Balance 비교표</strong>
-          <table class="cost-table">
-            <tr>
-              <th>구분</th>
-              <th>시중 낱개 영양제 5종</th>
-              <th>A:FIT Balance</th>
-            </tr>
-            <tr>
-              <td>월 지출 비용</td>
-              <td>180,000 원 (중복 과다)</td>
-              <td><strong>60,000 원대 (올인원)</strong></td>
-            </tr>
-            <tr>
-              <td>일일 복용 알수</td>
-              <td>7 ~ 9 정 (목넘김 부담)</td>
-              <td><strong>1 앰플 10초 섭취</strong></td>
-            </tr>
-            <tr>
-              <td>체내 흡수율</td>
-              <td>일반 정제 (20~30%)</td>
-              <td><strong>액상 앰플 융합 (88%)</strong></td>
-            </tr>
+        <div class="clinical-dashboard">
+          <div class="clinical-stats-grid">
+            <div class="stat-card">
+              <strong>- 64.7%</strong>
+              <span>섭취 2주 후 피로 지수 감소율</span>
+            </div>
+            <div class="stat-card">
+              <strong>3.8배</strong>
+              <span>일반 정제 대비 혈중 생체이용률</span>
+            </div>
+            <div class="stat-card">
+              <strong>0%</strong>
+              <span>중복 성분으로 인한 간 부담 지수</span>
+            </div>
+          </div>
+
+          <div class="donut-layout">
+            <div class="donut-chart-circle"></div>
+            <div>
+              <h3 style="margin-bottom: 6px;">A-Fit Bio™ 복합 포뮬러 임상 시험 결과 요약</h3>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                대상: 30~49세 전문직 종사자 120명 | 기간: 4주간 무작위 이중맹검 대조 시험<br>
+                결과: 피로도 64.7% 감소 확인 (p &lt; 0.001) 및 간 수치(AST/ALT) 안정성 검증 완료
+              </p>
+            </div>
+          </div>
+
+          <!-- DOI Archive Accordion -->
+          <details style="background: var(--card-subtle); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px;">
+            <summary style="font-weight: 700; color: var(--primary); cursor: pointer;">
+              📄 SCI급 논문 DOI 식별자 및 원본 데이터 아카이브 열람
+            </summary>
+            <div style="margin-top: 10px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+              • <strong>논문 1:</strong> Clinical Nutrition Res. 2025; 14(2): 112-124 (DOI: 10.7762/cnr.2025.14.2.112)<br>
+              • <strong>논문 2:</strong> Journal of Bio-Nutritional Science 2026; 28(1): 45-59 (DOI: 10.1016/j.jbns.2026.01.004)<br>
+              * 전문 열람은 마이페이지 R&D 연구소 아카이브에서 제공됩니다.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         AFITB-131: Comparison Matrix (낱개 5종 비교 매트릭스)
+         ========================================================= -->
+    <section id="matrix">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-131 · SCIENTIFIC COMPARISON MATRIX</span>
+          <h2>낱개 영양제 5종 vs A:FIT Balance 정밀 비교</h2>
+          <p class="lead">성분 충돌 위험도와 비용, 시간을 비교한 객관적 매트릭스 (Kroma Wellness 벤치마킹)</p>
+        </div>
+
+        <div class="card">
+          <table class="matrix-table">
+            <thead>
+              <tr>
+                <th>비교 항목</th>
+                <th>시중 낱개 영양제 5종 개별 구매</th>
+                <th>A:FIT Balance R&D 올인원 구독</th>
+                <th>과학적 절감 가치</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>성분 충돌 / 간 부담</strong></td>
+                <td>중복 과다 복용 위험 높음 (5병 개별 섭취)</td>
+                <td class="highlight"><strong>1:1 바이오 정밀 배합 (간 부담 0%)</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">중복 복용 완벽 차단</td>
+              </tr>
+              <tr>
+                <td><strong>생체 흡수율</strong></td>
+                <td>일반 고형 정제 (흡수 지연 및 위장 장애)</td>
+                <td class="highlight"><strong>질소밀폐 캡슐 + 액상 앰플 (3.8배 흡수)</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">빠른 혈중 활성화</td>
+              </tr>
+              <tr>
+                <td><strong>월간 지출 비용</strong></td>
+                <td>185,000원 (5병 구매 시)</td>
+                <td class="highlight"><strong>79,000원</strong></td>
+                <td style="font-weight: 900; color: var(--primary); font-size: 1.05rem;">월 106,000원 절감!</td>
+              </tr>
+              <tr>
+                <td><strong>하루 섭취 시간</strong></td>
+                <td>하루 10분 (약통 분류 & 복용)</td>
+                <td class="highlight"><strong>하루 15초 컷</strong></td>
+                <td style="font-weight: 800; color: var(--primary);">연간 3,650분 절약</td>
+              </tr>
+            </tbody>
           </table>
-          <div style="background: #cccccc; padding: 6px; text-align: center; font-size: 11px; font-weight: bold; margin-top: 8px;">
-            ⚖️ 월 12만 원 지출 절감 & 중복 성분 오남용 100% 방지
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================
+         AFITB-140: 15s Dual-Formulation Mechanism (이중제형 15초 기전)
+         ========================================================= -->
+    <section id="mechanism">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-140 · 15s DUAL-FORMULATION MECHANISM</span>
+          <h2>물 없이 마시는 15초 원터치 흡수 메커니즘</h2>
+          <p class="lead">앰플 상단 캡슐 챔버를 누르는 순간 정제가 액상으로 낙하하여 생체 흡수율을 극대화합니다. (Seed 벤치마킹)</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card step-card">
+            <div class="bio-badge-box">1</div>
+            <h3>1. 원터치 챔버 개방</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              질소 치환 밀폐 챔버를 가볍게 눌러 캡슐 보관실을 즉각 개방합니다.
+            </p>
+          </div>
+
+          <div class="card step-card">
+            <div class="bio-badge-box">2</div>
+            <h3>2. 정밀 배합 캡슐 낙하</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              산화 없이 신선하게 보존된 유용 캡슐 2정이 하단 액상 앰플로 완벽 낙하합니다.
+            </p>
+          </div>
+
+          <div class="card step-card">
+            <div class="bio-badge-box">3</div>
+            <h3>3. 15초 생체 흡수 완료</h3>
+            <p style="color: var(--text-muted); font-size: 0.92rem;">
+              물 필요 없이 고농축 액상과 함께 15초 만에 흡수되어 간 부담 없이 피로를 회복합니다.
+            </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC06] Dual Tech GIF Motion -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC06] Dual Tech GIF Motion (15초 프리미엄 앰플 모션)</span>
-      <h2 style="font-size: 17px; margin-bottom: 4px;">하루 15초, 고급 서재에서 즐기는 프리미엄 웰니스 메커니즘</h2>
-      <p style="font-size: 12px; color: #555555;">원터치 개봉과 동시에 신선하게 혼합되는 특허 앰플 섭취 3단계</p>
-
-      <div class="grey-placeholder" style="padding: 25px 15px;">
-        [15초 프리미엄 액상 앰플 3D 회전 & 스크롤 반응 애니메이션 영역]<br>
-        (상단 캡슐 캡 회전 ➔ 농축 앰플 침투 ➔ 15초 원샷 인터랙션)
-      </div>
-
-      <div class="steps-row">
-        <div class="step-box">
-          <strong style="font-size: 12px;">STEP 01. TWIST</strong>
-          <p style="font-size: 11px; margin-top: 4px;">보틀 상단 골드 캡 회전<br>(신선 보존 챔버 개방)</p>
+    <!-- =========================================================
+         AFITB-150: 3040 Professional Real Reviews (전문직 실명 후기)
+         ========================================================= -->
+    <section id="reviews">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-150 · 3040 PROFESSIONAL REVIEWS</span>
+          <h2>3040 전문직 / 워킹맘 실명 후기 (평점 ★ 4.95/5.0)</h2>
+          <p class="lead">자산운용사 임원, IT 워킹맘, 변호사의 100% 리얼 검증 보이스 (Perelel & Viome 벤치마킹)</p>
         </div>
-        <div class="step-box">
-          <strong style="font-size: 12px;">STEP 02. INFUSE</strong>
-          <p style="font-size: 11px; margin-top: 4px;">특허 정제가 하단<br>고농축 앰플로 즉각 혼합</p>
-        </div>
-        <div class="step-box">
-          <strong style="font-size: 12px;">STEP 03. SHOT</strong>
-          <p style="font-size: 11px; margin-top: 4px;">물 없이 15초 만에<br>부드럽고 신선하게 섭취</p>
+
+        <div class="grid-3">
+          <div class="review-card">
+            <div>
+              <div class="review-author">
+                <div class="author-avatar">정</div>
+                <div>
+                  <strong style="color: var(--primary);">정밸런스 (41세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">자산운용사 이사 / 만성 뇌 피로</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px;">★★★★★</div>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                "책상 위에 영양제 5개씩 올려두고 먹다 속 쓰려서 포기했었는데, A:FIT 하나로 바꾼 뒤 아침 뇌 피로감이 완전히 사라졌습니다."
+              </p>
+            </div>
+            <div style="font-size: 0.76rem; color: var(--accent-badge); font-weight: 700; margin-top: 12px;">
+              ✓ 8개월 장기 구독 중
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-author">
+                <div class="author-avatar">김</div>
+                <div>
+                  <strong style="color: var(--primary);">김수민 (37세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">IT 기업 팀장 / 워킹맘</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px;">★★★★★</div>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                "퇴근 후 육아까지 버틸 체력이 없었는데, 연구소장님이 직접 배합한 임상 데이터 믿고 매일 아침 15초 만에 챙겨 마십니다."
+              </p>
+            </div>
+            <div style="font-size: 0.76rem; color: var(--accent-badge); font-weight: 700; margin-top: 12px;">
+              ✓ 6개월 장기 구독 중
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div>
+              <div class="review-author">
+                <div class="author-avatar">박</div>
+                <div>
+                  <strong style="color: var(--primary);">박진우 (39세)</strong>
+                  <div style="font-size: 0.78rem; color: var(--text-muted);">법무법인 파트너 변호사</div>
+                </div>
+              </div>
+              <div style="color: #F59E0B; margin-bottom: 6px;">★★★★★</div>
+              <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6;">
+                "약통 여러 개 챙기던 번거로움이 사라지고 시간도 아껴져서 서재 책상 위 필수 루틴이 되었습니다. 강력 추천합니다."
+              </p>
+            </div>
+            <div style="font-size: 0.76rem; color: var(--accent-badge); font-weight: 700; margin-top: 12px;">
+              ✓ 5개월 장기 구독 중
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- [PAGE-01-SEC07] Professional Reviews -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC07] Professional Reviews (3040 전문직 실명 리뷰)</span>
-      <h2 style="font-size: 17px; margin-bottom: 4px;">3040 전문직 실제 장기 구독자 실명 리뷰</h2>
-      <p style="font-size: 12px; color: #555555;">금융, 법조, 의료계 및 워킹맘의 라이프스타일 변화 평가</p>
-
-      <div class="review-grid">
-        <div class="review-card">
-          <div style="font-weight: bold; margin-bottom: 4px;">최현우 (38세 / 자산운용사 이사)</div>
-          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 8개월 정기구독 중 [직종 인증]</div>
-          <p style="margin-top: 6px; color: #222;">
-            "매일 야근과 펀드 운용 스트레스로 만성 두뇌 피로에 시달렸는데, 뇌 피로 맞춤 앰플 섭취 후 다음 날 아침 집중력과 기상 컨디션이 획기적으로 개선되었습니다."
-          </p>
+    <!-- =========================================================
+         AFITB-160: FAQ (자주 묻는 질문)
+         ========================================================= -->
+    <section class="faq">
+      <div class="wrap">
+        <div class="section-header">
+          <span class="tag">AFITB-160 · FAQ</span>
+          <h2>자주 묻는 질문</h2>
         </div>
 
-        <div class="review-card">
-          <div style="font-weight: bold; margin-bottom: 4px;">정유진 (35세 / 법무법인 변호사 & 워킹맘)</div>
-          <div style="font-size: 11px; color: #555;">평점 ★★★★★ | 6개월 정기구독 중 [직종 인증]</div>
-          <p style="margin-top: 6px; color: #222;">
-            "바쁜 재판과 육아로 영양제 5~6통을 챙겨 먹다 목 넘김도 힘들고 중복 복용이 늘 불안했는데, 하루 15초 바이오 앰플 하나로 해결되어 삶의 질이 달라졌습니다."
-          </p>
-        </div>
+        <details open>
+          <summary>기존에 복용 중인 영양제와 함께 먹어도 되나요?</summary>
+          <p>A:FIT Balance는 1일 필수 기능성 성분을 중복 과다 없이 정밀 설계하였으므로, 기존 영양제 섭취를 중단하시고 본 제품 하나만 드시는 것을 권장합니다.</p>
+        </details>
+
+        <details>
+          <summary>임상 데이터의 세부 연구 결과를 확인할 수 있나요?</summary>
+          <p>네, SCI급 학술지에 게재된 A-Fit Bio™ 복합물의 임상 논문 요약본과 시험 데이터를 마이페이지 R&D 아카이브에서 열람하실 수 있습니다.</p>
+        </details>
+
+        <details>
+          <summary>정기구독 플랜 변경 및 해지는 자유로운가요?</summary>
+          <p>마이페이지에서 다음 정기배송 24시간 전까지 언제든지 배합 성분 변경, 일시정지, 위약금 0원의 100% 해지가 가능합니다.</p>
+        </details>
       </div>
     </section>
+  </main>
 
-    <!-- [PAGE-01-SEC08] Footer -->
-    <section>
-      <span class="section-label">[PAGE-01-SEC08] Footer (기업 정보 & 임상 출처 푸터)</span>
-      <div class="footer-box">
-        <p style="font-size: 11px; color: #444; margin-bottom: 6px;">
-          * 세브란스 바이오 임상 데이터셋 출처: 2025 바이오 웰니스 저널 Vol.12 No.4 (피험자 120명 대상 8주 무작위 이중맹검 대조군 시험)
-        </p>
-        <hr style="border: 0; border-top: 1px solid #aaa; margin: 8px 0;">
-        <p><strong>주식회사 에이핏 밸런스 (A:FIT Balance Inc.)</strong> | 대표: 윤서진 | R&D 센터: 서울 강남구 테헤란로 바이오타워</p>
-        <p>사업자등록번호: 214-88-00000 | 통신판매업: 제2026-서울강남-0456호 | 고객센터: 1588-0000 (평일 09:00~18:00)</p>
-        <p style="margin-top: 8px; color: #444;">
-          <span style="text-decoration: underline; cursor: pointer;">이용약관</span> | 
-          <span style="text-decoration: underline; cursor: pointer;">개인정보처리방침</span> | 
-          <span style="text-decoration: underline; cursor: pointer;">임상 논문 원본 데이터</span>
-        </p>
-        <p style="margin-top: 8px; font-size: 11px; color: #666;">Copyright © A:FIT Balance Inc. All rights reserved.</p>
-      </div>
-    </section>
-
-    <!-- [PAGE-01-SEC09] Sticky CTA Bar -->
-    <div class="sticky-cta-bar">
+  <!-- =========================================================
+       AFITB-170: Sticky Subscription Bar
+       ========================================================= -->
+  <aside class="sticky-bar" id="stickyBar">
+    <div class="wrap sticky-flex">
       <div>
-        <span class="section-label" style="margin-bottom: 2px;">[PAGE-01-SEC09] Sticky CTA Bar</span>
-        <p style="font-size: 13px; font-weight: bold;">
-          A:FIT Balance 15초 바이오 웰니스 프리미엄 정기구독 (월 6만 원대)
-        </p>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <strong style="font-size: 1.1rem; color: var(--primary);">A:FIT Balance 맞춤 바이오 이중제형 정기구독</strong>
+          <span class="tag highlight" style="font-size: 0.72rem; padding: 2px 8px;">첫 달 25% VIP 혜택</span>
+        </div>
+        <div style="font-size: 0.85rem; color: var(--text-muted);">
+          영양제 5종 대체, 하루 15초로 완성하는 3040 바이오 밸런스 (월 5만 원대~)
+        </div>
       </div>
-      <div class="btn-grey" style="margin-top: 0; padding: 10px 24px;">
-        15초 프리미엄 구독 시작하기 →
-      </div>
+      <button class="btn primary" style="padding: 12px 28px; font-size: 1rem;" onclick="openCheckoutModal()">
+        15초 맞춤 웰니스 시작하기 →
+      </button>
     </div>
+  </aside>
 
+  <!-- =========================================================
+       AFITB-180: Instant Checkout Modal (15초 맞춤 구독 모달)
+       ========================================================= -->
+  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="dialog">
+      <button class="close" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
+      <span class="tag">AFITB-180 · INSTANT CHECKOUT</span>
+      <h2 id="modalTitle" style="margin: 8px 0 16px;">15초 프리미엄 맞춤 구독 신청</h2>
+
+      <div style="background: var(--card-subtle); padding: 14px; border-radius: 12px; margin-bottom: 16px; border: 1px solid var(--border);">
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-bottom: 4px;">선택된 R&D 인증 맞춤 처방:</div>
+        <strong id="modalLabelText" style="font-size: 0.98rem; color: var(--primary);">
+          "연구원 윤서진 소장 검증: 3040 뇌 피로 리셋 밸런스 팩"
+        </strong>
+      </div>
+
+      <form id="checkoutForm" novalidate>
+        <div class="field">
+          <label for="custName">구독자 성함</label>
+          <input type="text" id="custName" name="custName" value="윤서진" required>
+        </div>
+
+        <div class="field">
+          <label for="custPhone">휴대폰 번호 (정밀배송 알림톡 수신용)</label>
+          <input type="tel" id="custPhone" name="custPhone" value="010-9876-5432" required>
+        </div>
+
+        <div class="field">
+          <label for="planSelect">구독 플랜 선택</label>
+          <select id="planSelect">
+            <option value="20day">월 20일 워크데이 집중팩 (월 20병 / 64,000원 → 첫달 48,000원)</option>
+            <option value="30day" selected>월 30일 프리미엄 풀케어팩 (월 30병 / 79,000원 → 첫달 59,250원)</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="custAddr">배송지 주소</label>
+          <input type="text" id="custAddr" name="custAddr" value="서울특별시 서초구 반포대로 201 (래미안 원베일리)" required>
+        </div>
+
+        <label style="display: flex; gap: 8px; align-items: center; margin: 16px 0; font-size: 0.88rem; color: var(--text);">
+          <input type="checkbox" id="agreeTerms" checked required>
+          <span>정기결제 이용약관 및 개인정보 수집 동의 (언제든 100% 해지 가능)</span>
+        </label>
+
+        <button type="submit" class="btn primary" style="width: 100%; justify-content: center; padding: 14px; font-size: 1.05rem;">
+          1초 간편 결제로 구독 시작하기
+        </button>
+
+        <div id="formStatus" class="status-box" style="display:none;"></div>
+      </form>
+    </div>
   </div>
 
+  <!-- =========================================================
+       AFITB-181: Done Modal (구독 접수 완료 모달)
+       ========================================================= -->
+  <div id="doneModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="doneTitle">
+    <div class="dialog" style="text-align: center;">
+      <button class="close" onclick="closeDoneModal()" aria-label="닫기">×</button>
+      <span class="tag highlight">AFITB-181 · SUBSCRIPTION CONFIRMED</span>
+      <div style="font-size: 3.2rem; margin: 12px 0;">🔬</div>
+      <h2 id="doneTitle" style="margin-bottom: 8px;">프리미엄 정기구독이 정상 접수되었습니다!</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">
+        윤서진 소장의 바이오 처방에 맞춘 첫 번째 올인원 이중제형 패키지가 내일 아침 문 앞으로 도착합니다.
+      </p>
+
+      <div style="background: var(--card-subtle); padding: 16px; border-radius: 14px; margin: 20px 0; font-size: 0.92rem; text-align: left; border: 1px solid var(--border);">
+        <div style="margin-bottom: 6px;">• <strong>처방 구독 번호:</strong> <span id="orderNum" style="color: var(--primary); font-weight: 800;">AFITB-20260814-3891</span></div>
+        <div style="margin-bottom: 6px;">• <strong>첫 배송 예정:</strong> 내일 아침 07:00 이전 (정밀 새벽 배송)</div>
+        <div>• <strong>인증 라벨:</strong> <span id="doneMsgText" style="color: var(--accent-badge); font-weight: 800;">"연구원 윤서진 소장 검증: 3040 뇌 피로 리셋 밸런스 팩"</span></div>
+      </div>
+
+      <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="closeDoneModal()">
+        확인 및 메인 홈으로
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="wrap footer">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-bottom: 16px;">
+      <div>
+        <strong style="color: var(--primary); font-size: 1.1rem;">A:FIT Balance (에이핏 밸런스)</strong>
+        <div style="font-size: 0.82rem; margin-top: 4px;">3040 전문직 및 워킹맘/파파 타깃 올인원 프리미엄 이중제형 정기구독 서비스</div>
+      </div>
+      <div style="font-size: 0.82rem;">
+        연구소 고객센터: 1588-0000 (평일 09:00 ~ 18:00) | rnd-support@afit.kr
+      </div>
+    </div>
+    <div>주식회사 에이핏 밸런스 | R&D 소장: 윤서진 | 사업자등록번호: 234-56-78901 | 통신판매업신고: 제2026-서울서초-0456호</div>
+    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Balance Inc. All rights reserved. (R&D Low-Fidelity Interactive Storyboard Prototype)</div>
+  </footer>
+
+  <!-- Interactive JavaScript -->
+  <script>
+    // 1. Stepper Navigation & Data Control
+    let selectedSymptomData = {
+      type: 'brain',
+      title: '만성 뇌 피로 / 집중력 저하 케어',
+      ing: 'L-테아닌 200mg + 포스파티딜세린 100mg',
+      msg: '연구원 윤서진 소장 검증: 3040 뇌 피로 리셋 밸런스 팩',
+      code: 'LAB-RND-2026-0842'
+    };
+
+    function selectSymptom(btn, type, title, ing, msg) {
+      document.querySelectorAll('#stepContent1 .quiz-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      
+      const codes = {
+        brain: 'LAB-RND-2026-0842',
+        sleep: 'LAB-RND-2026-1194',
+        immune: 'LAB-RND-2026-2351',
+        anti: 'LAB-RND-2026-4789'
+      };
+
+      selectedSymptomData = {
+        type: type,
+        title: title,
+        ing: ing,
+        msg: msg,
+        code: codes[type]
+      };
+    }
+
+    function selectPattern(btn) {
+      document.querySelectorAll('#stepContent2 .quiz-opt-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+    }
+
+    function goToStep(stepNum) {
+      // Update Stepper Headers
+      for (let i = 1; i <= 3; i++) {
+        const indicator = document.getElementById('stepIndicator' + i);
+        const content = document.getElementById('stepContent' + i);
+        
+        indicator.classList.remove('active', 'completed');
+        content.classList.remove('active');
+
+        if (i < stepNum) {
+          indicator.classList.add('completed');
+        } else if (i === stepNum) {
+          indicator.classList.add('active');
+          content.classList.add('active');
+        }
+      }
+    }
+
+    function runAiAnalysis() {
+      goToStep(3);
+      // Update Result Data
+      document.getElementById('stepResultTitle').textContent = `🧠 ${selectedSymptomData.title}`;
+      document.getElementById('stepResultIng').textContent = selectedSymptomData.ing;
+      document.getElementById('stepResultMsg').textContent = `"${selectedSymptomData.msg}"`;
+      document.getElementById('stepResultCode').textContent = selectedSymptomData.code;
+
+      // Update Bottle Graphic and Modal Data
+      document.getElementById('bottleHeroLabel').innerHTML = `"${selectedSymptomData.msg.replace('검증: ', '검증<br>')}"`;
+      document.getElementById('modalLabelText').textContent = `"${selectedSymptomData.msg}"`;
+      document.getElementById('doneMsgText').textContent = `"${selectedSymptomData.msg}"`;
+    }
+
+    // 2. Modal Control
+    const checkoutModal = document.getElementById('checkoutModal');
+    const doneModal = document.getElementById('doneModal');
+    const checkoutForm = document.getElementById('checkoutForm');
+    const formStatus = document.getElementById('formStatus');
+
+    function openCheckoutModal() {
+      checkoutModal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCheckoutModal() {
+      checkoutModal.classList.remove('open');
+      document.body.style.overflow = '';
+      formStatus.style.display = 'none';
+    }
+
+    function closeDoneModal() {
+      doneModal.classList.remove('open');
+      document.body.style.overflow = '';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    checkoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('custName').value.trim();
+      const phone = document.getElementById('custPhone').value.trim();
+      const agree = document.getElementById('agreeTerms').checked;
+
+      if (!name || phone.length < 9 || !agree) {
+        formStatus.style.display = 'block';
+        formStatus.className = 'status-box error';
+        formStatus.textContent = '성함과 휴대폰 번호를 확인하고 이용약관에 동의해 주세요.';
+        return;
+      }
+
+      formStatus.style.display = 'block';
+      formStatus.className = 'status-box good';
+      formStatus.textContent = '15초 맞춤 정기구독 결제 승인 중...';
+
+      setTimeout(() => {
+        closeCheckoutModal();
+        const randNum = Math.floor(1000 + Math.random() * 9000);
+        document.getElementById('orderNum').textContent = `AFITB-20260814-${randNum}`;
+        doneModal.classList.add('open');
+      }, 500);
+    });
+
+    // 4. Sticky Bar Scroll Visibility
+    const stickyBar = document.getElementById('stickyBar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        stickyBar.classList.add('show');
+      } else {
+        stickyBar.classList.remove('show');
+      }
+    });
+
+    // Close Modal on Escape Key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCheckoutModal();
+        closeDoneModal();
+      }
+    });
+  </script>
 </body>
 </html>
