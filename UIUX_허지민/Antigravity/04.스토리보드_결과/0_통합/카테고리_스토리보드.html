@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>A:FIT (에이핏) 7대 라이프스타일 컬렉션 제품 라인업 (Full-Width 와이드 에디션)</title>
+  <style>
+    /* =========================================================
+       A:FIT Category Design System (1920px Standard)
+       ========================================================= */
+    :root {
+      --primary: #183D33;
+      --primary-dark: #0E241E;
+      --accent: #76A58C;
+      --accent-hover: #5F8C75;
+      --accent-light: #EBF3EF;
+      --bg: #FAF7F0;
+      --card: #FFFFFF;
+      --card-subtle: #F3EFE6;
+      --border: rgba(24, 61, 51, 0.12);
+      --text: #183D33;
+      --text-body: #3A4B45;
+      --text-muted: #6B7C75;
+      --shadow-sm: 0 2px 8px rgba(24, 61, 51, 0.04);
+      --shadow-md: 0 12px 36px rgba(24, 61, 51, 0.08);
+      --shadow-lg: 0 24px 60px rgba(24, 61, 51, 0.12);
+      --radius: 20px;
+      --radius-sm: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--text-body);
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans KR", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      word-break: keep-all;
+    }
+
+    button, input, select, textarea { font: inherit; }
+    button { cursor: pointer; }
+
+    .wrap-wide {
+      width: min(1400px, calc(100% - 64px));
+      margin: auto;
+    }
+
+    /* Full-Width Top Sticky Header */
+    .top-full {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 240, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(18px);
+      width: 100%;
+      padding: 0 48px;
+    }
+    nav.nav-wide {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      gap: 32px;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+    .brand-logo strong {
+      font-size: 2.15rem;
+      font-weight: 950;
+      letter-spacing: -0.01em;
+      color: var(--primary);
+      line-height: 1;
+    }
+    .brand-badge {
+      font-size: 0.74rem;
+      font-weight: 800;
+      background: var(--accent-light);
+      color: var(--primary);
+      padding: 4px 10px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+    .links-wide {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+    .links-wide a {
+      color: var(--text-body);
+      text-decoration: none;
+      font-size: 0.86rem;
+      font-weight: 600;
+      padding: 6px 0;
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .links-wide a.active, .links-wide a:hover {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .links-wide a.active::after, .links-wide a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    .btn {
+      color: var(--primary);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--card);
+    }
+    .btn.primary {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: 1px solid var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn.primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Section Global */
+    section {
+      padding: 80px 0;
+      border-top: 1px solid var(--border);
+    }
+    .section-header {
+      margin-bottom: 32px;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid rgba(24, 61, 51, 0.2);
+      border-radius: 999px;
+      background: var(--card);
+      padding: 5px 14px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--primary);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(2.1rem, 3.2vw, 2.45rem);
+      line-height: 1.3;
+      margin: 12px 0 16px;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      line-height: 1.25;
+      margin: 8px 0 14px;
+      letter-spacing: -0.025em;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    .lead {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.68;
+      max-width: 680px;
+    }
+
+    /* Filter Chips Bar */
+    .filter-bar-wide {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 24px 0 40px;
+    }
+    .filter-bar-wide button {
+      border: 1.5px solid var(--border);
+      border-radius: 999px;
+      background: var(--card);
+      padding: 10px 18px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: var(--text-body);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .filter-bar-wide button:hover {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--primary);
+    }
+    .filter-bar-wide button.active {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Product Grid (3 Columns) */
+    .prd-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .prd-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+    }
+    .prd-card:hover {
+      border-color: var(--accent);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .prd-bottle-thumb {
+      height: 160px;
+      background: radial-gradient(circle at 50% 40%, #FFFFFF 0%, #EAEFEA 100%);
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 20px;
+      font-size: 3rem;
+      border: 1px solid var(--border);
+    }
+    .prd-tag {
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--card-subtle);
+      color: var(--primary);
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    /* Comparison Table */
+    .compare-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      font-size: 0.92rem;
+      background: var(--card);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border);
+    }
+    .compare-table th, .compare-table td {
+      border: 1px solid var(--border);
+      padding: 16px 20px;
+      text-align: left;
+    }
+    .compare-table th {
+      background: var(--card-subtle);
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(24, 61, 51, 0.65);
+      backdrop-filter: blur(6px);
+      place-items: center;
+      padding: 20px;
+    }
+    .modal.open { display: grid; }
+    .dialog {
+      width: min(540px, 100%);
+      background: var(--card);
+      border-radius: 24px;
+      padding: 36px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      position: relative;
+    }
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      border: 0;
+      background: var(--card-subtle);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+    }
+    .field {
+      display: grid;
+      gap: 6px;
+      margin: 14px 0;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .field input, .field select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #FFFFFF;
+      font-size: 0.95rem;
+      color: var(--text-body);
+    }
+
+    /* Footer Full */
+    .footer-full {
+      padding: 60px 48px 30px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      border-top: 1px solid var(--border);
+      width: 100%;
+    }
+
+    @media (max-width: 960px) {
+      .top-full { padding: 0 20px; }
+      .prd-grid { grid-template-columns: 1fr; gap: 24px; }
+      .links-wide a:not(:last-child) { display: none; }
+      .footer-full { padding: 40px 20px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-Width GNB -->
+  <header class="top-full">
+    <nav class="nav-wide">
+      <a href="메인페이지_스토리보드_와이드.html" class="brand-logo">
+        <strong>A:FIT</strong>
+        <span class="brand-badge">대한민국 No.1 맞춤 웰니스</span>
+      </a>
+      <div class="links-wide">
+        <a href="메인페이지_스토리보드_와이드.html">메인 홈</a>
+        <a href="브랜드소개_스토리보드.html">브랜드 소개</a>
+        <a href="#" class="active">제품 라인업</a>
+        <a href="메인페이지_스토리보드_와이드.html#calculator">가성비 계산기</a>
+        <a href="메인페이지_스토리보드_와이드.html#reviews">구독자 후기</a>
+        <button class="btn primary" onclick="openCheckoutModal()">
+          <span>10초 웰니스 시작</span>
+          <span>→</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- CAT-100: Category Header & Filter Chips -->
+    <section style="padding: 60px 0 40px; border-top: none;">
+      <div class="wrap-wide">
+        <div class="section-header">
+          <span class="tag" style="background: var(--accent-light); border-color: rgba(118, 165, 140, 0.4); color: var(--primary);">
+            CAT-100 · 7 LIFESTYLE FORMULAS
+          </span>
+          <h1>
+            내 라이프스타일에 맞춘<br>
+            7대 올인원 이중제형 컬렉션
+          </h1>
+          <p class="lead">
+            직장인, 운동선수, 3교대 간호사, IT 개발자까지. 당신의 하루 패턴에 가장 정밀하게 최적화된 10초 웰니스 포뮬러를 탐색하세요.
+          </p>
+        </div>
+
+        <!-- 8 Filter Chips -->
+        <div class="filter-bar-wide" id="filterBar">
+          <button class="active" data-cat="all">전체보기 (7)</button>
+          <button data-cat="1">💼 2030 직장인</button>
+          <button data-cat="2">🧬 R&D 바이오</button>
+          <button data-cat="3">⚡ 스포츠 Pro</button>
+          <button data-cat="4">💧 스킨 Glow</button>
+          <button data-cat="5">🌱 클린 Eco</button>
+          <button data-cat="6">🚨 3교대 Emergency</button>
+          <button data-cat="7">💻 IT Tech</button>
+        </div>
+
+        <!-- CAT-110: 7 Product Cards Grid -->
+        <div class="prd-grid" id="productGrid">
+          
+          <!-- Card 1 -->
+          <div class="prd-card" data-cat="1">
+            <div>
+              <div class="prd-bottle-thumb">💼</div>
+              <span class="prd-tag">2030 직장인 식비·피로 세이빙</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Worker Saving Pack</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                고순도 밀크씨슬 130mg + 활성 비타민 B군 500% + 타우린으로 출근길 10초 활력 충전.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('박지안 (2030 직장인 팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="prd-card" data-cat="2">
+            <div>
+              <div class="prd-bottle-thumb">🧬</div>
+              <span class="prd-tag">R&D 바이오 정밀 임상 사이언스</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Bio Science LAB</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                3단계 바이오 문진 매칭 유효성분 + 항산화 콤플렉스로 92.4% 다이렉트 진피 흡수.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('윤서진 (R&D 바이오 팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="prd-card" data-cat="3">
+            <div>
+              <div class="prd-bottle-thumb">⚡</div>
+              <span class="prd-tag">스포츠 액티브 당류 0g</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Active Pro Booster</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                순수 BCAA 5,000mg + 구연산 마그네슘 + 전해질 포뮬러로 운동 전 10초 부스팅.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('강민준 (스포츠 Pro 팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="prd-card" data-cat="4">
+            <div>
+              <div class="prd-bottle-thumb">💧</div>
+              <span class="prd-tag">스킨 바이오 속건조·진피 광채</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Skin Glow Ampoule</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                초저분자 액상 콜라겐 3,270mg + 순수 글루타치온 + 히알루론산 속건조 순삭 팩.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('송아현 (스킨 Glow 팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="prd-card" data-cat="5">
+            <div>
+              <div class="prd-bottle-thumb">🌱</div>
+              <span class="prd-tag">친환경 100% EVE 비건 & 생분해</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Clean Eco Vegan</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                프랑스 EVE 비건 B12 1,000% + 유기농 스피루리나 500mg 100% 식물성 클린 에너지.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('오유진 (클린 Eco 팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="prd-card" data-cat="6">
+            <div>
+              <div class="prd-bottle-thumb">🚨</div>
+              <span class="prd-tag">3교대·야간근무 속편한 비상활력</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Emergency Care</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                L-테아닌 200mg + 위점막 보호 양배추농축액 빈속에도 속 쓰림 0% 비상 케어.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('최교대 (3교대 비상팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 7 -->
+          <div class="prd-card" data-cat="7">
+            <div>
+              <div class="prd-bottle-thumb">💻</div>
+              <span class="prd-tag">IT 개발자 모니터 눈건강·포커스</span>
+              <h3 style="font-size: 1.25rem; margin: 4px 0 8px;">A:FIT Tech Focus Eye</h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 16px;">
+                루테인지아잔틴 20mg + 아스타잔틴 6mg + L-티로신 판교 개발자 10초 눈건강 포커스.
+              </p>
+            </div>
+            <div>
+              <div style="display: flex; align-items: baseline; gap: 8px; margin-bottom: 14px;">
+                <span style="font-size: 0.95rem; color: #9CA3AF; text-decoration: line-through;">114,000원</span>
+                <span style="font-size: 0.85rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 6px; border-radius: 4px;">30% OFF</span>
+                <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+              </div>
+              <button class="btn primary" style="width: 100%; justify-content: center; padding: 12px;" onclick="openCheckoutModal('임태현 (IT Tech 팩)')">
+                10초 맞춤 구독하기 →
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CAT-130: Formula Comparison Matrix -->
+    <section id="compare">
+      <div class="wrap-wide">
+        <div class="section-header">
+          <span class="tag">CAT-130 · FORMULA COMPARISON MATRIX</span>
+          <h2>7대 라인업 맞춤 스펙 한눈에 비교</h2>
+        </div>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>라인업 명칭</th>
+              <th>주요 특화 성분</th>
+              <th>제형 특성</th>
+              <th>추천 섭취 타이밍</th>
+              <th>첫달 구독가</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>💼 2030 직장인</strong></td>
+              <td>밀크씨슬 130mg + 활성B군 500%</td>
+              <td>캡슐 2정 + 피로케어 액상 50ml</td>
+              <td>아침 출근길 10초 원샷</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+            <tr>
+              <td><strong>🧬 R&D 바이오</strong></td>
+              <td>3단계 문진 매칭 + 항산화 콤플렉스</td>
+              <td>정밀 펠릿 2정 + 사이언스 액상</td>
+              <td>기상 직후 공복 10초</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+            <tr>
+              <td><strong>⚡ 스포츠 Pro</strong></td>
+              <td>순수 BCAA 5,000mg + 당류 0g</td>
+              <td>아미노 정제 2정 + 전해질 액상</td>
+              <td>운동 20분 전 10초</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+            <tr>
+              <td><strong>💧 스킨 Glow</strong></td>
+              <td>초저분자 콜라겐 3,270mg + 글루타치온</td>
+              <td>비타민C 정제 + 진피 히알루론산</td>
+              <td>아침 스킨케어 직후 10초</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+            <tr>
+              <td><strong>🌱 클린 Eco</strong></td>
+              <td>프랑스 EVE 비건 B12 + 스피루리나</td>
+              <td>100% 식물성 정제 + 유기농 액상</td>
+              <td>아침 식전 10초</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+            <tr>
+              <td><strong>🚨 3교대 Emergency</strong></td>
+              <td>L-테아닌 200mg + 양배추농축액</td>
+              <td>스트레스 완화 정제 + 위보호 액상</td>
+              <td>나이트 근무 투입 30분 전</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+            <tr>
+              <td><strong>💻 IT Tech</strong></td>
+              <td>루테인지아잔틴 20mg + 아스타잔틴</td>
+              <td>눈건강 연질캡슐 + 포커스 액상</td>
+              <td>오후 2시 코딩 집중 전</td>
+              <td style="color: var(--primary); font-weight: 800;">79,800원 (30% OFF)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <!-- Instant Checkout Modal -->
+  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true">
+    <div class="dialog">
+      <button class="close" onclick="closeCheckoutModal()">×</button>
+      <span class="tag">INSTANT CHECKOUT</span>
+      <h2 style="margin: 8px 0 16px;">10초 맞춤 정기구독 신청</h2>
+      <form id="checkoutForm" onsubmit="event.preventDefault(); alert('10초 맞춤 정기구독이 정상 접수되었습니다!'); closeCheckoutModal();">
+        <div class="field">
+          <label>구독자 성함</label>
+          <input type="text" id="orderCustName" value="허지민" required>
+        </div>
+        <div class="field">
+          <label>휴대폰 번호</label>
+          <input type="tel" value="010-9876-5432" required>
+        </div>
+        <div class="field">
+          <label>구독 플랜</label>
+          <select>
+            <option>월 30일 매일 올인원팩 (월 114,000원 → 첫달 79,800원 / 30% OFF)</option>
+            <option>월 20일 평일 출근 스타터팩 (월 76,000원 → 첫달 53,200원)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn primary" style="width: 100%; justify-content: center; padding: 14px; margin-top: 16px; font-size: 1.05rem;">
+          1초 간편 결제로 구독 시작하기
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Full-Width Footer -->
+  <footer class="footer-full">
+    <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 20px; margin-bottom: 20px;">
+      <div>
+        <strong style="color: var(--primary); font-size: 1.25rem;">A:FIT (주식회사 에이핏)</strong>
+        <div style="font-size: 0.88rem; margin-top: 4px;">대한민국 No.1 10초 올인원 이중제형 맞춤 웰니스 D2C 플랫폼</div>
+      </div>
+      <div style="font-size: 0.88rem;">
+        고객만족센터: 1588-0000 (평일 09:00 ~ 18:00) | contact@afit.kr
+      </div>
+    </div>
+    <div>주식회사 에이핏 | 대표이사: 허지민 | 사업자등록번호: 123-45-67890 | 통신판매업신고: 제2026-서울강남-0198호</div>
+    <div style="margin-top: 8px;">Copyright © 2026 A:FIT Inc. All rights reserved. (Category Storyboard Prototype)</div>
+  </footer>
+
+  <script>
+    // Filter functionality
+    const filterBtns = document.querySelectorAll('#filterBar button');
+    const cards = document.querySelectorAll('.prd-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const cat = btn.dataset.cat;
+        cards.forEach(card => {
+          if (cat === 'all' || card.dataset.cat === cat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    const checkoutModal = document.getElementById('checkoutModal');
+    function openCheckoutModal(name) {
+      if (name) document.getElementById('orderCustName').value = name;
+      checkoutModal.classList.add('open'); 
+      document.body.style.overflow = 'hidden'; 
+    }
+    function closeCheckoutModal() { 
+      checkoutModal.classList.remove('open'); 
+      document.body.style.overflow = ''; 
+    }
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeCheckoutModal(); });
+  </script>
+</body>
+</html>
