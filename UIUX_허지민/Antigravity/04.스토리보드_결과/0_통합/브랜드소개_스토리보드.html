@@ -240,6 +240,62 @@
       line-height: 1.65;
     }
 
+    /* Naming Identity Formula (BRD-100 Top) */
+    .naming-formula-box {
+      background: linear-gradient(135deg, rgba(24, 61, 51, 0.04) 0%, rgba(82, 144, 116, 0.08) 100%);
+      border: 1.5px solid rgba(82, 144, 116, 0.25);
+      border-radius: var(--radius-md);
+      padding: 36px 40px;
+      margin-bottom: 56px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .naming-formula-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1.25fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .naming-formula-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .naming-formula-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .naming-formula-card.highlight {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(24, 61, 51, 0.22);
+    }
+    .naming-formula-card.highlight:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .naming-symbol {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      text-align: center;
+    }
+    @media (max-width: 960px) {
+      .naming-formula-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .naming-symbol {
+        display: none;
+      }
+      .naming-formula-box {
+        padding: 24px 20px;
+      }
+    }
+
     /* Hero Section (BRD-100) */
     .hero-sec {
       padding: 60px 0 100px 0;
@@ -704,8 +760,9 @@
   </header>
 
   <!-- BRD-100: Hero Brand Manifesto & Philosophy -->
-  <section class="hero-sec" style="padding: 90px 0 100px;">
+  <section class="hero-sec" style="padding: 90px 0 90px;">
     <div class="wrap-wide">
+
       <div class="hero-grid" style="align-items: start; gap: 48px;">
         <div class="hero-content">
           <span class="tag-badge">
@@ -718,14 +775,14 @@
           <p class="lead" style="font-size: 1.05rem; font-weight: 600; color: var(--primary-light); margin-bottom: 20px;">
             바쁜 일상 속 결핍과 비효율을 해결하기 위해 시작된 A:FIT의 이야기입니다.
           </p>
-          <div style="font-size: 0.95rem; color: var(--text-body); line-height: 1.8; display: grid; gap: 14px;">
-            <p>
-              책상 위에 어지럽게 쌓여가는 대형 영양제 약통들, 그리고 시간에 쫓겨 인스턴트로 때우는 불균형한 한 끼. 
-              우리는 스스로에게 물었습니다. <em>"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?"</em>
+          <div style="font-size: 0.96rem; color: var(--text-body); line-height: 1.85; display: grid; gap: 16px;">
+            <p style="margin: 0;">
+              책상 위에 어지럽게 쌓여가는 대형 영양제 약통들, 그리고 시간에 쫓겨 인스턴트로 때우는 불균형한 한 끼.<br>
+              우리는 스스로에게 물었습니다. <strong style="color: var(--primary); font-weight: 800;">"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?"</strong>
             </p>
-            <p>
-              A:FIT은 이 단순하지만 본질적인 질문에서 출발했습니다. 
-              단순히 성분을 많이 담아내는 것이 아니라, 불필요한 과다 섭취를 비우고 개인의 라이프스타일에 맞춘 1:1 정밀 배합과 다이렉트 흡수 과학으로 건강을 관리하는 새로운 기준을 제시합니다.
+            <p style="margin: 0;">
+              A:FIT은 이 단순하지만 본질적인 질문에서 출발했습니다.<br>
+              단순히 성분을 많이 담아내는 것이 아니라, 불필요한 과다 섭취를 비우고 개인의 라이프스타일에 맞춘 <strong style="color: var(--primary); font-weight: 800;">1:1 정밀 배합과 다이렉트 흡수 과학</strong>으로 건강을 관리하는 새로운 기준을 제시합니다.
             </p>
           </div>
           <div style="margin-top: 32px; display: flex; gap: 14px; flex-wrap: wrap;">
@@ -760,8 +817,8 @@
             </p>
           </div>
 
-          <div style="background: var(--card); border: 1px solid var(--border); border-left: 4px solid #3B82F6; border-radius: var(--radius-sm); padding: 22px 24px; box-shadow: var(--shadow-subtle);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #2563EB; letter-spacing: 0.04em;">CORE VALUE 03</div>
+          <div style="background: var(--card); border: 1px solid var(--border); border-left: 4px solid #C88D74; border-radius: var(--radius-sm); padding: 22px 24px; box-shadow: var(--shadow-subtle);">
+            <div style="font-size: 0.82rem; font-weight: 800; color: #B86B53; letter-spacing: 0.04em;">CORE VALUE 03</div>
             <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
               지속 가능한 클린 순환 (Sustainable Cycle)
             </h3>
@@ -771,6 +828,59 @@
           </div>
         </div>
       </div>
+
+      <!-- 🌟 A:FIT Naming Identity Formula (Below Philosophy) -->
+      <div class="naming-formula-box" style="margin-top: 56px; margin-bottom: 0;">
+        <div style="margin-bottom: 24px;">
+          <span class="tag-badge" style="margin-bottom: 6px;">
+            <span class="tag-dot"></span>
+            BRAND IDENTITY · NAMING PHILOSOPHY
+          </span>
+          <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin: 0; letter-spacing: -0.02em;">
+            A:FIT = All-in-one + FIT
+          </h2>
+        </div>
+
+        <div class="naming-formula-grid">
+          <!-- 1. All-in-one -->
+          <div class="naming-formula-card">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">INTEGRATION</div>
+            <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary); margin: 4px 0 6px;">
+              All-in-one <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">(올인원)</span>
+            </div>
+            <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              어지러운 영양제 알약과 식사 대용식을 단 한 병으로 압축한 완전 통합 설계
+            </p>
+          </div>
+
+          <div class="naming-symbol">+</div>
+
+          <!-- 2. FIT -->
+          <div class="naming-formula-card">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">PERSONALIZATION</div>
+            <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary); margin: 4px 0 6px;">
+              FIT <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">(맞춤)</span>
+            </div>
+            <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+              획일화된 대량 생산 대신 개인의 라이프스타일 패턴에 정밀하게 1:1 맞춤 배합
+            </p>
+          </div>
+
+          <div class="naming-symbol">=</div>
+
+          <!-- 3. A:FIT -->
+          <div class="naming-formula-card highlight">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent); letter-spacing: 0.04em;">THE PHILOSOPHY</div>
+            <div style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF; margin: 4px 0 6px; letter-spacing: -0.02em;">
+              A:FIT <span style="font-size: 0.92rem; font-weight: 700; color: rgba(255,255,255,0.75);">(에이핏)</span>
+            </div>
+            <p style="font-size: 0.86rem; color: rgba(255, 255, 255, 0.9); line-height: 1.6; margin: 0;">
+              모든 솔루션이 하나로 합쳐져 내 몸에 정확하게 딱 맞는 1:1 맞춤 웰니스 전달
+            </p>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -783,7 +893,6 @@
           BRD-110 · THE PROBLEM & OUR SOLUTION
         </span>
         <h2>우리가 매일 영양제를 챙겨 먹지 못했던 진짜 이유</h2>
-        <p>복잡하고 번거로운 기존 방식의 한계를 넘어, 10초 만에 완결되는 새로운 웰니스 솔루션을 제시합니다.</p>
       </div>
 
       <div class="compare-grid">

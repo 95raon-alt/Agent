@@ -334,35 +334,130 @@
       position: relative;
     }
     .mini-bottle {
-      width: 60px;
-      height: 120px;
+      width: 80px;
+      height: 142px;
       margin: 0 auto;
-      filter: drop-shadow(0 8px 12px rgba(24, 61, 51, 0.12));
+      filter: drop-shadow(0 10px 18px rgba(24, 61, 51, 0.16));
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .prd-card:hover .mini-bottle {
+      transform: translateY(-5px) scale(1.04);
     }
     .mini-cap {
-      width: 38px;
-      height: 28px;
+      width: 52px;
+      height: 32px;
       margin: 0 auto;
-      background: #183D33;
-      border-radius: 6px 6px 3px 3px;
-      border: 1px solid rgba(255,255,255,0.2);
+      background: linear-gradient(145deg, #1C232B 0%, #0A0D10 100%);
+      border-radius: 8px 8px 3px 3px;
+      border: 1px solid rgba(255,255,255,0.24);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.18);
+      position: relative;
     }
     .mini-body {
-      width: 48px;
-      height: 80px;
+      width: 72px;
+      height: 100px;
       margin: -2px auto 0 auto;
-      background: linear-gradient(180deg, rgba(82, 144, 116, 0.3) 0%, rgba(24, 61, 51, 0.85) 100%);
-      border-radius: 4px 4px 12px 12px;
-      border: 1px solid rgba(82, 144, 116, 0.4);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(82, 144, 116, 0.12) 50%, rgba(24, 61, 51, 0.2) 100%);
+      border-radius: 4px 4px 18px 18px;
+      border: 1.5px solid rgba(82, 144, 116, 0.45);
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-end;
+      padding-bottom: 12px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.4), 0 8px 16px rgba(24, 61, 51, 0.08);
+      backdrop-filter: blur(4px);
     }
-    .mini-label {
-      font-size: 0.55rem;
-      color: #FFFFFF;
+    .glass-sheen {
+      position: absolute;
+      top: 0;
+      left: 6px;
+      width: 4px;
+      height: 92%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.05) 100%);
+      border-radius: 2px;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .liquid-container {
+      position: absolute;
+      bottom: 0;
+      left: -10%;
+      width: 120%;
+      height: 76%;
+      overflow: hidden;
+      border-radius: 0 0 20px 20px;
+      z-index: 1;
+      transform-origin: 50% 90%;
+      animation: gentleSlosh 3.2s ease-in-out infinite alternate;
+    }
+    .liquid-meniscus {
+      position: absolute;
+      top: 0;
+      left: -10%;
+      width: 120%;
+      height: 12px;
+      background: radial-gradient(ellipse at center, rgba(185, 238, 215, 0.98) 0%, rgba(82, 144, 116, 0.85) 60%, rgba(24, 61, 51, 0.95) 100%);
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(82, 144, 116, 0.4), inset 0 1px 2px rgba(255,255,255,0.9);
+      z-index: 2;
+      animation: meniscusWave 2.8s ease-in-out infinite alternate;
+    }
+    .liquid-fill {
+      position: absolute;
+      top: 5px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(82, 144, 116, 0.72) 0%, rgba(35, 88, 70, 0.92) 40%, rgba(18, 48, 40, 0.98) 100%);
+      box-shadow: inset 0 4px 10px rgba(255,255,255,0.15);
+      z-index: 1;
+    }
+
+    @keyframes gentleSlosh {
+      0% { transform: rotate(-2.8deg) translateY(0px) scaleY(1.02); }
+      50% { transform: rotate(0deg) translateY(1px) scaleY(0.99); }
+      100% { transform: rotate(2.8deg) translateY(-0.5px) scaleY(1.02); }
+    }
+    @keyframes meniscusWave {
+      0% { transform: scaleX(0.98) translateY(0px) rotate(-1.8deg); }
+      50% { transform: scaleX(1.03) translateY(1.2px) rotate(0.5deg); }
+      100% { transform: scaleX(0.99) translateY(-0.8px) rotate(2deg); }
+    }
+
+    .mini-engrave-label {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 5px;
+      padding: 5px 6px;
+      width: 86%;
+      text-align: center;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      white-space: nowrap;
+      box-sizing: border-box;
+      position: relative;
+      z-index: 4;
+    }
+    .mini-engrave-tag {
+      font-size: 0.52rem;
+      color: var(--accent-dark);
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      display: block;
+      white-space: nowrap;
+    }
+    .mini-engrave-name {
+      font-size: 0.74rem;
+      color: var(--primary);
+      font-weight: 900;
+      margin-top: 2px;
+      line-height: 1.15;
+      display: block;
+      white-space: nowrap;
     }
 
     .prd-formula-info {
@@ -598,7 +693,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">01 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -629,7 +734,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">02 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -660,7 +775,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">03 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -691,7 +816,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">04 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -722,7 +857,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">05 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -753,7 +898,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">06 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -784,7 +939,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">07 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -815,7 +980,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">08 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -846,7 +1021,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">09 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -877,7 +1062,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">10 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -908,7 +1103,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">11 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -939,7 +1144,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">12 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -970,7 +1185,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">13 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -1001,7 +1226,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">14 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -1032,7 +1267,17 @@
           <div class="prd-bottle-box">
             <div class="mini-bottle">
               <div class="mini-cap"></div>
-              <div class="mini-body"><span class="mini-label">15 팩</span></div>
+              <div class="mini-body">
+                <div class="glass-sheen"></div>
+                <div class="liquid-container">
+                  <div class="liquid-meniscus"></div>
+                  <div class="liquid-fill"></div>
+                </div>
+                <div class="mini-engrave-label">
+                  <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                  <span class="mini-engrave-name">OOO 님</span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="prd-formula-info">
@@ -1083,27 +1328,51 @@
 
   <!-- CAT-120: Quick View Modal -->
   <div id="quickViewModal" class="modal-overlay" onclick="if(event.target===this) closeQuickView()">
-    <div class="modal-box">
+    <div class="modal-box" style="max-width: 580px;">
       <button class="modal-close-btn" onclick="closeQuickView()">✕</button>
       <div style="text-align: center; margin-bottom: 20px;">
-        <span class="tag-badge" id="modalPrdTag"><span class="tag-dot"></span> 상세 성분 리포트</span>
-        <h3 id="modalPrdTitle" style="font-size: 1.45rem; font-weight: 800; color: var(--primary); margin-top: 8px;">제품명</h3>
-        <p id="modalPrdTarget" style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">타깃 대상</p>
+        <span class="tag-badge" id="modalPrdTag"><span class="tag-dot"></span> 상세 영양 처방 리포트</span>
+        <h3 id="modalPrdTitle" style="font-size: 1.55rem; font-weight: 800; color: var(--primary); margin-top: 8px;">제품명</h3>
+        <p id="modalPrdTarget" style="font-size: 0.90rem; color: var(--text-muted); margin-top: 4px;">타깃 대상</p>
       </div>
 
-      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px; margin-bottom: 18px;">
-        <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">상단 캡슐 정제 포뮬러</div>
-        <div id="modalCapText" style="font-size: 0.88rem; color: var(--text-body); line-height: 1.5;">성분 정보</div>
+      <!-- 💡 약사의 1줄 핵심 요약 -->
+      <div style="background: linear-gradient(135deg, rgba(82, 144, 116, 0.12) 0%, rgba(24, 61, 51, 0.05) 100%); border: 1.5px solid rgba(82, 144, 116, 0.35); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 16px;">
+        <div style="font-size: 0.82rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+          <span>💡</span> <span>약사의 3초 핵심 처방 요약</span>
+        </div>
+        <div id="modalSummaryText" style="font-size: 0.92rem; font-weight: 600; color: var(--primary); line-height: 1.5;">요약 정보</div>
       </div>
 
-      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 18px; margin-bottom: 20px;">
-        <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">하단 저점도 액상 앰플</div>
-        <div id="modalLiqText" style="font-size: 0.88rem; color: var(--text-body); line-height: 1.5;">액상 정보</div>
+      <!-- 💊 상단 정제 -->
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px;">
+        <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></span>
+          <span>상단 캡슐 정제 (무엇이 들어있나요?)</span>
+        </div>
+        <div id="modalCapText" style="font-size: 0.88rem; color: var(--text-body); line-height: 1.6;">성분 정보</div>
+      </div>
+
+      <!-- 🧪 하단 액상 -->
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px;">
+        <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></span>
+          <span>하단 액상 앰플 (왜 함께 마시나요?)</span>
+        </div>
+        <div id="modalLiqText" style="font-size: 0.88rem; color: var(--text-body); line-height: 1.6;">액상 정보</div>
+      </div>
+
+      <!-- ⏰ 섭취 골든타임 -->
+      <div style="background: var(--bg-subtle); border: 1px dashed var(--border-accent); border-radius: var(--radius-sm); padding: 12px 18px; margin-bottom: 22px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1rem;">⏰</span>
+        <div style="font-size: 0.85rem; color: var(--text-body);">
+          <strong style="color: var(--primary);">추천 섭취 골든타임:</strong> <span id="modalTimingText">섭취 시간 가이드</span>
+        </div>
       </div>
 
       <div style="display: flex; gap: 10px;">
-        <button class="btn primary" style="flex: 1; justify-content: center;" onclick="subscribeFromModal()">
-          이 제품 30% 할인가 구독하기 (월 79,800원)
+        <button class="btn primary" style="flex: 1; justify-content: center; font-size: 0.95rem;" onclick="subscribeFromModal()">
+          이 처방으로 30% 할인가 구독하기 (월 79,800원)
         </button>
         <button class="btn secondary" onclick="closeQuickView()">닫기</button>
       </div>
@@ -1171,21 +1440,141 @@
 
   <script>
     const quickViewData = [
-      { name: "나이트 오버타임 팩", cat: "2030 직장인", target: "잦은 야근 및 만성 피로 직장인", cap: "밀크씨슬추출물 130mg + 비타민B군 500% + 타우린 1,000mg", liq: "귀리 식이섬유 농축 곡물 쉐이크 포뮬러" },
-      { name: "모닝 퀵스타터 팩", cat: "2030 직장인", target: "바쁜 아침 공복 출근족", cap: "필수 비타민 13종 + 마그네슘 150mg + 나이아신", liq: "저당 오트밀 수용성 섬유 액상" },
-      { name: "애프터 파티 리커버리", cat: "2030 직장인", target: "회식 후 숙취 및 갈증 해소", cap: "헛개나무열매추출물 + 글루타치온 효모 + 밀크씨슬", liq: "전해질 타우린 이온 수분 앰플" },
-      { name: "바이오 이뮨 디펜스", cat: "R&D 바이오", target: "환절기 체내 면역 방어벽 구축", cap: "글루콘산 아연 12mg + 활성 비타민D 2,000IU + 셀레늄", liq: "엘더베리 고농축 바이오 액상" },
-      { name: "셀룰러 안티옥스", cat: "R&D 바이오", target: "유해 활성산소 억제 & 혈관 케어", cap: "순수 코엔자임Q10 100mg + 비타민E + 구리", liq: "석류 안토시아닌 폴리페놀 항산화 액상" },
-      { name: "프로틴 머슬 빌더", cat: "스포츠 Pro", target: "웨이트 트레이닝 & 근합성 극대화", cap: "필수 아미노산 9종 (EAA) + BCAA 5,000mg", liq: "100% 분리유청단백(WPI) 20g 무당류 액상" },
-      { name: "프리-워크아웃 부스터", cat: "스포츠 Pro", target: "운동 전 폭발적 혈관 펌핑", cap: "순수 발효 L-아르기닌 5,000mg + 크레아틴", liq: "타우린 2,000mg & 비타민C 고출력 활력 샷" },
-      { name: "딥 하이드라 콜라겐", cat: "이너뷰티 Glow", target: "피부 속건조 완화 & 탄력 장벽", cap: "발효 히알루론산 240mg + 저분자 엘라스틴", liq: "초저분자 어린(魚鱗) 콜라겐 3,270mg" },
-      { name: "브라이트닝 글루타치온", cat: "이너뷰티 Glow", target: "칙칙한 안색 개선 & 화사한 광채", cap: "L-글루타치온 건조효모 250mg + 비타민C 500mg", liq: "화이트토마토 농축 미백 앰플" },
-      { name: "퓨어 그린 비건 올인원", cat: "클린 Eco 비건", target: "100% 식물성 클린 영양 공급", cap: "유기농 효모 비타민B12 1,000% + 식물성 비건 철분", liq: "100% 완두·쌀 단백질 그린 쉐이크" },
-      { name: "밸런스 엔자임 다이제스트", cat: "클린 Eco 비건", target: "식후 더부룩함 & 편안한 소화", cap: "15곡 발효 효소 역가 50만 Unit + 유산균 사균체", liq: "양배추·매실 저자극 속편한 발효 액상" },
-      { name: "나이트 시프트 슬립", cat: "3교대 Emergency", target: "불규칙 수면 리듬 & 깊은 숙면", cap: "순수 L-테아닌 200mg + 몽모랑시 타트체리 멜라토닌", liq: "카모마일·마그네슘 진정 릴랙스 앰플" },
-      { name: "에머전시 바이탈 샷", cat: "3교대 Emergency", target: "야간 근무 중 급격한 체력 방전", cap: "활성형 비타민B12 1,000㎍ + 유기농 과라나 추출물", liq: "고농축 아미노 에너지 샷" },
-      { name: "블루라이트 아이 쉴드", cat: "판교 IT Tech", target: "장시간 모니터 노출 & 안구 건조", cap: "루테인지아잔틴 복합추출물 20mg + 아스타잔틴 6mg", liq: "스위스산 빌베리 시신경 보호 안토시아닌" },
-      { name: "뉴로 딥 포커스", cat: "판교 IT Tech", target: "코딩/기획 집중력 & 두뇌 피로", cap: "은행잎추출물 플라보놀배당체 28mg + 비타민B6", liq: "로즈마리 콜린 두뇌 신경 회로 포뮬러" }
+      {
+        name: "나이트 오버타임 팩",
+        cat: "2030 직장인",
+        target: "잦은 야근 및 만성 피로 직장인",
+        summary: "야근 후 묵직한 피로와 지친 간을 깨우는 고단백 에너지 처방",
+        cap: "• 밀크씨슬 130mg : 지친 간세포 보호 및 피로 물질 분해 지원<br>• 활성 비타민B군 500% : 음식물을 에너지로 빠르게 바꾸는 체내 활력 생성",
+        liq: "• 귀리 식이섬유 곡물 쉐이크 : 공복 속쓰림 방지 및 유효 성분의 4배 빠른 흡수 부스팅",
+        timing: "저녁 야근 시작 전 또는 늦은 저녁 식사 대용"
+      },
+      {
+        name: "모닝 퀵스타터 팩",
+        cat: "2030 직장인",
+        target: "바쁜 아침 공복 출근족",
+        summary: "아침 굶고 출근하는 직장인을 위한 10초 활력 충전 & 두뇌 부스팅",
+        cap: "• 필수 비타민 13종 : 하루에 꼭 필요한 기초 미네랄 밸런스 완성<br>• 마그네슘 150mg : 굳은 목과 어깨 근육 이완 및 오전 활력 충전",
+        liq: "• 저당 오트밀 수용성 섬유 액상 : 아침 혈당 급상승(스파이크) 방지 및 든든한 포만감 유지",
+        timing: "아침 출근길 또는 오전 첫 업무 시작 직전"
+      },
+      {
+        name: "애프터 파티 리커버리",
+        cat: "2030 직장인",
+        target: "회식 후 숙취 및 갈증 해소",
+        summary: "알코올 분해를 2배 빠르게 돕고 다음 날 아침 붓기와 갈증을 없애는 숙취 킬러",
+        cap: "• 헛개나무열매추출물 + 글루타치온 효모 : 숙취 유발 독소(아세트알데히드)의 급속 분해 촉진<br>• 밀크씨슬 : 음주로 손상된 간세포의 빠른 재생 지원",
+        liq: "• 전해질 타우린 이온 수분 앰플 : 음주 후 심한 탈수와 갈증의 즉각적인 해소",
+        timing: "회식 자리 직후 또는 잠들기 전 1병"
+      },
+      {
+        name: "바이오 이뮨 디펜스",
+        cat: "R&D 바이오",
+        target: "환절기 체내 면역 방어벽 구축",
+        summary: "목이 칼칼하고 감기 기운이 돌 때 체내 면역 세포를 깨우는 방어벽 포뮬러",
+        cap: "• 글루콘산 아연 12mg : 정상적인 면역 세포 분열을 돕는 필수 방어 미네랄 공급<br>• 활성 비타민D 2,000IU + 셀레늄 : 외부 유해 바이러스에 맞서는 저항력 강화",
+        liq: "• 엘더베리 고농축 바이오 액상 : 풍부한 안토시아닌을 통한 호흡기 및 구강 점막 보호",
+        timing: "일교차가 큰 아침 또는 컨디션 저하가 느껴질 때"
+      },
+      {
+        name: "셀룰러 안티옥스",
+        cat: "R&D 바이오",
+        target: "유해 활성산소 억제 & 혈관 케어",
+        summary: "야근과 스트레스로 쌓인 유해 활성산소를 제거하는 프리미엄 세포 항산화제",
+        cap: "• 순수 코엔자임Q10 100mg : 높은 혈압 감소 및 세포 내 에너지원(ATP) 생성<br>• 비타민E + 구리 : 유해 산소로부터 세포막을 빈틈없이 지키는 2중 방어",
+        liq: "• 석류 안토시아닌 폴리페놀 액상 : 혈관 탄력 유지 및 맑고 원활한 혈액 순환 지원",
+        timing: "점심 식사 직후 (지용성 성분의 흡수율 극대화)"
+      },
+      {
+        name: "프로틴 머슬 빌더",
+        cat: "스포츠 Pro",
+        target: "웨이트 트레이닝 & 근합성 극대화",
+        summary: "당류 0g, 쉐이커 없이 운동 후 10초 만에 끝내는 순수 근단백질 합성 샷",
+        cap: "• 필수 아미노산 9종(EAA) + BCAA 5,000mg : 운동 중 근육 손실 방지 및 즉각적인 근합성 트리거<br>• 비타민B6 : 섭취한 단백질의 체내 흡수 및 아미노산 대사 촉진",
+        liq: "• 100% 분리유청단백(WPI) 20g 무당류 액상 : 락토프리로 유당불내증 없이 30분 내 초고속 단백질 흡수",
+        timing: "운동 직후 30분 이내 (골든타임)"
+      },
+      {
+        name: "프리-워크아웃 부스터",
+        cat: "스포츠 Pro",
+        target: "운동 전 폭발적 혈관 펌핑",
+        summary: "지친 퇴근길에도 헬스장 바벨을 가볍게 만드는 고출력 혈관 펌핑 부스터",
+        cap: "• 순수 발효 L-아르기닌 5,000mg : 혈관 확장 및 근육으로 가는 산소 공급량 극대화<br>• 크레아틴 : 고강도 운동 시 순간 파워와 근력 퍼포먼스 향상",
+        liq: "• 타우린 2,000mg & 비타민C 샷 : 운동 중 젖산 축적 억제 및 지치지 않는 지구력 지원",
+        timing: "운동 시작 20분 전"
+      },
+      {
+        name: "딥 하이드라 콜라겐",
+        cat: "이너뷰티 Glow",
+        target: "피부 속건조 완화 & 탄력 장벽",
+        summary: "화장이 들뜨고 당기는 피부 속부터 차오르는 수분 탄력 앰플",
+        cap: "• 발효 히알루론산 240mg : 자기 무게 1,000배의 수분을 피부 속에 꽉 잡아두는 수분 잠금<br>• 저분자 엘라스틴 : 피부 속 콜라겐 기둥을 탄탄하게 묶어주는 탄력 지탱",
+        liq: "• 초저분자 어린(魚鱗) 콜라겐 3,270mg : 모공 1/1,000 크기로 피부 진피층까지 다이렉트 도달",
+        timing: "저녁 스킨케어 후 또는 취침 전"
+      },
+      {
+        name: "브라이트닝 글루타치온",
+        cat: "이너뷰티 Glow",
+        target: "칙칙한 안색 개선 & 화사한 광채",
+        summary: "야근으로 칙칙해진 피부 톤을 속부터 맑고 환하게 밝혀주는 광채 앰플",
+        cap: "• L-글루타치온 순수 건조효모 250mg : 칙칙한 멜라닌 색소 억제 및 화사한 피부 톤 케어<br>• 비타민C 500mg : 글루타치온의 체내 흡수율과 항산화 시너지 극대화",
+        liq: "• 화이트토마토 농축 미백 앰플 : 자외선으로부터 피부 보호 및 자연스러운 피부 광채 부여",
+        timing: "햇빛에 노출되기 전 아침 시간대"
+      },
+      {
+        name: "퓨어 그린 비건 올인원",
+        cat: "클린 Eco 비건",
+        target: "100% 식물성 클린 영양 공급",
+        summary: "프랑스 EVE 비건 인증, 속이 더부룩하지 않은 100% 식물성 멀티 비타민",
+        cap: "• 유기농 건조효모 비타민B12 1,000% : 채식 식단에서 결핍되기 쉬운 필수 혈액 생성 영양소 충족<br>• 식물성 비건 철분 : 위장 자극 없이 순하고 편안한 철분 흡수",
+        liq: "• 100% 완두·쌀 단백질 그린 쉐이크 : 동물성 원료 0%, 텁텁하지 않고 고소한 식물성 단백질 공급",
+        timing: "공복 또는 가벼운 식사 대용"
+      },
+      {
+        name: "밸런스 엔자임 다이제스트",
+        cat: "클린 Eco 비건",
+        target: "식후 더부룩함 & 편안한 소화",
+        summary: "탄수화물/배달음식 섭취 후 꽉 막힌 속을 가볍게 분해하는 천연 발효 효소",
+        cap: "• 15곡 발효 효소 역가 50만 Unit : 탄수화물과 단백질을 미세하게 쪼개는 초고속 소화 촉진<br>• 유산균 사균체 : 장내 유익균 환경 조성 및 배변 활동 지원",
+        liq: "• 국내산 양배추·매실 저자극 발효 액상 : 위벽 코팅을 통한 속쓰림과 더부룩함의 즉각적인 진정",
+        timing: "과식이나 기름진 식사 직후 10분 이내"
+      },
+      {
+        name: "나이트 시프트 슬립",
+        cat: "3교대 Emergency",
+        target: "불규칙 수면 리듬 & 깊은 숙면",
+        summary: "교대근무로 뒤바뀐 밤낮에도 잡념 없이 푹 자게 돕는 릴랙스 수면 처방",
+        cap: "• 순수 L-테아닌 200mg : 스트레스 뇌파(베타파) 완화 및 편안한 안정 뇌파(알파파) 유도<br>• 몽모랑시 타트체리 : 식물성 멜라토닌을 통한 자연스러운 입면 리듬 형성",
+        liq: "• 카모마일·마그네슘 진정 앰플 : 밤새 근육 경련과 뒤척임 없는 깊은 숙면 유지",
+        timing: "근무 후 잠들기 30분 전 (암막 환경 권장)"
+      },
+      {
+        name: "에머전시 바이탈 샷",
+        cat: "3교대 Emergency",
+        target: "야간 근무 중 급격한 체력 방전",
+        summary: "새벽 3~4시 쏟아지는 졸음과 체력 방전을 즉각 깨우는 무설탕 비상 활력 샷",
+        cap: "• 활성형 비타민B12 1,000㎍ : 지친 신경계를 위한 부담 없는 활력 충전<br>• 유기농 과라나 추출물 : 가슴 두근거림 없는 순하고 안전한 천연 각성 제공",
+        liq: "• 고농축 아미노 에너지 샷 : 간 피로 완화 및 빠른 에너지 회복 지원",
+        timing: "나이트 근무 중 집중력이 급격히 떨어질 때"
+      },
+      {
+        name: "블루라이트 아이 쉴드",
+        cat: "판교 IT Tech",
+        target: "장시간 모니터 노출 & 안구 건조",
+        summary: "하루 10시간 이상 모니터 보는 개발자를 위한 안구 건조 & 황반 색소 보호 쉴드",
+        cap: "• 루테인지아잔틴 복합추출물 20mg : 눈 망막 중심의 황반 색소 밀도 100% 유지<br>• 아스타잔틴 6mg : 미세 초점 조절력 개선을 통한 눈 침침함 완화",
+        liq: "• 스위스산 빌베리 안토시아닌 : 시신경 피로 회복 및 안구 눈물막의 촉촉한 보호",
+        timing: "오전 코딩 및 업무 시작 전"
+      },
+      {
+        name: "뉴로 딥 포커스",
+        cat: "판교 IT Tech",
+        target: "코딩/기획 집중력 & 두뇌 피로",
+        summary: "복잡한 알고리즘과 기획 업무 시 머리가 맑아지고 두뇌 혈류를 돕는 브레인 포뮬러",
+        cap: "• 은행잎추출물 플라보놀배당체 28mg : 뇌 미세혈관 혈류 개선을 통한 기억력과 집중력 향상<br>• 비타민B6 : 뇌신경 전달 물질의 원활한 합성 지원",
+        liq: "• 로즈마리 콜린 두뇌 신경 회로 포뮬러 : 두뇌 피로감 완화 및 장시간 몰입 상태 유지",
+        timing: "복잡한 회의나 코딩 집중 세션 15분 전"
+      }
     ];
 
     let currentSelectedModalProduct = '';
@@ -1211,8 +1600,10 @@
       document.getElementById('modalPrdTag').innerHTML = `<span class="tag-dot"></span> ` + data.cat;
       document.getElementById('modalPrdTitle').innerText = data.name;
       document.getElementById('modalPrdTarget').innerText = data.target;
-      document.getElementById('modalCapText').innerText = data.cap;
-      document.getElementById('modalLiqText').innerText = data.liq;
+      document.getElementById('modalSummaryText').innerText = data.summary;
+      document.getElementById('modalCapText').innerHTML = data.cap;
+      document.getElementById('modalLiqText').innerHTML = data.liq;
+      document.getElementById('modalTimingText').innerText = data.timing;
       document.getElementById('quickViewModal').classList.add('show');
     }
 
