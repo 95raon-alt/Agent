@@ -202,6 +202,28 @@
       transform: translateY(-2px);
       box-shadow: var(--shadow-glow);
     }
+    .btn-brand-story {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      background: #FFFFFF;
+      color: var(--primary);
+      border: 1px solid var(--border-strong);
+      box-shadow: var(--shadow-subtle);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .btn-brand-story:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+    }
 
     .tag {
       display: inline-flex;
@@ -897,41 +919,103 @@
       </div>
     </section>
 
-    <!-- 2. Brand Philosophy & Problem Solving (AFITW-110) -->
+    <!-- 2. Lifestyle Routine Transformation (AFITW-110: Direction 1) -->
     <section id="philosophy">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>THE PROBLEM & PHILOSOPHY</div>
-          <h2>우리가 마주한 결핍과 A:FIT의 해법</h2>
-          <p class="lead">시중 영양제 오남용과 불규칙한 식사가 가진 한계를 명확한 과학적 솔루션으로 해결합니다.</p>
+          <div class="tag"><span class="tag-dot"></span>ROUTINE TRANSFORMATION · BEFORE & AFTER</div>
+          <h2>내 하루에 딱 맞춘 웰니스 루틴</h2>
+          <p class="lead">소분의 번거로움 없이 물 없이 마시는 하루 1병,<br>나만을 위해 정밀 설계된 바이오 포뮬러를 경험하세요.</p>
         </div>
 
         <div class="grid-2">
-          <div class="card" style="border-left: 4px solid #EF4444; background: #FFFFFF;">
-            <span style="color: #EF4444; font-weight: 800; font-size: 0.85rem; letter-spacing: 0.04em;">THE PROBLEM</span>
-            <h3 style="margin: 10px 0 14px; font-size: 1.35rem; color: var(--primary);">비싸고 번거로운 기존의 섭취 방식</h3>
-            <ul style="list-style: none; display: grid; gap: 14px; font-size: 0.95rem; color: var(--text-body);">
-              <li><span style="color: #EF4444; font-weight: 900; margin-right: 8px;">✕</span> 매일 4~5개씩 챙겨야 하는 거대한 영양제 약통의 번거로움과 목걸림</li>
-              <li><span style="color: #EF4444; font-weight: 900; margin-right: 8px;">✕</span> 편의점 삼각김밥·도시락과 커피로 매달 25만 원 이상 낭비되는 불균형한 식비</li>
-              <li><span style="color: #EF4444; font-weight: 900; margin-right: 8px;">✕</span> 위장에서 대부분 파괴되는 정제형 영양제의 낮은 체내 흡수율 (단 12.3%)</li>
-            </ul>
+          <!-- Before Routine Card -->
+          <div class="card" style="background: #F7F6F2; border: 1px solid rgba(24, 61, 51, 0.12); padding: 36px 32px; border-radius: var(--radius); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.78rem; font-weight: 800; color: #78716C; background: #E7E5E4; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em;">BEFORE · 기존의 일상</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #DC2626;">비효율 & 피로</span>
+              </div>
+              <h3 style="margin: 12px 0 20px; font-size: 1.3rem; color: #44403C; font-weight: 800;">불규칙한 한 끼와 넘쳐나는 약통</h3>
+              
+              <div style="display: grid; gap: 16px;">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="background: #E7E5E4; color: #57534E; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; white-space: nowrap; margin-top: 2px;">07:30 AM</span>
+                  <div>
+                    <strong style="font-size: 0.94rem; color: #292524; display: block;">출근길 허겁지겁 때우는 식사</strong>
+                    <p style="font-size: 0.87rem; color: #78716C; line-height: 1.5; margin-top: 2px;">편의점 삼각김밥과 고카페인 음료로 때우는 불균형한 아침</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="background: #E7E5E4; color: #57534E; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; white-space: nowrap; margin-top: 2px;">09:30 AM</span>
+                  <div>
+                    <strong style="font-size: 0.94rem; color: #292524; display: block;">책상 위 4~5개 약통 챙기기</strong>
+                    <p style="font-size: 0.87rem; color: #78716C; line-height: 1.5; margin-top: 2px;">큰 알약들을 물과 함께 억지로 삼키며 느끼는 목걸림과 번거로움</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="background: #E7E5E4; color: #57534E; font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; white-space: nowrap; margin-top: 2px;">03:00 PM</span>
+                  <div>
+                    <strong style="font-size: 0.94rem; color: #292524; display: block;">더부룩한 속과 식비 부담</strong>
+                    <p style="font-size: 0.87rem; color: #78716C; line-height: 1.5; margin-top: 2px;">풀리지 않는 오후 피로감과 매달 25만 원 넘는 불필요한 지출</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; padding: 12px 16px; background: rgba(0,0,0,0.04); border-radius: 12px; font-size: 0.84rem; color: #57534E; font-weight: 600; text-align: center;">
+              ⚠️ 매일 반복되는 섭취 포기와 영양 불균형
+            </div>
           </div>
 
-          <div class="card" style="border-left: 4px solid var(--accent); background: #FFFFFF;">
-            <span style="color: var(--accent-dark); font-weight: 800; font-size: 0.85rem; letter-spacing: 0.04em;">A:FIT SOLUTION</span>
-            <h3 style="margin: 10px 0 14px; font-size: 1.35rem; color: var(--primary);">원핸드 올인원 이중제형 패러다임</h3>
-            <ul style="list-style: none; display: grid; gap: 14px; font-size: 0.95rem; color: var(--text-body);">
-              <li><span style="color: var(--accent-dark); font-weight: 900; margin-right: 8px;">✓</span> <strong>간편한 식사+영양:</strong> 물 없이 알약을 넘기는 저점도 식이섬유 포뮬러 + 맞춤 캡슐</li>
-              <li><span style="color: var(--accent-dark); font-weight: 900; margin-right: 8px;">✓</span> <strong>압도적 가성비:</strong> 커피 한 잔 값(일 3,800원)으로 식비와 영양제를 동시 해결</li>
-              <li><span style="color: var(--accent-dark); font-weight: 900; margin-right: 8px;">✓</span> <strong>흡수율 92.4% 극대화:</strong> 5단계 무균 질소 충진과 바이오 이중제형 특허 공정</li>
-            </ul>
+          <!-- After Routine Card -->
+          <div class="card" style="background: #FFFFFF; border: 2px solid var(--accent); padding: 36px 32px; border-radius: var(--radius); box-shadow: var(--shadow-card); display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <span style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); background: var(--accent-soft); padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em;">AFTER · A:FIT 스마트 루틴</span>
+                <span style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark);">10초 완성</span>
+              </div>
+              <h3 style="margin: 12px 0 20px; font-size: 1.3rem; color: var(--primary); font-weight: 800;">가방 속 1병으로 끝나는 웰니스</h3>
+              
+              <div style="display: grid; gap: 16px;">
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="background: var(--accent-soft); color: var(--accent-dark); font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; white-space: nowrap; margin-top: 2px;">08:00 AM</span>
+                  <div>
+                    <strong style="font-size: 0.94rem; color: var(--primary); display: block;">물 없이 어디서나 10초 섭취</strong>
+                    <p style="font-size: 0.87rem; color: var(--text-muted); line-height: 1.5; margin-top: 2px;">가방에서 꺼내 상단 캡슐과 하단 액상을 한 번에 가볍게 원핸드 섭취</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="background: var(--accent-soft); color: var(--accent-dark); font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; white-space: nowrap; margin-top: 2px;">10:00 AM</span>
+                  <div>
+                    <strong style="font-size: 0.94rem; color: var(--primary); display: block;">든든한 포만감과 업무 몰입</strong>
+                    <p style="font-size: 0.87rem; color: var(--text-muted); line-height: 1.5; margin-top: 2px;">저점도 식이섬유의 건강한 포만감과 1:1 맞춤 영양으로 맑은 하루 시작</p>
+                  </div>
+                </div>
+
+                <div style="display: flex; gap: 12px; align-items: flex-start;">
+                  <span style="background: var(--accent-soft); color: var(--accent-dark); font-size: 0.75rem; font-weight: 800; padding: 3px 8px; border-radius: 6px; white-space: nowrap; margin-top: 2px;">All-Day</span>
+                  <div>
+                    <strong style="font-size: 0.94rem; color: var(--primary); display: block;">92.4% 다이렉트 흡수 & 가성비</strong>
+                    <p style="font-size: 0.87rem; color: var(--text-muted); line-height: 1.5; margin-top: 2px;">위 자극 0% 흡수와 하루 3,800원(커피 1잔 값)으로 식비 55% 절감</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; padding: 12px 16px; background: var(--accent-soft); border-radius: 12px; font-size: 0.84rem; color: var(--accent-dark); font-weight: 700; text-align: center;">
+              ✨ 물 불필요 · 약통 0개 · 하루 10초 스마트 웰니스 완성
+            </div>
           </div>
         </div>
 
         <!-- Brand Story Link Banner -->
         <div style="text-align: center; margin-top: 36px;">
-          <a href="브랜드소개_스토리보드.html" class="btn" style="background: #FFFFFF; border: 1px solid var(--border-strong); color: var(--primary); font-weight: 700; padding: 14px 32px; border-radius: 999px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--shadow-subtle); transition: var(--transition);">
-            <span>🌿 A:FIT 브랜드 철학 & 과학 원칙 더 알아보기</span>
+          <a href="브랜드소개_스토리보드.html" class="btn-brand-story">
+            <span>A:FIT 브랜드 철학 & 과학 원칙 더 알아보기</span>
             <span style="font-weight: 900;">→</span>
           </a>
         </div>
