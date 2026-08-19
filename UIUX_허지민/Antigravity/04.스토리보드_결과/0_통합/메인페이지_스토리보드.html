@@ -336,6 +336,62 @@
       font-weight: 600;
     }
 
+    /* Naming Identity Formula (AFITW-105) */
+    .naming-formula-box {
+      background: linear-gradient(135deg, rgba(24, 61, 51, 0.04) 0%, rgba(82, 144, 116, 0.08) 100%);
+      border: 1.5px solid rgba(82, 144, 116, 0.25);
+      border-radius: var(--radius-md);
+      padding: 36px 40px;
+      margin-top: 56px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .naming-formula-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr auto 1.25fr;
+      gap: 16px;
+      align-items: center;
+    }
+    .naming-formula-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 22px 24px;
+      box-shadow: var(--shadow-subtle);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .naming-formula-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .naming-formula-card.highlight {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: #FFFFFF;
+      box-shadow: 0 10px 24px rgba(24, 61, 51, 0.22);
+    }
+    .naming-formula-card.highlight:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+    .naming-symbol {
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--accent);
+      text-align: center;
+    }
+    @media (max-width: 960px) {
+      .naming-formula-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+      .naming-symbol {
+        display: none;
+      }
+      .naming-formula-box {
+        padding: 24px 20px;
+      }
+    }
+
     /* Minimal High-End Desk Object Preview Card */
     .hero-visual-card {
       background: linear-gradient(145deg, #FFFFFF 0%, #F5F7F8 100%);
@@ -504,6 +560,16 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
       border: 1px solid rgba(255, 255, 255, 0.9);
       width: 86%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .bottle-engrave-label div {
+      width: 100%;
       text-align: center;
     }
 
@@ -706,7 +772,7 @@
       border: 2px solid #FFFFFF;
     }
 
-    /* 8. 15-Product Full Archive Grid */
+    /* 8. 15-Product Full Archive Grid (Rich CAT-110 Style) */
     .filter-pills {
       display: flex;
       gap: 10px;
@@ -723,6 +789,7 @@
       font-size: 0.88rem;
       color: var(--text-body);
       transition: var(--transition);
+      cursor: pointer;
     }
     .filter-pills button:hover {
       border-color: var(--primary);
@@ -733,21 +800,224 @@
       border-color: var(--primary);
       box-shadow: 0 4px 12px rgba(12, 15, 18, 0.12);
     }
-    .prd-card-item {
-      background: #FFFFFF;
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .prd-card {
+      background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 32px;
+      padding: 28px 24px;
+      box-shadow: var(--shadow-card);
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: var(--transition);
-      box-shadow: var(--shadow-subtle);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      position: relative;
     }
-    .prd-card-item:hover {
-      transform: translateY(-6px);
+    .prd-card:hover {
+      transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
-      border-color: var(--border-accent);
+      border-color: var(--accent);
+    }
+    .prd-header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .prd-cat-tag {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: var(--accent-dark);
+      background: rgba(82, 144, 116, 0.12);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(82, 144, 116, 0.25);
+    }
+    .prd-num {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--text-light);
+    }
+    .prd-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    .prd-target {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .prd-bottle-box {
+      width: 100%;
+      height: 190px;
+      background: linear-gradient(180deg, rgba(82, 144, 116, 0.05) 0%, rgba(24, 61, 51, 0.08) 100%);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border: 1px solid rgba(82, 144, 116, 0.15);
+      position: relative;
+    }
+    .mini-bottle {
+      width: 82px;
+      height: 164px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .prd-card:hover .mini-bottle {
+      transform: translateY(-4px) scale(1.03);
+    }
+    .mini-cap {
+      width: 44px;
+      height: 34px;
+      background: linear-gradient(145deg, #1C232B 0%, #0A0D10 100%);
+      border-radius: 7px 7px 3px 3px;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      z-index: 5;
+    }
+    .mini-body {
+      width: 62px;
+      height: 118px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(82, 144, 116, 0.12) 50%, rgba(24, 61, 51, 0.2) 100%);
+      border-radius: 4px 4px 18px 18px;
+      border: 1.5px solid rgba(82, 144, 116, 0.45);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding-bottom: 12px;
+      box-sizing: border-box;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 2px 8px rgba(255,255,255,0.4), 0 8px 16px rgba(24, 61, 51, 0.08);
+      backdrop-filter: blur(4px);
+    }
+    .mini-engrave-label {
+      background: rgba(255, 255, 255, 0.96);
+      border-radius: 5px;
+      padding: 5px 6px;
+      width: 86%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.95);
+      white-space: nowrap;
+      position: relative;
+      z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .mini-engrave-tag {
+      font-size: 0.52rem;
+      color: var(--accent-dark);
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      line-height: 1.15;
+      display: block;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .mini-engrave-name {
+      font-size: 0.74rem;
+      color: var(--primary);
+      font-weight: 900;
+      margin-top: 2px;
+      line-height: 1.15;
+      display: block;
+      width: 100%;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .mini-label {
+      background: rgba(255, 255, 255, 0.95);
+      color: var(--primary);
+      font-weight: 800;
+      padding: 3px 6px;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      width: 82%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      position: relative;
+      z-index: 4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .prd-formula-info {
+      background: var(--bg);
+      border-radius: var(--radius-xs);
+      padding: 12px;
+      margin-bottom: 18px;
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+    }
+    .prd-formula-row {
+      display: flex;
+      margin-bottom: 6px;
+      gap: 6px;
+    }
+    .prd-formula-row:last-child { margin-bottom: 0; }
+    .f-badge {
+      font-weight: 800;
+      color: var(--primary);
+      white-space: nowrap;
+      font-size: 0.76rem;
+    }
+    .f-val {
+      color: var(--text-body);
+    }
+    .prd-price-box {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+    .price-sub {
+      font-size: 0.80rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+    .price-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-top: 2px;
+      margin-bottom: 14px;
+    }
+    .price-main strong {
+      font-size: 1.25rem;
+      color: var(--primary);
+      font-weight: 900;
+    }
+    .price-main span {
+      font-size: 0.84rem;
+      color: #E55353;
+      font-weight: 800;
+    }
+    .card-actions {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 8px;
     }
 
     /* FAQ Details & Accordion */
@@ -918,6 +1188,124 @@
             <span style="font-size: 0.88rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
             <strong style="font-size: 1.45rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
             <span style="font-size: 0.78rem; font-weight: 800; color: #DC2626; background: #FEE2E2; padding: 2px 8px; border-radius: 4px;">첫달 30% OFF</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1.5. Brand Origin Manifesto & 3 Core Values & Naming Formula (AFITW-105) -->
+    <section id="manifesto" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
+      <div class="wrap-wide">
+        <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: start;">
+          <!-- Left: Brand Manifesto Story -->
+          <div>
+            <div class="tag"><span class="tag-dot"></span>ABOUT A:FIT · BRAND MANIFESTO & PHILOSOPHY</div>
+            <h2 style="font-size: 2.1rem; font-weight: 800; color: var(--primary); line-height: 1.35; margin: 16px 0 20px;">
+              우리는 왜 하루 한 병의 웰니스에 집착하는가
+            </h2>
+            <p class="lead" style="font-size: 1.02rem; font-weight: 600; color: var(--accent-dark); margin-bottom: 20px;">
+              바쁜 일상 속 결핍과 비효율을 해결하기 위해 시작된 A:FIT의 이야기입니다.
+            </p>
+            <div style="font-size: 0.96rem; color: var(--text-body); line-height: 1.85; display: grid; gap: 16px;">
+              <p style="margin: 0;">
+                책상 위에 어지럽게 쌓여가는 대형 영양제 약통들, 그리고 시간에 쫓겨 인스턴트로 때우는 불균형한 한 끼.<br>
+                우리는 스스로에게 물었습니다. <strong style="color: var(--primary); font-weight: 800;">"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?"</strong>
+              </p>
+              <p style="margin: 0;">
+                A:FIT은 이 단순하지만 본질적인 질문에서 출발했습니다.<br>
+                단순히 성분을 많이 담아내는 것이 아니라, 불필요한 과다 섭취를 비우고 개인의 라이프스타일에 맞춘 <strong style="color: var(--primary); font-weight: 800;">1:1 정밀 배합과 다이렉트 흡수 과학</strong>으로 건강을 관리하는 새로운 기준을 제시합니다.
+              </p>
+            </div>
+            <div style="margin-top: 28px; display: flex; gap: 14px; flex-wrap: wrap;">
+              <a href="브랜드소개_스토리보드.html" class="btn secondary" style="padding: 13px 24px; text-decoration: none;">
+                브랜드 창업 스토리 전체보기 →
+              </a>
+            </div>
+          </div>
+
+          <!-- Right: 3 Core Values Cards -->
+          <div style="display: grid; gap: 16px;">
+            <div class="card" style="border-left: 4px solid var(--primary); padding: 22px 24px;">
+              <div style="font-size: 0.80rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">CORE VALUE 01</div>
+              <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
+                1:1 맞춤 배합 원칙 (Personalized Precision)
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                획일화된 대량 생산 영양제가 아닌, 개인의 라이프스타일과 결핍을 정밀 분석한 1:1 맞춤 솔루션을 제공합니다.
+              </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid var(--accent); padding: 22px 24px;">
+              <div style="font-size: 0.80rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">CORE VALUE 02</div>
+              <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
+                흡수율 중심의 바이오 과학 (Bio-Absorption Science)
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                위장에서 대부분 파괴되던 기존 정제의 한계를 넘어, 바이오 이중제형 특허 공정으로 92.4% 다이렉트 체내 흡수를 구현합니다.
+              </p>
+            </div>
+
+            <div class="card" style="border-left: 4px solid #C88D74; padding: 22px 24px;">
+              <div style="font-size: 0.80rem; font-weight: 800; color: #B86B53; letter-spacing: 0.04em;">CORE VALUE 03</div>
+              <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
+                지속 가능한 클린 순환 (Sustainable Cycle)
+              </h3>
+              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                원료의 순수함은 물론, 180일 만에 자연으로 돌아가는 생분해 용기를 적용하여 사람과 환경의 지속 가능한 균형을 지킵니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🌟 A:FIT Naming Identity Formula -->
+        <div class="naming-formula-box">
+          <div style="margin-bottom: 24px;">
+            <span class="tag" style="margin-bottom: 6px;">
+              <span class="tag-dot"></span>
+              BRAND IDENTITY · NAMING PHILOSOPHY
+            </span>
+            <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin: 0; letter-spacing: -0.02em;">
+              A:FIT = All-in-one + FIT
+            </h2>
+          </div>
+
+          <div class="naming-formula-grid">
+            <!-- 1. All-in-one -->
+            <div class="naming-formula-card">
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">INTEGRATION</div>
+              <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary); margin: 4px 0 6px;">
+                All-in-one <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">(올인원)</span>
+              </div>
+              <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                어지러운 영양제 알약과 식사 대용식을 단 한 병으로 압축한 완전 통합 설계
+              </p>
+            </div>
+
+            <div class="naming-symbol">+</div>
+
+            <!-- 2. FIT -->
+            <div class="naming-formula-card">
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">PERSONALIZATION</div>
+              <div style="font-size: 1.25rem; font-weight: 900; color: var(--primary); margin: 4px 0 6px;">
+                FIT <span style="font-size: 0.88rem; font-weight: 700; color: var(--text-muted);">(맞춤)</span>
+              </div>
+              <p style="font-size: 0.86rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
+                내 몸의 하루 패턴과 결핍에 정확하게 꼭 들어맞는 1:1 개인화 솔루션
+              </p>
+            </div>
+
+            <div class="naming-symbol">=</div>
+
+            <!-- 3. A:FIT Result -->
+            <div class="naming-formula-card highlight">
+              <div style="font-size: 0.78rem; font-weight: 800; color: rgba(255,255,255,0.85); letter-spacing: 0.04em;">PREMIUM WELLNESS</div>
+              <div style="font-size: 1.35rem; font-weight: 900; color: #FFFFFF; margin: 4px 0 6px;">
+                A:FIT <span style="font-size: 0.88rem; font-weight: 700; color: var(--accent-light);">(에이핏)</span>
+              </div>
+              <p style="font-size: 0.86rem; color: rgba(255,255,255,0.92); line-height: 1.6; margin: 0;">
+                "모든 솔루션이 하나로 합쳐져 내 몸에 정확하게 딱 맞는 100% 맞춤 웰니스"
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -1123,7 +1511,7 @@
       </div>
     </section>
 
-    <!-- 4. Spotlight Showcase (Split Alternating Layout - AFITW-125) -->
+    <!-- 4. Spotlight Showcase (Split Alternating Layout - AFITW-130) -->
     <section id="spotlight">
       <div class="wrap-wide">
         <div class="section-header center">
@@ -1291,9 +1679,9 @@
                   </div>
                 </div>
               </div>
-              <div style="background: #FFFFFF; border: 1.5px dashed var(--border-accent); padding: 18px; border-radius: var(--radius-sm); margin-bottom: 16px; box-shadow: var(--shadow-subtle);">
-                <strong style="font-size: 1.15rem; color: var(--primary); display: block; font-weight: 900;" id="curationLabel">A:FIT FOR 박지안</strong>
-                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500;" id="curationEngraveMsg">"어제 밤샘 야근한 지안님을 위한 붓기 타파 팩"</span>
+              <div style="background: #FFFFFF; border: 1.5px dashed var(--border-accent); padding: 18px; border-radius: var(--radius-sm); margin-bottom: 16px; box-shadow: var(--shadow-subtle); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+                <strong style="font-size: 1.15rem; color: var(--primary); display: block; font-weight: 900; text-align: center; width: 100%;" id="curationLabel">A:FIT FOR 박지안</strong>
+                <span style="font-size: 0.85rem; color: var(--text-muted); font-weight: 500; text-align: center; width: 100%; display: block;" id="curationEngraveMsg">"어제 밤샘 야근한 지안님을 위한 붓기 타파 팩"</span>
               </div>
               <span style="font-size: 0.78rem; color: var(--text-light);">* 구독 시 입력하신 성함과 문구가 패키지 라벨에 레이저 각인됩니다.</span>
             </div>
@@ -1376,333 +1764,633 @@
           <p class="lead">상황별 맞춤 배합과 고유 유효 성분을 갖춘 15종 전 제품을 한눈에 탐색하세요.</p>
         </div>
 
-        <!-- Filter Chips -->
-        <div class="filter-pills" id="archiveFilterPills">
-          <button class="active" onclick="filterArchive('all')">전체보기 (15)</button>
-          <button onclick="filterArchive('1')">2030 직장인 (3)</button>
-          <button onclick="filterArchive('2')">R&D 바이오 (2)</button>
-          <button onclick="filterArchive('3')">스포츠 Pro (2)</button>
-          <button onclick="filterArchive('4')">이너뷰티 Glow (2)</button>
-          <button onclick="filterArchive('5')">클린 Eco 비건 (2)</button>
-          <button onclick="filterArchive('6')">3교대 Emergency (2)</button>
-          <button onclick="filterArchive('7')">판교 IT Tech (2)</button>
+        <!-- 8 Filter Chips -->
+        <div class="filter-pills" id="categoryPillBar">
+          <button class="active" onclick="filterCategory('all', this)">전체보기 (15)</button>
+          <button onclick="filterCategory('worker', this)">2030 직장인 (3)</button>
+          <button onclick="filterCategory('rnd', this)">R&D 바이오 (2)</button>
+          <button onclick="filterCategory('sports', this)">스포츠 Pro (2)</button>
+          <button onclick="filterCategory('beauty', this)">이너뷰티 Glow (2)</button>
+          <button onclick="filterCategory('vegan', this)">클린 Eco 비건 (2)</button>
+          <button onclick="filterCategory('shift', this)">3교대 Emergency (2)</button>
+          <button onclick="filterCategory('it', this)">판교 IT Tech (2)</button>
         </div>
 
-        <!-- 15 Products Card Grid -->
-        <div class="grid-3" id="archiveGrid">
-          
+        <!-- CAT-110: 15 Product Cards Grid -->
+        <div class="products-grid" id="productCardGrid">
+
           <!-- 01 -->
-          <div class="prd-card-item" data-cat="1">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">2030 직장인</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">01 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">나이트 오버타임 팩</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                비타민B군 500% + 밀크씨슬 130mg & 귀리 곡물 쉐이크.
-              </p>
+          <div class="prd-card" data-cat="worker">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">2030 직장인</span>
+              <span class="prd-num">01 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">나이트 오버타임 팩</div>
+            <div class="prd-target">잦은 야근 및 만성 피로 직장인</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('나이트 오버타임 팩')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">비타민B군 500% + 밀크씨슬 130mg</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">귀리 식이섬유 곡물 쉐이크</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('나이트 오버타임 팩')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(0)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 02 -->
-          <div class="prd-card-item" data-cat="1">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">2030 직장인</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">02 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">모닝 퀵스타터 팩</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                필수 비타민 13종 + 마그네슘 150mg & 저당 오트밀 액상.
-              </p>
+          <div class="prd-card" data-cat="worker">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">2030 직장인</span>
+              <span class="prd-num">02 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">모닝 퀵스타터 팩</div>
+            <div class="prd-target">바쁜 아침 공복 출근족</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('모닝 퀵스타터 팩')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">필수 비타민 13종 + 마그네슘 150mg</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">저당 오트밀 수용성 섬유 액상</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('모닝 퀵스타터 팩')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(1)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 03 -->
-          <div class="prd-card-item" data-cat="1">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">2030 직장인</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">03 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">애프터 파티 리커버리</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                헛개나무과병추출물 + 글루타치온 & 전해질 타우린 수분 포뮬러.
-              </p>
+          <div class="prd-card" data-cat="worker">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">2030 직장인</span>
+              <span class="prd-num">03 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">애프터 파티 리커버리</div>
+            <div class="prd-target">회식 후 숙취 및 갈증 해소</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('애프터 파티 리커버리')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">헛개나무추출물 + 글루타치온</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">전해질 타우린 수분 포뮬러</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('애프터 파티 리커버리')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(2)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 04 -->
-          <div class="prd-card-item" data-cat="2">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">R&D 바이오</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">04 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">바이오 이뮨 디펜스</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                아연 12mg + 비타민D 2,000IU & 엘더베리 고농축 바이오 액상.
-              </p>
+          <div class="prd-card" data-cat="rnd">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">R&D 바이오</span>
+              <span class="prd-num">04 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">바이오 이뮨 디펜스</div>
+            <div class="prd-target">환절기 체내 면역 방어벽 구축</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('바이오 이뮨 디펜스')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">아연 12mg + 비타민D 2,000IU</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">엘더베리 고농축 바이오 액상</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('바이오 이뮨 디펜스')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(3)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 05 -->
-          <div class="prd-card-item" data-cat="2">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">R&D 바이오</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">05 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">셀룰러 안티옥스</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                코엔자임Q10 100mg + 비타민E & 석류 안토시아닌 포뮬러.
-              </p>
+          <div class="prd-card" data-cat="rnd">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">R&D 바이오</span>
+              <span class="prd-num">05 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">셀룰러 안티옥스</div>
+            <div class="prd-target">유해 활성산소 억제 & 혈관 케어</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('셀룰러 안티옥스')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">코엔자임Q10 100mg + 비타민E</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">석류 안토시아닌 항산화 액상</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('셀룰러 안티옥스')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(4)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 06 -->
-          <div class="prd-card-item" data-cat="3">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">스포츠 Pro</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">06 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">프로틴 머슬 빌더</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                필수 아미노산 9종 (EAA) 정제 & 분리유청단백(WPI) 20g 액상.
-              </p>
+          <div class="prd-card" data-cat="sports">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">스포츠 Pro</span>
+              <span class="prd-num">06 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">프로틴 머슬 빌더</div>
+            <div class="prd-target">웨이트 트레이닝 & 근합성 극대화</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('프로틴 머슬 빌더')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">필수 아미노산 9종 (EAA) 정제</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">분리유청단백(WPI) 20g 액상</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('프로틴 머슬 빌더')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(5)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 07 -->
-          <div class="prd-card-item" data-cat="3">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">스포츠 Pro</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">07 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">프리-워크아웃 부스터</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                L-아르기닌 5,000mg + 크레아틴 & 타우린 비타민C 액상.
-              </p>
+          <div class="prd-card" data-cat="sports">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">스포츠 Pro</span>
+              <span class="prd-num">07 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">프리-워크아웃 부스터</div>
+            <div class="prd-target">운동 전 폭발적 혈관 펌핑</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('프리-워크아웃 부스터')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">L-아르기닌 5,000mg + 크레아틴</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">타우린·비타민C 활력 액상</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('프리-워크아웃 부스터')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(6)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 08 -->
-          <div class="prd-card-item" data-cat="4">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">이너뷰티 Glow</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">08 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">딥 하이드라 콜라겐</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                히알루론산 240mg + 엘라스틴 & 초저분자 피쉬콜라겐 3,270mg.
-              </p>
+          <div class="prd-card" data-cat="beauty">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">이너뷰티 Glow</span>
+              <span class="prd-num">08 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">딥 하이드라 콜라겐</div>
+            <div class="prd-target">피부 속건조 완화 & 탄력 장벽</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('딥 하이드라 콜라겐')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">히알루론산 240mg + 엘라스틴</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">초저분자 피쉬콜라겐 3,270mg</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('딥 하이드라 콜라겐')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(7)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 09 -->
-          <div class="prd-card-item" data-cat="4">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">이너뷰티 Glow</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">09 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">브라이트닝 글루타치온</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                순수 L-글루타치온 250mg & 화이트토마토 농축 미백 포뮬러.
-              </p>
+          <div class="prd-card" data-cat="beauty">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">이너뷰티 Glow</span>
+              <span class="prd-num">09 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">브라이트닝 글루타치온</div>
+            <div class="prd-target">칙칙한 안색 개선 & 화사한 광채</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('브라이트닝 글루타치온')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">L-글루타치온 효모 250mg</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">화이트토마토 농축 미백 포뮬러</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('브라이트닝 글루타치온')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(8)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 10 -->
-          <div class="prd-card-item" data-cat="5">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">클린 Eco 비건</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">10 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">퓨어 그린 비건 올인원</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                유기농 건조효모 B12 + 식물성 철분 & 완두·쌀 단백질 그린 쉐이크.
-              </p>
+          <div class="prd-card" data-cat="vegan">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">클린 Eco 비건</span>
+              <span class="prd-num">10 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">퓨어 그린 비건 올인원</div>
+            <div class="prd-target">100% 식물성 클린 영양 공급</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('퓨어 그린 비건 올인원')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">유기농 건조효모 B12 + 식물성 철분</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">100% 완두·쌀 단백질 그린 쉐이크</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('퓨어 그린 비건 올인원')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(9)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 11 -->
-          <div class="prd-card-item" data-cat="5">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">클린 Eco 비건</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">11 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">밸런스 엔자임 다이제스트</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                15곡 발효 효소 + 유산균 사균체 & 양배추 매실 저자극 포뮬러.
-              </p>
+          <div class="prd-card" data-cat="vegan">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">클린 Eco 비건</span>
+              <span class="prd-num">11 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">밸런스 엔자임 다이제스트</div>
+            <div class="prd-target">식후 더부룩함 & 편안한 소화</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('밸런스 엔자임 다이제스트')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">15곡 발효 효소 + 유산균 사균체</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">양배추·매실 저자극 소화 포뮬러</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('밸런스 엔자임 다이제스트')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(10)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 12 -->
-          <div class="prd-card-item" data-cat="6">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">3교대 Emergency</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">12 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">나이트 시프트 슬립</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                L-테아닌 200mg + 타트체리 멜라토닌 & 카모마일 마그네슘 진정 액상.
-              </p>
+          <div class="prd-card" data-cat="shift">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">3교대 Emergency</span>
+              <span class="prd-num">12 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">나이트 시프트 슬립</div>
+            <div class="prd-target">불규칙 수면 리듬 & 깊은 숙면</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('나이트 시프트 슬립')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">L-테아닌 200mg + 타트체리 멜라토닌</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">카모마일·마그네슘 진정 릴랙스</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('나이트 시프트 슬립')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(11)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 13 -->
-          <div class="prd-card-item" data-cat="6">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">3교대 Emergency</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">13 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">에머전시 바이탈 샷</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                활성형 비타민B12 1,000㎍ + 천연 과라나 & 고농축 아미노 에너지 샷.
-              </p>
+          <div class="prd-card" data-cat="shift">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">3교대 Emergency</span>
+              <span class="prd-num">13 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">에머전시 바이탈 샷</div>
+            <div class="prd-target">야간 근무 중 급격한 체력 방전</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('에머전시 바이탈 샷')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">활성형 비타민B12 1,000㎍ + 과라나</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">고농축 아미노 에너지 샷</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('에머전시 바이탈 샷')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(12)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 14 -->
-          <div class="prd-card-item" data-cat="7">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">판교 IT Tech</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">14 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">블루라이트 아이 쉴드</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                루테인지아잔틴 20mg + 아스타잔틴 & 빌베리 안토시아닌 액상.
-              </p>
+          <div class="prd-card" data-cat="it">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">판교 IT Tech</span>
+              <span class="prd-num">14 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">블루라이트 아이 쉴드</div>
+            <div class="prd-target">장시간 모니터 노출 & 안구 건조</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('블루라이트 아이 쉴드')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">루테인지아잔틴 20mg + 아스타잔틴</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">빌베리 시신경 보호 안토시아닌</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('블루라이트 아이 쉴드')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(13)">상세보기</button>
+              </div>
             </div>
           </div>
 
           <!-- 15 -->
-          <div class="prd-card-item" data-cat="7">
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span class="tag" style="margin-bottom: 0;">판교 IT Tech</span>
-                <span style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark);">15 / 15</span>
-              </div>
-              <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 6px; font-weight: 800;">뉴로 딥 포커스</h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.55; margin-bottom: 18px;">
-                은행잎추출물 28mg & 로즈마리 콜린 두뇌 회로 포뮬러.
-              </p>
+          <div class="prd-card" data-cat="it">
+            <div class="prd-header-top">
+              <span class="prd-cat-tag">판교 IT Tech</span>
+              <span class="prd-num">15 / 15</span>
             </div>
-            <div>
-              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
-                <span style="font-size: 0.85rem; color: var(--text-light); text-decoration: line-through;">114,000원</span>
-                <strong style="font-size: 1.35rem; color: var(--primary); font-weight: 900;">월 79,800원</strong>
+            <div class="prd-name">뉴로 딥 포커스</div>
+            <div class="prd-target">코딩/기획 집중력 & 두뇌 피로</div>
+            <div class="prd-bottle-box">
+              <div class="mini-bottle">
+                <div class="mini-cap"></div>
+                <div class="mini-body">
+                  <div class="glass-sheen"></div>
+                  <div class="liquid-container">
+                    <div class="liquid-meniscus"></div>
+                    <div class="liquid-fill"></div>
+                  </div>
+                  <div class="mini-engrave-label">
+                    <span class="mini-engrave-tag">1:1 맞춤 처방</span>
+                    <span class="mini-engrave-name">OOO 님</span>
+                  </div>
+                </div>
               </div>
-              <button class="btn primary" style="width: 100%; justify-content: center; padding: 11px;" onclick="openCheckoutModal('뉴로 딥 포커스')">구독 신청 →</button>
+            </div>
+            <div class="prd-formula-info">
+              <div class="prd-formula-row"><span class="f-badge">상단 정제:</span> <span class="f-val">은행잎추출물 플라보놀 28mg</span></div>
+              <div class="prd-formula-row"><span class="f-badge">하단 액상:</span> <span class="f-val">로즈마리 콜린 두뇌 회로 포뮬러</span></div>
+            </div>
+            <div class="prd-price-box">
+              <div class="price-sub">정가 114,000원</div>
+              <div class="price-main">
+                <strong>월 79,800원</strong>
+                <span>30% 할인 (일 3,800원)</span>
+              </div>
+              <div class="card-actions">
+                <button class="btn primary" style="padding: 11px 18px; font-size: 0.86rem; flex: 1;" onclick="openCheckoutModal('뉴로 딥 포커스')">구독 시작</button>
+                <button class="btn secondary" style="padding: 11px 16px; font-size: 0.86rem;" onclick="openQuickView(14)">상세보기</button>
+              </div>
             </div>
           </div>
 
@@ -1769,6 +2457,59 @@
     </section>
 
   </main>
+
+  <!-- Quick View Modal (CAT-120) -->
+  <div id="quickViewModal" class="modal" onclick="if(event.target===this) closeQuickView()">
+    <div class="modal-dialog" style="max-width: 580px; padding: 36px 32px;">
+      <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeQuickView()">×</button>
+      <div style="text-align: center; margin-bottom: 20px;">
+        <span class="tag" id="modalPrdTag"><span class="tag-dot"></span> 상세 영양 처방 리포트</span>
+        <h3 id="modalPrdTitle" style="font-size: 1.55rem; font-weight: 800; color: var(--primary); margin-top: 8px;">제품명</h3>
+        <p id="modalPrdTarget" style="font-size: 0.90rem; color: var(--text-muted); margin-top: 4px;">타깃 대상</p>
+      </div>
+
+      <!-- 💡 약사의 1줄 핵심 요약 -->
+      <div style="background: linear-gradient(135deg, rgba(82, 144, 116, 0.12) 0%, rgba(24, 61, 51, 0.05) 100%); border: 1.5px solid rgba(82, 144, 116, 0.35); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 16px;">
+        <div style="font-size: 0.82rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+          <span>💡</span> <span>약사의 3초 핵심 처방 요약</span>
+        </div>
+        <div id="modalSummaryText" style="font-size: 0.92rem; font-weight: 600; color: var(--primary); line-height: 1.5;">요약 정보</div>
+      </div>
+
+      <!-- 💊 상단 정제 -->
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px;">
+        <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></span>
+          <span>상단 캡슐 정제 (무엇이 들어있나요?)</span>
+        </div>
+        <div id="modalCapText" style="font-size: 0.88rem; color: var(--text-body); line-height: 1.6;">성분 정보</div>
+      </div>
+
+      <!-- 🧪 하단 액상 -->
+      <div style="background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px;">
+        <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></span>
+          <span>하단 고농축 액상 포뮬러 (왜 함께 마시나요?)</span>
+        </div>
+        <div id="modalLiqText" style="font-size: 0.88rem; color: var(--text-body); line-height: 1.6;">액상 정보</div>
+      </div>
+
+      <!-- ⏰ 섭취 골든타임 -->
+      <div style="background: var(--bg-subtle); border: 1px dashed var(--border-accent); border-radius: var(--radius-sm); padding: 12px 18px; margin-bottom: 22px; display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1rem;">⏰</span>
+        <div style="font-size: 0.85rem; color: var(--text-body);">
+          <strong style="color: var(--primary);">추천 섭취 골든타임:</strong> <span id="modalTimingText">섭취 시간 가이드</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="btn primary" style="flex: 1; justify-content: center; font-size: 0.95rem;" onclick="subscribeFromModal()">
+          이 처방으로 30% 할인가 구독하기 (월 79,800원)
+        </button>
+        <button class="btn secondary" onclick="closeQuickView()">닫기</button>
+      </div>
+    </div>
+  </div>
 
   <!-- Instant Checkout Modal -->
   <div id="checkoutModal" class="modal" role="dialog" aria-modal="true">
@@ -1917,20 +2658,182 @@
       document.getElementById("savedTime").innerText = "약 " + savedTime + "시간";
     }
 
-    // 3. Archive Filter
-    function filterArchive(cat) {
-      const buttons = document.querySelectorAll("#archiveFilterPills button");
-      buttons.forEach(b => b.classList.remove("active"));
-      event.target.classList.add("active");
+    // 3. Category Archive Filter & Quick View
+    const quickViewData = [
+      {
+        name: "나이트 오버타임 팩",
+        cat: "2030 직장인",
+        target: "잦은 야근 및 만성 피로 직장인",
+        summary: "야근 후 묵직한 피로와 지친 간을 깨우는 고단백 에너지 처방",
+        cap: "• 밀크씨슬 130mg : 지친 간세포 보호 및 피로 물질 분해 지원<br>• 활성 비타민B군 500% : 음식물을 에너지로 빠르게 바꾸는 체내 활력 생성",
+        liq: "• 귀리 식이섬유 곡물 쉐이크 : 공복 속쓰림 방지 및 유효 성분의 4배 빠른 흡수 부스팅",
+        timing: "저녁 야근 시작 전 또는 늦은 저녁 식사 대용"
+      },
+      {
+        name: "모닝 퀵스타터 팩",
+        cat: "2030 직장인",
+        target: "바쁜 아침 공복 출근족",
+        summary: "아침 굶고 출근하는 직장인을 위한 하루 1병 활력 충전 & 두뇌 부스팅",
+        cap: "• 필수 비타민 13종 : 하루에 꼭 필요한 기초 미네랄 밸런스 완성<br>• 마그네슘 150mg : 굳은 목과 어깨 근육 이완 및 오전 활력 충전",
+        liq: "• 저당 오트밀 수용성 섬유 액상 : 아침 혈당 급상승(스파이크) 방지 및 든든한 포만감 유지",
+        timing: "아침 출근길 또는 오전 첫 업무 시작 직전"
+      },
+      {
+        name: "애프터 파티 리커버리",
+        cat: "2030 직장인",
+        target: "회식 후 숙취 및 갈증 해소",
+        summary: "알코올 분해를 2배 빠르게 돕고 다음 날 아침 붓기와 갈증을 없애는 숙취 킬러",
+        cap: "• 헛개나무열매추출물 + 글루타치온 효모 : 숙취 유발 독소(아세트알데히드)의 급속 분해 촉진<br>• 밀크씨슬 : 음주로 손상된 간세포의 빠른 재생 지원",
+        liq: "• 전해질 타우린 이온 수분 포뮬러 : 음주 후 심한 탈수와 갈증의 즉각적인 해소",
+        timing: "회식 자리 직후 또는 잠들기 전 1병"
+      },
+      {
+        name: "바이오 이뮨 디펜스",
+        cat: "R&D 바이오",
+        target: "환절기 체내 면역 방어벽 구축",
+        summary: "목이 칼칼하고 감기 기운이 돌 때 체내 면역 세포를 깨우는 방어벽 포뮬러",
+        cap: "• 글루콘산 아연 12mg : 정상적인 면역 세포 분열을 돕는 필수 방어 미네랄 공급<br>• 활성 비타민D 2,000IU + 셀레늄 : 외부 유해 바이러스에 맞서는 저항력 강화",
+        liq: "• 엘더베리 고농축 바이오 액상 : 풍부한 안토시아닌을 통한 호흡기 및 구강 점막 보호",
+        timing: "일교차가 큰 아침 또는 컨디션 저하가 느껴질 때"
+      },
+      {
+        name: "셀룰러 안티옥스",
+        cat: "R&D 바이오",
+        target: "유해 활성산소 억제 & 혈관 케어",
+        summary: "야근과 스트레스로 쌓인 유해 활성산소를 제거하는 프리미엄 세포 항산화제",
+        cap: "• 순수 코엔자임Q10 100mg : 높은 혈압 감소 및 세포 내 에너지원(ATP) 생성<br>• 비타민E + 구리 : 유해 산소로부터 세포막을 빈틈없이 지키는 2중 방어",
+        liq: "• 석류 안토시아닌 폴리페놀 액상 : 혈관 탄력 유지 및 맑고 원활한 혈액 순환 지원",
+        timing: "점심 식사 직후 (지용성 성분의 흡수율 극대화)"
+      },
+      {
+        name: "프로틴 머슬 빌더",
+        cat: "스포츠 Pro",
+        target: "웨이트 트레이닝 & 근합성 극대화",
+        summary: "당류 0g, 쉐이커 없이 운동 후 간편하게 마시는 순수 근단백질 합성 샷",
+        cap: "• 필수 아미노산 9종(EAA) + BCAA 5,000mg : 운동 중 근육 손실 방지 및 즉각적인 근합성 트리거<br>• 비타민B6 : 섭취한 단백질의 체내 흡수 및 아미노산 대사 촉진",
+        liq: "• 100% 분리유청단백(WPI) 20g 무당류 액상 : 락토프리로 유당불내증 없이 30분 내 초고속 단백질 흡수",
+        timing: "운동 직후 30분 이내 (골든타임)"
+      },
+      {
+        name: "프리-워크아웃 부스터",
+        cat: "스포츠 Pro",
+        target: "운동 전 폭발적 혈관 펌핑",
+        summary: "지친 퇴근길에도 헬스장 바벨을 가볍게 만드는 고출력 혈관 펌핑 부스터",
+        cap: "• 순수 발효 L-아르기닌 5,000mg : 혈관 확장 및 근육으로 가는 산소 공급량 극대화<br>• 크레아틴 : 고강도 운동 시 순간 파워와 근력 퍼포먼스 향상",
+        liq: "• 타우린 2,000mg & 비타민C 샷 : 운동 중 젖산 축적 억제 및 지치지 않는 지구력 지원",
+        timing: "운동 시작 20분 전"
+      },
+      {
+        name: "딥 하이드라 콜라겐",
+        cat: "이너뷰티 Glow",
+        target: "피부 속건조 완화 & 탄력 장벽",
+        summary: "화장이 들뜨고 당기는 피부 속부터 차오르는 수분 탄력 포뮬러",
+        cap: "• 발효 히알루론산 240mg : 자기 무게 1,000배의 수분을 피부 속에 꽉 잡아두는 수분 잠금<br>• 저분자 엘라스틴 : 피부 속 콜라겐 기둥을 탄탄하게 묶어주는 탄력 지탱",
+        liq: "• 초저분자 어린(魚鱗) 콜라겐 3,270mg : 모공 1/1,000 크기로 피부 진피층까지 다이렉트 도달",
+        timing: "저녁 스킨케어 후 또는 취침 전"
+      },
+      {
+        name: "브라이트닝 글루타치온",
+        cat: "이너뷰티 Glow",
+        target: "칙칙한 안색 개선 & 화사한 광채",
+        summary: "야근으로 칙칙해진 피부 톤을 속부터 맑고 환하게 밝혀주는 광채 포뮬러",
+        cap: "• L-글루타치온 순수 건조효모 250mg : 칙칙한 멜라닌 색소 억제 및 화사한 피부 톤 케어<br>• 비타민C 500mg : 글루타치온의 체내 흡수율과 항산화 시너지 극대화",
+        liq: "• 화이트토마토 농축 미백 포뮬러 : 자외선으로부터 피부 보호 및 자연스러운 피부 광채 부여",
+        timing: "햇빛에 노출되기 전 아침 시간대"
+      },
+      {
+        name: "퓨어 그린 비건 올인원",
+        cat: "클린 Eco 비건",
+        target: "100% 식물성 클린 영양 공급",
+        summary: "프랑스 EVE 비건 인증, 속이 더부룩하지 않은 100% 식물성 멀티 비타민",
+        cap: "• 유기농 건조효모 비타민B12 1,000% : 채식 식단에서 결핍되기 쉬운 필수 혈액 생성 영양소 충족<br>• 식물성 비건 철분 : 위장 자극 없이 순하고 편안한 철분 흡수",
+        liq: "• 100% 완두·쌀 단백질 그린 쉐이크 : 동물성 원료 0%, 텁텁하지 않고 고소한 식물성 단백질 공급",
+        timing: "공복 또는 가벼운 식사 대용"
+      },
+      {
+        name: "밸런스 엔자임 다이제스트",
+        cat: "클린 Eco 비건",
+        target: "식후 더부룩함 & 편안한 소화",
+        summary: "탄수화물/배달음식 섭취 후 꽉 막힌 속을 가볍게 분해하는 천연 발효 효소",
+        cap: "• 15곡 발효 효소 역가 50만 Unit : 탄수화물과 단백질을 미세하게 쪼개는 초고속 소화 촉진<br>• 유산균 사균체 : 장내 유익균 환경 조성 및 배변 활동 지원",
+        liq: "• 국내산 양배추·매실 저자극 발효 액상 : 위벽 코팅을 통한 속쓰림과 더부룩함의 즉각적인 진정",
+        timing: "과식이나 기름진 식사 직후 10분 이내"
+      },
+      {
+        name: "나이트 시프트 슬립",
+        cat: "3교대 Emergency",
+        target: "불규칙 수면 리듬 & 깊은 숙면",
+        summary: "교대근무로 뒤바뀐 밤낮에도 잡념 없이 푹 자게 돕는 릴랙스 수면 처방",
+        cap: "• 순수 L-테아닌 200mg : 스트레스 뇌파(베타파) 완화 및 편안한 안정 뇌파(알파파) 유도<br>• 몽모랑시 타트체리 : 식물성 멜라토닌을 통한 자연스러운 입면 리듬 형성",
+        liq: "• 카모마일·마그네슘 진정 포뮬러 : 밤새 근육 경련과 뒤척임 없는 깊은 숙면 유지",
+        timing: "근무 후 잠들기 30분 전 (암막 환경 권장)"
+      },
+      {
+        name: "에머전시 바이탈 샷",
+        cat: "3교대 Emergency",
+        target: "야간 근무 중 급격한 체력 방전",
+        summary: "새벽 3~4시 쏟아지는 졸음과 체력 방전을 즉각 깨우는 무설탕 비상 활력 샷",
+        cap: "• 활성형 비타민B12 1,000㎍ : 지친 신경계를 위한 부담 없는 활력 충전<br>• 유기농 과라나 추출물 : 가슴 두근거림 없는 순하고 안전한 천연 각성 제공",
+        liq: "• 고농축 아미노 에너지 샷 : 간 피로 완화 및 빠른 에너지 회복 지원",
+        timing: "나이트 근무 중 집중력이 급격히 떨어질 때"
+      },
+      {
+        name: "블루라이트 아이 쉴드",
+        cat: "판교 IT Tech",
+        target: "장시간 모니터 노출 & 안구 건조",
+        summary: "하루 10시간 이상 모니터 보는 개발자를 위한 안구 건조 & 황반 색소 보호 쉴드",
+        cap: "• 루테인지아잔틴 복합추출물 20mg : 눈 망막 중심의 황반 색소 밀도 100% 유지<br>• 아스타잔틴 6mg : 미세 초점 조절력 개선을 통한 눈 침침함 완화",
+        liq: "• 스위스산 빌베리 안토시아닌 : 시신경 피로 회복 및 안구 눈물막의 촉촉한 보호",
+        timing: "오전 코딩 및 업무 시작 전"
+      },
+      {
+        name: "뉴로 딥 포커스",
+        cat: "판교 IT Tech",
+        target: "코딩/기획 집중력 & 두뇌 피로",
+        summary: "복잡한 알고리즘과 기획 업무 시 머리가 맑아지고 두뇌 혈류를 돕는 브레인 포뮬러",
+        cap: "• 은행잎추출물 플라보놀배당체 28mg : 뇌 미세혈관 혈류 개선을 통한 기억력과 집중력 향상<br>• 비타민B6 : 뇌신경 전달 물질의 원활한 합성 지원",
+        liq: "• 로즈마리 콜린 두뇌 신경 회로 포뮬러 : 두뇌 피로감 완화 및 장시간 몰입 상태 유지",
+        timing: "복잡한 회의나 코딩 집중 세션 15분 전"
+      }
+    ];
 
-      const items = document.querySelectorAll("#archiveGrid .prd-card-item");
-      items.forEach(item => {
-        if (cat === "all" || item.getAttribute("data-cat") === cat) {
-          item.style.display = "flex";
+    let currentSelectedModalProduct = '';
+
+    function filterCategory(cat, btn) {
+      const buttons = document.querySelectorAll("#categoryPillBar button");
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+
+      const items = document.querySelectorAll("#productCardGrid .prd-card");
+      items.forEach(card => {
+        if (cat === "all" || card.getAttribute("data-cat") === cat) {
+          card.style.display = "flex";
         } else {
-          item.style.display = "none";
+          card.style.display = "none";
         }
       });
+    }
+
+    function openQuickView(idx) {
+      const data = quickViewData[idx];
+      currentSelectedModalProduct = data.name;
+      document.getElementById('modalPrdTag').innerHTML = `<span class="tag-dot"></span> ` + data.cat;
+      document.getElementById('modalPrdTitle').innerText = data.name;
+      document.getElementById('modalPrdTarget').innerText = data.target;
+      document.getElementById('modalSummaryText').innerText = data.summary;
+      document.getElementById('modalCapText').innerHTML = data.cap;
+      document.getElementById('modalLiqText').innerHTML = data.liq;
+      document.getElementById('modalTimingText').innerText = data.timing;
+      document.getElementById('quickViewModal').classList.add('show');
+    }
+
+    function closeQuickView() {
+      document.getElementById('quickViewModal').classList.remove('show');
+    }
+
+    function subscribeFromModal() {
+      closeQuickView();
+      openCheckoutModal(currentSelectedModalProduct);
     }
 
     // 4. Modal Functions
