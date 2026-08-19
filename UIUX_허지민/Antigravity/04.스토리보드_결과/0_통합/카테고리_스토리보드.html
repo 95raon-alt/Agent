@@ -433,13 +433,18 @@
       border-radius: 5px;
       padding: 5px 6px;
       width: 86%;
-      text-align: center;
+      box-sizing: border-box;
+      margin: 0 auto;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
       border: 1px solid rgba(255, 255, 255, 0.95);
       white-space: nowrap;
-      box-sizing: border-box;
       position: relative;
       z-index: 4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
     .mini-engrave-tag {
       font-size: 0.52rem;
@@ -448,6 +453,8 @@
       letter-spacing: 0.04em;
       line-height: 1.15;
       display: block;
+      width: 100%;
+      text-align: center;
       white-space: nowrap;
     }
     .mini-engrave-name {
@@ -457,6 +464,8 @@
       margin-top: 2px;
       line-height: 1.15;
       display: block;
+      width: 100%;
+      text-align: center;
       white-space: nowrap;
     }
 
