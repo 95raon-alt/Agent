@@ -101,3 +101,7 @@ A clean minimalist monoline geometric typographic logo monogram of letter 'A'. M
 # 유사_로고_26.jpg
 
 A standalone minimalist geometric wellness logo symbol based on the hand-drawn sketch structure of overlapping ellipses. Featuring a harmonious 4-petal floral motif and dual-synergy nutrition emblem composed of interlocking symmetrical loops intersecting at the center. Pure flat 2D vector style, solid monochrome pitch black graphic icon (#000000) perfectly centered on a clean pure white background (#FFFFFF), modern sleek aesthetics, strictly no grid lines, no construction lines, no guides, no background patterns, no text, no 3D rendering, no shadows.
+
+# 유사_로고_27.jpg
+
+A standalone minimalist modern 2D flat vector hybrid logo symbol for A:FIT, seamlessly blending the design elements of drafts 1 through 6. Featuring the architectural geometric silhouette of capital letter 'A' integrated with flowing organic fluid curves and an interlocking infinity-loop crossbar representing dual-formula personalized nutrition synergy. Solid monochrome pitch black graphic icon (#000000) perfectly centered on an isolated pure clean white background (#FFFFFF), sharp clean vector lines, modern luxury wellness branding, strictly no grid lines, no construction lines, no background patterns, no text, no typography, no 3D rendering, no shadows.
