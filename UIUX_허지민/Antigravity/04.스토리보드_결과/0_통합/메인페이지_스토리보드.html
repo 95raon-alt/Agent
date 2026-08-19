@@ -392,6 +392,74 @@
       }
     }
 
+    /* BRD-145: Compact Brand Color Palette */
+    .compact-color-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .compact-color-card {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px 20px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    .compact-color-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-card);
+      border-color: var(--accent);
+    }
+    .compact-color-chip {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .compact-color-right {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      border-left: 1px solid var(--border);
+      padding-left: 15px;
+      flex: 1;
+    }
+    .compact-color-name-ko {
+      font-size: 0.98rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.25;
+    }
+    .compact-color-sub-row {
+      font-family: monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--accent-dark);
+      letter-spacing: -0.01em;
+    }
+    .compact-color-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+      margin: 0;
+    }
+    @media (max-width: 1024px) {
+      .compact-color-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 640px) {
+      .compact-color-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
     /* Minimal High-End Desk Object Preview Card */
     .hero-visual-card {
       background: linear-gradient(145deg, #FFFFFF 0%, #F5F7F8 100%);
@@ -1306,6 +1374,84 @@
               <p style="font-size: 0.86rem; color: rgba(255,255,255,0.92); line-height: 1.6; margin: 0;">
                 "모든 솔루션이 하나로 합쳐져 내 몸에 정확하게 딱 맞는 100% 맞춤 웰니스"
               </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 🎨 A:FIT Brand Signature Color Palette -->
+        <div style="margin-top: 56px; padding-top: 48px; border-top: 1px solid var(--border);">
+          <div style="margin-bottom: 28px; text-align: left;">
+            <span class="tag" style="margin-bottom: 6px;">
+              <span class="tag-dot"></span>
+              BRAND COLOR PALETTE · SIGNATURE COLORS
+            </span>
+            <h2 style="font-size: 1.65rem; font-weight: 800; color: var(--primary); margin: 0;">
+              A:FIT 브랜드 시그니처 컬러
+            </h2>
+            <p style="font-size: 0.90rem; color: var(--text-muted); margin-top: 6px;">
+              A:FIT의 정체성과 웰니스 무드를 완성하는 6가지 시그니처 색상입니다.
+            </p>
+          </div>
+
+          <div class="compact-color-grid">
+            <!-- 1. Deep Forest Green -->
+            <div class="compact-color-card" onclick="copyColor('#183D33', 'Deep Forest Green')">
+              <div class="compact-color-chip" style="background: #183D33;"></div>
+              <div class="compact-color-right">
+                <div class="compact-color-name-ko">딥 포레스트 그린</div>
+                <div class="compact-color-sub-row">Deep Forest Green · #183D33</div>
+                <p class="compact-color-desc">깊은 숲의 생명력과 타협 없는 안전성을 상징하는 메인 시그니처</p>
+              </div>
+            </div>
+
+            <!-- 2. Vital Sage Mint -->
+            <div class="compact-color-card" onclick="copyColor('#529074', 'Vital Sage Mint')">
+              <div class="compact-color-chip" style="background: #529074;"></div>
+              <div class="compact-color-right">
+                <div class="compact-color-name-ko">바이탈 세이지 민트</div>
+                <div class="compact-color-sub-row">Vital Sage Mint · #529074</div>
+                <p class="compact-color-desc">매일 아침 깨어나는 맑은 활력과 에너지를 표현하는 핵심 포인트</p>
+              </div>
+            </div>
+
+            <!-- 3. Clean Cashmere Ivory -->
+            <div class="compact-color-card" onclick="copyColor('#FAF8F5', 'Clean Cashmere Ivory')">
+              <div class="compact-color-chip" style="background: #FAF8F5; border: 1px solid var(--border);"></div>
+              <div class="compact-color-right">
+                <div class="compact-color-name-ko">웜 크림 아이보리</div>
+                <div class="compact-color-sub-row">Clean Cashmere Ivory · #FAF8F5</div>
+                <p class="compact-color-desc">눈이 편안한 웰니스 톤앤매너를 형성하는 여백 기본 배경</p>
+              </div>
+            </div>
+
+            <!-- 4. Dark Walnut Brown -->
+            <div class="compact-color-card" onclick="copyColor('#503323', 'Dark Walnut Brown')">
+              <div class="compact-color-chip" style="background: #503323;"></div>
+              <div class="compact-color-right">
+                <div class="compact-color-name-ko">다크 월넛 브라운</div>
+                <div class="compact-color-sub-row">Dark Walnut Brown · #503323</div>
+                <p class="compact-color-desc">대자연 원료의 진정성과 데스크 인테리어 우드 오브제 감성의 내추럴 포인트</p>
+              </div>
+            </div>
+
+            <!-- 5. Modern Charcoal Gray -->
+            <div class="compact-color-card" onclick="copyColor('#2D3A35', 'Modern Charcoal Gray')">
+              <div class="compact-color-chip" style="background: #2D3A35;"></div>
+              <div class="compact-color-right">
+                <div class="compact-color-name-ko">모던 차콜 그레이</div>
+                <div class="compact-color-sub-row">Modern Charcoal Gray · #2D3A35</div>
+                <p class="compact-color-desc">최적의 가독성을 제공하는 정갈한 본문 텍스트 및 구조 라인</p>
+              </div>
+            </div>
+
+            <!-- 6. Urban Deep Navy -->
+            <div class="compact-color-card" onclick="copyColor('#2A3C5A', 'Urban Deep Navy')">
+              <div class="compact-color-chip" style="background: #2A3C5A;"></div>
+              <div class="compact-color-right">
+                <div class="compact-color-name-ko">도심 딥 네이비</div>
+                <div class="compact-color-sub-row">Urban Deep Navy · #2A3C5A</div>
+                <p class="compact-color-desc">도심 직장인의 전문성과 스마트한 집중력을 대변하는 비즈니스 포인트</p>
+              </div>
             </div>
           </div>
         </div>
@@ -2854,6 +3000,13 @@
       const orderNum = "AFIT-" + new Date().getFullYear() + String(Math.floor(1000 + Math.random() * 9000));
       alert(`🎉 [A:FIT 맞춤 정기구독 신청 완료]\n\n구독자: ${name} 님\n신청 플랜: ${plan}\n주문 처방 번호: ${orderNum}\n\n1:1 맞춤 각인 패키지가 24시간 내 발송됩니다!`);
       closeCheckoutModal();
+    }
+
+    // 5. Copy Brand Color Code
+    function copyColor(hex, name) {
+      navigator.clipboard.writeText(hex).then(() => {
+        alert(`🎨 [컬러 코드 복사 완료]\n\n${name} (${hex}) 코드가 클립보드에 복사되었습니다!`);
+      });
     }
   </script>
 </body>
