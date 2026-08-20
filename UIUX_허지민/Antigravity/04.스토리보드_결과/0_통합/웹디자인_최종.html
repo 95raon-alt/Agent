@@ -1,0 +1,1795 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A:FIT · 하이엔드 어반 웰니스 1:1 맞춤 루틴</title>
+  
+  <!-- Pretendard & Inter Webfonts -->
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS & SYSTEM VARIABLES (뮤트 딥 세이지 #33453D Theme)
+       ========================================================================== */
+    :root {
+      /* 2안: Muted Deep Sage Palette */
+      --color-primary: #183D33;             /* Deep Forest Green (브랜드 메인 텍스트) */
+      --color-bg: #33453D;                  /* Main Canvas: Muted Deep Sage (#33453D) */
+      --color-bg-card: #FAF6EB;             /* Card Surface: Cream White (따뜻하고 맑은 카드) */
+      --color-bg-subtle: #27362F;           /* Subtle Section Contrast */
+      --color-accent: #183D33;              /* Deep Forest Green (핵심 CTA) */
+      --color-accent-hover: #503323;
+      --color-accent-tint: rgba(24, 61, 51, 0.08);
+      --color-natural: #503323;             /* Dark Walnut */
+      --color-text: #2D473E;                /* Body Text on Cards */
+      --color-text-dark: #183D33;           /* Headlines on Cards */
+      --color-text-light: #FAF6EB;          /* Headlines on Canvas */
+      --color-text-muted: rgba(250, 246, 235, 0.85); /* Muted Light Text */
+      --color-border: rgba(250, 246, 235, 0.22); /* 1px Hairline */
+      --color-urban: #2A3C5A;               /* Dark Navy */
+      
+      /* Status Colors */
+      --color-success: #10B981;
+      --color-warning: #F59E0B;
+      --color-danger: #EF4444;
+
+      /* Typography */
+      --font-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+      --font-en: 'Plus Jakarta Sans', 'Inter', sans-serif;
+
+      /* Spacing & Radii */
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-pill: 9999px;
+
+      /* Elevation & Shadows */
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.20);
+      --shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.35);
+      --shadow-floating: 0 20px 48px -8px rgba(0, 0, 0, 0.40);
+
+      /* Layout */
+      --container-max: 1320px;
+    }
+
+    /* Reset & Global */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-ko);
+      background-color: var(--color-bg);
+      color: var(--color-text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; outline: none; }
+    
+    .container {
+      width: 100%;
+      max-width: var(--container-max);
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    .section-title {
+      font-size: 38px;
+      font-weight: 800;
+      color: var(--color-text-light);
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+    .section-desc {
+      font-size: 16px;
+      color: var(--color-text-muted);
+      max-width: 640px;
+      line-height: 1.65;
+    }
+
+    /* ==========================================================================
+       동그라미 경계선이 없는 극저소음 가우시안 안개 앰비언트 스포트라이트 (Gaussian Fog Glow)
+       ========================================================================== */
+    .global-ambient-spotlight {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(250, 246, 235, 0.26) 0%,
+        rgba(210, 235, 220, 0.14) 22%,
+        rgba(164, 209, 184, 0.06) 48%,
+        rgba(118, 165, 140, 0.015) 72%,
+        transparent 100%
+      );
+      filter: blur(65px);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: left 0.14s cubic-bezier(0.1, 0.8, 0.2, 1), top 0.14s cubic-bezier(0.1, 0.8, 0.2, 1);
+      z-index: 50;
+      mix-blend-mode: screen;
+      will-change: left, top;
+    }
+
+    /* ==========================================================================
+       2. HEADER & GNB (Muted Deep Sage Glass, 68px, 동일 간격 8px 유틸리티 그룹)
+       ========================================================================== */
+    header.site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(51, 69, 61, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--color-border);
+      transition: all 0.25s ease;
+      width: 100%;
+    }
+    .header-inner {
+      width: 100%;
+      padding: 0 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+    }
+    
+    .logo-wordmark {
+      font-family: var(--font-en);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--color-text-light);
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      display: inline-block;
+      transition: opacity 0.2s;
+    }
+    .logo-wordmark:hover {
+      opacity: 0.85;
+    }
+    
+    .header-right-group {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    nav.gnb ul {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    
+    nav.gnb a {
+      position: relative;
+      padding: 4px 0;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--color-text-light);
+      transition: color 0.3s ease;
+      letter-spacing: -0.01em;
+      display: inline-block;
+    }
+    nav.gnb a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background-color: #FAF6EB;
+      transition: width 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+    nav.gnb a:hover {
+      color: #FFFFFF;
+    }
+    nav.gnb a:hover::after {
+      width: 100%;
+    }
+
+    /* 동일 간격 8px: [검색] ➔ (8px) ➔ [상담사] ➔ (8px) ➔ [구독버튼] */
+    .header-util-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Compact Underline Direct Search Bar (글자 없음, 80px) */
+    .header-search-bar {
+      display: flex;
+      align-items: center;
+      position: relative;
+      border-bottom: 1.5px solid rgba(250, 246, 235, 0.45);
+      padding: 2px 2px 3px;
+      transition: all 0.25s ease;
+      width: 80px;
+    }
+    .header-search-bar:focus-within {
+      border-bottom-color: #FAF6EB;
+      width: 110px;
+    }
+    .header-search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #FAF6EB;
+      font-size: 13px;
+      font-family: inherit;
+      width: 100%;
+      padding-right: 4px;
+    }
+    .btn-header-search {
+      background: transparent;
+      border: none;
+      color: var(--color-text-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .btn-header-search:hover {
+      color: #FFFFFF;
+      transform: scale(1.1);
+    }
+
+    /* CS Headset Button */
+    .btn-header-cs {
+      background: transparent;
+      border: none;
+      color: var(--color-text-light);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      transition: all 0.2s ease;
+    }
+    .btn-header-cs:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+      transform: scale(1.08);
+    }
+    
+    /* 맞춤 구독 시작하기 버튼 */
+    .btn-header-cta {
+      background: #FAF6EB;
+      color: var(--color-primary);
+      padding: 9px 15px;
+      border-radius: var(--radius-pill);
+      font-size: 13px;
+      font-weight: 800;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      white-space: nowrap;
+    }
+    .btn-header-cta:hover {
+      background: var(--color-primary);
+      color: #FAF6EB;
+      transform: translateY(-1px);
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (여유로운 상하 패딩 105px/125px & 확장된 46px 간격)
+       ========================================================================== */
+    .hero-section {
+      padding: 105px 0 125px;
+      position: relative;
+      background: transparent;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.18fr 0.82fr;
+      gap: 48px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* 좌측 컬럼: 상/하단 간격 46px */
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      gap: 46px;
+    }
+
+    .hero-top-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 간결한 1줄 H1 (밑줄 없음, 38px) */
+    .hero-headline {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 1.25;
+      letter-spacing: -0.03em;
+      color: var(--color-text-light);
+      margin-bottom: 14px;
+      white-space: nowrap;
+    }
+
+    /* 섬세하고 작은 3줄 서브텍스트 (13.5px) */
+    .hero-subtext {
+      font-size: 13.5px;
+      color: rgba(250, 246, 235, 0.85);
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 0;
+    }
+
+    /* 하단 액션 & 신뢰 지표 블록 */
+    .hero-bottom-block {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+    .btn-hero-primary {
+      background: #FAF6EB;
+      color: var(--color-primary);
+      padding: 16px 32px;
+      border-radius: var(--radius-pill);
+      font-size: 14.5px;
+      font-weight: 800;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+      transition: all 0.25s;
+    }
+    .btn-hero-primary:hover {
+      background: var(--color-primary);
+      color: #FAF6EB;
+      transform: translateY(-2px);
+    }
+    .btn-hero-secondary {
+      background: rgba(250, 246, 235, 0.12);
+      color: #FAF6EB;
+      border: 1.5px solid rgba(250, 246, 235, 0.35);
+      padding: 15px 26px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 700;
+      transition: all 0.2s;
+    }
+    .btn-hero-secondary:hover {
+      background: #FAF6EB;
+      color: var(--color-primary);
+      border-color: #FAF6EB;
+    }
+
+    /* 3대 신뢰 지표 */
+    .hero-proof-list {
+      display: flex;
+      gap: 32px;
+      padding-top: 22px;
+      border-top: 1px solid var(--color-border);
+      max-width: 500px;
+    }
+    .proof-item {
+      display: flex;
+      flex-direction: column;
+    }
+    .proof-val {
+      font-family: var(--font-en);
+      font-size: 23px;
+      font-weight: 800;
+      color: #FAF6EB;
+      letter-spacing: -0.02em;
+    }
+    .proof-lbl {
+      font-size: 12px;
+      color: rgba(250, 246, 235, 0.82);
+      font-weight: 600;
+    }
+
+    /* Flagship 3D Animated Desk Object Preview Card */
+    .hero-visual-card {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: 28px;
+      padding: 32px 26px 26px;
+      box-shadow: var(--shadow-floating);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      max-width: 390px;
+      margin-left: auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hero-visual-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    /* 상단 좌측으로 이동한 첫달 30% OFF 뱃지 */
+    .card-discount-badge {
+      position: absolute;
+      top: 22px;
+      left: 24px;
+      font-size: 11.5px;
+      font-weight: 800;
+      color: #EF4444;
+      background: #FEE2E2;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(239, 68, 68, 0.2);
+      letter-spacing: -0.01em;
+      z-index: 10;
+    }
+
+    /* 콤팩트 보틀 캔버스 */
+    .bottle-canvas-box {
+      width: 140px;
+      height: 230px;
+      margin: 8px auto 14px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .hero-visual-card:hover .bottle-canvas-box {
+      transform: translateY(-4px) scale(1.02);
+    }
+    .cap-3d {
+      width: 72px;
+      height: 48px;
+      background: linear-gradient(145deg, #183D33 0%, #0F2821 100%);
+      border-radius: 12px 12px 5px 5px;
+      position: relative;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255,255,255,0.18);
+      z-index: 5;
+    }
+    .cap-glow-ring {
+      width: 60px;
+      height: 2.5px;
+      background: #76A58C;
+      border-radius: 2px;
+      margin-top: 4px;
+      box-shadow: 0 0 8px #76A58C;
+    }
+    .cap-pills {
+      display: flex;
+      gap: 5px;
+      margin-top: 3px;
+    }
+    .pill-dot {
+      width: 11px;
+      height: 6px;
+      background: #F8D147;
+      border-radius: 3px;
+      box-shadow: inset 0 -1px 2px rgba(0,0,0,0.25);
+    }
+    .bottle-body-3d {
+      width: 95px;
+      height: 170px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(240,244,248,0.85) 100%);
+      border: 1.5px solid rgba(24, 61, 51, 0.22);
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 14px 28px rgba(24, 61, 51, 0.12), inset 0 0 20px rgba(118, 165, 140, 0.15);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 12px;
+      backdrop-filter: blur(10px);
+    }
+    .glass-sheen {
+      position: absolute;
+      top: 0;
+      left: 8px;
+      width: 5px;
+      height: 92%;
+      background: linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.05) 100%);
+      border-radius: 3px;
+      pointer-events: none;
+      z-index: 3;
+    }
+    .liquid-container {
+      position: absolute;
+      bottom: 0;
+      left: -10%;
+      width: 120%;
+      height: 74%;
+      overflow: hidden;
+      border-radius: 0 0 20px 20px;
+      z-index: 1;
+      transform-origin: 50% 90%;
+      animation: gentleSlosh 3.2s ease-in-out infinite alternate;
+    }
+    .liquid-meniscus {
+      position: absolute;
+      top: 0;
+      left: -10%;
+      width: 120%;
+      height: 14px;
+      background: radial-gradient(ellipse at center, rgba(185, 238, 215, 0.98) 0%, rgba(118, 165, 140, 0.85) 60%, rgba(24, 61, 51, 0.95) 100%);
+      border-radius: 50%;
+      box-shadow: 0 2px 8px rgba(118, 165, 140, 0.4), inset 0 1px 2px rgba(255,255,255,0.9);
+      z-index: 2;
+      animation: meniscusWave 2.8s ease-in-out infinite alternate;
+    }
+    .liquid-fill {
+      position: absolute;
+      top: 5px;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(118, 165, 140, 0.72) 0%, rgba(35, 88, 70, 0.92) 40%, rgba(18, 48, 40, 0.98) 100%);
+      box-shadow: inset 0 6px 14px rgba(255,255,255,0.14);
+      z-index: 1;
+    }
+    @keyframes gentleSlosh {
+      0% { transform: rotate(-2.8deg) translateY(0px) scaleY(1.02); }
+      50% { transform: rotate(0deg) translateY(1px) scaleY(0.99); }
+      100% { transform: rotate(2.8deg) translateY(-0.5px) scaleY(1.02); }
+    }
+    @keyframes meniscusWave {
+      0% { transform: scaleX(0.98) translateY(0px) rotate(-1.8deg); }
+      50% { transform: scaleX(1.03) translateY(1.2px) rotate(0.5deg); }
+      100% { transform: scaleX(0.99) translateY(-0.8px) rotate(2deg); }
+    }
+    .bottle-engrave-label {
+      position: relative;
+      z-index: 4;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 5px 7px;
+      border-radius: 5px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.9);
+      width: 84%;
+      box-sizing: border-box;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .flagship-prod-title {
+      font-size: 21px;
+      font-weight: 800;
+      color: var(--color-primary);
+      margin-bottom: 6px;
+      text-align: center;
+      letter-spacing: -0.02em;
+    }
+    
+    /* 성분 설명 텍스트 10.5px */
+    .flagship-prod-desc {
+      font-size: 10.5px;
+      color: #5E626B;
+      max-width: 300px;
+      margin: 0 auto 12px;
+      line-height: 1.45;
+      text-align: center;
+      letter-spacing: -0.01em;
+    }
+    
+    /* 가격 영역 */
+    .flagship-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .flagship-original-price {
+      font-size: 12px;
+      color: #8C9099;
+      text-decoration: line-through;
+      font-weight: 500;
+    }
+    .flagship-final-price {
+      font-family: var(--font-en);
+      font-size: 25px;
+      color: var(--color-primary);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    /* ==========================================================================
+       4. SECTION 1: 3 DESIGN PILLARS (좌측 포인트 라인 카드)
+       ========================================================================== */
+    .section-pillars {
+      padding: 100px 0;
+      background: var(--color-bg-subtle);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      z-index: 1;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 54px;
+    }
+    .pillar-card {
+      background: var(--color-bg-card);
+      border: 1px solid rgba(24, 61, 51, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 40px 32px 40px 36px;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-card);
+    }
+    .pillar-card-1 {
+      border-left: 6px solid #183D33;
+    }
+    .pillar-card-2 {
+      border-left: 6px solid #76A58C;
+    }
+    .pillar-card-3 {
+      border-left: 6px solid #503323;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+    }
+    .pillar-num {
+      font-family: var(--font-en);
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 18px;
+      letter-spacing: 0.04em;
+    }
+    .pillar-card-1 .pillar-num { color: #183D33; }
+    .pillar-card-2 .pillar-num { color: #76A58C; }
+    .pillar-card-3 .pillar-num { color: #503323; }
+
+    .pillar-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--color-text-dark);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+    .pillar-desc {
+      font-size: 15px;
+      color: #4C4E52;
+      line-height: 1.7;
+    }
+
+    /* ==========================================================================
+       5. SECTION 2: INTERACTIVE COST & TIME SAVING CALCULATOR (저울 UI)
+       ========================================================================== */
+    .section-calculator {
+      padding: 120px 0;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    .calc-card {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 28px;
+      padding: 56px 64px;
+      box-shadow: var(--shadow-floating);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .calc-inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+    .calc-slider-group label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--color-text-dark);
+      margin-bottom: 12px;
+    }
+    .slider-val {
+      font-family: var(--font-en);
+      color: #76A58C;
+      font-size: 17px;
+      font-weight: 800;
+    }
+    input[type=range] {
+      width: 100%;
+      height: 8px;
+      background: #E2D9C8;
+      border-radius: 9999px;
+      outline: none;
+      -webkit-appearance: none;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 24px;
+      height: 24px;
+      background: #183D33;
+      border: 3px solid #FFFFFF;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(24, 61, 51, 0.25);
+    }
+    .calc-results-box {
+      background: radial-gradient(circle at top, #FAF6EB 0%, #F4EFE2 100%);
+      border: 1.5px solid rgba(118, 165, 140, 0.4);
+      border-radius: 24px;
+      padding: 44px;
+      text-align: center;
+    }
+    .res-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #7A7D84;
+      margin-bottom: 8px;
+    }
+    .res-money-saved {
+      font-family: var(--font-en);
+      font-size: 46px;
+      font-weight: 800;
+      color: #183D33;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    .res-time-saved {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #76A58C;
+      margin-bottom: 24px;
+    }
+    .calc-cta {
+      background: #183D33;
+      color: #FAF6EB;
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 14px;
+      font-weight: 800;
+      width: 100%;
+      transition: all 0.2s;
+    }
+    .calc-cta:hover {
+      background: #76A58C;
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       6. SECTION 3: 1:1 DIAGNOSIS FUNNEL (STYLE GUIDE QUIZ COMPONENT)
+       ========================================================================== */
+    .section-quiz {
+      padding: 100px 0;
+      background: var(--color-bg-subtle);
+      border-top: 1px solid var(--color-border);
+      border-bottom: 1px solid var(--color-border);
+      position: relative;
+      z-index: 1;
+    }
+    .quiz-container-box {
+      background: var(--color-bg-card);
+      border: 1px solid var(--color-border);
+      border-radius: 28px;
+      padding: 56px 64px;
+      max-width: 960px;
+      margin: 0 auto;
+      box-shadow: var(--shadow-floating);
+    }
+    .quiz-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 36px;
+    }
+    .quiz-timer-badge {
+      height: 44px;
+      padding: 0 24px;
+      border-radius: var(--radius-pill);
+      background: #FFFFFF;
+      border: 1.5px solid rgba(24, 61, 51, 0.15);
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 4px 12px rgba(24, 61, 51, 0.05);
+    }
+    .quiz-timer-badge span.timer-nums {
+      font-family: 'Inter', monospace;
+      font-variant-numeric: tabular-nums;
+      font-size: 16.5px;
+      font-weight: 700;
+      color: #183D33;
+      letter-spacing: 0.04em;
+    }
+
+    .quiz-options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+    .quiz-option-card {
+      min-height: 68px;
+      background: #FFFFFF;
+      border: 1.5px solid rgba(76, 78, 82, 0.15);
+      border-radius: var(--radius-md);
+      padding: 16px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      cursor: pointer;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .quiz-option-card:hover {
+      border-color: #183D33;
+      background: #FDFBF7;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(24, 61, 51, 0.08);
+    }
+    .quiz-option-card.selected {
+      border: 2px solid #183D33;
+      background: #EAF4EE;
+    }
+    .quiz-opt-prefix {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #FAF6EB;
+      border: 1px solid rgba(76, 78, 82, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-weight: 800;
+      font-size: 13.5px;
+      color: #183D33;
+      transition: all 0.2s;
+    }
+    .quiz-option-card.selected .quiz-opt-prefix {
+      background: #183D33;
+      color: #FAF6EB;
+      border-color: #183D33;
+    }
+    .quiz-opt-label {
+      font-size: 15.5px;
+      font-weight: 600;
+      color: #183D33;
+    }
+    .quiz-recommend-result {
+      display: none;
+      background: #FFFFFF;
+      border: 1.5px solid #183D33;
+      border-radius: var(--radius-md);
+      padding: 28px;
+      text-align: center;
+      animation: fadeIn 0.3s ease;
+    }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ==========================================================================
+       7. SECTION 4: 15 DIFFERENT PRODUCTS COLLECTION & CIRCLE DETAIL BUTTON
+       ========================================================================== */
+    .section-usecases {
+      padding: 120px 0;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    .usecase-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 44px 0 54px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 14px 28px;
+      border-radius: var(--radius-pill);
+      font-size: 14.5px;
+      font-weight: 700;
+      background: rgba(250, 246, 235, 0.18);
+      border: 1.5px solid rgba(250, 246, 235, 0.35);
+      color: #FAF6EB;
+      transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: #FAF6EB;
+      color: #183D33;
+      font-weight: 800;
+      border-color: #FAF6EB;
+      box-shadow: 0 4px 14px rgba(24, 61, 51, 0.2);
+    }
+    
+    /* 15개 상품 카드 3열 그리드 */
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+    .product-card {
+      background: var(--color-bg-card);
+      border: 1.5px solid rgba(24, 61, 51, 0.1);
+      border-radius: 24px;
+      padding: 32px 28px 28px;
+      box-shadow: var(--shadow-card);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-hover);
+      border-color: #183D33;
+    }
+    .prod-badge-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .prod-tag {
+      padding: 5px 12px;
+      border-radius: var(--radius-pill);
+      font-size: 11.5px;
+      font-weight: 800;
+      background: rgba(24, 61, 51, 0.08);
+      color: #183D33;
+    }
+    .prod-score-label {
+      font-size: 12px;
+      font-weight: 700;
+      color: #76A58C;
+    }
+    .prod-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #183D33;
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .prod-desc {
+      font-size: 13.5px;
+      color: #4C4E52;
+      margin-bottom: 20px;
+      flex-grow: 1;
+      line-height: 1.6;
+    }
+    .prod-price-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-top: 16px;
+      border-top: 1px solid rgba(76, 78, 82, 0.12);
+      margin-bottom: 18px;
+    }
+    .prod-price {
+      font-family: var(--font-en);
+      font-size: 22px;
+      font-weight: 800;
+      color: #183D33;
+      letter-spacing: -0.02em;
+    }
+    .prod-discount {
+      font-family: var(--font-en);
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--color-danger);
+    }
+    
+    /* 카드 하단 [정기구독 시작하기 (넓은 메인 버튼)] + [동그라미 상세보기 아이콘 버튼 (우측)] */
+    .prod-btn-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .btn-prod-subscribe {
+      flex: 1;
+      background: #183D33;
+      color: #FAF6EB;
+      padding: 12px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 13.5px;
+      font-weight: 800;
+      transition: all 0.2s;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .btn-prod-subscribe:hover {
+      background: #76A58C;
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+    
+    /* 동그라미(Circle) 상세보기 아이콘 버튼 */
+    .btn-prod-detail-circle {
+      flex: 0 0 40px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(24, 61, 51, 0.06);
+      color: #183D33;
+      border: 1.5px solid rgba(24, 61, 51, 0.22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .btn-prod-detail-circle:hover {
+      background: #183D33;
+      color: #FAF6EB;
+      border-color: #183D33;
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(24, 61, 51, 0.2);
+    }
+
+    /* 상품 상세 모달 (Modal Popup) */
+    .product-modal-backdrop {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(15, 25, 21, 0.75);
+      backdrop-filter: blur(8px);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .product-modal-backdrop.active {
+      display: flex;
+    }
+    .product-modal-box {
+      background: #FAF6EB;
+      border: 1px solid rgba(24, 61, 51, 0.2);
+      border-radius: 28px;
+      max-width: 640px;
+      width: 100%;
+      padding: 44px 40px 36px;
+      box-shadow: var(--shadow-floating);
+      position: relative;
+      animation: modalSlideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalSlideUp {
+      from { opacity: 0; transform: translateY(20px) scale(0.96); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .btn-modal-close {
+      position: absolute;
+      top: 24px;
+      right: 24px;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(24, 61, 51, 0.08);
+      color: #183D33;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      transition: all 0.2s;
+    }
+    .btn-modal-close:hover {
+      background: #183D33;
+      color: #FAF6EB;
+    }
+    .modal-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: #183D33;
+      background: rgba(24, 61, 51, 0.1);
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 12px;
+    }
+    .modal-title {
+      font-size: 26px;
+      font-weight: 800;
+      color: #183D33;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .modal-rating {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #76A58C;
+      margin-bottom: 20px;
+    }
+    .modal-specs-box {
+      background: #FFFFFF;
+      border: 1px solid rgba(24, 61, 51, 0.12);
+      border-radius: 18px;
+      padding: 20px;
+      margin-bottom: 24px;
+    }
+    .modal-spec-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      padding: 8px 0;
+      border-bottom: 1px dashed rgba(76, 78, 82, 0.15);
+    }
+    .modal-spec-row:last-child {
+      border-bottom: none;
+    }
+    .modal-spec-lbl {
+      color: #7A7D84;
+      font-weight: 600;
+    }
+    .modal-spec-val {
+      color: #183D33;
+      font-weight: 800;
+    }
+    .modal-price-box {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 28px;
+      padding: 0 4px;
+    }
+    .modal-final-price {
+      font-family: var(--font-en);
+      font-size: 30px;
+      font-weight: 800;
+      color: #183D33;
+    }
+
+    /* ==========================================================================
+       8. SECTION 5: FINAL D2C CONVERSION CTA BANNER
+       ========================================================================== */
+    .section-final-cta {
+      padding: 120px 0;
+      text-align: center;
+      background: transparent;
+      position: relative;
+      z-index: 1;
+    }
+    .final-cta-box {
+      background: radial-gradient(circle at top right, #183D33 0%, #2A3C5A 100%);
+      color: #FFFFFF;
+      border-radius: 36px;
+      padding: 80px 48px;
+      box-shadow: var(--shadow-floating);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--color-border);
+    }
+    .final-cta-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 20px;
+      color: #FAF6EB;
+    }
+    .final-cta-desc {
+      font-size: 16.5px;
+      color: rgba(250, 246, 235, 0.85);
+      max-width: 600px;
+      margin: 0 auto 36px auto;
+    }
+
+    /* ==========================================================================
+       9. FOOTER (간격 24px 압축 & 2줄 설명글 & 와이드 레이아웃)
+       ========================================================================== */
+    footer.site-footer {
+      background: #18231E;
+      border-top: 1px solid var(--color-border);
+      padding: 80px 0 120px;
+      font-size: 14px;
+      color: #A4D1B8;
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+    .footer-inner {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 72px;
+    }
+    .footer-grid {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 40px;
+      margin-bottom: 56px;
+      width: 100%;
+    }
+    .footer-brand-col {
+      flex: 0 0 auto;
+      text-align: left;
+    }
+    .footer-brand-col p {
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: #A4D1B8;
+    }
+    .footer-nav-group {
+      display: flex;
+      gap: 24px;
+      margin-left: auto;
+      text-align: left;
+    }
+    .footer-col h5 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #FAF6EB;
+      margin-bottom: 18px;
+      white-space: nowrap;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-col a {
+      color: #A4D1B8;
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .footer-col a:hover {
+      color: #FAF6EB;
+    }
+    .footer-bottom {
+      padding-top: 32px;
+      border-top: 1px solid rgba(164, 209, 184, 0.2);
+      display: flex;
+      justify-content: space-between;
+      font-size: 13px;
+      color: rgba(164, 209, 184, 0.7);
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Full-Viewport Global Interactive Ambient Spotlight (Gaussian Fog Glow) -->
+  <div class="global-ambient-spotlight" id="globalSpotlight"></div>
+
+  <!-- Header & GNB (Muted Deep Sage Glass, 68px, 동일 간격 8px 유틸리티 그룹) -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#" class="logo-wordmark">A:FIT</a>
+
+      <div class="header-right-group">
+        <nav class="gnb">
+          <ul>
+            <li><a href="#about">브랜드 소개</a></li>
+            <li><a href="#diagnosis">1:1 맞춤 진단</a></li>
+            <li><a href="#usecases">루틴 컬렉션</a></li>
+          </ul>
+        </nav>
+        
+        <!-- Compact Search + CS Headset + CTA Button Utility Group (모두 동일한 Gap 8px) -->
+        <div class="header-util-group">
+          <!-- Compact Underline Direct Search Bar (글자 없음, 80px) -->
+          <div class="header-search-bar">
+            <input type="text" class="header-search-input" aria-label="검색어 입력" onkeydown="if(event.key==='Enter'){ alert('\' ' + this.value + ' \' 검색 결과로 이동합니다.'); }">
+            <button class="btn-header-search" aria-label="상품 검색" onclick="const val=document.querySelector('.header-search-input').value; alert(val ? '\''+val+'\' 검색 결과로 이동합니다.' : '검색어를 입력해 주세요.');">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+          </div>
+
+          <!-- 1:1 CS Counselor Headset Icon Button -->
+          <button class="btn-header-cs" aria-label="1:1 전문 상담사 연결" onclick="alert('A:FIT 1:1 맞춤 영양사/전문 상담사 실시간 상담톡으로 연결됩니다.')" title="1:1 전문 상담사 연결">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            </svg>
+          </button>
+
+          <!-- 맞춤 구독 CTA Button (양옆 슬림 패딩 15px) -->
+          <button class="btn-header-cta" onclick="location.href='#diagnosis'">맞춤 구독 시작하기</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="heroSection">
+    <div class="container hero-grid">
+      <!-- 좌측 컬럼: 상/하단 46px 여유로운 간격 -->
+      <div class="hero-content">
+        <!-- 1. 상단 텍스트 영역 -->
+        <div class="hero-top-block">
+          <h1 class="hero-headline">
+            도심 속 나를 위한 1:1 맞춤 웰니스
+          </h1>
+          <p class="hero-subtext">
+            불필요한 과잉 섭취와 식비 낭비 없이,<br>
+            임상 데이터로 증명된 최적의 원료와 기술로<br>
+            당신의 일상에 정확하게 딱 맞는 루틴을 설계합니다.
+          </p>
+        </div>
+
+        <!-- 2. 하단 액션 및 신뢰 지표 영역 -->
+        <div class="hero-bottom-block">
+          <div class="hero-cta-group">
+            <button class="btn-hero-primary" onclick="location.href='#diagnosis'">1:1 맞춤 진단 시작하기</button>
+            <button class="btn-hero-secondary" onclick="location.href='#calculator'">식비 절감 저울 계산기</button>
+          </div>
+
+          <div class="hero-proof-list">
+            <div class="proof-item">
+              <span class="proof-val">92.4%</span>
+              <span class="proof-lbl">체내 생체 흡수율</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-val">0%</span>
+              <span class="proof-lbl">위장 자극 합성 부형제</span>
+            </div>
+            <div class="proof-item">
+              <span class="proof-val">35% OFF</span>
+              <span class="proof-lbl">정기구독 식비 절감</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 우측 컬럼: Flagship 3D Animated Desk Object Preview Card -->
+      <div class="hero-visual-card">
+        <!-- 상단 좌측으로 이동한 첫달 30% OFF 뱃지 -->
+        <div class="card-discount-badge">첫달 30% OFF</div>
+
+        <div class="bottle-canvas-box">
+          <div class="cap-3d">
+            <span style="font-size: 8.5px; color: #FAF6EB; font-weight: 800; letter-spacing: 0.05em;">DUAL CAP</span>
+            <div class="cap-pills">
+              <div class="pill-dot"></div>
+              <div class="pill-dot" style="background: #76A58C;"></div>
+            </div>
+            <div class="cap-glow-ring"></div>
+          </div>
+          
+          <div class="bottle-body-3d">
+            <div class="glass-sheen"></div>
+            <div class="liquid-container">
+              <div class="liquid-meniscus"></div>
+              <div class="liquid-fill"></div>
+            </div>
+            <div class="bottle-engrave-label">
+              <div style="font-size: 8px; color: #183D33; font-weight: 800; letter-spacing: 0.06em;">1:1 맞춤 처방</div>
+              <div style="font-size: 11.5px; color: #183D33; font-weight: 900; margin-top: 1px;">박지안 님</div>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="flagship-prod-title">A:FIT 나이트 오버타임 팩</h3>
+        
+        <!-- 섬세하고 슬림한 10.5px 성분 설명 원본 유지 -->
+        <p class="flagship-prod-desc">
+          고순도 밀크씨슬 130mg<br>+<br>비타민B군 500% & 귀리 식이섬유 쉐이크 액상
+        </p>
+
+        <!-- 가격 대비 강조 -->
+        <div class="flagship-price-row">
+          <span class="flagship-original-price">114,000원</span>
+          <strong class="flagship-final-price">월 79,800원</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 1: 3 Design Pillars (Brand About Section - Left Colored Border Cards) -->
+  <section id="about" class="section-pillars">
+    <div class="container">
+      <h2 class="section-title">웰니스를 완성하는 3가지 디자인 철학</h2>
+      <p class="section-desc">단순한 건강기능식품이 아닌, 도심 속 나의 일상을 정돈하는 오브제와 기술의 조화.</p>
+      
+      <div class="pillars-grid">
+        <!-- Card 1: Deep Forest Left Accent -->
+        <div class="pillar-card pillar-card-1">
+          <div class="pillar-num">01</div>
+          <h3 class="pillar-title">오브제적 조형미</h3>
+          <p class="pillar-desc">약처럼 보이는 투박한 패키지가 아닌, 책상 위에 올려두고 싶은 미니멀 조형미로 매일의 섭취를 즐거운 감각으로 전환합니다.</p>
+        </div>
+
+        <!-- Card 2: Vital Sage Left Accent -->
+        <div class="pillar-card pillar-card-2">
+          <div class="pillar-num">02</div>
+          <h3 class="pillar-title">도심 직장인 공감</h3>
+          <p class="pillar-desc">하루 한 포 간편한 섭취, 영양제 중복 지출과 배달 식비를 줄여주는 정량적 데이터 저울로 삶의 실질적 효용을 증명합니다.</p>
+        </div>
+
+        <!-- Card 3: Dark Walnut Left Accent -->
+        <div class="pillar-card pillar-card-3">
+          <div class="pillar-num">03</div>
+          <h3 class="pillar-title">내추럴 웰니스 조화</h3>
+          <p class="pillar-desc">눈이 편안한 세이지 그린 캔버스와 맑은 크림 화이트 카드의 완벽한 시각적 밸런스를 제공합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: Interactive Cost & Time Saving Calculator -->
+  <section id="calculator" class="section-calculator">
+    <div class="container">
+      <div class="calc-card">
+        <div class="calc-inputs">
+          <div>
+            <h2 class="section-title" style="font-size: 32px; color: var(--color-primary);">식비 & 시간 절감 저울</h2>
+            <p style="font-size: 15px; color: #4C4E52; margin-top: 8px;">
+              슬라이더를 움직여 무심코 새어나가던 월 지출과 시간을 A:FIT 맞춤 구독으로 얼마나 아낄 수 있는지 확인해 보세요.
+            </p>
+          </div>
+
+          <div class="calc-slider-group">
+            <label>
+              <span>월 평균 영양제 & 카페인 지출액</span>
+              <span class="slider-val" id="costLabel">₩150,000</span>
+            </label>
+            <input type="range" id="costSlider" min="50000" max="400000" step="10000" value="150000">
+          </div>
+
+          <div class="calc-slider-group">
+            <label>
+              <span>영양제 고르고 챙겨 먹는 시간 (일일)</span>
+              <span class="slider-val" id="timeLabel">15분</span>
+            </label>
+            <input type="range" id="timeSlider" min="5" max="40" step="5" value="15">
+          </div>
+        </div>
+
+        <div class="calc-results-box">
+          <div class="res-title">A:FIT 정기구독 시 연간 예상 절감액</div>
+          <div class="res-money-saved" id="savedMoneyDisplay">₩630,000</div>
+          <div class="res-time-saved" id="savedTimeDisplay">연간 약 72시간의 의사결정 시간 절약</div>
+          <button class="calc-cta" onclick="location.href='#diagnosis'">이 절감 혜택으로 맞춤 구독 시작하기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: 1:1 Diagnosis Funnel (Style Guide Quiz Component) -->
+  <section id="diagnosis" class="section-quiz">
+    <div class="container">
+      <div class="quiz-container-box">
+        <div class="quiz-header">
+          <div>
+            <h2 class="section-title" style="font-size: 28px; margin-bottom: 0; color: var(--color-primary);">나만의 맞춤 웰니스 목적 진단</h2>
+          </div>
+          <div class="quiz-timer-badge">
+            <span class="timer-nums">00:09:54</span>
+          </div>
+        </div>
+
+        <p style="font-size: 16px; font-weight: 700; color: #183D33; margin-bottom: 20px;">
+          Q1. 현재 도심 일상에서 가장 시급하게 개선하고 싶은 건강 고민은 무엇인가요?
+        </p>
+
+        <div class="quiz-options-list">
+          <div class="quiz-option-card" onclick="selectQuizOption(this, '만성 피로 회복 & 숙면 에너지 팩')">
+            <div class="quiz-opt-prefix">A</div>
+            <div class="quiz-opt-label">오전 기상이 힘들고 오후만 되면 극심한 피로와 뇌 피로가 몰려온다.</div>
+          </div>
+          <div class="quiz-option-card" onclick="selectQuizOption(this, '속편한 소화 & 린 밸런스 팩')">
+            <div class="quiz-opt-prefix">B</div>
+            <div class="quiz-opt-label">불규칙한 배달 식사와 잦은 커피로 속쓰림 및 소화 불편이 잦다.</div>
+          </div>
+          <div class="quiz-option-card" onclick="selectQuizOption(this, '오피스 딥 포커스 & 브레인 부스터 팩')">
+            <div class="quiz-opt-prefix">C</div>
+            <div class="quiz-opt-label">업무 집중력이 쉽게 흐트러지고 모니터로 인한 눈 피로가 극심하다.</div>
+          </div>
+          <div class="quiz-option-card" onclick="selectQuizOption(this, '도심 활력 면역 & 안티스트레스 팩')">
+            <div class="quiz-opt-prefix">D</div>
+            <div class="quiz-opt-label">환절기 면역력이 떨어지고 잦은 야근으로 스트레스 지수가 높다.</div>
+          </div>
+        </div>
+
+        <div class="quiz-recommend-result" id="quizResultBox">
+          <div style="font-size: 13px; font-weight: 700; color: #76A58C; margin-bottom: 6px;">AI 맞춤 포뮬러 추천</div>
+          <div style="font-size: 20px; font-weight: 800; color: #183D33; margin-bottom: 8px;" id="quizResultTitle">만성 피로 회복 & 숙면 에너지 팩</div>
+          <p style="font-size: 14px; color: #4C4E52; margin-bottom: 16px;">고순도 활성 비타민B군 + 옥타코사놀 + 테아닌 1:1 맞춤 배합</p>
+          <button class="btn-hero-primary" style="padding: 12px 28px; font-size: 14px; background: #183D33; color: #FAF6EB;" onclick="location.href='#usecases'">이 구성으로 35% 할인 구독하기</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 15 DIFFERENT PRODUCTS COLLECTION & CIRCLE DETAIL BUTTON -->
+  <section id="usecases" class="section-usecases">
+    <div class="container">
+      <div style="text-align: center;">
+        <h2 class="section-title">A:FIT 15대 라이프스타일 맞춤 웰니스 컬렉션</h2>
+        <p class="section-desc" style="margin: 0 auto;">도심 속 다양한 일상 고민에 정확히 대응하는 15가지 전용 포뮬러를 만나보세요.</p>
+      </div>
+
+      <!-- 카테고리 필터 탭 -->
+      <ul class="usecase-tabs">
+        <li><button class="tab-btn active" onclick="filterProducts(this, 'all')">전체 컬렉션 (15)</button></li>
+        <li><button class="tab-btn" onclick="filterProducts(this, 'energy')">직장인 활력·피로 (4)</button></li>
+        <li><button class="tab-btn" onclick="filterProducts(this, 'mind')">집중·숙면·멘탈 (4)</button></li>
+        <li><button class="tab-btn" onclick="filterProducts(this, 'body')">소화·이너뷰티·대사 (4)</button></li>
+        <li><button class="tab-btn" onclick="filterProducts(this, 'vip')">프리미엄 올인원 (3)</button></li>
+      </ul>
+
+      <!-- 15개 서로 다른 상품 그리드 -->
+      <div class="product-grid" id="productGrid">
+        <!-- 15개의 각기 다른 고유 상품 카드가 JS를 통해 렌더링됩니다 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 5: Final Call to Action -->
+  <section class="section-final-cta">
+    <div class="container">
+      <div class="final-cta-box">
+        <h2 class="final-cta-title">오늘, 당신만의 맞춤 웰니스를<br>시작하세요.</h2>
+        <p class="final-cta-desc">
+          첫 1:1 맞춤 진단 고객 전원에게 한정판 에디토리얼 보틀과 첫 달 35% 할인 혜택을 즉시 제공합니다.
+        </p>
+        <button class="btn-hero-primary" style="background: #FAF6EB; color: #183D33;" onclick="location.href='#diagnosis'">
+          1:1 맞춤 진단받기
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer (간격 24px 압축 & 2줄 설명글 & 와이드 레이아웃) -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <!-- Brand Wordmark & 2-Line Intro (Left) -->
+        <div class="footer-brand-col">
+          <div class="logo-wordmark" style="margin-bottom: 16px; color: #FAF6EB;">
+            A:FIT
+          </div>
+          <p>
+            모든 솔루션을 하나로 모아,<br>
+            내 몸에 딱 맞는 1:1 맞춤 웰니스 루틴을 설계합니다.
+          </p>
+        </div>
+
+        <!-- Right-Aligned Compact 24px Navigation Group (Right) -->
+        <div class="footer-nav-group">
+          <div class="footer-col">
+            <h5>서비스 메뉴</h5>
+            <ul>
+              <li><a href="#about">브랜드 소개</a></li>
+              <li><a href="#diagnosis">1:1 맞춤 진단</a></li>
+              <li><a href="#usecases">루틴 컬렉션</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>비즈니스 & 제휴</h5>
+            <ul>
+              <li><a href="#">B2B 임직원 복지 플랜</a></li>
+              <li><a href="#">대량 구매 견적서</a></li>
+              <li><a href="#">전문가 파트너십</a></li>
+              <li><a href="#">연구 데이터 센터</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h5>고객 지원</h5>
+            <ul>
+              <li><a href="#">1:1 실시간 상담톡</a></li>
+              <li><a href="#">정기배송 관리 / 일시정지</a></li>
+              <li><a href="#">자주 묻는 질문 (FAQ)</a></li>
+              <li><a href="#">이용약관 및 개인정보처리방침</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 A:FIT Inc. All rights reserved.</span>
+        <span>본 사이트는 UI/UX 가상 클라이언트 표준 설계 규격에 맞춰 제작되었습니다.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Product Detail Modal Popup -->
+  <div class="product-modal-backdrop" id="productModal" onclick="if(event.target===this) closeProductModal();">
+    <div class="product-modal-box">
+      <button class="btn-modal-close" onclick="closeProductModal()" aria-label="닫기">✕</button>
+      <span class="modal-tag" id="modalTag">추천 상품</span>
+      <h3 class="modal-title" id="modalTitle">상품명</h3>
+      <div class="modal-rating" id="modalRating">평점 4.98 (2,480)</div>
+      
+      <div class="modal-specs-box">
+        <div class="modal-spec-row">
+          <span class="modal-spec-lbl">주요 핵심 원료</span>
+          <span class="modal-spec-val" id="modalIngredients">고순도 활성 비타민B군 + 밀크씨슬 130mg</span>
+        </div>
+        <div class="modal-spec-row">
+          <span class="modal-spec-lbl">권장 대상</span>
+          <span class="modal-spec-val" id="modalTarget">만성 피로 및 야근이 잦은 도심 직장인</span>
+        </div>
+        <div class="modal-spec-row">
+          <span class="modal-spec-lbl">섭취 방법</span>
+          <span class="modal-spec-val">하루 1회 1포, 식후 30분 미온수와 함께 섭취</span>
+        </div>
+        <div class="modal-spec-row">
+          <span class="modal-spec-lbl">임상 흡수율 검증</span>
+          <span class="modal-spec-val" style="color: #76A58C;">체내 생체 이용률 92.4% 입증</span>
+        </div>
+      </div>
+
+      <div class="modal-price-box">
+        <div>
+          <span style="font-size: 13px; color: #7A7D84; text-decoration: line-through;" id="modalOrigPrice">₩59,000</span>
+          <div class="modal-final-price" id="modalPrice">₩39,000 <small style="font-size: 14px; font-weight: 400; color: #7A7D84;">/월</small></div>
+        </div>
+        <span style="font-size: 14px; font-weight: 800; color: #EF4444;" id="modalDiscount">35% 정기구독 혜택</span>
+      </div>
+
+      <button class="btn-prod-subscribe" style="width: 100%; padding: 15px; font-size: 15px;" onclick="closeProductModal(); location.href='#diagnosis';">
+        이 포뮬러로 1:1 맞춤 정기구독 시작하기
+      </button>
+    </div>
+  </div>
+
+  <!-- Interactive JavaScript Logic -->
+  <script>
+    // 1. Interactive Cost & Time Scale Calculator
+    const costSlider = document.getElementById('costSlider');
+    const timeSlider = document.getElementById('timeSlider');
+    const costLabel = document.getElementById('costLabel');
+    const timeLabel = document.getElementById('timeLabel');
+    const savedMoneyDisplay = document.getElementById('savedMoneyDisplay');
+    const savedTimeDisplay = document.getElementById('savedTimeDisplay');
+
+    function updateCalculator() {
+      const cost = parseInt(costSlider.value);
+      const time = parseInt(timeSlider.value);
+
+      costLabel.innerText = '₩' + cost.toLocaleString();
+      timeLabel.innerText = time + '분';
+
+      const monthlySaved = Math.round(cost * 0.35);
+      const yearlySaved = monthlySaved * 12;
+      const yearlyHoursSaved = Math.round((time * 30 * 12) / 60 * 0.8);
+
+      savedMoneyDisplay.innerText = '₩' + yearlySaved.toLocaleString();
+      savedTimeDisplay.innerText = `연간 약 ${yearlyHoursSaved}시간의 의사결정 시간 절약`;
+    }
+
+    costSlider.addEventListener('input', updateCalculator);
+    timeSlider.addEventListener('input', updateCalculator);
+    updateCalculator();
+
+    // 2. Quiz Option Selection Logic
+    function selectQuizOption(element, packTitle) {
+      document.querySelectorAll('.quiz-option-card').forEach(card => card.classList.remove('selected'));
+      element.classList.add('selected');
+
+      const resultBox = document.getElementById('quizResultBox');
+      const resultTitle = document.getElementById('quizResultTitle');
+      resultTitle.innerText = packTitle;
+      resultBox.style.display = 'block';
+    }
+
+    // 3. 15 DISTINCT PRODUCTS DATA & DETAIL MODAL LOGIC
+    const allProducts = [
+      { id: 1, cat: 'energy', tag: 'BEST 1위', rating: '★ 4.98 (3,420)', title: '어반 에너제틱 데일리 팩', desc: '만성 피로 직장인을 위한 고함량 활성 비타민B군 8종 + 밀크씨슬 + 유기농 마그네슘 올인원.', price: '₩39,000', orig: '₩60,000', disc: '35% OFF', ingr: '활성비타민B 컴플렉스 500% + 실리마린 130mg', target: '만성 피로와 잦은 야근으로 에너지가 고갈된 직장인' },
+      { id: 2, cat: 'mind', tag: '집중 몰입', rating: '★ 4.95 (2,180)', title: '딥 포커스 & 루테인 지아잔틴', desc: '장시간 모니터 업무 전문직을 위한 아스타잔틴 눈 피로 개선 + L-테아닌 뇌파 안정 브레인 믹스.', price: '₩42,000', orig: '₩60,000', disc: '30% OFF', ingr: '루테인지아잔틴 20mg + 아스타잔틴 6mg + 테아닌 200mg', target: '모니터 화면을 오래 보고 뇌 피로가 누적된 분' },
+      { id: 3, cat: 'mind', tag: '숙면 리셋', rating: '★ 4.99 (1,640)', title: '나이트 리셋 & 마그네슘 릴렉스', desc: '깊은 수면과 긴장 완화를 돕는 킬레이트 마그네슘 + 락티움 + 감태 추출물 나이트 포뮬러.', price: '₩38,000', orig: '₩58,000', disc: '35% OFF', ingr: '글리시네이트 마그네슘 300mg + 락티움 150mg', target: '불면과 뒤척임으로 아침 개운함을 잃어버린 분' },
+      { id: 4, cat: 'energy', tag: '간 건강 1위', rating: '★ 4.96 (1,920)', title: '디톡스 간 활력 & 밀크씨슬 300', desc: '잦은 회식과 불규칙한 식사로 지친 간 세포 보호 및 해독 대사를 촉진하는 고순도 실리마린 배합.', price: '₩36,000', orig: '₩55,000', disc: '35% OFF', ingr: '밀크씨슬 300mg + UDCA 성분 + 아티초크 추출물', target: '음주 후 숙취와 피로가 오래 지속되는 분' },
+      { id: 5, cat: 'body', tag: '속편한 위장', rating: '★ 4.94 (1,450)', title: '속편한 소화 & 린 밸런스 팩', desc: '배달 음식과 카페인으로 자극받은 위 점막을 보호하고 더부룩함을 없애주는 식물성 복합 소화 효소.', price: '₩35,000', orig: '₩50,000', disc: '30% OFF', ingr: '스페인감초추출물 + 브로멜라인 효소 + 양배추농축분말', target: '식후 소화불량, 속쓰림, 가스 차는 증상이 잦은 분' },
+      { id: 6, cat: 'body', tag: '혈행·눈 건강', rating: '★ 4.97 (2,890)', title: '퓨어 혈행 & 초임계 rTG 오메가3', desc: '순도 80% 저온 초임계 추출로 어취를 최소화한 깨끗한 rTG 오메가3로 혈관 탄력과 혈행 개선.', price: '₩45,000', orig: '₩65,000', disc: '30% OFF', ingr: '초임계 rTG 오메가3 EPA+DHA 1,000mg', target: '혈액순환이 안 되고 육류 및 배달 섭취가 많은 분' },
+      { id: 7, cat: 'energy', tag: '면역 방어', rating: '★ 4.98 (1,770)', title: '이뮨 쉴드 & 아연 비타민D 5000', desc: '실내 생활이 많은 도심인을 위한 햇빛 비타민D3 5,000IU + 생체 흡수율 글루콘산 아연 고농축.', price: '₩32,000', orig: '₩48,000', disc: '33% OFF', ingr: '비타민D3 5,000IU + 활성 아연 15mg + 셀레늄', target: '야외 활동이 적고 잔병치레와 면역 저하를 겪는 분' },
+      { id: 8, cat: 'body', tag: '장 건강 밸런스', rating: '★ 4.96 (1,580)', title: '100억 신바이오틱스 & 유산균', desc: '위산과 담즙산에 파괴되지 않는 4중 특허 코팅 100억 CFU 생존 유산균 + 프리바이오틱스 복합제.', price: '₩37,000', orig: '₩54,000', disc: '31% OFF', ingr: '보장균수 100억 CFU + 포스트바이오틱스 배양물', target: '배변 활동이 불규칙하고 잦은 복부 팽만감을 겪는 분' },
+      { id: 9, cat: 'mind', tag: '스트레스 케어', rating: '★ 4.93 (1,120)', title: '안티스트레스 & 코티솔 컨트롤', desc: '업무 압박과 긴장으로 상승한 코티솔 수치를 안정시키는 홍경천 추출물 + 비타민C 고용량 케어.', price: '₩39,000', orig: '₩56,000', disc: '30% OFF', ingr: '홍경천추출물 로사빈 5mg + 판토텐산 + 비타민C', target: '과도한 업무 스트레스와 신경 예민함을 겪는 분' },
+      { id: 10, cat: 'body', tag: '피부 톤업', rating: '★ 4.95 (1,340)', title: '글루타치온 & 저분자 콜라겐 팩', desc: '순도 50% 효모 글루타치온 250mg과 300달톤 초저분자 피쉬콜라겐이 도심 속 맑은 생기를 충전.', price: '₩44,000', orig: '₩68,000', disc: '35% OFF', ingr: '환원형 글루타치온 250mg + 어린콜라겐 1,500mg', target: '자외선과 피로로 칙칙해진 피부 안색을 개선하고 싶은 분' },
+      { id: 11, cat: 'mind', tag: '두뇌 몰입', rating: '★ 4.97 (980)', title: '브레인 부스터 & 징코 메모리', desc: '시험과 중요한 프로젝트를 앞둔 전문직을 위한 은행잎 추출물 플라보놀 배당체 + 포스파티딜세린.', price: '₩41,000', orig: '₩62,000', disc: '34% OFF', ingr: '은행잎추출물 120mg + 포스파티딜세린 100mg', target: '기억력 감퇴를 느끼고 고도의 두뇌 집중이 필요한 분' },
+      { id: 12, cat: 'energy', tag: '관절·목 케어', rating: '★ 4.96 (1,210)', title: '옵티MSM & 조인트 플렉스', desc: '모니터 타이핑과 스마트폰으로 뻐근한 목, 손목, 무릎 관절을 부드럽게 지켜주는 순수 순도 99.9% MSM.', price: '₩36,000', orig: '₩52,000', disc: '30% OFF', ingr: '미국 Bergstrom OptiMSM 1,500mg + 보스웰리아', target: '손목터널증후군 및 거북목 등 관절 뻐근함을 느끼는 분' },
+      { id: 13, cat: 'body', tag: '체지방 컷팅', rating: '★ 4.92 (1,670)', title: '린 바디 밸런스 & 카테킨 핏', desc: '식후 혈당 상승 억제 바나바잎 + 순수 녹차 카테킨 성분으로 기름진 식사 후 체지방 축적을 방어.', price: '₩38,000', orig: '₩58,000', disc: '35% OFF', ingr: '카테킨 300mg + 코로솔산 바나바잎 + 비오틴', target: '탄수화물 및 배달 식단 후 체형 관리가 필요한 분' },
+      { id: 14, cat: 'vip', tag: '올인원 기초', rating: '★ 4.99 (2,050)', title: '오피스 에센셜 멀티비타민 24종', desc: '한국인 영양 섭취 기준에 맞춘 비타민 13종 + 미네랄 11종 정밀 배합 필수 기본 에너지팩.', price: '₩34,000', orig: '₩50,000', disc: '32% OFF', ingr: '비타민A·C·E·K + 비타민B군 + 엽산·셀레늄 등 24종', target: '식사를 불규칙하게 챙겨 영양 불균형이 걱정되는 분' },
+      { id: 15, cat: 'vip', tag: '시그니처 VIP', rating: '★ 5.00 (1,150)', title: 'A:FIT 마스터 웰니스 풀패키지', desc: '피로회복, 혈행개선, 면역, 숙면까지 1:1 맞춤형 4대 복합 포뮬러와 각인 오브제 보틀을 풀패키지로 제공.', price: '₩89,000', orig: '₩140,000', disc: '36% OFF', ingr: 'A:FIT 4대 핵심 포뮬러 30포 + 커스텀 네임 각인 보틀', target: '나를 위한 최고의 프리미엄 올인원 케어를 원하는 분' }
+    ];
+
+    function renderProducts(items) {
+      const grid = document.getElementById('productGrid');
+      grid.innerHTML = items.map(p => `
+        <div class="product-card">
+          <div class="prod-badge-row">
+            <span class="prod-tag">${p.tag}</span>
+            <span class="prod-score-label">${p.rating}</span>
+          </div>
+          <h3 class="prod-title">${p.title}</h3>
+          <p class="prod-desc">${p.desc}</p>
+          <div class="prod-price-row">
+            <span class="prod-price">${p.price} <small style="font-size: 13px; color: #7A7D84; font-weight: 400;">/월</small></span>
+            <span class="prod-discount">${p.disc}</span>
+          </div>
+          <!-- 정기구독 버튼(길게) + 동그라미(Circle) 상세보기 아이콘 버튼 -->
+          <div class="prod-btn-group">
+            <button class="btn-prod-subscribe" onclick="location.href='#diagnosis'">정기구독 시작하기</button>
+            <button class="btn-prod-detail-circle" onclick="openProductDetail(${p.id})" title="상세보기" aria-label="상세보기">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="5" x2="12" y2="19"></line>
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+              </svg>
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterProducts(btn, category) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      if (category === 'all') {
+        renderProducts(allProducts);
+      } else {
+        const filtered = allProducts.filter(p => p.cat === category);
+        renderProducts(filtered);
+      }
+    }
+
+    // Modal Control Functions
+    function openProductDetail(id) {
+      const p = allProducts.find(item => item.id === id);
+      if (!p) return;
+
+      document.getElementById('modalTag').innerText = p.tag;
+      document.getElementById('modalTitle').innerText = p.title;
+      document.getElementById('modalRating').innerText = p.rating;
+      document.getElementById('modalIngredients').innerText = p.ingr;
+      document.getElementById('modalTarget').innerText = p.target;
+      document.getElementById('modalOrigPrice').innerText = p.orig;
+      document.getElementById('modalPrice').innerHTML = `${p.price} <small style="font-size: 14px; font-weight: 400; color: #7A7D84;">/월</small>`;
+      document.getElementById('modalDiscount').innerText = `${p.disc} 정기구독 혜택`;
+
+      document.getElementById('productModal').classList.add('active');
+    }
+
+    function closeProductModal() {
+      document.getElementById('productModal').classList.remove('active');
+    }
+
+    // Initial Render of all 15 products
+    renderProducts(allProducts);
+
+    // 4. Global Viewport Mouse-Tracking Interactive Ambient Spotlight Logic
+    const globalSpotlight = document.getElementById('globalSpotlight');
+
+    if (globalSpotlight) {
+      window.addEventListener('mousemove', (e) => {
+        globalSpotlight.style.left = `${e.clientX}px`;
+        globalSpotlight.style.top = `${e.clientY}px`;
+      });
+    }
+  </script>
+</body>
+</html>
