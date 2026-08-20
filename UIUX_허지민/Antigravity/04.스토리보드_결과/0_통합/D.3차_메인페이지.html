@@ -9,36 +9,37 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* =========================================================
-       A:FIT Master D2C Design System (Moodboard High-End Urban Wellness)
+       A:FIT Muted Deep Sage Design System (웹디자인 최종 테마)
+       Canvas BG: #33453D (Muted Deep Sage)
+       Card BG: #FAF6EB (Cream White)
        Primary: #183D33 (Deep Forest Emerald)
-       Accent: #529074 (Vital Sage Mint)
-       Background: #FAF8F5 (Clean Cashmere Ivory)
-       Card/Surface: #FFFFFF (Clean Pure White)
-       Border: rgba(24, 61, 51, 0.09)
+       Accent: #76A58C (Vital Sage Mint)
        ========================================================= */
     :root {
       --primary: #183D33;
       --primary-rgb: 24, 61, 51;
       --primary-light: #244C41;
-      --accent: #529074;
-      --accent-dark: #386B54;
+      --accent: #76A58C;
+      --accent-dark: #529074;
       --accent-deep: #183D33;
-      --accent-soft: rgba(82, 144, 116, 0.1);
-      --bg: #FAF8F5;
-      --bg-subtle: #F2EFEB;
-      --card: #FFFFFF;
-      --card-muted: #F6F4EE;
-      --border: rgba(24, 61, 51, 0.09);
-      --border-strong: rgba(24, 61, 51, 0.18);
-      --border-accent: rgba(82, 144, 116, 0.35);
+      --accent-soft: rgba(118, 165, 140, 0.15);
+      --bg: #33453D;                  /* Main Canvas: Muted Deep Sage */
+      --bg-subtle: #27362F;           /* Sub Canvas / Section Contrast */
+      --card: #FAF6EB;                /* Card Surface: Cream White */
+      --card-muted: #F0EAD6;
+      --border: rgba(250, 246, 235, 0.22);
+      --border-strong: rgba(250, 246, 235, 0.35);
+      --border-accent: rgba(118, 165, 140, 0.45);
       --text: #183D33;
-      --text-body: #2D3A35;
-      --text-muted: #64756E;
-      --text-light: #94A39D;
-      --shadow-subtle: 0 1px 3px rgba(24, 61, 51, 0.02), 0 4px 12px rgba(24, 61, 51, 0.03);
-      --shadow-card: 0 10px 30px -5px rgba(24, 61, 51, 0.06), 0 0 1px 1px rgba(24, 61, 51, 0.04);
-      --shadow-hover: 0 20px 40px -10px rgba(24, 61, 51, 0.12), 0 0 1px 1px rgba(82, 144, 116, 0.35);
-      --shadow-glow: 0 0 35px rgba(82, 144, 116, 0.22);
+      --text-body: #2D473E;
+      --text-muted: #57534E;
+      --text-light: #8A9099;
+      --text-canvas-title: #FAF6EB;
+      --text-canvas-lead: rgba(250, 246, 235, 0.85);
+      --shadow-subtle: 0 4px 14px rgba(0, 0, 0, 0.15);
+      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.20), 0 0 1px 1px rgba(250, 246, 235, 0.08);
+      --shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.35), 0 0 1px 1px rgba(118, 165, 140, 0.5);
+      --shadow-glow: 0 0 40px rgba(118, 165, 140, 0.3);
       --radius-xl: 28px;
       --radius: 20px;
       --radius-sm: 12px;
@@ -57,6 +58,32 @@
       -moz-osx-font-smoothing: grayscale;
       word-break: keep-all;
       overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Full-Viewport Global Interactive Ambient Spotlight (Gaussian Fog Glow) */
+    .global-ambient-spotlight {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 620px;
+      height: 620px;
+      border-radius: 50%;
+      background: radial-gradient(
+        circle,
+        rgba(250, 246, 235, 0.26) 0%,
+        rgba(210, 235, 220, 0.14) 22%,
+        rgba(164, 209, 184, 0.06) 48%,
+        rgba(118, 165, 140, 0.015) 72%,
+        transparent 100%
+      );
+      filter: blur(65px);
+      pointer-events: none;
+      transform: translate(-50%, -50%);
+      transition: left 0.14s cubic-bezier(0.1, 0.8, 0.2, 1), top 0.14s cubic-bezier(0.1, 0.8, 0.2, 1);
+      z-index: 50;
+      mix-blend-mode: screen;
+      will-change: left, top;
     }
 
     button, input, select, textarea { font: inherit; }
@@ -66,63 +93,67 @@
     .wrap-wide {
       width: min(1360px, calc(100% - 64px));
       margin: auto;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Floating Glass Header */
+    /* Floating Glass Header (슬림 60px & 우측 정렬 레이아웃) */
     .top-full {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(250, 248, 245, 0.88);
+      background: rgba(51, 69, 61, 0.92);
       border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
       width: 100%;
-      padding: 0 48px;
+      padding: 0 40px;
       transition: var(--transition);
     }
     nav.nav-wide {
-      min-height: 74px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      min-height: 60px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       width: 100%;
-      gap: 32px;
     }
     .brand-group {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
-      color: var(--primary);
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      transition: var(--transition);
     }
     .brand-group strong {
-      font-size: 2.35rem;
+      font-size: 1.95rem;
       font-weight: 900;
-      letter-spacing: -0.06em;
-      color: var(--primary);
+      letter-spacing: -0.05em;
+      color: #76A58C;
       line-height: 1;
+      transition: var(--transition);
     }
-    .brand-badge {
-      font-size: 0.60rem;
-      font-weight: 500;
-      background: transparent;
-      color: #7E9088;
-      padding: 2px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(24, 61, 51, 0.12);
-      letter-spacing: -0.01em;
+    .brand-group:hover strong {
+      color: #FAF6EB;
+      transform: translateY(-1px);
     }
 
+    /* 우측 내비게이션 + CTA 버튼 그룹 */
+    .header-right-nav-group {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
     .links-wide {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 26px;
+      gap: 24px;
     }
     .links-wide a {
       text-decoration: none;
-      color: var(--text-muted);
+      color: #FAF6EB;
+      opacity: 0.85;
       font-weight: 600;
       font-size: 0.91rem;
       transition: var(--transition);
@@ -130,11 +161,13 @@
       padding: 6px 0;
     }
     .links-wide a:hover {
-      color: var(--primary);
+      color: #FFFFFF;
+      opacity: 1;
     }
     .links-wide a.active {
-      color: var(--primary);
+      color: #FFFFFF;
       font-weight: 700;
+      opacity: 1;
     }
     .links-wide a::after {
       content: '';
@@ -143,7 +176,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--primary);
+      background: #FAF6EB;
       border-radius: 2px;
       transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
@@ -172,24 +205,24 @@
       font-weight: 700;
     }
     .btn.primary {
-      background: var(--primary);
-      color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(24, 61, 51, 0.15);
+      background: var(--card);
+      color: var(--primary);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
     }
     .btn.primary:hover {
-      background: var(--primary-light);
+      background: #FFFFFF;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(12, 15, 18, 0.18);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
     }
     .btn.secondary {
-      background: #FFFFFF;
-      color: var(--primary);
-      border: 1px solid var(--border-strong);
+      background: rgba(250, 246, 235, 0.12);
+      color: #FAF6EB;
+      border: 1px solid rgba(250, 246, 235, 0.3);
       box-shadow: var(--shadow-subtle);
     }
     .btn.secondary:hover {
-      background: var(--bg-subtle);
-      border-color: var(--primary);
+      background: rgba(250, 246, 235, 0.25);
+      border-color: #FAF6EB;
       transform: translateY(-2px);
     }
     .btn.accent {
@@ -211,15 +244,15 @@
       font-weight: 700;
       font-size: 0.95rem;
       text-decoration: none;
-      background: #FFFFFF;
+      background: var(--card);
       color: var(--primary);
       border: 1px solid var(--border-strong);
       box-shadow: var(--shadow-subtle);
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-brand-story:hover {
-      background: var(--primary);
-      color: #FFFFFF;
+      background: #FFFFFF;
+      color: var(--primary);
       border-color: var(--primary);
       transform: translateY(-2px);
       box-shadow: var(--shadow-card);
@@ -233,11 +266,11 @@
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--accent-dark);
-      background: var(--accent-soft);
+      color: #FAF6EB;
+      background: rgba(250, 246, 235, 0.12);
       padding: 6px 14px;
       border-radius: 999px;
-      border: 1px solid var(--border-accent);
+      border: 1px solid rgba(250, 246, 235, 0.25);
       width: fit-content;
     }
     .tag-dot {
@@ -252,7 +285,7 @@
     h1 {
       font-size: clamp(1.95rem, 2.7vw, 2.55rem);
       line-height: 1.28;
-      color: var(--primary);
+      color: var(--text-canvas-title, #FAF6EB);
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 16px 0 18px;
@@ -260,7 +293,7 @@
     h2 {
       font-size: clamp(1.55rem, 2.2vw, 1.95rem);
       line-height: 1.28;
-      color: var(--primary);
+      color: var(--text-canvas-title, #FAF6EB);
       font-weight: 800;
       letter-spacing: -0.025em;
       margin-bottom: 12px;
@@ -268,7 +301,7 @@
     .lead {
       font-size: 0.90rem;
       line-height: 1.65;
-      color: var(--text-muted);
+      color: var(--text-canvas-lead, rgba(250, 246, 235, 0.85));
       max-width: 560px;
       font-weight: 400;
     }
@@ -1327,25 +1360,28 @@
 </head>
 <body>
 
+  <!-- Full-Viewport Global Interactive Ambient Spotlight (Gaussian Fog Glow) -->
+  <div class="global-ambient-spotlight" id="globalSpotlight"></div>
+
   <!-- Full-Width Floating GNB (Unified Across All Pages) -->
   <header class="top-full">
     <nav class="nav-wide">
-      <a href="메인페이지_스토리보드.html" class="brand-group">
+      <a href="D.3차_메인페이지.html" class="brand-group">
         <strong>A:FIT</strong>
-        <span class="brand-badge">1:1 맞춤 바이오 웰니스</span>
       </a>
-      <div class="links-wide">
-        <a href="메인페이지_스토리보드.html" class="active">메인 홈</a>
-        <a href="브랜드소개_스토리보드.html">브랜드 소개</a>
-        <a href="카테고리_스토리보드.html">15종 컬렉션</a>
-        <a href="#curation">AI 맞춤진단</a>
-        <a href="#calculator">가성비 계산기</a>
-        <a href="#reviews">구독 후기 & FAQ</a>
+      <div class="header-right-nav-group">
+        <div class="links-wide">
+          <a href="3차_브랜드소개.html">브랜드 소개</a>
+          <a href="3차_카테고리.html">15종 컬렉션</a>
+          <a href="#curation">AI 맞춤진단</a>
+          <a href="#calculator">가성비 계산기</a>
+          <a href="#reviews">구독 후기 & FAQ</a>
+        </div>
+        <button class="btn primary btn-gnb" onclick="openCheckoutModal('플래그십 올인원팩')">
+          <span>맞춤 구독 시작하기</span>
+          <span>→</span>
+        </button>
       </div>
-      <button class="btn primary btn-gnb" onclick="openCheckoutModal('플래그십 올인원팩')">
-        <span>맞춤 구독 시작하기</span>
-        <span>→</span>
-      </button>
     </nav>
   </header>
 
@@ -1467,7 +1503,7 @@
             </div>
 
             <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
-              <a href="브랜드소개_스토리보드.html" class="btn secondary" style="padding: 13px 24px; text-decoration: none;">
+              <a href="3차_브랜드소개.html" class="btn secondary" style="padding: 13px 24px; text-decoration: none;">
                 브랜드 창업 스토리 & 디자인 가이드 전체보기 →
               </a>
             </div>
@@ -1608,7 +1644,7 @@
 
         <!-- Brand Story Link Banner -->
         <div style="text-align: center; margin-top: 36px;">
-          <a href="브랜드소개_스토리보드.html" class="btn-brand-story">
+          <a href="3차_브랜드소개.html" class="btn-brand-story">
             <span>A:FIT 브랜드 철학 & 과학 원칙 더 알아보기</span>
             <span style="font-weight: 900;">→</span>
           </a>
@@ -3631,6 +3667,15 @@
     function copyColor(hex, name) {
       navigator.clipboard.writeText(hex).then(() => {
         alert(`[컬러 코드 복사 완료]\n\n${name} (${hex}) 코드가 클립보드에 복사되었습니다.`);
+      });
+    }
+
+    // 6. Global Interactive Ambient Spotlight Follower
+    const spotlight = document.getElementById('globalSpotlight');
+    if (spotlight) {
+      window.addEventListener('mousemove', (e) => {
+        spotlight.style.left = e.clientX + 'px';
+        spotlight.style.top = e.clientY + 'px';
       });
     }
   </script>
