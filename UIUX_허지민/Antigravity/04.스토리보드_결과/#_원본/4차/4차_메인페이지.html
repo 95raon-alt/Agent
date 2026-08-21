@@ -268,12 +268,16 @@
     .btn.primary {
       background: var(--card);
       color: var(--primary);
+      border: 1px solid transparent;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn.primary:hover {
-      background: #FFFFFF;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      background: var(--primary);
+      color: var(--card);
+      border-color: rgba(250, 246, 235, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 20px rgba(118, 165, 140, 0.25);
     }
     .btn-gnb.primary:hover,
     .btn-gnb:hover {
@@ -288,12 +292,14 @@
       color: #FAF6EB;
       border: 1px solid rgba(250, 246, 235, 0.3);
       box-shadow: var(--shadow-subtle);
+      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn.secondary:hover {
-      background: rgba(250, 246, 235, 0.25);
-      border-color: #FAF6EB;
-      color: #FAF6EB;
-      transform: translateY(-2px);
+      background: var(--accent);
+      color: var(--primary);
+      border-color: rgba(250, 246, 235, 0.45);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 18px rgba(118, 165, 140, 0.35);
     }
     .card .btn.secondary,
     .diag-quiz-container .btn.secondary,
@@ -439,7 +445,7 @@
       background: #FFFFFF;
       border: 1px solid rgba(24, 61, 51, 0.12);
       border-radius: var(--radius-sm);
-      padding: 11px 12px 11px 14px;
+      padding: 15px 12px 25px 14px;
       flex: 1;
       min-width: 0;
       box-shadow: var(--shadow-subtle);
@@ -454,14 +460,25 @@
       box-shadow: var(--shadow-card);
     }
     .metric-pill-item strong {
-      font-size: 0.92rem;
+      font-size: 1.02rem;
       color: var(--primary);
       display: block;
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.2;
-      margin-bottom: 3px;
+      margin-bottom: 15px;
     }
+    .metric-num {
+      font-size: 0.88rem;
+      font-weight: 800;
+      margin-right: 4px;
+      display: inline-block;
+      opacity: 0.85;
+      font-variant-numeric: tabular-nums;
+    }
+    .metric-pill-item:nth-child(1) .metric-num { color: #183D33; }
+    .metric-pill-item:nth-child(2) .metric-num { color: #76A58C; }
+    .metric-pill-item:nth-child(3) .metric-num { color: #503323; }
     .metric-pill-item span {
       font-size: 0.58rem;
       color: var(--text-muted);
@@ -904,107 +921,98 @@
       height: 100%;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(240,246,242,0.85) 100%);
+      background: linear-gradient(180deg, 
+        rgba(250, 246, 235, 0.72) 0%, 
+        rgba(118, 165, 140, 0.30) 35%, 
+        rgba(105, 65, 45, 0.62) 65%, 
+        rgba(80, 51, 35, 0.90) 100%
+      );
+      backdrop-filter: blur(6px);
+      box-shadow: inset 0 2px 10px rgba(250, 246, 235, 0.8), 
+                  inset 2px 0 10px rgba(80, 51, 35, 0.45), 
+                  inset 0 -6px 14px rgba(80, 51, 35, 0.50);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding-bottom: 12px;
+      padding-bottom: 14px;
       border-right: none;
+    }
+    .bottle-shoulder-logo {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.54rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      color: rgba(24, 61, 51, 0.72);
+      text-shadow: 0 1px 2px rgba(250, 246, 235, 0.8);
+      pointer-events: none;
+      z-index: 5;
+      white-space: nowrap !important;
     }
     .bottle-right-half {
       width: 50%;
       height: 100%;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, #182B24 0%, #101E19 100%);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 60%, rgba(82, 144, 116, 0.08) 100%);
+      backdrop-filter: blur(4px);
+      box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.6), inset -2px 0 6px rgba(255, 255, 255, 0.35);
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding-bottom: 12px;
     }
 
-    /* Left Real Liquid */
-    .liquid-container-half {
+    /* Wide Center-Spanning Custom Label */
+    .bottle-engrave-label-wide {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 88px;
+      z-index: 10;
+      background: #FFFFFF;
+      padding: 4px 6px;
+      border-radius: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22), 0 0 8px rgba(255, 255, 255, 0.8);
+      border: 1px solid rgba(24, 61, 51, 0.28);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      white-space: nowrap !important;
+      box-sizing: border-box;
+    }
+
+    /* Right Real Cutaway Liquid Layer (Crystal Hydrating Water) */
+    .cutaway-liquid-container {
       position: absolute;
       bottom: 0;
       left: -20%;
       width: 140%;
       height: 72%;
-      overflow: hidden;
-      border-radius: 0 0 0 22px;
-      z-index: 1;
-      animation: gentleSlosh 3.2s ease-in-out infinite alternate;
-    }
-    .liquid-fill-half {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(180deg, rgba(82, 144, 116, 0.85) 0%, rgba(24, 61, 51, 0.98) 100%);
-    }
-
-    /* Left Real Label */
-    .bottle-engrave-label-half {
-      position: relative;
-      z-index: 4;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 4px 6px;
-      border-radius: 4px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      margin-left: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      white-space: nowrap;
-      text-align: center;
-    }
-
-    /* Right Real Cutaway Liquid Layer */
-    .cutaway-liquid-container {
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 72%;
-      overflow: hidden;
       border-radius: 0 0 22px 0;
       z-index: 1;
-      background: linear-gradient(180deg, rgba(118, 165, 140, 0.75) 0%, rgba(35, 88, 70, 0.95) 45%, rgba(18, 48, 40, 0.98) 100%);
-      border-right: 5px solid rgba(118, 165, 140, 0.35);
-      animation: gentleSlosh 3.2s ease-in-out infinite alternate-reverse;
+      background: linear-gradient(180deg, rgba(118, 165, 140, 0.78) 0%, rgba(42, 98, 80, 0.90) 45%, rgba(24, 61, 51, 0.98) 100%);
+      box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.4), inset 0 -4px 10px rgba(0, 0, 0, 0.25);
+      animation: realWaterSlosh 3.6s ease-in-out infinite alternate;
     }
-    .cutaway-bio-particles {
+    .cutaway-liquid-container::before {
+      content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: radial-gradient(circle, rgba(250, 246, 235, 0.6) 1px, transparent 1px);
-      background-size: 8px 8px;
-      opacity: 0.45;
+      top: -5px;
+      left: 5%;
+      width: 90%;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(118, 165, 140, 0.5) 100%);
+      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.9);
+      z-index: 2;
       pointer-events: none;
-    }
-    .cutaway-active-indicator {
-      position: relative;
-      z-index: 4;
-      background: rgba(24, 61, 51, 0.92);
-      border: 1px solid #76A58C;
-      padding: 4px 6px;
-      border-radius: 0 4px 4px 0;
-      margin-right: 4px;
-      text-align: right;
-    }
-    .cutaway-active-indicator strong {
-      font-size: 0.52rem;
-      color: #FAF6EB;
-      display: block;
-      font-weight: 900;
-      letter-spacing: -0.02em;
-    }
-    .cutaway-active-indicator span {
-      font-size: 0.42rem;
-      color: #76A58C;
-      display: block;
-      font-weight: 700;
     }
 
     .glass-sheen {
@@ -1019,10 +1027,16 @@
       z-index: 3;
     }
 
-    @keyframes gentleSlosh {
-      0% { transform: rotate(-2deg) translateY(0px); }
-      50% { transform: rotate(0deg) translateY(1px); }
-      100% { transform: rotate(2deg) translateY(-0.5px); }
+    @keyframes realWaterSlosh {
+      0% {
+        transform: translateY(0px) rotate(-1.5deg) scaleY(1);
+      }
+      50% {
+        transform: translateY(-4px) rotate(1.2deg) scaleY(1.02);
+      }
+      100% {
+        transform: translateY(0px) rotate(-1.5deg) scaleY(1);
+      }
     }
 
     /* Cards & Grids */
@@ -1776,24 +1790,24 @@
 
           <div class="metrics-pill-group" style="margin: auto 0; padding: 8px 0;">
             <div class="metric-pill-item">
-              <strong>듀얼 제형</strong>
+              <strong><span class="metric-num">01</span> 듀얼 제형</strong>
               <span>상단 정제 + 하단 액상 결합</span>
             </div>
             <div class="metric-pill-item">
-              <strong>10초 루틴</strong>
+              <strong><span class="metric-num">02</span> 10초 루틴</strong>
               <span>물 없이 원핸드 즉시 섭취</span>
             </div>
             <div class="metric-pill-item">
-              <strong>1:1 라벨</strong>
+              <strong><span class="metric-num">03</span> 1:1 라벨</strong>
               <span>7대 라이프스타일 처방</span>
             </div>
           </div>
 
-          <div style="display: flex; gap: 14px; flex-wrap: wrap;">
-            <button class="btn primary" style="padding: 16px 36px; font-size: 1.02rem;" onclick="openCheckoutModal('A:FIT 시그니처 듀얼 팩')">
-              내 맞춤 루틴 시작하기 →
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <button class="btn primary" style="padding: 13px 26px; font-size: 0.92rem;" onclick="openCheckoutModal('A:FIT 시그니처 듀얼 팩')">
+              내 맞춤 루틴 찾아보기 →
             </button>
-            <a href="#curation" class="btn secondary" style="padding: 16px 28px; font-size: 1.02rem;">
+            <a href="#curation" class="btn secondary" style="padding: 13px 22px; font-size: 0.92rem;">
               라이프스타일 추천 진단 ↓
             </a>
           </div>
@@ -1802,15 +1816,9 @@
         <!-- Minimal 3D Desk Object Preview -->
         <div class="hero-visual-card">
           <div class="bottle-canvas-box" style="margin-top: 14px;">
-            
             <!-- Cap Split -->
             <div class="cap-3d-split">
-              <div class="cap-left-half">
-                <div class="cap-pills-left">
-                  <div class="pill-dot-sm"></div>
-                  <div class="pill-dot-sm" style="background: #00D287;"></div>
-                </div>
-              </div>
+              <div class="cap-left-half"></div>
               <div class="cap-right-half">
                 <div class="cutaway-pill-section">
                   <div class="cutaway-pill-core"></div>
@@ -1823,22 +1831,14 @@
             <div class="bottle-body-split">
               <div class="bottle-left-half">
                 <div class="glass-sheen"></div>
-                <div class="liquid-container-half">
-                  <div class="liquid-fill-half"></div>
-                </div>
-                <div class="bottle-engrave-label-half">
-                  <div style="font-size: 0.50rem; color: var(--accent-dark); font-weight: 800; white-space: nowrap;">1:1 맞춤</div>
-                  <div style="font-size: 0.68rem; color: var(--primary); font-weight: 900; white-space: nowrap; letter-spacing: -0.02em;" id="heroLabelTitle">박지안 님</div>
-                </div>
+                <div class="bottle-shoulder-logo">A:FIT</div>
               </div>
               <div class="bottle-right-half">
-                <div class="cutaway-liquid-container">
-                  <div class="cutaway-bio-particles"></div>
-                </div>
-                <div class="cutaway-active-indicator">
-                  <strong>리포좀 액상</strong>
-                  <span>92.4% 흡수층</span>
-                </div>
+                <div class="cutaway-liquid-container"></div>
+              </div>
+              <div class="bottle-engrave-label-wide">
+                <div style="font-size: 0.46rem; color: #183D33; font-weight: 800; text-align: center; width: 100%; white-space: nowrap !important; line-height: 1.15; letter-spacing: 0.02em;">1:1 맞춤 포뮬러</div>
+                <div style="font-size: 0.68rem; color: #183D33; font-weight: 900; text-align: center; width: 100%; letter-spacing: -0.03em; white-space: nowrap !important; line-height: 1.15;" id="heroLabelTitle">박지안 님</div>
               </div>
             </div>
           </div>
