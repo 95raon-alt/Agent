@@ -1485,63 +1485,6 @@
     </div>
   </div>
 
-  <!-- A:FIT 고객만족센터 (CS) Modal -->
-  <div id="csModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="csModalTitle" onclick="if(event.target===this) closeCsModal()">
-    <div class="modal-dialog">
-      <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeCsModal()" aria-label="닫기">×</button>
-      
-      <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 12px;">
-        <span class="tag" style="background: #111827; color: #FFFFFF; font-weight: 800;"><span class="tag-dot"></span> CS 1:1 LIVE CARE</span>
-      </div>
-      <h2 id="csModalTitle" style="font-size: 1.42rem; font-weight: 900; color: var(--primary); margin: 0 0 10px; line-height: 1.35;">
-        A:FIT 고객만족센터 & 1:1 상담
-      </h2>
-      <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 22px;">
-        맞춤 제형 상담, 배송 일정 변경, 섭취 가이드 등 전문 영양 코디네이터가 1:1로 신속히 답변해 드립니다.
-      </p>
-
-      <!-- 2 Major Inquiry Options -->
-      <div style="display: grid; gap: 12px; margin-bottom: 22px;">
-        <!-- Option 1: KakaoTalk Live Chat -->
-        <div style="border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; background: #FFFFFF;">
-          <div>
-            <div style="font-weight: 800; font-size: 0.95rem; color: var(--primary); margin-bottom: 2px;">💬 카카오톡 1:1 실시간 상담</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">평균 응답시간 1분 이내 · 365일 24시간 접수</div>
-          </div>
-          <button type="button" class="btn primary" style="padding: 8px 16px; font-size: 0.82rem; border-radius: 8px;" onclick="connectKakaoChat()">
-            채팅 시작 →
-          </button>
-        </div>
-
-        <!-- Option 2: Hotline Direct Call -->
-        <div style="border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 16px 18px; display: flex; align-items: center; justify-content: space-between; background: #FFFFFF;">
-          <div>
-            <div style="font-weight: 800; font-size: 0.95rem; color: var(--primary); margin-bottom: 2px;">📞 대표번호 유선 상담 (1588-4920)</div>
-            <div style="font-size: 0.78rem; color: var(--text-muted);">평일 09:00 ~ 18:00 (점심시간 12:30 ~ 13:30)</div>
-          </div>
-          <button type="button" class="btn secondary" style="padding: 8px 14px; font-size: 0.82rem; border-radius: 8px;" onclick="copyCsPhone('1588-4920')">
-            번호 복사
-          </button>
-        </div>
-      </div>
-
-      <!-- Assurance Guarantee -->
-      <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.80rem; color: var(--primary); line-height: 1.6;">
-        <strong style="display: block; margin-bottom: 2px; color: var(--primary);">🛡️ A:FIT 100% 안심 배송 & 교환 보증제</strong>
-        • 배송 중 파손 또는 캡/액상 불량 발생 시 <strong>100% 무료 맞춤 재배송</strong><br>
-        • 수령 후 7일 이내 미개봉 상품에 대해 1:1 무상 반품 지원
-      </div>
-
-      <div style="display: flex; gap: 10px;">
-        <button class="btn secondary" style="flex: 1; justify-content: center; font-size: 0.90rem;" onclick="closeCsModal(); window.location.href='메인페이지.html#reviews';">
-          자주 묻는 질문(FAQ) 확인
-        </button>
-        <button class="btn primary" style="padding: 12px 24px; font-size: 0.90rem;" onclick="closeCsModal()">
-          닫기
-        </button>
-      </div>
-    </div>
-  </div>
 
   <!-- CAT-140: Checkout Modal -->
   <div id="checkoutModal" class="modal-overlay" onclick="if(event.target===this) closeCheckoutModal()">
@@ -1895,22 +1838,9 @@
       }
     }
 
-    /* CS Modal Controller */
+    /* 1:1 CS Consultation Handler */
     function openCsModal() {
-      const modal = document.getElementById('csModal');
-      if (modal) modal.classList.add('active');
-    }
-    function closeCsModal() {
-      const modal = document.getElementById('csModal');
-      if (modal) modal.classList.remove('active');
-    }
-    function connectKakaoChat() {
-      alert('💬 [A:FIT 카카오톡 1:1 고객만족센터 연결]\n\n카카오톡 1:1 채팅 상담 창으로 안전하게 이동합니다.\n(상담원 연결 대기시간: 약 1분 이내)');
-    }
-    function copyCsPhone(phone) {
-      navigator.clipboard.writeText(phone).then(() => {
-        alert(`📞 고객센터 전화번호(${phone})가 클립보드에 복사되었습니다.\n(운영시간: 평일 09:00 ~ 18:00)`);
-      });
+      alert('💬 [A:FIT 1:1 고객만족센터 상담 연결]\n\n카카오톡 1:1 실시간 채팅 상담 및 대표번호(1588-4920) 채널로 연결됩니다.\n(운영시간: 평일 09:00 ~ 18:00 / 주말·공휴일 휴무)');
     }
   </script>
 </body>
