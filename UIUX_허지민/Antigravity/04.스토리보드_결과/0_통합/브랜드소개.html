@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -10,40 +10,40 @@
   <style>
     /* =========================================================
        A:FIT Master D2C Design System (Matching Main Landing Page v3.0)
-       Primary: #183D33 (Deep Forest Emerald)
-       Accent: #529074 (Vital Sage Mint)
-       Background: #FAF8F5 (Clean Cashmere Ivory)
-       Card/Surface: #FFFFFF (Clean Pure White)
-       Border: rgba(24, 61, 51, 0.09)
+       Primary: #111827 (Wireframe Dark Charcoal Black)
+       Accent: #6B7280 (Wireframe Mid Gray)
+       Background: #FFFFFF (Main Canvas: Pure White Wireframe)
+       Card/Surface: #FFFFFF (Pure White)
+       Border: #E5E7EB (Wireframe Border Line)
        ========================================================= */
     :root {
-      --primary: #183D33;
-      --primary-rgb: 24, 61, 51;
-      --primary-light: #244C41;
-      --accent: #529074;
-      --accent-dark: #386B54;
-      --accent-deep: #183D33;
-      --accent-soft: rgba(82, 144, 116, 0.1);
-      --bg: #FAF8F5;
-      --bg-subtle: #F2EFEB;
-      --card: #FFFFFF;
-      --card-muted: #F6F4EE;
-      --border: rgba(24, 61, 51, 0.09);
-      --border-strong: rgba(24, 61, 51, 0.18);
-      --border-accent: rgba(82, 144, 116, 0.35);
-      --text: #183D33;
-      --text-body: #2D3A35;
-      --text-muted: #64756E;
-      --text-light: #94A39D;
-      --shadow-subtle: 0 1px 3px rgba(24, 61, 51, 0.02), 0 4px 12px rgba(24, 61, 51, 0.03);
-      --shadow-card: 0 10px 30px -5px rgba(24, 61, 51, 0.06), 0 0 1px 1px rgba(24, 61, 51, 0.04);
-      --shadow-hover: 0 20px 40px -10px rgba(24, 61, 51, 0.12), 0 0 1px 1px rgba(82, 144, 116, 0.35);
-      --shadow-glow: 0 0 35px rgba(82, 144, 116, 0.22);
-      --radius-xl: 28px;
-      --radius: 20px;
-      --radius-sm: 12px;
-      --radius-xs: 8px;
-      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --primary: #111827;             /* Wireframe Dark Charcoal Black */
+      --primary-rgb: 17, 24, 39;
+      --primary-light: #374151;
+      --accent: #6B7280;              /* Wireframe Mid Gray */
+      --accent-dark: #4B5563;
+      --accent-deep: #111827;
+      --accent-soft: rgba(107, 114, 128, 0.10);
+      --bg: #FFFFFF;                  /* Main Canvas: Pure White Wireframe */
+      --bg-subtle: #F8F9FA;           /* Sub Canvas: Light Wireframe Gray */
+      --card: #FFFFFF;                /* Card Surface: Pure White */
+      --card-muted: #F3F4F6;
+      --border: #E5E7EB;              /* Wireframe Border Line */
+      --border-strong: #D1D5DB;
+      --border-accent: #9CA3AF;
+      --text: #111827;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 1px #E5E7EB;
+      --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.10), 0 0 0 1px #9CA3AF;
+      --shadow-glow: none;
+      --radius-xl: 20px;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --radius-xs: 4px;
+      --transition: all 0.25s ease;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -68,72 +68,67 @@
       margin: auto;
     }
 
-    /* Floating Glass Header */
+    /* Floating Wireframe Header (슬림 60px & 화이트 와이어프레임 GNB) */
     .top-full {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(250, 248, 245, 0.88);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
       width: 100%;
-      padding: 0 48px;
+      padding: 0 40px;
       transition: var(--transition);
     }
     nav.nav-wide {
-      min-height: 74px;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
+      min-height: 60px;
+      display: flex;
+      justify-content: space-between;
       align-items: center;
       width: 100%;
-      gap: 32px;
     }
     .brand-group {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 10px;
       text-decoration: none;
-      color: var(--primary);
+      background: none;
+      padding: 0;
+      box-shadow: none;
+      transition: var(--transition);
     }
     .brand-group strong {
-      font-size: 2.35rem;
+      font-size: 1.95rem;
       font-weight: 900;
-      letter-spacing: -0.06em;
-      color: var(--primary);
+      letter-spacing: -0.05em;
+      color: #111827;
       line-height: 1;
-    }
-    .brand-badge {
-      font-size: 0.60rem;
-      font-weight: 500;
-      background: transparent;
-      color: #7E9088;
-      padding: 2px 7px;
-      border-radius: 999px;
-      border: 1px solid rgba(24, 61, 51, 0.12);
-      letter-spacing: -0.01em;
+      transition: var(--transition);
     }
 
+    /* 우측 내비게이션 + CTA 버튼 그룹 */
+    .header-right-nav-group {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
     .links-wide {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 26px;
+      gap: 22px;
     }
     .links-wide a {
       text-decoration: none;
-      color: var(--text-muted);
+      color: #4B5563;
       font-weight: 600;
-      font-size: 0.91rem;
+      font-size: 0.82rem;
       transition: var(--transition);
       position: relative;
       padding: 6px 0;
     }
     .links-wide a:hover {
-      color: var(--primary);
+      color: #111827;
     }
     .links-wide a.active {
-      color: var(--primary);
+      color: #111827;
       font-weight: 700;
     }
     .links-wide a::after {
@@ -143,13 +138,74 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--primary);
+      background: #111827;
       border-radius: 2px;
-      transition: width 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: width 0.3s ease;
     }
-    .links-wide a.active::after,
-    .links-wide a:hover::after {
+    .links-wide a:hover::after,
+    .links-wide a.active::after {
       width: 100%;
+    }
+
+    /* GNB 우측 액션 그룹 (검색, 상담사, 구독버튼 간격 15px) */
+    .gnb-actions-wrap {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    /* GNB 인라인 검색창 및 상담사 아이콘 */
+    .gnb-search-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 2px;
+      border-bottom: 1.5px solid #D1D5DB;
+      transition: border-color 0.3s ease;
+    }
+    .gnb-search-wrap:focus-within {
+      border-bottom-color: #111827;
+    }
+    .gnb-search-wrap .gnb-icon {
+      color: #111827;
+      opacity: 0.75;
+      flex-shrink: 0;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+    .gnb-search-wrap:hover .gnb-icon {
+      opacity: 1;
+      color: #111827;
+    }
+    .gnb-search-input {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #111827;
+      font-size: 0.82rem;
+      font-family: inherit;
+      width: 90px;
+      transition: width 0.3s ease;
+    }
+    .gnb-search-input:focus {
+      width: 125px;
+    }
+    .gnb-consult-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: #111827;
+      opacity: 0.80;
+      cursor: pointer;
+      padding: 4px;
+      transition: var(--transition);
+    }
+    .gnb-consult-btn:hover {
+      opacity: 1;
+      color: #111827;
+      transform: translateY(-1px);
     }
 
     /* Buttons & Badges */
@@ -171,16 +227,28 @@
       padding: 9px 18px;
       font-size: 0.84rem;
       font-weight: 700;
+      background: #111827 !important;
+      color: #FFFFFF !important;
+      border: 1px solid #111827 !important;
+    }
+    .btn-gnb:hover {
+      background: #374151 !important;
+      color: #FFFFFF !important;
+      border-color: #374151 !important;
+      transform: translateY(-1px);
     }
     .btn.primary {
-      background: var(--primary);
+      background: #111827;
       color: #FFFFFF;
-      box-shadow: 0 4px 14px rgba(24, 61, 51, 0.15);
+      border: 1px solid #111827;
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition);
     }
     .btn.primary:hover {
-      background: var(--primary-light);
+      background: #374151;
+      color: #FFFFFF;
+      border-color: #374151;
       transform: translateY(-2px);
-      box-shadow: 0 8px 24px rgba(12, 15, 18, 0.18);
     }
     .btn.secondary {
       background: #FFFFFF;
@@ -199,12 +267,12 @@
       align-items: center;
       gap: 6px;
       padding: 6px 14px;
-      background: rgba(82, 144, 116, 0.08);
-      border: 1px solid rgba(82, 144, 116, 0.22);
+      background: #F3F4F6;
+      border: 1px solid #E5E7EB;
       border-radius: 999px;
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--accent-dark);
+      color: #111827;
       letter-spacing: 0.04em;
       text-transform: uppercase;
     }
@@ -212,7 +280,7 @@
       width: 6px;
       height: 6px;
       border-radius: 50%;
-      background: var(--accent);
+      background: #111827;
     }
 
     /* Section Utilities */
@@ -254,20 +322,21 @@
       display: flex;
       gap: 16px;
       align-items: center;
-      box-shadow: var(--shadow-subtle);
+      box-shadow: none;
       transition: var(--transition);
       cursor: pointer;
     }
     .compact-color-card:hover {
       transform: translateY(-2px);
       box-shadow: var(--shadow-card);
-      border-color: var(--accent);
+      border-color: #111827;
     }
     .compact-color-chip {
       width: 50px;
       height: 50px;
       border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      border: 1px solid #E5E7EB;
+      box-shadow: none;
       flex-shrink: 0;
     }
     .compact-color-right {
@@ -288,7 +357,7 @@
       font-family: monospace;
       font-size: 0.78rem;
       font-weight: 700;
-      color: var(--accent-dark);
+      color: #6B7280;
       letter-spacing: -0.01em;
     }
     .compact-color-desc {
@@ -310,12 +379,12 @@
 
     /* Naming Identity Formula (BRD-100 Top) */
     .naming-formula-box {
-      background: linear-gradient(135deg, rgba(24, 61, 51, 0.04) 0%, rgba(82, 144, 116, 0.08) 100%);
-      border: 1.5px solid rgba(82, 144, 116, 0.25);
+      background: #F9FAFB;
+      border: 1.5px solid #E5E7EB;
       border-radius: var(--radius-md);
       padding: 36px 40px;
       margin-bottom: 56px;
-      box-shadow: var(--shadow-subtle);
+      box-shadow: none;
     }
     .naming-formula-grid {
       display: grid;
@@ -328,27 +397,27 @@
       border: 1px solid var(--border);
       border-radius: var(--radius-sm);
       padding: 22px 24px;
-      box-shadow: var(--shadow-subtle);
+      box-shadow: none;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
     .naming-formula-card:hover {
       transform: translateY(-3px);
-      border-color: var(--accent);
+      border-color: #111827;
     }
     .naming-formula-card.highlight {
-      background: var(--primary);
-      border-color: var(--primary);
+      background: #111827;
+      border-color: #111827;
       color: #FFFFFF;
-      box-shadow: 0 10px 24px rgba(24, 61, 51, 0.22);
+      box-shadow: none;
     }
     .naming-formula-card.highlight:hover {
       transform: translateY(-3px);
-      border-color: var(--accent);
+      border-color: #111827;
     }
     .naming-symbol {
       font-size: 2rem;
       font-weight: 900;
-      color: var(--accent);
+      color: #111827;
       text-align: center;
     }
     @media (max-width: 960px) {
@@ -424,7 +493,7 @@
       height: 280px;
       margin: 20px auto;
       position: relative;
-      filter: drop-shadow(0 20px 30px rgba(24, 61, 51, 0.18));
+      filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.12));
       transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .bottle-3d:hover {
@@ -434,17 +503,17 @@
       width: 80px;
       height: 60px;
       margin: 0 auto;
-      background: linear-gradient(135deg, #2D4A41, #183D33);
+      background: #F9FAFB;
       border-radius: 12px 12px 6px 6px;
-      border: 2px solid rgba(255,255,255,0.2);
+      border: 1.5px solid #111827;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
+      color: #111827;
       font-size: 0.65rem;
       font-weight: 800;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      box-shadow: none;
     }
     .bottle-pill-preview {
       display: flex;
@@ -455,34 +524,36 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #529074;
+      background: #E5E7EB;
+      border: 1px solid #6B7280;
     }
-    .pill-dot.gold { background: #E6B870; }
+    .pill-dot.gold { background: #D1D5DB; }
     .bottle-body {
       width: 100px;
       height: 180px;
       margin: -4px auto 0 auto;
-      background: linear-gradient(180deg, rgba(82, 144, 116, 0.25) 0%, rgba(24, 61, 51, 0.85) 100%);
+      background: #FFFFFF;
       border-radius: 8px 8px 24px 24px;
-      border: 2px solid rgba(82, 144, 116, 0.4);
+      border: 1.5px solid #111827;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      color: #FFFFFF;
+      color: #111827;
       padding: 10px;
-      backdrop-filter: blur(4px);
+      box-shadow: none;
     }
     .bottle-label {
-      background: rgba(255,255,255,0.95);
-      color: var(--primary);
+      background: #F9FAFB;
+      color: #111827;
       padding: 6px 10px;
       border-radius: 6px;
       font-size: 0.72rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border: 1px solid #111827;
+      box-shadow: none;
     }
 
     /* Comparison Section (BRD-110) */
@@ -504,8 +575,8 @@
       box-shadow: var(--shadow-hover);
     }
     .compare-card.positive {
-      border-color: rgba(82, 144, 116, 0.4);
-      background: linear-gradient(180deg, #FFFFFF 0%, #F5FAF7 100%);
+      border-color: #111827;
+      background: #F9FAFB;
     }
     .compare-card h3 {
       font-size: 1.45rem;
@@ -530,8 +601,8 @@
       color: var(--text-body);
       line-height: 1.5;
     }
-    .icon-cross { color: #E55353; font-weight: 900; }
-    .icon-check { color: var(--accent); font-weight: 900; }
+    .icon-cross { color: #6B7280; font-weight: 900; }
+    .icon-check { color: #111827; font-weight: 900; }
 
     .absorb-bar-wrap {
       margin-top: 30px;
@@ -540,7 +611,7 @@
     }
     .absorb-bar-bg {
       height: 14px;
-      background: rgba(24, 61, 51, 0.08);
+      background: #E5E7EB;
       border-radius: 999px;
       overflow: hidden;
       margin-top: 8px;
@@ -548,7 +619,7 @@
     .absorb-bar-fill {
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #529074, #183D33);
+      background: #111827;
       width: 92.4%;
     }
 
@@ -570,14 +641,14 @@
       position: relative;
     }
     .step-card:hover {
-      border-color: var(--accent);
+      border-color: var(--primary);
       transform: translateY(-6px);
       box-shadow: var(--shadow-card);
     }
     .step-num {
       font-size: 1.8rem;
       font-weight: 900;
-      color: var(--accent);
+      color: #111827;
       letter-spacing: -0.04em;
       margin-bottom: 12px;
     }
@@ -650,39 +721,38 @@
     }
     .cert-card:hover {
       transform: translateY(-6px);
-      border-color: rgba(82, 144, 116, 0.4);
-      box-shadow: 0 16px 36px -8px rgba(24, 61, 51, 0.12), 0 0 1px 1px rgba(82, 144, 116, 0.3);
+      border-color: #111827;
+      box-shadow: var(--shadow-hover);
     }
     .trust-seal-icon {
       width: 58px;
       height: 58px;
       margin: 0 auto 16px auto;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(82, 144, 116, 0.14) 0%, rgba(24, 61, 51, 0.05) 100%);
-      border: 1.5px solid rgba(82, 144, 116, 0.32);
+      background: #F3F4F6;
+      border: 1.5px solid #D1D5DB;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary);
-      box-shadow: 0 4px 12px rgba(82, 144, 116, 0.12);
+      color: #111827;
+      box-shadow: none;
       transition: var(--transition);
     }
     .cert-card:hover .trust-seal-icon,
     .eco-card:hover .trust-seal-icon {
-      background: linear-gradient(135deg, #183D33 0%, #244C41 100%);
+      background: #111827;
       color: #FFFFFF;
-      border-color: #183D33;
+      border-color: #111827;
       transform: scale(1.08) rotate(4deg);
-      box-shadow: 0 8px 20px rgba(24, 61, 51, 0.25);
     }
     .trust-reg-badge {
       font-size: 0.72rem;
       font-weight: 700;
-      color: var(--accent-dark);
-      background: rgba(82, 144, 116, 0.08);
+      color: #374151;
+      background: #F3F4F6;
       padding: 3px 10px;
       border-radius: 6px;
-      border: 1px solid rgba(82, 144, 116, 0.2);
+      border: 1px solid #D1D5DB;
       margin-top: auto;
     }
     .cert-card h4 {
@@ -699,14 +769,15 @@
 
     /* Master Subscription CTA Banner (BRD-150) */
     .cta-banner {
-      background: linear-gradient(135deg, #183D33 0%, #244C41 100%);
-      color: #FFFFFF;
+      background: #F9FAFB;
+      color: #111827;
       border-radius: var(--radius-xl);
+      border: 1.5px solid #111827;
       padding: 70px 48px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: var(--shadow-hover);
+      box-shadow: var(--shadow-card);
     }
     .cta-banner h2 {
       font-size: 2.8rem;
@@ -714,10 +785,11 @@
       letter-spacing: -0.04em;
       margin-bottom: 18px;
       line-height: 1.25;
+      color: #111827;
     }
     .cta-banner p {
       font-size: 1.15rem;
-      color: rgba(255,255,255,0.8);
+      color: #4B5563;
       max-width: 640px;
       margin: 0 auto 36px auto;
       line-height: 1.6;
@@ -751,6 +823,33 @@
     @keyframes modalFadeIn {
       from { opacity: 0; transform: translateY(20px) scale(0.96); }
       to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    /* Standard Modal System (CS Modal & Checkout Modal) */
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(18, 30, 25, 0.72);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      z-index: 2000;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .modal.active {
+      display: flex;
+    }
+    .modal-dialog {
+      background: #FAF6EB;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      max-width: 480px;
+      width: 100%;
+      padding: 40px;
+      position: relative;
+      box-shadow: var(--shadow-hover);
+      color: var(--text);
     }
     .modal-close-btn {
       position: absolute;
@@ -804,27 +903,38 @@
 
   <!-- Full-Width Floating GNB (Unified Across All Pages) -->
   <header class="top-full">
-    <div class="wrap-wide">
-      <nav class="nav-wide">
-        <a href="메인페이지.html" class="brand-group">
-          <strong>A:FIT</strong>
-          <span class="brand-badge">BRAND STORY</span>
-        </a>
+    <nav class="nav-wide">
+      <a href="메인페이지.html" class="brand-group" title="A:FIT 홈으로 이동" aria-label="A:FIT 홈으로 이동">
+        <strong>A:FIT</strong>
+      </a>
+      <div class="header-right-nav-group">
         <div class="links-wide">
-          <a href="메인페이지.html">메인 홈</a>
           <a href="브랜드소개.html" class="active">브랜드 소개</a>
           <a href="카테고리.html">15종 컬렉션</a>
           <a href="메인페이지.html#curation">AI 맞춤진단</a>
           <a href="메인페이지.html#calculator">가성비 계산기</a>
           <a href="메인페이지.html#reviews">구독 후기 & FAQ</a>
         </div>
-        <div>
-          <button class="btn primary btn-gnb" onclick="openCheckoutModal('브랜드 소개 플래그십 플랜')">
-            맞춤 구독 시작하기 →
+        <div class="gnb-actions-wrap">
+          <div class="gnb-search-wrap">
+            <input type="text" class="gnb-search-input" aria-label="맞춤 루틴 검색" onkeydown="handleGnbSearch(event)">
+            <svg class="gnb-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" onclick="const input = document.querySelector('.gnb-search-input'); handleGnbSearch({key:'Enter', target: input});">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+          </div>
+          <button type="button" class="gnb-consult-btn" title="A:FIT 브랜드 고객만족센터 (CS)" aria-label="A:FIT 브랜드 고객만족센터 (CS)" onclick="openCsModal()">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
+              <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+            </svg>
+          </button>
+          <button class="btn primary btn-gnb" onclick="openCheckoutModal('플래그십 올인원팩')">
+            <span>맞춤 구독 시작하기</span>
           </button>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   </header>
 
   <!-- BRD-100: Hero Brand Manifesto & Philosophy -->
@@ -833,10 +943,6 @@
 
       <div class="hero-grid" style="align-items: start; gap: 48px;">
         <div class="hero-content">
-          <span class="tag-badge">
-            <span class="tag-dot"></span>
-            ABOUT A:FIT · BRAND MANIFESTO & PHILOSOPHY
-          </span>
           <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); line-height: 1.3; margin: 16px 0;">
             우리는 왜 하루 한 병의 웰니스에 집착하는가
           </h1>
@@ -900,10 +1006,6 @@
       <!-- 🌟 A:FIT Naming Identity Formula (Below Philosophy) -->
       <div class="naming-formula-box" style="margin-top: 56px; margin-bottom: 0;">
         <div style="margin-bottom: 24px;">
-          <span class="tag-badge" style="margin-bottom: 6px;">
-            <span class="tag-dot"></span>
-            BRAND IDENTITY · NAMING PHILOSOPHY
-          </span>
           <h2 style="font-size: 1.8rem; font-weight: 900; color: var(--primary); margin: 0; letter-spacing: -0.02em;">
             A:FIT = All-in-one + FIT
           </h2>
@@ -956,10 +1058,6 @@
   <section style="background: var(--bg-subtle);">
     <div class="wrap-wide">
       <div class="section-header">
-        <span class="tag-badge">
-          <span class="tag-dot"></span>
-          BRD-110 · THE PROBLEM & OUR SOLUTION
-        </span>
         <h2>우리가 매일 영양제를 챙겨 먹지 못했던 진짜 이유</h2>
       </div>
 
@@ -973,12 +1071,12 @@
             <li><span class="icon-cross">✕</span> 공복 섭취 시 속 쓰림 및 낮은 체내 흡수율(12.3%)</li>
           </ul>
           <div class="absorb-bar-wrap">
-            <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: #E55353;">
+            <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: #4B5563;">
               <span>기존 정제형 체내 흡수율</span>
               <span>12.3%</span>
             </div>
             <div class="absorb-bar-bg">
-              <div style="height: 100%; width: 12.3%; background: #E55353; border-radius: 999px;"></div>
+              <div style="height: 100%; width: 12.3%; background: #9CA3AF; border-radius: 999px;"></div>
             </div>
           </div>
         </div>
@@ -1009,10 +1107,6 @@
   <section id="processSec">
     <div class="wrap-wide">
       <div class="section-header">
-        <span class="tag-badge">
-          <span class="tag-dot"></span>
-          BRD-120 · 5-STEP BIO PROCESS
-        </span>
         <h2>타협하지 않는 5단계 정밀 바이오 공정</h2>
         <p>1:1 정밀 AI 문진부터 최첨단 무균 질소 충진, 콜드체인 새벽 직배송까지 투명하게 공개합니다.</p>
       </div>
@@ -1051,17 +1145,13 @@
   <section style="background: var(--bg-subtle);">
     <div class="wrap-wide">
       <div class="section-header">
-        <span class="tag-badge">
-          <span class="tag-dot"></span>
-          BRD-130 · SUSTAINABLE WELLNESS
-        </span>
         <h2>지구와 사람을 함께 살리는 친환경 순환</h2>
         <p>A:FIT은 환경을 생각하는 지속 가능한 웰니스를 실천합니다.</p>
       </div>
 
       <div class="eco-grid">
         <div class="eco-card">
-          <div class="trust-seal-icon" style="width: 52px; height: 52px; margin: 0 auto 16px auto; border-radius: 50%; background: rgba(82, 144, 116, 0.08); border: 1px solid rgba(82, 144, 116, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary);">
+          <div class="trust-seal-icon" style="width: 52px; height: 52px; margin: 0 auto 16px auto; border-radius: 50%; background: #F3F4F6; border: 1px solid #D1D5DB; display: flex; align-items: center; justify-content: center; color: #111827;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/>
               <path d="M2 21c0-3 1.85-5.36 5.08-6"/>
@@ -1071,7 +1161,7 @@
           <p>옥수수 전분에서 추출한 100% 식물성 생분해 소재로 제작되어 180일 만에 자연 토양으로 환원됩니다.</p>
         </div>
         <div class="eco-card">
-          <div class="trust-seal-icon" style="width: 52px; height: 52px; margin: 0 auto 16px auto; border-radius: 50%; background: rgba(82, 144, 116, 0.08); border: 1px solid rgba(82, 144, 116, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary);">
+          <div class="trust-seal-icon" style="width: 52px; height: 52px; margin: 0 auto 16px auto; border-radius: 50%; background: #F3F4F6; border: 1px solid #D1D5DB; display: flex; align-items: center; justify-content: center; color: #111827;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
               <polyline points="3.29 7 12 12 20.71 7"/>
@@ -1082,7 +1172,7 @@
           <p>비코팅 크라프트지와 콩기름(Soy Ink) 인쇄를 적용하여 분리배출이 간편하고 재활용성이 우수합니다.</p>
         </div>
         <div class="eco-card">
-          <div class="trust-seal-icon" style="width: 52px; height: 52px; margin: 0 auto 16px auto; border-radius: 50%; background: rgba(82, 144, 116, 0.08); border: 1px solid rgba(82, 144, 116, 0.25); display: flex; align-items: center; justify-content: center; color: var(--primary);">
+          <div class="trust-seal-icon" style="width: 52px; height: 52px; margin: 0 auto 16px auto; border-radius: 50%; background: #F3F4F6; border: 1px solid #D1D5DB; display: flex; align-items: center; justify-content: center; color: #111827;">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
               <path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/>
               <path d="M21 3v5h-5"/>
@@ -1101,10 +1191,6 @@
   <section>
     <div class="wrap-wide">
       <div class="section-header">
-        <span class="tag-badge">
-          <span class="tag-dot"></span>
-          BRD-140 · TRUST & CERTIFICATES
-        </span>
         <h2>공인된 데이터와 4대 공식 인증</h2>
         <p>국가 공인 기관 및 글로벌 인증을 통해 제품의 안전성과 과학적 효능을 입증받았습니다.</p>
       </div>
@@ -1171,10 +1257,6 @@
   <section id="colors" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 80px 0;">
     <div class="wrap-wide">
       <div class="section-header" style="margin-bottom: 40px;">
-        <span class="tag-badge">
-          <span class="tag-dot"></span>
-          BRD-145 · BRAND COLOR PALETTE
-        </span>
         <h2 style="font-size: 1.65rem;">A:FIT 브랜드 시그니처 컬러</h2>
         <p style="font-size: 0.88rem; margin-top: 8px;">A:FIT의 정체성과 웰니스 무드를 완성하는 6가지 시그니처 색상입니다.</p>
       </div>
@@ -1259,6 +1341,137 @@
     </div>
   </footer>
 
+  <!-- A:FIT Customer Service (CS) Modal -->
+  <div id="csModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="csModalTitle" onclick="if(event.target===this) closeCsModal()">
+    <div class="modal-dialog" style="max-width: 520px; padding: 36px 30px;">
+      <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeCsModal()" aria-label="닫기">×</button>
+      
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 id="csModalTitle" style="font-size: 1.45rem; margin-top: 0; margin-bottom: 8px; font-weight: 800; color: var(--primary);">A:FIT 브랜드 고객만족센터</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          상품 하자, 교환/반품 접수, 배송 및 구독 문의를 신속하게 해결해 드립니다.
+        </p>
+      </div>
+
+      <!-- Channel 1: KakaoTalk 1:1 Live Chat -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+          <div>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">REAL-TIME CHAT</span>
+            <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">카카오톡 1:1 실시간 상담</strong>
+          </div>
+          <span style="font-size: 0.76rem; color: #111827; font-weight: 700; background: #F3F4F6; padding: 3px 8px; border-radius: 999px; border: 1px solid #E5E7EB;">● 상담원 대기중</span>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin: 0 0 14px 0;">
+          파손 사진 첨부, 불량 교환 접수, 실시간 배송 조회를 가장 빠르게 처리하실 수 있습니다.
+        </p>
+        <button type="button" onclick="connectKakaoChat()" style="width: 100%; background: #FEE500; color: #191919; font-weight: 800; font-size: 0.95rem; border: none; border-radius: 10px; padding: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: var(--transition);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#191919">
+            <path d="M12 3c-5.52 0-10 3.58-10 8 0 2.83 1.83 5.32 4.62 6.72-.2.75-.73 2.72-.84 3.16-.13.54.2.53.42.38.17-.11 2.37-1.61 3.33-2.27.79.11 1.62.17 2.47.17 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/>
+          </svg>
+          <span>카카오톡 1:1 상담원 연결하기</span>
+        </button>
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 8px;">
+          운영시간: 평일 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00 / 주말·공휴일 휴무)
+        </div>
+      </div>
+
+      <!-- Channel 2: Phone Hotline -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">PHONE HOTLINE</span>
+            <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">고객센터 대표 전화</strong>
+          </div>
+          <a href="tel:1588-4920" style="background: #111827; color: #FFFFFF; font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            📞 통화 연결
+          </a>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 10px; margin: 6px 0;">
+          <span style="font-size: 1.55rem; font-weight: 900; color: var(--primary); letter-spacing: -0.02em;">1588-4920</span>
+          <button type="button" onclick="copyCsPhone('1588-4920')" style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; font-size: 0.76rem; color: var(--text-muted); cursor: pointer;">번호 복사</button>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">
+          통화료는 발신자 부담이며, 통화량이 많을 때는 카카오톡 상담을 이용하시면 더 빠릅니다.
+        </div>
+      </div>
+
+      <!-- Assurance Guarantee & FAQ Quick Links -->
+      <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.80rem; color: var(--primary); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 2px; color: var(--primary);">🛡️ A:FIT 100% 품질 안심 보증제</strong>
+        • 배송 중 파손 또는 캡/액상 불량 발생 시 <strong>100% 무료 맞춤 재배송</strong><br>
+        • 미개봉 상품은 수령 후 7일 이내 1:1 무상 반품 접수 지원
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <a href="메인페이지.html#reviews" class="btn secondary" style="flex: 1; justify-content: center; font-size: 0.90rem; text-decoration: none;" onclick="closeCsModal()">
+          자주 묻는 질문(FAQ) 확인하기
+        </a>
+        <button class="btn primary" style="padding: 12px 24px; font-size: 0.90rem;" onclick="closeCsModal()">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instant Checkout Modal (3-State Workflow & A11y) -->
+  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle" onclick="if(event.target===this) closeCheckoutModal()">
+    <div class="modal-dialog">
+      <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
+      
+      <!-- State 1: Input Form -->
+      <div id="checkoutFormBox">
+        <h2 id="checkoutModalTitle" style="font-size: 1.45rem; margin-top: 0; margin-bottom: 18px; font-weight: 800; color: var(--primary);">A:FIT 1:1 맞춤 정기구독 신청</h2>
+        
+        <form onsubmit="handleOrderSubmit(event)">
+          <div style="margin-bottom: 16px;">
+            <label for="orderPlanName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">선택 제품 / 처방 플랜</label>
+            <input type="text" id="orderPlanName" value="01. 나이트 오버타임 팩" style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px; background: #F9FAFB; font-weight: 800; color: var(--primary);" readonly>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label for="orderCustName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독자 성함</label>
+            <input type="text" id="orderCustName" placeholder="예: 박지안" value="박지안" required style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;">
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label for="orderCustPhone" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">연락처 (배송 안내용)</label>
+            <input type="tel" id="orderCustPhone" placeholder="010-0000-0000" value="010-3849-2910" required style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;">
+          </div>
+          <div style="margin-bottom: 24px;">
+            <label for="orderCustAddr" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">배송지 주소</label>
+            <input type="text" id="orderCustAddr" placeholder="기본 배송 주소 입력" value="서울특별시 강남구 테헤란로 142" required style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;">
+          </div>
+          <button type="submit" class="btn primary" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 15px;">
+            월 79,800원에 1:1 맞춤 구독 시작하기 →
+          </button>
+        </form>
+      </div>
+
+      <!-- State 2: Processing Spinner -->
+      <div id="checkoutLoadingBox" style="display: none; text-align: center; padding: 40px 20px;">
+        <div style="width: 48px; height: 48px; border: 4px solid #E5E7EB; border-top-color: #111827; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px;"></div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">1:1 맞춤 처방 데이터 동기화 중...</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">질소 충진 무균 패키지와 개인 각인 라벨을 생성하고 있습니다.</p>
+      </div>
+
+      <!-- State 3: Success Confirmation -->
+      <div id="checkoutSuccessBox" style="display: none; text-align: center; padding: 20px 10px;">
+        <div style="width: 56px; height: 56px; background: #F3F4F6; color: #111827; border: 1.5px solid #D1D5DB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">✓</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">1:1 맞춤 구독 신청 완료!</h3>
+        <p style="font-size: 0.90rem; color: var(--text-body); line-height: 1.6; margin-bottom: 24px;">
+          <strong id="successCustName">박지안</strong> 님만을 위한 첫 번째 30일 루틴 팩이<br>
+          안전하게 무균 질소 충진되어 출고 준비에 들어갔습니다.
+        </p>
+        <div style="background: #F9FAFB; border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 24px; text-align: left; font-size: 0.85rem; line-height: 1.6;">
+          • 첫 배송 예정일: <strong style="color: var(--primary);">내일 오전 07:00 (새벽 배송)</strong><br>
+          • 무료 혜택: <strong>1:1 맞춤 각인 라벨 & 전용 휴대용 케이스 증정</strong>
+        </div>
+        <button class="btn primary" style="width: 100%; justify-content: center;" onclick="closeCheckoutModal()">
+          확인 완료
+        </button>
+      </div>
+    </div>
+  </div>
+
   <script>
     function copyColor(hex, name) {
       if (navigator.clipboard) {
@@ -1271,6 +1484,81 @@
         prompt('색상 코드 복사 (Ctrl+C):', hex);
       }
     }
+
+    /* GNB 인라인 검색 */
+    function handleGnbSearch(e) {
+      if (e.key === 'Enter') {
+        const query = e.target.value.trim();
+        if (query) {
+          window.location.href = `카테고리.html?search=${encodeURIComponent(query)}`;
+        }
+      }
+    }
+
+    /* CS Modal Controller */
+    function openCsModal() {
+      const modal = document.getElementById('csModal');
+      if (modal) modal.classList.add('active');
+    }
+    function closeCsModal() {
+      const modal = document.getElementById('csModal');
+      if (modal) modal.classList.remove('active');
+    }
+    function connectKakaoChat() {
+      alert('💬 [A:FIT 카카오톡 1:1 고객만족센터 연결]\n\n카카오톡 1:1 채팅 상담 창으로 안전하게 이동합니다.\n(상담원 연결 대기시간: 약 1분 이내)');
+    }
+    function copyCsPhone(phone) {
+      navigator.clipboard.writeText(phone).then(() => {
+        alert(`📞 고객센터 전화번호(${phone})가 클립보드에 복사되었습니다.`);
+      });
+    }
+
+    /* Checkout Modal Controller */
+    function openCheckoutModal(planName) {
+      const modal = document.getElementById('checkoutModal');
+      const planInput = document.getElementById('orderPlanName');
+      const formBox = document.getElementById('checkoutFormBox');
+      const loadingBox = document.getElementById('checkoutLoadingBox');
+      const successBox = document.getElementById('checkoutSuccessBox');
+      
+      if (planInput && planName) planInput.value = planName;
+      if (formBox) formBox.style.display = 'block';
+      if (loadingBox) loadingBox.style.display = 'none';
+      if (successBox) successBox.style.display = 'none';
+      if (modal) modal.classList.add('active');
+    }
+    function closeCheckoutModal() {
+      const modal = document.getElementById('checkoutModal');
+      if (modal) modal.classList.remove('active');
+    }
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const formBox = document.getElementById('checkoutFormBox');
+      const loadingBox = document.getElementById('checkoutLoadingBox');
+      const successBox = document.getElementById('checkoutSuccessBox');
+      const custNameInput = document.getElementById('orderCustName');
+      const successCustName = document.getElementById('successCustName');
+
+      if (successCustName && custNameInput) {
+        successCustName.textContent = custNameInput.value || '고객';
+      }
+
+      formBox.style.display = 'none';
+      loadingBox.style.display = 'block';
+
+      setTimeout(() => {
+        loadingBox.style.display = 'none';
+        successBox.style.display = 'block';
+      }, 1200);
+    }
+
+    /* ESC Key Support */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCsModal();
+        closeCheckoutModal();
+      }
+    });
   </script>
 </body>
 </html>

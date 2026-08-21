@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
@@ -9,42 +9,43 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,800&family=Pretendard:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     /* =========================================================
-       A:FIT Muted Deep Sage Design System (웹디자인 최종 테마)
-       Canvas BG: #33453D (Muted Deep Sage)
-       Card BG: #FAF6EB (Cream White)
-       Primary: #183D33 (Deep Forest Emerald)
-       Accent: #76A58C (Vital Sage Mint)
+       A:FIT 100% Monochromatic Wireframe Design System
+       Primary: #111827 (Wireframe Dark Charcoal Black)
+       Accent: #6B7280 (Wireframe Mid Gray)
+       Background: #FFFFFF (Pure White Canvas)
+       Card/Surface: #FFFFFF (Pure White)
+       Border: #E5E7EB (Wireframe Outline)
        ========================================================= */
     :root {
-      --primary: #183D33;
-      --primary-rgb: 24, 61, 51;
-      --primary-light: #244C41;
-      --accent: #76A58C;
-      --accent-dark: #529074;
-      --accent-deep: #183D33;
-      --accent-soft: rgba(118, 165, 140, 0.15);
-      --bg: #33453D;                  /* Main Canvas: Muted Deep Sage */
-      --bg-subtle: #27362F;           /* Sub Canvas / Section Contrast */
-      --card: #FAF6EB;                /* Card Surface: Cream White */
-      --card-muted: #F0EAD6;
-      --border: rgba(250, 246, 235, 0.22);
-      --border-strong: rgba(250, 246, 235, 0.35);
-      --border-accent: rgba(118, 165, 140, 0.45);
-      --text: #183D33;
-      --text-body: #2D473E;
-      --text-muted: #57534E;
-      --text-light: #8A9099;
-      --text-canvas-title: #FAF6EB;
-      --text-canvas-lead: rgba(250, 246, 235, 0.85);
-      --shadow-subtle: 0 4px 14px rgba(0, 0, 0, 0.15);
-      --shadow-card: 0 4px 20px -2px rgba(0, 0, 0, 0.20), 0 0 1px 1px rgba(250, 246, 235, 0.08);
-      --shadow-hover: 0 12px 32px -4px rgba(0, 0, 0, 0.35), 0 0 1px 1px rgba(118, 165, 140, 0.5);
-      --shadow-glow: 0 0 40px rgba(118, 165, 140, 0.3);
-      --radius-xl: 28px;
-      --radius: 20px;
-      --radius-sm: 12px;
-      --radius-xs: 8px;
-      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      --primary: #111827;             /* Wireframe Dark Charcoal Black */
+      --primary-rgb: 17, 24, 39;
+      --primary-light: #374151;
+      --accent: #6B7280;              /* Wireframe Mid Gray */
+      --accent-dark: #4B5563;
+      --accent-deep: #111827;
+      --accent-soft: rgba(107, 114, 128, 0.10);
+      --bg: #FFFFFF;                  /* Main Canvas: Pure White Wireframe */
+      --bg-subtle: #F8F9FA;           /* Sub Canvas: Light Wireframe Gray */
+      --card: #FFFFFF;                /* Card Surface: Pure White */
+      --card-muted: #F3F4F6;
+      --border: #E5E7EB;              /* Wireframe Border Line */
+      --border-strong: #D1D5DB;
+      --border-accent: #9CA3AF;
+      --text: #111827;
+      --text-body: #374151;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --text-canvas-title: #111827;
+      --text-canvas-lead: #4B5563;
+      --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.05);
+      --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 1px #E5E7EB;
+      --shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.10), 0 0 0 1px #9CA3AF;
+      --shadow-glow: none;
+      --radius-xl: 20px;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --radius-xs: 4px;
+      --transition: all 0.25s ease;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -61,31 +62,6 @@
       position: relative;
     }
 
-    /* Full-Viewport Global Interactive Ambient Spotlight (Gaussian Fog Glow) */
-    .global-ambient-spotlight {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 620px;
-      height: 620px;
-      border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(250, 246, 235, 0.26) 0%,
-        rgba(210, 235, 220, 0.14) 22%,
-        rgba(164, 209, 184, 0.06) 48%,
-        rgba(118, 165, 140, 0.015) 72%,
-        transparent 100%
-      );
-      filter: blur(65px);
-      pointer-events: none;
-      transform: translate(-50%, -50%);
-      transition: left 0.14s cubic-bezier(0.1, 0.8, 0.2, 1), top 0.14s cubic-bezier(0.1, 0.8, 0.2, 1);
-      z-index: 50;
-      mix-blend-mode: screen;
-      will-change: left, top;
-    }
-
     button, input, select, textarea { font: inherit; }
     button { cursor: pointer; }
 
@@ -99,15 +75,13 @@
       z-index: 1;
     }
 
-    /* Floating Glass Header (슬림 60px & 우측 정렬 레이아웃) */
+    /* Floating Wireframe Header (슬림 60px & 화이트 와이어프레임 GNB) */
     .top-full {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(51, 69, 61, 0.92);
-      border-bottom: 1px solid var(--border);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
+      background: #FFFFFF;
+      border-bottom: 1px solid #E5E7EB;
       width: 100%;
       padding: 0 40px;
       transition: var(--transition);
@@ -132,7 +106,7 @@
       font-size: 1.95rem;
       font-weight: 900;
       letter-spacing: -0.05em;
-      color: #529074;
+      color: #111827;
       line-height: 1;
       transition: var(--transition);
     }
@@ -150,8 +124,7 @@
     }
     .links-wide a {
       text-decoration: none;
-      color: #FAF6EB;
-      opacity: 0.85;
+      color: #4B5563;
       font-weight: 600;
       font-size: 0.82rem;
       transition: var(--transition);
@@ -159,13 +132,11 @@
       padding: 6px 0;
     }
     .links-wide a:hover {
-      color: #FFFFFF;
-      opacity: 1;
+      color: #111827;
     }
     .links-wide a.active {
-      color: #FFFFFF;
+      color: #111827;
       font-weight: 700;
-      opacity: 1;
     }
     .links-wide a::after {
       content: '';
@@ -174,11 +145,12 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: #FAF6EB;
+      background: #111827;
       border-radius: 2px;
-      transition: width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: width 0.3s ease;
     }
-    .links-wide a:hover::after {
+    .links-wide a:hover::after,
+    .links-wide a.active::after {
       width: 100%;
     }
 
@@ -195,28 +167,28 @@
       align-items: center;
       gap: 6px;
       padding: 4px 2px;
-      border-bottom: 1.5px solid rgba(250, 246, 235, 0.45);
+      border-bottom: 1.5px solid #D1D5DB;
       transition: border-color 0.3s ease;
     }
     .gnb-search-wrap:focus-within {
-      border-bottom-color: #FAF6EB;
+      border-bottom-color: #111827;
     }
     .gnb-search-wrap .gnb-icon {
-      color: #FAF6EB;
-      opacity: 0.85;
+      color: #111827;
+      opacity: 0.75;
       flex-shrink: 0;
       cursor: pointer;
       transition: var(--transition);
     }
     .gnb-search-wrap:hover .gnb-icon {
       opacity: 1;
-      color: #FFFFFF;
+      color: #111827;
     }
     .gnb-search-input {
       background: transparent;
       border: none;
       outline: none;
-      color: #FAF6EB;
+      color: #111827;
       font-size: 0.82rem;
       font-family: inherit;
       width: 90px;
@@ -231,19 +203,19 @@
       justify-content: center;
       background: transparent;
       border: none;
-      color: #FAF6EB;
-      opacity: 0.85;
+      color: #111827;
+      opacity: 0.80;
       cursor: pointer;
       padding: 4px;
       transition: var(--transition);
     }
     .gnb-consult-btn:hover {
       opacity: 1;
-      color: #FFFFFF;
+      color: #111827;
       transform: translateY(-1px);
     }
 
-    /* Refined Luxury Buttons & Badges */
+    /* Buttons & Badges */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -259,47 +231,44 @@
       white-space: nowrap;
     }
     .btn-gnb {
-      padding: 6px 18px;
+      padding: 9px 18px;
       font-size: 0.84rem;
       font-weight: 700;
-      border: 1px solid transparent;
-      transition: var(--transition);
+      background: #111827 !important;
+      color: #FFFFFF !important;
+      border: 1px solid #111827 !important;
     }
-    .btn.primary {
-      background: var(--card);
-      color: var(--primary);
-      border: 1px solid transparent;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .btn.primary:hover {
-      background: var(--primary);
-      color: var(--card);
-      border-color: rgba(250, 246, 235, 0.45);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4), 0 0 20px rgba(118, 165, 140, 0.25);
-    }
-    .btn-gnb.primary:hover,
     .btn-gnb:hover {
-      background: var(--primary);
-      color: #FAF6EB;
-      border-color: rgba(250, 246, 235, 0.35);
-      box-shadow: none;
+      background: #374151 !important;
+      color: #FFFFFF !important;
+      border-color: #374151 !important;
       transform: translateY(-1px);
     }
-    .btn.secondary {
-      background: rgba(250, 246, 235, 0.12);
-      color: #FAF6EB;
-      border: 1px solid rgba(250, 246, 235, 0.3);
+    .btn.primary {
+      background: #111827;
+      color: #FFFFFF;
+      border: 1px solid #111827;
       box-shadow: var(--shadow-subtle);
-      transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: var(--transition);
+    }
+    .btn.primary:hover {
+      background: #374151;
+      color: #FFFFFF;
+      border-color: #374151;
+      transform: translateY(-2px);
+    }
+    .btn.secondary {
+      background: #FFFFFF;
+      color: #111827;
+      border: 1.5px solid #D1D5DB;
+      box-shadow: var(--shadow-subtle);
+      transition: var(--transition);
     }
     .btn.secondary:hover {
-      background: var(--accent);
-      color: var(--primary);
-      border-color: rgba(250, 246, 235, 0.45);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25), 0 0 18px rgba(118, 165, 140, 0.35);
+      background: #F3F4F6;
+      border-color: #111827;
+      color: #111827;
+      transform: translateY(-2px);
     }
     .card .btn.secondary,
     .diag-quiz-container .btn.secondary,
@@ -309,8 +278,8 @@
     .modal-box .btn.secondary,
     .modal .btn.secondary {
       background: #FFFFFF;
-      color: var(--primary);
-      border: 1.5px solid rgba(24, 61, 51, 0.2);
+      color: #111827;
+      border: 1.5px solid #D1D5DB;
     }
     .card .btn.secondary:hover,
     .diag-quiz-container .btn.secondary:hover,
@@ -319,21 +288,21 @@
     .modal-dialog .btn.secondary:hover,
     .modal-box .btn.secondary:hover,
     .modal .btn.secondary:hover {
-      background: #F4EFE6;
-      border-color: var(--primary);
-      color: var(--primary);
+      background: #F3F4F6;
+      border-color: #111827;
+      color: #111827;
       transform: translateY(-2px);
-      box-shadow: var(--shadow-subtle);
+      box-shadow: none;
     }
     .btn.accent {
-      background: var(--accent-deep);
+      background: #111827;
       color: #FFFFFF;
-      border: 1px solid rgba(0, 210, 135, 0.3);
+      border: 1px solid #111827;
     }
     .btn.accent:hover {
-      background: var(--primary);
+      background: #374151;
       transform: translateY(-2px);
-      box-shadow: var(--shadow-glow);
+      box-shadow: none;
     }
     .btn-brand-story {
       display: inline-flex;
@@ -347,7 +316,7 @@
       background: var(--card);
       color: var(--primary);
       border: 1px solid var(--border-strong);
-      box-shadow: var(--shadow-subtle);
+      box-shadow: none;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .btn-brand-story:hover {
@@ -355,7 +324,7 @@
       color: var(--primary);
       border-color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-card);
+      box-shadow: none;
     }
 
     .tag {
@@ -366,26 +335,25 @@
       font-weight: 800;
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: #FAF6EB;
-      background: rgba(250, 246, 235, 0.12);
+      color: #111827;
+      background: #F3F4F6;
       padding: 6px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(250, 246, 235, 0.25);
+      border: 1px solid #E5E7EB;
       width: fit-content;
     }
     .tag-dot {
       width: 6px;
       height: 6px;
-      background: var(--accent);
+      background: #111827;
       border-radius: 50%;
-      box-shadow: 0 0 6px var(--accent);
     }
 
     /* Editorial Typography */
     h1 {
       font-size: clamp(1.95rem, 2.7vw, 2.55rem);
       line-height: 1.28;
-      color: var(--text-canvas-title, #FAF6EB);
+      color: #111827;
       font-weight: 800;
       letter-spacing: -0.03em;
       margin: 16px 0 18px;
@@ -393,7 +361,7 @@
     h2 {
       font-size: clamp(1.55rem, 2.2vw, 1.95rem);
       line-height: 1.28;
-      color: var(--text-canvas-title, #FAF6EB);
+      color: #111827;
       font-weight: 800;
       letter-spacing: -0.025em;
       margin-bottom: 12px;
@@ -401,7 +369,7 @@
     .lead {
       font-size: 0.90rem;
       line-height: 1.65;
-      color: var(--text-canvas-lead, rgba(250, 246, 235, 0.85));
+      color: var(--text-body);
       max-width: 560px;
       font-weight: 400;
     }
@@ -426,7 +394,7 @@
       align-items: center;
     }
 
-    /* 1. Hero Section Grid (웹디자인 최종본 100% 동일 사양) */
+    /* 1. Hero Section Grid */
     .hero-wide-grid {
       display: grid;
       grid-template-columns: 1.18fr 0.82fr;
@@ -443,25 +411,25 @@
     }
     .metric-pill-item {
       background: #FFFFFF;
-      border: 1px solid rgba(24, 61, 51, 0.12);
+      border: 1px solid #E5E7EB;
       border-radius: var(--radius-sm);
       padding: 15px 12px 25px 14px;
       flex: 1;
       min-width: 0;
       box-shadow: var(--shadow-subtle);
       transition: var(--transition);
-      border-left: 3px solid var(--accent);
+      border-left: 3px solid #111827;
     }
-    .metric-pill-item:nth-child(1) { border-left-color: #183D33; }
-    .metric-pill-item:nth-child(2) { border-left-color: #76A58C; }
-    .metric-pill-item:nth-child(3) { border-left-color: #503323; }
+    .metric-pill-item:nth-child(1) { border-left-color: #111827; }
+    .metric-pill-item:nth-child(2) { border-left-color: #6B7280; }
+    .metric-pill-item:nth-child(3) { border-left-color: #9CA3AF; }
     .metric-pill-item:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
       box-shadow: var(--shadow-card);
     }
     .metric-pill-item strong {
       font-size: 1.02rem;
-      color: var(--primary);
+      color: #111827;
       display: block;
       font-weight: 800;
       letter-spacing: -0.03em;
@@ -476,9 +444,9 @@
       opacity: 0.85;
       font-variant-numeric: tabular-nums;
     }
-    .metric-pill-item:nth-child(1) .metric-num { color: #183D33; }
-    .metric-pill-item:nth-child(2) .metric-num { color: #76A58C; }
-    .metric-pill-item:nth-child(3) .metric-num { color: #503323; }
+    .metric-pill-item:nth-child(1) .metric-num { color: #111827; }
+    .metric-pill-item:nth-child(2) .metric-num { color: #4B5563; }
+    .metric-pill-item:nth-child(3) .metric-num { color: #6B7280; }
     .metric-pill-item span {
       font-size: 0.58rem;
       color: var(--text-muted);
@@ -490,8 +458,8 @@
 
     /* Naming Identity Formula (AFITW-105) */
     .naming-formula-box {
-      background: linear-gradient(135deg, rgba(24, 61, 51, 0.04) 0%, rgba(82, 144, 116, 0.08) 100%);
-      border: 1px solid var(--border-accent);
+      background: #F9FAFB;
+      border: 1px solid #D1D5DB;
       border-radius: var(--radius-sm);
       padding: 16px 20px;
       display: flex;
@@ -500,8 +468,8 @@
       margin-top: 24px;
     }
     .formula-tag {
-      background: var(--primary);
-      color: #FAF6EB;
+      background: #111827;
+      color: #FFFFFF;
       font-weight: 900;
       font-size: 0.78rem;
       padding: 6px 12px;
@@ -513,11 +481,11 @@
     .formula-text {
       font-size: 0.91rem;
       font-weight: 700;
-      color: var(--primary);
+      color: #111827;
       line-height: 1.45;
     }
     .formula-text span {
-      color: var(--accent-dark);
+      color: #4B5563;
       font-weight: 800;
     }
 
@@ -542,9 +510,9 @@
       box-shadow: var(--shadow-hover);
     }
     .routine-card.after-card {
-      background: linear-gradient(180deg, #FAF6EB 0%, #FFFFFF 100%);
-      border: 2px solid var(--accent);
-      box-shadow: 0 8px 30px rgba(82, 144, 116, 0.12);
+      background: #F9FAFB;
+      border: 2px solid #111827;
+      box-shadow: var(--shadow-card);
     }
     .routine-timeline {
       display: flex;
@@ -601,8 +569,8 @@
     .seal-badge {
       font-size: 0.72rem;
       font-weight: 800;
-      color: var(--accent-dark);
-      background: rgba(82, 144, 116, 0.12);
+      color: #374151;
+      background: #F3F4F6;
       padding: 4px 10px;
       border-radius: 999px;
       display: inline-block;
@@ -756,7 +724,7 @@
       left: 0;
       right: 0;
       height: 120px;
-      background: radial-gradient(circle at 50% 0%, rgba(118, 165, 140, 0.16) 0%, transparent 70%);
+      background: radial-gradient(circle at 50% 0%, rgba(150, 150, 150, 0.10) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-visual-card:hover {
@@ -781,14 +749,14 @@
       letter-spacing: -0.01em;
     }
     .split-view-badge.real {
-      background: rgba(24, 61, 51, 0.08);
-      color: var(--primary);
-      border: 1px solid rgba(24, 61, 51, 0.15);
+      background: #F3F4F6;
+      color: #111827;
+      border: 1px solid #D1D5DB;
     }
     .split-view-badge.cutaway {
-      background: rgba(118, 165, 140, 0.18);
-      color: #2D634E;
-      border: 1px solid rgba(118, 165, 140, 0.35);
+      background: #FFFFFF;
+      color: #4B5563;
+      border: 1px solid #D1D5DB;
     }
     .split-view-divider {
       font-size: 0.72rem;
@@ -816,7 +784,7 @@
       display: none !important;
     }
 
-    /* 3D Dual Cap (Split Structure) */
+    /* 3D Dual Cap (Wireframe Outline Structure) */
     .cap-3d-split {
       width: 84px;
       height: 52px;
@@ -824,25 +792,26 @@
       display: flex;
       border-radius: 12px 12px 4px 4px;
       overflow: hidden;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.14);
-      border: 1px solid rgba(24, 61, 51, 0.2);
+      box-shadow: none;
+      border: 1.5px solid #111827;
+      background: #F9FAFB;
       z-index: 5;
     }
     .cap-left-half {
       width: 50%;
       height: 100%;
-      background: linear-gradient(145deg, #1C232B 0%, #0A0D10 100%);
+      background: #F3F4F6;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
-      border-right: none;
+      border-right: 1px dashed #D1D5DB;
     }
     .cap-right-half {
       width: 50%;
       height: 100%;
-      background: linear-gradient(145deg, #24352F 0%, #172420 100%);
+      background: #FFFFFF;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -850,7 +819,6 @@
       position: relative;
       padding: 4px;
       box-sizing: border-box;
-      border-left: none;
     }
     .cap-pills-left {
       display: flex;
@@ -860,28 +828,27 @@
     .pill-dot-sm {
       width: 10px;
       height: 6px;
-      background: #F8D147;
+      background: #E5E7EB;
+      border: 1px solid #6B7280;
       border-radius: 3px;
-      box-shadow: inset 0 -1px 2px rgba(0,0,0,0.3);
     }
     .cutaway-pill-section {
       width: 24px;
       height: 16px;
-      background: #2D443B;
-      border: 1px solid #76A58C;
+      background: #F9FAFB;
+      border: 1px solid #4B5563;
       border-radius: 6px;
       position: relative;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
     }
     .cutaway-pill-core {
       width: 16px;
       height: 9px;
-      background: linear-gradient(90deg, #F8D147 0%, #F59E0B 50%, #10B981 100%);
+      background: #E5E7EB;
+      border: 1px solid #111827;
       border-radius: 4px;
-      box-shadow: 0 0 4px rgba(248, 209, 71, 0.5);
       position: relative;
     }
     .cutaway-pill-core::after {
@@ -897,13 +864,12 @@
     .cutaway-drop-valve {
       width: 20px;
       height: 2px;
-      background: #76A58C;
+      background: #6B7280;
       margin-top: 4px;
       border-radius: 1px;
-      box-shadow: 0 0 4px rgba(118, 165, 140, 0.6);
     }
 
-    /* 3D Bottle Body (Split Structure) */
+    /* 3D Bottle Body (Wireframe Outline Structure) */
     .bottle-body-split {
       width: 108px;
       height: 172px;
@@ -911,31 +877,22 @@
       display: flex;
       border-radius: 0 0 22px 22px;
       overflow: hidden;
-      box-shadow: 0 14px 28px rgba(24, 61, 51, 0.1), inset 0 0 16px rgba(82, 144, 116, 0.08);
-      border: 1.5px solid rgba(24, 61, 51, 0.2);
+      box-shadow: none;
+      border: 1.5px solid #111827;
       border-top: none;
-      background: #FAF6EB;
+      background: #FFFFFF;
     }
     .bottle-left-half {
       width: 50%;
       height: 100%;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, 
-        rgba(250, 246, 235, 0.72) 0%, 
-        rgba(118, 165, 140, 0.30) 35%, 
-        rgba(105, 65, 45, 0.62) 65%, 
-        rgba(80, 51, 35, 0.90) 100%
-      );
-      backdrop-filter: blur(6px);
-      box-shadow: inset 0 2px 10px rgba(250, 246, 235, 0.8), 
-                  inset 2px 0 10px rgba(80, 51, 35, 0.45), 
-                  inset 0 -6px 14px rgba(80, 51, 35, 0.50);
+      background: #F9FAFB;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
       padding-bottom: 14px;
-      border-right: none;
+      border-right: 1px dashed #D1D5DB;
     }
     .bottle-shoulder-logo {
       position: absolute;
@@ -946,8 +903,7 @@
       font-size: 0.54rem;
       font-weight: 900;
       letter-spacing: 0.14em;
-      color: rgba(24, 61, 51, 0.72);
-      text-shadow: 0 1px 2px rgba(250, 246, 235, 0.8);
+      color: #111827;
       pointer-events: none;
       z-index: 5;
       white-space: nowrap !important;
@@ -957,9 +913,7 @@
       height: 100%;
       position: relative;
       overflow: hidden;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 60%, rgba(82, 144, 116, 0.08) 100%);
-      backdrop-filter: blur(4px);
-      box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.6), inset -2px 0 6px rgba(255, 255, 255, 0.35);
+      background: #FFFFFF;
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
@@ -977,8 +931,8 @@
       background: #FFFFFF;
       padding: 4px 6px;
       border-radius: 5px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.22), 0 0 8px rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(24, 61, 51, 0.28);
+      box-shadow: none;
+      border: 1px solid #111827;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -988,7 +942,7 @@
       box-sizing: border-box;
     }
 
-    /* Right Real Cutaway Liquid Layer (Crystal Hydrating Water) */
+    /* Right Real Cutaway Liquid Layer (Wireframe Clean Cut) */
     .cutaway-liquid-container {
       position: absolute;
       bottom: 0;
@@ -997,46 +951,15 @@
       height: 72%;
       border-radius: 0 0 22px 0;
       z-index: 1;
-      background: linear-gradient(180deg, rgba(118, 165, 140, 0.78) 0%, rgba(42, 98, 80, 0.90) 45%, rgba(24, 61, 51, 0.98) 100%);
-      box-shadow: inset 0 2px 8px rgba(255, 255, 255, 0.4), inset 0 -4px 10px rgba(0, 0, 0, 0.25);
-      animation: realWaterSlosh 3.6s ease-in-out infinite alternate;
+      background: transparent;
+      box-shadow: none;
     }
     .cutaway-liquid-container::before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: 5%;
-      width: 90%;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(118, 165, 140, 0.5) 100%);
-      box-shadow: 0 2px 6px rgba(255, 255, 255, 0.5), inset 0 1px 2px rgba(255, 255, 255, 0.9);
-      z-index: 2;
-      pointer-events: none;
+      display: none;
     }
 
     .glass-sheen {
-      position: absolute;
-      top: 0;
-      left: 6px;
-      width: 4px;
-      height: 92%;
-      background: linear-gradient(180deg, rgba(255,255,255,0.65) 0%, rgba(255,255,255,0.05) 100%);
-      border-radius: 2px;
-      pointer-events: none;
-      z-index: 3;
-    }
-
-    @keyframes realWaterSlosh {
-      0% {
-        transform: translateY(0px) rotate(-1.5deg) scaleY(1);
-      }
-      50% {
-        transform: translateY(-4px) rotate(1.2deg) scaleY(1.02);
-      }
-      100% {
-        transform: translateY(0px) rotate(-1.5deg) scaleY(1);
-      }
+      display: none;
     }
 
     /* Cards & Grids */
@@ -1078,39 +1001,39 @@
       position: relative;
     }
     .trust-card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(82, 144, 116, 0.4);
-      box-shadow: 0 16px 36px -8px rgba(24, 61, 51, 0.12), 0 0 1px 1px rgba(82, 144, 116, 0.3);
+      transform: translateY(-4px);
+      border-color: #111827;
+      box-shadow: var(--shadow-card);
     }
     .trust-seal-icon {
       width: 58px;
       height: 58px;
       margin: 0 auto 16px auto;
       border-radius: 50%;
-      background: linear-gradient(135deg, rgba(82, 144, 116, 0.14) 0%, rgba(24, 61, 51, 0.05) 100%);
-      border: 1.5px solid rgba(82, 144, 116, 0.32);
+      background: #F3F4F6;
+      border: 1.5px solid #D1D5DB;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--primary);
-      box-shadow: 0 4px 12px rgba(82, 144, 116, 0.12);
+      color: #111827;
+      box-shadow: none;
       transition: var(--transition);
     }
     .trust-card:hover .trust-seal-icon {
-      background: linear-gradient(135deg, #183D33 0%, #244C41 100%);
+      background: #111827;
       color: #FFFFFF;
-      border-color: #183D33;
-      transform: scale(1.08) rotate(4deg);
-      box-shadow: 0 8px 20px rgba(24, 61, 51, 0.25);
+      border-color: #111827;
+      transform: scale(1.05);
+      box-shadow: none;
     }
     .trust-reg-badge {
       font-size: 0.72rem;
       font-weight: 700;
-      color: var(--accent-dark);
-      background: rgba(82, 144, 116, 0.08);
+      color: #4B5563;
+      background: #F3F4F6;
       padding: 3px 10px;
       border-radius: 6px;
-      border: 1px solid rgba(82, 144, 116, 0.2);
+      border: 1px solid #E5E7EB;
       margin-top: auto;
     }
 
@@ -1179,7 +1102,7 @@
     .diag-progress-track {
       width: 100%;
       height: 6px;
-      background: rgba(24, 61, 51, 0.08);
+      background: #E5E7EB;
       border-radius: 999px;
       margin: 0 0 32px;
       overflow: hidden;
@@ -1188,7 +1111,7 @@
     .diag-progress-bar {
       height: 100%;
       width: 33.3%;
-      background: var(--accent);
+      background: #111827;
       border-radius: 999px;
       transition: width 0.4s ease;
     }
@@ -1198,7 +1121,7 @@
     .diag-step-num {
       font-size: 0.78rem;
       font-weight: 800;
-      color: var(--accent-dark);
+      color: #6B7280;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 6px;
@@ -1223,7 +1146,7 @@
       justify-content: space-between;
       padding: 16px 20px;
       border-radius: var(--radius-sm);
-      border: 1.5px solid rgba(24, 61, 51, 0.12);
+      border: 1.5px solid #E5E7EB;
       background: #FFFFFF;
       text-align: left;
       transition: var(--transition);
@@ -1231,20 +1154,20 @@
       width: 100%;
     }
     .diag-option-btn:hover {
-      background: #FDFBF7;
-      border-color: var(--accent);
+      background: #F9FAFB;
+      border-color: #111827;
       transform: translateY(-2px);
-      box-shadow: 0 6px 16px rgba(24, 61, 51, 0.08);
+      box-shadow: none;
     }
     .diag-option-btn.selected {
-      background: #EAF4EE;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 2px var(--primary);
+      background: #F3F4F6;
+      border-color: #111827;
+      box-shadow: 0 0 0 2px #111827;
     }
     .diag-opt-num {
       font-size: 0.78rem;
       font-weight: 800;
-      color: var(--accent-dark);
+      color: #4B5563;
       margin-right: 10px;
       font-family: 'Plus Jakarta Sans', monospace;
     }
@@ -1265,8 +1188,8 @@
     .diag-spinner {
       width: 44px;
       height: 44px;
-      border: 3px solid rgba(82, 144, 116, 0.2);
-      border-top-color: var(--accent);
+      border: 3px solid #E5E7EB;
+      border-top-color: #111827;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
       margin: 0 auto 20px;
@@ -1287,14 +1210,7 @@
       overflow: hidden;
     }
     .calc-box::after {
-      content: '';
-      position: absolute;
-      bottom: -60px;
-      right: -60px;
-      width: 220px;
-      height: 220px;
-      background: radial-gradient(circle, rgba(0,210,135,0.18) 0%, transparent 70%);
-      pointer-events: none;
+      display: none;
     }
     .slider-range {
       width: 100%;
@@ -1445,11 +1361,11 @@
     .prd-cat-tag {
       font-size: 0.76rem;
       font-weight: 800;
-      color: var(--accent-dark);
-      background: rgba(82, 144, 116, 0.12);
+      color: #374151;
+      background: #F3F4F6;
       padding: 4px 10px;
       border-radius: 999px;
-      border: 1px solid rgba(82, 144, 116, 0.25);
+      border: 1px solid #D1D5DB;
     }
     .prd-num {
       font-size: 0.82rem;
@@ -1477,13 +1393,13 @@
     .prd-bottle-box {
       width: 100%;
       height: 190px;
-      background: linear-gradient(180deg, rgba(82, 144, 116, 0.05) 0%, rgba(24, 61, 51, 0.08) 100%);
+      background: #F9FAFB;
       border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
       justify-content: center;
       margin-bottom: 18px;
-      border: 1px solid rgba(82, 144, 116, 0.15);
+      border: 1px solid #E5E7EB;
       position: relative;
     }
     .mini-bottle {
@@ -1501,19 +1417,19 @@
     .mini-cap {
       width: 44px;
       height: 34px;
-      background: linear-gradient(145deg, #1C232B 0%, #0A0D10 100%);
+      background: #111827;
       border-radius: 7px 7px 3px 3px;
       position: relative;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.22);
-      border: 1px solid rgba(255, 255, 255, 0.14);
+      box-shadow: none;
+      border: 1px solid #111827;
       z-index: 5;
     }
     .mini-body {
       width: 62px;
       height: 118px;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.28) 0%, rgba(82, 144, 116, 0.12) 50%, rgba(24, 61, 51, 0.2) 100%);
+      background: #FFFFFF;
       border-radius: 4px 4px 18px 18px;
-      border: 1.5px solid rgba(82, 144, 116, 0.45);
+      border: 1.5px solid #111827;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1522,18 +1438,17 @@
       box-sizing: border-box;
       position: relative;
       overflow: hidden;
-      box-shadow: inset 0 2px 8px rgba(255,255,255,0.4), 0 8px 16px rgba(24, 61, 51, 0.08);
-      backdrop-filter: blur(4px);
+      box-shadow: none;
     }
     .mini-engrave-label {
-      background: rgba(255, 255, 255, 0.96);
+      background: #F9FAFB;
       border-radius: 5px;
       padding: 4px 0;
       width: 88%;
       box-sizing: border-box;
       margin: 0 auto;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
-      border: 1px solid rgba(255, 255, 255, 0.95);
+      box-shadow: none;
+      border: 1px solid #111827;
       white-space: nowrap;
       position: relative;
       z-index: 4;
@@ -1545,7 +1460,7 @@
     }
     .mini-engrave-tag {
       font-size: 0.52rem;
-      color: var(--accent-dark);
+      color: #4B5563;
       font-weight: 800;
       letter-spacing: 0;
       line-height: 1.2;
@@ -1556,7 +1471,7 @@
     }
     .mini-engrave-name {
       font-size: 0.74rem;
-      color: var(--primary);
+      color: #111827;
       font-weight: 900;
       margin-top: 1px;
       letter-spacing: 0;
@@ -1567,13 +1482,13 @@
       white-space: nowrap;
     }
     .mini-label {
-      background: rgba(255, 255, 255, 0.95);
-      color: var(--primary);
+      background: #F9FAFB;
+      color: #111827;
       font-weight: 800;
       padding: 3px 6px;
       border-radius: 4px;
-      border: 1px solid rgba(255, 255, 255, 0.9);
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      border: 1px solid #111827;
+      box-shadow: none;
       width: 82%;
       box-sizing: border-box;
       margin: 0 auto;
@@ -1591,8 +1506,8 @@
       padding: 12px 14px;
       margin-bottom: 16px;
       font-size: 0.82rem;
-      border: 1.5px solid rgba(24, 61, 51, 0.12);
-      box-shadow: var(--shadow-subtle);
+      border: 1.5px solid #E5E7EB;
+      box-shadow: none;
     }
     .prd-formula-row {
       display: flex;
@@ -1603,8 +1518,8 @@
     .prd-formula-row:last-child { margin-bottom: 0; }
     .f-badge {
       font-weight: 800;
-      color: var(--primary);
-      background: rgba(24, 61, 51, 0.06);
+      color: #111827;
+      background: #F3F4F6;
       padding: 2px 7px;
       border-radius: 4px;
       white-space: nowrap;
@@ -1621,7 +1536,7 @@
     }
     .price-sub {
       font-size: 0.78rem;
-      color: #64756E;
+      color: #9CA3AF;
       font-weight: 600;
     }
     .price-main {
@@ -1633,12 +1548,12 @@
     }
     .price-main strong {
       font-size: 1.25rem;
-      color: var(--primary);
+      color: #111827;
       font-weight: 900;
     }
     .price-main span {
       font-size: 0.84rem;
-      color: #E55353;
+      color: #4B5563;
       font-weight: 800;
     }
     .card-actions {
@@ -1682,7 +1597,7 @@
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(12, 15, 18, 0.65);
+      background: rgba(17, 24, 39, 0.65);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       z-index: 2000;
@@ -1710,8 +1625,8 @@
     .loading-spinner {
       width: 42px;
       height: 42px;
-      border: 3px solid rgba(82, 144, 116, 0.2);
-      border-top-color: var(--accent);
+      border: 3px solid #E5E7EB;
+      border-top-color: #111827;
       border-radius: 50%;
       animation: spin 0.8s linear infinite;
       margin: 28px auto;
@@ -1732,8 +1647,6 @@
 </head>
 <body>
 
-  <!-- Full-Viewport Global Interactive Ambient Spotlight (Gaussian Fog Glow) -->
-  <div class="global-ambient-spotlight" id="globalSpotlight"></div>
 
   <!-- Full-Width Floating GNB (Unified Across All Pages) -->
   <header class="top-full">
@@ -1781,7 +1694,7 @@
             <h1 style="font-size: 2.75rem; line-height: 1.28; letter-spacing: -0.04em; margin: 0 0 16px;">
               나를 위한 1:1 맞춤 웰니스
             </h1>
-            <p class="lead" style="font-size: 13.5px; color: var(--text-canvas-lead, rgba(250, 246, 235, 0.85)); line-height: 1.7; max-width: 520px; margin-bottom: 0;">
+            <p class="lead" style="font-size: 13.5px; color: #4B5563; line-height: 1.7; max-width: 520px; margin-bottom: 0;">
               불필요한 과잉 섭취와 식비 낭비 없이,<br>
               임상 데이터로 증명된 최적의 원료와 기술로<br>
               당신의 일상에 정확하게 딱 맞는 루틴을 설계합니다.
@@ -1837,56 +1750,58 @@
                 <div class="cutaway-liquid-container"></div>
               </div>
               <div class="bottle-engrave-label-wide">
-                <div style="font-size: 0.46rem; color: #183D33; font-weight: 800; text-align: center; width: 100%; white-space: nowrap !important; line-height: 1.15; letter-spacing: 0.02em;">1:1 맞춤 포뮬러</div>
-                <div style="font-size: 0.68rem; color: #183D33; font-weight: 900; text-align: center; width: 100%; letter-spacing: -0.03em; white-space: nowrap !important; line-height: 1.15;" id="heroLabelTitle">박지안 님</div>
+                <div style="font-size: 0.46rem; color: #111827; font-weight: 800; text-align: center; width: 100%; white-space: nowrap !important; line-height: 1.15; letter-spacing: 0.02em;">1:1 맞춤 포뮬러</div>
+                <div style="font-size: 0.68rem; color: #111827; font-weight: 900; text-align: center; width: 100%; letter-spacing: -0.03em; white-space: nowrap !important; line-height: 1.15;" id="heroLabelTitle">박지안 님</div>
               </div>
             </div>
           </div>
 
-          <h3 style="font-size: 1.15rem; color: var(--primary); margin-bottom: 4px; font-weight: 800;">A:FIT 시그니처 듀얼 팩</h3>
-          <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.45; max-width: 320px; margin: 0 auto 10px; font-weight: 500;">
-            <strong style="color: var(--primary);">[야근·피로 회복 루틴]</strong><br>
+          <h3 style="font-size: 1.15rem; color: #111827; margin-bottom: 4px; font-weight: 800;">A:FIT 시그니처 듀얼 팩</h3>
+          <p style="font-size: 0.82rem; color: #4B5563; line-height: 1.45; max-width: 320px; margin: 0 auto 10px; font-weight: 500;">
+            <strong style="color: #111827;">[야근·피로 회복 루틴]</strong><br>
             상단: 밀크씨슬 130mg + 활력 비타민B군 500%<br>
             하단: 귀리 식이섬유 단백 농축 액상
           </p>
-          <div style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 6px; border-top: 1px dashed var(--border);">
-            <div style="font-size: 0.90rem; color: var(--primary); font-weight: 800;">
-              정기구독 시 1병 2,660원대 <span style="font-size: 0.78rem; color: var(--text-muted); font-weight: 500;">(월 79,800원)</span>
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 2px; padding-top: 6px; border-top: 1px dashed #E5E7EB;">
+            <div style="font-size: 0.90rem; color: #111827; font-weight: 800;">
+              정기구독 시 1병 2,660원대 <span style="font-size: 0.78rem; color: #6B7280; font-weight: 500;">(월 79,800원)</span>
             </div>
-            <span style="font-size: 0.72rem; font-weight: 700; color: var(--accent-dark);">✓ 개인화 각인 라벨 무료 적용</span>
+            <span style="font-size: 0.72rem; font-weight: 700; color: #4B5563;">✓ 개인화 각인 라벨 무료 적용</span>
           </div>
         </div>
       </div>
     </section>
 
     <!-- 1.5. Brand Origin Manifesto & 3 Core Values & Naming Formula (AFITW-105) -->
-    <section id="manifesto" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
+    <section id="manifesto" style="background: #F9FAFB; border-top: 1px solid #E5E7EB; padding: 100px 0;">
       <div class="wrap-wide">
         <div style="display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 48px; align-items: start;">
           <!-- Left: Brand Manifesto Story -->
           <div>
-            <div class="tag"><span class="tag-dot"></span>ABOUT A:FIT · BRAND MANIFESTO & PHILOSOPHY</div>
-            <h2 style="font-size: 2.1rem; font-weight: 800; color: #FAF6EB; line-height: 1.35; margin: 16px 0 20px;">
+            <h2 style="font-size: 2.1rem; font-weight: 800; color: #111827; line-height: 1.35; margin: 0 0 20px;">
               우리는 왜 하루 한 병의 웰니스에 집착하는가
             </h2>
-            <p class="lead" style="font-size: 1.02rem; font-weight: 600; color: var(--accent); margin-bottom: 20px;">
+            <p class="lead" style="font-size: 1.02rem; font-weight: 600; color: #4B5563; margin-bottom: 20px;">
               바쁜 일상 속 결핍과 비효율을 해결하기 위해 시작된 A:FIT의 이야기입니다.
             </p>
-            <div style="font-size: 0.96rem; color: rgba(250, 246, 235, 0.85); line-height: 1.85; display: grid; gap: 16px;">
+            <div style="font-size: 0.96rem; color: #4B5563; line-height: 1.85; display: grid; gap: 16px;">
               <p style="margin: 0;">
                 책상 위에 어지럽게 쌓여가는 대형 영양제 약통들, 그리고 시간에 쫓겨 인스턴트로 때우는 불균형한 한 끼.<br>
-                우리는 스스로에게 물었습니다. <strong style="color: #FAF6EB; font-weight: 800;">"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?"</strong>
+                우리는 스스로에게 물었습니다. <strong style="color: #111827; font-weight: 800;">"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?"</strong>
               </p>
               <p style="margin: 0;">
-                A:FIT은 이 단순하지만 본질적인 질문에서 출발했습니다.<br>
-                단순히 성분을 많이 담아내는 것이 아니라, 불필요한 과다 섭취를 비우고 개인의 라이프스타일에 맞춘 <strong style="color: var(--accent); font-weight: 800;">1:1 정밀 배합과 다이렉트 흡수 과학</strong>으로 건강을 관리하는 새로운 기준을 제시합니다.
+                기존 시장의 솔루션은 <strong>'먹어야 할 것의 가짓수'</strong>만 늘려갈 뿐, 정작 바쁜 현대인의 흡수 한계와 위장 부담, 그리고 번거로운 일상 루틴을 해결하지 못했습니다.
+              </p>
+              <p style="margin: 0;">
+                A:FIT은 이 비효율의 악순환을 끊어내기 위해 탄생했습니다. <strong>불필요한 과잉을 덜어내고, 내 몸이 지금 당장 필요로 하는 유효성분만을 정밀 타겟팅</strong>하여 물 없이도 10초 만에 완결되는 가장 진화된 웰니스 루틴을 제안합니다.
               </p>
             </div>
-            <!-- Concise Naming Formula Banner -->
-            <div style="margin-top: 24px; padding: 18px 22px; background: rgba(250, 246, 235, 0.06); border: 1px solid rgba(250, 246, 235, 0.20); border-radius: var(--radius-sm); display: flex; align-items: center; gap: 16px;">
-              <span style="font-size: 1.05rem; font-weight: 900; color: #FAF6EB; white-space: nowrap;">A:FIT = All-in-one + FIT</span>
-              <span style="font-size: 0.86rem; color: rgba(250, 246, 235, 0.85); line-height: 1.5;">
-                복잡한 영양제와 식사를 한 병에 압축한 <strong style="color: #FAF6EB;">올인원(All-in-one)</strong>과 내 하루에 꼭 맞는 <strong style="color: #FAF6EB;">개인화(FIT)</strong>의 결합
+
+            <!-- Naming Identity Formula (AFITW-105) -->
+            <div class="naming-formula-box" style="margin-top: 24px; padding: 18px 22px; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 16px;">
+              <span style="font-size: 1.05rem; font-weight: 900; color: #111827; white-space: nowrap;">A:FIT = All-in-one + FIT</span>
+              <span style="font-size: 0.86rem; color: #4B5563; line-height: 1.5;">
+                복잡한 영양제와 식사를 한 병에 압축한 <strong style="color: #111827;">올인원(All-in-one)</strong>과 내 하루에 꼭 맞는 <strong style="color: #111827;">개인화(FIT)</strong>의 결합
               </span>
             </div>
 
@@ -1898,34 +1813,28 @@
           </div>
 
           <!-- Right: 3 Core Values Cards -->
-          <div style="display: grid; gap: 16px;">
-            <div class="card" style="border-left: 4px solid var(--primary); padding: 22px 24px;">
-              <div style="font-size: 0.80rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">CORE VALUE 01</div>
-              <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
-                1:1 맞춤 배합 원칙 (Personalized Precision)
-              </h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
-                획일화된 대량 생산 영양제가 아닌, 개인의 라이프스타일과 결핍을 정밀 분석한 1:1 맞춤 솔루션을 제공합니다.
+          <div style="display: grid; gap: 20px;">
+            <div class="card" style="padding: 28px; border-left: 4px solid #111827; background: #FFFFFF;">
+              <div style="font-size: 0.80rem; font-weight: 900; color: #111827; letter-spacing: 0.05em; margin-bottom: 6px;">CORE BELIEF 01</div>
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #111827; margin-bottom: 8px;">1:1 정밀 맞춤 배합의 원칙</h3>
+              <p style="font-size: 0.88rem; color: #6B7280; line-height: 1.6; margin: 0;">
+                누구에게나 똑같은 범용 영양제는 더 이상 답이 아닙니다. 설문 기반 라이프스타일 분석을 통해 개인의 결핍 요소만을 골라 담습니다.
               </p>
             </div>
 
-            <div class="card" style="border-left: 4px solid var(--accent); padding: 22px 24px;">
-              <div style="font-size: 0.80rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">CORE VALUE 02</div>
-              <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
-                흡수율 중심의 바이오 과학 (Bio-Absorption Science)
-              </h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
-                위장에서 대부분 파괴되던 기존 정제의 한계를 넘어, 상단 정제와 하단 액상의 듀얼 바이오 결합으로 최적의 체내 흡수를 구현합니다.
+            <div class="card" style="padding: 28px; border-left: 4px solid #6B7280; background: #FFFFFF;">
+              <div style="font-size: 0.80rem; font-weight: 900; color: #6B7280; letter-spacing: 0.05em; margin-bottom: 6px;">CORE BELIEF 02</div>
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #111827; margin-bottom: 8px;">체내 흡수율 중심의 바이오 과학</h3>
+              <p style="font-size: 0.88rem; color: #6B7280; line-height: 1.6; margin: 0;">
+                아무리 좋은 성분도 흡수되지 않으면 무의미합니다. 상단 정제와 하단 저점도 액상의 이중제형 기전으로 흡수율을 92.4%까지 극대화합니다.
               </p>
             </div>
 
-            <div class="card" style="border-left: 4px solid #C88D74; padding: 22px 24px;">
-              <div style="font-size: 0.80rem; font-weight: 800; color: #B86B53; letter-spacing: 0.04em;">CORE VALUE 03</div>
-              <h3 style="font-size: 1.12rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
-                지속 가능한 클린 순환 (Sustainable Cycle)
-              </h3>
-              <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
-                원료의 순수함은 물론, 180일 만에 자연으로 돌아가는 생분해 용기를 적용하여 사람과 환경의 지속 가능한 균형을 지킵니다.
+            <div class="card" style="padding: 28px; border-left: 4px solid #4B5563; background: #FFFFFF;">
+              <div style="font-size: 0.80rem; font-weight: 900; color: #4B5563; letter-spacing: 0.05em; margin-bottom: 6px;">CORE BELIEF 03</div>
+              <h3 style="font-size: 1.15rem; font-weight: 800; color: #111827; margin-bottom: 8px;">지속 가능한 클린 웰니스 순환</h3>
+              <p style="font-size: 0.88rem; color: #6B7280; line-height: 1.6; margin: 0;">
+                나의 건강뿐 아니라 환경의 지속가능성을 생각합니다. 180일 토양 생분해 용기와 무라벨·에코 리필 시스템을 지향합니다.
               </p>
             </div>
       </div>
@@ -1935,21 +1844,20 @@
     <section id="philosophy">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>ROUTINE TRANSFORMATION · BEFORE & AFTER</div>
           <h2>내 하루에 딱 맞춘 웰니스 루틴</h2>
           <p class="lead">소분의 번거로움 없이 물 없이 마시는 하루 1병,<br>나만을 위해 정밀 설계된 바이오 포뮬러를 경험하세요.</p>
         </div>
 
         <div class="grid-2">
           <!-- Before Routine Card -->
-          <div class="card" style="background: #F7F6F2; border: 1px solid rgba(24, 61, 51, 0.12); padding: 36px 32px; border-radius: var(--radius); display: flex; flex-direction: column; justify-content: space-between;">
+          <div class="card" style="background: #F9FAFB; border: 1px solid #E5E7EB; padding: 36px 32px; border-radius: var(--radius); display: flex; flex-direction: column; justify-content: space-between;">
             <div>
               <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                <span style="font-size: 0.78rem; font-weight: 800; color: #78716C; background: #E7E5E4; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em;">BEFORE · 기존의 일상</span>
-                <span style="font-size: 0.82rem; font-weight: 700; color: #DC2626;">비효율 & 피로</span>
+                <span style="font-size: 0.78rem; font-weight: 800; color: #4B5563; background: #E5E7EB; padding: 4px 12px; border-radius: 999px; letter-spacing: 0.04em;">BEFORE · 기존의 일상</span>
+                <span style="font-size: 0.82rem; font-weight: 700; color: #4B5563;">비효율 & 피로</span>
               </div>
-              <h3 style="margin: 12px 0 6px; font-size: 1.3rem; color: #44403C; font-weight: 800;">불규칙한 한 끼와 넘쳐나는 약통</h3>
-              <div style="font-size: 0.72rem; color: #78716C; margin-bottom: 16px; font-weight: 600;">
+              <h3 style="margin: 12px 0 6px; font-size: 1.3rem; color: #111827; font-weight: 800;">불규칙한 한 끼와 넘쳐나는 약통</h3>
+              <div style="font-size: 0.72rem; color: #6B7280; margin-bottom: 16px; font-weight: 600;">
                 권장 이미지: 600×400px (3:2) / 출근길 일상 스냅컷 (스튜디오 톤다운 룩)
               </div>
               
@@ -2044,9 +1952,8 @@
     <section id="science" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>SCIENCE & TECHNOLOGY</div>
-          <h2 style="color: #FAF6EB; font-size: 2.1rem; font-weight: 800; line-height: 1.35; margin: 16px 0 12px;">4대 공인 인증 & 5단계 무균 질소 공정</h2>
-          <p class="lead" style="color: rgba(250, 246, 235, 0.85); font-size: 1rem; line-height: 1.65; max-width: 580px; margin: 0 auto 48px;">식약처·GMP 4대 공식 인증 기준과 무균 질소 충진 기술로<br>매일 가장 신선하고 안전한 웰니스를 전달합니다.</p>
+          <h2 style="color: var(--primary); font-size: 2.1rem; font-weight: 800; line-height: 1.35; margin: 0 0 12px;">4대 공인 인증 & 5단계 무균 질소 공정</h2>
+          <p class="lead" style="color: var(--text-body); font-size: 1rem; line-height: 1.65; max-width: 580px; margin: 0 auto 48px;">식약처·GMP 4대 공식 인증 기준과 무균 질소 충진 기술로<br>매일 가장 신선하고 안전한 웰니스를 전달합니다.</p>
         </div>
 
         <!-- 4 Luxury Trust Seals (Top) -->
@@ -2106,7 +2013,7 @@
           </div>
         </div>
 
-        <div style="text-align: center; font-size: 0.78rem; color: rgba(250, 246, 235, 0.65); margin-bottom: 48px;">
+        <div style="text-align: center; font-size: 0.78rem; color: #6B7280; margin-bottom: 48px;">
           * 상기 인증 번호, 시험 성적 및 92.4% 흡수율 데이터는 UI/UX 프로토타입 시연을 위한 가상 콘셉트 데이터(Mock Data)입니다.
         </div>
 
@@ -2145,7 +2052,6 @@
     <section id="spotlight">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>FEATURED SPOTLIGHT</div>
           <h2>상황별 대표 시그니처 포뮬러 3종</h2>
           <p class="lead">현대인의 대표적인 결핍 상황과 생활 패턴을 해결하기 위해 우선 선정된 A:FIT의 핵심 라인업입니다.</p>
         </div>
@@ -2153,24 +2059,24 @@
         <!-- Spotlight 1: Sports Pro (프로틴 머슬 빌더) -->
         <div class="spotlight-row">
           <div class="spotlight-img-box">
-            <div class="prd-bottle-box" style="width: 140px; margin: 0 auto 16px auto; background: rgba(82, 144, 116, 0.08); border-radius: 16px; padding: 24px;">
+            <div class="prd-bottle-box" style="width: 140px; margin: 0 auto 16px auto; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 16px; padding: 24px;">
               <div class="mini-bottle" style="width: 70px; height: 140px; margin: 0 auto;">
-                <div class="mini-cap" style="width: 44px; height: 32px; background: #183D33;"></div>
-                <div class="mini-body" style="width: 58px; height: 95px; background: linear-gradient(180deg, rgba(82, 144, 116, 0.3) 0%, rgba(24, 61, 51, 0.9) 100%);">
-                  <span class="mini-label" style="font-size: 0.65rem;">06 PRO</span>
+                <div class="mini-cap" style="width: 44px; height: 32px; background: #111827; border: 1px solid #111827;"></div>
+                <div class="mini-body" style="width: 58px; height: 95px; background: #FFFFFF; border: 1.5px solid #111827; box-shadow: none;">
+                  <span class="mini-label" style="font-size: 0.65rem; background: #F9FAFB; color: #111827; border: 1px solid #111827;">06 PRO</span>
                 </div>
               </div>
             </div>
             <div style="display: flex; gap: 6px; justify-content: center; margin-bottom: 8px;">
-              <span class="tag" style="background: var(--primary); color: #fff; font-weight: 800;">대표 시그니처 01</span>
-              <span class="tag" style="background: rgba(82, 144, 116, 0.1); border-color: rgba(82, 144, 116, 0.3); color: var(--primary); font-weight: 800;">스포츠 Pro 06</span>
+              <span class="tag" style="background: #111827; color: #FFFFFF; font-weight: 800; border-color: #111827;">대표 시그니처 01</span>
+              <span class="tag" style="background: #F3F4F6; border-color: #E5E7EB; color: #111827; font-weight: 800;">스포츠 Pro 06</span>
             </div>
             <h3 style="font-size: 1.5rem; color: var(--primary); margin: 6px 0 4px; font-weight: 800;">프로틴 머슬 빌더</h3>
-            <p style="font-size: 0.88rem; color: var(--accent-dark); font-weight: 700;">운동 전후 단백질 & 에너지 활력 루틴</p>
+            <p style="font-size: 0.88rem; color: #4B5563; font-weight: 700;">운동 전후 단백질 & 에너지 활력 루틴</p>
           </div>
           <div>
-            <span style="font-size: 0.82rem; font-weight: 800; color: var(--accent); letter-spacing: 0.05em;">[선정 배경] 운동 전후 단백질 쉐이커 세척과 알약 보충의 비효율 해결</span>
-            <h3 style="font-size: 1.85rem; color: #FAF6EB; margin: 8px 0 16px; font-weight: 900; line-height: 1.35;">
+            <span style="font-size: 0.82rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em;">[선정 배경] 운동 전후 단백질 쉐이커 세척과 알약 보충의 비효율 해결</span>
+            <h3 style="font-size: 1.85rem; color: var(--primary); margin: 8px 0 16px; font-weight: 900; line-height: 1.35;">
               당류 0g, 쉐이커 없이 운동 후 마시는<br>
               압도적인 근단백질 합성 퍼포먼스
             </h3>
@@ -2178,7 +2084,7 @@
             <div style="display: grid; gap: 10px; background: #FFFFFF; padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 20px; font-size: 0.90rem;">
               <div><strong>① 생활 문제:</strong> 쉐이커 세척의 번거로움, 부스터 알약과 단백질 파우더 개별 섭취의 불편함</div>
               <div><strong>② 해결 방식:</strong> 물 없이 보틀 하나로 즉각적인 아미노산 & 분리유청단백질 원스톱 충전</div>
-              <div><strong>③ 섭취 시점:</strong> <span style="color: var(--accent-dark); font-weight: 700;">운동 직후 30분 이내 (골든 타임)</span></div>
+              <div><strong>③ 섭취 시점:</strong> <span style="color: #111827; font-weight: 700;">운동 직후 30분 이내 (골든 타임)</span></div>
               <div style="padding-top: 8px; border-top: 1px dashed var(--border);">
                 <strong>④ 제형 구성:</strong> 상단 정제(필수 아미노산 EAA 9종) + 하단 액상(WPI 단백질 20g 농축액)
               </div>
@@ -2194,8 +2100,8 @@
         <!-- Spotlight 2: Shift Emergency (나이트 시프트 슬립) -->
         <div class="spotlight-row reverse">
           <div>
-            <span style="font-size: 0.82rem; font-weight: 800; color: var(--accent); letter-spacing: 0.05em;">[선정 배경] 불규칙한 3교대 근무 및 야간 생활자의 깨진 생체 리듬 회복</span>
-            <h3 style="font-size: 1.85rem; color: #FAF6EB; margin: 8px 0 16px; font-weight: 900; line-height: 1.35;">
+            <span style="font-size: 0.82rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em;">[선정 배경] 불규칙한 3교대 근무 및 야간 생활자의 깨진 생체 리듬 회복</span>
+            <h3 style="font-size: 1.85rem; color: var(--primary); margin: 8px 0 16px; font-weight: 900; line-height: 1.35;">
               불규칙한 교대근무와 야간 근무 후,<br>
               깊은 숙면 리듬을 되찾아주는 수면 포뮬러
             </h3>
@@ -2203,7 +2109,7 @@
             <div style="display: grid; gap: 10px; background: #FFFFFF; padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 20px; font-size: 0.90rem;">
               <div><strong>① 생활 문제:</strong> 주야간 교대로 인한 수면 장애, 스트레스 긴장, 빈속 속쓰림</div>
               <div><strong>② 해결 방식:</strong> 뇌파를 안정시키는 이완 정제와 위에 부담 없는 진정 액상으로 편안한 입면 서포트</div>
-              <div><strong>③ 섭취 시점:</strong> <span style="color: var(--accent-dark); font-weight: 700;">퇴근 후 취침 30분 전</span></div>
+              <div><strong>③ 섭취 시점:</strong> <span style="color: #111827; font-weight: 700;">퇴근 후 취침 30분 전</span></div>
               <div style="padding-top: 8px; border-top: 1px dashed var(--border);">
                 <strong>④ 제형 구성:</strong> 상단 정제(긴장 완화 L-테아닌 200mg) + 하단 액상(타트체리 멜라토닌 & 유기농 양배추 농축액)
               </div>
@@ -2215,44 +2121,44 @@
             </div>
           </div>
           <div class="spotlight-img-box">
-            <div class="prd-bottle-box" style="width: 140px; margin: 0 auto 16px auto; background: rgba(82, 144, 116, 0.08); border-radius: 16px; padding: 24px;">
+            <div class="prd-bottle-box" style="width: 140px; margin: 0 auto 16px auto; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 16px; padding: 24px;">
               <div class="mini-bottle" style="width: 70px; height: 140px; margin: 0 auto;">
-                <div class="mini-cap" style="width: 44px; height: 32px; background: #183D33;"></div>
-                <div class="mini-body" style="width: 58px; height: 95px; background: linear-gradient(180deg, rgba(82, 144, 116, 0.3) 0%, rgba(24, 61, 51, 0.9) 100%);">
-                  <span class="mini-label" style="font-size: 0.65rem;">12 SLEEP</span>
+                <div class="mini-cap" style="width: 44px; height: 32px; background: #111827; border: 1px solid #111827;"></div>
+                <div class="mini-body" style="width: 58px; height: 95px; background: #FFFFFF; border: 1.5px solid #111827; box-shadow: none;">
+                  <span class="mini-label" style="font-size: 0.65rem; background: #F9FAFB; color: #111827; border: 1px solid #111827;">12 SLEEP</span>
                 </div>
               </div>
             </div>
             <div style="display: flex; gap: 6px; justify-content: center; margin-bottom: 8px;">
-              <span class="tag" style="background: var(--primary); color: #fff; font-weight: 800;">대표 시그니처 02</span>
-              <span class="tag" style="background: rgba(82, 144, 116, 0.1); border-color: rgba(82, 144, 116, 0.3); color: var(--primary); font-weight: 800;">3교대 Emergency 12</span>
+              <span class="tag" style="background: #111827; color: #FFFFFF; font-weight: 800; border-color: #111827;">대표 시그니처 02</span>
+              <span class="tag" style="background: #F3F4F6; border-color: #E5E7EB; color: #111827; font-weight: 800;">3교대 Emergency 12</span>
             </div>
             <h3 style="font-size: 1.5rem; color: var(--primary); margin: 6px 0 4px; font-weight: 800;">나이트 시프트 슬립</h3>
-            <p style="font-size: 0.88rem; color: var(--accent-dark); font-weight: 700;">불규칙 교대근무와 야간 심신 이완/휴식 루틴</p>
+            <p style="font-size: 0.88rem; color: #4B5563; font-weight: 700;">불규칙 교대근무와 야간 심신 이완/휴식 루틴</p>
           </div>
         </div>
 
         <!-- Spotlight 3: IT Tech Focus (블루라이트 아이 쉴드) -->
         <div class="spotlight-row">
           <div class="spotlight-img-box">
-            <div class="prd-bottle-box" style="width: 140px; margin: 0 auto 16px auto; background: rgba(82, 144, 116, 0.08); border-radius: 16px; padding: 24px;">
+            <div class="prd-bottle-box" style="width: 140px; margin: 0 auto 16px auto; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: 16px; padding: 24px;">
               <div class="mini-bottle" style="width: 70px; height: 140px; margin: 0 auto;">
-                <div class="mini-cap" style="width: 44px; height: 32px; background: #183D33;"></div>
-                <div class="mini-body" style="width: 58px; height: 95px; background: linear-gradient(180deg, rgba(82, 144, 116, 0.3) 0%, rgba(24, 61, 51, 0.9) 100%);">
-                  <span class="mini-label" style="font-size: 0.65rem;">14 EYE</span>
+                <div class="mini-cap" style="width: 44px; height: 32px; background: #111827; border: 1px solid #111827;"></div>
+                <div class="mini-body" style="width: 58px; height: 95px; background: #FFFFFF; border: 1.5px solid #111827; box-shadow: none;">
+                  <span class="mini-label" style="font-size: 0.65rem; background: #F9FAFB; color: #111827; border: 1px solid #111827;">14 EYE</span>
                 </div>
               </div>
             </div>
             <div style="display: flex; gap: 6px; justify-content: center; margin-bottom: 8px;">
-              <span class="tag" style="background: var(--primary); color: #fff; font-weight: 800;">대표 시그니처 03</span>
-              <span class="tag" style="background: rgba(82, 144, 116, 0.1); border-color: rgba(82, 144, 116, 0.3); color: var(--primary); font-weight: 800;">판교 IT Tech 14</span>
+              <span class="tag" style="background: #111827; color: #FFFFFF; font-weight: 800; border-color: #111827;">대표 시그니처 03</span>
+              <span class="tag" style="background: #F3F4F6; border-color: #E5E7EB; color: #111827; font-weight: 800;">판교 IT Tech 14</span>
             </div>
             <h3 style="font-size: 1.5rem; color: var(--primary); margin: 6px 0 4px; font-weight: 800;">블루라이트 아이 쉴드</h3>
-            <p style="font-size: 0.88rem; color: var(--accent-dark); font-weight: 700;">장시간 모니터 업무 직장인 & 개발자의 시각 집중 루틴</p>
+            <p style="font-size: 0.88rem; color: #4B5563; font-weight: 700;">장시간 모니터 업무 직장인 & 개발자의 시각 집중 루틴</p>
           </div>
           <div>
-            <span style="font-size: 0.82rem; font-weight: 800; color: var(--accent); letter-spacing: 0.05em;">[선정 배경] 하루 10시간 이상 모니터 앞 개발자/직장인의 안구 피로 & 집중력 저하 해결</span>
-            <h3 style="font-size: 1.85rem; color: #FAF6EB; margin: 8px 0 16px; font-weight: 900; line-height: 1.35;">
+            <span style="font-size: 0.82rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em;">[선정 배경] 하루 10시간 이상 모니터 앞 개발자/직장인의 안구 피로 & 집중력 저하 해결</span>
+            <h3 style="font-size: 1.85rem; color: var(--primary); margin: 8px 0 16px; font-weight: 900; line-height: 1.35;">
               하루 10시간 모니터 앞 개발자를 위한<br>
               초정밀 안구 피로 & 황반 색소 보호
             </h3>
@@ -2260,7 +2166,7 @@
             <div style="display: grid; gap: 10px; background: #FFFFFF; padding: 20px; border-radius: var(--radius-sm); border: 1px solid var(--border); margin-bottom: 20px; font-size: 0.90rem;">
               <div><strong>① 생활 문제:</strong> 화면 장시간 노출로 인한 눈 침침함, 시각 피로도 급증, 오후 집중력 저하</div>
               <div><strong>② 해결 방식:</strong> 황반 색소 밀도를 유지하는 지용성 정제와 피로 완화 안토시아닌 액상의 듀얼 케어</div>
-              <div><strong>③ 섭취 시점:</strong> <span style="color: var(--accent-dark); font-weight: 700;">오후 2시 (스크린 업무 집중 시간)</span></div>
+              <div><strong>③ 섭취 시점:</strong> <span style="color: #111827; font-weight: 700;">오후 2시 (스크린 업무 집중 시간)</span></div>
               <div style="padding-top: 8px; border-top: 1px dashed var(--border);">
                 <strong>④ 제형 구성:</strong> 상단 정제(루테인지아잔틴 20mg + 아스타잔틴 6mg) + 하단 액상(빌베리 안토시아닌 농축액)
               </div>
@@ -2279,9 +2185,8 @@
     <section id="curation" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>PERSONALIZED WELLNESS DIAGNOSTIC</div>
-          <h2 style="color: #FAF6EB; font-size: 2.1rem; font-weight: 800; line-height: 1.35; margin: 16px 0 12px;">내 라이프스타일 1:1 맞춤 배합 진단</h2>
-          <p class="lead" style="color: rgba(250, 246, 235, 0.85); font-size: 1rem; line-height: 1.65; max-width: 600px; margin: 0 auto 48px;">3가지 질문을 통해 일상 패턴과 결핍 요소를 분석하고 최적화된 처방 리포트와 각인 라벨을 생성합니다.</p>
+          <h2 style="color: var(--primary); font-size: 2.1rem; font-weight: 800; line-height: 1.35; margin: 0 0 12px;">내 라이프스타일 1:1 맞춤 배합 진단</h2>
+          <p class="lead" style="color: var(--text-body); font-size: 1rem; line-height: 1.65; max-width: 600px; margin: 0 auto 48px;">3가지 질문을 통해 일상 패턴과 결핍 요소를 분석하고 최적화된 처방 리포트와 각인 라벨을 생성합니다.</p>
         </div>
 
         <div class="diag-quiz-container" id="diagQuizContainer">
@@ -2498,12 +2403,12 @@
                   야근과 수면 부족으로 저하된 간 대사 기능을 회복하고, 아침 공복 혈당을 안정시키는 고단백·식이섬유 올인원 포뮬러가 처방되었습니다.
                 </p>
                 
-                <div style="background: #FFFFFF; border-radius: var(--radius-sm); padding: 20px; border: 1.5px solid rgba(24, 61, 51, 0.12); margin-bottom: 24px; box-shadow: var(--shadow-subtle);">
+                <div style="background: #FFFFFF; border-radius: var(--radius-sm); padding: 20px; border: 1.5px solid #E5E7EB; margin-bottom: 24px; box-shadow: none;">
                   <div style="font-weight: 800; color: var(--primary); margin-bottom: 6px; font-size: 0.95rem;">정밀 매칭 유효 성분 (1:1 처방)</div>
                   <div style="font-size: 0.92rem; color: var(--text-body); line-height: 1.6;" id="curationIngredients">
                     밀크씨슬 130mg + 활성 비타민 B군 500% + 타우린 1,000mg + 귀리 식이섬유 액상
                   </div>
-                  <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 0.85rem; color: var(--accent-dark); font-weight: 700;" id="curationTimingGuide">
+                  <div style="margin-top: 10px; padding-top: 10px; border-top: 1px dashed var(--border); font-size: 0.85rem; color: #111827; font-weight: 700;" id="curationTimingGuide">
                     추천 섭취 골든타임: 출근 직후 또는 야근 시작 전 섭취
                   </div>
                 </div>
@@ -2517,17 +2422,17 @@
               </div>
 
               <!-- Real-time Engraved Bottle Preview -->
-              <div style="background: #FFFFFF; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius); padding: 36px 28px; text-align: center; box-shadow: var(--shadow-subtle);">
-                <span style="font-size: 0.75rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; display: block; margin-bottom: 12px;">1:1 PERSONALIZED LABEL PREVIEW</span>
-                <div class="prd-bottle-box" style="width: 110px; margin: 0 auto 16px auto; background: #FFFFFF; border-radius: 12px; padding: 16px; border: 1px solid var(--border);">
+              <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 36px 28px; text-align: center; box-shadow: none;">
+                <span style="font-size: 0.75rem; font-weight: 800; color: #4B5563; letter-spacing: 0.08em; display: block; margin-bottom: 12px;">1:1 PERSONALIZED LABEL PREVIEW</span>
+                <div class="prd-bottle-box" style="width: 110px; margin: 0 auto 16px auto; background: #F9FAFB; border-radius: 12px; padding: 16px; border: 1px solid #E5E7EB;">
                   <div class="mini-bottle" style="width: 50px; height: 100px; margin: 0 auto;">
-                    <div class="mini-cap" style="width: 32px; height: 22px; background: #183D33;"></div>
-                    <div class="mini-body" style="width: 42px; height: 70px; background: linear-gradient(180deg, rgba(82, 144, 116, 0.3) 0%, rgba(24, 61, 51, 0.9) 100%);">
-                      <span class="mini-label" style="font-size: 0.55rem;" id="curationBottleTag">AFIT</span>
+                    <div class="mini-cap" style="width: 32px; height: 22px; background: #111827; border: 1px solid #111827;"></div>
+                    <div class="mini-body" style="width: 42px; height: 70px; background: #FFFFFF; border: 1.5px solid #111827; box-shadow: none;">
+                      <span class="mini-label" style="font-size: 0.55rem; background: #F9FAFB; color: #111827; border: 1px solid #111827;" id="curationBottleTag">AFIT</span>
                     </div>
                   </div>
                 </div>
-                <div style="background: #FFFFFF; border: 1.5px dashed var(--border-accent); padding: 16px; border-radius: var(--radius-sm); margin-bottom: 12px; box-shadow: var(--shadow-subtle);">
+                <div style="background: #FFFFFF; border: 1.5px dashed #D1D5DB; padding: 16px; border-radius: var(--radius-sm); margin-bottom: 12px; box-shadow: none;">
                   <strong style="font-size: 1.10rem; color: var(--primary); display: block; font-weight: 900; margin-bottom: 2px;" id="curationLabel">A:FIT FOR 2030 직장인</strong>
                   <span style="font-size: 0.84rem; color: var(--text-muted); font-weight: 500;" id="curationEngraveMsg">"야근과 피로를 덜어주는 맞춤 활력 루틴"</span>
                 </div>
@@ -2546,8 +2451,7 @@
           
           <!-- Calculator -->
           <div class="calc-box">
-            <div class="tag" style="background: rgba(255,255,255,0.12); color: #fff; border-color: rgba(255,255,255,0.2);"><span class="tag-dot"></span>COST & TIME VALUE CALCULATOR</div>
-            <h2 style="color: #fff; margin: 16px 0 8px;">내 한 달 식비와 시간, 얼마나 절약될까?</h2>
+            <h2 style="color: #fff; margin: 0 0 8px;">내 한 달 식비와 시간, 얼마나 절약될까?</h2>
             <p style="color: rgba(255,255,255,0.75); font-size: 0.95rem; margin-bottom: 20px;">평소 식비 기준과 구독 일수를 선택하여 투명한 절감 산출식을 실시간으로 확인하세요.</p>
             
             <!-- Step 1: Baseline Meal Cost Configuration -->
@@ -2572,7 +2476,7 @@
 
             <!-- Step 3: Transparent Formula & Equation Box -->
             <div class="calc-formula-box" id="calcFormulaBox">
-              <div style="font-weight: 800; color: var(--accent); margin-bottom: 4px;">[투명 산출 근거 및 계산식]</div>
+              <div style="font-weight: 800; color: #FFFFFF; margin-bottom: 4px;">[투명 산출 근거 및 계산식]</div>
               <div>• 식비 절감식: (<span id="eqMealCost">8,500원</span> - A:FIT 2,660원) × <span id="eqDays1">20일</span> = <strong id="eqSavedMoney" style="color: #FFFFFF;">116,800원</strong></div>
               <div>• 시간 절약식: 1회 식사·준비 30분(0.5시간) × <span id="eqDays2">20일</span> = <strong id="eqSavedTime" style="color: #FFFFFF;">10시간</strong></div>
             </div>
@@ -2581,7 +2485,7 @@
             <div style="background: rgba(0,0,0,0.3); border-radius: var(--radius-sm); padding: 22px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; border: 1px solid rgba(255,255,255,0.08);">
               <div>
                 <span style="font-size: 0.84rem; color: rgba(255,255,255,0.65);">한 달 절약 식비</span>
-                <strong style="font-size: 1.75rem; color: var(--accent); display: block; font-weight: 900;" id="savedMoney">116,800원</strong>
+                <strong style="font-size: 1.75rem; color: #FFFFFF; display: block; font-weight: 900;" id="savedMoney">116,800원</strong>
               </div>
               <div>
                 <span style="font-size: 0.84rem; color: rgba(255,255,255,0.65);">절약된 식사·준비 시간</span>
@@ -2596,37 +2500,36 @@
 
           <!-- Dual-Formulation Mechanism Guide -->
           <div>
-            <div class="tag"><span class="tag-dot"></span>DUAL-FORMULATION MECHANISM</div>
-            <h2 style="margin: 14px 0 16px;">물 없이 간편하게 마시는<br>원핸드 3단계 섭취 기전</h2>
+            <h2 style="margin: 0 0 16px;">물 없이 간편하게 마시는<br>원핸드 3단계 섭취 기전</h2>
             <p class="lead" style="margin-bottom: 32px;">어디서나 생수를 찾을 필요 없이 한 손으로 간편하게 섭취하세요.</p>
 
             <div style="display: grid; gap: 16px;">
               <div class="card" style="padding: 22px; display: flex; gap: 20px; align-items: center;">
-                <div style="font-size: 1.05rem; font-weight: 900; color: var(--primary); background: rgba(82, 144, 116, 0.12); width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(82, 144, 116, 0.3); flex-shrink: 0;">01</div>
+                <div style="font-size: 1.05rem; font-weight: 900; color: #111827; background: #F3F4F6; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid #D1D5DB; flex-shrink: 0;">01</div>
                 <div>
                   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
                     <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">원터치 캡 딸깍</strong>
-                    <span style="font-size: 0.70rem; color: var(--accent-dark); font-weight: 700; background: rgba(82,144,116,0.1); padding: 2px 6px; border-radius: 4px;">권장: 400×300px 실사 컷</span>
+                    <span style="font-size: 0.70rem; color: #4B5563; font-weight: 700; background: #F3F4F6; padding: 2px 6px; border-radius: 4px; border: 1px solid #E5E7EB;">권장: 400×300px 실사 컷</span>
                   </div>
                   <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">상단 캡을 가볍게 열어 분리된 고농축 맞춤 정제를 확인합니다.</p>
                 </div>
               </div>
               <div class="card" style="padding: 22px; display: flex; gap: 20px; align-items: center;">
-                <div style="font-size: 1.05rem; font-weight: 900; color: var(--primary); background: rgba(82, 144, 116, 0.12); width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(82, 144, 116, 0.3); flex-shrink: 0;">02</div>
+                <div style="font-size: 1.05rem; font-weight: 900; color: #111827; background: #F3F4F6; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid #D1D5DB; flex-shrink: 0;">02</div>
                 <div>
                   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
                     <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">정제 톡 낙하</strong>
-                    <span style="font-size: 0.70rem; color: var(--accent-dark); font-weight: 700; background: rgba(82,144,116,0.1); padding: 2px 6px; border-radius: 4px;">권장: 400×300px 실사 컷</span>
+                    <span style="font-size: 0.70rem; color: #4B5563; font-weight: 700; background: #F3F4F6; padding: 2px 6px; border-radius: 4px; border: 1px solid #E5E7EB;">권장: 400×300px 실사 컷</span>
                   </div>
                   <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">미세 소형 정제를 입안에 털어 넣습니다.</p>
                 </div>
               </div>
               <div class="card" style="padding: 22px; display: flex; gap: 20px; align-items: center;">
-                <div style="font-size: 1.05rem; font-weight: 900; color: var(--primary); background: rgba(82, 144, 116, 0.12); width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid rgba(82, 144, 116, 0.3); flex-shrink: 0;">03</div>
+                <div style="font-size: 1.05rem; font-weight: 900; color: #111827; background: #F3F4F6; width: 46px; height: 46px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 1.5px solid #D1D5DB; flex-shrink: 0;">03</div>
                 <div>
                   <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 2px;">
                     <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">원샷 부드러운 다이렉트 섭취</strong>
-                    <span style="font-size: 0.70rem; color: var(--accent-dark); font-weight: 700; background: rgba(82,144,116,0.1); padding: 2px 6px; border-radius: 4px;">권장: 400×300px 실사 컷</span>
+                    <span style="font-size: 0.70rem; color: #4B5563; font-weight: 700; background: #F3F4F6; padding: 2px 6px; border-radius: 4px; border: 1px solid #E5E7EB;">권장: 400×300px 실사 컷</span>
                   </div>
                   <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">하단 저점도 고농축 액상 포뮬러를 마시며 부드럽게 넘겨 식사와 영양을 동시 완료합니다.</p>
                 </div>
@@ -2642,9 +2545,8 @@
     <section id="archive" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>FULL PRODUCT ARCHIVE</div>
-          <h2 style="color: #FAF6EB; font-size: 2.1rem; font-weight: 800; line-height: 1.35; margin: 16px 0 12px;">A:FIT 15종 전체 컬렉션 아카이브</h2>
-          <p class="lead" style="color: rgba(250, 246, 235, 0.85); font-size: 1rem; line-height: 1.65; max-width: 600px; margin: 0 auto 48px;">상황별 맞춤 배합과 고유 유효 성분을 갖춘 15종 전 제품을 한눈에 탐색하세요.</p>
+          <h2 style="color: var(--primary); font-size: 2.1rem; font-weight: 800; line-height: 1.35; margin: 0 0 12px;">A:FIT 15종 전체 컬렉션 아카이브</h2>
+          <p class="lead" style="color: var(--text-body); font-size: 1rem; line-height: 1.65; max-width: 600px; margin: 0 auto 48px;">상황별 맞춤 배합과 고유 유효 성분을 갖춘 15종 전 제품을 한눈에 탐색하세요.</p>
         </div>
 
         <!-- Multi-dimensional Filter Navigation Bar -->
@@ -2720,8 +2622,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">밀크씨슬 130mg + 비타민B군 500%</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">속쓰림 없는 귀리 식이섬유 곡물 쉐이크</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">저녁 야근 시작 전 / 식사 대용</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">저녁 야근 시작 전 / 식사 대용</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -2763,8 +2665,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">필수 비타민 13종 + 마그네슘 150mg</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">저당 오트밀 수용성 섬유질 & 활력 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">아침 출근길 공복 / 업무 시작 전</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">아침 출근길 공복 / 업무 시작 전</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -2806,8 +2708,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">헛개나무추출물 + 순수 글루타치온 효모</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">전해질 미네랄 & 타우린 1,000mg 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">음주 직후 또는 다음 날 기상 직후</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">음주 직후 또는 다음 날 기상 직후</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -2849,8 +2751,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">글루콘산 아연 12mg + 비타민D 2,000IU</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">유럽산 엘더베리 고농축 바이오 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">매일 아침 식후 1병</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">매일 아침 식후 1병</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -2892,8 +2794,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">코엔자임Q10 100mg + 비타민E</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">지중해 석류 농축 안토시아닌 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">오후 2시 나른한 업무 시간</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">오후 2시 나른한 업무 시간</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -2935,8 +2837,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">필수 아미노산 9종 (EAA 5,000mg)</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">분리유청단백질(WPI) 20g 초저당 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">운동 직후 30분 이내 (골든타임)</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 3정+액상 120ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">운동 직후 30분 이내 (골든타임)</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 3정+액상 120ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -2978,8 +2880,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">L-아르기닌 5,000mg + 크레아틴</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">타우린 1,000mg + 고농축 비타민C 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">운동 시작 20~30분 전</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">운동 시작 20~30분 전</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3021,8 +2923,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">히알루론산 240mg + 피쉬 엘라스틴</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">초저분자 피쉬콜라겐 3,270mg 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">매일 아침 세안 직후 공복</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">매일 아침 세안 직후 공복</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3064,8 +2966,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">L-글루타치온 순수 효모 250mg</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">화이트토마토 농축 브라이트닝 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">오후 1시 나른한 시간대</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">오후 1시 나른한 시간대</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3107,8 +3009,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">EVE 비건 건조효모 B12 + 식물성 철분</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">100% 유기농 완두·현미 단백질 쉐이크</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">아침 식사 대용 1병</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">아침 식사 대용 1병</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3150,8 +3052,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">15곡 발효 곡물 효소 + 유산균 사균체</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">유기농 양배추 & 매실 저자극 농축액</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">점심 또는 저녁 식사 직후</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">점심 또는 저녁 식사 직후</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3193,8 +3095,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">뇌파 안정 L-테아닌 200mg + 마그네슘</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">타트체리 멜라토닌 & 카모마일 진정 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">퇴근 후 취침 30분 전</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">퇴근 후 취침 30분 전</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3236,8 +3138,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">비타민B12 1,000㎍ + 천연 과라나</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">고농축 아미노산 타우린 & 구연산 샷</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">심야 근무 시작 직전</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">심야 근무 시작 직전</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3279,8 +3181,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">루테인지아잔틴 20mg + 아스타잔틴 6mg</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">빌베리 안토시아닌 시신경 보호 농축액</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">오후 2시 화면 집중 시간</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">오후 2시 화면 집중 시간</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3322,8 +3224,8 @@
             <div class="prd-formula-info">
               <div class="prd-formula-row"><span class="f-badge">상단 정제</span> <span class="f-val">은행잎추출물 플라보놀 28mg + 테아닌</span></div>
               <div class="prd-formula-row"><span class="f-badge">하단 액상</span> <span class="f-val">로즈마리 콜린 두뇌 회로 부스팅 액상</span></div>
-              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: rgba(82, 144, 116, 0.15);">추천 시점</span> <span class="f-val" style="color: var(--accent-dark); font-weight: 700;">오전 집중 코딩 / 기획 시작 전</span></div>
-              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: rgba(24, 61, 51, 0.08);">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
+              <div class="prd-formula-row" style="margin-top: 6px; padding-top: 6px; border-top: 1px dashed var(--border);"><span class="f-badge" style="background: #F3F4F6;">추천 시점</span> <span class="f-val" style="color: #111827; font-weight: 700;">오전 집중 코딩 / 기획 시작 전</span></div>
+              <div class="prd-formula-row" style="margin-top: 4px;"><span class="f-badge" style="background: #F3F4F6;">용량 구성</span> <span class="f-val">1병 (정제 2정+액상 100ml) / 월 30병</span></div>
             </div>
             <div class="prd-price-box">
               <div class="price-sub">정기구독 30일 기준</div>
@@ -3341,10 +3243,10 @@
           <!-- Empty State Container -->
           <div id="archiveEmptyState" class="empty-state-card" style="display: none;">
             <div style="font-size: 2.2rem; color: var(--accent); margin-bottom: 12px;">∅</div>
-            <h3 style="font-size: 1.25rem; color: #FAF6EB; font-weight: 800; margin-bottom: 8px;">
+            <h3 style="font-size: 1.25rem; color: var(--primary); font-weight: 800; margin-bottom: 8px;">
               선택하신 조건에 일치하는 맞춤 포뮬러가 없습니다.
             </h3>
-            <p style="font-size: 0.92rem; color: rgba(250, 246, 235, 0.85); margin-bottom: 22px;">
+            <p style="font-size: 0.92rem; color: var(--text-body); margin-bottom: 22px;">
               필터 조건을 변경하시거나 초기화 버튼을 눌러 15종 전체 컬렉션을 확인해 보세요.
             </p>
             <button type="button" class="btn primary" style="padding: 10px 22px; font-size: 0.88rem;" onclick="resetAllFilters()">
@@ -3354,7 +3256,7 @@
 
         </div>
 
-        <div style="text-align: center; font-size: 0.78rem; color: rgba(250, 246, 235, 0.65); margin-top: 36px;">
+        <div style="text-align: center; font-size: 0.78rem; color: var(--text-muted); margin-top: 36px;">
           * 표기된 15종 상품 구성, 구독 가격 및 프로모션 혜택은 서비스 UI/UX 시연을 위한 기획 데이터입니다.
         </div>
       </div>
@@ -3364,7 +3266,6 @@
     <section id="reviews">
       <div class="wrap-wide">
         <div class="section-header center">
-          <div class="tag"><span class="tag-dot"></span>PERSONA USER SCENARIO</div>
           <h2>타겟 페르소나 인터뷰 기반 가상 사용 시나리오</h2>
           <p class="lead" style="margin-bottom: 8px;">제품 기능 설계를 위해 진행된 3개 직군 페르소나 심층 인터뷰를 바탕으로 도출된 예상 일상 변화 시나리오입니다.</p>
           <p style="font-size: 0.80rem; color: var(--text-light); margin-bottom: 36px;">* 본 시나리오는 제품 기획 및 페르소나 가설 검증을 위한 가상 인터뷰 모델링 데이터입니다.</p>
@@ -3432,7 +3333,7 @@
       </div>
 
       <!-- 전문가 1줄 핵심 요약 -->
-      <div style="background: linear-gradient(135deg, rgba(82, 144, 116, 0.12) 0%, rgba(24, 61, 51, 0.05) 100%); border: 1.5px solid rgba(82, 144, 116, 0.35); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 16px;">
+      <div style="background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 16px;">
         <div style="font-size: 0.82rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
           <span>전문가 핵심 처방 요약</span>
         </div>
@@ -3440,16 +3341,16 @@
       </div>
 
       <!-- 상단 정제 -->
-      <div style="background: #FFFFFF; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px; box-shadow: var(--shadow-subtle);">
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px; box-shadow: none;">
         <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
-          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--accent);"></span>
+          <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #111827;"></span>
           <span>상단 캡슐 정제 구성</span>
         </div>
         <div id="modalCapText" style="font-size: 0.90rem; color: var(--text-body); line-height: 1.6;">성분 정보</div>
       </div>
 
       <!-- 하단 액상 -->
-      <div style="background: #FFFFFF; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px; box-shadow: var(--shadow-subtle);">
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 16px 18px; margin-bottom: 14px; box-shadow: none;">
         <div style="font-size: 0.84rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 6px; margin-bottom: 6px;">
           <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--primary);"></span>
           <span>하단 고농축 액상 포뮬러</span>
@@ -3458,14 +3359,14 @@
       </div>
 
       <!-- 섭취 골든타임 -->
-      <div style="background: #FFFFFF; border: 1.5px dashed rgba(118, 165, 140, 0.5); border-radius: var(--radius-sm); padding: 12px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
+      <div style="background: #FFFFFF; border: 1.5px dashed #D1D5DB; border-radius: var(--radius-sm); padding: 12px 18px; margin-bottom: 16px; display: flex; align-items: center; gap: 8px;">
         <div style="font-size: 0.86rem; color: var(--text-body);">
-          <strong style="color: var(--primary);">추천 섭취 골든타임:</strong> <span id="modalTimingText" style="font-weight: 700; color: var(--accent-dark);">섭취 시간 가이드</span>
+          <strong style="color: var(--primary);">추천 섭취 골든타임:</strong> <span id="modalTimingText" style="font-weight: 700; color: #111827;">섭취 시간 가이드</span>
         </div>
       </div>
 
       <!-- CS Quick Contact Box (카톡 문의 & 대표번호) -->
-      <div style="background: #F8FAF8; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
+      <div style="background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px;">
         <div style="display: flex; align-items: center; gap: 8px;">
           <span style="font-size: 1.05rem;">💬</span>
           <span style="font-size: 0.84rem; color: var(--primary); font-weight: 700;">상품 하자 접수 및 성분 문의</span>
@@ -3474,7 +3375,7 @@
           <button type="button" onclick="connectKakaoChat()" style="background: #FEE500; color: #191919; font-weight: 800; font-size: 0.80rem; border: none; border-radius: 6px; padding: 6px 12px; cursor: pointer; display: flex; align-items: center; gap: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.08);">
             <span>카톡 1:1 상담</span>
           </button>
-          <a href="tel:1588-4920" style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); text-decoration: none; padding: 5px 8px; border-radius: 6px; background: rgba(82, 144, 116, 0.1);">
+          <a href="tel:1588-4920" style="font-size: 0.82rem; font-weight: 800; color: #111827; text-decoration: none; padding: 5px 8px; border-radius: 6px; background: #F3F4F6; border: 1px solid #E5E7EB;">
             📞 1588-4920
           </a>
         </div>
@@ -3502,13 +3403,13 @@
       </div>
 
       <!-- Channel 1: KakaoTalk 1:1 Live Chat -->
-      <div style="background: #FFFFFF; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow-subtle);">
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
         <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
           <div>
-            <span style="font-size: 0.76rem; font-weight: 800; color: #E5A800; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">REAL-TIME CHAT</span>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">REAL-TIME CHAT</span>
             <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">카카오톡 1:1 실시간 상담</strong>
           </div>
-          <span style="font-size: 0.76rem; color: #10B981; font-weight: 700; background: rgba(16, 185, 129, 0.1); padding: 3px 8px; border-radius: 999px;">● 상담원 대기중</span>
+          <span style="font-size: 0.76rem; color: #111827; font-weight: 700; background: #F3F4F6; padding: 3px 8px; border-radius: 999px; border: 1px solid #E5E7EB;">● 상담원 대기중</span>
         </div>
         <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin: 0 0 14px 0;">
           파손 사진 첨부, 불량 교환 접수, 실시간 배송 조회를 가장 빠르게 처리하실 수 있습니다.
@@ -3525,13 +3426,13 @@
       </div>
 
       <!-- Channel 2: Phone Hotline -->
-      <div style="background: #FFFFFF; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: var(--shadow-subtle);">
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
           <div>
-            <span style="font-size: 0.76rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.05em; display: block; margin-bottom: 2px;">PHONE HOTLINE</span>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">PHONE HOTLINE</span>
             <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">고객센터 대표 전화</strong>
           </div>
-          <a href="tel:1588-4920" style="background: var(--primary); color: #FAF6EB; font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <a href="tel:1588-4920" style="background: #111827; color: #FFFFFF; font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
             📞 통화 연결
           </a>
         </div>
@@ -3545,7 +3446,7 @@
       </div>
 
       <!-- Assurance Guarantee & FAQ Quick Links -->
-      <div style="background: linear-gradient(135deg, rgba(82, 144, 116, 0.1) 0%, rgba(24, 61, 51, 0.04) 100%); border: 1px solid rgba(82, 144, 116, 0.3); border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.80rem; color: var(--primary); line-height: 1.6;">
+      <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.80rem; color: var(--primary); line-height: 1.6;">
         <strong style="display: block; margin-bottom: 2px; color: var(--primary);">🛡️ A:FIT 100% 품질 안심 보증제</strong>
         • 배송 중 파손 또는 캡/액상 불량 발생 시 <strong>100% 무료 맞춤 재배송</strong><br>
         • 미개봉 상품은 수령 후 7일 이내 1:1 무상 반품 접수 지원
@@ -3574,7 +3475,7 @@
         <form onsubmit="handleOrderSubmit(event)">
           <div style="margin-bottom: 16px;">
             <label for="orderPlanName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">선택 제품 / 처방 플랜</label>
-            <input type="text" id="orderPlanName" value="01. 나이트 오버타임 팩" style="width: 100%; padding: 12px 14px; border: 1.5px solid rgba(24, 61, 51, 0.15); border-radius: 10px; background: #F8FAF8; font-weight: 800; color: var(--primary);" readonly>
+            <input type="text" id="orderPlanName" value="01. 나이트 오버타임 팩" style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px; background: #F9FAFB; font-weight: 800; color: var(--primary);" readonly>
           </div>
           <div style="margin-bottom: 16px;">
             <label for="orderCustName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독자 성함</label>
@@ -3618,7 +3519,7 @@
           선택하신 맞춤 포뮬러가 1:1 라벨 각인 공정을 거쳐 안전하게 출고됩니다.
         </p>
 
-        <div style="background: #F8FAF8; border: 1.5px solid rgba(24, 61, 51, 0.12); border-radius: var(--radius-sm); padding: 20px; text-align: left; margin-bottom: 24px; font-size: 0.88rem; line-height: 1.8;">
+        <div style="background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 20px; text-align: left; margin-bottom: 24px; font-size: 0.88rem; line-height: 1.8;">
           <div style="display: flex; justify-content: space-between;">
             <span style="color: var(--text-muted);">주문 접수번호</span>
             <strong style="color: var(--primary); font-weight: 800;" id="successOrderNum">AFIT-20260821-001</strong>
@@ -3633,7 +3534,7 @@
           </div>
           <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--border); margin-top: 8px; padding-top: 8px;">
             <span style="color: var(--text-muted);">첫 배송 예정일</span>
-            <strong style="color: var(--accent-dark); font-weight: 800;">신청 후 2영업일 이내 무균 질소 팩 출고</strong>
+            <strong style="color: #111827; font-weight: 800;">신청 후 2영업일 이내 무균 질소 팩 출고</strong>
           </div>
         </div>
 
@@ -4192,14 +4093,6 @@
       });
     }
 
-    // 7. Global Interactive Ambient Spotlight Follower
-    const spotlight = document.getElementById('globalSpotlight');
-    if (spotlight) {
-      window.addEventListener('mousemove', (e) => {
-        spotlight.style.left = e.clientX + 'px';
-        spotlight.style.top = e.clientY + 'px';
-      });
-    }
   </script>
 </body>
 </html>
