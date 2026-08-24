@@ -1,0 +1,1026 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - navigation [ref=e3]:
+      - link "A:FIT 홈으로 이동" [ref=e4] [cursor=pointer]:
+        - /url: 메인페이지.html
+        - strong [ref=e5]: A:FIT
+      - generic [ref=e6]:
+        - generic [ref=e7]:
+          - link "브랜드 소개" [ref=e8] [cursor=pointer]:
+            - /url: 브랜드소개.html
+          - link "15종 컬렉션" [ref=e9] [cursor=pointer]:
+            - /url: 카테고리.html
+          - link "AI 맞춤진단" [ref=e10] [cursor=pointer]:
+            - /url: "#curation"
+          - link "가성비 계산기" [ref=e11] [cursor=pointer]:
+            - /url: "#calculator"
+          - link "구독 후기 & FAQ" [ref=e12] [cursor=pointer]:
+            - /url: "#reviews"
+        - generic [ref=e13]:
+          - generic [ref=e14]:
+            - textbox "맞춤 루틴 검색" [ref=e15]
+            - img [ref=e16] [cursor=pointer]
+          - button "A:FIT 브랜드 고객만족센터 (CS)" [ref=e19] [cursor=pointer]
+          - button "맞춤 구독 시작하기" [ref=e23] [cursor=pointer]
+  - main [ref=e25]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]:
+          - heading "나를 위한 1:1 맞춤 웰니스" [level=1] [ref=e30]
+          - paragraph [ref=e31]: 불필요한 과잉 섭취와 식비 낭비 없이, 신뢰할 수 있는 기능성 원료와 이중제형 기술로 당신의 일상에 정확하게 딱 맞는 루틴을 설계합니다.
+        - generic [ref=e32]:
+          - generic [ref=e33]:
+            - strong [ref=e34]:
+              - generic [ref=e35]: "01"
+              - text: 이중 제형
+            - generic [ref=e36]: 상단 정제 + 하단 액상 결합
+          - generic [ref=e37]:
+            - strong [ref=e38]:
+              - generic [ref=e39]: "02"
+              - text: 스마트 루틴
+            - generic [ref=e40]: 번거로움 없는 데일리 웰니스
+          - generic [ref=e41]:
+            - strong [ref=e42]:
+              - generic [ref=e43]: "03"
+              - text: 1:1 라벨
+            - generic [ref=e44]: 7대 라이프스타일 처방
+        - generic [ref=e45]:
+          - button "내 맞춤 루틴 찾아보기 →" [ref=e46] [cursor=pointer]
+          - link "라이프스타일 추천 진단 ↓" [ref=e47] [cursor=pointer]:
+            - /url: "#curation"
+      - img "A:FIT 시그니처 1:1 맞춤 3D 듀얼 보틀 와이어프레임 렌더링 - 상단 정제 캡슐과 하단 액상 보틀 결합 구조" [ref=e48]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: A:FIT
+          - generic [ref=e60]:
+            - generic [ref=e61]: 1:1 맞춤 포뮬러
+            - generic [ref=e62]: 박지안 님
+        - heading "A:FIT 시그니처 듀얼 팩" [level=3] [ref=e63]
+        - paragraph [ref=e64]:
+          - strong [ref=e65]: "[야근·피로 회복 루틴]"
+          - text: "상단: 밀크씨슬 130mg + 활력 비타민B군 500% 하단: 귀리 식이섬유 단백 농축 액상"
+        - generic [ref=e66]:
+          - generic [ref=e67]: 정기구독 시 1병 2,660원대 (월 79,800원)
+          - generic [ref=e68]: ✓ 개인화 각인 라벨 무료 적용
+    - generic [ref=e71]:
+      - generic [ref=e72]:
+        - heading "우리는 왜 하루 한 병의 웰니스에 집착하는가" [level=2] [ref=e73]
+        - paragraph [ref=e74]: 바쁜 일상 속 결핍과 비효율을 해결하기 위해 시작된 A:FIT의 이야기입니다.
+        - generic [ref=e75]:
+          - paragraph [ref=e76]:
+            - text: 책상 위에 어지럽게 쌓여가는 대형 영양제 약통들, 그리고 시간에 쫓겨 인스턴트로 때우는 불균형한 한 끼. 우리는 스스로에게 물었습니다.
+            - strong [ref=e77]: "\"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?\""
+          - paragraph [ref=e78]:
+            - text: 기존 시장의 솔루션은
+            - strong [ref=e79]: "'먹어야 할 것의 가짓수'"
+            - text: 만 늘려갈 뿐, 정작 바쁜 현대인의 흡수 한계와 위장 부담, 그리고 번거로운 일상 루틴을 해결하지 못했습니다.
+          - paragraph [ref=e80]:
+            - text: A:FIT은 이 비효율의 악순환을 끊어내기 위해 탄생했습니다.
+            - strong [ref=e81]: 불필요한 과잉을 덜어내고, 내 몸이 지금 당장 필요로 하는 유효성분만을 정밀 타겟팅
+            - text: 하여 물 없이도 간편하게 완결되는 가장 진화된 웰니스 루틴을 제안합니다.
+        - generic [ref=e82]:
+          - generic [ref=e83]: A:FIT = All-in-one + FIT
+          - generic [ref=e84]:
+            - text: 복잡한 영양제와 식사를 한 병에 압축한
+            - strong [ref=e85]: 올인원(All-in-one)
+            - text: 과 내 하루에 꼭 맞는
+            - strong [ref=e86]: 개인화(FIT)
+            - text: 의 결합
+        - link "브랜드 창업 스토리 & 디자인 가이드 전체보기 →" [ref=e88] [cursor=pointer]:
+          - /url: 브랜드소개.html
+      - generic [ref=e89]:
+        - generic [ref=e90]:
+          - generic [ref=e91]: CORE BELIEF 01
+          - heading "1:1 정밀 맞춤 배합의 원칙" [level=3] [ref=e92]
+          - paragraph [ref=e93]: 누구에게나 똑같은 범용 영양제는 더 이상 답이 아닙니다. 설문 기반 라이프스타일 분석을 통해 개인의 결핍 요소만을 골라 담습니다.
+        - generic [ref=e94]:
+          - generic [ref=e95]: CORE BELIEF 02
+          - heading "체내 이용 효율 중심의 이중제형 과학" [level=3] [ref=e96]
+          - paragraph [ref=e97]: 아무리 좋은 성분도 흡수되지 않으면 무의미합니다. 상단 정제와 하단 저점도 액상의 이중제형 기전으로 체내 이용 효율과 편안한 흡수를 돕습니다.
+        - generic [ref=e98]:
+          - generic [ref=e99]: CORE BELIEF 03
+          - heading "지속 가능한 클린 웰니스 순환" [level=3] [ref=e100]
+          - paragraph [ref=e101]: 나의 건강뿐 아니라 환경의 지속가능성을 생각합니다. 180일 토양 생분해 용기와 친환경 패키징 시스템을 적용합니다.
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - heading "내 하루에 딱 맞춘 웰니스 루틴" [level=2] [ref=e105]
+        - paragraph [ref=e106]: 복잡하고 번거로운 영양제 소분에서 벗어나, 하루 1병으로 완성되는 스마트 루틴의 변화를 경험하세요.
+      - generic [ref=e107]:
+        - generic [ref=e108]:
+          - generic [ref=e109]:
+            - generic [ref=e110]: BEFORE · 기존 일상
+            - heading "불규칙한 한 끼와 넘쳐나는 약통" [level=3] [ref=e111]
+            - img [ref=e113]:
+              - generic [ref=e115]: 07:30 AM
+            - generic [ref=e139]:
+              - generic [ref=e140]:
+                - generic [ref=e141]: 07:30 AM
+                - generic [ref=e142]:
+                  - strong [ref=e143]: 출근길 허겁지겁 때우는 식사
+                  - paragraph [ref=e144]: 편의점 삼각김밥과 고카페인 음료로 때우는 불균형한 아침
+              - generic [ref=e145]:
+                - generic [ref=e146]: 09:30 AM
+                - generic [ref=e147]:
+                  - strong [ref=e148]: 책상 위 4~5개 약통 챙기기
+                  - paragraph [ref=e149]: 큰 알약들을 물과 함께 억지로 삼키며 느끼는 목걸림과 번거로움
+              - generic [ref=e150]:
+                - generic [ref=e151]: 03:00 PM
+                - generic [ref=e152]:
+                  - strong [ref=e153]: 더부룩한 속에 지친 일상
+                  - paragraph [ref=e154]: 불균형한 아침과 거친 알약들로 인해 속이 불편하고 피로한 오후
+          - generic [ref=e155]: 매일 반복되는 섭취 포기와 영양 불균형의 한계
+        - generic [ref=e156]:
+          - generic [ref=e157]:
+            - generic [ref=e158]: AFTER · 스마트 루틴
+            - heading "하루 1병으로 완성하는 올인원 웰니스" [level=3] [ref=e159]
+            - img [ref=e161]:
+              - generic [ref=e163]:
+                - generic [ref=e167]: 1:1 FIT
+                - generic [ref=e176]: "A : FIT"
+                - generic [ref=e177]: ALL-IN-ONE
+                - generic [ref=e192]: 체내 이용 효율 향상
+            - generic [ref=e193]:
+              - generic [ref=e194]:
+                - generic [ref=e195]: 08:00 AM
+                - generic [ref=e196]:
+                  - strong [ref=e197]: 1병으로 끝내는 든든한 아침
+                  - paragraph [ref=e198]: 1:1 맞춤 영양과 부드러운 액상으로 채우는 균형 잡힌 아침
+              - generic [ref=e199]:
+                - generic [ref=e200]: 10:00 AM
+                - generic [ref=e201]:
+                  - strong [ref=e202]: 한 번에 챙기는 올인원 섭취
+                  - paragraph [ref=e203]: 상단 정제와 하단 액상을 함께 마시는 부드러운 목넘김
+              - generic [ref=e204]:
+                - generic [ref=e205]: All-Day
+                - generic [ref=e206]:
+                  - strong [ref=e207]: 속 편하게 채우는 맑은 활력
+                  - paragraph [ref=e208]: 위 부담 없는 저자극 흡수로 인해 속이 편안하고 활기찬 하루
+          - generic [ref=e209]: 물 불필요 · 약통 0개 · 하루 1병 스마트 웰니스 완성
+      - link "A:FIT 브랜드 철학 & 과학 원칙 더 알아보기 →" [ref=e211] [cursor=pointer]:
+        - /url: 브랜드소개.html
+        - generic [ref=e212]: A:FIT 브랜드 철학 & 과학 원칙 더 알아보기
+        - generic [ref=e213]: →
+    - generic [ref=e215]:
+      - generic [ref=e216]:
+        - heading "4대 공인 인증 & 5단계 무균 질소 공정" [level=2] [ref=e217]
+        - paragraph [ref=e218]: 식약처·GMP 4대 공식 인증 기준과 무균 질소 충진 기술로매일 가장 신선하고 안전한 웰니스를 전달합니다.
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - generic [ref=e225]: MFDS KOREA
+          - strong [ref=e226]: 식약처 기능성 인정 기준
+          - generic [ref=e227]: 건기식 법적 규격 100% 충족
+          - generic [ref=e228]: 제2026-식약처-0814호
+        - generic [ref=e229]:
+          - generic [ref=e234]: GMP CERTIFIED
+          - strong [ref=e235]: 우수 제조 GMP 제조 기준
+          - generic [ref=e236]: 클린룸 무균 공정 100% 검증
+          - generic [ref=e237]: 제2026-GMP-042호
+        - generic [ref=e238]:
+          - generic [ref=e243]: EVE VEGAN FRANCE
+          - strong [ref=e244]: 프랑스 EVE VEGAN
+          - generic [ref=e245]: 100% 식물성 공식 비건 인증
+          - generic [ref=e246]: EVE-VGN-2026-FR
+        - generic [ref=e247]:
+          - generic [ref=e254]: KCL TEST PASS
+          - strong [ref=e255]: 180일 생분해 에코용기
+          - generic [ref=e256]: KCL 180일 토양 자연분해 통과
+          - generic [ref=e257]: KCL-BIO-2026-098
+      - generic [ref=e258]: "* 상기 인증 번호, 시험 성적 및 제품별 배합 데이터는 UI/UX 프로토타입 시연을 위한 가상 콘셉트 데이터(Mock Data)입니다."
+      - generic [ref=e259]:
+        - generic [ref=e260]:
+          - generic [ref=e261]: 01 STEP
+          - strong [ref=e262]: 원료 정밀 검수
+          - paragraph [ref=e263]: 글로벌 공인 프리미엄 식물성/바이오 기능성 원료 100% 검증
+        - generic [ref=e264]:
+          - generic [ref=e265]: 02 STEP
+          - strong [ref=e266]: 미세 소형 정제 타정
+          - paragraph [ref=e267]: 목넘김 이물감 제로를 위한 고농축 마이크로 타정 기술 적용
+        - generic [ref=e268]:
+          - generic [ref=e269]: 03 STEP
+          - strong [ref=e270]: 저점도 액상 포뮬라
+          - paragraph [ref=e271]: 수용성 식이섬유 배합으로 포만감과 부드러운 목넘김 동시 구현
+        - generic [ref=e272]:
+          - generic [ref=e273]: 04 STEP
+          - strong [ref=e274]: 무균 질소 충진 밀폐
+          - paragraph [ref=e275]: 산화율 0% 유지를 위한 5단계 챔버 질소 치환 및 진공 분리 씰링
+        - generic [ref=e276]:
+          - generic [ref=e277]: 05 STEP
+          - strong [ref=e278]: 1:1 맞춤 라벨 출고
+          - paragraph [ref=e279]: 개인별 건강 처방 메시지 레이저 각인 후 24시간 내 신선 직배송
+    - generic [ref=e281]:
+      - generic [ref=e282]:
+        - heading "상황별 대표 시그니처 포뮬러 3종" [level=2] [ref=e283]
+        - paragraph [ref=e284]: 현대인의 대표적인 결핍 상황과 생활 패턴을 해결하기 위해 우선 선정된 A:FIT의 핵심 라인업입니다.
+      - generic [ref=e285]:
+        - img "대표 시그니처 01 프로틴 머슬 빌더 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (1:1 정사각형 비율)" [ref=e286]:
+          - generic [ref=e290]:
+            - generic: A:FIT
+            - generic [ref=e291]:
+              - generic [ref=e292]: 1:1 맞춤 처방
+              - generic [ref=e293]: 06 PRO
+          - generic [ref=e294]:
+            - generic [ref=e295]: 대표 시그니처 01
+            - generic [ref=e296]: 스포츠 Pro 06
+          - heading "프로틴 머슬 빌더" [level=3] [ref=e297]
+          - paragraph [ref=e298]: 운동 전후 단백질 & 에너지 활력 루틴
+        - generic [ref=e299]:
+          - text: "[선정 배경] 운동 전후 단백질 쉐이커 세척과 알약 보충의 비효율 해결"
+          - heading "당류 0g, 쉐이커 없이 운동 후 마시는 압도적인 근단백질 합성 퍼포먼스" [level=3] [ref=e300]
+          - generic [ref=e301]:
+            - generic [ref=e302]:
+              - strong [ref=e303]: "① 생활 문제:"
+              - text: 쉐이커 세척의 번거로움, 부스터 알약과 단백질 파우더 개별 섭취의 불편함
+            - generic [ref=e304]:
+              - strong [ref=e305]: "② 해결 방식:"
+              - text: 물 없이 보틀 하나로 즉각적인 아미노산 & 분리유청단백질 원스톱 충전
+            - generic [ref=e306]:
+              - strong [ref=e307]: "③ 섭취 시점:"
+              - text: 운동 직후 30분 이내 (골든 타임)
+            - generic [ref=e308]:
+              - strong [ref=e309]: "④ 제형 구성:"
+              - text: 상단 정제(필수 아미노산 EAA 9종) + 하단 액상(WPI 단백질 20g 농축액)
+          - generic [ref=e310]:
+            - button "A:FIT 맞춤 구독 시작 →" [ref=e311] [cursor=pointer]
+            - link "전체 15종에서 위치 확인 ↓" [ref=e312] [cursor=pointer]:
+              - /url: "#archive"
+      - generic [ref=e313]:
+        - generic [ref=e314]:
+          - text: "[선정 배경] 불규칙한 3교대 근무 및 야간 생활자의 깨진 생체 리듬 회복"
+          - heading "불규칙한 교대근무와 야간 근무 후, 깊은 숙면 리듬을 되찾아주는 수면 포뮬러" [level=3] [ref=e315]
+          - generic [ref=e316]:
+            - generic [ref=e317]:
+              - strong [ref=e318]: "① 생활 문제:"
+              - text: 주야간 교대로 인한 수면 장애, 스트레스 긴장, 빈속 속쓰림
+            - generic [ref=e319]:
+              - strong [ref=e320]: "② 해결 방식:"
+              - text: 뇌파를 안정시키는 이완 정제와 위에 부담 없는 진정 액상으로 편안한 입면 서포트
+            - generic [ref=e321]:
+              - strong [ref=e322]: "③ 섭취 시점:"
+              - text: 퇴근 후 취침 30분 전
+            - generic [ref=e323]:
+              - strong [ref=e324]: "④ 제형 구성:"
+              - text: 상단 정제(긴장 완화 L-테아닌 200mg) + 하단 액상(타트체리 멜라토닌 & 유기농 양배추 농축액)
+          - generic [ref=e325]:
+            - button "A:FIT 맞춤 구독 시작 →" [ref=e326] [cursor=pointer]
+            - link "전체 15종에서 위치 확인 ↓" [ref=e327] [cursor=pointer]:
+              - /url: "#archive"
+        - img "대표 시그니처 02 나이트 시프트 슬립 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (1:1 정사각형 비율)" [ref=e328]:
+          - generic [ref=e332]:
+            - generic: A:FIT
+            - generic [ref=e333]:
+              - generic [ref=e334]: 1:1 맞춤 처방
+              - generic [ref=e335]: 12 SLEEP
+          - generic [ref=e336]:
+            - generic [ref=e337]: 대표 시그니처 02
+            - generic [ref=e338]: 3교대 Emergency 12
+          - heading "나이트 시프트 슬립" [level=3] [ref=e339]
+          - paragraph [ref=e340]: 불규칙 교대근무와 야간 심신 이완/휴식 루틴
+      - generic [ref=e341]:
+        - img "대표 시그니처 03 블루라이트 아이 쉴드 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (1:1 정사각형 비율)" [ref=e342]:
+          - generic [ref=e346]:
+            - generic: A:FIT
+            - generic [ref=e347]:
+              - generic [ref=e348]: 1:1 맞춤 처방
+              - generic [ref=e349]: 14 EYE
+          - generic [ref=e350]:
+            - generic [ref=e351]: 대표 시그니처 03
+            - generic [ref=e352]: 판교 IT Tech 14
+          - heading "블루라이트 아이 쉴드" [level=3] [ref=e353]
+          - paragraph [ref=e354]: 장시간 모니터 업무 직장인 & 개발자의 시각 집중 루틴
+        - generic [ref=e355]:
+          - text: "[선정 배경] 하루 10시간 이상 모니터 앞 개발자/직장인의 안구 피로 & 집중력 저하 해결"
+          - heading "하루 10시간 모니터 앞 개발자를 위한 초정밀 안구 피로 & 황반 색소 보호" [level=3] [ref=e356]
+          - generic [ref=e357]:
+            - generic [ref=e358]:
+              - strong [ref=e359]: "① 생활 문제:"
+              - text: 화면 장시간 노출로 인한 눈 침침함, 시각 피로도 급증, 오후 집중력 저하
+            - generic [ref=e360]:
+              - strong [ref=e361]: "② 해결 방식:"
+              - text: 황반 색소 밀도를 유지하는 지용성 정제와 피로 완화 안토시아닌 액상의 듀얼 케어
+            - generic [ref=e362]:
+              - strong [ref=e363]: "③ 섭취 시점:"
+              - text: 오후 2시 (스크린 업무 집중 시간)
+            - generic [ref=e364]:
+              - strong [ref=e365]: "④ 제형 구성:"
+              - text: 상단 정제(루테인지아잔틴 20mg + 아스타잔틴 6mg) + 하단 액상(빌베리 안토시아닌 농축액)
+          - generic [ref=e366]:
+            - button "A:FIT 맞춤 구독 시작 →" [ref=e367] [cursor=pointer]
+            - link "전체 15종에서 위치 확인 ↓" [ref=e368] [cursor=pointer]:
+              - /url: "#archive"
+    - generic [ref=e370]:
+      - generic [ref=e371]:
+        - heading "내 라이프스타일 1:1 맞춤 배합 진단" [level=2] [ref=e372]
+        - paragraph [ref=e373]: 3가지 질문을 통해 일상 패턴과 결핍 요소를 분석하고 최적화된 처방 리포트와 각인 라벨을 생성합니다.
+      - generic [ref=e375]:
+        - generic [ref=e378]:
+          - generic [ref=e379]: STEP 01 / 03
+          - heading "현재 어떤 일상 패턴을 보내고 계신가요?" [level=3] [ref=e380]
+          - paragraph [ref=e381]: 가장 가까운 라이프스타일을 1개 선택해 주세요.
+        - generic [ref=e382]:
+          - button "[01] 2030 직장인 잦은 야근과 불규칙한 식사, 만성 피로 관리 →" [ref=e383] [cursor=pointer]:
+            - generic [ref=e384]:
+              - text: "[01]"
+              - strong [ref=e385]: 2030 직장인
+              - generic [ref=e386]: 잦은 야근과 불규칙한 식사, 만성 피로 관리
+            - generic [ref=e387]: →
+          - button "[02] R&D 바이오 고도의 집중과 정밀 분석, 두뇌 과부하 케어 →" [ref=e388] [cursor=pointer]:
+            - generic [ref=e389]:
+              - text: "[02]"
+              - strong [ref=e390]: R&D 바이오
+              - generic [ref=e391]: 고도의 집중과 정밀 분석, 두뇌 과부하 케어
+            - generic [ref=e392]: →
+          - button "[03] 스포츠 Pro 고강도 웨이트 트레이닝 및 근단백질 합성 관리 →" [ref=e393] [cursor=pointer]:
+            - generic [ref=e394]:
+              - text: "[03]"
+              - strong [ref=e395]: 스포츠 Pro
+              - generic [ref=e396]: 고강도 웨이트 트레이닝 및 근단백질 합성 관리
+            - generic [ref=e397]: →
+          - button "[04] 이너뷰티 Glow 피부 속건조 케어 및 맑은 안색·항산화 케어 →" [ref=e398] [cursor=pointer]:
+            - generic [ref=e399]:
+              - text: "[04]"
+              - strong [ref=e400]: 이너뷰티 Glow
+              - generic [ref=e401]: 피부 속건조 케어 및 맑은 안색·항산화 케어
+            - generic [ref=e402]: →
+          - button "[05] 클린 Eco 비건 100% 식물성 원료 및 친환경 지속 가능 루틴 →" [ref=e403] [cursor=pointer]:
+            - generic [ref=e404]:
+              - text: "[05]"
+              - strong [ref=e405]: 클린 Eco 비건
+              - generic [ref=e406]: 100% 식물성 원료 및 친환경 지속 가능 루틴
+            - generic [ref=e407]: →
+          - button "[06] 3교대 Emergency 주·야간 교대근무로 인한 생체 시계 불균형 해소 →" [ref=e408] [cursor=pointer]:
+            - generic [ref=e409]:
+              - text: "[06]"
+              - strong [ref=e410]: 3교대 Emergency
+              - generic [ref=e411]: 주·야간 교대근무로 인한 생체 시계 불균형 해소
+            - generic [ref=e412]: →
+          - button "[07] 판교 IT Tech 하루 10시간 이상 화면을 보는 모니터 업무 집중 →" [ref=e413] [cursor=pointer]:
+            - generic [ref=e414]:
+              - text: "[07]"
+              - strong [ref=e415]: 판교 IT Tech
+              - generic [ref=e416]: 하루 10시간 이상 화면을 보는 모니터 업무 집중
+            - generic [ref=e417]: →
+    - generic [ref=e420]:
+      - generic [ref=e421]:
+        - heading "내 한 달 식비와 시간, 얼마나 절약될까?" [level=2] [ref=e422]
+        - paragraph [ref=e423]: 평소 식비 기준과 구독 일수를 선택하여 투명한 절감 산출식을 실시간으로 확인하세요.
+        - generic [ref=e424]:
+          - generic [ref=e425]: 1. 평소 한 끼 식비 기준 선택
+          - generic [ref=e426]:
+            - button "7,000원 (간편식)" [ref=e427] [cursor=pointer]
+            - button "8,500원 (편의점/분식)" [ref=e428] [cursor=pointer]
+            - button "11,000원 (일반외식)" [ref=e429] [cursor=pointer]
+            - button "13,000원 (배달음식)" [ref=e430] [cursor=pointer]
+        - generic [ref=e431]:
+          - generic [ref=e432]:
+            - generic [ref=e433]: 2. 월 구독 일수 선택
+            - generic [ref=e434]:
+              - text: "선택 일수:"
+              - strong [ref=e435]: 20일
+          - slider [ref=e436]: "20"
+        - generic [ref=e437]:
+          - generic [ref=e438]: "[투명 산출 근거 및 계산식]"
+          - generic [ref=e439]:
+            - text: "• 식비 절감식: (8,500원 - A:FIT 2,660원) × 20일 ="
+            - strong [ref=e440]: 116,800원
+          - generic [ref=e441]:
+            - text: "• 시간 절약식: 1회 식사·준비 30분(0.5시간) × 20일 ="
+            - strong [ref=e442]: 10시간
+        - generic [ref=e443]:
+          - generic [ref=e444]:
+            - text: 한 달 절약 식비
+            - strong [ref=e445]: 116,800원
+          - generic [ref=e446]:
+            - text: 절약된 식사·준비 시간
+            - strong [ref=e447]: 약 10시간
+        - generic [ref=e448]: "* A:FIT 1병 가격은 30일 정기구독 기준(가안, 1병 2,660원)이며, 외식/편의점 단가는 통계 가안 기준입니다."
+      - generic [ref=e449]:
+        - heading "물 없이 간편하게 마시는 올인원 3단계 섭취 기전" [level=2] [ref=e450]: 물 없이 간편하게 마시는올인원 3단계 섭취 기전
+        - paragraph [ref=e451]: 어디서나 생수를 찾을 필요 없이 한 손으로 간편하게 섭취하세요.
+        - generic [ref=e452]:
+          - generic [ref=e453]:
+            - generic [ref=e454]: "01"
+            - generic [ref=e455]:
+              - generic [ref=e456]:
+                - strong [ref=e457]: 원터치 캡 딸깍
+                - generic [ref=e458]: "권장: 400×300px 실사 컷"
+              - paragraph [ref=e459]: 상단 캡을 가볍게 열어 분리된 고농축 맞춤 정제를 확인합니다.
+          - generic [ref=e460]:
+            - generic [ref=e461]: "02"
+            - generic [ref=e462]:
+              - generic [ref=e463]:
+                - strong [ref=e464]: 정제 톡 낙하
+                - generic [ref=e465]: "권장: 400×300px 실사 컷"
+              - paragraph [ref=e466]: 미세 소형 정제를 입안에 털어 넣습니다.
+          - generic [ref=e467]:
+            - generic [ref=e468]: "03"
+            - generic [ref=e469]:
+              - generic [ref=e470]:
+                - strong [ref=e471]: 원샷 부드러운 다이렉트 섭취
+                - generic [ref=e472]: "권장: 400×300px 실사 컷"
+              - paragraph [ref=e473]: 하단 저점도 고농축 액상 포뮬러를 마시며 부드럽게 넘겨 식사와 영양을 동시 완료합니다.
+    - generic [ref=e475]:
+      - generic [ref=e476]:
+        - heading "A:FIT 15종 전체 컬렉션 아카이브" [level=2] [ref=e477]
+        - paragraph [ref=e478]: 상황별 맞춤 배합과 고유 유효 성분을 갖춘 15종 전 제품을 한눈에 탐색하세요.
+      - generic [ref=e479]:
+        - generic [ref=e480]:
+          - generic [ref=e481]: 라이프스타일
+          - generic [ref=e482]:
+            - button "전체 (15)" [ref=e483] [cursor=pointer]
+            - button "2030 직장인 (3)" [ref=e484] [cursor=pointer]
+            - button "R&D 바이오 (2)" [ref=e485] [cursor=pointer]
+            - button "스포츠 Pro (2)" [ref=e486] [cursor=pointer]
+            - button "이너뷰티 Glow (2)" [ref=e487] [cursor=pointer]
+            - button "클린 Eco 비건 (2)" [ref=e488] [cursor=pointer]
+            - button "3교대 Emergency (2)" [ref=e489] [cursor=pointer]
+            - button "판교 IT Tech (2)" [ref=e490] [cursor=pointer]
+        - generic [ref=e491]:
+          - generic [ref=e492]: 섭취 시점
+          - generic [ref=e493]:
+            - button "전체 시점" [ref=e494] [cursor=pointer]
+            - button "아침 기상" [ref=e495] [cursor=pointer]
+            - button "업무/집중" [ref=e496] [cursor=pointer]
+            - button "운동 전후" [ref=e497] [cursor=pointer]
+            - button "야간/회식" [ref=e498] [cursor=pointer]
+            - button "취침 전" [ref=e499] [cursor=pointer]
+        - generic [ref=e500]:
+          - generic [ref=e501]: 건강 목적
+          - generic [ref=e502]:
+            - button "전체 목적" [ref=e503] [cursor=pointer]
+            - button "활력/에너지" [ref=e504] [cursor=pointer]
+            - button "두뇌/시각" [ref=e505] [cursor=pointer]
+            - button "근합성/체력" [ref=e506] [cursor=pointer]
+            - button "피부/항산화" [ref=e507] [cursor=pointer]
+            - button "수면/이완" [ref=e508] [cursor=pointer]
+            - button "속편함/소화" [ref=e509] [cursor=pointer]
+      - generic [ref=e510]:
+        - generic [ref=e511]:
+          - generic [ref=e512]:
+            - generic [ref=e513]: 2030 직장인
+            - generic [ref=e514]: 01 / 15
+          - generic [ref=e515]: 나이트 오버타임 팩
+          - generic [ref=e516]:
+            - strong [ref=e517]: "해결 문제:"
+            - text: 잦은 야근과 수면 부족으로 인한 만성 피로 완화 및 간 활력 케어 서포트
+          - 'img "01 / 15 나이트 오버타임 팩 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 잦은 야근과 수면 부족으로 인한 만성 피로 완화 및 간 활력 케어 서포트" [ref=e518]':
+            - generic [ref=e521]:
+              - generic: A:FIT
+              - generic [ref=e522]:
+                - generic [ref=e523]: 1:1 맞춤 처방
+                - generic [ref=e524]: OOO님
+          - generic [ref=e525]:
+            - generic [ref=e526]:
+              - generic [ref=e527]: 상단 정제
+              - generic [ref=e528]: 밀크씨슬 130mg + 비타민B군 500%
+            - generic [ref=e529]:
+              - generic [ref=e530]: 하단 액상
+              - generic [ref=e531]: 속쓰림 없는 귀리 식이섬유 곡물 쉐이크
+            - generic [ref=e532]:
+              - generic [ref=e533]: 추천 시점
+              - generic [ref=e534]: 저녁 야근 시작 전 / 식사 대용
+            - generic [ref=e535]:
+              - generic [ref=e536]: 용량 구성
+              - generic [ref=e537]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e538]:
+            - generic [ref=e539]: 정기구독 30일 기준
+            - generic [ref=e540]:
+              - strong [ref=e541]: 월 79,800원
+              - generic [ref=e542]: 1병 약 2,660원대
+            - generic [ref=e543]:
+              - button "상세보기" [ref=e544] [cursor=pointer]
+              - button "구독 시작" [ref=e545] [cursor=pointer]
+        - generic [ref=e546]:
+          - generic [ref=e547]:
+            - generic [ref=e548]: 2030 직장인
+            - generic [ref=e549]: 02 / 15
+          - generic [ref=e550]: 모닝 퀵스타터 팩
+          - generic [ref=e551]:
+            - strong [ref=e552]: "해결 문제:"
+            - text: 바쁜 아침 공복 출근으로 인한 오전 에너지 결핍 및 혈당 저하 해소
+          - 'img "02 / 15 모닝 퀵스타터 팩 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 바쁜 아침 공복 출근으로 인한 오전 에너지 결핍 및 혈당 저하 해소" [ref=e553]':
+            - generic [ref=e556]:
+              - generic: A:FIT
+              - generic [ref=e557]:
+                - generic [ref=e558]: 1:1 맞춤 처방
+                - generic [ref=e559]: OOO님
+          - generic [ref=e560]:
+            - generic [ref=e561]:
+              - generic [ref=e562]: 상단 정제
+              - generic [ref=e563]: 필수 비타민 13종 + 마그네슘 150mg
+            - generic [ref=e564]:
+              - generic [ref=e565]: 하단 액상
+              - generic [ref=e566]: 저당 오트밀 수용성 섬유질 & 활력 액상
+            - generic [ref=e567]:
+              - generic [ref=e568]: 추천 시점
+              - generic [ref=e569]: 아침 출근길 공복 / 업무 시작 전
+            - generic [ref=e570]:
+              - generic [ref=e571]: 용량 구성
+              - generic [ref=e572]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e573]:
+            - generic [ref=e574]: 정기구독 30일 기준
+            - generic [ref=e575]:
+              - strong [ref=e576]: 월 79,800원
+              - generic [ref=e577]: 1병 약 2,660원대
+            - generic [ref=e578]:
+              - button "상세보기" [ref=e579] [cursor=pointer]
+              - button "구독 시작" [ref=e580] [cursor=pointer]
+        - generic [ref=e581]:
+          - generic [ref=e582]:
+            - generic [ref=e583]: 2030 직장인
+            - generic [ref=e584]: 03 / 15
+          - generic [ref=e585]: 애프터 파티 리커버리
+          - generic [ref=e586]:
+            - strong [ref=e587]: "해결 문제:"
+            - text: 회식 후 아세트알데히드 축적으로 인한 숙취, 갈증 및 두통 완화
+          - 'img "03 / 15 애프터 파티 리커버리 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 회식 후 아세트알데히드 축적으로 인한 숙취, 갈증 및 두통 완화" [ref=e588]':
+            - generic [ref=e591]:
+              - generic: A:FIT
+              - generic [ref=e592]:
+                - generic [ref=e593]: 1:1 맞춤 처방
+                - generic [ref=e594]: OOO님
+          - generic [ref=e595]:
+            - generic [ref=e596]:
+              - generic [ref=e597]: 상단 정제
+              - generic [ref=e598]: 헛개나무추출물 + 순수 글루타치온 효모
+            - generic [ref=e599]:
+              - generic [ref=e600]: 하단 액상
+              - generic [ref=e601]: 전해질 미네랄 & 타우린 1,000mg 액상
+            - generic [ref=e602]:
+              - generic [ref=e603]: 추천 시점
+              - generic [ref=e604]: 음주 직후 또는 다음 날 기상 직후
+            - generic [ref=e605]:
+              - generic [ref=e606]: 용량 구성
+              - generic [ref=e607]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e608]:
+            - generic [ref=e609]: 정기구독 30일 기준
+            - generic [ref=e610]:
+              - strong [ref=e611]: 월 79,800원
+              - generic [ref=e612]: 1병 약 2,660원대
+            - generic [ref=e613]:
+              - button "상세보기" [ref=e614] [cursor=pointer]
+              - button "구독 시작" [ref=e615] [cursor=pointer]
+        - generic [ref=e616]:
+          - generic [ref=e617]:
+            - generic [ref=e618]: R&D 바이오
+            - generic [ref=e619]: 04 / 15
+          - generic [ref=e620]: 바이오 이뮨 디펜스
+          - generic [ref=e621]:
+            - strong [ref=e622]: "해결 문제:"
+            - text: 밀폐된 연구 환경과 환절기 체온 변화로 약해진 1차 면역 방어벽 강화
+          - 'img "04 / 15 바이오 이뮨 디펜스 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 밀폐된 연구 환경과 환절기 체온 변화로 약해진 1차 면역 방어벽 강화" [ref=e623]':
+            - generic [ref=e626]:
+              - generic: A:FIT
+              - generic [ref=e627]:
+                - generic [ref=e628]: 1:1 맞춤 처방
+                - generic [ref=e629]: OOO님
+          - generic [ref=e630]:
+            - generic [ref=e631]:
+              - generic [ref=e632]: 상단 정제
+              - generic [ref=e633]: 글루콘산 아연 12mg + 비타민D 2,000IU
+            - generic [ref=e634]:
+              - generic [ref=e635]: 하단 액상
+              - generic [ref=e636]: 유럽산 엘더베리 고농축 바이오 액상
+            - generic [ref=e637]:
+              - generic [ref=e638]: 추천 시점
+              - generic [ref=e639]: 매일 아침 식후 1병
+            - generic [ref=e640]:
+              - generic [ref=e641]: 용량 구성
+              - generic [ref=e642]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e643]:
+            - generic [ref=e644]: 정기구독 30일 기준
+            - generic [ref=e645]:
+              - strong [ref=e646]: 월 79,800원
+              - generic [ref=e647]: 1병 약 2,660원대
+            - generic [ref=e648]:
+              - button "상세보기" [ref=e649] [cursor=pointer]
+              - button "구독 시작" [ref=e650] [cursor=pointer]
+        - generic [ref=e651]:
+          - generic [ref=e652]:
+            - generic [ref=e653]: R&D 바이오
+            - generic [ref=e654]: 05 / 15
+          - generic [ref=e655]: 셀룰러 안티옥스
+          - generic [ref=e656]:
+            - strong [ref=e657]: "해결 문제:"
+            - text: 고강도 두뇌 노동 및 스트레스로 누적된 유해 활성산소의 세포 손상 억제
+          - 'img "05 / 15 셀룰러 안티옥스 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 고강도 두뇌 노동 및 스트레스로 누적된 유해 활성산소의 세포 손상 억제" [ref=e658]':
+            - generic [ref=e661]:
+              - generic: A:FIT
+              - generic [ref=e662]:
+                - generic [ref=e663]: 1:1 맞춤 처방
+                - generic [ref=e664]: OOO님
+          - generic [ref=e665]:
+            - generic [ref=e666]:
+              - generic [ref=e667]: 상단 정제
+              - generic [ref=e668]: 코엔자임Q10 100mg + 비타민E
+            - generic [ref=e669]:
+              - generic [ref=e670]: 하단 액상
+              - generic [ref=e671]: 지중해 석류 농축 안토시아닌 액상
+            - generic [ref=e672]:
+              - generic [ref=e673]: 추천 시점
+              - generic [ref=e674]: 오후 2시 나른한 업무 시간
+            - generic [ref=e675]:
+              - generic [ref=e676]: 용량 구성
+              - generic [ref=e677]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e678]:
+            - generic [ref=e679]: 정기구독 30일 기준
+            - generic [ref=e680]:
+              - strong [ref=e681]: 월 79,800원
+              - generic [ref=e682]: 1병 약 2,660원대
+            - generic [ref=e683]:
+              - button "상세보기" [ref=e684] [cursor=pointer]
+              - button "구독 시작" [ref=e685] [cursor=pointer]
+        - generic [ref=e686]:
+          - generic [ref=e687]:
+            - generic [ref=e688]: 대표 시그니처
+            - generic [ref=e689]: 06 / 15
+          - generic [ref=e690]: 프로틴 머슬 빌더
+          - generic [ref=e691]:
+            - strong [ref=e692]: "해결 문제:"
+            - text: 운동 후 쉐이커 세척의 번거로움 없이 즉각적인 근단백질 합성 유도
+          - 'img "06 / 15 프로틴 머슬 빌더 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 운동 후 쉐이커 세척의 번거로움 없이 즉각적인 근단백질 합성 유도" [ref=e693]':
+            - generic [ref=e696]:
+              - generic: A:FIT
+              - generic [ref=e697]:
+                - generic [ref=e698]: 1:1 맞춤 처방
+                - generic [ref=e699]: OOO님
+          - generic [ref=e700]:
+            - generic [ref=e701]:
+              - generic [ref=e702]: 상단 정제
+              - generic [ref=e703]: 필수 아미노산 9종 (EAA 5,000mg)
+            - generic [ref=e704]:
+              - generic [ref=e705]: 하단 액상
+              - generic [ref=e706]: 분리유청단백질(WPI) 20g 초저당 액상
+            - generic [ref=e707]:
+              - generic [ref=e708]: 추천 시점
+              - generic [ref=e709]: 운동 직후 30분 이내 (골든타임)
+            - generic [ref=e710]:
+              - generic [ref=e711]: 용량 구성
+              - generic [ref=e712]: 1병 (정제 3정+액상 120ml) / 월 30병
+          - generic [ref=e713]:
+            - generic [ref=e714]: 정기구독 30일 기준
+            - generic [ref=e715]:
+              - strong [ref=e716]: 월 79,800원
+              - generic [ref=e717]: 1병 약 2,660원대
+            - generic [ref=e718]:
+              - button "상세보기" [ref=e719] [cursor=pointer]
+              - button "구독 시작" [ref=e720] [cursor=pointer]
+        - generic [ref=e721]:
+          - generic [ref=e722]:
+            - generic [ref=e723]: 스포츠 Pro
+            - generic [ref=e724]: 07 / 15
+          - generic [ref=e725]: 프리-워크아웃 부스터
+          - generic [ref=e726]:
+            - strong [ref=e727]: "해결 문제:"
+            - text: 운동 전 에너지 고갈 상태에서 혈관 확장 및 폭발적 근력 퍼포먼스 발현
+          - 'img "07 / 15 프리-워크아웃 부스터 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 운동 전 에너지 고갈 상태에서 혈관 확장 및 폭발적 근력 퍼포먼스 발현" [ref=e728]':
+            - generic [ref=e731]:
+              - generic: A:FIT
+              - generic [ref=e732]:
+                - generic [ref=e733]: 1:1 맞춤 처방
+                - generic [ref=e734]: OOO님
+          - generic [ref=e735]:
+            - generic [ref=e736]:
+              - generic [ref=e737]: 상단 정제
+              - generic [ref=e738]: L-아르기닌 5,000mg + 크레아틴
+            - generic [ref=e739]:
+              - generic [ref=e740]: 하단 액상
+              - generic [ref=e741]: 타우린 1,000mg + 고농축 비타민C 액상
+            - generic [ref=e742]:
+              - generic [ref=e743]: 추천 시점
+              - generic [ref=e744]: 운동 시작 20~30분 전
+            - generic [ref=e745]:
+              - generic [ref=e746]: 용량 구성
+              - generic [ref=e747]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e748]:
+            - generic [ref=e749]: 정기구독 30일 기준
+            - generic [ref=e750]:
+              - strong [ref=e751]: 월 79,800원
+              - generic [ref=e752]: 1병 약 2,660원대
+            - generic [ref=e753]:
+              - button "상세보기" [ref=e754] [cursor=pointer]
+              - button "구독 시작" [ref=e755] [cursor=pointer]
+        - generic [ref=e756]:
+          - generic [ref=e757]:
+            - generic [ref=e758]: 이너뷰티 Glow
+            - generic [ref=e759]: 08 / 15
+          - generic [ref=e760]: 딥 하이드라 콜라겐
+          - generic [ref=e761]:
+            - strong [ref=e762]: "해결 문제:"
+            - text: 건조한 실내 환경으로 인한 피부 진피 속당김 및 탄력 저하 개선
+          - 'img "08 / 15 딥 하이드라 콜라겐 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 건조한 실내 환경으로 인한 피부 진피 속당김 및 탄력 저하 개선" [ref=e763]':
+            - generic [ref=e766]:
+              - generic: A:FIT
+              - generic [ref=e767]:
+                - generic [ref=e768]: 1:1 맞춤 처방
+                - generic [ref=e769]: OOO님
+          - generic [ref=e770]:
+            - generic [ref=e771]:
+              - generic [ref=e772]: 상단 정제
+              - generic [ref=e773]: 히알루론산 240mg + 피쉬 엘라스틴
+            - generic [ref=e774]:
+              - generic [ref=e775]: 하단 액상
+              - generic [ref=e776]: 초저분자 피쉬콜라겐 3,270mg 액상
+            - generic [ref=e777]:
+              - generic [ref=e778]: 추천 시점
+              - generic [ref=e779]: 매일 아침 세안 직후 공복
+            - generic [ref=e780]:
+              - generic [ref=e781]: 용량 구성
+              - generic [ref=e782]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e783]:
+            - generic [ref=e784]: 정기구독 30일 기준
+            - generic [ref=e785]:
+              - strong [ref=e786]: 월 79,800원
+              - generic [ref=e787]: 1병 약 2,660원대
+            - generic [ref=e788]:
+              - button "상세보기" [ref=e789] [cursor=pointer]
+              - button "구독 시작" [ref=e790] [cursor=pointer]
+        - generic [ref=e791]:
+          - generic [ref=e792]:
+            - generic [ref=e793]: 이너뷰티 Glow
+            - generic [ref=e794]: 09 / 15
+          - generic [ref=e795]: 브라이트닝 글루타치온
+          - generic [ref=e796]:
+            - strong [ref=e797]: "해결 문제:"
+            - text: 자외선 노출과 피로 누적으로 칙칙해진 피부 톤과 기미·잡티 완화
+          - 'img "09 / 15 브라이트닝 글루타치온 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 자외선 노출과 피로 누적으로 칙칙해진 피부 톤과 기미·잡티 완화" [ref=e798]':
+            - generic [ref=e801]:
+              - generic: A:FIT
+              - generic [ref=e802]:
+                - generic [ref=e803]: 1:1 맞춤 처방
+                - generic [ref=e804]: OOO님
+          - generic [ref=e805]:
+            - generic [ref=e806]:
+              - generic [ref=e807]: 상단 정제
+              - generic [ref=e808]: L-글루타치온 순수 효모 250mg
+            - generic [ref=e809]:
+              - generic [ref=e810]: 하단 액상
+              - generic [ref=e811]: 화이트토마토 농축 브라이트닝 액상
+            - generic [ref=e812]:
+              - generic [ref=e813]: 추천 시점
+              - generic [ref=e814]: 오후 1시 나른한 시간대
+            - generic [ref=e815]:
+              - generic [ref=e816]: 용량 구성
+              - generic [ref=e817]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e818]:
+            - generic [ref=e819]: 정기구독 30일 기준
+            - generic [ref=e820]:
+              - strong [ref=e821]: 월 79,800원
+              - generic [ref=e822]: 1병 약 2,660원대
+            - generic [ref=e823]:
+              - button "상세보기" [ref=e824] [cursor=pointer]
+              - button "구독 시작" [ref=e825] [cursor=pointer]
+        - generic [ref=e826]:
+          - generic [ref=e827]:
+            - generic [ref=e828]: 클린 Eco 비건
+            - generic [ref=e829]: 10 / 15
+          - generic [ref=e830]: 퓨어 그린 비건 올인원
+          - generic [ref=e831]:
+            - strong [ref=e832]: "해결 문제:"
+            - text: 채식 식단에서 쉽게 결핍되는 식물성 비타민B12 및 철분의 균형 공급
+          - 'img "10 / 15 퓨어 그린 비건 올인원 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 채식 식단에서 쉽게 결핍되는 식물성 비타민B12 및 철분의 균형 공급" [ref=e833]':
+            - generic [ref=e836]:
+              - generic: A:FIT
+              - generic [ref=e837]:
+                - generic [ref=e838]: 1:1 맞춤 처방
+                - generic [ref=e839]: OOO님
+          - generic [ref=e840]:
+            - generic [ref=e841]:
+              - generic [ref=e842]: 상단 정제
+              - generic [ref=e843]: EVE 비건 건조효모 B12 + 식물성 철분
+            - generic [ref=e844]:
+              - generic [ref=e845]: 하단 액상
+              - generic [ref=e846]: 100% 유기농 완두·현미 단백질 쉐이크
+            - generic [ref=e847]:
+              - generic [ref=e848]: 추천 시점
+              - generic [ref=e849]: 아침 식사 대용 1병
+            - generic [ref=e850]:
+              - generic [ref=e851]: 용량 구성
+              - generic [ref=e852]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e853]:
+            - generic [ref=e854]: 정기구독 30일 기준
+            - generic [ref=e855]:
+              - strong [ref=e856]: 월 79,800원
+              - generic [ref=e857]: 1병 약 2,660원대
+            - generic [ref=e858]:
+              - button "상세보기" [ref=e859] [cursor=pointer]
+              - button "구독 시작" [ref=e860] [cursor=pointer]
+        - generic [ref=e861]:
+          - generic [ref=e862]:
+            - generic [ref=e863]: 클린 Eco 비건
+            - generic [ref=e864]: 11 / 15
+          - generic [ref=e865]: 밸런스 엔자임 다이제스트
+          - generic [ref=e866]:
+            - strong [ref=e867]: "해결 문제:"
+            - text: 식사 후 더부룩함, 가스 참, 불규칙한 배변 활동의 편안한 소화 서포트
+          - 'img "11 / 15 밸런스 엔자임 다이제스트 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 식사 후 더부룩함, 가스 참, 불규칙한 배변 활동의 편안한 소화 서포트" [ref=e868]':
+            - generic [ref=e871]:
+              - generic: A:FIT
+              - generic [ref=e872]:
+                - generic [ref=e873]: 1:1 맞춤 처방
+                - generic [ref=e874]: OOO님
+          - generic [ref=e875]:
+            - generic [ref=e876]:
+              - generic [ref=e877]: 상단 정제
+              - generic [ref=e878]: 15곡 발효 곡물 효소 + 유산균 사균체
+            - generic [ref=e879]:
+              - generic [ref=e880]: 하단 액상
+              - generic [ref=e881]: 유기농 양배추 & 매실 저자극 농축액
+            - generic [ref=e882]:
+              - generic [ref=e883]: 추천 시점
+              - generic [ref=e884]: 점심 또는 저녁 식사 직후
+            - generic [ref=e885]:
+              - generic [ref=e886]: 용량 구성
+              - generic [ref=e887]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e888]:
+            - generic [ref=e889]: 정기구독 30일 기준
+            - generic [ref=e890]:
+              - strong [ref=e891]: 월 79,800원
+              - generic [ref=e892]: 1병 약 2,660원대
+            - generic [ref=e893]:
+              - button "상세보기" [ref=e894] [cursor=pointer]
+              - button "구독 시작" [ref=e895] [cursor=pointer]
+        - generic [ref=e896]:
+          - generic [ref=e897]:
+            - generic [ref=e898]: 대표 시그니처
+            - generic [ref=e899]: 12 / 15
+          - generic [ref=e900]: 나이트 시프트 슬립
+          - generic [ref=e901]:
+            - strong [ref=e902]: "해결 문제:"
+            - text: 주·야간 교대근무로 무너진 수면 리듬 회복 및 심신 긴장 이완
+          - 'img "12 / 15 나이트 시프트 슬립 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 주·야간 교대근무로 무너진 수면 리듬 회복 및 심신 긴장 이완" [ref=e903]':
+            - generic [ref=e906]:
+              - generic: A:FIT
+              - generic [ref=e907]:
+                - generic [ref=e908]: 1:1 맞춤 처방
+                - generic [ref=e909]: OOO님
+          - generic [ref=e910]:
+            - generic [ref=e911]:
+              - generic [ref=e912]: 상단 정제
+              - generic [ref=e913]: 뇌파 안정 L-테아닌 200mg + 마그네슘
+            - generic [ref=e914]:
+              - generic [ref=e915]: 하단 액상
+              - generic [ref=e916]: 타트체리 멜라토닌 & 카모마일 진정 액상
+            - generic [ref=e917]:
+              - generic [ref=e918]: 추천 시점
+              - generic [ref=e919]: 퇴근 후 취침 30분 전
+            - generic [ref=e920]:
+              - generic [ref=e921]: 용량 구성
+              - generic [ref=e922]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e923]:
+            - generic [ref=e924]: 정기구독 30일 기준
+            - generic [ref=e925]:
+              - strong [ref=e926]: 월 79,800원
+              - generic [ref=e927]: 1병 약 2,660원대
+            - generic [ref=e928]:
+              - button "상세보기" [ref=e929] [cursor=pointer]
+              - button "구독 시작" [ref=e930] [cursor=pointer]
+        - generic [ref=e931]:
+          - generic [ref=e932]:
+            - generic [ref=e933]: 3교대 Emergency
+            - generic [ref=e934]: 13 / 15
+          - generic [ref=e935]: 에머전시 바이탈 샷
+          - generic [ref=e936]:
+            - strong [ref=e937]: "해결 문제:"
+            - text: 심야 야간 근무 시간대의 급격한 체력 고갈 및 두뇌 졸음 방지
+          - 'img "13 / 15 에머전시 바이탈 샷 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 심야 야간 근무 시간대의 급격한 체력 고갈 및 두뇌 졸음 방지" [ref=e938]':
+            - generic [ref=e941]:
+              - generic: A:FIT
+              - generic [ref=e942]:
+                - generic [ref=e943]: 1:1 맞춤 처방
+                - generic [ref=e944]: OOO님
+          - generic [ref=e945]:
+            - generic [ref=e946]:
+              - generic [ref=e947]: 상단 정제
+              - generic [ref=e948]: 비타민B12 1,000㎍ + 천연 과라나
+            - generic [ref=e949]:
+              - generic [ref=e950]: 하단 액상
+              - generic [ref=e951]: 고농축 아미노산 타우린 & 구연산 샷
+            - generic [ref=e952]:
+              - generic [ref=e953]: 추천 시점
+              - generic [ref=e954]: 심야 근무 시작 직전
+            - generic [ref=e955]:
+              - generic [ref=e956]: 용량 구성
+              - generic [ref=e957]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e958]:
+            - generic [ref=e959]: 정기구독 30일 기준
+            - generic [ref=e960]:
+              - strong [ref=e961]: 월 79,800원
+              - generic [ref=e962]: 1병 약 2,660원대
+            - generic [ref=e963]:
+              - button "상세보기" [ref=e964] [cursor=pointer]
+              - button "구독 시작" [ref=e965] [cursor=pointer]
+        - generic [ref=e966]:
+          - generic [ref=e967]:
+            - generic [ref=e968]: 대표 시그니처
+            - generic [ref=e969]: 14 / 15
+          - generic [ref=e970]: 블루라이트 아이 쉴드
+          - generic [ref=e971]:
+            - strong [ref=e972]: "해결 문제:"
+            - text: 하루 10시간 이상 모니터 노출로 인한 황반 색소 감소 및 안구 건조 피로
+          - 'img "14 / 15 블루라이트 아이 쉴드 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 하루 10시간 이상 모니터 노출로 인한 황반 색소 감소 및 안구 건조 피로" [ref=e973]':
+            - generic [ref=e976]:
+              - generic: A:FIT
+              - generic [ref=e977]:
+                - generic [ref=e978]: 1:1 맞춤 처방
+                - generic [ref=e979]: OOO님
+          - generic [ref=e980]:
+            - generic [ref=e981]:
+              - generic [ref=e982]: 상단 정제
+              - generic [ref=e983]: 루테인지아잔틴 20mg + 아스타잔틴 6mg
+            - generic [ref=e984]:
+              - generic [ref=e985]: 하단 액상
+              - generic [ref=e986]: 빌베리 안토시아닌 시신경 보호 농축액
+            - generic [ref=e987]:
+              - generic [ref=e988]: 추천 시점
+              - generic [ref=e989]: 오후 2시 화면 집중 시간
+            - generic [ref=e990]:
+              - generic [ref=e991]: 용량 구성
+              - generic [ref=e992]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e993]:
+            - generic [ref=e994]: 정기구독 30일 기준
+            - generic [ref=e995]:
+              - strong [ref=e996]: 월 79,800원
+              - generic [ref=e997]: 1병 약 2,660원대
+            - generic [ref=e998]:
+              - button "상세보기" [ref=e999] [cursor=pointer]
+              - button "구독 시작" [ref=e1000] [cursor=pointer]
+        - generic [ref=e1001]:
+          - generic [ref=e1002]:
+            - generic [ref=e1003]: 판교 IT Tech
+            - generic [ref=e1004]: 15 / 15
+          - generic [ref=e1005]: 뉴로 딥 포커스
+          - generic [ref=e1006]:
+            - strong [ref=e1007]: "해결 문제:"
+            - text: 복잡한 코딩 및 설계 업무 시 발생하는 두뇌 피로 및 기억·집중력 저하
+          - 'img "15 / 15 뉴로 딥 포커스 1:1 맞춤 3D 이중제형 보틀 와이어프레임 렌더링 (4:5 표준 비율) - 해결 문제: 복잡한 코딩 및 설계 업무 시 발생하는 두뇌 피로 및 기억·집중력 저하" [ref=e1008]':
+            - generic [ref=e1011]:
+              - generic: A:FIT
+              - generic [ref=e1012]:
+                - generic [ref=e1013]: 1:1 맞춤 처방
+                - generic [ref=e1014]: OOO님
+          - generic [ref=e1015]:
+            - generic [ref=e1016]:
+              - generic [ref=e1017]: 상단 정제
+              - generic [ref=e1018]: 은행잎추출물 플라보놀 28mg + 테아닌
+            - generic [ref=e1019]:
+              - generic [ref=e1020]: 하단 액상
+              - generic [ref=e1021]: 로즈마리 콜린 두뇌 회로 부스팅 액상
+            - generic [ref=e1022]:
+              - generic [ref=e1023]: 추천 시점
+              - generic [ref=e1024]: 오전 집중 코딩 / 기획 시작 전
+            - generic [ref=e1025]:
+              - generic [ref=e1026]: 용량 구성
+              - generic [ref=e1027]: 1병 (정제 2정+액상 100ml) / 월 30병
+          - generic [ref=e1028]:
+            - generic [ref=e1029]: 정기구독 30일 기준
+            - generic [ref=e1030]:
+              - strong [ref=e1031]: 월 79,800원
+              - generic [ref=e1032]: 1병 약 2,660원대
+            - generic [ref=e1033]:
+              - button "상세보기" [ref=e1034] [cursor=pointer]
+              - button "구독 시작" [ref=e1035] [cursor=pointer]
+      - generic [ref=e1036]: "* 표기된 15종 상품 구성, 구독 가격 및 프로모션 혜택은 서비스 UI/UX 시연을 위한 기획 데이터입니다."
+    - generic [ref=e1038]:
+      - generic [ref=e1039]:
+        - heading "타겟 페르소나 인터뷰 기반 가상 사용 시나리오" [level=2] [ref=e1040]
+        - paragraph [ref=e1041]: 제품 기능 설계를 위해 진행된 3개 직군 페르소나 심층 인터뷰를 바탕으로 도출된 예상 일상 변화 시나리오입니다.
+        - paragraph [ref=e1042]: "* 본 시나리오는 제품 기획 및 페르소나 가설 검증을 위한 가상 인터뷰 모델링 데이터입니다."
+      - generic [ref=e1043]:
+        - generic [ref=e1044]:
+          - generic [ref=e1045]: SCENARIO 01 · IT 직장인
+          - strong [ref=e1046]: "\"야근 후 아침 영양 불균형과 속쓰림 개선\""
+          - paragraph [ref=e1047]: 편의점 인스턴트와 고카페인 음료 대신 하루 1병으로 해결하니 공복 속쓰림이 줄고 오전 피로 회복이 빨라질 것으로 기대됩니다.
+          - generic [ref=e1048]: 박지안 (2030 IT 기획 직무 페르소나)
+        - generic [ref=e1049]:
+          - generic [ref=e1050]: SCENARIO 02 · 3교대 의료진
+          - strong [ref=e1051]: "\"나이트 근무 중 불규칙 식사와 체력 방전 해결\""
+          - paragraph [ref=e1052]: 식사 시간이 불규칙한 야간 근무 중에도 스테이션에서 물 없이 간편하게 섭취해 체력 저하와 수면 리듬 붕괴를 완화하는 시나리오입니다.
+          - generic [ref=e1053]: 최교대 (대학병원 3교대 간호사 페르소나)
+        - generic [ref=e1054]:
+          - generic [ref=e1055]: SCENARIO 03 · 테크 개발자
+          - strong [ref=e1056]: "\"장시간 모니터 몰입에 따른 안구 건조 & 뇌 피로 완화\""
+          - paragraph [ref=e1057]: 책상 위 복잡한 약통 없이 오후 코딩 집중 세션 전 1병으로 눈 침침함과 두뇌 피로감을 덜어주는 루틴 형성을 목표로 합니다.
+          - generic [ref=e1058]: 임태현 (판교 시니어 개발자 페르소나)
+      - generic [ref=e1059]:
+        - heading "자주 묻는 질문 (FAQ)" [level=3] [ref=e1060]
+        - group [ref=e1061]:
+          - generic "정말 물 없이 알약을 섭취해도 괜찮나요? +" [ref=e1062] [cursor=pointer]:
+            - text: 정말 물 없이 알약을 섭취해도 괜찮나요?
+            - generic [ref=e1063]: +
+        - group [ref=e1064]:
+          - generic "구독 일정 변경이나 일시 정지/해지는 자유로운가요? +" [ref=e1065] [cursor=pointer]:
+            - text: 구독 일정 변경이나 일시 정지/해지는 자유로운가요?
+            - generic [ref=e1066]: +
+        - group [ref=e1067]:
+          - generic "패키지 라벨 문구는 어떻게 변경하나요? +" [ref=e1068] [cursor=pointer]:
+            - text: 패키지 라벨 문구는 어떻게 변경하나요?
+            - generic [ref=e1069]: +
+  - contentinfo [ref=e1070]:
+    - generic [ref=e1071]:
+      - generic [ref=e1072]:
+        - strong [ref=e1073]: "[PROJECT DISCLAIMER · 가상 프로젝트 고지]"
+        - text: 본 웹사이트는 A:FIT 맞춤 영양 구독 서비스의 UI/UX 디자인 및 인터랙션 설계를 위한 학술·포트폴리오 가상 프로젝트입니다. 사이트에 기재된 상표, 제품명, 배합비, 인증 번호, 리뷰 및 가격 정보는 서비스 시연을 위한 가상 데이터(Mock Data)이며 실제 상업적 판매 또는 의료적 처방을 목적으로 하지 않습니다.
+      - generic [ref=e1074]:
+        - generic [ref=e1075]:
+          - strong [ref=e1076]: A:FIT
+          - paragraph [ref=e1077]: "(주)에이핏바이오 (가상 프로젝트) | 대표: 홍길동 | 서울특별시 강남구 테헤란로 웰니스타워 12층 사업자등록번호: 000-00-00000 | 통신판매업신고: 2026-서울강남-0000"
+        - generic [ref=e1078]: © 2026 A:FIT Inc. All Rights Reserved. 맞춤 웰니스 UI/UX 포트폴리오
