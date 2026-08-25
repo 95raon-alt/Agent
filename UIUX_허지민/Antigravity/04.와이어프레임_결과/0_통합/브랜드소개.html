@@ -15,6 +15,11 @@
        Background: #FFFFFF (Main Canvas: Pure White Wireframe)
        Card/Surface: #FFFFFF (Pure White)
        Border: #E5E7EB (Wireframe Border Line)
+
+       [Step 1 Benchmark References & 1-Line Goals]
+       1. Usability: Ritual & AG1 - 모바일/긴 스토리 스크롤 위치 인디케이터 및 앵커 탐색 UX
+       2. Design: Seed & Heights - 상단 정제 + 하단 액상 이중제형 단면 도해 및 5단계 공정 타임라인
+       3. Mood: Wholier & Moon Juice - 바쁜 직장인의 아침과 1병 루틴 대조 및 미니멀 웰니스 톤앤매너
        ========================================================= */
     :root {
       --primary: #111827;             /* Wireframe Dark Charcoal Black */
@@ -923,35 +928,31 @@
           <h1 style="font-size: 2.5rem; font-weight: 800; color: var(--primary); line-height: 1.3; margin: 16px 0;">
             우리는 왜 하루 한 병의 웰니스에 집착하는가
           </h1>
-          <p class="lead" style="font-size: 1.05rem; font-weight: 600; color: var(--primary-light); margin-bottom: 20px;">
+          <p class="lead" style="font-size: 1.05rem; font-weight: 600; color: var(--primary-light); margin-bottom: 16px;">
             바쁜 일상 속 결핍과 비효율을 해결하기 위해 시작된 A:FIT의 이야기입니다.
           </p>
-          <div style="font-size: 0.96rem; color: var(--text-body); line-height: 1.85; display: grid; gap: 16px;">
+          <div style="font-size: 0.96rem; color: var(--text-body); line-height: 1.75; display: grid; gap: 10px; margin-bottom: 20px;">
             <p style="margin: 0;">
-              책상 위에 어지럽게 쌓여가는 대형 영양제 약통들, 그리고 시간에 쫓겨 인스턴트로 때우는 불균형한 한 끼.<br>
-              우리는 스스로에게 물었습니다. <strong style="color: var(--primary); font-weight: 800;">"스스로를 돌보는 과정이 왜 이토록 번거롭고 부담스러워야 할까?"</strong>
+              책상 위 늘어선 수많은 약통과 불규칙한 식사로 지친 현대인에게, 불필요한 과잉을 덜어내고 꼭 필요한 유효성분만을 정밀하게 담았습니다.
             </p>
             <p style="margin: 0;">
-              기존 시장의 솔루션은 <strong>'먹어야 할 것의 가짓수'</strong>만 늘려갈 뿐, 정작 바쁜 현대인의 흡수 한계와 위장 부담, 그리고 번거로운 일상 루틴을 해결하지 못했습니다.
-            </p>
-            <p style="margin: 0;">
-              A:FIT은 이 비효율의 악순환을 끊어내기 위해 탄생했습니다. <strong>불필요한 과잉을 덜어내고, 내 몸이 지금 당장 필요로 하는 유효성분만을 정밀 타겟팅</strong>하여 물 없이도 간편하게 완결되는 가장 진화된 웰니스 루틴을 제안합니다.
+              물 없이도 언제 어디서나 10초 만에 완결되는 가장 진화된 하루 1병 웰니스 루틴을 제안합니다.
             </p>
           </div>
           <!-- Naming Identity Formula (BRD-100) -->
-          <div class="naming-formula-box" style="margin-top: 24px; padding: 18px 22px; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 16px;">
-            <span style="font-size: 1.05rem; font-weight: 900; color: #111827; white-space: nowrap;">A:FIT = All-in-one + FIT</span>
-            <span style="font-size: 0.86rem; color: #4B5563; line-height: 1.5;">
+          <div class="naming-formula-box" style="margin-top: 16px; padding: 16px 20px; background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); display: flex; align-items: center; gap: 14px;">
+            <span style="font-size: 1.02rem; font-weight: 900; color: #111827; white-space: nowrap;">A:FIT = All-in-one + FIT</span>
+            <span style="font-size: 0.85rem; color: #4B5563; line-height: 1.5;">
               복잡한 영양제와 식사를 한 병에 압축한 <strong style="color: #111827;">올인원(All-in-one)</strong>과 내 하루에 꼭 맞는 <strong style="color: #111827;">개인화(FIT)</strong>의 결합
             </span>
           </div>
 
-          <div style="margin-top: 24px; display: flex; gap: 14px; flex-wrap: wrap;">
-            <a href="카테고리.html" class="btn primary" style="text-decoration: none;">
-              15종 맞춤 컬렉션 보기 →
+          <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 12px; flex-wrap: nowrap;">
+            <a href="#problemSec" class="btn primary" style="text-decoration: none; padding: 12px 22px; font-size: 0.92rem; font-weight: 700; white-space: nowrap;">
+              A:FIT이 시작된 이유 보기 ↓
             </a>
-            <a href="#processSec" class="btn secondary" style="text-decoration: none;">
-              5단계 무균 제조 공정 보기 ↓
+            <a href="#signatureSec" class="btn secondary" style="text-decoration: none; padding: 12px 22px; font-size: 0.92rem; font-weight: 700; white-space: nowrap;">
+              한 병 루틴의 원리 (단면도)
             </a>
           </div>
         </div>
@@ -992,21 +993,24 @@
     </div>
   </section>
 
-  <!-- BRD-110: Problem & Solution -->
-  <section style="background: var(--bg-subtle);">
+  <!-- BRD-110: Problem & Solution (3단계 핵심 이야기 압축: 문제 -> 원리 -> 하루 변화) -->
+  <section id="problemSec" style="background: var(--bg-subtle);">
     <div class="wrap-wide">
       <div class="section-header">
+        <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">PROBLEM & DAILY SHIFT</div>
         <h2>우리가 매일 영양제를 챙겨 먹지 못했던 진짜 이유</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">복잡한 영양 습관에서 물 없는 하루 1병 이중제형 루틴으로의 전환</p>
       </div>
 
       <div class="compare-grid">
+        <!-- 01 시작된 문제 (여러 영양제, 불규칙한 식사, 복잡한 습관) -->
         <div class="compare-card">
-          <h3><span class="icon-cross">✕</span> 기존의 번거로운 영양제 습관</h3>
+          <div style="font-size: 0.78rem; font-weight: 800; color: #6B7280; letter-spacing: 0.04em; margin-bottom: 6px;">01 PROBLEM · 시작된 문제</div>
+          <h3><span class="icon-cross">✕</span> 여러 약통과 복잡한 섭취 습관</h3>
           <ul class="compare-list">
-            <li><span class="icon-cross">✕</span> 매일 4~5개의 약통을 일일이 열고 소분해야 하는 번거로움</li>
-            <li><span class="icon-cross">✕</span> 물이 없으면 먹을 수 없어 외출·출근 시 복용 포기</li>
-            <li><span class="icon-cross">✕</span> 단단하게 뭉친 압축 정제로 인해 위장 손실률 87.7% 발생</li>
-            <li><span class="icon-cross">✕</span> 공복 섭취 시 속 쓰림 및 낮은 체내 흡수율(12.3%)</li>
+            <li><span class="icon-cross">✕</span> 매일 4~5개 약통을 일일이 열고 소분해야 하는 번거로움</li>
+            <li><span class="icon-cross">✕</span> 바쁜 일상과 불규칙한 식사로 매번 물을 챙기기 어려워 복용 포기</li>
+            <li><span class="icon-cross">✕</span> 단단한 압축 정제의 낮은 체내 흡수율과 잦은 공복 위장 부담</li>
           </ul>
           <div class="absorb-bar-wrap">
             <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: #4B5563;">
@@ -1019,13 +1023,14 @@
           </div>
         </div>
 
+        <!-- 02 해결 원리 & 03 사용자의 하루 변화 -->
         <div class="compare-card positive">
-          <h3><span class="icon-check">✓</span> A:FIT 하루 1병 이중제형 올인원</h3>
+          <div style="font-size: 0.78rem; font-weight: 800; color: var(--primary); letter-spacing: 0.04em; margin-bottom: 6px;">02 PRINCIPLE & 03 DAILY SHIFT</div>
+          <h3><span class="icon-check">✓</span> 이중제형 원리와 가벼워진 1병 루틴</h3>
           <ul class="compare-list">
-            <li><span class="icon-check">✓</span> 상단 맞춤 정제 + 하단 저점도 액상이 결합된 단 한 병의 솔루션</li>
-            <li><span class="icon-check">✓</span> 별도의 물 준비 없이, 캡을 열어 고농축 액상과 함께 하루 1병 간편 섭취</li>
-            <li><span class="icon-check">✓</span> 고농축 액상 포뮬러와 함께 부드럽게 흡수되어 위장 부담 최소화 및 빠른 흡수</li>
-            <li><span class="icon-check">✓</span> 수용성 식이섬유로 든든한 포만감과 공복 허기 지연 효과</li>
+            <li><span class="icon-check">✓</span> <strong>[원리]</strong> 상단 맞춤 정제 + 하단 저점도 액상이 한 병에 결합된 이중제형 구조</li>
+            <li><span class="icon-check">✓</span> <strong>[원리]</strong> 별도의 물 없이 캡을 열어 고농축 액상과 함께 꿀꺽 삼키는 흡수 과학</li>
+            <li><span class="icon-check">✓</span> <strong>[변화]</strong> 여러 약통과 물을 챙기던 하루에서 주머니 속 1병으로 끝나는 10초 루틴</li>
           </ul>
           <div class="absorb-bar-wrap">
             <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: var(--primary);">
@@ -1209,6 +1214,27 @@
             <p class="compact-color-desc">도심 직장인의 전문성과 B2B/오피스 플랜을 강조하는 비즈니스 포인트</p>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRD-140: Closing Next Action CTA (페이지 최하단 단일 구매/탐색 유도) -->
+  <section style="background: #FFFFFF; border-top: 1px solid var(--border); padding: 80px 0; text-align: center;">
+    <div class="wrap-wide" style="max-width: 760px; margin: auto;">
+      <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">NEXT ACTION</div>
+      <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--primary); margin-bottom: 12px;">
+        내 하루에 꼭 맞는 맞춤 웰니스를 경험해 보세요
+      </h2>
+      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 28px;">
+        브랜드 철학과 이중제형 기술이 집약된 A:FIT의 15종 라인업을 탐색하거나 나만의 맞춤 구독을 시작해 보세요.
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="카테고리.html" class="btn primary" style="text-decoration: none; padding: 14px 28px; font-weight: 700;">
+          15종 맞춤 컬렉션 둘러보기 →
+        </a>
+        <button class="btn secondary" style="padding: 14px 28px; font-weight: 700;" onclick="openCheckoutModal('A:FIT 시그니처 1:1 맞춤 정기구독')">
+          1:1 맞춤 정기구독 신청
+        </button>
       </div>
     </div>
   </section>
