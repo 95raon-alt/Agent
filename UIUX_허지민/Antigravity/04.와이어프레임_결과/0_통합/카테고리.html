@@ -323,19 +323,24 @@
       margin-bottom: 48px;
       box-shadow: var(--shadow-card);
       display: grid;
-      gap: 16px;
+      gap: 18px;
+      width: 100%;
+      box-sizing: border-box;
     }
     .filter-row {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 16px;
+      width: 100%;
+      min-width: 0;
     }
     .filter-label {
       font-size: 0.82rem;
       font-weight: 800;
       color: #4B5563;
-      width: 100px;
+      width: 84px;
       flex-shrink: 0;
+      padding-top: 8px;
       letter-spacing: -0.01em;
     }
     .filter-row .filter-pills {
@@ -344,6 +349,8 @@
       flex-wrap: wrap;
       margin-bottom: 0;
       justify-content: flex-start;
+      flex: 1;
+      min-width: 0;
     }
     .filter-row .filter-pills button {
       padding: 8px 16px;
@@ -355,6 +362,7 @@
       color: var(--text-body);
       transition: var(--transition);
       cursor: pointer;
+      white-space: nowrap;
     }
     .filter-row .filter-pills button:hover {
       border-color: #111827;
@@ -643,43 +651,47 @@
       background: #F9FAFB;
     }
 
-    /* Modal Styling */
-    .modal-overlay {
+    /* Instant Modal */
+    .modal {
+      display: none;
       position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(12, 15, 18, 0.7);
+      inset: 0;
+      background: rgba(17, 24, 39, 0.65);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
       z-index: 2000;
-      display: none;
       align-items: center;
       justify-content: center;
       padding: 20px;
+      overflow-y: auto;
     }
-    .modal-overlay.show { display: flex; }
-    .modal-box {
-      background: var(--card);
+    .modal.show,
+    .modal.active {
+      display: flex;
+    }
+    .modal-dialog {
+      background: #FFFFFF;
       border-radius: var(--radius-xl);
-      max-width: 580px;
-      width: 100%;
-      padding: 40px;
-      box-shadow: 0 25px 60px rgba(0,0,0,0.25);
-      border: 1px solid var(--border);
+      padding: 40px 32px;
+      width: min(580px, 100%);
+      max-height: calc(100vh - 48px);
+      overflow-y: auto;
       position: relative;
-      animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border);
     }
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: translateY(20px) scale(0.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
-    .modal-close-btn {
-      position: absolute;
-      top: 24px; right: 24px;
-      background: transparent;
-      border: none;
-      font-size: 1.5rem;
-      color: var(--text-muted);
-      cursor: pointer;
+    .loading-spinner {
+      width: 42px;
+      height: 42px;
+      border: 3px solid #E5E7EB;
+      border-top-color: #111827;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      margin: 28px auto;
     }
     .form-group {
       margin-bottom: 18px;
@@ -702,15 +714,116 @@
       font-size: 0.95rem;
     }
 
-    /* Responsive */
+    /* =========================================================
+       Comprehensive Responsive Queries (390px Mobile & 768px Tablet)
+       - 가로 넘침(Horizontal Overflow) 100% 방지
+       - 모바일 390px에서 1열 스택 및 44px 터치 타깃 완비
+       ========================================================= */
+
+    /* 1. Tablet Landscape (1024px ~ 1100px) */
     @media (max-width: 1100px) {
-      .products-grid { grid-template-columns: repeat(2, 1fr); }
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 20px !important;
+      }
     }
+
+    /* 2. Tablet Portrait & Mobile (768px 이하) */
     @media (max-width: 768px) {
-      .top-full { padding: 0 20px; }
-      .links-wide { display: none; }
-      .products-grid { grid-template-columns: 1fr; }
-      .section-header h1 { font-size: 2.2rem; }
+      .wrap-wide {
+        padding: 0 16px !important;
+      }
+      section {
+        padding: 60px 0 !important;
+      }
+      .top-full {
+        padding: 0 20px;
+      }
+      .links-wide {
+        display: none;
+      }
+      .gnb-actions-wrap .btn-gnb {
+        padding: 8px 14px;
+        font-size: 0.82rem;
+      }
+      .section-header {
+        margin-bottom: 36px;
+      }
+      .section-header h1 {
+        font-size: 1.65rem !important;
+      }
+      /* 3차원 필터 바 모바일 세로 배치 및 컴팩트 래핑 */
+      .filter-dimension-nav {
+        padding: 18px 14px !important;
+        gap: 16px !important;
+        margin-bottom: 32px !important;
+      }
+      .filter-row {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+      }
+      .filter-label {
+        width: auto !important;
+        padding-top: 0 !important;
+        font-size: 0.84rem !important;
+        color: #111827 !important;
+      }
+      .filter-pills {
+        display: flex;
+        flex-wrap: wrap !important;
+        gap: 6px !important;
+        width: 100% !important;
+      }
+      .filter-pills button {
+        padding: 6px 12px !important;
+        font-size: 0.78rem !important;
+      }
+      .prd-card {
+        padding: 24px 18px !important;
+      }
+      .modal-dialog {
+        padding: 28px 18px !important;
+        width: min(580px, calc(100vw - 32px)) !important;
+        max-height: calc(100vh - 32px) !important;
+        margin: 16px auto !important;
+      }
+      footer {
+        padding: 48px 20px !important;
+      }
+    }
+
+    /* 3. Small Mobile (480px 이하 / 390px 스마트폰 기준) */
+    @media (max-width: 480px) {
+      .top-full {
+        padding: 0 12px;
+      }
+      .gnb-search-wrap {
+        display: none !important;
+      }
+      .brand-group strong {
+        font-size: 1.6rem;
+      }
+      .products-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
+      }
+      .prd-card {
+        padding: 20px 16px !important;
+      }
+      .prd-name {
+        font-size: 1.25rem !important;
+      }
+      .btn {
+        min-height: 44px;
+        padding: 12px 16px;
+      }
+      .modal-dialog {
+        padding: 24px 16px !important;
+      }
+      footer {
+        padding: 40px 16px !important;
+      }
     }
   </style>
 </head>
@@ -1433,9 +1546,9 @@
   </section>
 
   <!-- CAT-120: Quick View Modal -->
-  <div id="quickViewModal" class="modal-overlay" onclick="if(event.target===this) closeQuickView()">
-    <div class="modal-box" style="max-width: 580px;">
-      <button class="modal-close-btn" onclick="closeQuickView()">✕</button>
+  <div id="quickViewModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalPrdTitle" onclick="if(event.target===this) closeQuickView()">
+    <div class="modal-dialog" style="max-width: 580px; padding: 36px 28px;">
+      <button style="position: absolute; right: 20px; top: 20px; font-size: 1.5rem; background: #F3F4F6; border: 1px solid #E5E7EB; border-radius: 50%; width: 36px; height: 36px; display: flex; align-items: center; justify-content: center; color: var(--primary); line-height: 1; cursor: pointer; z-index: 10;" onclick="closeQuickView()" aria-label="닫기">×</button>
       <div style="text-align: center; margin-bottom: 20px;">
         <span class="tag-badge" id="modalPrdTag"><span class="tag-dot"></span> 상세 영양 처방 리포트</span>
         <h3 id="modalPrdTitle" style="font-size: 1.55rem; font-weight: 800; color: var(--primary); margin-top: 8px;">제품명</h3>
@@ -1476,71 +1589,215 @@
         </div>
       </div>
 
-      <div style="display: flex; gap: 10px;">
+      <div style="display: flex; gap: 10px; margin-top: 18px;">
         <button class="btn primary" style="flex: 1; justify-content: center; font-size: 0.95rem;" onclick="subscribeFromModal()">
           이 처방으로 30% 할인가 구독하기 (월 79,800원)
         </button>
-        <button class="btn secondary" onclick="closeQuickView()">닫기</button>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- CAT-140: Checkout Modal -->
-  <div id="checkoutModal" class="modal-overlay" onclick="if(event.target===this) closeCheckoutModal()">
-    <div class="modal-box">
-      <button class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
-      <div style="text-align: center; margin-bottom: 24px;">
-        <span class="tag-badge" style="margin-bottom: 8px;"><span class="tag-dot"></span> FAST CHECKOUT</span>
-        <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">A:FIT 1:1 맞춤 정기구독</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin-top: 4px;">하루 3,800원으로 시작하는 바른 웰니스 습관</p>
-      </div>
-      <form onsubmit="handleOrderSubmit(event)">
-        <div class="form-group">
-          <label>선택 플랜</label>
-          <input type="text" id="orderPlanName" value="나이트 오버타임 팩" readonly style="background: var(--bg-subtle); font-weight: 700; color: var(--primary);">
-        </div>
-        <div class="form-group">
-          <label>구독자 성함 (보틀 레이저 각인명)</label>
-          <input type="text" id="orderCustName" placeholder="예: 홍길동" required>
-        </div>
-        <div class="form-group">
-          <label>연락처</label>
-          <input type="tel" placeholder="010-0000-0000" required>
-        </div>
-        <div class="form-group">
-          <label>배송지 주소</label>
-          <input type="text" placeholder="서울시 강남구 테헤란로..." required>
-        </div>
-        <div style="background: var(--bg-subtle); padding: 14px 18px; border-radius: var(--radius-sm); margin: 20px 0; font-size: 0.88rem;">
-          <div style="display: flex; justify-content: space-between; margin-bottom: 6px;">
-            <span style="color: var(--text-muted);">정상가 (30일분)</span>
-            <span style="text-decoration: line-through; color: var(--text-light);">114,000원</span>
-          </div>
-          <div style="display: flex; justify-content: space-between; font-weight: 800; font-size: 1.05rem; color: var(--primary);">
-            <span>첫 달 스타터 30% 혜택가</span>
-            <span style="color: #111827; font-weight: 800;">월 79,800원 (일 3,800원)</span>
-          </div>
-        </div>
-        <button type="submit" class="btn primary" style="width: 100%; justify-content: center; padding: 15px; font-size: 1.02rem;">
-          1초 간편 결제로 구독 시작하기
+        <button class="btn secondary" style="min-width: 90px; justify-content: center; font-weight: 700;" onclick="closeQuickView()">
+          닫기
         </button>
-      </form>
+      </div>
     </div>
   </div>
 
-  <!-- Wide Minimalist Footer -->
-  <footer style="background: #0C0F12; color: #FFFFFF; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
-    <div class="wrap-wide" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-      <div>
-        <strong style="font-size: 1.8rem; letter-spacing: -0.05em; color: #FFFFFF; font-weight: 900;">A:FIT</strong>
-        <p style="font-size: 0.84rem; color: rgba(255,255,255,0.55); margin-top: 6px; line-height: 1.6;">
-          (주)에이핏바이오 | 대표: 허지민 | 서울특별시 강남구 테헤란로 웰니스타워 12층<br>
-          사업자등록번호: 120-88-99881 | 통신판매업신고: 2026-서울강남-0412
+
+  <!-- A:FIT Customer Service (CS) Modal (메인페이지 100% 동일) -->
+  <div id="csModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="csModalTitle" onclick="if(event.target===this) closeCsModal()">
+    <div class="modal-dialog" style="max-width: 520px; padding: 36px 30px;">
+      <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeCsModal()" aria-label="닫기">×</button>
+      
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 id="csModalTitle" style="font-size: 1.45rem; margin-top: 0; margin-bottom: 8px; font-weight: 800; color: var(--primary);">A:FIT 브랜드 고객만족센터</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          상품 하자, 교환/반품 접수, 배송 및 구독 문의를 신속하게 해결해 드립니다.
         </p>
       </div>
-      <div style="font-size: 0.84rem; color: rgba(255,255,255,0.45);">
-        © 2026 A:FIT Inc. All Rights Reserved. 대한민국 No.1 맞춤 웰니스
+
+      <!-- Channel 1: KakaoTalk 1:1 Live Chat -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+          <div>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">REAL-TIME CHAT</span>
+            <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">카카오톡 1:1 실시간 상담</strong>
+          </div>
+          <span style="font-size: 0.76rem; color: #111827; font-weight: 700; background: #F3F4F6; padding: 3px 8px; border-radius: 999px; border: 1px solid #E5E7EB;">● 상담원 대기중</span>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin: 0 0 14px 0;">
+          파손 사진 첨부, 불량 교환 접수, 실시간 배송 조회를 가장 빠르게 처리하실 수 있습니다.
+        </p>
+        <button type="button" onclick="connectKakaoChat()" style="width: 100%; background: #FEE500; color: #191919; font-weight: 800; font-size: 0.95rem; border: none; border-radius: 10px; padding: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: var(--transition);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#191919">
+            <path d="M12 3c-5.52 0-10 3.58-10 8 0 2.83 1.83 5.32 4.62 6.72-.2.75-.73 2.72-.84 3.16-.13.54.2.53.42.38.17-.11 2.37-1.61 3.33-2.27.79.11 1.62.17 2.47.17 5.52 0 10-3.58 10-8s-4.48-8-10-8z"/>
+          </svg>
+          <span>카카오톡 1:1 상담원 연결하기</span>
+        </button>
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 8px;">
+          운영시간: 평일 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00 / 주말·공휴일 휴무)
+        </div>
+      </div>
+
+      <!-- Channel 2: Phone Hotline -->
+      <div style="background: #FFFFFF; border: 1.5px solid #E5E7EB; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #4B5563; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">PHONE HOTLINE</span>
+            <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">고객센터 대표 전화</strong>
+          </div>
+          <a href="tel:1588-4920" style="background: #111827; color: #FFFFFF; font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            📞 통화 연결
+          </a>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 10px; margin: 6px 0;">
+          <span style="font-size: 1.55rem; font-weight: 900; color: var(--primary); letter-spacing: -0.02em;">1588-4920</span>
+          <button type="button" onclick="copyCsPhone('1588-4920')" style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; font-size: 0.76rem; color: var(--text-muted); cursor: pointer;">번호 복사</button>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">
+          통화료는 발신자 부담이며, 통화량이 많을 때는 카카오톡 상담을 이용하시면 더 빠릅니다.
+        </div>
+      </div>
+
+      <!-- Assurance Guarantee & FAQ Quick Links -->
+      <div style="background: #F9FAFB; border: 1px solid #E5E7EB; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.80rem; color: var(--primary); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 2px; color: var(--primary);">🛡️ A:FIT 100% 품질 안심 보증제</strong>
+        • 배송 중 파손 또는 캡/액상 불량 발생 시 <strong>100% 무료 맞춤 재배송</strong><br>
+        • 미개봉 상품은 수령 후 7일 이내 1:1 무상 반품 접수 지원
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <button class="btn secondary" style="flex: 1; justify-content: center; font-size: 0.90rem;" onclick="closeCsModal(); window.location.href='메인페이지.html#reviews';">
+          자주 묻는 질문(FAQ) 확인하기
+        </button>
+        <button class="btn primary" style="padding: 12px 24px; font-size: 0.90rem;" onclick="closeCsModal()">
+          닫기
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Instant Checkout Modal (3-State Workflow & A11y - 메인페이지 100% 동일) -->
+  <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle" onclick="if(event.target===this) closeCheckoutModal()">
+    <div class="modal-dialog">
+      <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
+      
+      <!-- State 1: Input Form -->
+      <div id="checkoutFormBox">
+        <h2 id="checkoutModalTitle" style="font-size: 1.45rem; margin-top: 0; margin-bottom: 18px; font-weight: 800; color: var(--primary);">A:FIT 1:1 맞춤 정기구독 신청</h2>
+        
+        <form onsubmit="handleOrderSubmit(event)">
+          <div style="margin-bottom: 16px;">
+            <label for="orderPlanName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">선택 제품 / 처방 플랜</label>
+            <input type="text" id="orderPlanName" value="01. 나이트 오버타임 팩" style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px; background: #F9FAFB; font-weight: 800; color: var(--primary);" readonly>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label for="orderCustName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독자 성함 <span style="color: #EF4444;">*</span></label>
+            <input type="text" id="orderCustName" placeholder="예: 홍길동 (최소 2자)" required style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 10px;" oninput="validateNameInput(this)">
+            <div id="nameErrorMsg" style="color: #EF4444; font-size: 0.78rem; margin-top: 4px; display: none;">성함을 2자 이상 정확히 입력해 주세요.</div>
+          </div>
+          <div style="margin-bottom: 16px;">
+            <label for="orderCustPhone" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">휴대폰 번호 <span style="color: #EF4444;">*</span></label>
+            <input type="tel" id="orderCustPhone" placeholder="예: 010-1234-5678" maxlength="13" required style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 10px;" oninput="formatPhoneNumber(this)">
+            <div id="phoneErrorMsg" style="color: #EF4444; font-size: 0.78rem; margin-top: 4px; display: none;">올바른 휴대폰 번호 형식을 입력해 주세요 (010-XXXX-XXXX).</div>
+          </div>
+          <div style="margin-bottom: 22px;">
+            <label for="orderPlanPeriod" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독 플랜 선택</label>
+            <select id="orderPlanPeriod" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 10px; background: #FFFFFF; font-weight: 600;">
+              <option>월 30일 매일 올인원팩 (월 79,800원)</option>
+              <option>월 20일 평일 출근팩 (월 53,200원)</option>
+            </select>
+          </div>
+          <button type="submit" id="btnSubmitOrder" class="btn primary" style="width: 100%; justify-content: center; padding: 15px; font-size: 1.02rem;">
+            구독 신청 완료하기
+          </button>
+        </form>
+      </div>
+
+      <!-- State 2: Loading State -->
+      <div id="checkoutLoadingBox" style="display: none; text-align: center; padding: 24px 0;">
+        <div style="width: 44px; height: 44px; border: 3px solid #E5E7EB; border-top-color: #111827; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px;"></div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">
+          1:1 맞춤 구독 처방을 접수하고 있습니다
+        </h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+          개인화 라벨 각인 정보 및 첫 정기배송 일정을 생성 중입니다.<br>잠시만 기다려 주세요.
+        </p>
+      </div>
+
+      <!-- State 3: Success Confirmation -->
+      <div id="checkoutSuccessBox" style="display: none; text-align: center; padding: 12px 0;">
+        <h3 style="font-size: 1.38rem; font-weight: 900; color: var(--primary); margin-bottom: 12px;">
+          정기구독 신청이 성공적으로 완료되었습니다
+        </h3>
+        <p style="font-size: 0.90rem; color: var(--text-muted); margin-bottom: 24px;">
+          선택하신 맞춤 포뮬러가 1:1 라벨 각인 공정을 거쳐 안전하게 출고됩니다.
+        </p>
+
+        <div style="background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 20px; text-align: left; margin-bottom: 24px; font-size: 0.88rem; line-height: 1.8;">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">주문 접수번호</span>
+            <strong style="color: var(--primary); font-weight: 800;" id="successOrderNum">AFIT-20260825-001</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">구독자</span>
+            <strong style="color: var(--primary);" id="successCustName">홍길동 님</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">신청 플랜</span>
+            <strong style="color: var(--primary);" id="successPlanName">01. 나이트 오버타임 팩</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--border); margin-top: 8px; padding-top: 8px;">
+            <span style="color: var(--text-muted);">첫 배송 예정일</span>
+            <strong style="color: #111827; font-weight: 800;">신청 후 2영업일 이내 무균 질소 팩 출고</strong>
+          </div>
+        </div>
+
+        <button type="button" class="btn primary" style="width: 100%; justify-content: center; padding: 14px;" onclick="closeCheckoutModal()">
+          확인 완료
+        </button>
+      </div>
+
+      <!-- State 4: Error & Retry State -->
+      <div id="checkoutErrorBox" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 2.4rem; margin-bottom: 12px;">⚠️</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #111827; margin-bottom: 8px;">
+          정기구독 신청 전송 실패
+        </h3>
+        <p style="font-size: 0.90rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+          일시적인 통신 오류로 신청서가 정상 접수되지 않았습니다.<br>입력하신 정보는 안전하게 보존되어 있으니 다시 시도해 주세요.
+        </p>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="btn primary" style="flex: 1; justify-content: center; min-width: 160px;" onclick="retryCheckoutSubmit()">
+            신청 다시 시도하기 ↻
+          </button>
+          <button type="button" class="btn secondary" onclick="backToCheckoutForm()">
+            입력 정보 수정
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wide Minimalist Footer (메인페이지 100% 동일 원본) -->
+  <footer style="background: #0C0F12; color: #FFFFFF; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
+    <div class="wrap-wide">
+      
+      <!-- Project Legal Disclaimer Box -->
+      <div style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.18); border-radius: var(--radius-sm); padding: 22px 26px; margin-bottom: 36px; font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.65;">
+        <strong style="color: var(--accent); display: block; margin-bottom: 4px; font-weight: 800; font-size: 0.88rem;">[PROJECT DISCLAIMER · 가상 프로젝트 고지]</strong>
+        본 웹사이트는 A:FIT 맞춤 영양 구독 서비스의 UI/UX 디자인 및 인터랙션 설계를 위한 학술·포트폴리오 가상 프로젝트입니다.<br>
+        사이트에 기재된 상표, 제품명, 배합비, 인증 번호, 리뷰 및 가격 정보는 서비스 시연을 위한 가상 데이터(Mock Data)이며 실제 상업적 판매 또는 의료적 처방을 목적으로 하지 않습니다.
+      </div>
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+        <div>
+          <strong style="font-size: 1.8rem; letter-spacing: -0.05em; color: #FFFFFF; font-weight: 900;">A:FIT</strong>
+          <p style="font-size: 0.84rem; color: rgba(255,255,255,0.55); margin-top: 6px; line-height: 1.6;">
+            (주)에이핏바이오 (가상 프로젝트) | 대표: 홍길동 | 서울특별시 강남구 테헤란로 웰니스타워 12층<br>
+            사업자등록번호: 000-00-00000 | 통신판매업신고: 2026-서울강남-0000
+          </p>
+        </div>
+        <div style="font-size: 0.84rem; color: rgba(255,255,255,0.45);">
+          © 2026 A:FIT Inc. All Rights Reserved. 맞춤 웰니스 UI/UX 포트폴리오
+        </div>
       </div>
     </div>
   </footer>
@@ -1777,36 +2034,24 @@
       document.getElementById('modalCapText').innerHTML = data.cap;
       document.getElementById('modalLiqText').innerHTML = data.liq;
       document.getElementById('modalTimingText').innerText = data.timing;
-      document.getElementById('quickViewModal').classList.add('show');
+      const modal = document.getElementById('quickViewModal');
+      if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      }
     }
 
     function closeQuickView() {
-      document.getElementById('quickViewModal').classList.remove('show');
+      const modal = document.getElementById('quickViewModal');
+      if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+      }
     }
 
     function subscribeFromModal() {
       closeQuickView();
       openCheckoutModal(currentSelectedModalProduct);
-    }
-
-    function openCheckoutModal(planName) {
-      if (planName) {
-        document.getElementById('orderPlanName').value = planName;
-      }
-      document.getElementById('checkoutModal').classList.add('show');
-    }
-
-    function closeCheckoutModal() {
-      document.getElementById('checkoutModal').classList.remove('show');
-    }
-
-    function handleOrderSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById('orderCustName').value;
-      const plan = document.getElementById('orderPlanName').value;
-      const orderNum = "AFIT-" + new Date().getFullYear() + String(Math.floor(1000 + Math.random() * 9000));
-      alert(`🎉 [A:FIT 맞춤 정기구독 신청 완료]\n\n구독자: ${name} 님\n신청 플랜: ${plan}\n주문 처방 번호: ${orderNum}\n\n1:1 맞춤 각인 패키지가 24시간 내 발송됩니다!`);
-      closeCheckoutModal();
     }
 
     /* GNB 인라인 검색 */
@@ -1838,10 +2083,191 @@
       }
     }
 
-    /* 1:1 CS Consultation Handler */
+    /* 1:1 CS Consultation Handler (메인페이지 100% 동일) */
+    let lastFocusedElement = null;
+
     function openCsModal() {
-      alert('💬 [A:FIT 1:1 고객만족센터 상담 연결]\n\n카카오톡 1:1 실시간 채팅 상담 및 대표번호(1588-4920) 채널로 연결됩니다.\n(운영시간: 평일 09:00 ~ 18:00 / 주말·공휴일 휴무)');
+      lastFocusedElement = document.activeElement;
+      const modal = document.getElementById('csModal');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('button');
+        if (closeBtn) closeBtn.focus();
+      }
     }
+
+    function closeCsModal() {
+      const modal = document.getElementById('csModal');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+    }
+
+    function connectKakaoChat() {
+      alert('💬 [A:FIT 카카오톡 1:1 고객만족센터 연결]\n\n카카오톡 1:1 채팅 상담 창으로 안전하게 이동합니다.\n(상담원 연결 대기시간: 약 1분 이내)');
+    }
+
+    function copyCsPhone(phone) {
+      navigator.clipboard.writeText(phone).then(() => {
+        alert(`📞 고객센터 전화번호(${phone})가 클립보드에 복사되었습니다.`);
+      });
+    }
+
+    /* Form Validation Handlers (메인페이지 100% 동일) */
+    function validateNameInput(input) {
+      const errorMsg = document.getElementById("nameErrorMsg");
+      if (input.value.trim().length >= 2) {
+        if (errorMsg) errorMsg.style.display = "none";
+        input.style.borderColor = "";
+      }
+    }
+
+    function formatPhoneNumber(input) {
+      let val = input.value.replace(/[^0-9]/g, '');
+      if (val.length > 3 && val.length <= 7) {
+        val = val.slice(0, 3) + '-' + val.slice(3);
+      } else if (val.length > 7) {
+        val = val.slice(0, 3) + '-' + val.slice(3, 7) + '-' + val.slice(7, 11);
+      }
+      input.value = val;
+      const errorMsg = document.getElementById("phoneErrorMsg");
+      const phoneRegex = /^01[0-9]-\d{3,4}-\d{4}$/;
+      if (phoneRegex.test(val)) {
+        if (errorMsg) errorMsg.style.display = "none";
+        input.style.borderColor = "";
+      }
+    }
+
+    /* Checkout Modal Controller & 3-State Workflow (메인페이지 100% 동일) */
+    function openCheckoutModal(planName) {
+      lastFocusedElement = document.activeElement;
+      if (planName) {
+        const planInput = document.getElementById("orderPlanName");
+        if (planInput) planInput.value = planName;
+      }
+      document.getElementById("checkoutFormBox").style.display = "block";
+      document.getElementById("checkoutLoadingBox").style.display = "none";
+      document.getElementById("checkoutSuccessBox").style.display = "none";
+      const errorBox = document.getElementById("checkoutErrorBox");
+      if (errorBox) errorBox.style.display = "none";
+
+      const nameError = document.getElementById("nameErrorMsg");
+      if (nameError) nameError.style.display = "none";
+      const phoneError = document.getElementById("phoneErrorMsg");
+      if (phoneError) phoneError.style.display = "none";
+      const nameInput = document.getElementById("orderCustName");
+      if (nameInput) nameInput.style.borderColor = "";
+      const phoneInput = document.getElementById("orderCustPhone");
+      if (phoneInput) phoneInput.style.borderColor = "";
+
+      const modal = document.getElementById("checkoutModal");
+      if (modal) {
+        modal.classList.add("active");
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          if (nameInput) nameInput.focus();
+        }, 100);
+      }
+    }
+
+    function closeCheckoutModal() {
+      const modal = document.getElementById("checkoutModal");
+      if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
+    }
+
+    function handleOrderSubmit(e) {
+      e.preventDefault();
+      const nameInput = document.getElementById("orderCustName");
+      const phoneInput = document.getElementById("orderCustPhone");
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const plan = document.getElementById("orderPlanName") ? document.getElementById("orderPlanName").value : '01. 나이트 오버타임 팩';
+
+      if (name.length < 2) {
+        const nameError = document.getElementById("nameErrorMsg");
+        if (nameError) nameError.style.display = "block";
+        if (nameInput) {
+          nameInput.focus();
+          nameInput.style.borderColor = "#EF4444";
+        }
+        return;
+      }
+
+      const phoneRegex = /^01[0-9]-\d{3,4}-\d{4}$/;
+      if (!phoneRegex.test(phone)) {
+        const phoneError = document.getElementById("phoneErrorMsg");
+        if (phoneError) phoneError.style.display = "block";
+        if (phoneInput) {
+          phoneInput.focus();
+          phoneInput.style.borderColor = "#EF4444";
+        }
+        return;
+      }
+
+      const orderNum = "AFIT-" + new Date().getFullYear() + "-" + String(Math.floor(1000 + Math.random() * 9000));
+
+      document.getElementById("checkoutFormBox").style.display = "none";
+      document.getElementById("checkoutLoadingBox").style.display = "block";
+
+      setTimeout(() => {
+        document.getElementById("checkoutLoadingBox").style.display = "none";
+        document.getElementById("checkoutSuccessBox").style.display = "block";
+
+        const orderNumElem = document.getElementById("successOrderNum");
+        if (orderNumElem) orderNumElem.innerText = orderNum;
+        const custNameElem = document.getElementById("successCustName");
+        if (custNameElem) custNameElem.innerText = name + " 님";
+        const planNameElem = document.getElementById("successPlanName");
+        if (planNameElem) planNameElem.innerText = plan;
+      }, 1200);
+    }
+
+    function retryCheckoutSubmit() {
+      const errorBox = document.getElementById("checkoutErrorBox");
+      if (errorBox) errorBox.style.display = "none";
+      document.getElementById("checkoutLoadingBox").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("checkoutLoadingBox").style.display = "none";
+        document.getElementById("checkoutSuccessBox").style.display = "block";
+      }, 1000);
+    }
+
+    function backToCheckoutForm() {
+      const errorBox = document.getElementById("checkoutErrorBox");
+      if (errorBox) errorBox.style.display = "none";
+      document.getElementById("checkoutFormBox").style.display = "block";
+    }
+
+    /* ESC Key Support & Modal Focus Trap */
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeCsModal();
+        closeCheckoutModal();
+        closeQuickView();
+      }
+      if (e.key === 'Tab') {
+        const activeModal = document.querySelector('.modal.active');
+        if (!activeModal) return;
+        const focusables = activeModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
   </script>
 </body>
 </html>
