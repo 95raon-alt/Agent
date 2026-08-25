@@ -873,26 +873,62 @@
       font-size: 0.95rem;
     }
 
-    /* Responsive Breakpoints (Zero Horizontal Overflow on 390px) */
+    /* Responsive Breakpoints (Zero Horizontal Overflow on 390px - 메인페이지 동기화) */
+    .signature-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero-btn-group {
+      margin-top: 24px;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .hero-core-beliefs {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 20px;
+      padding-left: 24px;
+      border-left: 2px solid var(--border);
+    }
     @media (max-width: 1100px) {
       .hero-grid { grid-template-columns: 1fr; }
+      .signature-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
       .process-timeline { grid-template-columns: repeat(2, 1fr); }
       .eco-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
+      .wrap-wide { padding: 0 16px !important; }
+      section { padding: 60px 0 !important; }
+      .hero-sec { padding: 60px 0 50px !important; }
       .top-full { padding: 0 20px; }
       .links-wide { display: none; }
+      .gnb-actions-wrap .btn-gnb { padding: 8px 14px; font-size: 0.82rem; }
       .hero-grid { grid-template-columns: 1fr !important; }
+      .signature-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+      .hero-core-beliefs { border-left: none !important; border-top: 1px solid var(--border) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .compare-grid { grid-template-columns: 1fr; }
       .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .process-timeline { grid-template-columns: 1fr; }
       .hero-content h1 { font-size: 2.1rem; }
+      footer { padding: 48px 20px !important; }
     }
     @media (max-width: 480px) {
+      .top-full { padding: 0 12px; }
+      .gnb-search-wrap { display: none !important; }
+      .brand-group strong { font-size: 1.6rem; }
+      .hero-btn-group { flex-direction: column !important; width: 100% !important; gap: 10px !important; }
+      .hero-btn-group .btn { width: 100% !important; justify-content: center !important; }
       .trust-grid { grid-template-columns: 1fr; gap: 12px; }
-      .trust-card { padding: 20px 16px; }
+      .trust-card { padding: 20px 16px; word-break: keep-all; overflow-wrap: break-word; }
       .naming-formula-box { flex-direction: column; align-items: flex-start !important; }
       .compact-color-grid { grid-template-columns: 1fr !important; }
+      .modal-dialog { padding: 28px 18px !important; width: min(520px, calc(100vw - 32px)) !important; margin: 16px auto !important; }
+      footer { padding: 40px 16px !important; }
     }
   </style>
 </head>
@@ -962,18 +998,18 @@
             </span>
           </div>
 
-          <div style="margin-top: 24px; display: inline-flex; align-items: center; gap: 12px; flex-wrap: nowrap;">
-            <a href="#problemSec" class="btn primary" style="text-decoration: none; padding: 12px 22px; font-size: 0.92rem; font-weight: 700; white-space: nowrap;">
+          <div class="hero-btn-group">
+            <a href="#problemSec" class="btn primary" style="text-decoration: none; padding: 12px 22px; font-size: 0.92rem; font-weight: 700;">
               A:FIT이 시작된 이유 보기 ↓
             </a>
-            <a href="#signatureSec" class="btn secondary" style="text-decoration: none; padding: 12px 22px; font-size: 0.92rem; font-weight: 700; white-space: nowrap;">
+            <a href="#signatureSec" class="btn secondary" style="text-decoration: none; padding: 12px 22px; font-size: 0.92rem; font-weight: 700;">
               한 병 루틴의 원리 (단면도)
             </a>
           </div>
         </div>
 
         <!-- 3 Core Values (Right - Clean Editorial List without Heavy Boxes) -->
-        <div style="display: flex; flex-direction: column; justify-content: center; gap: 20px; padding-left: 24px; border-left: 2px solid var(--border);">
+        <div class="hero-core-beliefs">
           <div>
             <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.06em; margin-bottom: 4px;">CORE BELIEF 01</div>
             <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 6px;">
@@ -1024,7 +1060,7 @@
         </p>
       </div>
 
-      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;">
+      <div class="signature-grid">
         <!-- 좌측: 대형 제품 단면 도해 (기술 구현 시각화) -->
         <div style="background: var(--bg-subtle); border: 1.5px solid var(--border); border-radius: var(--radius-xl); padding: 40px 32px; text-align: center;">
           <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 20px; letter-spacing: 0.05em;">
@@ -1285,7 +1321,7 @@
             <div class="compact-color-sub-row">Dark Walnut Brown · #503323</div>
             <p class="compact-color-desc">데스크 인테리어 우드 오브제 감성과 대자연 원료의 내추럴 포인트</p>
           </div>
-        </div>
+        </button>
 
         <!-- 5. Charcoal Gray (Grid/Text) -->
         <button type="button" class="compact-color-card" onclick="copyColor('#4C4E52', 'Charcoal Gray (모던 차콜 그레이)')" aria-label="모던 차콜 그레이 #4C4E52 색상 코드 복사">
@@ -1333,16 +1369,26 @@
 
   <!-- Wide Minimalist Footer -->
   <footer style="background: #0C0F12; color: #FFFFFF; padding: 60px 48px; border-top: 1px solid rgba(255,255,255,0.08);">
-    <div class="wrap-wide" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
-      <div>
-        <strong style="font-size: 1.8rem; letter-spacing: -0.05em; color: #FFFFFF; font-weight: 900;">A:FIT</strong>
-        <p style="font-size: 0.84rem; color: rgba(255,255,255,0.55); margin-top: 6px; line-height: 1.6;">
-          (주)에이핏바이오 | 대표: 홍길동 (UI/UX 포트폴리오 가상 프로젝트) | 서울특별시 강남구 테헤란로 웰니스타워 12층<br>
-          사업자등록번호: 120-88-99881 | 통신판매업신고: 2026-서울강남-0412
-        </p>
+    <div class="wrap-wide">
+      
+      <!-- Project Legal Disclaimer Box -->
+      <div style="background: rgba(255,255,255,0.04); border: 1px dashed rgba(255,255,255,0.18); border-radius: var(--radius-sm); padding: 22px 26px; margin-bottom: 36px; font-size: 0.82rem; color: rgba(255,255,255,0.65); line-height: 1.65;">
+        <strong style="color: var(--accent); display: block; margin-bottom: 4px; font-weight: 800; font-size: 0.88rem;">[PROJECT DISCLAIMER · 가상 프로젝트 고지]</strong>
+        본 웹사이트는 A:FIT 맞춤 영양 구독 서비스의 UI/UX 디자인 및 인터랙션 설계를 위한 학술·포트폴리오 가상 프로젝트입니다.<br>
+        사이트에 기재된 상표, 제품명, 배합비, 인증 번호, 리뷰 및 가격 정보는 서비스 시연을 위한 가상 데이터(Mock Data)이며 실제 상업적 판매 또는 의료적 처방을 목적으로 하지 않습니다.
       </div>
-      <div style="font-size: 0.84rem; color: rgba(255,255,255,0.45);">
-        © 2026 A:FIT Inc. All Rights Reserved. 대한민국 No.1 맞춤 웰니스
+
+      <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 24px;">
+        <div>
+          <strong style="font-size: 1.8rem; letter-spacing: -0.05em; color: #FFFFFF; font-weight: 900;">A:FIT</strong>
+          <p style="font-size: 0.84rem; color: rgba(255,255,255,0.55); margin-top: 6px; line-height: 1.6;">
+            (주)에이핏바이오 (가상 프로젝트) | 대표: 홍길동 | 서울특별시 강남구 테헤란로 웰니스타워 12층<br>
+            사업자등록번호: 000-00-00000 | 통신판매업신고: 2026-서울강남-0000
+          </p>
+        </div>
+        <div style="font-size: 0.84rem; color: rgba(255,255,255,0.45);">
+          © 2026 A:FIT Inc. All Rights Reserved. 맞춤 웰니스 UI/UX 포트폴리오
+        </div>
       </div>
     </div>
   </footer>
