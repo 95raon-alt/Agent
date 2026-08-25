@@ -330,6 +330,13 @@
       box-shadow: none;
       transition: var(--transition);
       cursor: pointer;
+      text-align: left;
+      font-family: inherit;
+      width: 100%;
+    }
+    .compact-color-card:focus-visible {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
     }
     .compact-color-card:hover {
       transform: translateY(-2px);
@@ -593,6 +600,12 @@
     }
 
     /* 3. Science & 5-Step Process Timeline (BRD-120) */
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 20px;
+    }
     .trust-card {
       text-align: center;
       padding: 32px 20px;
@@ -802,10 +815,7 @@
       position: relative;
       animation: modalFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    @keyframes modalFadeIn {
-      from { opacity: 0; transform: translateY(20px) scale(0.96); }
-      to { opacity: 1; transform: translateY(0) scale(1); }
-    }
+    
     /* Standard Modal System (CS Modal & Checkout Modal) */
     .modal {
       display: none;
@@ -863,21 +873,26 @@
       font-size: 0.95rem;
     }
 
-    /* Responsive Breakpoints */
+    /* Responsive Breakpoints (Zero Horizontal Overflow on 390px) */
     @media (max-width: 1100px) {
       .hero-grid { grid-template-columns: 1fr; }
       .process-timeline { grid-template-columns: repeat(2, 1fr); }
-      .cert-grid { grid-template-columns: repeat(2, 1fr); }
       .eco-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 768px) {
       .top-full { padding: 0 20px; }
       .links-wide { display: none; }
+      .hero-grid { grid-template-columns: 1fr !important; }
       .compare-grid { grid-template-columns: 1fr; }
+      .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
       .process-timeline { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
-      .hero-content h1 { font-size: 2.4rem; }
-      .hero-stats { grid-template-columns: 1fr; gap: 14px; }
+      .hero-content h1 { font-size: 2.1rem; }
+    }
+    @media (max-width: 480px) {
+      .trust-grid { grid-template-columns: 1fr; gap: 12px; }
+      .trust-card { padding: 20px 16px; }
+      .naming-formula-box { flex-direction: column; align-items: flex-start !important; }
+      .compact-color-grid { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
@@ -957,36 +972,113 @@
           </div>
         </div>
 
-        <!-- 3 Core Values Cards (Right) -->
-        <div style="display: grid; gap: 18px;">
-          <div style="background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: var(--radius-sm); padding: 22px 24px; box-shadow: var(--shadow-subtle);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">CORE BELIEF 01</div>
-            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
+        <!-- 3 Core Values (Right - Clean Editorial List without Heavy Boxes) -->
+        <div style="display: flex; flex-direction: column; justify-content: center; gap: 20px; padding-left: 24px; border-left: 2px solid var(--border);">
+          <div>
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.06em; margin-bottom: 4px;">CORE BELIEF 01</div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 6px;">
               1:1 정밀 맞춤 배합의 원칙
             </h3>
             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
-              누구에게나 똑같은 범용 영양제는 더 이상 답이 아닙니다. 설문 기반 라이프스타일 분석을 통해 개인의 결핍 요소만을 골라 담습니다.
+              누구에게나 똑같은 범용 영양제 대신, 설문 기반 라이프스타일 분석으로 개인의 결핍 요소만을 골라 담습니다.
             </p>
           </div>
 
-          <div style="background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: var(--radius-sm); padding: 22px 24px; box-shadow: var(--shadow-subtle);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.04em;">CORE BELIEF 02</div>
-            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
+          <div style="border-top: 1px solid var(--border); padding-top: 18px;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.06em; margin-bottom: 4px;">CORE BELIEF 02</div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 6px;">
               체내 흡수율 중심의 바이오 과학
             </h3>
             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
-              아무리 좋은 성분도 흡수되지 않으면 무의미합니다. 상단 정제와 하단 저점도 액상의 이중제형 기전으로 흡수율을 92.4%까지 극대화합니다.
+              상단 정제와 하단 저점도 액상의 이중제형 기전으로 일반 정제 대비 체내 흡수율을 92.4%까지 극대화합니다.
             </p>
           </div>
 
-          <div style="background: var(--card); border: 1px solid var(--border); border-left: 4px solid #4B5563; border-radius: var(--radius-sm); padding: 22px 24px; box-shadow: var(--shadow-subtle);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: #4B5563; letter-spacing: 0.04em;">CORE BELIEF 03</div>
-            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 6px 0 8px;">
+          <div style="border-top: 1px solid var(--border); padding-top: 18px;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.06em; margin-bottom: 4px;">CORE BELIEF 03</div>
+            <h3 style="font-size: 1.15rem; font-weight: 800; color: var(--primary); margin: 0 0 6px;">
               지속 가능한 클린 웰니스 순환
             </h3>
             <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin: 0;">
-              나의 건강뿐 아니라 환경의 지속가능성을 생각합니다. 180일 토양 생분해 용기와 친환경 패키징 시스템을 적용합니다.
+              나의 건강과 환경을 위해 180일 토양 생분해 용기와 공병 무상 수거 에코백 제도를 함께 운영합니다.
             </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRD-105: [신설] A:FIT 브랜드 철학과 기술의 집약체 (시그니처 듀얼 팩 단면 도해) -->
+  <section id="signatureSec" style="background: #FFFFFF; border-top: 1px solid var(--border); padding: 90px 0;">
+    <div class="wrap-wide">
+      <!-- 섹션 헤더 (철학과 기술의 연결 명시) -->
+      <div class="section-header" style="text-align: center; margin-bottom: 54px;">
+        <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">
+          PHILOSOPHY & TECHNOLOGY INNOVATION
+        </div>
+        <h2 style="font-size: 2.1rem; font-weight: 800; color: var(--primary);">
+          철학과 기술의 집약체, A:FIT 시그니처 듀얼 팩
+        </h2>
+        <p style="font-size: 1.02rem; color: var(--text-muted); margin-top: 10px;">
+          A:FIT의 3대 철학(올인원·개인맞춤·흡수과학)이 단 하나의 이중제형 기술로 완성된 대표 사례
+        </p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; align-items: center;">
+        <!-- 좌측: 대형 제품 단면 도해 (기술 구현 시각화) -->
+        <div style="background: var(--bg-subtle); border: 1.5px solid var(--border); border-radius: var(--radius-xl); padding: 40px 32px; text-align: center;">
+          <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 20px; letter-spacing: 0.05em;">
+            CROSS-SECTION SCHEMATIC · 이중제형 단면 구조
+          </div>
+          
+          <!-- 상단 맞춤 정제 챔버 -->
+          <div style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 12px; padding: 18px; margin-bottom: 12px;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent); margin-bottom: 4px;">TOP CHAMBER (상단 정제)</div>
+            <strong style="font-size: 1.05rem; color: var(--primary);">1:1 개인 맞춤 고농축 정제 (3정)</strong>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px;">비타민B군 + 밀크씨슬 + 테아닌 정밀 타겟팅</p>
+          </div>
+
+          <!-- 결합 씰 -->
+          <div style="background: #E5E7EB; border-radius: 6px; padding: 6px; font-size: 0.75rem; font-weight: 700; color: #4B5563; margin-bottom: 12px;">
+            ▲ 특허 무균 질소 듀얼 락 씰링 (정제와 액상의 교차 오염 및 산화 완벽 차단)
+          </div>
+
+          <!-- 하단 액상 챔버 -->
+          <div style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 12px; padding: 22px;">
+            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent); margin-bottom: 4px;">BOTTOM BOTTLE (하단 액상)</div>
+            <strong style="font-size: 1.05rem; color: var(--primary);">다이렉트 흡수 고농축 액상 (50ml)</strong>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px;">물 없이 삼키는 저점도 포뮬러 + 빠른 체내 흡수 촉진</p>
+          </div>
+        </div>
+
+        <!-- 우측: 3대 철학 ➔ 기술 1:1 매핑 (3개 카드 형태 복원) -->
+        <div>
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 18px;">
+            브랜드 철학이 기술로 구현된 3가지 원리
+          </h3>
+          <div style="display: grid; gap: 14px; margin-bottom: 24px;">
+            <div style="padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 8px;">
+              <strong style="font-size: 0.96rem; color: var(--primary);">01. 올인원 압축 (All-in-one)</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">책상 위 늘어선 4~5개 약통을 단 1병으로 압축한 일체형 보틀 기술</p>
+            </div>
+            <div style="padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px;">
+              <strong style="font-size: 0.96rem; color: var(--primary);">02. 1:1 개인 맞춤 (FIT)</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">라이프스타일 분석 기반 개인별 결핍 요소만 맞춤 타겟팅하는 배합 기술</p>
+            </div>
+            <div style="padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--border); border-left: 4px solid #4B5563; border-radius: 8px;">
+              <strong style="font-size: 0.96rem; color: var(--primary);">03. 흡수 중심 과학 (Absorption)</strong>
+              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">물 없이 캡을 열고 액상과 함께 꿀꺽 삼켜 10초 만에 흡수시키는 제형 기술</p>
+            </div>
+          </div>
+
+          <div style="padding: 16px 20px; background: var(--bg-subtle); border-radius: 10px; border: 1px dashed var(--border-strong);">
+            <div style="font-size: 0.82rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">15종 전체 컬렉션 안내</div>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px;">
+              직장인, 야간근무, 운동, 수면 등 7대 라이프스타일 15종 전체 비교는 서브카테고리 페이지에서 확인하실 수 있습니다.
+            </p>
+            <a href="카테고리.html" style="font-size: 0.86rem; font-weight: 800; color: var(--primary); text-decoration: underline;">
+              15종 서브카테고리 맞춤 라인업 비교하기 →
+            </a>
           </div>
         </div>
       </div>
@@ -1055,7 +1147,7 @@
       </div>
 
       <!-- 4 Luxury Trust Seals (Top) -->
-      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px;">
+      <div class="trust-grid">
         <div class="trust-card">
           <div class="trust-seal-icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
@@ -1120,27 +1212,27 @@
         <div class="process-step-item">
           <div class="process-step-num">01 STEP</div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">원료 정밀 검수</strong>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">글로벌 공인 프리미엄 식물성/바이오 기능성 원료 100% 검증</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">글로벌 공인 프리미엄 식물성/바이오 기능성 원료 100% 검증</p>
         </div>
         <div class="process-step-item">
           <div class="process-step-num">02 STEP</div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">미세 소형 정제 타정</strong>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">목넘김 이물감 제로를 위한 고농축 마이크로 타정 기술 적용</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">목넘김 이물감 제로를 위한 고농축 마이크로 타정 기술 적용</p>
         </div>
         <div class="process-step-item">
           <div class="process-step-num">03 STEP</div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">저점도 액상 포뮬라</strong>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">수용성 식이섬유 배합으로 포만감과 부드러운 목넘김 동시 구현</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">수용성 식이섬유 배합으로 포만감과 부드러운 목넘김 동시 구현</p>
         </div>
         <div class="process-step-item">
           <div class="process-step-num">04 STEP</div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">무균 질소 충진 밀폐</strong>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">산화율 0% 유지를 위한 5단계 챔버 질소 치환 및 진공 분리 씰링</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">산화율 0% 유지를 위한 5단계 챔버 질소 치환 및 진공 분리 씰링</p>
         </div>
         <div class="process-step-item">
           <div class="process-step-num">05 STEP</div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">1:1 맞춤 라벨 출고</strong>
-          <p style="font-size: 0.85rem; color: var(--text-muted);">개인별 건강 처방 메시지 레이저 각인 후 24시간 내 신선 직배송</p>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">개인별 건강 처방 메시지 레이저 각인 후 24시간 내 신선 직배송</p>
         </div>
       </div>
     </div>
@@ -1156,37 +1248,37 @@
 
       <div class="compact-color-grid">
         <!-- 1. Deep Green (Primary) -->
-        <div class="compact-color-card" onclick="copyColor('#183D33', 'Deep Green (딥 포레스트 그린)')">
+        <button type="button" class="compact-color-card" onclick="copyColor('#183D33', 'Deep Green (딥 포레스트 그린)')" aria-label="딥 포레스트 그린 #183D33 색상 코드 복사">
           <div class="compact-color-chip" style="background: #183D33;"></div>
           <div class="compact-color-right">
             <div class="compact-color-name-ko">딥 포레스트 그린</div>
             <div class="compact-color-sub-row">Deep Green · #183D33</div>
             <p class="compact-color-desc">헤더 로고, 메인 헤드라인, 브랜드 신뢰감을 대변하는 메인 시그니처</p>
           </div>
-        </div>
+        </button>
 
         <!-- 2. Cream White (Background) -->
-        <div class="compact-color-card" onclick="copyColor('#FAF6EB', 'Cream White (웜 내추럴 크림)')">
+        <button type="button" class="compact-color-card" onclick="copyColor('#FAF6EB', 'Cream White (웜 내추럴 크림)')" aria-label="웜 내추럴 크림 #FAF6EB 색상 코드 복사">
           <div class="compact-color-chip" style="background: #FAF6EB; border: 1px solid var(--border);"></div>
           <div class="compact-color-right">
             <div class="compact-color-name-ko">웜 내추럴 크림</div>
             <div class="compact-color-sub-row">Cream White · #FAF6EB</div>
-            <p class="compact-color-desc">눈이 편안한 40%+ 여백과 웰니스 무드를 완성하는 기본 배경</p>
+            <p class="compact-color-desc">내추럴 웰니스 감성을 전달하는 메인 캔버스 및 카드 배경</p>
           </div>
-        </div>
+        </button>
 
         <!-- 3. Sage Green (Accent) -->
-        <div class="compact-color-card" onclick="copyColor('#76A58C', 'Sage Green (바이탈 세이지 민트)')">
+        <button type="button" class="compact-color-card" onclick="copyColor('#76A58C', 'Sage Green (바이탈 세이지 민트)')" aria-label="바이탈 세이지 민트 #76A58C 색상 코드 복사">
           <div class="compact-color-chip" style="background: #76A58C;"></div>
           <div class="compact-color-right">
             <div class="compact-color-name-ko">바이탈 세이지 민트</div>
             <div class="compact-color-sub-row">Sage Green · #76A58C</div>
             <p class="compact-color-desc">핵심 CTA 버튼, 활력 배지 및 호버 인터랙션을 이끄는 활력 포인트</p>
           </div>
-        </div>
+        </button>
 
         <!-- 4. Dark Walnut Brown (Natural) -->
-        <div class="compact-color-card" onclick="copyColor('#503323', 'Dark Walnut Brown (다크 월넛 브라운)')">
+        <button type="button" class="compact-color-card" onclick="copyColor('#503323', 'Dark Walnut Brown (다크 월넛 브라운)')" aria-label="다크 월넛 브라운 #503323 색상 코드 복사">
           <div class="compact-color-chip" style="background: #503323;"></div>
           <div class="compact-color-right">
             <div class="compact-color-name-ko">다크 월넛 브라운</div>
@@ -1196,24 +1288,24 @@
         </div>
 
         <!-- 5. Charcoal Gray (Grid/Text) -->
-        <div class="compact-color-card" onclick="copyColor('#4C4E52', 'Charcoal Gray (모던 차콜 그레이)')">
+        <button type="button" class="compact-color-card" onclick="copyColor('#4C4E52', 'Charcoal Gray (모던 차콜 그레이)')" aria-label="모던 차콜 그레이 #4C4E52 색상 코드 복사">
           <div class="compact-color-chip" style="background: #4C4E52;"></div>
           <div class="compact-color-right">
             <div class="compact-color-name-ko">모던 차콜 그레이</div>
             <div class="compact-color-sub-row">Charcoal Gray · #4C4E52</div>
             <p class="compact-color-desc">최적의 가독성을 제공하는 본문 텍스트, 카드 보더 및 디바이더 라인</p>
           </div>
-        </div>
+        </button>
 
         <!-- 6. Dark Navy (Urban) -->
-        <div class="compact-color-card" onclick="copyColor('#2A3C5A', 'Dark Navy (도심 딥 네이비)')">
+        <button type="button" class="compact-color-card" onclick="copyColor('#2A3C5A', 'Dark Navy (도심 딥 네이비)')" aria-label="도심 딥 네이비 #2A3C5A 색상 코드 복사">
           <div class="compact-color-chip" style="background: #2A3C5A;"></div>
           <div class="compact-color-right">
             <div class="compact-color-name-ko">도심 딥 네이비</div>
             <div class="compact-color-sub-row">Dark Navy · #2A3C5A</div>
             <p class="compact-color-desc">도심 직장인의 전문성과 B2B/오피스 플랜을 강조하는 비즈니스 포인트</p>
           </div>
-        </div>
+        </button>
       </div>
     </div>
   </section>
@@ -1245,7 +1337,7 @@
       <div>
         <strong style="font-size: 1.8rem; letter-spacing: -0.05em; color: #FFFFFF; font-weight: 900;">A:FIT</strong>
         <p style="font-size: 0.84rem; color: rgba(255,255,255,0.55); margin-top: 6px; line-height: 1.6;">
-          (주)에이핏바이오 | 대표: 허지민 | 서울특별시 강남구 테헤란로 웰니스타워 12층<br>
+          (주)에이핏바이오 | 대표: 홍길동 (UI/UX 포트폴리오 가상 프로젝트) | 서울특별시 강남구 테헤란로 웰니스타워 12층<br>
           사업자등록번호: 120-88-99881 | 통신판매업신고: 2026-서울강남-0412
         </p>
       </div>
@@ -1328,7 +1420,7 @@
     </div>
   </div>
 
-  <!-- Instant Checkout Modal (3-State Workflow & A11y) -->
+  <!-- Instant Checkout Modal (3-State Workflow & A11y - 메인페이지 100% 동일) -->
   <div id="checkoutModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="checkoutModalTitle" onclick="if(event.target===this) closeCheckoutModal()">
     <div class="modal-dialog">
       <button style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" onclick="closeCheckoutModal()" aria-label="닫기">×</button>
@@ -1343,50 +1435,96 @@
             <input type="text" id="orderPlanName" value="01. 나이트 오버타임 팩" style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px; background: #F9FAFB; font-weight: 800; color: var(--primary);" readonly>
           </div>
           <div style="margin-bottom: 16px;">
-            <label for="orderCustName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독자 성함</label>
-            <input type="text" id="orderCustName" placeholder="예: 박지안" value="박지안" required style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;">
+            <label for="orderCustName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독자 성함 <span style="color: #EF4444;">*</span></label>
+            <input type="text" id="orderCustName" placeholder="예: 홍길동 (최소 2자)" required style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 10px;" oninput="validateNameInput(this)">
+            <div id="nameErrorMsg" style="color: #EF4444; font-size: 0.78rem; margin-top: 4px; display: none;">성함을 2자 이상 정확히 입력해 주세요.</div>
           </div>
           <div style="margin-bottom: 16px;">
-            <label for="orderCustPhone" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">연락처 (배송 안내용)</label>
-            <input type="tel" id="orderCustPhone" placeholder="010-0000-0000" value="010-3849-2910" required style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;">
+            <label for="orderCustPhone" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">휴대폰 번호 <span style="color: #EF4444;">*</span></label>
+            <input type="tel" id="orderCustPhone" placeholder="예: 010-1234-5678" maxlength="13" required style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 10px;" oninput="formatPhoneNumber(this)">
+            <div id="phoneErrorMsg" style="color: #EF4444; font-size: 0.78rem; margin-top: 4px; display: none;">올바른 휴대폰 번호 형식을 입력해 주세요 (010-XXXX-XXXX).</div>
           </div>
-          <div style="margin-bottom: 24px;">
-            <label for="orderCustAddr" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">배송지 주소</label>
-            <input type="text" id="orderCustAddr" placeholder="기본 배송 주소 입력" value="서울특별시 강남구 테헤란로 142" required style="width: 100%; padding: 12px 14px; border: 1.5px solid #E5E7EB; border-radius: 10px;">
+          <div style="margin-bottom: 22px;">
+            <label for="orderPlanPeriod" style="font-size: 0.85rem; font-weight: 700; color: var(--primary); display: block; margin-bottom: 6px;">구독 플랜 선택</label>
+            <select id="orderPlanPeriod" style="width: 100%; padding: 12px 14px; border: 1px solid var(--border-strong); border-radius: 10px; background: #FFFFFF; font-weight: 600;">
+              <option>월 30일 매일 올인원팩 (월 79,800원)</option>
+              <option>월 20일 평일 출근팩 (월 53,200원)</option>
+            </select>
           </div>
-          <button type="submit" class="btn primary" style="width: 100%; justify-content: center; font-size: 1.05rem; padding: 15px;">
-            월 79,800원에 1:1 맞춤 구독 시작하기 →
+          <button type="submit" id="btnSubmitOrder" class="btn primary" style="width: 100%; justify-content: center; padding: 15px; font-size: 1.02rem;">
+            구독 신청 완료하기
           </button>
         </form>
       </div>
 
-      <!-- State 2: Processing Spinner -->
-      <div id="checkoutLoadingBox" style="display: none; text-align: center; padding: 40px 20px;">
-        <div style="width: 48px; height: 48px; border: 4px solid #E5E7EB; border-top-color: #111827; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px;"></div>
-        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">1:1 맞춤 처방 데이터 동기화 중...</h3>
-        <p style="font-size: 0.88rem; color: var(--text-muted); margin: 0;">질소 충진 무균 패키지와 개인 각인 라벨을 생성하고 있습니다.</p>
+      <!-- State 2: Loading State -->
+      <div id="checkoutLoadingBox" style="display: none; text-align: center; padding: 24px 0;">
+        <div style="width: 44px; height: 44px; border: 3px solid #E5E7EB; border-top-color: #111827; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 16px;"></div>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">
+          1:1 맞춤 구독 처방을 접수하고 있습니다
+        </h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+          개인화 라벨 각인 정보 및 첫 정기배송 일정을 생성 중입니다.<br>잠시만 기다려 주세요.
+        </p>
       </div>
 
       <!-- State 3: Success Confirmation -->
-      <div id="checkoutSuccessBox" style="display: none; text-align: center; padding: 20px 10px;">
-        <div style="width: 56px; height: 56px; background: #F3F4F6; color: #111827; border: 1.5px solid #D1D5DB; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin: 0 auto 16px;">✓</div>
-        <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 8px;">1:1 맞춤 구독 신청 완료!</h3>
-        <p style="font-size: 0.90rem; color: var(--text-body); line-height: 1.6; margin-bottom: 24px;">
-          <strong id="successCustName">박지안</strong> 님만을 위한 첫 번째 30일 루틴 팩이<br>
-          안전하게 무균 질소 충진되어 출고 준비에 들어갔습니다.
+      <div id="checkoutSuccessBox" style="display: none; text-align: center; padding: 12px 0;">
+        <h3 style="font-size: 1.38rem; font-weight: 900; color: var(--primary); margin-bottom: 12px;">
+          정기구독 신청이 성공적으로 완료되었습니다
+        </h3>
+        <p style="font-size: 0.90rem; color: var(--text-muted); margin-bottom: 24px;">
+          선택하신 맞춤 포뮬러가 1:1 라벨 각인 공정을 거쳐 안전하게 출고됩니다.
         </p>
-        <div style="background: #F9FAFB; border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 24px; text-align: left; font-size: 0.85rem; line-height: 1.6;">
-          • 첫 배송 예정일: <strong style="color: var(--primary);">내일 오전 07:00 (새벽 배송)</strong><br>
-          • 무료 혜택: <strong>1:1 맞춤 각인 라벨 & 전용 휴대용 케이스 증정</strong>
+
+        <div style="background: #F9FAFB; border: 1.5px solid #E5E7EB; border-radius: var(--radius-sm); padding: 20px; text-align: left; margin-bottom: 24px; font-size: 0.88rem; line-height: 1.8;">
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">주문 접수번호</span>
+            <strong style="color: var(--primary); font-weight: 800;" id="successOrderNum">AFIT-20260825-001</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">구독자</span>
+            <strong style="color: var(--primary);" id="successCustName">홍길동 님</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between;">
+            <span style="color: var(--text-muted);">신청 플랜</span>
+            <strong style="color: var(--primary);" id="successPlanName">01. 나이트 오버타임 팩</strong>
+          </div>
+          <div style="display: flex; justify-content: space-between; border-top: 1px dashed var(--border); margin-top: 8px; padding-top: 8px;">
+            <span style="color: var(--text-muted);">첫 배송 예정일</span>
+            <strong style="color: #111827; font-weight: 800;">신청 후 2영업일 이내 무균 질소 팩 출고</strong>
+          </div>
         </div>
-        <button class="btn primary" style="width: 100%; justify-content: center;" onclick="closeCheckoutModal()">
+
+        <button type="button" class="btn primary" style="width: 100%; justify-content: center; padding: 14px;" onclick="closeCheckoutModal()">
           확인 완료
         </button>
+      </div>
+
+      <!-- State 4: Error & Retry State -->
+      <div id="checkoutErrorBox" style="display: none; text-align: center; padding: 20px 0;">
+        <div style="font-size: 2.4rem; margin-bottom: 12px;">⚠️</div>
+        <h3 style="font-size: 1.35rem; font-weight: 800; color: #111827; margin-bottom: 8px;">
+          정기구독 신청 전송 실패
+        </h3>
+        <p style="font-size: 0.90rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+          일시적인 통신 오류로 신청서가 정상 접수되지 않았습니다.<br>입력하신 정보는 안전하게 보존되어 있으니 다시 시도해 주세요.
+        </p>
+        <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+          <button type="button" class="btn primary" style="flex: 1; justify-content: center; min-width: 160px;" onclick="retryCheckoutSubmit()">
+            신청 다시 시도하기 ↻
+          </button>
+          <button type="button" class="btn secondary" onclick="backToCheckoutForm()">
+            입력 정보 수정
+          </button>
+        </div>
       </div>
     </div>
   </div>
 
   <script>
+    let lastFocusedElement = null;
+
     function copyColor(hex, name) {
       if (navigator.clipboard) {
         navigator.clipboard.writeText(hex).then(() => {
@@ -1411,12 +1549,22 @@
 
     /* CS Modal Controller */
     function openCsModal() {
+      lastFocusedElement = document.activeElement;
       const modal = document.getElementById('csModal');
-      if (modal) modal.classList.add('active');
+      if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        const closeBtn = modal.querySelector('button');
+        if (closeBtn) closeBtn.focus();
+      }
     }
     function closeCsModal() {
       const modal = document.getElementById('csModal');
-      if (modal) modal.classList.remove('active');
+      if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
     }
     function connectKakaoChat() {
       alert('💬 [A:FIT 카카오톡 1:1 고객만족센터 연결]\n\n카카오톡 1:1 채팅 상담 창으로 안전하게 이동합니다.\n(상담원 연결 대기시간: 약 1분 이내)');
@@ -1427,50 +1575,155 @@
       });
     }
 
-    /* Checkout Modal Controller */
+    /* Form Validation Handlers (메인페이지 100% 동일) */
+    function validateNameInput(input) {
+      const errorMsg = document.getElementById("nameErrorMsg");
+      if (input.value.trim().length >= 2) {
+        if (errorMsg) errorMsg.style.display = "none";
+        input.style.borderColor = "";
+      }
+    }
+
+    function formatPhoneNumber(input) {
+      let val = input.value.replace(/[^0-9]/g, '');
+      if (val.length > 3 && val.length <= 7) {
+        val = val.slice(0, 3) + '-' + val.slice(3);
+      } else if (val.length > 7) {
+        val = val.slice(0, 3) + '-' + val.slice(3, 7) + '-' + val.slice(7, 11);
+      }
+      input.value = val;
+      const errorMsg = document.getElementById("phoneErrorMsg");
+      const phoneRegex = /^01[0-9]-\d{3,4}-\d{4}$/;
+      if (phoneRegex.test(val)) {
+        if (errorMsg) errorMsg.style.display = "none";
+        input.style.borderColor = "";
+      }
+    }
+
+    /* Checkout Modal Controller & 3-State Workflow (메인페이지 100% 동일) */
     function openCheckoutModal(planName) {
-      const modal = document.getElementById('checkoutModal');
-      const planInput = document.getElementById('orderPlanName');
-      const formBox = document.getElementById('checkoutFormBox');
-      const loadingBox = document.getElementById('checkoutLoadingBox');
-      const successBox = document.getElementById('checkoutSuccessBox');
-      
-      if (planInput && planName) planInput.value = planName;
-      if (formBox) formBox.style.display = 'block';
-      if (loadingBox) loadingBox.style.display = 'none';
-      if (successBox) successBox.style.display = 'none';
-      if (modal) modal.classList.add('active');
+      lastFocusedElement = document.activeElement;
+      if (planName) {
+        const planInput = document.getElementById("orderPlanName");
+        if (planInput) planInput.value = planName;
+      }
+      document.getElementById("checkoutFormBox").style.display = "block";
+      document.getElementById("checkoutLoadingBox").style.display = "none";
+      document.getElementById("checkoutSuccessBox").style.display = "none";
+      const errorBox = document.getElementById("checkoutErrorBox");
+      if (errorBox) errorBox.style.display = "none";
+
+      const nameError = document.getElementById("nameErrorMsg");
+      if (nameError) nameError.style.display = "none";
+      const phoneError = document.getElementById("phoneErrorMsg");
+      if (phoneError) phoneError.style.display = "none";
+      const nameInput = document.getElementById("orderCustName");
+      if (nameInput) nameInput.style.borderColor = "";
+      const phoneInput = document.getElementById("orderCustPhone");
+      if (phoneInput) phoneInput.style.borderColor = "";
+
+      const modal = document.getElementById("checkoutModal");
+      if (modal) {
+        modal.classList.add("active");
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => {
+          if (nameInput) nameInput.focus();
+        }, 100);
+      }
     }
+
     function closeCheckoutModal() {
-      const modal = document.getElementById('checkoutModal');
-      if (modal) modal.classList.remove('active');
+      const modal = document.getElementById("checkoutModal");
+      if (modal) {
+        modal.classList.remove("active");
+        document.body.style.overflow = '';
+        if (lastFocusedElement) lastFocusedElement.focus();
+      }
     }
+
     function handleOrderSubmit(e) {
       e.preventDefault();
-      const formBox = document.getElementById('checkoutFormBox');
-      const loadingBox = document.getElementById('checkoutLoadingBox');
-      const successBox = document.getElementById('checkoutSuccessBox');
-      const custNameInput = document.getElementById('orderCustName');
-      const successCustName = document.getElementById('successCustName');
+      const nameInput = document.getElementById("orderCustName");
+      const phoneInput = document.getElementById("orderCustPhone");
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const plan = document.getElementById("orderPlanName") ? document.getElementById("orderPlanName").value : '01. 나이트 오버타임 팩';
 
-      if (successCustName && custNameInput) {
-        successCustName.textContent = custNameInput.value || '고객';
+      if (name.length < 2) {
+        const nameError = document.getElementById("nameErrorMsg");
+        if (nameError) nameError.style.display = "block";
+        if (nameInput) {
+          nameInput.focus();
+          nameInput.style.borderColor = "#EF4444";
+        }
+        return;
       }
 
-      formBox.style.display = 'none';
-      loadingBox.style.display = 'block';
+      const phoneRegex = /^01[0-9]-\d{3,4}-\d{4}$/;
+      if (!phoneRegex.test(phone)) {
+        const phoneError = document.getElementById("phoneErrorMsg");
+        if (phoneError) phoneError.style.display = "block";
+        if (phoneInput) {
+          phoneInput.focus();
+          phoneInput.style.borderColor = "#EF4444";
+        }
+        return;
+      }
+
+      const orderNum = "AFIT-" + new Date().getFullYear() + "-" + String(Math.floor(1000 + Math.random() * 9000));
+
+      document.getElementById("checkoutFormBox").style.display = "none";
+      document.getElementById("checkoutLoadingBox").style.display = "block";
 
       setTimeout(() => {
-        loadingBox.style.display = 'none';
-        successBox.style.display = 'block';
+        document.getElementById("checkoutLoadingBox").style.display = "none";
+        document.getElementById("checkoutSuccessBox").style.display = "block";
+
+        const orderNumElem = document.getElementById("successOrderNum");
+        if (orderNumElem) orderNumElem.innerText = orderNum;
+        const custNameElem = document.getElementById("successCustName");
+        if (custNameElem) custNameElem.innerText = name + " 님";
+        const planNameElem = document.getElementById("successPlanName");
+        if (planNameElem) planNameElem.innerText = plan;
       }, 1200);
     }
 
-    /* ESC Key Support */
+    function retryCheckoutSubmit() {
+      const errorBox = document.getElementById("checkoutErrorBox");
+      if (errorBox) errorBox.style.display = "none";
+      document.getElementById("checkoutLoadingBox").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("checkoutLoadingBox").style.display = "none";
+        document.getElementById("checkoutSuccessBox").style.display = "block";
+      }, 1000);
+    }
+
+    function backToCheckoutForm() {
+      const errorBox = document.getElementById("checkoutErrorBox");
+      if (errorBox) errorBox.style.display = "none";
+      document.getElementById("checkoutFormBox").style.display = "block";
+    }
+
+    /* ESC Key Support & Modal Focus Trap */
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape') {
         closeCsModal();
         closeCheckoutModal();
+      }
+      if (e.key === 'Tab') {
+        const activeModal = document.querySelector('.modal.active');
+        if (!activeModal) return;
+        const focusables = activeModal.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+        if (focusables.length === 0) return;
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
       }
     });
   </script>
