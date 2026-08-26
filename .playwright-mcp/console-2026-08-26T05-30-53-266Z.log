@@ -1,0 +1,2 @@
+[      19ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8080/%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC.html:0
+[      42ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://127.0.0.1:8080/favicon.ico:0
