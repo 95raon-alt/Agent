@@ -634,7 +634,8 @@
     .process-timeline {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      gap: 18px;
+      gap: 22px;
+      position: relative;
     }
     .process-step-item {
       background: var(--card);
@@ -645,6 +646,17 @@
       box-shadow: var(--shadow-subtle);
       transition: var(--transition);
       border-top: 3px solid var(--primary);
+    }
+    .process-step-item:not(:last-child)::after {
+      content: "➔";
+      position: absolute;
+      right: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.82rem;
+      font-weight: 900;
+      color: #9CA3AF;
+      z-index: 2;
     }
     .process-step-item:hover {
       transform: translateY(-3px);
@@ -913,7 +925,14 @@
       .hero-core-beliefs { border-left: none !important; border-top: 1px solid var(--border) !important; padding-left: 0 !important; padding-top: 24px !important; }
       .compare-grid { grid-template-columns: 1fr; }
       .trust-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-      .process-timeline { grid-template-columns: 1fr; }
+      .process-timeline { grid-template-columns: 1fr; gap: 28px; }
+      .process-step-item:not(:last-child)::after {
+        content: "↓";
+        right: 50%;
+        top: auto;
+        bottom: -20px;
+        transform: translateX(50%);
+      }
       .hero-content h1 { font-size: 2.1rem; }
       footer { padding: 48px 20px !important; }
     }
@@ -1039,7 +1058,86 @@
               나의 건강과 환경을 위해 180일 토양 생분해 용기와 공병 무상 수거 에코백 제도를 함께 운영합니다.
             </p>
           </div>
+          <div style="margin-top: 14px; font-size: 0.76rem; color: #9CA3AF; line-height: 1.4;">
+            * 안내: 본 페이지에 기재된 92.4% 체내 흡수율, 180일 생분해 및 공정 규격은 UI/UX 포트폴리오 기획을 위한 가상 설정 데이터(Mock Data)입니다.
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRD-110: Problem & Solution (3단계 핵심 이야기 압축: 시작된 문제 -> 원리 -> 하루 변화) -->
+  <section id="problemSec" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 90px 0;">
+    <div class="wrap-wide">
+      <div class="section-header">
+        <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">PROBLEM & DAILY SHIFT</div>
+        <h2>우리가 매일 영양제를 챙겨 먹지 못했던 진짜 이유</h2>
+        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">복잡한 영양 습관에서 물 없는 하루 1병 이중제형 루틴으로의 전환</p>
+      </div>
+
+      <div class="compare-grid">
+        <!-- 01 시작된 문제: 과거의 번거로운 아침 장면 (Before Scene) -->
+        <div class="compare-card">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="font-size: 0.78rem; font-weight: 800; color: #6B7280; letter-spacing: 0.06em; text-transform: uppercase;">01 BEFORE SCENE · 시작된 문제</span>
+            <span style="background: #F3F4F6; color: #6B7280; border: 1px solid #D1D5DB; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;">과거의 불편한 일상</span>
+          </div>
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0 0 14px; line-height: 1.35;">
+            <span class="icon-cross">✕</span> 책상 위 5개 약통과 물을 찾던 번거로운 아침
+          </h3>
+          <!-- 핵심 장면 키워드 태그 (1초 만에 차이 인식) -->
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px;">
+            <span style="background: #FFFFFF; border: 1px solid #E5E7EB; color: #4B5563; font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: 6px;">#알약 5개 일일이 소분</span>
+            <span style="background: #FFFFFF; border: 1px solid #E5E7EB; color: #4B5563; font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: 6px;">#물 없인 복용 포기</span>
+            <span style="background: #FFFFFF; border: 1px solid #E5E7EB; color: #4B5563; font-size: 0.76rem; font-weight: 700; padding: 4px 10px; border-radius: 6px;">#더부룩한 위장 부담</span>
+          </div>
+          <ul class="compare-list" style="font-size: 0.88rem; color: var(--text-muted);">
+            <li><span class="icon-cross">✕</span> 매일 알약을 열고 소분하다 바쁜 출근길에 결국 섭취를 포기했던 하루</li>
+            <li><span class="icon-cross">✕</span> 단단한 압축 정제로 인한 낮은 체내 흡수율과 잦은 공복 속쓰림</li>
+          </ul>
+          <div class="absorb-bar-wrap">
+            <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: #4B5563;">
+              <span>기존 정제형 체내 흡수율</span>
+              <span>12.3%</span>
+            </div>
+            <div class="absorb-bar-bg">
+              <div style="height: 100%; width: 12.3%; background: #9CA3AF; border-radius: 999px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 02 & 03 달라진 하루: 가벼워진 1병 루틴 장면 (After Scene) -->
+        <div class="compare-card positive">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px;">
+            <span style="font-size: 0.78rem; font-weight: 800; color: var(--primary); letter-spacing: 0.06em; text-transform: uppercase;">02 & 03 AFTER SCENE · 달라진 하루</span>
+            <span style="background: #111827; color: #FFFFFF; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 999px;">한 병 웰니스 루틴</span>
+          </div>
+          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin: 0 0 14px; line-height: 1.35;">
+            <span class="icon-check">✓</span> 주머니 속 1병으로 물 없이 10초 만에 완결
+          </h3>
+          <!-- 핵심 장면 키워드 태그 (1초 만에 차이 인식) -->
+          <div style="display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 18px;">
+            <span style="background: #FFFFFF; border: 1px solid #111827; color: #111827; font-size: 0.76rem; font-weight: 800; padding: 4px 10px; border-radius: 6px;">#물 없는 꿀꺽 목넘김</span>
+            <span style="background: #FFFFFF; border: 1px solid #111827; color: #111827; font-size: 0.76rem; font-weight: 800; padding: 4px 10px; border-radius: 6px;">#원핸드 10초 섭취</span>
+            <span style="background: #FFFFFF; border: 1px solid #111827; color: #111827; font-size: 0.76rem; font-weight: 800; padding: 4px 10px; border-radius: 6px;">#하루 1병 올인원 완결</span>
+          </div>
+          <ul class="compare-list" style="font-size: 0.88rem; color: var(--text-muted);">
+            <li><span class="icon-check">✓</span> 상단 맞춤 정제와 하단 저점도 액상이 결합되어 주머니 속 1병으로 가볍게 해결</li>
+            <li><span class="icon-check">✓</span> 캡을 열고 액상과 함께 삼켜 10초 만에 끝나는 가장 진화된 데일리 루틴</li>
+          </ul>
+          <div class="absorb-bar-wrap">
+            <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: var(--primary);">
+              <span>A:FIT 고농축 액상 포뮬러 흡수율</span>
+              <span>92.4% (다이렉트 흡수)</span>
+            </div>
+            <div class="absorb-bar-bg">
+              <div class="absorb-bar-fill"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 24px; font-size: 0.78rem; color: #6B7280;">
+        * 상기 12.3% vs 92.4% 수치는 문제 정의 및 이중제형 흡수 원리 시연을 위한 가상 콘셉트 비교 데이터입니다.
       </div>
     </div>
   </section>
@@ -1061,113 +1159,70 @@
       </div>
 
       <div class="signature-grid">
-        <!-- 좌측: 대형 제품 단면 도해 (기술 구현 시각화) -->
-        <div style="background: var(--bg-subtle); border: 1.5px solid var(--border); border-radius: var(--radius-xl); padding: 40px 32px; text-align: center;">
-          <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 20px; letter-spacing: 0.05em;">
-            CROSS-SECTION SCHEMATIC · 이중제형 단면 구조
+        <!-- 좌측: 대형 제품 단면 도해 (기술 구현 시각화 - 시각적 주인공) -->
+        <div style="background: var(--bg-subtle); border: 2px solid var(--primary); border-radius: var(--radius-xl); padding: 42px 32px; text-align: center; box-shadow: 0 4px 16px rgba(0,0,0,0.04);">
+          <div style="display: inline-block; font-size: 0.78rem; font-weight: 800; color: #FFFFFF; background: var(--primary); padding: 4px 12px; border-radius: 999px; margin-bottom: 22px; letter-spacing: 0.06em;">
+            CROSS-SECTION SCHEMATIC · 이중제형 단면 구조도
           </div>
           
           <!-- 상단 맞춤 정제 챔버 -->
-          <div style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 12px; padding: 18px; margin-bottom: 12px;">
-            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent); margin-bottom: 4px;">TOP CHAMBER (상단 정제)</div>
-            <strong style="font-size: 1.05rem; color: var(--primary);">1:1 개인 맞춤 고농축 정제 (3정)</strong>
-            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px;">비타민B군 + 밀크씨슬 + 테아닌 정밀 타겟팅</p>
+          <div style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 12px; padding: 20px; margin-bottom: 10px; position: relative;">
+            <div style="font-size: 0.76rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; letter-spacing: 0.04em;">[01 TOP CHAMBER · 상단 정제]</div>
+            <strong style="font-size: 1.12rem; color: var(--primary); display: block;">1:1 맞춤 고농축 소형 정제 (3정)</strong>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 5px; line-height: 1.4;">비타민B군 + 밀크씨슬 + 테아닌 타겟팅 (목넘김 이물감 제로 마이크로 타정)</p>
           </div>
 
           <!-- 결합 씰 -->
-          <div style="background: #E5E7EB; border-radius: 6px; padding: 6px; font-size: 0.75rem; font-weight: 700; color: #4B5563; margin-bottom: 12px;">
-            ▲ 특허 무균 질소 듀얼 락 씰링 (정제와 액상의 교차 오염 및 산화 완벽 차단)
+          <div style="background: #E5E7EB; border: 1px dashed #9CA3AF; border-radius: 8px; padding: 8px 12px; font-size: 0.76rem; font-weight: 800; color: #374151; margin-bottom: 10px;">
+            ▲ [02 PATENTED BARRIER] 특허 무균 질소 듀얼 락 격벽 (정제-액상 산화 & 습기 교차 오염 0% 차단)
           </div>
 
           <!-- 하단 액상 챔버 -->
-          <div style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 12px; padding: 22px;">
-            <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent); margin-bottom: 4px;">BOTTOM BOTTLE (하단 액상)</div>
-            <strong style="font-size: 1.05rem; color: var(--primary);">다이렉트 흡수 고농축 액상 (50ml)</strong>
-            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px;">물 없이 삼키는 저점도 포뮬러 + 빠른 체내 흡수 촉진</p>
+          <div style="background: #FFFFFF; border: 2px solid var(--primary); border-radius: 12px; padding: 24px;">
+            <div style="font-size: 0.76rem; font-weight: 800; color: var(--accent); margin-bottom: 4px; letter-spacing: 0.04em;">[03 BOTTOM BOTTLE · 하단 액상]</div>
+            <strong style="font-size: 1.12rem; color: var(--primary); display: block;">다이렉트 흡수 고농축 액상 (50ml)</strong>
+            <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 5px; line-height: 1.4;">물 없이 삼키는 저점도 포뮬러 + 92.4% 다이렉트 체내 흡수 촉진</p>
           </div>
         </div>
 
-        <!-- 우측: 3대 철학 ➔ 기술 1:1 매핑 (3개 카드 형태 복원) -->
+        <!-- 우측: 3대 철학 ➔ 단면도 부위별 보조 주석 해설 (무거운 카드 탈피) -->
         <div>
-          <h3 style="font-size: 1.35rem; font-weight: 800; color: var(--primary); margin-bottom: 18px;">
-            브랜드 철학이 기술로 구현된 3가지 원리
+          <div style="font-size: 0.82rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.06em; margin-bottom: 6px;">STRUCTURE ANNOTATIONS</div>
+          <h3 style="font-size: 1.38rem; font-weight: 800; color: var(--primary); margin-bottom: 12px;">
+            단면 구조에 담긴 3대 바이오 기술 원리
           </h3>
-          <div style="display: grid; gap: 14px; margin-bottom: 24px;">
-            <div style="padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--border); border-left: 4px solid var(--primary); border-radius: 8px;">
-              <strong style="font-size: 0.96rem; color: var(--primary);">01. 올인원 압축 (All-in-one)</strong>
-              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">책상 위 늘어선 4~5개 약통을 단 1병으로 압축한 일체형 보틀 기술</p>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 22px;">
+            A:FIT 시그니처 듀얼 팩의 각 물리적 부위는 브랜드 3대 철학을 1:1로 실현합니다.
+          </p>
+
+          <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+            <!-- 주석 1: 상단 챔버 대응 -->
+            <div style="padding: 14px 18px; border-left: 3px solid var(--primary); background: #F9FAFB; border-radius: 0 8px 8px 0;">
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 3px;">TOP CHAMBER ➔ 01. 올인원 압축 & 1:1 맞춤</div>
+              <strong style="font-size: 0.96rem; color: var(--primary);">책상 위 5개 약통을 단 1병으로 압축한 개인화 배합</strong>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">라이프스타일 분석 기반 개인별 결핍 요소만 맞춤 타겟팅하여 상단 3정으로 정밀 압축</p>
             </div>
-            <div style="padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 8px;">
-              <strong style="font-size: 0.96rem; color: var(--primary);">02. 1:1 개인 맞춤 (FIT)</strong>
-              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">라이프스타일 분석 기반 개인별 결핍 요소만 맞춤 타겟팅하는 배합 기술</p>
+
+            <!-- 주석 2: 듀얼 락 격벽 대응 -->
+            <div style="padding: 14px 18px; border-left: 3px solid var(--accent); background: #F9FAFB; border-radius: 0 8px 8px 0;">
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 3px;">DUAL-LOCK BARRIER ➔ 02. 무균 질소 차단 기술</div>
+              <strong style="font-size: 0.96rem; color: var(--primary);">산화율 0%를 유지하는 특허 진공 분리 씰링</strong>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">정제와 액상이 섭취 직전까지 서로 닿지 않도록 완전 격리하여 원료 유효성분 보존</p>
             </div>
-            <div style="padding: 16px 18px; background: #FFFFFF; border: 1px solid var(--border); border-left: 4px solid #4B5563; border-radius: 8px;">
-              <strong style="font-size: 0.96rem; color: var(--primary);">03. 흡수 중심 과학 (Absorption)</strong>
-              <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">물 없이 캡을 열고 액상과 함께 꿀꺽 삼켜 10초 만에 흡수시키는 제형 기술</p>
+
+            <!-- 주석 3: 하단 액상 대응 -->
+            <div style="padding: 14px 18px; border-left: 3px solid #4B5563; background: #F9FAFB; border-radius: 0 8px 8px 0;">
+              <div style="font-size: 0.78rem; font-weight: 800; color: var(--accent-dark); margin-bottom: 3px;">BOTTOM BOTTLE ➔ 03. 체내 다이렉트 흡수 과학</div>
+              <strong style="font-size: 0.96rem; color: var(--primary);">물 없이 10초 만에 흡수시키는 고농축 액상 포뮬러</strong>
+              <p style="font-size: 0.84rem; color: var(--text-muted); margin-top: 4px; line-height: 1.5;">별도의 물 없이 액상과 함께 꿀꺽 삼키며 92.4% 다이렉트 체내 흡수를 실현</p>
             </div>
           </div>
 
-          <div style="padding: 16px 20px; background: var(--bg-subtle); border-radius: 10px; border: 1px dashed var(--border-strong);">
-            <div style="font-size: 0.82rem; font-weight: 800; color: var(--primary); margin-bottom: 6px;">15종 전체 컬렉션 안내</div>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 10px;">
-              직장인, 야간근무, 운동, 수면 등 7대 라이프스타일 15종 전체 비교는 서브카테고리 페이지에서 확인하실 수 있습니다.
+          <div style="padding: 14px 18px; background: var(--bg-subtle); border-radius: 8px; border: 1px dashed var(--border-strong);">
+            <div style="font-size: 0.82rem; font-weight: 800; color: var(--primary); margin-bottom: 4px;">ℹ️ 15종 전체 컬렉션 분리 안내</div>
+            <p style="font-size: 0.84rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+              직장인, 야간근무, 스포츠, 수면 등 7대 라이프스타일 15종 전체 맞춤 라인업은 서브카테고리에서 별도로 분류·제공되며, 본 페이지 최하단에서 상세히 둘러보실 수 있습니다.
             </p>
-            <a href="카테고리.html" style="font-size: 0.86rem; font-weight: 800; color: var(--primary); text-decoration: underline;">
-              15종 서브카테고리 맞춤 라인업 비교하기 →
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- BRD-110: Problem & Solution (3단계 핵심 이야기 압축: 문제 -> 원리 -> 하루 변화) -->
-  <section id="problemSec" style="background: var(--bg-subtle);">
-    <div class="wrap-wide">
-      <div class="section-header">
-        <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">PROBLEM & DAILY SHIFT</div>
-        <h2>우리가 매일 영양제를 챙겨 먹지 못했던 진짜 이유</h2>
-        <p style="font-size: 0.95rem; color: var(--text-muted); margin-top: 8px;">복잡한 영양 습관에서 물 없는 하루 1병 이중제형 루틴으로의 전환</p>
-      </div>
-
-      <div class="compare-grid">
-        <!-- 01 시작된 문제 (여러 영양제, 불규칙한 식사, 복잡한 습관) -->
-        <div class="compare-card">
-          <div style="font-size: 0.78rem; font-weight: 800; color: #6B7280; letter-spacing: 0.04em; margin-bottom: 6px;">01 PROBLEM · 시작된 문제</div>
-          <h3><span class="icon-cross">✕</span> 여러 약통과 복잡한 섭취 습관</h3>
-          <ul class="compare-list">
-            <li><span class="icon-cross">✕</span> 매일 4~5개 약통을 일일이 열고 소분해야 하는 번거로움</li>
-            <li><span class="icon-cross">✕</span> 바쁜 일상과 불규칙한 식사로 매번 물을 챙기기 어려워 복용 포기</li>
-            <li><span class="icon-cross">✕</span> 단단한 압축 정제의 낮은 체내 흡수율과 잦은 공복 위장 부담</li>
-          </ul>
-          <div class="absorb-bar-wrap">
-            <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: #4B5563;">
-              <span>기존 정제형 체내 흡수율</span>
-              <span>12.3%</span>
-            </div>
-            <div class="absorb-bar-bg">
-              <div style="height: 100%; width: 12.3%; background: #9CA3AF; border-radius: 999px;"></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- 02 해결 원리 & 03 사용자의 하루 변화 -->
-        <div class="compare-card positive">
-          <div style="font-size: 0.78rem; font-weight: 800; color: var(--primary); letter-spacing: 0.04em; margin-bottom: 6px;">02 PRINCIPLE & 03 DAILY SHIFT</div>
-          <h3><span class="icon-check">✓</span> 이중제형 원리와 가벼워진 1병 루틴</h3>
-          <ul class="compare-list">
-            <li><span class="icon-check">✓</span> <strong>[원리]</strong> 상단 맞춤 정제 + 하단 저점도 액상이 한 병에 결합된 이중제형 구조</li>
-            <li><span class="icon-check">✓</span> <strong>[원리]</strong> 별도의 물 없이 캡을 열어 고농축 액상과 함께 꿀꺽 삼키는 흡수 과학</li>
-            <li><span class="icon-check">✓</span> <strong>[변화]</strong> 여러 약통과 물을 챙기던 하루에서 주머니 속 1병으로 끝나는 10초 루틴</li>
-          </ul>
-          <div class="absorb-bar-wrap">
-            <div style="display: flex; justify-content: space-between; font-size: 0.84rem; font-weight: 700; color: var(--primary);">
-              <span>A:FIT 고농축 액상 포뮬러 흡수율</span>
-              <span>92.4% (다이렉트 흡수)</span>
-            </div>
-            <div class="absorb-bar-bg">
-              <div class="absorb-bar-fill"></div>
-            </div>
           </div>
         </div>
       </div>
@@ -1243,30 +1298,45 @@
         * 상기 인증 번호, 시험 성적 및 92.4% 흡수율 데이터는 UI/UX 프로토타입 시연을 위한 가상 콘셉트 데이터(Mock Data)입니다.
       </div>
 
-      <!-- 5-Step Process Timeline (Bottom) -->
+      <!-- 5-Step Process Timeline (Connected Process Flow) -->
       <div class="process-timeline">
         <div class="process-step-item">
-          <div class="process-step-num">01 STEP</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span class="process-step-num" style="margin: 0; font-size: 0.82rem; font-weight: 900; color: var(--primary);">STEP 01</span>
+            <span style="font-size: 0.70rem; font-weight: 800; color: #6B7280; background: #F3F4F6; padding: 2px 6px; border-radius: 4px;">RAW MATERIAL</span>
+          </div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">원료 정밀 검수</strong>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">글로벌 공인 프리미엄 식물성/바이오 기능성 원료 100% 검증</p>
         </div>
         <div class="process-step-item">
-          <div class="process-step-num">02 STEP</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span class="process-step-num" style="margin: 0; font-size: 0.82rem; font-weight: 900; color: var(--primary);">STEP 02</span>
+            <span style="font-size: 0.70rem; font-weight: 800; color: #6B7280; background: #F3F4F6; padding: 2px 6px; border-radius: 4px;">MICRO TABLET</span>
+          </div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">미세 소형 정제 타정</strong>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">목넘김 이물감 제로를 위한 고농축 마이크로 타정 기술 적용</p>
         </div>
         <div class="process-step-item">
-          <div class="process-step-num">03 STEP</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span class="process-step-num" style="margin: 0; font-size: 0.82rem; font-weight: 900; color: var(--primary);">STEP 03</span>
+            <span style="font-size: 0.70rem; font-weight: 800; color: #6B7280; background: #F3F4F6; padding: 2px 6px; border-radius: 4px;">LIQUID FORMULA</span>
+          </div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">저점도 액상 포뮬라</strong>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">수용성 식이섬유 배합으로 포만감과 부드러운 목넘김 동시 구현</p>
         </div>
         <div class="process-step-item">
-          <div class="process-step-num">04 STEP</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span class="process-step-num" style="margin: 0; font-size: 0.82rem; font-weight: 900; color: var(--primary);">STEP 04</span>
+            <span style="font-size: 0.70rem; font-weight: 800; color: #6B7280; background: #F3F4F6; padding: 2px 6px; border-radius: 4px;">NITROGEN SEAL</span>
+          </div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">무균 질소 충진 밀폐</strong>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">산화율 0% 유지를 위한 5단계 챔버 질소 치환 및 진공 분리 씰링</p>
         </div>
         <div class="process-step-item">
-          <div class="process-step-num">05 STEP</div>
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+            <span class="process-step-num" style="margin: 0; font-size: 0.82rem; font-weight: 900; color: var(--primary);">STEP 05</span>
+            <span style="font-size: 0.70rem; font-weight: 800; color: #111827; background: #E5E7EB; padding: 2px 6px; border-radius: 4px;">CUSTOM LABEL</span>
+          </div>
           <strong style="color: var(--primary); display: block; margin-bottom: 4px; font-size: 1rem;">1:1 맞춤 라벨 출고</strong>
           <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5;">개인별 건강 처방 메시지 레이저 각인 후 24시간 내 신선 직배송</p>
         </div>
