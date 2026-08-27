@@ -949,6 +949,152 @@
       .modal-dialog { padding: 28px 18px !important; width: min(520px, calc(100vw - 32px)) !important; margin: 16px auto !important; }
       footer { padding: 40px 16px !important; }
     }
+
+    /* BRD-145: Brand Identity Logo Showcase & Meaning (Draft Concept) */
+    .brand-logo-showcase {
+      background: #FFFFFF;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      margin-bottom: 44px;
+      box-shadow: var(--shadow-subtle);
+    }
+    .brand-logo-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .draft-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #F3F4F6;
+      border: 1px solid #D1D5DB;
+      color: #374151;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 5px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.04em;
+    }
+    .draft-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #D97706;
+      box-shadow: 0 0 0 2px rgba(217, 119, 6, 0.2);
+    }
+    .draft-note {
+      font-size: 0.8rem;
+      color: #6B7280;
+    }
+    .brand-logo-body {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .brand-logo-visual-box {
+      background: #FAF6EB;
+      border: 1px solid #E5E7EB;
+      border-radius: var(--radius-sm);
+      padding: 32px 24px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .brand-logo-img {
+      max-width: 100%;
+      height: auto;
+      max-height: 88px;
+      object-fit: contain;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.04));
+    }
+    .brand-logo-visual-meta {
+      font-size: 0.76rem;
+      color: #4B5563;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      padding: 6px 14px;
+      border-radius: 6px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      font-weight: 700;
+    }
+    .brand-logo-headline {
+      font-size: 1.25rem;
+      font-weight: 900;
+      color: var(--primary);
+      line-height: 1.45;
+      margin: 0 0 18px 0;
+      word-break: keep-all;
+    }
+    .logo-metaphor-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .logo-metaphor-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      background: #F9FAFB;
+      border: 1px solid #E5E7EB;
+      border-radius: 8px;
+      padding: 13px 16px;
+      transition: var(--transition);
+    }
+    .logo-metaphor-item:hover {
+      border-color: #111827;
+      background: #FFFFFF;
+    }
+    .logo-metaphor-icon {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      line-height: 1.2;
+      margin-top: 1px;
+    }
+    .logo-metaphor-title {
+      font-size: 0.90rem;
+      font-weight: 800;
+      color: var(--primary);
+      margin-bottom: 3px;
+    }
+    .logo-metaphor-desc {
+      font-size: 0.82rem;
+      color: var(--text-body);
+      line-height: 1.45;
+      margin: 0;
+    }
+    .logo-color-connect {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed #D1D5DB;
+      font-size: 0.82rem;
+      color: #4B5563;
+      line-height: 1.5;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    @media (max-width: 960px) {
+      .brand-logo-body {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .brand-logo-showcase {
+        padding: 24px 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -1344,12 +1490,90 @@
     </div>
   </section>
 
-  <!-- BRD-145: Compact Brand Color Palette (Bottom Sub-section) -->
+  <!-- BRD-145: Brand Identity (Logo Showcase & Signature Color Palette) -->
   <section id="colors" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 80px 0;">
     <div class="wrap-wide">
-      <div class="section-header" style="margin-bottom: 40px;">
-        <h2 style="font-size: 1.65rem;">A:FIT 브랜드 시그니처 컬러</h2>
-        <p style="font-size: 0.88rem; margin-top: 8px;">A:FIT의 정체성과 웰니스 무드를 완성하는 6가지 시그니처 색상입니다.</p>
+      <div class="section-header" style="margin-bottom: 36px;">
+        <div style="font-size: 0.85rem; font-weight: 800; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 8px;">BRAND IDENTITY · 심볼 & 컬러</div>
+        <h2 style="font-size: 1.85rem; font-weight: 800; color: var(--primary);">A:FIT 브랜드 아이덴티티: 로고 & 시그니처 컬러</h2>
+        <p style="font-size: 0.92rem; margin-top: 8px; color: var(--text-muted);">
+          하루 1병 이중제형 루틴의 철학을 담은 심볼 마크와 브랜드 정체성을 완성하는 6대 시그니처 컬러 시스템입니다.
+        </p>
+      </div>
+
+      <!-- 로고 디자인 시안 및 의미 해설 (임시 시안 쇼케이스) -->
+      <div class="brand-logo-showcase">
+        <div class="brand-logo-header">
+          <div class="draft-badge">
+            <span class="draft-badge-dot"></span>
+            DRAFT CONCEPT · 브랜드 로고 시안 (임시)
+          </div>
+          <div class="draft-note">* 본 심볼은 브랜드 기획 및 개발 단계의 임시 시안(Draft)으로 향후 정교화될 수 있습니다.</div>
+        </div>
+
+        <div class="brand-logo-body">
+          <!-- 좌측: 로고 비주얼 박스 -->
+          <div class="brand-logo-visual-box">
+            <img src="로고.jpg" onerror="this.onerror=null; this.src='../../../패키지/1차/로고.jpg';" alt="A:FIT 공식 브랜드 로고 시안 (모노그램 A 심볼과 워드마크)" class="brand-logo-img">
+            <div class="brand-logo-visual-meta">
+              <span>심볼: 모노그램 'A'</span>
+              <span>•</span>
+              <span>워드마크: A:FIT</span>
+              <span>•</span>
+              <span>2D Flat Vector</span>
+            </div>
+          </div>
+
+          <!-- 우측: 로고 조형 의미 및 브랜드 스토리 -->
+          <div class="brand-logo-content">
+            <h3 class="brand-logo-headline">
+              “마시는 액상(물방울)과 보틀(정제)이 퍼즐처럼 딱 맞물려(FIT) 알파벳 ‘A’를 완성한 이중제형 심볼”
+            </h3>
+
+            <div class="logo-metaphor-list">
+              <div class="logo-metaphor-item">
+                <div class="logo-metaphor-icon">💧</div>
+                <div>
+                  <div class="logo-metaphor-title">좌측 곡선 루프 (Liquid Care) · 마시는 액상 & 흡수율</div>
+                  <p class="logo-metaphor-desc">
+                    몸에 부드럽고 빠르게 흡수되는 저점도 고농축 액상 앰플 포뮬러와 생명력의 물방울을 상징합니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="logo-metaphor-item">
+                <div class="logo-metaphor-icon">🍾</div>
+                <div>
+                  <div class="logo-metaphor-title">우측 사선 기둥 (Solid Science & Bottle) · 정제 & 보틀 라인</div>
+                  <p class="logo-metaphor-desc">
+                    상단 캡슐의 단단한 정제(Tablet)와 슬림하게 뻗은 시그니처 보틀의 실루엣, 임상 데이터 기반의 과학적 신뢰를 상징합니다.
+                  </p>
+                </div>
+              </div>
+
+              <div class="logo-metaphor-item">
+                <div class="logo-metaphor-icon">🧩</div>
+                <div>
+                  <div class="logo-metaphor-title">빈틈없는 인터로킹 (1:1 FIT) · 내 일상에 꼭 맞는 결합</div>
+                  <p class="logo-metaphor-desc">
+                    액체와 고체, 사용자와 맞춤 포뮬러가 퍼즐처럼 정밀하게 맞물려(FIT) 알파벳 'A'이자 올인원(All-in-one) 웰니스를 완성합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="logo-color-connect">
+              <span style="font-weight: 700; color: var(--primary);">🎨 컬러 매핑:</span>
+              <span>로고는 헤더 GNB와 제품 패키지에서 브랜드 메인 시그니처 컬러인 <strong>딥 포레스트 그린(#183D33)</strong> 또는 모던 미니멀 <strong>차콜 블랙(#111827)</strong>으로 적용되어 신뢰감과 정갈함을 전달합니다.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6대 시그니처 컬러 서브헤더 -->
+      <div style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px;">
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 0;">A:FIT 6대 시그니처 컬러 시스템</h3>
+        <span style="font-size: 0.8rem; color: #6B7280;">* 각 컬러 카드를 클릭하면 HEX 코드가 클립보드에 바로 복사됩니다.</span>
       </div>
 
       <div class="compact-color-grid">
