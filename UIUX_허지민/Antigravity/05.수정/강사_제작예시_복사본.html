@@ -4842,6 +4842,19 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
           link.classList.add('active');
         });
       });
+
+      // ESC 키 입력 시 열려 있는 모달 팝업창 닫기
+      window.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' || e.key === 'Esc') {
+          const activeModal = document.querySelector('.modal:target');
+          if (activeModal) {
+            e.preventDefault();
+            const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+            window.location.hash = '#_';
+            window.scrollTo(0, currentScroll);
+          }
+        }
+      });
     });
   </script>
 
