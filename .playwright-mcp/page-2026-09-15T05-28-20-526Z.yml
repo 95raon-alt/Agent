@@ -1,0 +1,174 @@
+- generic [ref=f5e5]:
+  - generic [ref=f5e6]:
+    - generic [ref=f5e7]:
+      - generic [ref=f5e10]:
+        - application [aria-hidden] [ref=f5e19]
+        - status [ref=f5e20]: Screenreader support for the board is currently disabled. To enable it via Accessibility settings, press Ctrl+K, type Accessibility Settings, and press Enter. To see available keyboard shortcuts, enter Ctrl+Shift+Question mark .
+        - status [ref=f5e22]
+        - generic:
+          - button [ref=f5e24]:
+            - generic [aria-hidden] [ref=f5e25]:
+              - generic [ref=f5e26]: S
+              - generic [ref=f5e28]: S
+            - generic [aria-hidden] [ref=f5e30]: "6"
+          - button [ref=f5e32]:
+            - generic [ref=f5e36]: S
+            - generic [aria-hidden] [ref=f5e38]: "7"
+        - generic:
+          - generic: 임연우
+          - generic: 박찬미
+          - generic: eungyoung
+          - generic: SBS_Daejeon
+        - generic [ref=f5e1091]:
+          - button [ref=f5e1209]
+          - button [ref=f5e1210]:
+            - generic:
+              - generic:
+                - generic:
+                  - button: (강의장)UIUX A
+                  - generic: File name
+        - generic [ref=f5e335]:
+          - generic [ref=f5e337]:
+            - button [ref=f5e1211]:
+              - generic [ref=f5e341]: "7"
+            - generic:
+              - generic:
+                - button [ref=f5e1212]
+                - generic [ref=f5e356]:
+                  - button [ref=f5e1213]
+                  - generic [aria-hidden] [ref=f5e364]: S
+          - button [ref=f5e1214]: 2%
+          - generic [ref=f5e366]:
+            - group [ref=f5e1215]:
+              - button [ref=f5e1216]
+              - button [ref=f5e1217]
+            - button [ref=f5e1218]: Share
+      - generic:
+        - generic:
+          - generic:
+            - region "Application toolbar":
+              - toolbar "Editor" [ref=f5e520]:
+                - generic [ref=f5e526]:
+                  - group "Move" [ref=f5e527]:
+                    - button "Move" [pressed] [ref=f5e528]
+                    - button "Move tools" [ref=f5e529]
+                  - group "Frame" [ref=f5e530]:
+                    - button "Frame" [ref=f5e531]
+                    - button "Region tools" [ref=f5e532]
+                  - group "Rectangle" [ref=f5e533]:
+                    - button "Rectangle" [ref=f5e534]
+                    - button "Shape tools" [ref=f5e535]
+                  - group "Pen" [ref=f5e536]:
+                    - button "Pen" [ref=f5e537]
+                    - button "Creation tools" [ref=f5e538]
+                  - group "Text" [ref=f5e539]:
+                    - button "Text" [ref=f5e540]
+                    - button "Type tools" [ref=f5e541]
+                  - group "Comment" [ref=f5e542]:
+                    - button "Comment (119 unread)" [ref=f5e543]
+                    - button "Comment tools" [ref=f5e544]
+                  - button "Actions" [ref=f5e545]
+                - radiogroup "Toolbelt Mode" [ref=f5e549]:
+                  - generic [ref=f5e551]:
+                    - generic [ref=f5e553]:
+                      - radio "Draw" [ref=f5e554]
+                      - generic [ref=f5e558]: Draw
+                    - generic [ref=f5e559]:
+                      - radio "Design" [checked] [ref=f5e560]
+                      - generic [ref=f5e564]: Design
+                    - generic [ref=f5e565]:
+                      - radio "Motion" [ref=f5e566]
+                      - generic [ref=f5e570]: Motion
+                    - generic [ref=f5e571]:
+                      - radio "Dev Mode" [ref=f5e572]
+                      - generic [ref=f5e576]: Dev Mode
+    - region "Help/zoom toolbar" [ref=f5e579]:
+      - toolbar "Help/zoom toolbar" [ref=f5e581]:
+        - button "Help" [ref=f5e583]
+  - dialog [active] [ref=f5e1219]:
+    - generic [ref=f5e1221]:
+      - generic:
+        - generic [ref=f5e1222]:
+          - generic [ref=f5e1223]:
+            - heading "Settings" [level=2] [ref=f5e1224]
+            - tablist [ref=f5e1225]:
+              - tab "Account" [selected] [ref=f5e1226]:
+                - generic [aria-hidden] [ref=f5e1227]: Account
+              - tab "Community" [ref=f5e1229]:
+                - generic [aria-hidden] [ref=f5e1230]: Community
+              - tab "Notifications" [ref=f5e1232]:
+                - generic [aria-hidden] [ref=f5e1233]: Notifications
+              - tab "Security" [ref=f5e1235]:
+                - generic [aria-hidden] [ref=f5e1236]: Security
+          - tabpanel "Account" [ref=f5e1238]:
+            - generic [ref=f5e1239]:
+              - button "Edit current user avatar, no image uploaded" [ref=f5e1249]:
+                - generic: Edit
+              - generic [ref=f5e1251]:
+                - generic [ref=f5e1253]:
+                  - heading "Name" [level=3] [ref=f5e1254]
+                  - generic [ref=f5e1255]: 지민
+                  - button "Change name" [ref=f5e1257]
+                  - heading "Email" [level=3] [ref=f5e1258]
+                  - generic [ref=f5e1259]: raon__95@naver.com
+                  - button "Change email" [ref=f5e1261]
+                  - heading "Role" [level=3] [ref=f5e1262]
+                  - generic [ref=f5e1263]: Design
+                  - button "Change role" [ref=f5e1265]
+                - generic [ref=f5e1267]:
+                  - heading "Your spaces" [level=3] [ref=f5e1268]
+                  - generic [ref=f5e1271]:
+                    - link "Learn" [ref=f5e1272] [cursor=pointer]:
+                      - /url: https://www.figma.com/pricing/
+                    - text: what products are included in each seat.
+                - generic [ref=f5e1273]:
+                  - heading "Language" [level=3] [ref=f5e1274]
+                  - generic [ref=f5e1275]: English
+                  - button "Change language" [ref=f5e1276]
+                - generic [ref=f5e1277]:
+                  - heading "Theme" [level=3] [ref=f5e1278]
+                  - generic [ref=f5e1280]:
+                    - combobox "System theme" [ref=f5e1281]
+                    - generic: System theme
+                  - generic [ref=f5e1283]:
+                    - checkbox "Enhance contrast" [ref=f5e1285]
+                    - generic [ref=f5e1286]: Enhance contrast
+                    - paragraph [ref=f5e1287]: When enabled, contrast between text and controls and their backgrounds will be increased
+                - generic [ref=f5e1288]:
+                  - heading "New features" [level=3] [ref=f5e1289]
+                  - generic [ref=f5e1290]:
+                    - text: Closed captions
+                    - generic [ref=f5e1291]: Beta
+                  - generic [ref=f5e1293]:
+                    - text: Learn more about captioning
+                    - link "here" [ref=f5e1294] [cursor=pointer]:
+                      - /url: https://help.figma.com/hc/articles/4402390110743
+                - generic [ref=f5e1295]:
+                  - heading "Fonts" [level=3] [ref=f5e1296]
+                  - generic [ref=f5e1297]: Local fonts are currently not enabled. To use them, you’ll need to download Figma’s font installer or desktop app.
+                  - button "Use local fonts" [ref=f5e1299]
+                - generic [ref=f5e1300]:
+                  - heading "Your uploaded fonts" [level=3] [ref=f5e1301]
+                  - generic [ref=f5e1302]: Upload fonts for your personal use with a paid plan.
+                  - button "View plans" [ref=f5e1304]
+                - generic [ref=f5e1305]:
+                  - heading "Library" [level=3] [ref=f5e1306]
+                  - generic [ref=f5e1308]:
+                    - button "Enable libraries" [ref=f5e1309] [cursor=pointer]
+                    - text: for all files in your drafts
+                - generic [ref=f5e1310]:
+                  - heading "View history" [level=3] [ref=f5e1311]
+                  - generic [ref=f5e1313]:
+                    - text: You can currently see teammates’ view history in your files, and they can see yours.
+                    - link "Learn more" [ref=f5e1314] [cursor=pointer]:
+                      - /url: https://help.figma.com/hc/articles/29638316371479
+                  - button "Change preference" [ref=f5e1316]
+                - generic [ref=f5e1317]:
+                  - heading "Account" [level=3] [ref=f5e1318]
+                  - button "Delete account" [ref=f5e1320]
+        - button "Close" [ref=f5e1323]
+  - generic:
+    - status
+    - group [ref=f5e585]:
+      - alert [ref=f5e587]
+      - alert [ref=f5e589]
