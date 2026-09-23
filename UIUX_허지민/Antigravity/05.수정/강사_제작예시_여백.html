@@ -2314,6 +2314,488 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
 </style>
+<style id="hero-test-styles">
+/* Hero imported from hero_test.html; styles restricted to #hero. */
+#hero .studio-bottle{--bottle-width:150px;--liquid:#d8c174;--ink:#d5dd38;width:var(--bottle-width);height:calc(var(--bottle-width)*2.2);position:relative;flex:none;filter:drop-shadow(17px 23px 10px #16200b35);isolation:isolate}
+#hero .studio-bottle.pink{--liquid:#e1aca6;--ink:#ecc9b8}
+#hero .studio-bottle.blue{--liquid:#aec7cb;--ink:#c7dce0}
+#hero .studio-bottle.cream{--liquid:#dfd1b3;--ink:#e1d7af}
+#hero .studio-cap{position:absolute;left:6%;top:0;width:88%;height:19%;border-radius:30% 30% 16% 16%/28% 28% 12% 12%;background:linear-gradient(90deg,#767f6d,#d4d9cd 12%,#fcfdf8 30%,#c2c9b9 45%,#f8faf2 70%,#a7af9d 91%,#74816d);border:1px solid #bfc9b1;box-shadow:inset 0 5px 2px #fff,inset 0 -5px 5px #4a583d66;z-index:3}
+#hero .studio-cap:before{content:'';position:absolute;left:3%;top:5%;width:94%;height:21%;border-radius:50%;border:1px solid #fff;background:linear-gradient(110deg,#edf1e7,#b3bca5 45%,#e4ebdd)}
+#hero .studio-cap:after{content:'';position:absolute;inset:44% 0 16%;background:repeating-linear-gradient(90deg,#fff2 0 2px,#46503311 2px 4px)}
+#hero .studio-neck{position:absolute;left:17%;top:17%;width:66%;height:12%;background:linear-gradient(90deg,#29302288,#fff9 13%,#87917c88 40%,#fff8 65%,#353e2888);border:2px solid #d5debf;border-radius:15%;z-index:2}
+#hero .studio-glass{position:absolute;top:24%;height:76%;width:100%;border:2px solid #e0e7d1;border-radius:24% 24% 20% 20%/14% 14% 8% 8%;overflow:hidden;background:linear-gradient(90deg,#b1bca57a,#ffffffb8 14%,#8190714a 34%,#fff6 70%,#78866a70);box-shadow:inset 6px 0 6px #fff7,inset -6px 0 4px #68795660,inset 0 -8px 3px #dae6c9}
+#hero .studio-glass:after{content:'';position:absolute;left:8%;top:1%;height:95%;width:7%;background:linear-gradient(90deg,transparent,#ffffff95,transparent);border-radius:50%;z-index:5}
+#hero .studio-liquid{position:absolute;inset:23% 2% 3%;border-radius:0 0 18% 18%;background:linear-gradient(90deg,#ffffff50,transparent 30%,#42481933),var(--liquid);opacity:.8;box-shadow:inset 0 3px 2px #ffffffa6}
+#hero .studio-label{position:absolute;inset:20% -1% 17%;background:linear-gradient(95deg,#29342f,#172820 24%,#33433b 54%,#203028 77%,#111d18);color:var(--ink);display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:12%;box-shadow:0 1px 2px #0005;transform:rotate(-1deg)}
+#hero .studio-label small{font-size:calc(var(--bottle-width)*.038);letter-spacing:1px}
+#hero .studio-label b{font:400 calc(var(--bottle-width)*.245)/1.25 Georgia,serif;letter-spacing:-2px}
+#hero .studio-label>span{font-size:calc(var(--bottle-width)*.041);letter-spacing:1px}
+#hero .studio-label i{font-size:calc(var(--bottle-width)*.06);font-style:normal;letter-spacing:1px;border-top:1px solid #ffffff25;margin-top:12%;padding-top:8%;width:76%}
+#hero .studio-label em{font-size:calc(var(--bottle-width)*.041);line-height:1.7;font-style:normal;margin-top:8%}
+
+#hero {
+  background: #F5F2EB !important;
+  min-height: 880px !important;
+  padding: 40px 0 80px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+/* Background Atmospheric Architectural Stage (image.png reference) */
+#hero .luxury-hero-stage-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Soft Sunlight Halo in the Horizon */
+#hero .luxury-sunlight {
+  position: absolute;
+  top: 15%;
+  right: 28%;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 248, 220, 0.9) 0%, rgba(255, 230, 180, 0.45) 40%, rgba(245, 242, 235, 0) 75%);
+  filter: blur(28px);
+  animation: afitHeroSunlightPulse 8s ease-in-out infinite alternate;
+}
+@keyframes afitHeroSunlightPulse {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  100% { transform: scale(1.08); opacity: 1; }
+}
+
+/* Architectural Portal Frame (inspired by image.png window/door opening) */
+#hero .luxury-arch-frame {
+  position: absolute;
+  top: 40px;
+  right: 5%;
+  width: 58%;
+  height: 92%;
+  border-radius: 36px 36px 0 0;
+  background: linear-gradient(175deg, #FFFFFF 0%, #F8F5EE 45%, #EBE5D8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 
+    inset 0 2px 20px rgba(255,255,255,0.9),
+    0 24px 60px rgba(45, 41, 35, 0.08),
+    0 1px 3px rgba(0,0,0,0.04);
+  z-index: 1;
+  overflow: hidden;
+}
+#hero .luxury-arch-frame::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(235, 229, 216, 0.8), transparent);
+}
+
+/* Faint Stamp / Watermark Graphic (image.png bottom right reference) */
+#hero .luxury-seal-stamp {
+  position: absolute;
+  right: 48px;
+  bottom: 48px;
+  width: 140px;
+  height: 140px;
+  border: 1.5px dashed rgba(160, 150, 135, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 0.65;
+  animation: afitHeroRotateStamp 40s linear infinite;
+}
+@keyframes afitHeroRotateStamp {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+#hero .luxury-seal-text {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #7A7265;
+  text-transform: uppercase;
+  width: 110px;
+  line-height: 1.4;
+}
+
+/* Floating Circular SCROLL DOWN Button (image copy 2.png reference) */
+#hero .hero-scroll-badge {
+  position: absolute;
+  right: 64px;
+  bottom: 50px;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #3B462C;
+  color: #FFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(59, 70, 44, 0.28);
+  z-index: 10;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+#hero .hero-scroll-badge:hover {
+  transform: translateY(4px) scale(1.05);
+  background: #252D1C;
+}
+#hero .hero-scroll-badge span {
+  font-size: 7px;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  line-height: 1.2;
+}
+#hero .hero-scroll-badge svg {
+  margin-top: 3px;
+  transition: transform 0.25s ease;
+}
+#hero .hero-scroll-badge:hover svg {
+  transform: translateY(2px);
+}
+
+/* Main Hero Two-Column Grid */
+#hero .hero-editorial-wrap {
+  position: relative;
+  z-index: 5;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 48px 20px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 50px;
+  align-items: center;
+  min-height: 720px;
+}
+
+/* Left Content Column */
+#hero .hero-copy-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 20px;
+  z-index: 5;
+}
+
+/* Series / Pagination Indicator (image copy.png reference: • 01 Nutrition care Pet Food) */
+#hero .hero-series-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #5C6356;
+  text-transform: uppercase;
+}
+#hero .hero-series-indicator .bullet {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3B462C;
+}
+#hero .hero-series-indicator .line {
+  width: 38px;
+  height: 1.5px;
+  background: rgba(92, 99, 86, 0.4);
+}
+
+/* Grand Serif Editorial Headline (image.png luxury serif style for Korean) */
+#hero .hero-main-title-serif {
+  font-family: 'Noto Serif KR', 'Cormorant Garamond', 'Batang', Georgia, serif;
+  font-size: clamp(38px, 4.3vw, 58px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #191C1A;
+  margin: 0 0 22px;
+  word-break: keep-all;
+}
+#hero .hero-main-title-serif .num-accent {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #191C1A;
+  margin-right: 2px;
+}
+
+/* Lead Description */
+#hero .hero-lead-desc {
+  font-size: 15px;
+  line-height: 1.85;
+  color: #52594D;
+  max-width: 530px;
+  margin: 0 0 32px;
+  word-break: keep-all;
+}
+
+/* 3 Core Value Metric Pills (Refined into sleek minimal horizontal row) */
+#hero .hero-metrics-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(216, 209, 195, 0.7);
+  border-radius: 16px;
+  padding: 16px 20px;
+  margin-bottom: 34px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.02);
+}
+#hero .hero-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  border-right: 1px solid rgba(216, 209, 195, 0.6);
+  padding-right: 12px;
+}
+#hero .hero-metric-item:last-child {
+  border-right: none;
+  padding-right: 0;
+}
+#hero .hero-metric-num {
+  font-size: 11px;
+  font-weight: 800;
+  color: #B89B6C;
+  letter-spacing: 0.1em;
+}
+#hero .hero-metric-title {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #191C1A;
+}
+#hero .hero-metric-sub {
+  font-size: 11.5px;
+  color: #6C7367;
+  line-height: 1.4;
+}
+
+/* Hero CTA Button Group (image.png black capsule button reference) */
+#hero .hero-action-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 36px;
+}
+#hero .btn-pill-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #191C1A;
+  color: #FFFFFF !important;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 32px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid #191C1A;
+  box-shadow: 0 8px 24px rgba(25, 28, 26, 0.22);
+  transition: all 0.25s ease;
+}
+#hero .btn-pill-primary:hover {
+  background: #3B462C;
+  border-color: #3B462C;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(25, 28, 26, 0.28);
+}
+#hero .btn-pill-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.85);
+  color: #191C1A !important;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  border: 1px solid rgba(216, 209, 195, 0.9);
+  transition: all 0.25s ease;
+}
+#hero .btn-pill-secondary:hover {
+  background: #FFFFFF;
+  border-color: #191C1A;
+  transform: translateY(-2px);
+}
+
+/* Slider Controls & Progress (image copy 2.png reference: (←) (→) + progress bar) */
+#hero .hero-slider-nav-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#hero .slider-arrows {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#hero .slider-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1px solid rgba(92, 99, 86, 0.3);
+  background: rgba(255, 255, 255, 0.6);
+  color: #2D3328;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+#hero .slider-arrow-btn:hover {
+  background: #191C1A;
+  color: #FFF;
+  border-color: #191C1A;
+}
+#hero .slider-progress-track {
+  flex: 1;
+  max-width: 260px;
+  height: 2px;
+  background: rgba(92, 99, 86, 0.2);
+  border-radius: 2px;
+  position: relative;
+  overflow: hidden;
+}
+#hero .slider-progress-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 33.333%;
+  background: #191C1A;
+  border-radius: 2px;
+}
+#hero .slider-current-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #737A6D;
+}
+
+/* ==========================================================================
+   RIGHT VISUAL CENTERPIECE (3D Studio Dual Bottle Presentation)
+   ========================================================================== */
+#hero .hero-visual-col {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 600px;
+  z-index: 5;
+}
+
+/* Pedestal Platform with Ambient Glow & Reflection */
+#hero .bottle-pedestal-stage {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 3D Bottle Showcase Container */
+#hero .showcase-bottle-wrapper {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 420px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Primary Hero Studio Bottle (Hero Accent Scale) */
+#hero .showcase-main-bottle {
+  --bottle-width: 185px;
+  z-index: 3;
+  filter: drop-shadow(0 28px 34px rgba(28, 33, 24, 0.24));
+  transition: transform 0.4s ease;
+}
+#hero .showcase-main-bottle:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Flanking Bottle Collection Lineup (Soft depth-of-field background bottles) */
+#hero .flank-bottle {
+  position: absolute;
+  bottom: 20px;
+  opacity: 0.72;
+  filter: blur(1.5px) drop-shadow(0 14px 20px rgba(0,0,0,0.14));
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+#hero .flank-bottle:hover {
+  transform: translateY(-6px) scale(1.06);
+  z-index: 4;
+}
+#hero .flank-bottle.left-1 {
+  left: 15px;
+  --bottle-width: 130px;
+  transform: rotate(-10deg);
+}
+#hero .flank-bottle.right-1 {
+  right: 15px;
+  --bottle-width: 130px;
+  transform: rotate(10deg);
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+  #hero .hero-editorial-wrap {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px 24px;
+  }
+  #hero .luxury-arch-frame {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  #hero .hero-serif-headline {
+    font-size: 32px;
+  }
+  #hero .hero-main-headline {
+    font-size: 30px;
+  }
+  #hero .hero-metrics-bar {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  #hero .hero-metric-item {
+    border-right: none;
+    border-bottom: 1px solid rgba(216, 209, 195, 0.6);
+    padding-bottom: 8px;
+  }
+  #hero .hero-metric-item:last-child {
+    border-bottom: none;
+  }
+  #hero .hero-action-group {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #hero .hero-scroll-badge, #hero .luxury-seal-stamp {
+    display: none;
+  }
+}
+
+</style>
 </head>
 <body>
 
@@ -2357,73 +2839,123 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
   <main>
 
     <!-- 1. Hero Section (AFITW-100) -->
-    <section id="hero" style="border-top: none;"><div class="hero-stage"><div class="hero-halo"></div><div class="hero-product-line" aria-hidden="true"><div class="studio-bottle lime"><div class="studio-cap"></div><div class="studio-neck"></div><div class="studio-glass"><div class="studio-liquid"></div><div class="studio-label"><small>PERSONAL WELLNESS</small><b>A:FIT</b><span>ALL-IN-ONE + FIT</span><i>01 WORK</i><em>1:1 DAILY FORMULA<br>100 ml</em></div></div></div><div class="studio-bottle cream"><div class="studio-cap"></div><div class="studio-neck"></div><div class="studio-glass"><div class="studio-liquid"></div><div class="studio-label"><small>PERSONAL WELLNESS</small><b>A:FIT</b><span>ALL-IN-ONE + FIT</span><i>06 PRO</i><em>1:1 DAILY FORMULA<br>100 ml</em></div></div></div><div class="studio-bottle pink"><div class="studio-cap"></div><div class="studio-neck"></div><div class="studio-glass"><div class="studio-liquid"></div><div class="studio-label"><small>PERSONAL WELLNESS</small><b>A:FIT</b><span>ALL-IN-ONE + FIT</span><i>12 SLEEP</i><em>1:1 DAILY FORMULA<br>100 ml</em></div></div></div><div class="studio-bottle blue"><div class="studio-cap"></div><div class="studio-neck"></div><div class="studio-glass"><div class="studio-liquid"></div><div class="studio-label"><small>PERSONAL WELLNESS</small><b>A:FIT</b><span>ALL-IN-ONE + FIT</span><i>14 EYE</i><em>1:1 DAILY FORMULA<br>100 ml</em></div></div></div></div><div class="hero-slant"></div></div>
-      <div class="wrap-wide hero-wide-grid">
-        <div style="display: flex; flex-direction: column; box-sizing: border-box;" class="hero-copy"><div class="hero-wordmark">A:FIT</div>
-          <div>
-            <h1 style="font-size: 2.75rem; line-height: 1.28; letter-spacing: -0.04em; margin: 0 0 16px;">나를 위한<br>1:1 맞춤 웰니스</h1>
-            <p class="lead" style="font-size: 13.5px; color: #555b4d; line-height: 1.7; max-width: 520px; margin-bottom: 0;">
-              불필요한 과잉 섭취와 식비 낭비 없이,<br>
-              신뢰할 수 있는 기능성 원료와 이중제형 기술로<br>
-              당신의 일상에 정확하게 딱 맞는 루틴을 설계합니다.
-            </p>
+    <section id="hero">
+      <!-- Atmospheric Architectural Background Stage (image.png style) -->
+      <div class="luxury-hero-stage-bg" aria-hidden="true">
+        <div class="luxury-sunlight"></div>
+        <div class="luxury-arch-frame"></div>
+      </div>
+
+
+
+
+
+      <!-- Main Two-Column Editorial Hero Content -->
+      <div class="hero-editorial-wrap">
+        <!-- Left: Copy & Value Proposition & Slider Controls -->
+        <div class="hero-copy-col">
+
+
+          <!-- Grand Korean Headline -->
+          <h1 class="hero-main-headline">
+            나를 위한<br>
+            1:1 맞춤 웰니스
+          </h1>
+
+          <!-- Lead Description -->
+          <p class="hero-lead-desc">
+            불필요한 과잉 섭취와 식비 낭비 없이, 상단 정제와 하단 저점도 액상의 이중제형 특허 기술로 당신의 일상에 정확하게 딱 맞는 데일리 웰니스 루틴을 설계합니다.
+          </p>
+
+          <!-- 3 Core Value Metric Pills -->
+          <div class="hero-metrics-bar">
+            <div class="hero-metric-item">
+              <span class="hero-metric-num">01</span>
+              <strong class="hero-metric-title">이중 제형</strong>
+              <span class="hero-metric-sub">상단 정제 + 하단 액상 결합</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-num">02</span>
+              <strong class="hero-metric-title">스마트 루틴</strong>
+              <span class="hero-metric-sub">물 없이 10초 원스톱 완성</span>
+            </div>
+            <div class="hero-metric-item">
+              <span class="hero-metric-num">03</span>
+              <strong class="hero-metric-title">1:1 개인화</strong>
+              <span class="hero-metric-sub">이름 각인 & 7대 처방 라벨</span>
+            </div>
           </div>
 
-          <div class="metrics-pill-group hero-metrics" style="margin: 24px 0; padding: 0;">
-            <div class="metric-pill-item">
-              <strong><span class="metric-num">01</span> 이중 제형</strong>
-              <span>상단 정제 + 하단 액상 결합</span>
-            </div>
-            <div class="metric-pill-item">
-              <strong><span class="metric-num">02</span> 스마트 루틴</strong>
-              <span>번거로움 없는 데일리 웰니스</span>
-            </div>
-            <div class="metric-pill-item">
-              <strong><span class="metric-num">03</span> 1:1 라벨</strong>
-              <span>7대 라이프스타일 처방</span>
-            </div>
-          </div>
-
-          <div class="hero-btn-group">
-            <a class="btn primary" style="padding: 13px 26px; font-size: 0.92rem;" href="#checkoutModal">
-              내 맞춤 루틴 찾아보기 →
+          <!-- CTA Button Group (image.png black rounded capsule pill style) -->
+          <div class="hero-action-group">
+            <a href="#checkoutModal" class="btn-pill-primary">
+              <span>예약 및 맞춤 처방 시작하기</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
             </a>
-            <a href="#curation" class="btn secondary" style="padding: 13px 22px; font-size: 0.92rem;">
-              라이프스타일 추천 진단 ↓
+            <a href="#curation" class="btn-pill-secondary">
+              <span>라이프스타일 추천 진단 ↓</span>
             </a>
           </div>
         </div>
 
-        <!-- 히어로 우측 컬럼: 4대 공인 인증 (마데키엘 레퍼런스 스타일: 상단 원형 아이콘 + 하단 텍스트 가로 4열 배치) -->
-        <div class="hero-right-trust-col">
-          <div class="hero-trust-bar" aria-label="A:FIT 4대 공인 인증 마크">
-            <div class="hero-trust-item">
-              <div class="hero-trust-icon-circle">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
+        <!-- Right: 3D Dual Bottle Centerpiece Showcase -->
+        <div class="hero-visual-col">
+          <div class="bottle-pedestal-stage">
+            <div class="showcase-bottle-wrapper">
+              <!-- Background Bottle: Pro (Cream) -->
+              <div class="studio-bottle cream flank-bottle left-1" title="06 PRO FORMULA">
+                <div class="studio-cap"></div>
+                <div class="studio-neck"></div>
+                <div class="studio-glass">
+                  <div class="studio-liquid"></div>
+                  <div class="studio-label">
+                    <small>PERSONAL WELLNESS</small>
+                    <b>A:FIT</b>
+                    <span>ALL-IN-ONE + FIT</span>
+                    <i>06 PRO</i>
+                    <em>1:1 FORMULA<br>100 ml</em>
+                  </div>
+                </div>
               </div>
-              <span class="hero-trust-label">식약처 인정</span>
-            </div>
-            <div class="hero-trust-item">
-              <div class="hero-trust-icon-circle">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path></svg>
+
+              <!-- Main Hero Bottle: 01 WORK (Lime) -->
+              <div class="studio-bottle lime showcase-main-bottle" title="A:FIT 시그니처 듀얼 팩 (01 WORK)">
+                <div class="studio-cap"></div>
+                <div class="studio-neck"></div>
+                <div class="studio-glass">
+                  <div class="studio-liquid"></div>
+                  <div class="studio-label">
+                    <small>PERSONAL WELLNESS</small>
+                    <b>A:FIT</b>
+                    <span>ALL-IN-ONE + FIT</span>
+                    <i>01 WORK</i>
+                    <em>1:1 DAILY FORMULA<br>100 ml</em>
+                  </div>
+                </div>
               </div>
-              <span class="hero-trust-label">GMP 인증</span>
-            </div>
-            <div class="hero-trust-item">
-              <div class="hero-trust-icon-circle">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"></path><path d="M2 21c0-3 1.85-5.36 5.08-6"></path></svg>
+
+              <!-- Background Bottle: Sleep (Pink) -->
+              <div class="studio-bottle pink flank-bottle right-1" title="12 SLEEP FORMULA">
+                <div class="studio-cap"></div>
+                <div class="studio-neck"></div>
+                <div class="studio-glass">
+                  <div class="studio-liquid"></div>
+                  <div class="studio-label">
+                    <small>PERSONAL WELLNESS</small>
+                    <b>A:FIT</b>
+                    <span>ALL-IN-ONE + FIT</span>
+                    <i>12 SLEEP</i>
+                    <em>1:1 FORMULA<br>100 ml</em>
+                  </div>
+                </div>
               </div>
-              <span class="hero-trust-label">비건 인증</span>
             </div>
-            <div class="hero-trust-item">
-              <div class="hero-trust-icon-circle">
-                <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"></path><path d="M21 3v5h-5"></path><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"></path><path d="M8 16H3v5"></path></svg>
-              </div>
-              <span class="hero-trust-label">생분해 용기</span>
-            </div>
+
           </div>
         </div>
-
       </div>
     </section>
 
