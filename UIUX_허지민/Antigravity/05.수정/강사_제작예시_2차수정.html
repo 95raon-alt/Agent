@@ -2966,6 +2966,66 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
 #curation .diag-progress-segment.is-current { background: #c5d200; }
 #curation .diag-progress-segment.is-complete { background: #858e4c; }
 </style>
+<style id="archive-sidebar-layout">
+/* Archive: category sidebar and image-led product grid. */
+#archive .archive-form { display: grid; grid-template-columns: 220px minmax(0, 1fr); align-items: start; gap: 40px; }
+#archive .filter-dimension-nav { margin: 0; padding: 0; background: transparent; border: 0; border-radius: 0; box-shadow: none; min-width: 0; }
+#archive .filter-row { display: block; padding: 0; margin: 0 0 26px; border: 0; }
+#archive .filter-label { display: block; width: auto; margin: 0 0 12px; font-size: 12px; font-weight: 700; color: #59655d; }
+#archive .filter-pills { display: flex; flex-wrap: wrap; gap: 7px; }
+#archive #filterPillsCat { flex-direction: column; }
+#archive .filter-choice { position: relative; min-width: 0; }
+#archive .filter-choice span { display: flex; align-items: center; min-height: 36px; padding: 8px 12px; box-sizing: border-box; border: 1px solid #e5e9e5; border-radius: 999px; background: #fff; color: #78837b; font-size: 11px; line-height: 1.5; transition: background .2s, color .2s, border-color .2s; }
+#archive #filterPillsCat .filter-choice span { justify-content: space-between; min-height: 43px; padding: 10px 16px; font-size: 12px; }
+#archive #filterPillsCat .filter-choice span::after { content: '\2192'; font-size: 16px; margin-left: 8px; opacity: .65; }
+#archive .filter-choice:has(input:checked) span { background: #2c5947; border-color: #2c5947; color: #fff; }
+#archive .filter-choice:hover span { border-color: #7c9b8a; }
+#archive .filter-choice:has(input:focus-visible) span { outline: 2px solid #2c5947; outline-offset: 3px; }
+#archive .filter-reset { margin-top: 0; padding: 5px 0; color: #6b7b70; font-size: 11px; }
+#archive .products-grid { min-width: 0; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 46px 20px; align-items: stretch; }
+#archive .prd-card { min-width: 0; padding: 0; background: transparent; border: 0 !important; border-radius: 0; box-shadow: none; justify-content: flex-start; }
+#archive .prd-bottle-box { order: 0; width: 100%; aspect-ratio: 1 / 1.12; min-height: 260px; height: auto; padding: 0; margin: 0; border: 0; border-radius: 0; background: #f3f4f2; }
+#archive .collection-bottle .studio-bottle { --bottle-width: 108px; }
+#archive .prd-bottle-box > .mini-bottle { display: none; }
+#archive .prd-header-top { order: 1; margin: 14px 0 7px; gap: 8px; }
+#archive .prd-cat-tag { color: #52745f !important; font-size: 10px; }
+#archive .prd-num { font-size: 10px; color: #a1a7a2; }
+#archive .prd-name { order: 2; font-size: 16px; line-height: 1.5; font-weight: 700; letter-spacing: -.035em; margin: 0 0 7px; }
+#archive .prd-problem-line { order: 3; min-height: 0; padding: 0; margin: 0 0 18px; font-size: 11px; line-height: 1.75; color: #818881; word-break: keep-all; overflow-wrap: anywhere; }
+#archive .prd-problem-line strong { font-weight: 500; color: inherit; }
+#archive .prd-price-box { order: 5; margin-top: auto; padding-top: 14px; border-top: 1px solid #eef0ed; }
+#archive .price-sub { font-size: 10px; color: #8b928c; }
+#archive .price-main { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-start; gap: 3px 10px; margin: 4px 0 0; }
+#archive .price-main strong { font-size: 19px; font-weight: 800; letter-spacing: -.045em; color: #253e30; }
+#archive .price-main > span { font-size: 10px; font-weight: 400; color: #7c857e; }
+#archive .card-actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 7px; margin-top: 16px; align-items: stretch; }
+#archive .card-actions .btn { min-width: 0; min-height: 40px; padding: 10px 8px !important; font-size: 12px !important; line-height: 1.5; border-radius: 999px !important; }
+#archive .card-actions .btn.primary { background: #2c5947 !important; border-color: #2c5947 !important; color: #fff !important; }
+#archive .card-actions .btn.primary:hover { background: #214535 !important; border-color: #214535 !important; }
+#archive .card-actions .btn.secondary { border-color: #cbd5cd !important; color: #365541 !important; background: #fff !important; }
+#archive .card-actions .btn.secondary:hover { background: #f1f5f1 !important; }
+@media (max-width: 1100px) {
+  #archive .archive-form { grid-template-columns: 190px minmax(0, 1fr); gap: 28px; }
+  #archive .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  #archive .archive-form { grid-template-columns: 1fr; gap: 32px; }
+  #archive #filterPillsCat { flex-direction: row; }
+  #archive .filter-row { margin-bottom: 18px; }
+  #archive #filterPillsCat .filter-choice span { min-height: 38px; padding: 8px 12px; font-size: 11px; }
+  #archive #filterPillsCat .filter-choice span::after { display: none; }
+  #archive .products-grid { gap: 36px 16px; }
+  #archive .prd-bottle-box { min-height: 230px; }
+  #archive .collection-bottle .studio-bottle { --bottle-width: 90px; }
+}
+@media (max-width: 520px) {
+  #archive .products-grid { grid-template-columns: 1fr; gap: 40px; }
+  #archive .prd-bottle-box { aspect-ratio: 1.15; min-height: 280px; }
+  #archive .collection-bottle .studio-bottle { --bottle-width: 115px; }
+  #archive .prd-name { font-size: 18px; }
+  #archive .prd-problem-line { font-size: 12px; }
+}
+</style>
 </head>
 <body>
 
