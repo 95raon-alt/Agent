@@ -3026,6 +3026,105 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
   #archive .prd-problem-line { font-size: 12px; }
 }
 </style>
+<style id="science-light-palette">
+/* Alternate white with the neighboring ivory sections without changing layout. */
+#science { background: #fff !important; }
+#science .fact-stage { background: #fff; color: var(--text); }
+#science .fact-stage h2 { color: var(--primary) !important; }
+#science .process-step-item { background: #fff !important; border-color: #dddfd2 !important; border-top-color: #a0ac00 !important; box-shadow: 0 4px 20px rgba(37, 41, 35, .04) !important; }
+#science .process-step-item:hover { border-color: #b7bcaa !important; border-top-color: #899300 !important; box-shadow: 0 12px 30px rgba(37, 41, 35, .08) !important; }
+#science .process-step-num { color: #727b00; }
+#science .process-step-item > strong { color: var(--primary) !important; }
+#science .process-step-item > p { color: var(--text-body) !important; }
+#science .science-process-divider { background: linear-gradient(90deg, transparent, #dddfd2 20%, #dddfd2 80%, transparent); }
+#science .fact-numbers > div { border-color: #dddfd2; }
+#science .fact-numbers span { color: var(--text-body); }
+#science .fact-numbers strong { color: #727b00; }
+#science .fact-numbers p, #science .fact-note { color: var(--text-muted); }
+</style>
+<style id="page-section-backgrounds">
+/* Alternate the hero ivory and white throughout the page. */
+:root {
+  --section-bg-white: #ffffff;
+  --section-bg-ivory: #f5f2eb;
+}
+#hero,
+#philosophy,
+#spotlight,
+#calculator,
+#reviews {
+  background: var(--section-bg-ivory) !important;
+}
+#manifesto,
+#science,
+#curation,
+#archive {
+  background: var(--section-bg-white) !important;
+}
+#science .fact-stage {
+  background: transparent;
+}
+</style>
+<style id="calculator-split-layout">
+#calculator .calc-box {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: center;
+  overflow: visible;
+}
+#calculator .calc-input-panel,
+#calculator .calc-output-panel { min-width: 0; }
+#calculator .calc-output-panel {
+  padding: clamp(24px, 3vw, 40px);
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: 3px solid #a0ac00;
+}
+#calculator .calc-results-box {
+  background: transparent;
+  padding: 0;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 26px;
+}
+#calculator .calc-result-col + .calc-result-col {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+#calculator .calc-label { font-size: 14px; color: var(--text-body); }
+#calculator .calc-val-wrap { flex-wrap: wrap; gap: 8px; }
+#calculator .calc-val-wrap strong {
+  font-size: clamp(36px, 3.7vw, 54px);
+  line-height: 1.2;
+  color: #727b00;
+  letter-spacing: -.04em;
+}
+#calculator .calc-formula-wrap {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  color: var(--text-body);
+  overflow-wrap: anywhere;
+}
+#calculator .calc-formula-title { color: var(--text-body); }
+#calculator .calc-footnote { margin-top: 16px; color: var(--text-muted); }
+#calculator .calc-preset-btn:has(input:focus-visible) {
+  outline: 3px solid #727b00;
+  outline-offset: 3px;
+}
+@media (max-width: 900px) {
+  #calculator .calc-box { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+}
+</style>
+<style id="signature-unboxed-style">
+/* Remove only the outer card; preserve the colored box behind each bottle. */
+#spotlight .signature-editorial-card {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+</style>
 </head>
 <body>
 
@@ -3792,7 +3891,7 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
     <section id="calculator">
       <div class="wrap-wide">
         <!-- Calculator -->
-        <div class="calc-box">
+        <div class="calc-box"><div class="calc-input-panel">
             <h2>내 한 달 식비와 시간,<br>얼마나 절약될까?</h2>
             
             <!-- Step 1: Baseline Meal Cost Configuration -->
@@ -3859,10 +3958,10 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
               </select>
             </div>
 
-            <hr class="calc-divider">
+            </div><div class="calc-output-panel" role="region" aria-label="예상 절약 금액과 시간">
 
             <!-- Step 3: Final Results Grid -->
-            <div class="calc-results-box">
+            <div class="calc-results-box" aria-live="polite" aria-atomic="true">
               <div class="calc-result-col">
                 <span class="calc-label">한 달 절약 식비</span>
                 <div class="calc-val-wrap">
@@ -3893,7 +3992,7 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
           </div>
 
       </div>
-    </section>
+    </div></section>
 
     <!-- 8. 15-Product Full Archive Showcase (AFITW-160) -->
     <section id="archive" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
@@ -4623,6 +4722,79 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
           이 처방으로 정기구독 시작하기 (월 79,800원)
         </button>
         <button type="button" class="btn secondary" style="border-radius: 999px !important;" onclick="closeQuickView()">닫기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- A:FIT Customer Service (CS) Modal -->
+  <div id="csModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="csModalTitle"><a class="modal-backdrop" href="#hero" aria-label="닫기"></a>
+    <div class="modal-dialog" style="max-width: 520px; padding: 36px 30px;">
+      <a class="" style="position: absolute; right: 24px; top: 24px; font-size: 1.6rem; background: none; border: none; color: var(--text-muted); line-height: 1; cursor: pointer;" aria-label="닫기" href="#hero">×</a>
+      
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h2 id="csModalTitle" style="font-size: 1.45rem; margin-top: 0; margin-bottom: 8px; font-weight: 800; color: var(--primary);">A:FIT 브랜드 고객만족센터</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+          상품 하자, 교환/반품 접수, 배송 및 구독 문의를 신속하게 해결해 드립니다.
+        </p>
+      </div>
+
+      <!-- Channel 1: KakaoTalk 1:1 Live Chat -->
+      <div style="background: #FFFFFF; border: 1.5px solid #dddfd2; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+          <div>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #555b4d; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">REAL-TIME CHAT</span>
+            <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">카카오톡 1:1 실시간 상담</strong>
+          </div>
+          <span style="font-size: 0.76rem; color: #252923; font-weight: 700; background: #f3f4ee; padding: 3px 8px; border-radius: 999px; border: 1px solid #dddfd2;">● 상담원 대기중</span>
+        </div>
+        <p style="font-size: 0.82rem; color: var(--text-body); line-height: 1.5; margin: 0 0 14px 0;">
+          파손 사진 첨부, 불량 교환 접수, 실시간 배송 조회를 가장 빠르게 처리하실 수 있습니다.
+        </p>
+        <a class="" style="width: 100%; background: #FEE500; color: #191919; font-weight: 800; font-size: 0.95rem; border: none; border-radius: 10px; padding: 13px; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); transition: var(--transition);" href="#csModal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="#191919">
+            <path d="M12 3c-5.52 0-10 3.58-10 8 0 2.83 1.83 5.32 4.62 6.72-.2.75-.73 2.72-.84 3.16-.13.54.2.53.42.38.17-.11 2.37-1.61 3.33-2.27.79.11 1.62.17 2.47.17 5.52 0 10-3.58 10-8s-4.48-8-10-8z"></path>
+          </svg>
+          <span>카카오톡 1:1 상담원 연결하기</span>
+        </a>
+        <div style="font-size: 0.75rem; color: var(--text-muted); text-align: center; margin-top: 8px;">
+          운영시간: 평일 09:00 ~ 18:00 (점심시간 12:00 ~ 13:00 / 주말·공휴일 휴무)
+        </div>
+      </div>
+
+      <!-- Channel 2: Phone Hotline -->
+      <div style="background: #FFFFFF; border: 1.5px solid #dddfd2; border-radius: var(--radius); padding: 18px 20px; margin-bottom: 14px; box-shadow: none;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div>
+            <span style="font-size: 0.76rem; font-weight: 800; color: #555b4d; letter-spacing: 0.05em; display: block; margin-bottom: 2px;">PHONE HOTLINE</span>
+            <strong style="font-size: 1.05rem; color: var(--primary); font-weight: 800;">고객센터 대표 전화</strong>
+          </div>
+          <a href="tel:1588-4920" style="background: #252923; color: #FFFFFF; font-weight: 800; font-size: 0.85rem; padding: 8px 16px; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            📞 통화 연결
+          </a>
+        </div>
+        <div style="display: flex; align-items: baseline; gap: 10px; margin: 6px 0;">
+          <span style="font-size: 1.55rem; font-weight: 900; color: var(--primary); letter-spacing: -0.02em;">1588-4920</span>
+          <a class="" style="background: none; border: 1px solid var(--border); border-radius: 6px; padding: 2px 8px; font-size: 0.76rem; color: var(--text-muted); cursor: pointer;" href="#csModal">번호 복사</a>
+        </div>
+        <div style="font-size: 0.75rem; color: var(--text-muted);">
+          통화료는 발신자 부담이며, 통화량이 많을 때는 카카오톡 상담을 이용하시면 더 빠릅니다.
+        </div>
+      </div>
+
+      <!-- Assurance Guarantee & FAQ Quick Links -->
+      <div style="background: #f3f4ee; border: 1px solid #dddfd2; border-radius: var(--radius-sm); padding: 12px 16px; margin-bottom: 20px; font-size: 0.80rem; color: var(--primary); line-height: 1.6;">
+        <strong style="display: block; margin-bottom: 2px; color: var(--primary);">🛡️ A:FIT 100% 품질 안심 보증제</strong>
+        • 배송 중 파손 또는 캡/액상 불량 발생 시 <strong>100% 무료 맞춤 재배송</strong><br>
+        • 미개봉 상품은 수령 후 7일 이내 1:1 무상 반품 접수 지원
+      </div>
+
+      <div style="display: flex; gap: 10px;">
+        <a class="btn secondary" style="flex: 1; justify-content: center; font-size: 0.90rem;" href="#reviews">
+          자주 묻는 질문(FAQ) 확인하기
+        </a>
+        <a class="btn primary" style="padding: 12px 24px; font-size: 0.90rem;" href="#hero">
+          닫기
+        </a>
       </div>
     </div>
   </div>
