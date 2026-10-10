@@ -3241,6 +3241,63 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
 #science .process-scroll-step h3{color:var(--text)}
 #science .process-step-description{color:var(--text-body)}
 </style>
+<style id="hero-card-contrast">
+/* Readable value cards and secondary action on the dark hero. */
+#hero .hero-metrics-bar {
+  background: #343130;
+  border-color: #706760;
+  box-shadow: 0 8px 24px rgba(0,0,0,.12);
+}
+#hero .hero-metric-item { border-color: #706760; }
+#hero .hero-metric-num { color: #c5a58d; }
+#hero .hero-metric-title { color: #f4f2ef; }
+#hero .hero-metric-sub { color: #d3cfca; }
+#hero .btn-pill-secondary {
+  background: #343130;
+  border-color: #706760;
+  color: #f4f2ef !important;
+}
+#hero .btn-pill-secondary:hover {
+  background: #45413e;
+  border-color: #c5a58d;
+}
+#hero .btn-pill-secondary:focus-visible {
+  outline: 2px solid #c5a58d;
+  outline-offset: 4px;
+}
+</style>
+<style id="hero-button-bottom-alignment">
+/* The image frame and the left column share the same bottom inset. */
+@media (min-width: 1201px) {
+  #hero { min-height: 0 !important; }
+  #hero .hero-editorial-wrap {
+    min-height: 760px;
+    align-items: stretch;
+  }
+  #hero .hero-copy-col {
+    justify-content: flex-start;
+    padding-top: 140px;
+    padding-bottom: 0;
+  }
+  #hero .hero-lead-desc { margin-bottom: 0; }
+  #hero .hero-metrics-bar {
+    flex-shrink: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  #hero .hero-action-group {
+    position: static;
+    flex-shrink: 0;
+    margin: 0;
+    padding: 0;
+  }
+  #hero .luxury-arch-frame {
+    top: 70px;
+    bottom: 100px;
+    height: auto;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -3309,7 +3366,7 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
 
           <!-- Lead Description -->
           <p class="hero-lead-desc">
-            불필요한 과잉 섭취와 식비 낭비 없이, 상단 정제와 하단 저점도 액상의 이중제형 특허 기술로 당신의 일상에 정확하게 딱 맞는 데일리 웰니스 루틴을 설계합니다.
+            불필요한 과잉 섭취와 식비 낭비 없이,<br>상단 정제와 하단 저점도 액상의 이중제형 특허 기술로 당신의 일상에<br>정확하게 딱 맞는 데일리 웰니스 루틴을 설계합니다.
           </p>
 
           <!-- 3 Core Value Metric Pills -->
