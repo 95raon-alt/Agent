@@ -2835,7 +2835,7 @@ html{scroll-padding-top:108px}body{font-family:Arial,'Malgun Gothic','맑은 고
 #spotlight .signature-editorial-copy { position: relative; z-index: 2; width: 100%; padding: 32px 24px 0; text-align: right; box-sizing: border-box; }
 #spotlight .signature-editorial-category { margin: 0 0 8px; color: #bdb6af; font: 400 14px/1.4 Georgia, serif; }
 #spotlight .signature-editorial-copy h3 { margin: 0; color: #f4f2ef; font-size: clamp(18px, 1.75vw, 25px); font-weight: 500; line-height: 1.45; letter-spacing: -.055em; word-break: keep-all; }
-#spotlight .signature-editorial-description { max-width: 210px; margin: 12px 0 0 auto; color: #bdb6af; font-size: 12px; line-height: 1.7; word-break: keep-all; }
+#spotlight .signature-editorial-description { max-width: none; margin: 12px 0 0 auto; color: #bdb6af; font-size: 12px; line-height: 1.7; word-break: keep-all; white-space: nowrap; }
 #spotlight .signature-editorial-visual { position: absolute; inset: 170px 0 0; display: flex; align-items: center; justify-content: center; overflow: hidden; background: radial-gradient(ellipse at 30% 16%, #faf8eb 0%, #e9e5e0 50%, #bdb9b4 100%); }
 #spotlight .signature-editorial-bottle { transform: rotate(-9deg); }
 #spotlight .signature-editorial-visual .studio-bottle { --bottle-width: 145px; }
@@ -3298,6 +3298,91 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
   }
 }
 </style>
+<style id="savings-reference-styles">
+#calculator { padding:90px 0!important; background:#383533!important; color:#f4f2ef; }
+#calculator .savings-layout { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(0,1fr); gap:clamp(32px,4.4vw,72px); align-items:stretch; }
+#calculator .savings-input { min-width:0; display:flex; flex-direction:column; }
+#calculator .savings-eyebrow { align-self:flex-start; border:1px solid #706760; border-radius:999px; background:#403b37; font-size:14px; font-weight:700; padding:3px 14px; }
+#calculator .savings-input h2 { font-size:clamp(30px,3.2vw,46px)!important; font-weight:800!important; line-height:1.22!important; letter-spacing:-.05em; margin:18px 0 40px; }
+#calculator .savings-controls { border:1px solid #5a5551!important; border-radius:22px; padding:30px; background:#343130; }
+#calculator .savings-controls fieldset { border:0; padding:0; min-width:0; }
+#calculator .savings-controls fieldset + fieldset { margin-top:26px; padding-top:30px; border-top:1px solid #5a5551!important; }
+#calculator .savings-control-title { float:left; width:100%; display:flex; justify-content:space-between; align-items:center; gap:12px; margin-bottom:22px; font-size:16px; font-weight:700; }
+#calculator .savings-control-title > span { display:flex; align-items:center; gap:10px; }
+#calculator .savings-control-title output { white-space:nowrap; font-size:19px; font-variant-numeric:tabular-nums; }
+#calculator .savings-number { display:inline-grid; place-items:center; flex:none; width:25px; height:25px; background:#45413e; border-radius:50%; font-size:15px; }
+#calculator .savings-presets { clear:both; display:grid; gap:10px; }
+#calculator .savings-meals { grid-template-columns:repeat(4,minmax(0,1fr)); }
+#calculator .savings-days { grid-template-columns:repeat(5,minmax(0,1fr)); }
+#calculator .savings-presets button { min-width:0; padding:13px 3px; background:#403b37!important; border:1px solid #5a5551!important; border-radius:15px!important; font-size:16px; font-weight:700; white-space:nowrap; }
+#calculator .savings-presets button[aria-pressed="true"] { background:#b18b73!important; border-color:#b18b73!important; color:#f4f2ef!important; }
+#calculator .savings-presets button:hover { border-color:#b18b73!important; }
+#calculator .savings-range { display:block; width:100%; height:28px; margin:20px 0 0; padding:0; appearance:none; -webkit-appearance:none; border:0!important; background:transparent!important; cursor:pointer; accent-color:#b18b73!important; }
+#calculator .savings-range::-webkit-slider-runnable-track { height:9px; border-radius:999px; background:#5a5551; }
+#calculator .savings-range::-webkit-slider-thumb { appearance:none; -webkit-appearance:none; width:25px; height:25px; margin-top:-8px; border:1px solid #b18b73; border-radius:50%; background:#b18b73; }
+#calculator .savings-range::-moz-range-track { height:9px; border-radius:999px; background:#5a5551; }
+#calculator .savings-range::-moz-range-thumb { width:25px; height:25px; border:1px solid #b18b73; border-radius:50%; background:#b18b73; }
+#calculator .savings-basis { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:auto; padding-top:32px; font-size:12px; }
+#calculator .savings-basis p { margin:0; color:#bdb6af!important; }
+#calculator .savings-report { min-width:0; padding:36px; border:1px solid #706760!important; border-radius:22px; background:#343130; }
+#calculator .savings-report-heading { display:flex; justify-content:space-between; align-items:center; gap:10px; border-bottom:1px solid #45413e; padding-bottom:20px; margin-bottom:28px; font-size:13px; font-weight:700; }
+#calculator .savings-report-heading strong { font-size:13px; border:1px solid #706760; border-radius:999px; background:#45413e; padding:4px 10px; white-space:nowrap; }
+#calculator .savings-result-label { margin:0 0 4px; font-size:14px; font-weight:600; color:#bdb6af!important; }
+#calculator .savings-money { margin:0 0 24px; font-size:22px; line-height:1.4; }
+#calculator .savings-money strong { font-size:clamp(36px,4vw,60px); letter-spacing:-.045em; font-weight:800; font-variant-numeric:tabular-nums; }
+#calculator .savings-time { margin:0 0 28px; font-size:20px; line-height:1.5; }
+#calculator .savings-time strong { font-size:38px; margin:0 4px; }
+#calculator .savings-comparison { padding:16px; border:1px solid #5a5551; border-radius:17px; background:#f4f2ef; }
+#calculator .savings-comparison-labels { display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap; font-size:12px; line-height:1.6; margin-bottom:10px; }
+#calculator .savings-comparison-labels b { font-weight:500; }
+#calculator .savings-comparison-bar { display:flex; height:14px; border-radius:999px; overflow:hidden; background:#5a5551!important; }
+#calculator .savings-comparison-bar span:first-child { width:33.25%; background:#b18b73!important; }
+#calculator .savings-comparison-bar span:last-child { flex:1; background:#5a5551!important; }
+#calculator .savings-leisure { display:flex; align-items:center; gap:12px; margin:26px 0; padding:17px; border:1px solid #5a5551; border-radius:15px; font-size:12px; background:#403b37; }
+#calculator .savings-cta { display:flex; align-items:center; justify-content:center; gap:12px; padding:20px 12px; border:1px solid #b18b73!important; border-radius:16px; background:#45413e!important; text-decoration:none; font-size:17px; font-weight:800; text-align:center; line-height:1.5; }
+#calculator .savings-cta:hover { background:#5a5551!important; }
+#calculator .savings-details { margin-top:38px; border-top:1px solid #5a5551; }
+#calculator .savings-details summary { display:flex; align-items:center; justify-content:space-between; padding:28px 10px; list-style:none; cursor:pointer; font-size:15px; font-weight:600; }
+#calculator .savings-details summary::-webkit-details-marker { display:none; }
+#calculator .savings-details:not([open]) .savings-chevron { transform:rotate(180deg); }
+#calculator .savings-formulas { padding:22px; border:1px solid #5a5551; border-radius:17px; background:#343130; font-size:14px; line-height:1.8; }
+#calculator .savings-formulas p + p { margin-top:10px; }
+#calculator .savings-disclaimer { font-size:12px; color:#bdb6af!important; }
+@media(max-width:1000px) {
+ #calculator .savings-layout { gap:24px; grid-template-columns:minmax(0,1.2fr) minmax(0,1fr); }
+ #calculator .savings-controls, #calculator .savings-report { padding:24px; }
+ #calculator .savings-control-title { font-size:13px; }
+ #calculator .savings-control-title output { font-size:15px; }
+ #calculator .savings-presets { gap:6px; }
+ #calculator .savings-presets button { font-size:13px; }
+ #calculator .savings-report-heading { flex-wrap:wrap; }
+}
+@media(max-width:800px) {
+ #calculator { padding:64px 0!important; }
+ #calculator .savings-layout { grid-template-columns:1fr; gap:28px; }
+ #calculator .savings-input h2 { margin-bottom:28px; }
+ #calculator .savings-controls, #calculator .savings-report { padding:24px 20px; }
+ #calculator .savings-control-title { font-size:13px; gap:6px; }
+ #calculator .savings-control-title > span { gap:7px; }
+ #calculator .savings-number { width:21px; height:21px; font-size:12px; }
+ #calculator .savings-control-title output { font-size:15px; }
+ #calculator .savings-presets button { padding:12px 2px; font-size:13px; border-radius:12px!important; }
+ #calculator .savings-basis { padding-top:22px; font-size:11px; }
+ #calculator .savings-money strong { font-size:48px; }
+ #calculator .savings-report-heading { flex-wrap:nowrap; }
+ #calculator .savings-cta { font-size:16px; }
+ #calculator .savings-details summary { font-size:13px; padding:24px 0; }
+ #calculator .savings-formulas { font-size:12px; padding:18px; }
+ #calculator .savings-disclaimer { font-size:11px; }
+}
+#calculator .savings-input h2, #calculator .savings-control-title, #calculator .savings-report-heading, #calculator .savings-money, #calculator .savings-time, #calculator .savings-details { color:#f4f2ef; }
+#calculator .savings-presets button { color:#f4f2ef; cursor:pointer; }
+#calculator .savings-comparison { background:#302c29; }
+#calculator .savings-cta { background:#b18b73!important; color:#292522; }
+#calculator .savings-cta:hover { background:#c29c84!important; }
+#calculator .savings-money strong, #calculator .savings-time strong, #calculator .savings-control-title output { color:#d4ae94; }
+#calculator :focus-visible { outline:2px solid #d4ae94; outline-offset:4px; }
+</style>
 </head>
 <body>
 
@@ -3573,15 +3658,7 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
 <article class="process-scroll-step" id="science-step-3" aria-labelledby="science-step-title-3"><span class="process-step-marker" aria-hidden="true">03</span><p class="process-step-kicker">PROCESS 03 / 05</p><h3 id="science-step-title-3">저점도 액상 포뮬라</h3><p class="process-step-description">수용성 식이섬유 배합으로 포만감과 부드러운 목넘김 동시 구현</p></article>
 <article class="process-scroll-step" id="science-step-4" aria-labelledby="science-step-title-4"><span class="process-step-marker" aria-hidden="true">04</span><p class="process-step-kicker">PROCESS 04 / 05</p><h3 id="science-step-title-4">무균 질소 충진 밀폐</h3><p class="process-step-description">산화율 0% 유지를 위한 5단계 챔버 질소 치환 및 진공 분리 씰링</p></article>
 <article class="process-scroll-step" id="science-step-5" aria-labelledby="science-step-title-5"><span class="process-step-marker" aria-hidden="true">05</span><p class="process-step-kicker">PROCESS 05 / 05</p><h3 id="science-step-title-5">1:1 맞춤 라벨 출고</h3><p class="process-step-description">개인별 건강 처방 메시지 레이저 각인 후 24시간 내 신선 직배송</p></article></div></div></div>
-<div class="science-process-divider"></div>
 
-
-        <div class="fact-numbers">
-          <div><span>건기식 법적 규격</span><strong>100<small>%</small></strong><p>식약처 기능성 인정 기준</p></div>
-          <div><span>무균 질소 밀폐 공정</span><strong>0<small>%</small></strong><p>산화율 0% 유지</p></div>
-          <div><span>자연으로 돌아가는 용기</span><strong>180<small>일</small></strong><p>토양 생분해 에코용기</p></div>
-        </div>
-        <p class="fact-note" style="margin-top: 35px; margin-bottom: 0;">* 원본 와이어프레임의 가상 콘셉트 수치이며, 실제 시험 결과가 아닙니다.</p>
 
       </div>
     </section>
@@ -3590,7 +3667,6 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
     <section id="spotlight">
       <div class="wrap-wide">
         <div class="section-header center">
-          <p class="signature-editorial-eyebrow">Signature Formula</p>
           <h2>상황별 대표 시그니처 포뮬러 3종</h2>
         </div>
         <div class="signature-editorial-grid">
@@ -3891,15 +3967,13 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
 
               <!-- Real-time Engraved Bottle Preview -->
               <div style="background: #343130; border: 1.5px solid #5a5551; border-radius: var(--radius); padding: 36px 28px; text-align: center; box-shadow: none;">
-                <span style="font-size: 0.75rem; font-weight: 800; color: #bdb6af; letter-spacing: 0.08em; display: block; margin-bottom: 12px;">1:1 PERSONALIZED LABEL PREVIEW</span>
-                <div class="diag-preview-bottle-box" style="width: 110px; margin: 0 auto 16px auto; background: #45413e; border-radius: 12px; padding: 16px; border: 1px solid #5a5551;">
-                  <div class="mini-bottle" style="width: 54px; height: 100px; margin: 0 auto;">
-                    <div class="mini-cap" style="width: 36px; height: 22px; background: #45413e; border: 1.5px solid #2f2b28; border-radius: 6px 6px 0 0;"></div>
-                    <div class="mini-body" style="width: 50px; height: 74px; background: #343130; border: 1.5px solid #2f2b28; border-top: none; border-radius: 0 0 14px 14px; position: relative;">
-                      <div class="mini-shoulder-logo" style="top: 4px; font-size: 0.44rem;">A:FIT</div>
-                      <div class="mini-engrave-label" style="bottom: 6px; width: 44px; padding: 2px;">
-                        <span class="mini-engrave-name" style="font-size: 0.52rem;" id="curationBottleTag">01 WORK</span>
-                      </div>
+                <div class="diag-studio-preview" style="display: flex; justify-content: center; padding: 12px 0 28px;" role="img" aria-label="맞춤 라벨 A:FIT 이중제형 보틀">
+                  <div class="studio-bottle lime" style="--bottle-width: 150px;" aria-hidden="true">
+                    <div class="studio-cap"></div>
+                    <div class="studio-neck"></div>
+                    <div class="studio-glass">
+                      <div class="studio-liquid"></div>
+                      <div class="studio-label"><small>PERSONAL WELLNESS</small><b>A:FIT</b><span>ALL-IN-ONE + FIT</span><i id="curationBottleTag">01 WORK</i><em>1:1 DAILY FORMULA<br>100 ml</em></div>
                     </div>
                   </div>
                 </div>
@@ -3917,110 +3991,56 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
 
     <!-- 6. Cost Calculator (AFITW-150) -->
     <section id="calculator">
-      <div class="wrap-wide">
-        <!-- Calculator -->
-        <div class="calc-box"><div class="calc-input-panel">
-            <h2>내 한 달 식비와 시간,<br>얼마나 절약될까?</h2>
-            
-            <!-- Step 1: Baseline Meal Cost Configuration -->
-            <div>
-              <div class="calc-step-label">1. 평소 한 끼 식비 기준 선택</div>
-              <div class="calc-preset-group" id="mealPresetGroup">
-                <label class="calc-preset-btn">
-                  <input type="radio" name="meal-cost" value="5000">
-                  <span class="cost-num">5,000</span>
-                  <span class="cost-unit">원</span>
-                </label>
-                <label class="calc-preset-btn">
-                  <input type="radio" name="meal-cost" value="8000" checked="">
-                  <span class="cost-num">8,000</span>
-                  <span class="cost-unit">원</span>
-                </label>
-                <label class="calc-preset-btn">
-                  <input type="radio" name="meal-cost" value="10000">
-                  <span class="cost-num">10,000</span>
-                  <span class="cost-unit">원</span>
-                </label>
-                <label class="calc-preset-btn">
-                  <input type="radio" name="meal-cost" value="15000">
-                  <span class="cost-num">15,000</span>
-                  <span class="cost-unit">원</span>
-                </label>
-              </div>
-            </div>
-
-            <!-- Step 2: Intake Days Slider -->
-            <div style="margin-top: 28px;">
-              <div class="calc-step-label">2. 월 구독 일 수 선택</div>
-              <select class="days-select" id="daysSlider" aria-label="월 구독 일 수 선택">
-                <option value="1">1일</option>
-                <option value="2">2일</option>
-                <option value="3">3일</option>
-                <option value="4">4일</option>
-                <option value="5">5일</option>
-                <option value="6">6일</option>
-                <option value="7">7일</option>
-                <option value="8">8일</option>
-                <option value="9">9일</option>
-                <option value="10">10일</option>
-                <option value="11">11일</option>
-                <option value="12">12일</option>
-                <option value="13">13일</option>
-                <option value="14">14일</option>
-                <option value="15">15일</option>
-                <option value="16">16일</option>
-                <option value="17">17일</option>
-                <option value="18">18일</option>
-                <option value="19">19일</option>
-                <option value="20" selected="">20일</option>
-                <option value="21">21일</option>
-                <option value="22">22일</option>
-                <option value="23">23일</option>
-                <option value="24">24일</option>
-                <option value="25">25일</option>
-                <option value="26">26일</option>
-                <option value="27">27일</option>
-                <option value="28">28일</option>
-                <option value="29">29일</option>
-                <option value="30">30일</option>
-              </select>
-            </div>
-
-            </div><div class="calc-output-panel" role="region" aria-label="예상 절약 금액과 시간">
-
-            <!-- Step 3: Final Results Grid -->
-            <div class="calc-results-box" aria-live="polite" aria-atomic="true">
-              <div class="calc-result-col">
-                <span class="calc-label">한 달 절약 식비</span>
-                <div class="calc-val-wrap">
-                  <strong id="calcCostResult">106,800</strong>
-                  <span class="calc-unit">원</span>
-                </div>
-              </div>
-              <div class="calc-result-col">
-                <span class="calc-label">절약된 식사·준비 시간</span>
-                <div class="calc-val-wrap">
-                  <span class="calc-prefix">약</span>
-                  <strong id="calcTimeResult">10</strong>
-                  <span class="calc-unit">시간</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Step 4: Transparent Formula & Equation Box -->
-            <div class="calc-formula-wrap">
-              <div class="calc-formula-title">[투명 산출 근거 및 계산식]</div>
-              <div id="calcFormulaCost">• 식비 절감식: (8,000원 - A:FIT 2,660원) x 20일 = 106,800원</div>
-              <div id="calcFormulaTime">• 시간 절약식: 1회 식사·준비 30분(0.5시간) x 20일 = 10시간</div>
-            </div>
-
-            <div class="calc-footnote">
-              * A:FIT 1병 가격은 30일 정기구독 기준(1인, 1병 2,660원)이며, 위치/분야별 단가는 통계 기반 기준입니다.
-            </div>
-          </div>
-
+ <div class="wrap-wide savings-wrap">
+  <div class="savings-layout">
+   <div class="savings-input">
+    <span class="savings-eyebrow">▦ &nbsp; 스마트 절약 리포트</span>
+    <h2>내 한 달 식비와 시간,<br>얼마나 절약될까?</h2>
+    <div class="savings-controls">
+     <fieldset>
+      <legend class="savings-control-title"><span><b class="savings-number">1</b> 평소 한 끼 식비 기준 선택</span><output id="mealCostValue" for="mealCostSlider">8,000원</output></legend>
+      <div class="savings-presets savings-meals" role="group" aria-label="한 끼 식비 빠른 선택">
+       <button type="button" data-meal="5000" aria-pressed="false">5,000원</button><button type="button" data-meal="8000" aria-pressed="true">8,000원</button><button type="button" data-meal="10000" aria-pressed="false">10,000원</button><button type="button" data-meal="15000" aria-pressed="false">15,000원</button>
       </div>
-    </div></section>
+      <input class="savings-range" id="mealCostSlider" type="range" min="5000" max="25000" step="100" value="8000" aria-label="평소 한 끼 식비" aria-valuetext="8,000원">
+     </fieldset>
+     <fieldset>
+      <legend class="savings-control-title"><span><b class="savings-number">2</b> 월 구독 일수 선택</span><output id="daysValue" for="daysSlider">20일</output></legend>
+      <div class="savings-presets savings-days" role="group" aria-label="월 구독 일수 빠른 선택">
+       <button type="button" data-days="10" aria-pressed="false">10일</button><button type="button" data-days="15" aria-pressed="false">15일</button><button type="button" data-days="20" aria-pressed="true">20일</button><button type="button" data-days="25" aria-pressed="false">25일</button><button type="button" data-days="30" aria-pressed="false">30일</button>
+      </div>
+      <input class="savings-range" id="daysSlider" type="range" min="10" max="30" step="1" value="20" aria-label="월 구독 일수" aria-valuetext="20일">
+     </fieldset>
+    </div>
+    <div class="savings-basis"><p>✓ A:FIT 1병 가격: <strong>2,660원</strong> (30일 정기구독 기준)</p><p>1회 식사 준비시간 30분 절약</p></div>
+   </div>
+   <div class="savings-report" role="region" aria-label="예상 절약 리포트">
+    <div class="savings-report-heading"><span>▤ &nbsp; 예상 절약 리포트</span><strong id="savingsPercent">66.8% 비용 절감</strong></div>
+    <div class="savings-results" aria-live="polite" aria-atomic="true">
+     <p class="savings-result-label">한 달 절약 식비</p>
+     <p class="savings-money"><strong id="calcCostResult">106,800</strong> <span>원</span></p>
+     <p class="savings-result-label">절약된 식사 · 준비 시간</p>
+     <p class="savings-time">약 <strong id="calcTimeResult">10</strong> <span>시간</span></p>
+    </div>
+    <div class="savings-comparison">
+     <div class="savings-comparison-labels"><span>기존 외식비 (<b id="baselineCost">160,000원</b>)</span><span>구독 이용 (<b id="subscriptionCost">53,200원</b>)</span></div>
+     <div class="savings-comparison-bar" role="img" aria-label="기존 외식비 중 구독 비용 33.3%, 절약 비용 66.8%"><span id="subscriptionShare"></span><span></span></div>
+    </div>
+    <p class="savings-leisure">◷ <span>한 달 동안 <strong>영화 <b id="movieCount">5</b>편</strong> 혹은 <strong>책 <b id="bookCount">3</b>권</strong>을 읽을 수 있어요!</span></p>
+    <a class="savings-cta" id="savingsSubscribe" href="#checkoutModal">이 조건으로 정기구독 신청하기 <span aria-hidden="true">→</span></a>
+   </div>
+  </div>
+  <details class="savings-details" open>
+   <summary><span>ⓘ &nbsp; [투명 산출 근거 및 상세 계산식]</span><span class="savings-chevron" aria-hidden="true">⌃</span></summary>
+   <div class="savings-formulas">
+    <p id="calcFormulaCost">식비 절약식: (8,000원 − A:FIT 2,660원) × 20일 = 106,800원</p>
+    <p id="calcFormulaTime">시간 절약식: 1회 식사·준비 30분(0.5시간) × 20일 = 10시간</p>
+    <p class="savings-disclaimer">* A:FIT 1병 가격은 30일 정기구독 기준(1병 2,660원)입니다. 선택 일수에 같은 단가를 적용한 예상 비교 금액입니다.</p>
+    <p class="savings-disclaimer">* 시간 활용 예시는 영화 1편 2시간, 책 1권 3시간 기준으로 계산합니다.</p>
+   </div>
+  </details>
+ </div>
+</section>
 
     <!-- 8. 15-Product Full Archive Showcase (AFITW-160) -->
     <section id="archive" style="background: var(--bg-subtle); border-top: 1px solid var(--border); padding: 100px 0;">
@@ -5382,43 +5402,6 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
     window.subscribeFromModal = subscribeFromModal;
     window.openCheckoutModal = openCheckoutModal;
 
-      // Calculator Live Interactive Logic
-      const mealInputs = document.querySelectorAll('input[name="meal-cost"]');
-      const daysSelect = document.getElementById('daysSlider');
-      const costResultEl = document.getElementById('calcCostResult');
-      const timeResultEl = document.getElementById('calcTimeResult');
-      const formulaCostEl = document.getElementById('calcFormulaCost');
-      const formulaTimeEl = document.getElementById('calcFormulaTime');
-
-      function updateCalculator() {
-        const checkedRadio = document.querySelector('input[name="meal-cost"]:checked');
-        const mealCost = checkedRadio ? parseInt(checkedRadio.value, 10) : 8000;
-        const days = daysSelect ? parseInt(daysSelect.value, 10) : 20;
-        const afitPrice = 2660;
-
-        const savedCost = (mealCost - afitPrice) * days;
-        const savedHours = Math.round(0.5 * days);
-
-        if (costResultEl) {
-          costResultEl.textContent = savedCost.toLocaleString();
-        }
-        if (timeResultEl) {
-          timeResultEl.textContent = savedHours;
-        }
-        if (formulaCostEl) {
-          formulaCostEl.textContent = '• 식비 절감식: (' + mealCost.toLocaleString() + '원 - A:FIT 2,660원) x ' + days + '일 = ' + savedCost.toLocaleString() + '원';
-        }
-        if (formulaTimeEl) {
-          formulaTimeEl.textContent = '• 시간 절약식: 1회 식사·준비 30분(0.5시간) x ' + days + '일 = ' + savedHours + '시간';
-        }
-      }
-
-      mealInputs.forEach(function (input) {
-        input.addEventListener('change', updateCalculator);
-      });
-      if (daysSelect) {
-        daysSelect.addEventListener('change', updateCalculator);
-      }
     });
   </script>
 
@@ -5545,6 +5528,40 @@ input::placeholder,textarea::placeholder{color:var(--text-muted)}
   if(header)observer.observe(header);
  }
  if(document.fonts)document.fonts.ready.then(schedule);
+ render();
+})();
+</script>
+<script id="savings-reference-script">
+(() => {
+ const section=document.getElementById('calculator');
+ const meal=section.querySelector('#mealCostSlider'), days=section.querySelector('#daysSlider');
+ const get=id=>section.querySelector('#'+id), money=n=>n.toLocaleString('ko-KR');
+ function render(){
+  const cost=Number(meal.value), count=Number(days.value), unit=2660;
+  const baseline=cost*count, subscription=unit*count, savings=baseline-subscription, hours=count*.5;
+  get('mealCostValue').textContent=money(cost)+'원'; get('daysValue').textContent=count+'일';
+  meal.setAttribute('aria-valuetext',money(cost)+'원'); days.setAttribute('aria-valuetext',count+'일');
+  section.querySelectorAll('[data-meal]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.meal)===cost)));
+  section.querySelectorAll('[data-days]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.days)===count)));
+  get('calcCostResult').textContent=money(savings);get('calcTimeResult').textContent=hours.toLocaleString('ko-KR');
+  get('savingsPercent').textContent=(savings/baseline*100).toFixed(1)+'% 비용 절감';
+  get('baselineCost').textContent=money(baseline)+'원';get('subscriptionCost').textContent=money(subscription)+'원';
+  get('subscriptionShare').style.width=(subscription/baseline*100)+'%';
+  section.querySelector('.savings-comparison-bar').setAttribute('aria-label','기존 외식비 '+money(baseline)+'원 중 구독 비용 '+money(subscription)+'원, 절약 비용 '+money(savings)+'원');
+  get('movieCount').textContent=Math.floor(hours/2);get('bookCount').textContent=Math.floor(hours/3);
+  get('calcFormulaCost').textContent='식비 절약식: ('+money(cost)+'원 − A:FIT 2,660원) × '+count+'일 = '+money(savings)+'원';
+  get('calcFormulaTime').textContent='시간 절약식: 1회 식사·준비 30분(0.5시간) × '+count+'일 = '+hours+'시간';
+ }
+ section.querySelectorAll('[data-meal]').forEach(b=>b.addEventListener('click',()=>{meal.value=b.dataset.meal;render();}));
+ section.querySelectorAll('[data-days]').forEach(b=>b.addEventListener('click',()=>{days.value=b.dataset.days;render();}));
+ [meal,days].forEach(input=>{input.addEventListener('input',render);input.addEventListener('change',render);});
+ get('savingsSubscribe').addEventListener('click',()=>{
+  const select=document.getElementById('orderPlanPeriod');if(!select)return;
+  const count=Number(days.value);
+  let option=[...select.options].find(o=>o.textContent.startsWith('월 '+count+'일 '));
+  if(!option){option=new Option('월 '+count+'일 맞춤 올인원팩 (월 '+money(count*2660)+'원)');option.dataset.calculator='true';select.add(option);}
+  select.value=option.value;select.dispatchEvent(new Event('change',{bubbles:true}));
+ });
  render();
 })();
 </script>
